@@ -1,0 +1,96 @@
+{
+	consume_items: true
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	default_repeatable_quest: true
+	filename: "crop"
+	group: "189D77A4C52994B6"
+	icon: "minecraft:wheat_seeds"
+	id: "08E3F8FADCAEE65B"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["157BBBAB00E2FAAF"]
+			hide: true
+			icon: "minecraft:wheat_seeds"
+			id: "69D0A2940723341A"
+			rewards: [{
+				count: 2
+				id: "128BA3BA79D5E74F"
+				item: "minecraft:wheat_seeds"
+				type: "item"
+			}]
+			tasks: [{
+				count: 16L
+				id: "02BB7BFB113828A0"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
+			title: "Buy Wheat Seeds"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5F7A2CDA6365739F"]
+			icon: "minecraft:carrot"
+			id: "42F61617476FBFCC"
+			rewards: [{
+				count: 2
+				id: "1C60DADADCF7A977"
+				item: "minecraft:carrot"
+				type: "item"
+			}]
+			tasks: [{
+				count: 48L
+				id: "7B71F365F027097D"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
+			title: "Buy Carrot"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["288982646CCE5C7A"]
+			icon: "minecraft:sugar_cane"
+			id: "5EC3E67CEBBB2604"
+			rewards: [{
+				count: 2
+				id: "3204BC56166A6A93"
+				item: "minecraft:sugar_cane"
+				type: "item"
+			}]
+			tasks: [{
+				count: 48L
+				id: "5EA228279EA3125F"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
+			title: "Buy Sugar Cane"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["33913A2849395FB8"]
+			icon: "minecraft:potato"
+			id: "139EDF3D2E9F5E13"
+			rewards: [{
+				count: 2
+				id: "3366642D0DFF401C"
+				item: "minecraft:potato"
+				type: "item"
+			}]
+			tasks: [{
+				count: 64L
+				id: "79D9DD3207196D24"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
+			title: "Buy Potato"
+			x: 6.0d
+			y: 0.0d
+		}
+	]
+	title: "Crops"
+}

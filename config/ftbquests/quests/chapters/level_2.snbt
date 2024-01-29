@@ -1,0 +1,272 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_2"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "minecraft:egg"
+	id: "5FE078A74DE0DDFE"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["624386B8BEA0CAE4"]
+			icon: "minecraft:egg"
+			id: "7D3858343983B67A"
+			rewards: [
+				{
+					command: "/gamestage add @p level_2 true"
+					elevate_perms: true
+					id: "4CAE7972E362E1D6"
+					silent: true
+					title: "Level up to Level 2"
+					type: "command"
+				}
+				{
+					id: "3BCB555692378DB7"
+					item: {
+						Count: 1b
+						id: "bountiful:decree"
+						tag: {
+							RepairCost: 0
+							"bountiful:decree_data": "{\"ids\":[\"level_2\"]}"
+							display: {
+								Name: "{\"text\":\"Level 2 Decree\"}"
+							}
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "octagon"
+			tasks: [{
+				consume_items: true
+				id: "7C4C7021FAA74276"
+				item: "kubejs:gold_coin"
+				type: "item"
+			}]
+			title: "Level 2"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7D3858343983B67A"]
+			id: "778CCDE835D9EF67"
+			tasks: [
+				{
+					id: "530B222E9D20B5BD"
+					item: "minecraft:chicken"
+					type: "item"
+				}
+				{
+					id: "67F4C8C07A96E24B"
+					item: "minecraft:egg"
+					type: "item"
+				}
+				{
+					id: "543011554063230A"
+					item: "minecraft:feather"
+					type: "item"
+				}
+			]
+			title: "Chicken"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7D3858343983B67A"]
+			id: "19B61578D942D20A"
+			tasks: [{
+				id: "5DF5E6E5AE89A230"
+				item: "minecraft:cobblestone"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["19B61578D942D20A"]
+			id: "342421E0C377A36D"
+			tasks: [{
+				id: "5268DBF51D13CD09"
+				item: "minecraft:furnace"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7D3858343983B67A"]
+			id: "507ACE79E870A152"
+			tasks: [{
+				id: "1D6D69E9E676BD5F"
+				item: "minecraft:hay_block"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["7D3858343983B67A"]
+			id: "6ABD336C3EB9F503"
+			tasks: [{
+				id: "3634670EA1C7EE95"
+				item: "minecraft:rotten_flesh"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"7D3858343983B67A"
+				"210CABE0AFB5A000"
+			]
+			id: "5571AA243B6BB49B"
+			tasks: [{
+				icon: "minecraft:oak_door"
+				id: "2A1E7FF6A1BD58BE"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "minecraft:wooden_doors"
+					}
+				}
+				title: "Any Wooden Door"
+				type: "item"
+			}]
+			title: "Wooden Door"
+			x: -2.0d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"5571AA243B6BB49B"
+				"4BF5364205E39A77"
+			]
+			id: "0EB9C48464D5C956"
+			tasks: [{
+				icon: "minecraft:oak_trapdoor"
+				id: "6C72236233047E7E"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "minecraft:wooden_trapdoors"
+					}
+				}
+				title: "Any Wooden Trapdoor"
+				type: "item"
+			}]
+			title: "Wooden Trapdoor"
+			x: -4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["0EB9C48464D5C956"]
+			icon: "minecraft:ladder"
+			id: "3248B784E4E15ADF"
+			tasks: [{
+				id: "367C60779FE4A915"
+				item: "minecraft:ladder"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"778CCDE835D9EF67"
+				"342421E0C377A36D"
+			]
+			id: "6136AD91428A0801"
+			tasks: [{
+				id: "20B15C43031E912C"
+				item: "minecraft:cooked_chicken"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"342421E0C377A36D"
+				"5B297B946A6D8EAB"
+			]
+			id: "501C3132C26AE330"
+			tasks: [{
+				id: "3F2E60D7E683A99C"
+				item: "minecraft:charcoal"
+				type: "item"
+			}]
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["501C3132C26AE330"]
+			id: "175C3116B3681471"
+			tasks: [{
+				id: "1D1C4CB1CDE98B93"
+				item: "minecraft:torch"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["7D3858343983B67A"]
+			id: "25862DE4D25EA92E"
+			tasks: [
+				{
+					id: "368A5FCF763F3EDE"
+					item: {
+						Count: 1b
+						id: "immersive_armors:wooden_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "1ACFC47A2D99179A"
+					item: {
+						Count: 1b
+						id: "immersive_armors:wooden_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "4603F43231BBB1A8"
+					item: {
+						Count: 1b
+						id: "immersive_armors:wooden_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "31A81E307E7A62C4"
+					item: {
+						Count: 1b
+						id: "immersive_armors:wooden_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Wooden Armor"
+			x: 2.0d
+			y: -2.0d
+		}
+	]
+	title: "Level 2"
+}

@@ -1,0 +1,186 @@
+{
+	consume_items: true
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	default_repeatable_quest: true
+	filename: "decree"
+	group: "189D77A4C52994B6"
+	hide_quest_until_deps_visible: true
+	icon: {
+		Count: 1b
+		id: "bountiful:decree"
+		tag: {
+			"bountiful:decree_data": "{\"ids\":[\"level_1\"]}"
+		}
+	}
+	id: "2DF5275C33DDF6E4"
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["37DB727D93347A94"]
+			icon: "minecraft:wheat"
+			id: "46C535480DDE5E57"
+			rewards: [{
+				id: "2245CA0B152D4FD9"
+				item: {
+					Count: 1b
+					id: "bountiful:decree"
+					tag: {
+						RepairCost: 0
+						"bountiful:decree_data": "{\"ids\":[\"level_1\"]}"
+						display: {
+							Name: "{\"text\":\"Level 1 Decree\"}"
+						}
+					}
+				}
+				title: "Level 1 Decree"
+				type: "item"
+			}]
+			tasks: [{
+				id: "3D140B33CBC6CA81"
+				type: "checkmark"
+			}]
+			title: "Level 1 Decree"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7D3858343983B67A"]
+			icon: "minecraft:egg"
+			id: "71447B54165CE531"
+			rewards: [{
+				id: "6B8F27E7222FE295"
+				item: {
+					Count: 1b
+					id: "bountiful:decree"
+					tag: {
+						RepairCost: 0
+						"bountiful:decree_data": "{\"ids\":[\"level_2\"]}"
+						display: {
+							Name: "{\"text\":\"Level 2 Decree\"}"
+						}
+					}
+				}
+				title: "Level 2 Decree"
+				type: "item"
+			}]
+			tasks: [{
+				id: "448D2E3D2008F230"
+				type: "checkmark"
+			}]
+			title: "Level 2 Decree"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["573FE8ED65790A78"]
+			icon: "minecraft:leather"
+			id: "06C6A0F67450B4E6"
+			rewards: [{
+				id: "7304A87D32FAD1DA"
+				item: {
+					Count: 1b
+					id: "bountiful:decree"
+					tag: {
+						RepairCost: 0
+						"bountiful:decree_data": "{\"ids\":[\"level_3\"]}"
+						display: {
+							Name: "{\"text\":\"Level 3 Decree\"}"
+						}
+					}
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "497FFF92D0C52D4F"
+				type: "checkmark"
+			}]
+			title: "Level 3 Decree"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1003C2B79F710366"]
+			icon: "minecraft:carrot"
+			id: "044F309535FBB4A6"
+			rewards: [{
+				id: "6ED8E0890F8B5F1A"
+				item: {
+					Count: 1b
+					id: "bountiful:decree"
+					tag: {
+						RepairCost: 0
+						"bountiful:decree_data": "{\"ids\":[\"level_4\"]}"
+						display: {
+							Name: "{\"text\":\"Level 4 Decree\"}"
+						}
+					}
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "0C0908690CF55AD4"
+				type: "checkmark"
+			}]
+			title: "Level 4 Decree"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["29747D157C7F8C88"]
+			icon: "minecraft:white_wool"
+			id: "4920B20782F90919"
+			rewards: [{
+				id: "572FB2AB8FD04883"
+				item: {
+					Count: 1b
+					id: "bountiful:decree"
+					tag: {
+						RepairCost: 0
+						"bountiful:decree_data": "{\"ids\":[\"level_5\"]}"
+						display: {
+							Name: "{\"text\":\"Level 5 Decree\"}"
+						}
+					}
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "03133192824392A4"
+				type: "checkmark"
+			}]
+			title: "Level 5 Decree"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7297A69487BEE03D"]
+			icon: "minecraft:potato"
+			id: "27F11AC0D93891A9"
+			rewards: [{
+				id: "1CCE421EAA28E102"
+				item: {
+					Count: 1b
+					id: "bountiful:decree"
+					tag: {
+						RepairCost: 0
+						"bountiful:decree_data": "{\"ids\":[\"level_6\"]}"
+						display: {
+							Name: "{\"text\":\"Level 6 Decree\"}"
+						}
+					}
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "59DA64934FE490FB"
+				type: "checkmark"
+			}]
+			title: "Level 6 Decree"
+			x: 0.0d
+			y: 2.0d
+		}
+	]
+	title: "Decrees"
+}

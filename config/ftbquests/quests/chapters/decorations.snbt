@@ -1,0 +1,34 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	default_repeatable_quest: true
+	filename: "decorations"
+	group: "189D77A4C52994B6"
+	hide_quest_until_deps_visible: true
+	id: "4006A7DC9A19859E"
+	order_index: 3
+	quest_links: [ ]
+	quests: [{
+		can_repeat: true
+		dependencies: ["74402ECAFFAFAEC4"]
+		hide: true
+		icon: "minecraft:torch"
+		id: "26532BF72C97D9E4"
+		rewards: [{
+			id: "342C4BF8F31F4426"
+			item: "minecraft:torch"
+			type: "item"
+		}]
+		tasks: [{
+			consume_items: true
+			count: 10L
+			id: "55EFDF752CE9A2A9"
+			item: "kubejs:copper_coin"
+			type: "item"
+		}]
+		title: "Buy Torch"
+		x: 0.0d
+		y: 0.0d
+	}]
+	title: "Decorations"
+}

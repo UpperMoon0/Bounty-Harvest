@@ -1,0 +1,19 @@
+{
+	id: "15745E140450D77B"
+	loot_size: 3
+	order_index: 0
+	rewards: [
+		{ count: 2, item: "minecraft:oak_log", random_bonus: 5 }
+		{ count: 2, item: "minecraft:birch_log", random_bonus: 5 }
+		{ count: 2, item: "minecraft:jungle_log", random_bonus: 5 }
+		{ count: 4, item: "minecraft:acacia_log", random_bonus: 8 }
+		{ count: 2, item: "minecraft:dark_oak_log", random_bonus: 5 }
+		{ count: 2, item: "minecraft:mangrove_log", random_bonus: 5 }
+		{ count: 2, item: "minecraft:cherry_log", random_bonus: 5 }
+		{ count: 5, item: "kubejs:copper_coin", random_bonus: 45, weight: 0.3f }
+		{ item: "kubejs:iron_coin", random_bonus: 5, weight: 0.1f }
+		{ count: 2, item: "minecraft:wheat_seeds", random_bonus: 6, weight: 0.8f }
+		{ count: 2, item: "minecraft:torch", random_bonus: 6, weight: 0.6f }
+	]
+	title: "Level 1"
+}

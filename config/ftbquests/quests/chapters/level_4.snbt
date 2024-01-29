@@ -1,0 +1,321 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_4"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "minecraft:carrot"
+	id: "2AF3D52E5E46A20F"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"6A7021EDEDAB323D"
+				"61B2F967D28FCF1E"
+				"678A8EAEB2BF6661"
+				"1B338FE451D61157"
+				"57737325F1848DFB"
+				"0238CB04F8F7CDEA"
+			]
+			icon: "minecraft:carrot"
+			id: "1003C2B79F710366"
+			rewards: [
+				{
+					command: "/gamestage add @p level_4 true"
+					elevate_perms: true
+					id: "2B1DDE4295CD60DD"
+					silent: true
+					title: "Level up to Level 4"
+					type: "command"
+				}
+				{
+					id: "2295122A1560CAE1"
+					item: {
+						Count: 1b
+						id: "bountiful:decree"
+						tag: {
+							RepairCost: 0
+							"bountiful:decree_data": "{\"ids\":[\"level_4\"]}"
+							display: {
+								Name: "{\"text\":\"Level 4 Decree\"}"
+							}
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "octagon"
+			tasks: [{
+				consume_items: true
+				count: 3L
+				id: "5CDAE6C6E830E3D0"
+				item: "kubejs:gold_coin"
+				type: "item"
+			}]
+			title: "Level 4"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"1003C2B79F710366"
+				"5F7A2CDA6365739F"
+			]
+			id: "352F41B3BED0E086"
+			tasks: [{
+				id: "269DA89171668F2A"
+				item: "minecraft:carrot"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"352F41B3BED0E086"
+				"26BE7AF89E2CAA09"
+			]
+			id: "58846BA779358FD2"
+			tasks: [
+				{
+					id: "413A84E06FE1CFAA"
+					item: "minecraft:porkchop"
+					type: "item"
+				}
+				{
+					id: "3889A8C8D9A43814"
+					item: "minecraft:cooked_porkchop"
+					type: "item"
+				}
+			]
+			title: "Pig"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"1003C2B79F710366"
+				"5340351BF8EB0942"
+			]
+			id: "72CAF40486DF976F"
+			tasks: [{
+				id: "026B64363A5FE21E"
+				item: "farmersdelight:wheat_dough"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"17F6492995529F96"
+				"1AFF08E723FC1F0F"
+			]
+			id: "19A0223BFE395A14"
+			tasks: [
+				{
+					id: "45A5573D47862E96"
+					item: {
+						Count: 1b
+						id: "minecraft:stone_shovel"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "39C623F4A3918C9A"
+					item: {
+						Count: 1b
+						id: "minecraft:stone_pickaxe"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "3B4663CE58D98FD9"
+					item: {
+						Count: 1b
+						id: "minecraft:stone_axe"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "1C188B295DD98031"
+					item: {
+						Count: 1b
+						id: "minecraft:stone_hoe"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "330D6E427AAE1BF4"
+					item: {
+						Count: 1b
+						id: "minecraft:stone_sword"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Flint Tools"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1003C2B79F710366"]
+			id: "382504BCFCC6B07A"
+			tasks: [{
+				id: "12F8A6CCF615292A"
+				item: "minecraft:gunpowder"
+				type: "item"
+			}]
+			title: "Creeper"
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1003C2B79F710366"]
+			id: "6A5228B39CFC9F88"
+			tasks: [
+				{
+					id: "77CA2E89333327E4"
+					item: "minecraft:string"
+					type: "item"
+				}
+				{
+					id: "2C5451DB682F750B"
+					item: "minecraft:spider_eye"
+					type: "item"
+				}
+			]
+			title: "Spider"
+			x: -1.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"1003C2B79F710366"
+				"66D7279E3A29E6A6"
+			]
+			id: "12932CB774E66484"
+			tasks: [{
+				id: "7C2A27D31C954D1B"
+				item: "minecraft:glass"
+				type: "item"
+			}]
+			x: -1.5d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"1003C2B79F710366"
+				"0CA50C39F07ED541"
+			]
+			id: "7D811445066E0898"
+			tasks: [
+				{
+					icon: "minecraft:oak_button"
+					id: "3181F287CBC9E103"
+					item: {
+						Count: 1b
+						id: "itemfilters:tag"
+						tag: {
+							value: "minecraft:wooden_buttons"
+						}
+					}
+					title: "Any Wooden Button"
+					type: "item"
+				}
+				{
+					icon: "minecraft:oak_pressure_plate"
+					id: "104D55D30B2B309B"
+					item: {
+						Count: 1b
+						id: "itemfilters:tag"
+						tag: {
+							value: "minecraft:wooden_pressure_plates"
+						}
+					}
+					title: "Any Wooden Pressure Plate"
+					type: "item"
+				}
+			]
+			title: "Wooden Button and Pressure Plate"
+			x: 1.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["1003C2B79F710366"]
+			id: "17F6492995529F96"
+			tasks: [{
+				id: "0799389515CA36EB"
+				item: "minecraft:flint"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"1003C2B79F710366"
+				"67FD374C4E8AC1E6"
+			]
+			id: "3BA339E0640B6081"
+			tasks: [
+				{
+					id: "4CBD4601C827EC15"
+					item: "aquaculture:bluegill"
+					type: "item"
+				}
+				{
+					id: "3B4B483682E076C8"
+					item: "aquaculture:perch"
+					type: "item"
+				}
+				{
+					id: "358152537741347A"
+					item: "aquaculture:smallmouth_bass"
+					type: "item"
+				}
+				{
+					id: "2613A4AACA6BE43A"
+					item: "aquaculture:brown_trout"
+					type: "item"
+				}
+				{
+					id: "3474EBCE175F278C"
+					item: {
+						Count: 1b
+						id: "aquaculture:minnow"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "1C75103E693D7EB6"
+					item: "aquaculture:carp"
+					type: "item"
+				}
+			]
+			title: "Small Freshwater Fishes"
+			x: 1.5d
+			y: 1.5d
+		}
+	]
+	title: "Level 4"
+}

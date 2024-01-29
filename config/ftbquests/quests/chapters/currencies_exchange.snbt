@@ -1,0 +1,208 @@
+{
+	consume_items: true
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	default_repeatable_quest: true
+	filename: "currencies_exchange"
+	group: "189D77A4C52994B6"
+	icon: "kubejs:gold_coin"
+	id: "00241F31C27A6B00"
+	images: [
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 1.0d
+			hover: [ ]
+			image: "kubejs:item/copper_coin"
+			rotation: 0.0d
+			width: 1.0d
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 1.0d
+			hover: [ ]
+			image: "kubejs:item/iron_coin"
+			rotation: 0.0d
+			width: 1.0d
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 1.0d
+			hover: [ ]
+			image: "kubejs:item/gold_coin"
+			rotation: 0.0d
+			width: 1.0d
+			x: -2.0d
+			y: 4.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 1.0d
+			hover: [ ]
+			image: "kubejs:item/copper_coin"
+			rotation: 0.0d
+			width: 1.0d
+			x: 0.0d
+			y: -2.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 1.0d
+			hover: [ ]
+			image: "kubejs:item/iron_coin"
+			rotation: 0.0d
+			width: 1.0d
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 1.0d
+			hover: [ ]
+			image: "kubejs:item/gold_coin"
+			rotation: 0.0d
+			width: 1.0d
+			x: 4.0d
+			y: -2.0d
+		}
+	]
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			can_repeat: true
+			icon: "kubejs:iron_coin"
+			id: "74BE872A1FFE8D25"
+			rewards: [{
+				id: "42F809394CA5AB8D"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 10L
+				id: "38717F53F686847C"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
+			title: "10 copper -> 1 iron"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			can_repeat: true
+			icon: "kubejs:gold_coin"
+			id: "01629608AA28532C"
+			rewards: [{
+				id: "55DB8D308B6B13F5"
+				item: "kubejs:gold_coin"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 100L
+				id: "2F6B787A4725E6BA"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
+			title: "100 copper -> 1 gold"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			can_repeat: true
+			icon: "kubejs:gold_coin"
+			id: "5F32AAAEB7BC9921"
+			rewards: [{
+				id: "24B173B8B9673B53"
+				item: "kubejs:gold_coin"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 10L
+				id: "2E0C2CECB5D14F98"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			title: "10 iron -> 1 gold"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			can_repeat: true
+			icon: "kubejs:iron_coin"
+			id: "35C7758BD65E25D6"
+			rewards: [{
+				count: 10
+				id: "3CD540072739CC94"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				id: "399C3807FE4934AA"
+				item: "kubejs:gold_coin"
+				type: "item"
+			}]
+			title: "1 gold -> 10 iron"
+			x: 2.0d
+			y: 4.0d
+		}
+		{
+			can_repeat: true
+			icon: "kubejs:copper_coin"
+			id: "3F0C4C3C7725808B"
+			rewards: [{
+				count: 100
+				id: "576D0DCD72079255"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				id: "0A6C0D57BDA8239B"
+				item: "kubejs:gold_coin"
+				type: "item"
+			}]
+			title: "1 gold -> 100 copper"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			can_repeat: true
+			icon: "kubejs:copper_coin"
+			id: "09B1773AF34E7789"
+			rewards: [{
+				count: 10
+				id: "78071D88326BB059"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "3A80D21D5757E118"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			title: "1 iron -> 10 copper"
+			x: 0.0d
+			y: 2.0d
+		}
+	]
+	title: "Money Exchange"
+}

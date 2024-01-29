@@ -1,0 +1,60 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_8"
+	group: "39B7846742C777FD"
+	icon: "farmersdelight:cooked_chicken_cuts"
+	id: "28CBD1C8C3A098FA"
+	order_index: 7
+	quest_links: [ ]
+	quests: [{
+		dependencies: [
+			"1ADE6247221F4942"
+			"703B6BE0DF83164D"
+			"23575B3128D5D87C"
+			"2436700B61FFC87B"
+			"14967CCC45B91E64"
+			"33913A2849395FB8"
+			"0DCF6289F1635383"
+		]
+		icon: "farmersdelight:cooked_chicken_cuts"
+		id: "4003BF6FE565761F"
+		rewards: [
+			{
+				command: "/gamestage add @p level_7 true"
+				elevate_perms: true
+				id: "37252479FFAC6A0F"
+				silent: true
+				title: "Level up to Level 7"
+				type: "command"
+			}
+			{
+				id: "044FBD3F543A7EF9"
+				item: {
+					Count: 1b
+					id: "bountiful:decree"
+					tag: {
+						RepairCost: 0
+						"bountiful:decree_data": "{\"ids\":[\"level_7\"]}"
+						display: {
+							Name: "{\"text\":\"Level 7 Decree\"}"
+						}
+					}
+				}
+				type: "item"
+			}
+		]
+		shape: "octagon"
+		tasks: [{
+			consume_items: true
+			count: 10L
+			id: "2E5CA35378F340E9"
+			item: "kubejs:gold_coin"
+			type: "item"
+		}]
+		title: "Level 8"
+		x: 0.0d
+		y: 0.0d
+	}]
+	title: "Level 8"
+}

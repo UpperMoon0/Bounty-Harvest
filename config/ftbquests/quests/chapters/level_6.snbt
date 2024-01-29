@@ -1,0 +1,292 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_6"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "minecraft:potato"
+	id: "0E6B14941942FF66"
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"7E69CE3D2A589C46"
+				"71BAF60A6925FE01"
+				"288982646CCE5C7A"
+				"7A267011FFCC2421"
+				"1631C4F08CA698F1"
+			]
+			icon: "minecraft:potato"
+			id: "7297A69487BEE03D"
+			rewards: [
+				{
+					command: "/gamestage add @p level_6 true"
+					elevate_perms: true
+					id: "1F10B933EFFC1054"
+					silent: true
+					title: "Level up to Level 6"
+					type: "command"
+				}
+				{
+					id: "581DA5988396076E"
+					item: {
+						Count: 1b
+						id: "bountiful:decree"
+						tag: {
+							RepairCost: 0
+							"bountiful:decree_data": "{\"ids\":[\"level_6\"]}"
+							display: {
+								Name: "{\"text\":\"Level 6 Decree\"}"
+							}
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "octagon"
+			tasks: [{
+				consume_items: true
+				count: 8L
+				id: "6221AF20E1FF898D"
+				item: "kubejs:gold_coin"
+				type: "item"
+			}]
+			title: "Level 6"
+			x: -0.5d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"7297A69487BEE03D"
+				"33913A2849395FB8"
+			]
+			id: "015743E28B4488CE"
+			tasks: [
+				{
+					id: "4566A41DD702A1FB"
+					item: "minecraft:potato"
+					type: "item"
+				}
+				{
+					id: "4D5CC65F27EE7B51"
+					item: "minecraft:baked_potato"
+					type: "item"
+				}
+				{
+					id: "2081C939C9E624F2"
+					item: "minecraft:poisonous_potato"
+					type: "item"
+				}
+			]
+			x: 1.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["7297A69487BEE03D"]
+			id: "210D58BA749A0F47"
+			tasks: [
+				{
+					id: "5CB2F39948DA1CD4"
+					item: "minecraft:brown_mushroom"
+					type: "item"
+				}
+				{
+					id: "74FFE0DD29094CF5"
+					item: "minecraft:red_mushroom"
+					type: "item"
+				}
+			]
+			title: "Mushroom"
+			x: -0.5d
+			y: -3.0d
+		}
+		{
+			dependencies: [
+				"210D58BA749A0F47"
+				"2436700B61FFC87B"
+			]
+			id: "01B9DF675D81D290"
+			tasks: [{
+				id: "133B8FEA15EA803E"
+				item: "minecraft:bowl"
+				type: "item"
+			}]
+			x: 0.5d
+			y: -5.0d
+		}
+		{
+			dependencies: ["01B9DF675D81D290"]
+			id: "343DEFDA4A80BD80"
+			tasks: [{
+				id: "52B2C27427857FDD"
+				item: "minecraft:mushroom_stew"
+				type: "item"
+			}]
+			x: -1.5d
+			y: -5.0d
+		}
+		{
+			dependencies: [
+				"7297A69487BEE03D"
+				"703B6BE0DF83164D"
+			]
+			id: "363EE262F4B948E6"
+			tasks: [{
+				id: "38DD6FBE56864414"
+				item: "minecraft:bookshelf"
+				type: "item"
+			}]
+			x: 2.0d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"7297A69487BEE03D"
+				"23575B3128D5D87C"
+			]
+			id: "54F6ACDCF4631920"
+			tasks: [{
+				id: "1D063334752E08A6"
+				item: "minecraft:fermented_spider_eye"
+				type: "item"
+			}]
+			x: -3.0d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"7297A69487BEE03D"
+				"1ADE6247221F4942"
+			]
+			id: "7E5E0232C32AA186"
+			tasks: [
+				{
+					id: "1C3AE9C6A2AE1E5B"
+					item: {
+						Count: 1b
+						id: "immersive_armors:bone_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "6D54EA222E8BAB54"
+					item: {
+						Count: 1b
+						id: "immersive_armors:bone_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "3E0F1FBB2735230E"
+					item: {
+						Count: 1b
+						id: "immersive_armors:bone_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "48A60D8FFC18B1FE"
+					item: {
+						Count: 1b
+						id: "immersive_armors:bone_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Bone Armor"
+			x: -2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["7297A69487BEE03D"]
+			id: "015061CA8AE2092C"
+			tasks: [
+				{
+					icon: "minecraft:dandelion"
+					id: "2B7606AC7DC6AC57"
+					item: {
+						Count: 1b
+						id: "itemfilters:tag"
+						tag: {
+							value: "forge:yellow_flowers"
+						}
+					}
+					title: "Any Yellow Flower"
+					type: "item"
+				}
+				{
+					icon: "minecraft:poppy"
+					id: "783F3AB3A3CBB0EA"
+					item: {
+						Count: 1b
+						id: "itemfilters:tag"
+						tag: {
+							value: "forge:red_flowers"
+						}
+					}
+					title: "Any Red Flower"
+					type: "item"
+				}
+			]
+			title: "Red and Yellow Flowers"
+			x: -1.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"7297A69487BEE03D"
+				"0DCF6289F1635383"
+			]
+			id: "57165E328146D4DA"
+			tasks: [{
+				id: "6A224EDD6618F097"
+				item: "kubejs:wool_yarn"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"015061CA8AE2092C"
+				"14967CCC45B91E64"
+			]
+			id: "46F26870382E1407"
+			tasks: [{
+				id: "7627042D71EC1783"
+				item: "minecraft:orange_dye"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"57165E328146D4DA"
+				"46F26870382E1407"
+			]
+			id: "66BB290DCD86866E"
+			tasks: [{
+				id: "14E0A7E0152E4D27"
+				item: "kubejs:wool_sweater"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 3.5d
+		}
+	]
+	title: "Level 6"
+}

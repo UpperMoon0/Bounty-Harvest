@@ -1,0 +1,235 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_5"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "minecraft:white_wool"
+	id: "4A5E5FEF0B33C7A3"
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"26BE7AF89E2CAA09"
+				"5F7A2CDA6365739F"
+				"66D7279E3A29E6A6"
+				"0CA50C39F07ED541"
+				"1AFF08E723FC1F0F"
+				"5340351BF8EB0942"
+			]
+			icon: "minecraft:white_wool"
+			id: "29747D157C7F8C88"
+			rewards: [
+				{
+					command: "/gamestage add @p level_5 true"
+					elevate_perms: true
+					id: "50A78B2A1AA05F04"
+					silent: true
+					title: "Level up to Level 5"
+					type: "command"
+				}
+				{
+					id: "6341F0E8517F62A6"
+					item: {
+						Count: 1b
+						id: "bountiful:decree"
+						tag: {
+							RepairCost: 0
+							"bountiful:decree_data": "{\"ids\":[\"level_5\"]}"
+							display: {
+								Name: "{\"text\":\"Level 5 Decree\"}"
+							}
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "octagon"
+			tasks: [{
+				consume_items: true
+				count: 5L
+				id: "2E2F6426E598A287"
+				item: "kubejs:gold_coin"
+				type: "item"
+			}]
+			title: "Level 5"
+			x: -0.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["29747D157C7F8C88"]
+			id: "1A4BBDAC32E8E8CB"
+			tasks: [{
+				id: "50FEBABB457853F1"
+				item: "farmersdelight:carrot_crate"
+				type: "item"
+			}]
+			x: -1.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"29747D157C7F8C88"
+				"7E69CE3D2A589C46"
+			]
+			id: "1CCF7C805ED9FE8B"
+			tasks: [
+				{
+					icon: "minecraft:white_wool"
+					id: "4D8584A4BBCC99A6"
+					item: {
+						Count: 1b
+						id: "itemfilters:tag"
+						tag: {
+							value: "minecraft:wool"
+						}
+					}
+					title: "Any Wool"
+					type: "item"
+				}
+				{
+					id: "4EAF16DDD91CBC09"
+					item: "minecraft:mutton"
+					type: "item"
+				}
+				{
+					id: "034F743380AD6539"
+					item: "minecraft:cooked_mutton"
+					type: "item"
+				}
+			]
+			title: "Sheep"
+			x: 1.0d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"1CCF7C805ED9FE8B"
+				"71BAF60A6925FE01"
+			]
+			icon: "minecraft:white_bed"
+			id: "6EA2798DA5176208"
+			tasks: [{
+				icon: "minecraft:white_bed"
+				id: "38B1E9AAF89A0A04"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "minecraft:beds"
+					}
+				}
+				title: "Any Bed"
+				type: "item"
+			}]
+			title: "Bed"
+			x: 3.0d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"29747D157C7F8C88"
+				"288982646CCE5C7A"
+			]
+			id: "1FD813E5CF445550"
+			tasks: [{
+				id: "6155F723394EBF70"
+				item: "minecraft:sugar_cane"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["1FD813E5CF445550"]
+			id: "2DEC233FBECE5A0F"
+			tasks: [{
+				id: "6D4C4173A5CA0CE4"
+				item: "minecraft:sugar"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["1FD813E5CF445550"]
+			id: "5217D4C2C241C0A9"
+			tasks: [{
+				id: "7C1C0CCBC519AC60"
+				item: "minecraft:paper"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"5217D4C2C241C0A9"
+				"7A267011FFCC2421"
+			]
+			id: "0139DF3D2C0E8D13"
+			tasks: [{
+				id: "45B67866D0205AF8"
+				item: "minecraft:book"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"29747D157C7F8C88"
+				"1631C4F08CA698F1"
+			]
+			id: "185D159902032063"
+			tasks: [{
+				id: "25DD95773FB54E65"
+				item: "minecraft:tnt"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"29747D157C7F8C88"
+				"35C4F11F6C24E7FC"
+			]
+			id: "617E16F23CADA562"
+			tasks: [
+				{
+					id: "4EECD686E4B9B6BF"
+					item: "aquaculture:gar"
+					type: "item"
+				}
+				{
+					id: "641ECF0946C09540"
+					item: "aquaculture:muskellunge"
+					type: "item"
+				}
+				{
+					id: "0F21B9E87227A382"
+					item: "minecraft:salmon"
+					type: "item"
+				}
+			]
+			title: "Medium Freshwater Fishes"
+			x: -3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["617E16F23CADA562"]
+			id: "43D5B92E7B462E7E"
+			tasks: [{
+				id: "6166F90E3CF06C3D"
+				item: "minecraft:ink_sac"
+				type: "item"
+			}]
+			title: "Squid"
+			x: -5.5d
+			y: -0.5d
+		}
+	]
+	title: "Level 5"
+}

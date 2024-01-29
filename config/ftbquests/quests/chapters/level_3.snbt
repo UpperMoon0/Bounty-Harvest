@@ -1,0 +1,272 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_3"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "minecraft:leather"
+	id: "3D5CF467B00AFBA8"
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"158DA2403C78ECEB"
+				"210CABE0AFB5A000"
+				"4BF5364205E39A77"
+				"5813B6DEAD915636"
+				"5B297B946A6D8EAB"
+				"04106F735AB264CF"
+			]
+			icon: "minecraft:leather"
+			id: "573FE8ED65790A78"
+			rewards: [
+				{
+					command: "/gamestage add @p level_3 true"
+					elevate_perms: true
+					id: "6629D8529763B34A"
+					silent: true
+					title: "Level up to Level 3"
+					type: "command"
+				}
+				{
+					id: "2FD553EA8B8C5325"
+					item: {
+						Count: 1b
+						id: "bountiful:decree"
+						tag: {
+							RepairCost: 0
+							"bountiful:decree_data": "{\"ids\":[\"level_3\"]}"
+							display: {
+								Name: "{\"text\":\"Level 3 Decree\"}"
+							}
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "octagon"
+			tasks: [
+				{
+					consume_items: true
+					id: "51C23B8B5D40946D"
+					item: "kubejs:gold_coin"
+					type: "item"
+				}
+				{
+					count: 7L
+					id: "61E029DDE9A30515"
+					item: { Count: 7b, id: "kubejs:iron_coin" }
+					type: "item"
+				}
+			]
+			title: "Level 3"
+			x: 0.5d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"573FE8ED65790A78"
+				"6A7021EDEDAB323D"
+			]
+			id: "4D94846C7A3621E1"
+			tasks: [
+				{
+					id: "36CA09406A4FE748"
+					item: "minecraft:beef"
+					type: "item"
+				}
+				{
+					id: "437086DAB4036A82"
+					item: "minecraft:cooked_beef"
+					type: "item"
+				}
+				{
+					id: "24F7AF2A6828AD64"
+					item: "minecraft:leather"
+					type: "item"
+				}
+			]
+			title: "Cow"
+			x: -0.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"4D94846C7A3621E1"
+				"678A8EAEB2BF6661"
+			]
+			id: "076BFC8E90689E06"
+			tasks: [
+				{
+					id: "3630EA2CCAC3D14E"
+					item: {
+						Count: 1b
+						id: "minecraft:leather_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "2C8FBF40447E4223"
+					item: {
+						Count: 1b
+						id: "minecraft:leather_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "66CA63F8322CC6D6"
+					item: {
+						Count: 1b
+						id: "minecraft:leather_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "55635BEB719CBE83"
+					item: {
+						Count: 1b
+						id: "minecraft:leather_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Leather Armor"
+			x: -1.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["573FE8ED65790A78"]
+			id: "354771AEA610B772"
+			tasks: [{
+				id: "24E83E5C75B1569C"
+				item: "minecraft:bone"
+				type: "item"
+			}]
+			x: 2.5d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"354771AEA610B772"
+				"1B338FE451D61157"
+			]
+			id: "328A5A7575E922BB"
+			tasks: [{
+				id: "007E85D2015D42E2"
+				item: "minecraft:bone_meal"
+				type: "item"
+			}]
+			x: 4.5d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"573FE8ED65790A78"
+				"61B2F967D28FCF1E"
+			]
+			id: "521B1983269E86CD"
+			tasks: [{
+				id: "34DC260D620B0200"
+				item: "farmersdelight:fried_egg"
+				type: "item"
+			}]
+			x: -0.5d
+			y: -2.5d
+		}
+		{
+			dependencies: [
+				"573FE8ED65790A78"
+				"0238CB04F8F7CDEA"
+			]
+			id: "469D79186355892B"
+			tasks: [{
+				icon: "minecraft:oak_boat"
+				id: "5196E141B83AD323"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "minecraft:boats"
+					}
+				}
+				title: "Any Boat"
+				type: "item"
+			}]
+			title: "Boat"
+			x: -1.5d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"57737325F1848DFB"
+				"573FE8ED65790A78"
+			]
+			id: "05B91EF6C45378BE"
+			tasks: [
+				{
+					icon: "minecraft:oak_fence"
+					id: "62B4AA089A6C6C88"
+					item: {
+						Count: 1b
+						id: "itemfilters:tag"
+						tag: {
+							value: "forge:fences/wooden"
+						}
+					}
+					title: "Any Wooden Fence"
+					type: "item"
+				}
+				{
+					icon: "minecraft:oak_fence_gate"
+					id: "4CD28B77A07855E6"
+					item: {
+						Count: 1b
+						id: "itemfilters:tag"
+						tag: {
+							value: "forge:fence_gates/wooden"
+						}
+					}
+					title: "Any Wooden Fence Gate"
+					type: "item"
+				}
+			]
+			title: "Wooden Fence and Fence Gate"
+			x: 1.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"573FE8ED65790A78"
+				"4349B3E0CC45ABE2"
+			]
+			id: "43CD52707D5AC45C"
+			tasks: [{
+				id: "003328B83628CC9B"
+				item: {
+					Count: 1b
+					id: "minecraft:bow"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 1.5d
+			y: -2.5d
+		}
+	]
+	title: "Level 3"
+}

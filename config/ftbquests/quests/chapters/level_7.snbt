@@ -1,0 +1,350 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_7"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "minecraft:copper_ingot"
+	id: "257A8F10E2DBD05B"
+	order_index: 6
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"1ADE6247221F4942"
+				"703B6BE0DF83164D"
+				"23575B3128D5D87C"
+				"2436700B61FFC87B"
+				"14967CCC45B91E64"
+				"33913A2849395FB8"
+				"0DCF6289F1635383"
+			]
+			icon: "minecraft:copper_ingot"
+			id: "0A53CC520F7826A3"
+			rewards: [
+				{
+					command: "/gamestage add @p level_7 true"
+					elevate_perms: true
+					id: "5F17EA48FD2E51D1"
+					silent: true
+					title: "Level up to Level 7"
+					type: "command"
+				}
+				{
+					id: "3EAAD3FF909BE248"
+					item: {
+						Count: 1b
+						id: "bountiful:decree"
+						tag: {
+							RepairCost: 0
+							"bountiful:decree_data": "{\"ids\":[\"level_7\"]}"
+							display: {
+								Name: "{\"text\":\"Level 7 Decree\"}"
+							}
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "octagon"
+			tasks: [{
+				consume_items: true
+				count: 10L
+				id: "1A54ACFC554590C8"
+				item: "kubejs:gold_coin"
+				type: "item"
+			}]
+			title: "Level 7"
+			x: 0.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"0A53CC520F7826A3"
+				"344E9059F675B1E2"
+			]
+			id: "6A5C20C31BD2649E"
+			tasks: [
+				{
+					id: "23232AF83E879BA3"
+					item: "minecraft:raw_copper"
+					type: "item"
+				}
+				{
+					id: "78468E0A8A12BB94"
+					item: "minecraft:copper_ingot"
+					type: "item"
+				}
+			]
+			title: "Copper"
+			x: -1.5d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"0A53CC520F7826A3"
+				"7342432EA4D37CF5"
+			]
+			id: "557852FFD6F4D560"
+			tasks: [
+				{
+					id: "511E6646D44416DA"
+					item: "minecraft:raw_iron"
+					type: "item"
+				}
+				{
+					id: "4AC85624B3D59722"
+					item: "minecraft:iron_ingot"
+					type: "item"
+				}
+			]
+			title: "Iron"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["557852FFD6F4D560"]
+			id: "1F768D9AE414C105"
+			tasks: [{
+				id: "47C974D26A075E5C"
+				item: "minecraft:bucket"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1F768D9AE414C105"]
+			id: "522AB9F276BC5735"
+			tasks: [{
+				id: "5AC6416680889A34"
+				item: "minecraft:water_bucket"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["1F768D9AE414C105"]
+			id: "39A799527478DAF9"
+			tasks: [{
+				id: "682A841B041CFADC"
+				item: "minecraft:milk_bucket"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["6A5C20C31BD2649E"]
+			id: "1E3050BA6A45ECEA"
+			tasks: [{
+				id: "56A5A43C9FABF3BC"
+				item: "minecraft:glass_bottle"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["0A53CC520F7826A3"]
+			id: "627A04ED165155B1"
+			tasks: [{
+				id: "5CDFE6B7C67A5E56"
+				item: "minecraft:apple"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"39A799527478DAF9"
+				"6DADF584D644DD98"
+			]
+			id: "40CF73DC10015083"
+			tasks: [{
+				id: "32C75B16274A5880"
+				item: "farmersdelight:pie_crust"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"40CF73DC10015083"
+				"627A04ED165155B1"
+			]
+			id: "0B7198D069D4E3D5"
+			tasks: [{
+				id: "3E04C97A22F77911"
+				item: "farmersdelight:apple_pie"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"6A5C20C31BD2649E"
+				"3C0EB5561AD356A0"
+			]
+			id: "39CB53749B785E72"
+			tasks: [{
+				id: "6DC13AEE2CBF4CAC"
+				item: "minecraft:composter"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 4.5d
+		}
+		{
+			dependencies: [
+				"6A5C20C31BD2649E"
+				"678CBD6568736F1E"
+			]
+			id: "73620329AFAF2DA2"
+			tasks: [{
+				id: "59C8AABD1B5C9465"
+				item: {
+					Count: 1b
+					id: "minecraft:brush"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -1.5d
+			y: 6.5d
+		}
+		{
+			dependencies: ["0A53CC520F7826A3"]
+			id: "721756E8B627DC24"
+			tasks: [{
+				id: "1406B7F996F1F4B7"
+				item: "farmersdelight:potato_crate"
+				type: "item"
+			}]
+			x: -1.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"721756E8B627DC24"
+				"69BFEA0074BEDFE8"
+			]
+			id: "598AE7CCA471A40A"
+			tasks: [{
+				id: "5AE29D483BB1F243"
+				item: "farmersdelight:stuffed_potato"
+				type: "item"
+			}]
+			x: -3.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"39A799527478DAF9"
+				"58BE87C46706B0FB"
+			]
+			id: "39F7E07DCC2152F6"
+			tasks: [{
+				id: "7FDDD285C3F485D0"
+				item: "minecraft:cake"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"6A5C20C31BD2649E"
+				"7B138BBFA5A9E53D"
+			]
+			id: "34B5DF088E2F447E"
+			tasks: [
+				{
+					id: "1AC9E12AE8A09AC1"
+					item: {
+						Count: 1b
+						id: "bettercopper:copper_shovel"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "29DEA7E1C86699A5"
+					item: {
+						Count: 1b
+						id: "bettercopper:copper_pickaxe"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "198189A9FD436D17"
+					item: {
+						Count: 1b
+						id: "bettercopper:copper_axe"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "1356A443C9E0E10E"
+					item: {
+						Count: 1b
+						id: "bettercopper:copper_hoe"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "65DF3C2BBEFFA3BF"
+					item: {
+						Count: 1b
+						id: "bettercopper:copper_sword"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Copper Tools"
+			x: -3.5d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"557852FFD6F4D560"
+				"750CED3C0D8BDBD6"
+			]
+			id: "5C6BB14026AE99D5"
+			tasks: [{
+				id: "184F69C260A1025B"
+				item: {
+					Count: 1b
+					id: "minecraft:fishing_rod"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 2.0d
+			y: -2.5d
+		}
+	]
+	title: "Level 7"
+}
