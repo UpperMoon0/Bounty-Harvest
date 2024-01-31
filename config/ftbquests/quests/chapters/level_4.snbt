@@ -62,6 +62,7 @@
 				"1003C2B79F710366"
 				"5F7A2CDA6365739F"
 			]
+			hide: false
 			id: "352F41B3BED0E086"
 			tasks: [{
 				id: "269DA89171668F2A"
@@ -76,6 +77,7 @@
 				"352F41B3BED0E086"
 				"26BE7AF89E2CAA09"
 			]
+			hide: false
 			id: "58846BA779358FD2"
 			tasks: [
 				{
@@ -98,6 +100,7 @@
 				"1003C2B79F710366"
 				"5340351BF8EB0942"
 			]
+			hide: false
 			id: "72CAF40486DF976F"
 			tasks: [{
 				id: "026B64363A5FE21E"
@@ -210,6 +213,7 @@
 				"1003C2B79F710366"
 				"66D7279E3A29E6A6"
 			]
+			hide: false
 			id: "12932CB774E66484"
 			tasks: [{
 				id: "7C2A27D31C954D1B"
@@ -224,10 +228,10 @@
 				"1003C2B79F710366"
 				"0CA50C39F07ED541"
 			]
+			hide: false
 			id: "7D811445066E0898"
 			tasks: [
 				{
-					icon: "minecraft:oak_button"
 					id: "3181F287CBC9E103"
 					item: {
 						Count: 1b
@@ -240,7 +244,6 @@
 					type: "item"
 				}
 				{
-					icon: "minecraft:oak_pressure_plate"
 					id: "104D55D30B2B309B"
 					item: {
 						Count: 1b
@@ -273,6 +276,7 @@
 				"1003C2B79F710366"
 				"67FD374C4E8AC1E6"
 			]
+			hide: false
 			id: "3BA339E0640B6081"
 			tasks: [
 				{

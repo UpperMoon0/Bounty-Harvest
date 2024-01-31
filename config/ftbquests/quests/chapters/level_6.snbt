@@ -61,6 +61,7 @@
 				"7297A69487BEE03D"
 				"33913A2849395FB8"
 			]
+			hide: false
 			id: "015743E28B4488CE"
 			tasks: [
 				{
@@ -106,6 +107,7 @@
 				"210D58BA749A0F47"
 				"2436700B61FFC87B"
 			]
+			hide: false
 			id: "01B9DF675D81D290"
 			tasks: [{
 				id: "133B8FEA15EA803E"
@@ -131,6 +133,7 @@
 				"7297A69487BEE03D"
 				"703B6BE0DF83164D"
 			]
+			hide: false
 			id: "363EE262F4B948E6"
 			tasks: [{
 				id: "38DD6FBE56864414"
@@ -145,6 +148,7 @@
 				"7297A69487BEE03D"
 				"23575B3128D5D87C"
 			]
+			hide: false
 			id: "54F6ACDCF4631920"
 			tasks: [{
 				id: "1D063334752E08A6"
@@ -159,6 +163,7 @@
 				"7297A69487BEE03D"
 				"1ADE6247221F4942"
 			]
+			hide: false
 			id: "7E5E0232C32AA186"
 			tasks: [
 				{
@@ -250,6 +255,7 @@
 				"7297A69487BEE03D"
 				"0DCF6289F1635383"
 			]
+			hide: false
 			id: "57165E328146D4DA"
 			tasks: [{
 				id: "6A224EDD6618F097"
@@ -264,6 +270,7 @@
 				"015061CA8AE2092C"
 				"14967CCC45B91E64"
 			]
+			hide: false
 			id: "46F26870382E1407"
 			tasks: [{
 				id: "7627042D71EC1783"

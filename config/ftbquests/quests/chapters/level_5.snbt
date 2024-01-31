@@ -73,6 +73,7 @@
 				"29747D157C7F8C88"
 				"7E69CE3D2A589C46"
 			]
+			hide: false
 			id: "1CCF7C805ED9FE8B"
 			tasks: [
 				{
@@ -108,10 +109,10 @@
 				"1CCF7C805ED9FE8B"
 				"71BAF60A6925FE01"
 			]
+			hide: false
 			icon: "minecraft:white_bed"
 			id: "6EA2798DA5176208"
 			tasks: [{
-				icon: "minecraft:white_bed"
 				id: "38B1E9AAF89A0A04"
 				item: {
 					Count: 1b
@@ -132,6 +133,7 @@
 				"29747D157C7F8C88"
 				"288982646CCE5C7A"
 			]
+			hide: false
 			id: "1FD813E5CF445550"
 			tasks: [{
 				id: "6155F723394EBF70"
@@ -168,6 +170,7 @@
 				"5217D4C2C241C0A9"
 				"7A267011FFCC2421"
 			]
+			hide: false
 			id: "0139DF3D2C0E8D13"
 			tasks: [{
 				id: "45B67866D0205AF8"
@@ -182,6 +185,7 @@
 				"29747D157C7F8C88"
 				"1631C4F08CA698F1"
 			]
+			hide: false
 			id: "185D159902032063"
 			tasks: [{
 				id: "25DD95773FB54E65"
@@ -196,6 +200,7 @@
 				"29747D157C7F8C88"
 				"35C4F11F6C24E7FC"
 			]
+			hide: false
 			id: "617E16F23CADA562"
 			tasks: [
 				{

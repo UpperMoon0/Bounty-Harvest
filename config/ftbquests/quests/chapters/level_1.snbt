@@ -10,6 +10,11 @@
 	quest_links: [ ]
 	quests: [
 		{
+			description: [
+				"Welcome to &2Level 1&r. In this level, you can gather wood by chopping trees, harvest wheat to craft bread, and more! "
+				""
+				"&4To learn more about the research system, please refer to the quest above this one.&r"
+			]
 			id: "74402ECAFFAFAEC4"
 			rewards: [{
 				command: "/gamestage add @p level_1 true"
@@ -132,7 +137,6 @@
 				type: "item"
 			}]
 			tasks: [{
-				icon: "minecraft:oak_log"
 				id: "6D348E24A2AD28E3"
 				item: {
 					Count: 1b
@@ -160,7 +164,6 @@
 				type: "random"
 			}]
 			tasks: [{
-				icon: "minecraft:chest"
 				id: "32908F36FD95F41D"
 				item: {
 					Count: 1b
@@ -178,11 +181,7 @@
 		}
 		{
 			dependencies: ["0A6DE571FAAFADA0"]
-			description: [
-				"Wheat is your first crop. You can find wheat seeds by breaking most types of grass (not the grass block)."
-				""
-				"Before you can make bread from wheat, you will need to research it first."
-			]
+			description: ["Wheat is your first crop. You can find wheat seeds by breaking most types of grass (not the grass block)."]
 			hide: true
 			id: "157BBBAB00E2FAAF"
 			rewards: [{
@@ -212,8 +211,12 @@
 				"157BBBAB00E2FAAF"
 				"624386B8BEA0CAE4"
 			]
-			description: ["Bread is the final objective of &2Level 1&r. Congratulations!"]
-			hide: true
+			description: [
+				"Before you can make bread from wheat, you will need to research it first."
+				""
+				"Bread is the final objective of &2Level 1&r. Congratulations!"
+			]
+			hide: false
 			id: "5918C8C324EC380B"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -291,6 +294,33 @@
 			title: "The Research System"
 			x: 0.0d
 			y: -2.0d
+		}
+		{
+			dependencies: ["0A6DE571FAAFADA0"]
+			description: ["Sand and gravel may not be worth much by themselves, but they can be transformed into more valuable products such as glass or flint later on."]
+			hide: true
+			id: "44F6F42801500C65"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "1A55374214C16B17"
+				table_id: 1545964012159686523L
+				type: "loot"
+			}]
+			tasks: [
+				{
+					id: "37CB835AD432A205"
+					item: "minecraft:sand"
+					type: "item"
+				}
+				{
+					id: "42134742A6B71837"
+					item: "minecraft:gravel"
+					type: "item"
+				}
+			]
+			title: "Sand and Gravel"
+			x: 2.0d
+			y: 3.0d
 		}
 	]
 	title: "Level 1"

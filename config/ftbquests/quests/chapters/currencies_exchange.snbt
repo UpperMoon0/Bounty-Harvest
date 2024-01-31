@@ -3,6 +3,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	default_repeatable_quest: true
+	disable_toast: true
 	filename: "currencies_exchange"
 	group: "189D77A4C52994B6"
 	icon: "kubejs:gold_coin"
@@ -86,6 +87,7 @@
 	quests: [
 		{
 			can_repeat: true
+			disable_toast: true
 			icon: "kubejs:iron_coin"
 			id: "74BE872A1FFE8D25"
 			rewards: [{
@@ -106,6 +108,7 @@
 		}
 		{
 			can_repeat: true
+			disable_toast: true
 			icon: "kubejs:gold_coin"
 			id: "01629608AA28532C"
 			rewards: [{
@@ -126,6 +129,7 @@
 		}
 		{
 			can_repeat: true
+			disable_toast: true
 			icon: "kubejs:gold_coin"
 			id: "5F32AAAEB7BC9921"
 			rewards: [{
@@ -146,6 +150,7 @@
 		}
 		{
 			can_repeat: true
+			disable_toast: true
 			icon: "kubejs:iron_coin"
 			id: "35C7758BD65E25D6"
 			rewards: [{
@@ -166,6 +171,7 @@
 		}
 		{
 			can_repeat: true
+			disable_toast: true
 			icon: "kubejs:copper_coin"
 			id: "3F0C4C3C7725808B"
 			rewards: [{
@@ -186,6 +192,7 @@
 		}
 		{
 			can_repeat: true
+			disable_toast: true
 			icon: "kubejs:copper_coin"
 			id: "09B1773AF34E7789"
 			rewards: [{

@@ -63,6 +63,7 @@
 				"0A53CC520F7826A3"
 				"344E9059F675B1E2"
 			]
+			hide: false
 			id: "6A5C20C31BD2649E"
 			tasks: [
 				{
@@ -85,6 +86,7 @@
 				"0A53CC520F7826A3"
 				"7342432EA4D37CF5"
 			]
+			hide: false
 			id: "557852FFD6F4D560"
 			tasks: [
 				{
@@ -162,6 +164,7 @@
 				"39A799527478DAF9"
 				"6DADF584D644DD98"
 			]
+			hide: false
 			id: "40CF73DC10015083"
 			tasks: [{
 				id: "32C75B16274A5880"
@@ -190,6 +193,7 @@
 				"6A5C20C31BD2649E"
 				"3C0EB5561AD356A0"
 			]
+			hide: false
 			id: "39CB53749B785E72"
 			tasks: [{
 				id: "6DC13AEE2CBF4CAC"
@@ -197,13 +201,14 @@
 				type: "item"
 			}]
 			x: -3.5d
-			y: 4.5d
+			y: 5.5d
 		}
 		{
 			dependencies: [
 				"6A5C20C31BD2649E"
 				"678CBD6568736F1E"
 			]
+			hide: false
 			id: "73620329AFAF2DA2"
 			tasks: [{
 				id: "59C8AABD1B5C9465"
@@ -235,6 +240,7 @@
 				"721756E8B627DC24"
 				"69BFEA0074BEDFE8"
 			]
+			hide: false
 			id: "598AE7CCA471A40A"
 			tasks: [{
 				id: "5AE29D483BB1F243"
@@ -249,6 +255,7 @@
 				"39A799527478DAF9"
 				"58BE87C46706B0FB"
 			]
+			hide: false
 			id: "39F7E07DCC2152F6"
 			tasks: [{
 				id: "7FDDD285C3F485D0"
@@ -263,6 +270,7 @@
 				"6A5C20C31BD2649E"
 				"7B138BBFA5A9E53D"
 			]
+			hide: false
 			id: "34B5DF088E2F447E"
 			tasks: [
 				{
@@ -323,13 +331,14 @@
 			]
 			title: "Copper Tools"
 			x: -3.5d
-			y: 2.0d
+			y: 2.5d
 		}
 		{
 			dependencies: [
 				"557852FFD6F4D560"
 				"750CED3C0D8BDBD6"
 			]
+			hide: false
 			id: "5C6BB14026AE99D5"
 			tasks: [{
 				id: "184F69C260A1025B"
@@ -344,6 +353,35 @@
 			}]
 			x: 2.0d
 			y: -2.5d
+		}
+		{
+			dependencies: ["73620329AFAF2DA2"]
+			id: "0F046D49DC4BDDE5"
+			tasks: [{
+				id: "0CF6C38E4C1AB728"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 8.5d
+		}
+		{
+			dependencies: ["73620329AFAF2DA2"]
+			id: "0F3044742FD58877"
+			tasks: [{
+				id: "18576D7087B97DBF"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "minecraft:decorated_pot_sherds"
+					}
+				}
+				title: "Any #minecraft:decorated_pot_sherds"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 8.5d
 		}
 	]
 	title: "Level 7"

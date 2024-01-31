@@ -69,6 +69,7 @@
 				"573FE8ED65790A78"
 				"6A7021EDEDAB323D"
 			]
+			hide: false
 			id: "4D94846C7A3621E1"
 			tasks: [
 				{
@@ -96,6 +97,7 @@
 				"4D94846C7A3621E1"
 				"678A8EAEB2BF6661"
 			]
+			hide: false
 			id: "076BFC8E90689E06"
 			tasks: [
 				{
@@ -163,6 +165,7 @@
 				"354771AEA610B772"
 				"1B338FE451D61157"
 			]
+			hide: false
 			id: "328A5A7575E922BB"
 			tasks: [{
 				id: "007E85D2015D42E2"
@@ -177,6 +180,7 @@
 				"573FE8ED65790A78"
 				"61B2F967D28FCF1E"
 			]
+			hide: false
 			id: "521B1983269E86CD"
 			tasks: [{
 				id: "34DC260D620B0200"
@@ -191,9 +195,9 @@
 				"573FE8ED65790A78"
 				"0238CB04F8F7CDEA"
 			]
+			hide: false
 			id: "469D79186355892B"
 			tasks: [{
-				icon: "minecraft:oak_boat"
 				id: "5196E141B83AD323"
 				item: {
 					Count: 1b
@@ -214,10 +218,10 @@
 				"57737325F1848DFB"
 				"573FE8ED65790A78"
 			]
+			hide: false
 			id: "05B91EF6C45378BE"
 			tasks: [
 				{
-					icon: "minecraft:oak_fence"
 					id: "62B4AA089A6C6C88"
 					item: {
 						Count: 1b
@@ -230,7 +234,6 @@
 					type: "item"
 				}
 				{
-					icon: "minecraft:oak_fence_gate"
 					id: "4CD28B77A07855E6"
 					item: {
 						Count: 1b
@@ -244,7 +247,7 @@
 				}
 			]
 			title: "Wooden Fence and Fence Gate"
-			x: 1.5d
+			x: 3.5d
 			y: 1.5d
 		}
 		{
@@ -252,6 +255,7 @@
 				"573FE8ED65790A78"
 				"4349B3E0CC45ABE2"
 			]
+			hide: false
 			id: "43CD52707D5AC45C"
 			tasks: [{
 				id: "003328B83628CC9B"
@@ -266,6 +270,38 @@
 			}]
 			x: 1.5d
 			y: -2.5d
+		}
+		{
+			dependencies: [
+				"573FE8ED65790A78"
+				"67DA2A29AC997C88"
+			]
+			id: "4967B23E5A19ADB4"
+			tasks: [
+				{
+					id: "69359810F2C8C9F3"
+					item: "minecraft:brick"
+					type: "item"
+				}
+				{
+					id: "0EA39E955B0F39B7"
+					item: "minecraft:bricks"
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["4967B23E5A19ADB4"]
+			id: "281A5329C4D661E3"
+			tasks: [{
+				id: "5D744725E94E860C"
+				item: "minecraft:flower_pot"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 3.5d
 		}
 	]
 	title: "Level 3"

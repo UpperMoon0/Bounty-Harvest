@@ -1449,6 +1449,54 @@
 			x: 8.0d
 			y: 10.0d
 		}
+		{
+			dependencies: ["7D3858343983B67A"]
+			icon: "minecraft:clay_ball"
+			id: "1F0F741D3DCC517B"
+			rewards: [{
+				command: "/gamestage add @p level_2_clay true"
+				elevate_perms: true
+				icon: "minecraft:clay_ball"
+				id: "03CEC7D0ACF3A17A"
+				silent: true
+				title: "Research Clay"
+				type: "command"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 6L
+				id: "744208E8FBF41293"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			title: "Research Clay"
+			x: 2.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["573FE8ED65790A78"]
+			icon: "minecraft:brick"
+			id: "67DA2A29AC997C88"
+			rewards: [{
+				command: "/gamestage add @p level_3_brick true"
+				elevate_perms: true
+				icon: "minecraft:brick"
+				id: "11DDA48968A3937E"
+				silent: true
+				title: "Research Brick"
+				type: "command"
+			}]
+			tasks: [{
+				consume_items: true
+				icon: "kubejs:gold_coin"
+				id: "4854D08C006CE4DF"
+				item: "kubejs:gold_coin"
+				type: "item"
+			}]
+			title: "Research Brick"
+			x: 4.0d
+			y: 14.0d
+		}
 	]
 	title: "Research"
 }
