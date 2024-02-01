@@ -79,20 +79,13 @@
 			]
 			hide: false
 			id: "58846BA779358FD2"
-			tasks: [
-				{
-					id: "413A84E06FE1CFAA"
-					item: "minecraft:porkchop"
-					type: "item"
-				}
-				{
-					id: "3889A8C8D9A43814"
-					item: "minecraft:cooked_porkchop"
-					type: "item"
-				}
-			]
+			tasks: [{
+				id: "413A84E06FE1CFAA"
+				item: "minecraft:porkchop"
+				type: "item"
+			}]
 			title: "Pig"
-			x: 0.0d
+			x: -1.0d
 			y: 4.0d
 		}
 		{
@@ -319,6 +312,17 @@
 			title: "Small Freshwater Fishes"
 			x: 1.5d
 			y: 1.5d
+		}
+		{
+			dependencies: ["58846BA779358FD2"]
+			id: "6D3ECD5141AFA093"
+			tasks: [{
+				id: "2357515CE357A112"
+				item: "minecraft:cooked_porkchop"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 4.0d
 		}
 	]
 	title: "Level 4"

@@ -78,11 +78,6 @@
 					type: "item"
 				}
 				{
-					id: "437086DAB4036A82"
-					item: "minecraft:cooked_beef"
-					type: "item"
-				}
-				{
 					id: "24F7AF2A6828AD64"
 					item: "minecraft:leather"
 					type: "item"
@@ -302,6 +297,17 @@
 			}]
 			x: 3.5d
 			y: 3.5d
+		}
+		{
+			dependencies: ["4D94846C7A3621E1"]
+			id: "0F903402C0357CB1"
+			tasks: [{
+				id: "1F540A02C3858084"
+				item: "minecraft:cooked_beef"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 1.5d
 		}
 	]
 	title: "Level 3"
