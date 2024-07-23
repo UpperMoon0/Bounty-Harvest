@@ -4,7 +4,6 @@
     "furnace": true,
     "harvest_tool.show_unbreakable": false,
     "animal_owner": true,
-    "animal_owner.fetch_names": true,
     "harvest_tool.effective_tool": true,
     "item_storage.normal_amount": 9,
     "item_storage": true,
@@ -52,7 +51,9 @@
     "chiseled_bookshelf": true
   },
   "delightful": {
-    "crop_progress": true
+    "crop_progress": true,
+    "pie_icons": true,
+    "mushroom_colony": true
   },
   "twilightforest": {
     "quest_ram_wool": true

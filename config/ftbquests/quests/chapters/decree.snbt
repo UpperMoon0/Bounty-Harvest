@@ -7,14 +7,14 @@
 	group: "189D77A4C52994B6"
 	hide_quest_until_deps_visible: true
 	icon: {
-		Count: 1b
+		Count: 1
 		id: "bountiful:decree"
 		tag: {
 			"bountiful:decree_data": "{\"ids\":[\"level_1\"]}"
 		}
 	}
 	id: "2DF5275C33DDF6E4"
-	order_index: 4
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
@@ -24,7 +24,7 @@
 			rewards: [{
 				id: "2245CA0B152D4FD9"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "bountiful:decree"
 					tag: {
 						RepairCost: 0
@@ -52,7 +52,7 @@
 			rewards: [{
 				id: "6B8F27E7222FE295"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "bountiful:decree"
 					tag: {
 						RepairCost: 0
@@ -80,7 +80,7 @@
 			rewards: [{
 				id: "7304A87D32FAD1DA"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "bountiful:decree"
 					tag: {
 						RepairCost: 0
@@ -107,7 +107,7 @@
 			rewards: [{
 				id: "6ED8E0890F8B5F1A"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "bountiful:decree"
 					tag: {
 						RepairCost: 0
@@ -134,7 +134,7 @@
 			rewards: [{
 				id: "572FB2AB8FD04883"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "bountiful:decree"
 					tag: {
 						RepairCost: 0
@@ -161,7 +161,7 @@
 			rewards: [{
 				id: "1CCE421EAA28E102"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "bountiful:decree"
 					tag: {
 						RepairCost: 0

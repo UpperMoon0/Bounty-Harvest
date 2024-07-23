@@ -11,11 +11,10 @@
 	quests: [
 		{
 			dependencies: [
-				"7E69CE3D2A589C46"
-				"71BAF60A6925FE01"
-				"288982646CCE5C7A"
-				"7A267011FFCC2421"
-				"1631C4F08CA698F1"
+				"43D5B92E7B462E7E"
+				"1CCF7C805ED9FE8B"
+				"185D159902032063"
+				"1FD813E5CF445550"
 			]
 			icon: "minecraft:potato"
 			id: "7297A69487BEE03D"
@@ -31,7 +30,7 @@
 				{
 					id: "581DA5988396076E"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "bountiful:decree"
 						tag: {
 							RepairCost: 0
@@ -45,22 +44,63 @@
 				}
 			]
 			shape: "octagon"
-			tasks: [{
-				consume_items: true
-				count: 8L
-				id: "6221AF20E1FF898D"
-				item: "kubejs:gold_coin"
-				type: "item"
-			}]
+			tasks: [
+				{
+					consume_items: true
+					count: 5L
+					id: "6221AF20E1FF898D"
+					item: "kubejs:gold_coin"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 4L
+					id: "6397DCE49D42D962"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "minecraft:beds"
+						}
+					}
+					title: "Any #minecraft:beds"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 20L
+					id: "40CD2D206717F1CB"
+					item: { Count: 20, id: "minecraft:cooked_mutton" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "33143B6F397732D1"
+					item: { Count: 12, id: "minecraft:tnt" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "19981BE78849C36D"
+					item: { Count: 12, id: "minecraft:book" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "6379A138E246177C"
+					item: { Count: 12, id: "minecraft:ink_sac" }
+					type: "item"
+				}
+			]
 			title: "Level 6"
 			x: -0.5d
 			y: -0.5d
 		}
 		{
-			dependencies: [
-				"7297A69487BEE03D"
-				"33913A2849395FB8"
-			]
+			dependencies: ["7297A69487BEE03D"]
 			hide: false
 			id: "015743E28B4488CE"
 			tasks: [
@@ -103,10 +143,7 @@
 			y: -3.0d
 		}
 		{
-			dependencies: [
-				"210D58BA749A0F47"
-				"2436700B61FFC87B"
-			]
+			dependencies: ["210D58BA749A0F47"]
 			hide: false
 			id: "01B9DF675D81D290"
 			tasks: [{
@@ -129,10 +166,7 @@
 			y: -5.0d
 		}
 		{
-			dependencies: [
-				"7297A69487BEE03D"
-				"703B6BE0DF83164D"
-			]
+			dependencies: ["7297A69487BEE03D"]
 			hide: false
 			id: "363EE262F4B948E6"
 			tasks: [{
@@ -144,10 +178,7 @@
 			y: -0.5d
 		}
 		{
-			dependencies: [
-				"7297A69487BEE03D"
-				"23575B3128D5D87C"
-			]
+			dependencies: ["7297A69487BEE03D"]
 			hide: false
 			id: "54F6ACDCF4631920"
 			tasks: [{
@@ -159,17 +190,14 @@
 			y: -0.5d
 		}
 		{
-			dependencies: [
-				"7297A69487BEE03D"
-				"1ADE6247221F4942"
-			]
+			dependencies: ["7297A69487BEE03D"]
 			hide: false
 			id: "7E5E0232C32AA186"
 			tasks: [
 				{
 					id: "1C3AE9C6A2AE1E5B"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "immersive_armors:bone_helmet"
 						tag: {
 							Damage: 0
@@ -180,7 +208,7 @@
 				{
 					id: "6D54EA222E8BAB54"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "immersive_armors:bone_chestplate"
 						tag: {
 							Damage: 0
@@ -191,7 +219,7 @@
 				{
 					id: "3E0F1FBB2735230E"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "immersive_armors:bone_leggings"
 						tag: {
 							Damage: 0
@@ -202,7 +230,7 @@
 				{
 					id: "48A60D8FFC18B1FE"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "immersive_armors:bone_boots"
 						tag: {
 							Damage: 0
@@ -223,7 +251,7 @@
 					icon: "minecraft:dandelion"
 					id: "2B7606AC7DC6AC57"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "itemfilters:tag"
 						tag: {
 							value: "forge:yellow_flowers"
@@ -236,7 +264,7 @@
 					icon: "minecraft:poppy"
 					id: "783F3AB3A3CBB0EA"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "itemfilters:tag"
 						tag: {
 							value: "forge:red_flowers"
@@ -251,10 +279,7 @@
 			y: 1.5d
 		}
 		{
-			dependencies: [
-				"7297A69487BEE03D"
-				"0DCF6289F1635383"
-			]
+			dependencies: ["7297A69487BEE03D"]
 			hide: false
 			id: "57165E328146D4DA"
 			tasks: [{
@@ -266,10 +291,7 @@
 			y: 1.5d
 		}
 		{
-			dependencies: [
-				"015061CA8AE2092C"
-				"14967CCC45B91E64"
-			]
+			dependencies: ["015061CA8AE2092C"]
 			hide: false
 			id: "46F26870382E1407"
 			tasks: [{

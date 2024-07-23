@@ -70,7 +70,7 @@
 				{
 					id: "4978B29CD4ACDF16"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:wooden_sword"
 						tag: {
 							Damage: 0
@@ -81,7 +81,7 @@
 				{
 					id: "00FC197B722ABBAF"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:wooden_shovel"
 						tag: {
 							Damage: 0
@@ -92,7 +92,7 @@
 				{
 					id: "0BE830BCE6BD2D0A"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:wooden_pickaxe"
 						tag: {
 							Damage: 0
@@ -103,7 +103,7 @@
 				{
 					id: "0E5B3AC67A7A92E2"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:wooden_axe"
 						tag: {
 							Damage: 0
@@ -114,7 +114,7 @@
 				{
 					id: "55C7CC51961F6E09"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:wooden_hoe"
 						tag: {
 							Damage: 0
@@ -139,7 +139,7 @@
 			tasks: [{
 				id: "6D348E24A2AD28E3"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "itemfilters:tag"
 					tag: {
 						value: "minecraft:logs"
@@ -166,7 +166,7 @@
 			tasks: [{
 				id: "32908F36FD95F41D"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "itemfilters:tag"
 					tag: {
 						value: "forge:chests/wooden"
@@ -207,10 +207,7 @@
 			y: 4.5d
 		}
 		{
-			dependencies: [
-				"157BBBAB00E2FAAF"
-				"624386B8BEA0CAE4"
-			]
+			dependencies: ["157BBBAB00E2FAAF"]
 			description: [
 				"Before you can make bread from wheat, you will need to research it first."
 				""
@@ -247,7 +244,7 @@
 				{
 					id: "1C201451E9870D6F"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "bountiful:decree"
 						tag: {
 							RepairCost: 0
@@ -309,7 +306,14 @@
 			tasks: [
 				{
 					id: "37CB835AD432A205"
-					item: "minecraft:sand"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "forge:sand"
+						}
+					}
+					title: "Any #forge:sand"
 					type: "item"
 				}
 				{

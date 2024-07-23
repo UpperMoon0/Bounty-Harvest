@@ -6,7 +6,7 @@
 	group: "189D77A4C52994B6"
 	hide_quest_until_deps_visible: true
 	id: "4006A7DC9A19859E"
-	order_index: 3
+	order_index: 2
 	quest_links: [ ]
 	quests: [{
 		can_repeat: true

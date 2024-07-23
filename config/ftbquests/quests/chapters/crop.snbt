@@ -7,7 +7,7 @@
 	group: "189D77A4C52994B6"
 	icon: "minecraft:wheat_seeds"
 	id: "08E3F8FADCAEE65B"
-	order_index: 1
+	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
@@ -32,7 +32,6 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["5F7A2CDA6365739F"]
 			icon: "minecraft:carrot"
 			id: "42F61617476FBFCC"
 			rewards: [{
@@ -52,7 +51,6 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["288982646CCE5C7A"]
 			icon: "minecraft:sugar_cane"
 			id: "5EC3E67CEBBB2604"
 			rewards: [{
@@ -72,7 +70,6 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["33913A2849395FB8"]
 			icon: "minecraft:potato"
 			id: "139EDF3D2E9F5E13"
 			rewards: [{

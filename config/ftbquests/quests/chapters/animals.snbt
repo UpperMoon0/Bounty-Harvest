@@ -7,11 +7,10 @@
 	group: "189D77A4C52994B6"
 	icon: "minecraft:egg"
 	id: "61E938A5BAC6BD4B"
-	order_index: 2
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["158DA2403C78ECEB"]
 			icon: "minecraft:chicken_spawn_egg"
 			id: "2C89F326D1B02E2B"
 			rewards: [{
@@ -31,7 +30,6 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["6A7021EDEDAB323D"]
 			icon: "minecraft:cow_spawn_egg"
 			id: "1CDC85097BF0DB3D"
 			rewards: [{
@@ -51,7 +49,6 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["26BE7AF89E2CAA09"]
 			icon: "minecraft:pig_spawn_egg"
 			id: "3A11E98249BA4F92"
 			rewards: [{
@@ -69,7 +66,7 @@
 				{
 					count: 28L
 					id: "79A230B5B98CC5EE"
-					item: { Count: 28b, id: "kubejs:copper_coin" }
+					item: { Count: 28, id: "kubejs:copper_coin" }
 					type: "item"
 				}
 			]
@@ -78,7 +75,6 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["7E69CE3D2A589C46"]
 			icon: "minecraft:sheep_spawn_egg"
 			id: "67B868D8EADB6BA2"
 			rewards: [{
@@ -102,7 +98,7 @@
 				{
 					count: 32L
 					id: "61FE9439CF1BFF58"
-					item: { Count: 32b, id: "kubejs:copper_coin" }
+					item: { Count: 32, id: "kubejs:copper_coin" }
 					type: "item"
 				}
 			]

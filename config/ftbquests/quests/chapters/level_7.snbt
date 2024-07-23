@@ -11,13 +11,9 @@
 	quests: [
 		{
 			dependencies: [
-				"1ADE6247221F4942"
-				"703B6BE0DF83164D"
-				"23575B3128D5D87C"
-				"2436700B61FFC87B"
-				"14967CCC45B91E64"
-				"33913A2849395FB8"
-				"0DCF6289F1635383"
+				"210D58BA749A0F47"
+				"015743E28B4488CE"
+				"66BB290DCD86866E"
 			]
 			icon: "minecraft:copper_ingot"
 			id: "0A53CC520F7826A3"
@@ -33,7 +29,7 @@
 				{
 					id: "3EAAD3FF909BE248"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "bountiful:decree"
 						tag: {
 							RepairCost: 0
@@ -47,22 +43,42 @@
 				}
 			]
 			shape: "octagon"
-			tasks: [{
-				consume_items: true
-				count: 10L
-				id: "1A54ACFC554590C8"
-				item: "kubejs:gold_coin"
-				type: "item"
-			}]
+			tasks: [
+				{
+					consume_items: true
+					count: 8L
+					id: "1A54ACFC554590C8"
+					item: "kubejs:gold_coin"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "3D4675D6BF568A80"
+					item: { Count: 8, id: "minecraft:mushroom_stew" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 9L
+					id: "1B358C70AA1BEC71"
+					item: { Count: 6, id: "kubejs:wool_sweater" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 36L
+					id: "70DA258D3E2ED1DD"
+					item: { Count: 28, id: "minecraft:baked_potato" }
+					type: "item"
+				}
+			]
 			title: "Level 7"
 			x: 0.0d
 			y: 1.0d
 		}
 		{
-			dependencies: [
-				"0A53CC520F7826A3"
-				"344E9059F675B1E2"
-			]
+			dependencies: ["0A53CC520F7826A3"]
 			hide: false
 			id: "6A5C20C31BD2649E"
 			tasks: [
@@ -82,10 +98,7 @@
 			y: 4.0d
 		}
 		{
-			dependencies: [
-				"0A53CC520F7826A3"
-				"7342432EA4D37CF5"
-			]
+			dependencies: ["0A53CC520F7826A3"]
 			hide: false
 			id: "557852FFD6F4D560"
 			tasks: [
@@ -160,10 +173,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: [
-				"39A799527478DAF9"
-				"6DADF584D644DD98"
-			]
+			dependencies: ["39A799527478DAF9"]
 			hide: false
 			id: "40CF73DC10015083"
 			tasks: [{
@@ -189,10 +199,7 @@
 			y: 4.0d
 		}
 		{
-			dependencies: [
-				"6A5C20C31BD2649E"
-				"3C0EB5561AD356A0"
-			]
+			dependencies: ["6A5C20C31BD2649E"]
 			hide: false
 			id: "39CB53749B785E72"
 			tasks: [{
@@ -204,16 +211,13 @@
 			y: 5.5d
 		}
 		{
-			dependencies: [
-				"6A5C20C31BD2649E"
-				"678CBD6568736F1E"
-			]
+			dependencies: ["6A5C20C31BD2649E"]
 			hide: false
 			id: "73620329AFAF2DA2"
 			tasks: [{
 				id: "59C8AABD1B5C9465"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:brush"
 					tag: {
 						Damage: 0
@@ -236,10 +240,7 @@
 			y: -2.0d
 		}
 		{
-			dependencies: [
-				"721756E8B627DC24"
-				"69BFEA0074BEDFE8"
-			]
+			dependencies: ["721756E8B627DC24"]
 			hide: false
 			id: "598AE7CCA471A40A"
 			tasks: [{
@@ -251,10 +252,7 @@
 			y: -2.0d
 		}
 		{
-			dependencies: [
-				"39A799527478DAF9"
-				"58BE87C46706B0FB"
-			]
+			dependencies: ["39A799527478DAF9"]
 			hide: false
 			id: "39F7E07DCC2152F6"
 			tasks: [{
@@ -266,17 +264,14 @@
 			y: 2.0d
 		}
 		{
-			dependencies: [
-				"6A5C20C31BD2649E"
-				"7B138BBFA5A9E53D"
-			]
+			dependencies: ["6A5C20C31BD2649E"]
 			hide: false
 			id: "34B5DF088E2F447E"
 			tasks: [
 				{
 					id: "1AC9E12AE8A09AC1"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "bettercopper:copper_shovel"
 						tag: {
 							Damage: 0
@@ -287,7 +282,7 @@
 				{
 					id: "29DEA7E1C86699A5"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "bettercopper:copper_pickaxe"
 						tag: {
 							Damage: 0
@@ -298,7 +293,7 @@
 				{
 					id: "198189A9FD436D17"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "bettercopper:copper_axe"
 						tag: {
 							Damage: 0
@@ -309,7 +304,7 @@
 				{
 					id: "1356A443C9E0E10E"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "bettercopper:copper_hoe"
 						tag: {
 							Damage: 0
@@ -320,7 +315,7 @@
 				{
 					id: "65DF3C2BBEFFA3BF"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "bettercopper:copper_sword"
 						tag: {
 							Damage: 0
@@ -334,16 +329,13 @@
 			y: 2.5d
 		}
 		{
-			dependencies: [
-				"557852FFD6F4D560"
-				"750CED3C0D8BDBD6"
-			]
+			dependencies: ["557852FFD6F4D560"]
 			hide: false
 			id: "5C6BB14026AE99D5"
 			tasks: [{
 				id: "184F69C260A1025B"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:fishing_rod"
 					tag: {
 						Damage: 0
@@ -371,7 +363,7 @@
 			tasks: [{
 				id: "18576D7087B97DBF"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "itemfilters:tag"
 					tag: {
 						value: "minecraft:decorated_pot_sherds"

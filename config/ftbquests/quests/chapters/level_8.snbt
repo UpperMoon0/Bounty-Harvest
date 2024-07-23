@@ -8,15 +8,6 @@
 	order_index: 7
 	quest_links: [ ]
 	quests: [{
-		dependencies: [
-			"1ADE6247221F4942"
-			"703B6BE0DF83164D"
-			"23575B3128D5D87C"
-			"2436700B61FFC87B"
-			"14967CCC45B91E64"
-			"33913A2849395FB8"
-			"0DCF6289F1635383"
-		]
 		icon: "farmersdelight:cooked_chicken_cuts"
 		id: "4003BF6FE565761F"
 		rewards: [
@@ -31,7 +22,7 @@
 			{
 				id: "044FBD3F543A7EF9"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "bountiful:decree"
 					tag: {
 						RepairCost: 0

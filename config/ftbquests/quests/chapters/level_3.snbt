@@ -11,12 +11,10 @@
 	quests: [
 		{
 			dependencies: [
-				"158DA2403C78ECEB"
-				"210CABE0AFB5A000"
-				"4BF5364205E39A77"
-				"5813B6DEAD915636"
-				"5B297B946A6D8EAB"
-				"04106F735AB264CF"
+				"46299A2CF9119F73"
+				"6136AD91428A0801"
+				"175C3116B3681471"
+				"6ABD336C3EB9F503"
 			]
 			icon: "minecraft:leather"
 			id: "573FE8ED65790A78"
@@ -32,7 +30,7 @@
 				{
 					id: "2FD553EA8B8C5325"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "bountiful:decree"
 						tag: {
 							RepairCost: 0
@@ -54,9 +52,31 @@
 					type: "item"
 				}
 				{
-					count: 7L
-					id: "61E029DDE9A30515"
-					item: { Count: 7b, id: "kubejs:iron_coin" }
+					consume_items: true
+					count: 8L
+					id: "4CD5AB29DD021E1C"
+					item: { Count: 8, id: "minecraft:cooked_chicken" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "2E51DA89E895A4B8"
+					item: { Count: 8, id: "minecraft:torch" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "05AAABC40A80D038"
+					item: "minecraft:terracotta"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "726821DC61D877A1"
+					item: { Count: 8, id: "minecraft:rotten_flesh" }
 					type: "item"
 				}
 			]
@@ -65,10 +85,7 @@
 			y: -0.5d
 		}
 		{
-			dependencies: [
-				"573FE8ED65790A78"
-				"6A7021EDEDAB323D"
-			]
+			dependencies: ["573FE8ED65790A78"]
 			hide: false
 			id: "4D94846C7A3621E1"
 			tasks: [
@@ -88,17 +105,14 @@
 			y: 1.5d
 		}
 		{
-			dependencies: [
-				"4D94846C7A3621E1"
-				"678A8EAEB2BF6661"
-			]
+			dependencies: ["4D94846C7A3621E1"]
 			hide: false
 			id: "076BFC8E90689E06"
 			tasks: [
 				{
 					id: "3630EA2CCAC3D14E"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:leather_helmet"
 						tag: {
 							Damage: 0
@@ -109,7 +123,7 @@
 				{
 					id: "2C8FBF40447E4223"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:leather_chestplate"
 						tag: {
 							Damage: 0
@@ -120,7 +134,7 @@
 				{
 					id: "66CA63F8322CC6D6"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:leather_leggings"
 						tag: {
 							Damage: 0
@@ -131,7 +145,7 @@
 				{
 					id: "55635BEB719CBE83"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:leather_boots"
 						tag: {
 							Damage: 0
@@ -156,10 +170,7 @@
 			y: -0.5d
 		}
 		{
-			dependencies: [
-				"354771AEA610B772"
-				"1B338FE451D61157"
-			]
+			dependencies: ["354771AEA610B772"]
 			hide: false
 			id: "328A5A7575E922BB"
 			tasks: [{
@@ -171,10 +182,7 @@
 			y: -0.5d
 		}
 		{
-			dependencies: [
-				"573FE8ED65790A78"
-				"61B2F967D28FCF1E"
-			]
+			dependencies: ["573FE8ED65790A78"]
 			hide: false
 			id: "521B1983269E86CD"
 			tasks: [{
@@ -186,16 +194,13 @@
 			y: -2.5d
 		}
 		{
-			dependencies: [
-				"573FE8ED65790A78"
-				"0238CB04F8F7CDEA"
-			]
+			dependencies: ["573FE8ED65790A78"]
 			hide: false
 			id: "469D79186355892B"
 			tasks: [{
 				id: "5196E141B83AD323"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "itemfilters:tag"
 					tag: {
 						value: "minecraft:boats"
@@ -209,17 +214,14 @@
 			y: -0.5d
 		}
 		{
-			dependencies: [
-				"57737325F1848DFB"
-				"573FE8ED65790A78"
-			]
+			dependencies: ["573FE8ED65790A78"]
 			hide: false
 			id: "05B91EF6C45378BE"
 			tasks: [
 				{
 					id: "62B4AA089A6C6C88"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "itemfilters:tag"
 						tag: {
 							value: "forge:fences/wooden"
@@ -231,7 +233,7 @@
 				{
 					id: "4CD28B77A07855E6"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "itemfilters:tag"
 						tag: {
 							value: "forge:fence_gates/wooden"
@@ -246,16 +248,13 @@
 			y: 1.5d
 		}
 		{
-			dependencies: [
-				"573FE8ED65790A78"
-				"4349B3E0CC45ABE2"
-			]
+			dependencies: ["573FE8ED65790A78"]
 			hide: false
 			id: "43CD52707D5AC45C"
 			tasks: [{
 				id: "003328B83628CC9B"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:bow"
 					tag: {
 						Damage: 0
@@ -267,10 +266,7 @@
 			y: -2.5d
 		}
 		{
-			dependencies: [
-				"573FE8ED65790A78"
-				"67DA2A29AC997C88"
-			]
+			dependencies: ["573FE8ED65790A78"]
 			id: "4967B23E5A19ADB4"
 			tasks: [
 				{

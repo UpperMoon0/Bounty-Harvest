@@ -10,11 +10,7 @@
 	id: "00241F31C27A6B00"
 	images: [
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 1.0d
-			hover: [ ]
 			image: "kubejs:item/copper_coin"
 			rotation: 0.0d
 			width: 1.0d
@@ -22,11 +18,7 @@
 			y: 0.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 1.0d
-			hover: [ ]
 			image: "kubejs:item/iron_coin"
 			rotation: 0.0d
 			width: 1.0d
@@ -34,11 +26,7 @@
 			y: 2.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 1.0d
-			hover: [ ]
 			image: "kubejs:item/gold_coin"
 			rotation: 0.0d
 			width: 1.0d
@@ -46,11 +34,7 @@
 			y: 4.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 1.0d
-			hover: [ ]
 			image: "kubejs:item/copper_coin"
 			rotation: 0.0d
 			width: 1.0d
@@ -58,11 +42,7 @@
 			y: -2.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 1.0d
-			hover: [ ]
 			image: "kubejs:item/iron_coin"
 			rotation: 0.0d
 			width: 1.0d
@@ -70,11 +50,7 @@
 			y: -2.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 1.0d
-			hover: [ ]
 			image: "kubejs:item/gold_coin"
 			rotation: 0.0d
 			width: 1.0d
@@ -82,7 +58,7 @@
 			y: -2.0d
 		}
 	]
-	order_index: 5
+	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{

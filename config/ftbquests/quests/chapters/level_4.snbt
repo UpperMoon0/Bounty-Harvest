@@ -11,12 +11,9 @@
 	quests: [
 		{
 			dependencies: [
-				"6A7021EDEDAB323D"
-				"61B2F967D28FCF1E"
-				"678A8EAEB2BF6661"
-				"1B338FE451D61157"
-				"57737325F1848DFB"
-				"0238CB04F8F7CDEA"
+				"4967B23E5A19ADB4"
+				"354771AEA610B772"
+				"4D94846C7A3621E1"
 			]
 			icon: "minecraft:carrot"
 			id: "1003C2B79F710366"
@@ -32,7 +29,7 @@
 				{
 					id: "2295122A1560CAE1"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "bountiful:decree"
 						tag: {
 							RepairCost: 0
@@ -46,22 +43,48 @@
 				}
 			]
 			shape: "octagon"
-			tasks: [{
-				consume_items: true
-				count: 3L
-				id: "5CDAE6C6E830E3D0"
-				item: "kubejs:gold_coin"
-				type: "item"
-			}]
+			tasks: [
+				{
+					consume_items: true
+					id: "5CDAE6C6E830E3D0"
+					item: "kubejs:gold_coin"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "148496AD041DB986"
+					item: { Count: 8, id: "kubejs:iron_coin" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "2DDA7D4B9E966C80"
+					item: { Count: 8, id: "minecraft:cooked_beef" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "690FB21FF4E312EC"
+					item: { Count: 8, id: "minecraft:leather" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "602BA0B766EB9931"
+					item: { Count: 8, id: "minecraft:bone" }
+					type: "item"
+				}
+			]
 			title: "Level 4"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			dependencies: [
-				"1003C2B79F710366"
-				"5F7A2CDA6365739F"
-			]
+			dependencies: ["1003C2B79F710366"]
 			hide: false
 			id: "352F41B3BED0E086"
 			tasks: [{
@@ -73,10 +96,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: [
-				"352F41B3BED0E086"
-				"26BE7AF89E2CAA09"
-			]
+			dependencies: ["352F41B3BED0E086"]
 			hide: false
 			id: "58846BA779358FD2"
 			tasks: [{
@@ -89,10 +109,7 @@
 			y: 4.0d
 		}
 		{
-			dependencies: [
-				"1003C2B79F710366"
-				"5340351BF8EB0942"
-			]
+			dependencies: ["1003C2B79F710366"]
 			hide: false
 			id: "72CAF40486DF976F"
 			tasks: [{
@@ -104,16 +121,13 @@
 			y: -2.0d
 		}
 		{
-			dependencies: [
-				"17F6492995529F96"
-				"1AFF08E723FC1F0F"
-			]
+			dependencies: ["17F6492995529F96"]
 			id: "19A0223BFE395A14"
 			tasks: [
 				{
 					id: "45A5573D47862E96"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:stone_shovel"
 						tag: {
 							Damage: 0
@@ -124,7 +138,7 @@
 				{
 					id: "39C623F4A3918C9A"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:stone_pickaxe"
 						tag: {
 							Damage: 0
@@ -135,7 +149,7 @@
 				{
 					id: "3B4663CE58D98FD9"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:stone_axe"
 						tag: {
 							Damage: 0
@@ -146,7 +160,7 @@
 				{
 					id: "1C188B295DD98031"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:stone_hoe"
 						tag: {
 							Damage: 0
@@ -157,7 +171,7 @@
 				{
 					id: "330D6E427AAE1BF4"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:stone_sword"
 						tag: {
 							Damage: 0
@@ -202,10 +216,7 @@
 			y: 1.5d
 		}
 		{
-			dependencies: [
-				"1003C2B79F710366"
-				"66D7279E3A29E6A6"
-			]
+			dependencies: ["1003C2B79F710366"]
 			hide: false
 			id: "12932CB774E66484"
 			tasks: [{
@@ -217,17 +228,14 @@
 			y: -1.5d
 		}
 		{
-			dependencies: [
-				"1003C2B79F710366"
-				"0CA50C39F07ED541"
-			]
+			dependencies: ["1003C2B79F710366"]
 			hide: false
 			id: "7D811445066E0898"
 			tasks: [
 				{
 					id: "3181F287CBC9E103"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "itemfilters:tag"
 						tag: {
 							value: "minecraft:wooden_buttons"
@@ -239,7 +247,7 @@
 				{
 					id: "104D55D30B2B309B"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "itemfilters:tag"
 						tag: {
 							value: "minecraft:wooden_pressure_plates"
@@ -265,10 +273,7 @@
 			y: 0.0d
 		}
 		{
-			dependencies: [
-				"1003C2B79F710366"
-				"67FD374C4E8AC1E6"
-			]
+			dependencies: ["1003C2B79F710366"]
 			hide: false
 			id: "3BA339E0640B6081"
 			tasks: [
@@ -295,7 +300,7 @@
 				{
 					id: "3474EBCE175F278C"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "aquaculture:minnow"
 						tag: {
 							Damage: 0

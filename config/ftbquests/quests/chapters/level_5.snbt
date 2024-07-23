@@ -11,12 +11,12 @@
 	quests: [
 		{
 			dependencies: [
-				"26BE7AF89E2CAA09"
-				"5F7A2CDA6365739F"
-				"66D7279E3A29E6A6"
-				"0CA50C39F07ED541"
-				"1AFF08E723FC1F0F"
-				"5340351BF8EB0942"
+				"352F41B3BED0E086"
+				"3BA339E0640B6081"
+				"58846BA779358FD2"
+				"17F6492995529F96"
+				"382504BCFCC6B07A"
+				"6A5228B39CFC9F88"
 			]
 			icon: "minecraft:white_wool"
 			id: "29747D157C7F8C88"
@@ -32,7 +32,7 @@
 				{
 					id: "6341F0E8517F62A6"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "bountiful:decree"
 						tag: {
 							RepairCost: 0
@@ -46,13 +46,50 @@
 				}
 			]
 			shape: "octagon"
-			tasks: [{
-				consume_items: true
-				count: 5L
-				id: "2E2F6426E598A287"
-				item: "kubejs:gold_coin"
-				type: "item"
-			}]
+			tasks: [
+				{
+					consume_items: true
+					count: 3L
+					id: "2E2F6426E598A287"
+					item: "kubejs:gold_coin"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 20L
+					id: "25177E75320B4917"
+					item: { Count: 20, id: "minecraft:flint" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 24L
+					id: "462540B1A26D11FF"
+					item: { Count: 24, id: "minecraft:carrot" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "58B489F58654D31A"
+					item: { Count: 16, id: "minecraft:cooked_porkchop" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 6L
+					id: "2E12CA8D9AC5A7F6"
+					item: { Count: 6, id: "minecraft:spider_eye" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "05AF041D1BE9581F"
+					item: { Count: 16, id: "minecraft:gunpowder" }
+					type: "item"
+				}
+			]
 			title: "Level 5"
 			x: -0.5d
 			y: 0.5d
@@ -69,10 +106,7 @@
 			y: -2.0d
 		}
 		{
-			dependencies: [
-				"29747D157C7F8C88"
-				"7E69CE3D2A589C46"
-			]
+			dependencies: ["29747D157C7F8C88"]
 			hide: false
 			id: "1CCF7C805ED9FE8B"
 			tasks: [
@@ -80,7 +114,7 @@
 					icon: "minecraft:white_wool"
 					id: "4D8584A4BBCC99A6"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "itemfilters:tag"
 						tag: {
 							value: "minecraft:wool"
@@ -100,17 +134,14 @@
 			y: -1.0d
 		}
 		{
-			dependencies: [
-				"1CCF7C805ED9FE8B"
-				"71BAF60A6925FE01"
-			]
+			dependencies: ["1CCF7C805ED9FE8B"]
 			hide: false
 			icon: "minecraft:white_bed"
 			id: "6EA2798DA5176208"
 			tasks: [{
 				id: "38B1E9AAF89A0A04"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "itemfilters:tag"
 					tag: {
 						value: "minecraft:beds"
@@ -124,10 +155,7 @@
 			y: -1.0d
 		}
 		{
-			dependencies: [
-				"29747D157C7F8C88"
-				"288982646CCE5C7A"
-			]
+			dependencies: ["29747D157C7F8C88"]
 			hide: false
 			id: "1FD813E5CF445550"
 			tasks: [{
@@ -161,10 +189,7 @@
 			y: 3.5d
 		}
 		{
-			dependencies: [
-				"5217D4C2C241C0A9"
-				"7A267011FFCC2421"
-			]
+			dependencies: ["5217D4C2C241C0A9"]
 			hide: false
 			id: "0139DF3D2C0E8D13"
 			tasks: [{
@@ -176,10 +201,7 @@
 			y: 5.0d
 		}
 		{
-			dependencies: [
-				"29747D157C7F8C88"
-				"1631C4F08CA698F1"
-			]
+			dependencies: ["29747D157C7F8C88"]
 			hide: false
 			id: "185D159902032063"
 			tasks: [{
@@ -191,10 +213,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: [
-				"29747D157C7F8C88"
-				"35C4F11F6C24E7FC"
-			]
+			dependencies: ["29747D157C7F8C88"]
 			hide: false
 			id: "617E16F23CADA562"
 			tasks: [
