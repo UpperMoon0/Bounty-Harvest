@@ -221,7 +221,48 @@ ServerEvents.recipes((e) => {
         C: 'minecraft:iron_nugget'
     })
 
-    /* Level 8
+    // Level 8
+    e.remove({id: 'bettercopper:copper_helmet'})
+    e.remove({id: 'bettercopper:copper_chestplate'})
+    e.remove({id: 'bettercopper:copper_leggings'})
+    e.remove({id: 'bettercopper:copper_boots'})
+
+    e.remove({id: 'minecraft:chain'})
+    e.shaped('3x minecraft:chain', [
+        ' N ',
+        ' I ',
+        ' N '
+    ], {
+        N: 'minecraft:iron_nugget',
+        I: 'minecraft:iron_ingot'
+    })
+    e.shaped('minecraft:chainmail_helmet', [
+        'III',
+        'I I'
+    ], {
+        I: 'minecraft:chain'
+    })
+    e.shaped('minecraft:chainmail_chestplate', [
+        'I I',
+        'III',
+        'III'
+    ], {
+        I: 'minecraft:chain'
+    })
+    e.shaped('minecraft:chainmail_leggings', [
+        'III',
+        'I I',
+        'I I'
+    ], {
+        I: 'minecraft:chain'
+    })
+    e.shaped('minecraft:chainmail_boots', [
+        'I I',
+        'I I'
+    ], {
+        I: 'minecraft:chain'
+    })
+
     e.shaped('farmersdelight:stuffed_potato', [
         'AB',
         'C '
@@ -231,106 +272,19 @@ ServerEvents.recipes((e) => {
         C: 'farmersdelight:milk_bottle'
     })
 
-    e.shaped('4x farmersdelight:wheat_dough', [
-        'WWA',
-        'WE '
-    ], {
-        W: 'minecraft:wheat',
-        E: 'minecraft:egg',
-        A: 'minecraft:water_bottle'
-    })
-
-    e.shaped('4x farmersdelight:pie_crust', [
-        'M M',
-        'DMD',
-        ' D '
-    ], {
-        D: 'farmersdelight:wheat_dough',
-        M: 'farmersdelight:milk_bottle'
-    })
-
-
-    // Level 9
-
-
-    e.remove({id: 'minecraft:chain'})
-    e.shaped('16x minecraft:chain', [
-        'A',
-        'B',
-        'A'
-    ], {
-        A: 'minecraft:iron_nugget',
-        B: 'minecraft:iron_ingot'
-    })
-
-    e.shaped('minecraft:chainmail_helmet', [
-        'ABA',
-        'A A'
-    ], {
-        A: 'minecraft:chain',
-        B: 'minecraft:copper_ingot'
-    })
-
-    e.shaped('minecraft:chainmail_chestplate', [
-        'A A',
-        'ABA',
-        'AAA'
-    ], {
-        A: 'minecraft:chain',
-        B: 'minecraft:copper_ingot'
-    })
-
-    e.shaped('minecraft:chainmail_leggings', [
-        'ABA',
-        'A A',
-        'A A'
-    ], {
-        A: 'minecraft:chain',
-        B: 'minecraft:copper_ingot'
-    })
-
-    e.shaped('minecraft:chainmail_boots', [
-        'A A',
-        'B B'
-    ], {
-        A: 'minecraft:chain',
-        B: 'minecraft:copper_ingot'
-    })
-
-    e.remove({id: 'aquaculture:wooden_fillet_knife'})
-    e.shaped('aquaculture:wooden_fillet_knife', [
-        '  A',
-        'CA ',
-        'B  '
-    ], {
-        A: '#minecraft:planks',
-        B: 'minecraft:stick',
-        C: 'create:copper_nugget'
-    })
-
-    e.remove({id: 'aquaculture:stone_fillet_knife'})
-    e.shaped('aquaculture:stone_fillet_knife', [
-        '  A',
-        'CA ',
-        'B  '
-    ], {
-        A: '#forge:cobblestone',
-        B: 'minecraft:stick',
-        C: 'create:copper_nugget'
-    })
-
-    e.remove({id: 'farmersdelight:flint_knife'})
-    e.shaped('farmersdelight:flint_knife', [
-        '  A',
-        'CA ',
-        'B  '
-    ], {
-        A: 'minecraft:flint',
-        B: 'minecraft:stick',
-        C: 'create:copper_nugget'
-    })
+    e.remove({id: 'farmersdelight:cutting/cooked_chicken'})
+    e.remove({id: 'farmersdelight:cabbage_from_leaves'})
 
     e.remove({id: 'farmersdelight:chicken_sandwich'})
+    e.shaped('farmersdelight:chicken_sandwich', [
+        'AB',
+        'CD'
+    ], {
+        A: 'minecraft:bread',
+        B: 'farmersdelight:cooked_chicken_cuts',
+        C: 'farmersdelight:cabbage_leaf',
+        D: 'minecraft:carrot'
+    })
     e.shaped('farmersdelight:chicken_sandwich', [
         'AB',
         'CD'
@@ -340,5 +294,4 @@ ServerEvents.recipes((e) => {
         C: 'delightful:chopped_clover',
         D: 'minecraft:carrot'
     })
-    */
 })

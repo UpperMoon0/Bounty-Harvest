@@ -107,7 +107,7 @@
 		}
 		{
 			dependencies: ["29747D157C7F8C88"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "1CCF7C805ED9FE8B"
 			tasks: [
 				{
@@ -135,7 +135,7 @@
 		}
 		{
 			dependencies: ["1CCF7C805ED9FE8B"]
-			hide: false
+			hide_until_deps_visible: false
 			icon: "minecraft:white_bed"
 			id: "6EA2798DA5176208"
 			tasks: [{
@@ -156,7 +156,7 @@
 		}
 		{
 			dependencies: ["29747D157C7F8C88"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "1FD813E5CF445550"
 			tasks: [{
 				id: "6155F723394EBF70"
@@ -190,7 +190,7 @@
 		}
 		{
 			dependencies: ["5217D4C2C241C0A9"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "0139DF3D2C0E8D13"
 			tasks: [{
 				id: "45B67866D0205AF8"
@@ -202,7 +202,7 @@
 		}
 		{
 			dependencies: ["29747D157C7F8C88"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "185D159902032063"
 			tasks: [{
 				id: "25DD95773FB54E65"
@@ -214,25 +214,20 @@
 		}
 		{
 			dependencies: ["29747D157C7F8C88"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "617E16F23CADA562"
-			tasks: [
-				{
-					id: "4EECD686E4B9B6BF"
-					item: "aquaculture:gar"
-					type: "item"
+			tasks: [{
+				id: "0F21B9E87227A382"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "forge:medium_freshwater_fishes"
+					}
 				}
-				{
-					id: "641ECF0946C09540"
-					item: "aquaculture:muskellunge"
-					type: "item"
-				}
-				{
-					id: "0F21B9E87227A382"
-					item: "minecraft:salmon"
-					type: "item"
-				}
-			]
+				title: "Any #forge:medium_freshwater_fishes"
+				type: "item"
+			}]
 			title: "Medium Freshwater Fishes"
 			x: -3.0d
 			y: 0.0d

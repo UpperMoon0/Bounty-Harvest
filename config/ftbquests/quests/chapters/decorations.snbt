@@ -11,7 +11,7 @@
 	quests: [{
 		can_repeat: true
 		dependencies: ["74402ECAFFAFAEC4"]
-		hide: true
+		hide_until_deps_visible: true
 		icon: "minecraft:torch"
 		id: "26532BF72C97D9E4"
 		rewards: [{

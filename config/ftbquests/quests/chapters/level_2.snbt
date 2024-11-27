@@ -53,14 +53,14 @@
 				}
 				{
 					consume_items: true
-					count: 8L
+					count: 3L
 					id: "52B8230BBFDE2E89"
-					item: { Count: 8, id: "minecraft:bread" }
+					item: "minecraft:bread"
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 12L
+					count: 5L
 					id: "2ED32D5F67BFC5D2"
 					item: {
 						Count: 1
@@ -74,7 +74,7 @@
 				}
 				{
 					consume_items: true
-					count: 32L
+					count: 12L
 					id: "0FED66D5BBA09D04"
 					item: {
 						Count: 1
@@ -88,7 +88,7 @@
 				}
 				{
 					consume_items: true
-					count: 32L
+					count: 12L
 					id: "1A90758BE2ACF9B5"
 					item: {
 						Count: 1
@@ -107,7 +107,7 @@
 		}
 		{
 			dependencies: ["7D3858343983B67A"]
-			hide: false
+			hide_until_deps_visible: true
 			id: "778CCDE835D9EF67"
 			tasks: [
 				{
@@ -132,6 +132,7 @@
 		}
 		{
 			dependencies: ["7D3858343983B67A"]
+			hide_until_deps_visible: true
 			id: "19B61578D942D20A"
 			tasks: [{
 				id: "5DF5E6E5AE89A230"
@@ -154,6 +155,7 @@
 		}
 		{
 			dependencies: ["7D3858343983B67A"]
+			hide_until_deps_visible: true
 			id: "507ACE79E870A152"
 			tasks: [{
 				id: "1D6D69E9E676BD5F"
@@ -165,6 +167,7 @@
 		}
 		{
 			dependencies: ["7D3858343983B67A"]
+			hide_until_deps_visible: true
 			id: "6ABD336C3EB9F503"
 			tasks: [{
 				id: "3634670EA1C7EE95"
@@ -176,7 +179,7 @@
 		}
 		{
 			dependencies: ["7D3858343983B67A"]
-			hide: false
+			hide_until_deps_visible: true
 			id: "5571AA243B6BB49B"
 			tasks: [{
 				id: "2A1E7FF6A1BD58BE"
@@ -196,7 +199,7 @@
 		}
 		{
 			dependencies: ["5571AA243B6BB49B"]
-			hide: false
+			hide_until_deps_visible: true
 			id: "0EB9C48464D5C956"
 			tasks: [{
 				id: "6C72236233047E7E"
@@ -216,7 +219,7 @@
 		}
 		{
 			dependencies: ["0EB9C48464D5C956"]
-			hide: false
+			hide_until_deps_visible: true
 			icon: "minecraft:ladder"
 			id: "3248B784E4E15ADF"
 			tasks: [{
@@ -243,21 +246,14 @@
 		}
 		{
 			dependencies: ["342421E0C377A36D"]
-			hide: false
+			hide_until_deps_visible: true
 			id: "501C3132C26AE330"
-			tasks: [
-				{
-					id: "3F2E60D7E683A99C"
-					item: "minecraft:charcoal"
-					type: "item"
-				}
-				{
-					id: "1B91AB0F5241DAA7"
-					item: "minecraft:coal"
-					type: "item"
-				}
-			]
-			title: "Coal"
+			tasks: [{
+				id: "3F2E60D7E683A99C"
+				item: "minecraft:charcoal"
+				type: "item"
+			}]
+			title: "Charcoal"
 			x: 4.0d
 			y: -2.0d
 		}
@@ -274,7 +270,7 @@
 		}
 		{
 			dependencies: ["7D3858343983B67A"]
-			hide: false
+			hide_until_deps_visible: true
 			id: "25862DE4D25EA92E"
 			tasks: [
 				{
@@ -328,6 +324,7 @@
 		}
 		{
 			dependencies: ["7D3858343983B67A"]
+			hide_until_deps_visible: true
 			id: "47B754C95B98C91B"
 			tasks: [
 				{
@@ -350,6 +347,7 @@
 				"342421E0C377A36D"
 				"47B754C95B98C91B"
 			]
+			hide_until_deps_visible: true
 			id: "46299A2CF9119F73"
 			tasks: [{
 				id: "0730F35A2A5D3540"
@@ -358,6 +356,17 @@
 			}]
 			x: 4.0d
 			y: 4.0d
+		}
+		{
+			dependencies: ["501C3132C26AE330"]
+			id: "50ACAB39579BA5AA"
+			tasks: [{
+				id: "4BCBEE5B525A20A7"
+				item: "minecraft:coal"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 0.0d
 		}
 	]
 	title: "Level 2"

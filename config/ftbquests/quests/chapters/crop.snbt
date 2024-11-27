@@ -11,8 +11,8 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["157BBBAB00E2FAAF"]
-			hide: true
+			dependencies: ["74402ECAFFAFAEC4"]
+			hide_until_deps_visible: true
 			icon: "minecraft:wheat_seeds"
 			id: "69D0A2940723341A"
 			rewards: [{
@@ -32,6 +32,7 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["1003C2B79F710366"]
 			icon: "minecraft:carrot"
 			id: "42F61617476FBFCC"
 			rewards: [{
@@ -51,6 +52,7 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["29747D157C7F8C88"]
 			icon: "minecraft:sugar_cane"
 			id: "5EC3E67CEBBB2604"
 			rewards: [{
@@ -70,6 +72,7 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["7297A69487BEE03D"]
 			icon: "minecraft:potato"
 			id: "139EDF3D2E9F5E13"
 			rewards: [{
@@ -86,6 +89,48 @@
 			}]
 			title: "Buy Potato"
 			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["74402ECAFFAFAEC4"]
+			hide_until_deps_visible: true
+			icon: "minecraft:bone_meal"
+			id: "0AF8D4DD44F1810B"
+			rewards: [{
+				count: 4
+				id: "08558ABACB0F8C3E"
+				item: "minecraft:bone_meal"
+				type: "item"
+			}]
+			tasks: [{
+				count: 16L
+				id: "3B78A0A0B1721C7B"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
+			title: "Buy Bone Meal"
+			x: 0.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["4003BF6FE565761F"]
+			icon: "farmersdelight:cabbage"
+			id: "354D89A7217D2552"
+			rewards: [{
+				count: 2
+				icon: "farmersdelight:cabbage_seeds"
+				id: "52200ACA6C004644"
+				item: "farmersdelight:cabbage_seeds"
+				type: "item"
+			}]
+			tasks: [{
+				count: 2L
+				id: "066AD2111C3911E8"
+				item: "kubejs:gold_coin"
+				type: "item"
+			}]
+			title: "Buy Cabbage"
+			x: 8.0d
 			y: 0.0d
 		}
 	]

@@ -35,7 +35,7 @@
 		{
 			dependencies: ["43284F27E8D976FC"]
 			description: ["To unlock 3x3 recipes, create a crafting table."]
-			hide: true
+			hide_until_deps_visible: true
 			id: "7E05FEED92D53715"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -58,7 +58,7 @@
 				""
 				"Sorry, but stone tools are not unlocked until &2Level 4&r, and they are made of flint, not stone."
 			]
-			hide: true
+			hide_until_deps_visible: true
 			id: "0A6DE571FAAFADA0"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -155,7 +155,7 @@
 		{
 			dependencies: ["7E05FEED92D53715"]
 			description: ["Use a chest to store your items."]
-			hide: true
+			hide_until_deps_visible: true
 			id: "44559F724FDC9994"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -182,7 +182,7 @@
 		{
 			dependencies: ["0A6DE571FAAFADA0"]
 			description: ["Wheat is your first crop. You can find wheat seeds by breaking most types of grass (not the grass block)."]
-			hide: true
+			hide_until_deps_visible: true
 			id: "157BBBAB00E2FAAF"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -213,7 +213,7 @@
 				""
 				"Bread is the final objective of &2Level 1&r. Congratulations!"
 			]
-			hide: false
+			hide_until_deps_visible: false
 			id: "5918C8C324EC380B"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -238,7 +238,7 @@
 				""
 				"&cDue to the default behavior of the Bountiful mod, each time the Bounty Board is placed, it will contain a random decree, which may not correspond to your level. To acquire a decree of a specific level, you have the option to get it in the shop or receive it as a reward each time you level up.&r"
 			]
-			hide: true
+			hide_until_deps_visible: true
 			id: "37DB727D93347A94"
 			rewards: [
 				{
@@ -275,27 +275,21 @@
 		}
 		{
 			dependencies: ["74402ECAFFAFAEC4"]
-			description: [
-				"In the modpack Bountiful Harvest, the availability of most items is determined by your progress level. As you advance through the game stages, you unlock access to a wider range of items."
-				""
-				"Additionally, certain items are locked and can only be accessed through research. The research process is an integral part of the pack and is located under the “Research” chapter in the “Shop” group within the Quests."
-				""
-				"Each research task requires a specific amount of coins for completion. Upon completion, the items associated with that research are permanently unlocked."
-			]
+			description: ["In the modpack Bountiful Harvest, the availability of most items is determined by your progress level. As you advance through the game stages, you unlock access to a wider range of items."]
 			icon: "create:crafting_blueprint"
 			id: "4CE5E3F960990234"
 			tasks: [{
 				id: "3F510732D237B9C3"
 				type: "checkmark"
 			}]
-			title: "The Research System"
+			title: "The Level System"
 			x: 0.0d
 			y: -2.0d
 		}
 		{
 			dependencies: ["0A6DE571FAAFADA0"]
 			description: ["Sand and gravel may not be worth much by themselves, but they can be transformed into more valuable products such as glass or flint later on."]
-			hide: true
+			hide_until_deps_visible: true
 			id: "44F6F42801500C65"
 			rewards: [{
 				exclude_from_claim_all: true

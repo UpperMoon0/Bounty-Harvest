@@ -11,6 +11,7 @@
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["7D3858343983B67A"]
 			icon: "minecraft:chicken_spawn_egg"
 			id: "2C89F326D1B02E2B"
 			rewards: [{
@@ -25,11 +26,12 @@
 				item: "kubejs:copper_coin"
 				type: "item"
 			}]
-			title: "Buy Chickens"
+			title: "Buy Chicken"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
+			dependencies: ["573FE8ED65790A78"]
 			icon: "minecraft:cow_spawn_egg"
 			id: "1CDC85097BF0DB3D"
 			rewards: [{
@@ -44,11 +46,12 @@
 				item: "kubejs:iron_coin"
 				type: "item"
 			}]
-			title: "Buy Cows"
+			title: "Buy Cow"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
+			dependencies: ["1003C2B79F710366"]
 			icon: "minecraft:pig_spawn_egg"
 			id: "3A11E98249BA4F92"
 			rewards: [{
@@ -70,11 +73,12 @@
 					type: "item"
 				}
 			]
-			title: "Buy Pigs"
+			title: "Buy Pig"
 			x: 4.0d
 			y: 0.0d
 		}
 		{
+			dependencies: ["29747D157C7F8C88"]
 			icon: "minecraft:sheep_spawn_egg"
 			id: "67B868D8EADB6BA2"
 			rewards: [{
@@ -102,8 +106,36 @@
 					type: "item"
 				}
 			]
-			title: "Buy Sheeps"
+			title: "Buy Sheep"
 			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4003BF6FE565761F"]
+			icon: "minecraft:rabbit_spawn_egg"
+			id: "182F14B598A346E6"
+			rewards: [{
+				count: 2
+				id: "4A69A7F57493EDBA"
+				item: "minecraft:rabbit_spawn_egg"
+				type: "item"
+			}]
+			tasks: [
+				{
+					count: 3L
+					id: "4545453D5EC7279A"
+					item: "kubejs:gold_coin"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "083B1963139AB80B"
+					item: "kubejs:iron_coin"
+					type: "item"
+				}
+			]
+			title: "Buy Rabbit"
+			x: 8.0d
 			y: 0.0d
 		}
 	]

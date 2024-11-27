@@ -34,7 +34,6 @@
 						}
 					}
 				}
-				title: "Level 1 Decree"
 				type: "item"
 			}]
 			tasks: [{
@@ -62,14 +61,12 @@
 						}
 					}
 				}
-				title: "Level 2 Decree"
 				type: "item"
 			}]
 			tasks: [{
 				id: "448D2E3D2008F230"
 				type: "checkmark"
 			}]
-			title: "Level 2 Decree"
 			x: 2.0d
 			y: 0.0d
 		}
@@ -179,6 +176,68 @@
 			}]
 			title: "Level 6 Decree"
 			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0A53CC520F7826A3"]
+			icon: "minecraft:copper_ingot"
+			id: "3C1EA2C1A0DF86E5"
+			rewards: [{
+				id: "68B693D70840F6FD"
+				item: {
+					Count: 1
+					id: "bountiful:decree"
+					tag: {
+						RepairCost: 0
+						"bountiful:decree_data": "{\"ids\":[\"level_7\"]}"
+						display: {
+							Name: "{\"text\":\"Level 7 Decree\"}"
+						}
+					}
+				}
+				title: "Level 7 Decree"
+				type: "item"
+			}]
+			tasks: [{
+				id: "23AC750B5F27E59D"
+				type: "checkmark"
+			}]
+			title: "Level 7 Decree"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4003BF6FE565761F"]
+			icon: {
+				Count: 1
+				id: "farmersdelight:iron_knife"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "6A94E9EC9DEA65D0"
+			rewards: [{
+				id: "1D605AEACC533768"
+				item: {
+					Count: 1
+					id: "bountiful:decree"
+					tag: {
+						RepairCost: 0
+						"bountiful:decree_data": "{\"ids\":[\"level_8\"]}"
+						display: {
+							Name: "{\"text\":\"Level 8 Decree\"}"
+						}
+					}
+				}
+				title: "Level 7 Decree"
+				type: "item"
+			}]
+			tasks: [{
+				id: "569F40A0400DC8F9"
+				type: "checkmark"
+			}]
+			title: "Level 8 Decree"
+			x: 4.0d
 			y: 2.0d
 		}
 	]

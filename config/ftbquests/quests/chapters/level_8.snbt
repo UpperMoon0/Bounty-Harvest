@@ -3,49 +3,413 @@
 	default_quest_shape: ""
 	filename: "level_8"
 	group: "39B7846742C777FD"
-	icon: "farmersdelight:cooked_chicken_cuts"
+	hide_quest_until_deps_visible: true
+	icon: {
+		Count: 1
+		id: "farmersdelight:iron_knife"
+		tag: {
+			Damage: 0
+		}
+	}
 	id: "28CBD1C8C3A098FA"
 	order_index: 7
 	quest_links: [ ]
-	quests: [{
-		icon: "farmersdelight:cooked_chicken_cuts"
-		id: "4003BF6FE565761F"
-		rewards: [
-			{
-				command: "/gamestage add @p level_7 true"
-				elevate_perms: true
-				id: "37252479FFAC6A0F"
-				silent: true
-				title: "Level up to Level 7"
-				type: "command"
+	quests: [
+		{
+			dependencies: [
+				"0F046D49DC4BDDE5"
+				"0B7198D069D4E3D5"
+			]
+			icon: {
+				Count: 1
+				id: "farmersdelight:iron_knife"
+				tag: {
+					Damage: 0
+				}
 			}
-			{
-				id: "044FBD3F543A7EF9"
+			id: "4003BF6FE565761F"
+			rewards: [
+				{
+					command: "/gamestage add @p level_8 true"
+					id: "37252479FFAC6A0F"
+					silent: true
+					title: "Level up to Level 8"
+					type: "command"
+				}
+				{
+					id: "044FBD3F543A7EF9"
+					item: {
+						Count: 1
+						id: "bountiful:decree"
+						tag: {
+							RepairCost: 0
+							"bountiful:decree_data": "{\"ids\":[\"level_8\"]}"
+							display: {
+								Name: "{\"text\":\"Level 8 Decree\"}"
+							}
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "octagon"
+			tasks: [
+				{
+					consume_items: true
+					count: 10L
+					id: "2E5CA35378F340E9"
+					item: "kubejs:gold_coin"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 3L
+					id: "2FE8400B35D5988D"
+					item: "minecraft:copper_block"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "00C2B0B2D61D5B5D"
+					item: { Count: 8, id: "minecraft:cake" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "2B17C1C4762C593F"
+					item: { Count: 8, id: "farmersdelight:apple_pie" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "37D93A40E0FB9910"
+					item: { Count: 12, id: "farmersdelight:stuffed_potato" }
+					type: "item"
+				}
+			]
+			title: "Level 8"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4003BF6FE565761F"]
+			id: "645C790E90C0B928"
+			tasks: [
+				{
+					id: "048C732311122488"
+					item: "farmersdelight:cabbage"
+					type: "item"
+				}
+				{
+					id: "1A6C69E894E918B9"
+					item: "farmersdelight:cabbage_seeds"
+					type: "item"
+				}
+			]
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4003BF6FE565761F"]
+			id: "71E71D7275B43925"
+			tasks: [
+				{
+					id: "493CE6FA17A98066"
+					item: "farmersdelight:cutting_board"
+					type: "item"
+				}
+				{
+					id: "5AB42315E5293FFE"
+					item: {
+						Count: 1
+						id: "farmersdelight:iron_knife"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["71E71D7275B43925"]
+			id: "3EC63F83C96A2CDC"
+			tasks: [
+				{
+					id: "23D92A003F9A4D19"
+					item: "farmersdelight:minced_beef"
+					type: "item"
+				}
+				{
+					id: "2374C592D4126DE4"
+					item: "farmersdelight:beef_patty"
+					type: "item"
+				}
+			]
+			x: -1.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["71E71D7275B43925"]
+			id: "1375AACD0F8D3CAA"
+			tasks: [
+				{
+					id: "5C3AEC7FD8BF3DB0"
+					item: "farmersdelight:chicken_cuts"
+					type: "item"
+				}
+				{
+					id: "0BAB379B8CA5EB5A"
+					item: "farmersdelight:cooked_chicken_cuts"
+					type: "item"
+				}
+			]
+			title: "Chicken Cuts"
+			x: -2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"71E71D7275B43925"
+				"645C790E90C0B928"
+			]
+			id: "341564D2A3533A88"
+			tasks: [{
+				id: "6B261F9C128194FA"
+				item: "farmersdelight:cabbage_leaf"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["71E71D7275B43925"]
+			id: "046A43CC68FD8EBF"
+			tasks: [{
+				id: "3F199B0F4426B294"
+				item: "delightful:chopped_clover"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"1375AACD0F8D3CAA"
+				"341564D2A3533A88"
+			]
+			id: "0D966A212409CE9A"
+			tasks: [{
+				id: "25844AEDDDDB5B88"
+				item: "farmersdelight:chicken_sandwich"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["4003BF6FE565761F"]
+			id: "55AA3B59F7D05DBD"
+			tasks: [
+				{
+					id: "700FF6E8D0744A35"
+					item: "minecraft:rabbit"
+					type: "item"
+				}
+				{
+					id: "50BBE88A2F1ABFB4"
+					item: "minecraft:rabbit_hide"
+					type: "item"
+				}
+			]
+			title: "Rabbit"
+			x: 0.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["55AA3B59F7D05DBD"]
+			id: "2BD8FA52183C51AC"
+			tasks: [{
+				id: "731C2E4E0E76E9C7"
+				item: "minecraft:rabbit_foot"
+				type: "item"
+			}]
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["55AA3B59F7D05DBD"]
+			id: "01F21613A4D18C69"
+			tasks: [{
+				id: "68C69AC841022E42"
+				item: "minecraft:cooked_rabbit"
+				type: "item"
+			}]
+			x: 1.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["01F21613A4D18C69"]
+			id: "351F401802546C9C"
+			tasks: [{
+				id: "4607F90E7E38FD67"
+				item: "minecraft:rabbit_stew"
+				type: "item"
+			}]
+			x: 3.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["71E71D7275B43925"]
+			id: "5C81FC911146503D"
+			tasks: [{
+				id: "390B5C3CE3177396"
+				item: "aquaculture:fish_fillet_raw"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4003BF6FE565761F"]
+			id: "4491D804378DB826"
+			tasks: [{
+				id: "266E93CB11716F72"
 				item: {
 					Count: 1
-					id: "bountiful:decree"
+					id: "minecraft:shears"
 					tag: {
-						RepairCost: 0
-						"bountiful:decree_data": "{\"ids\":[\"level_7\"]}"
-						display: {
-							Name: "{\"text\":\"Level 7 Decree\"}"
-						}
+						Damage: 0
 					}
 				}
 				type: "item"
-			}
-		]
-		shape: "octagon"
-		tasks: [{
-			consume_items: true
-			count: 10L
-			id: "2E5CA35378F340E9"
-			item: "kubejs:gold_coin"
-			type: "item"
-		}]
-		title: "Level 8"
-		x: 0.0d
-		y: 0.0d
-	}]
+			}]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4491D804378DB826"]
+			id: "0FC861EECB620B59"
+			tasks: [{
+				id: "72CEE09984158A6B"
+				item: "minecraft:seagrass"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"5C81FC911146503D"
+				"0FC861EECB620B59"
+			]
+			id: "4ADABDD279A23636"
+			tasks: [{
+				id: "17CEC71303D5EE95"
+				item: "aquaculture:sushi"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["71E71D7275B43925"]
+			id: "3EC3DECAE8E769A8"
+			tasks: [
+				{
+					id: "3317562B5631F94B"
+					item: "farmersdelight:bacon"
+					type: "item"
+				}
+				{
+					id: "581FFD48DD62C008"
+					item: "farmersdelight:cooked_bacon"
+					type: "item"
+				}
+			]
+			title: "Bacon"
+			x: 1.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["3EC3DECAE8E769A8"]
+			id: "7AB15AE376082688"
+			tasks: [{
+				id: "16FD0F3DED789D18"
+				item: "farmersdelight:bacon_and_eggs"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["4003BF6FE565761F"]
+			id: "4D755510311AFC36"
+			tasks: [{
+				id: "772DB5A241D6BD2F"
+				item: "minecraft:chain"
+				type: "item"
+			}]
+			x: -2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["4D755510311AFC36"]
+			id: "6FC9DF630BA299CC"
+			tasks: [
+				{
+					id: "056AC7E63E57BA9E"
+					item: {
+						Count: 1
+						id: "minecraft:chainmail_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "27676E2A2901D2A0"
+					item: {
+						Count: 1
+						id: "minecraft:chainmail_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "42B358A81B0C2979"
+					item: {
+						Count: 1
+						id: "minecraft:chainmail_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "472B0DEFEC993173"
+					item: {
+						Count: 1
+						id: "minecraft:chainmail_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			x: -3.5d
+			y: -3.5d
+		}
+	]
 	title: "Level 8"
 }

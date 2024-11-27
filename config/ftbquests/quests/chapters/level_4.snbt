@@ -85,7 +85,7 @@
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "352F41B3BED0E086"
 			tasks: [{
 				id: "269DA89171668F2A"
@@ -97,7 +97,7 @@
 		}
 		{
 			dependencies: ["352F41B3BED0E086"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "58846BA779358FD2"
 			tasks: [{
 				id: "413A84E06FE1CFAA"
@@ -110,7 +110,7 @@
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "72CAF40486DF976F"
 			tasks: [{
 				id: "026B64363A5FE21E"
@@ -217,7 +217,7 @@
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "12932CB774E66484"
 			tasks: [{
 				id: "7C2A27D31C954D1B"
@@ -229,7 +229,7 @@
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "7D811445066E0898"
 			tasks: [
 				{
@@ -274,46 +274,20 @@
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "3BA339E0640B6081"
-			tasks: [
-				{
-					id: "4CBD4601C827EC15"
-					item: "aquaculture:bluegill"
-					type: "item"
-				}
-				{
-					id: "3B4B483682E076C8"
-					item: "aquaculture:perch"
-					type: "item"
-				}
-				{
-					id: "358152537741347A"
-					item: "aquaculture:smallmouth_bass"
-					type: "item"
-				}
-				{
-					id: "2613A4AACA6BE43A"
-					item: "aquaculture:brown_trout"
-					type: "item"
-				}
-				{
-					id: "3474EBCE175F278C"
-					item: {
-						Count: 1
-						id: "aquaculture:minnow"
-						tag: {
-							Damage: 0
-						}
+			tasks: [{
+				id: "4CBD4601C827EC15"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "forge:small_freshwater_fishes"
 					}
-					type: "item"
 				}
-				{
-					id: "1C75103E693D7EB6"
-					item: "aquaculture:carp"
-					type: "item"
-				}
-			]
+				title: "Any #forge:small_freshwater_fishes"
+				type: "item"
+			}]
 			title: "Small Freshwater Fishes"
 			x: 1.5d
 			y: 1.5d
