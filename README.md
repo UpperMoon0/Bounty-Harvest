@@ -41,5 +41,4 @@ Outputs:
 - `dist/Bounty-Harvest-<version>.zip` — CurseForge client manifest with runtime overrides
 - `dist/Bounty-Harvest-<version>-server.zip` — dedicated server, Forge installer, and launchers
 
-Pull requests validate the quest graph and progression invariants, build both archives, inspect their client/server split, and boot the dedicated server. A version change merged into `main` creates the GitHub release and publishes the client plus its server child file to CurseForge when the `CURSEFORGE_API_TOKEN` repository secret is configured.
-
+Pull requests validate the quest graph, critical progression gates, pack invariants, archive client/server split, and dedicated-server boot. A version change merged into `main` creates the GitHub release after a successful build; CurseForge preflight/publishing runs independently and requires the `CURSEFORGE_API_TOKEN` repository secret. `CURSEFORGE_CORE_API_KEY` is optional and is used only for idempotent duplicate-file lookup through the separate CurseForge Core API.

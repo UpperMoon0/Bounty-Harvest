@@ -23,7 +23,8 @@ $artifact = [string]$pack.artifactName
 $clientArchive = Join-Path $repoRoot "dist/$artifact-$Version.zip"
 $serverArchive = Join-Path $repoRoot "dist/$artifact-$Version-server.zip"
 $changelog = [string](Get-Content -LiteralPath $ChangelogFile -Raw -Encoding utf8)
-$endpoint = "https://minecraft.curseforge.com/api/projects/$($pack.curseForgeProjectId)/upload-file"
+$authorApiBase = 'https://minecraft.curseforge.com/api'
+$uploadEndpoint = "$authorApiBase/projects/$($pack.curseForgeProjectId)/upload-file"
 $mainMetadata = [ordered]@{
     changelog = $changelog
     changelogType = 'markdown'
@@ -44,6 +45,16 @@ if ($DryRun) {
     exit 0
 }
 
+$token = [Environment]::GetEnvironmentVariable('CURSEFORGE_API_TOKEN')
+if ([string]::IsNullOrWhiteSpace($token)) {
+    if ($Preflight) { throw 'CURSEFORGE_API_TOKEN is required for preflight.' }
+    throw 'CURSEFORGE_API_TOKEN is required.'
+}
+if (-not $pack.curseForgeProjectId -or $pack.curseForgeProjectId -eq 0) {
+    throw 'CurseForge project ID is required.'
+}
+$authorHeaders = @{ 'X-Api-Token' = $token }
+
 if ($Preflight) {
     Write-Host "PREFLIGHT: validating CurseForge upload prerequisites"
     if (-not (Test-Path -LiteralPath $clientArchive -PathType Leaf)) {
@@ -55,14 +66,13 @@ if ($Preflight) {
     if (-not (Test-Path -LiteralPath $ChangelogFile -PathType Leaf)) {
         throw "Missing changelog: $ChangelogFile"
     }
-    $token = [Environment]::GetEnvironmentVariable('CURSEFORGE_API_TOKEN')
-    if ([string]::IsNullOrWhiteSpace($token)) { throw 'CURSEFORGE_API_TOKEN is required for preflight.' }
-    if (-not $pack.curseForgeProjectId -or $pack.curseForgeProjectId -eq 0) { throw 'CurseForge project ID is required.' }
-    $headers = @{ 'X-Api-Token' = $token }
-    $gameVersionsEndpoint = "https://api.curseforge.com/v1/mods/$($pack.curseForgeProjectId)/files/game-versions"
+
+    # This is the CurseForge author/upload API. Author tokens authenticate with
+    # X-Api-Token; do not send them to the separate api.curseforge.com Core API.
+    $gameVersionsEndpoint = "$authorApiBase/game/versions"
     try {
-        $gameVersions = Invoke-RestMethod -Uri $gameVersionsEndpoint -Headers $headers
-        $availableNames = @($gameVersions.data | ForEach-Object { [string]$_.name })
+        $gameVersions = @(Invoke-RestMethod -Uri $gameVersionsEndpoint -Headers $authorHeaders)
+        $availableNames = @($gameVersions | ForEach-Object { [string]$_.name })
         $requiredNames = @(
             [string]$pack.minecraftVersion,
             'Forge',
@@ -77,7 +87,7 @@ if ($Preflight) {
         Write-Host "PREFLIGHT: All required game version names are recognized by CurseForge."
     }
     catch {
-        throw "PREFLIGHT: CurseForge API reachability or game-version check failed: $($_.Exception.Message)"
+        throw "PREFLIGHT: CurseForge author API reachability or game-version check failed: $($_.Exception.Message)"
     }
     Write-Host "PREFLIGHT: All checks passed."
     exit 0
@@ -90,9 +100,13 @@ foreach ($archive in @($clientArchive, $serverArchive)) {
     }
 }
 
-$token = [Environment]::GetEnvironmentVariable('CURSEFORGE_API_TOKEN')
-if ([string]::IsNullOrWhiteSpace($token)) { throw 'CURSEFORGE_API_TOKEN is required.' }
-$headers = @{ 'X-Api-Token' = $token }
+# Duplicate recovery uses the separate CurseForge Core API only when its own
+# x-api-key credential is configured. Normal uploads require only the author token.
+$coreApiKey = [Environment]::GetEnvironmentVariable('CURSEFORGE_CORE_API_KEY')
+$coreHeaders = $null
+if (-not [string]::IsNullOrWhiteSpace($coreApiKey)) {
+    $coreHeaders = @{ 'x-api-key' = $coreApiKey }
+}
 $filesEndpoint = "https://api.curseforge.com/v1/mods/$($pack.curseForgeProjectId)/files"
 
 function Get-UploadErrorBody($ErrorRecord) {
@@ -103,21 +117,28 @@ function Get-UploadErrorBody($ErrorRecord) {
 }
 
 function Get-ExistingFileId($DisplayName) {
+    if ($null -eq $coreHeaders) { return $null }
+
     $pageSize = 50
-    for ($index = 0; $index -lt 2500; $index += $pageSize) {
-        $page = Invoke-RestMethod -Uri "$filesEndpoint`?index=$index&pageSize=$pageSize" -Headers $headers
-        if (-not $page -or -not $page.data) { break }
-        foreach ($file in @($page.data)) {
-            if ($file.displayName -eq $DisplayName -and $file.id) { return [string]$file.id }
+    try {
+        for ($index = 0; $index -lt 2500; $index += $pageSize) {
+            $page = Invoke-RestMethod -Uri "$filesEndpoint`?index=$index&pageSize=$pageSize" -Headers $coreHeaders
+            if (-not $page -or -not $page.data) { break }
+            foreach ($file in @($page.data)) {
+                if ($file.displayName -eq $DisplayName -and $file.id) { return [string]$file.id }
+            }
+            if ($page.data.Count -lt $pageSize) { break }
         }
-        if ($page.data.Count -lt $pageSize) { break }
+    }
+    catch {
+        throw "CurseForge duplicate lookup failed with CURSEFORGE_CORE_API_KEY: $($_.Exception.Message)"
     }
     return $null
 }
 
 function Publish-File($Metadata, $Archive) {
     try {
-        $response = Invoke-RestMethod -Uri $endpoint -Method Post -Headers $headers -Form @{
+        $response = Invoke-RestMethod -Uri $uploadEndpoint -Method Post -Headers $authorHeaders -Form @{
             metadata = ($Metadata | ConvertTo-Json -Compress -Depth 5)
             file = Get-Item -LiteralPath $Archive
         }
@@ -131,6 +152,9 @@ function Publish-File($Metadata, $Archive) {
             if ($existing) {
                 Write-Host "Reusing existing CurseForge file $existing for $($Metadata.displayName)."
                 return $existing
+            }
+            if ($null -eq $coreHeaders) {
+                Write-Warning 'CurseForge reported a duplicate. Configure CURSEFORGE_CORE_API_KEY to enable idempotent duplicate lookup.'
             }
         }
         throw "CurseForge upload failed for ${Archive}: $body"

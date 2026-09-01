@@ -10,7 +10,7 @@
 	quests: [
 		{
 			description: [
-				"Bounty Harvest uses levels as research milestones. Completing a level-up quest automatically grants its stage and unlocks the items, recipes, creatures, and systems assigned to that level."
+				"Bounty Harvest uses levels as research milestones. Completing a level-up quest automatically grants its stage; ItemStages uses those stages to gate selected items and selected mod namespaces."
 				""
 				"Locked items show their required stage in their tooltip and are hidden or marked in JEI until that stage is available."
 			]
@@ -25,7 +25,7 @@
 		}
 		{
 			dependencies: ["E60381A75A8C4D21"]
-			description: ["The quest book is the authoritative progression map. Locked-item tooltips identify later-level recipe requirements."]
+			description: ["The quest book is the authoritative progression map. Locked-item tooltips identify later-stage item requirements."]
 			id: "E5CA8B613D89274F"
 			tasks: [{
 				id: "435E9C0AD162A8BF"

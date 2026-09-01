@@ -13,5 +13,5 @@ ItemEvents.tooltip((e) => {
         'minecraft:iron_helmet', 'minecraft:iron_chestplate',
         'minecraft:iron_leggings', 'minecraft:iron_boots', 'minecraft:shield'
     ]
-    ironworking.forEach(item => e.add(item, ['Requires Level 7']))
+    ironworking.forEach(item => e.add(item, ['Requires Level 7 — Ironworking']))
 });

@@ -95,6 +95,8 @@ def main() -> int:
         errors.append("poisonous potato is not isolated as an optional quest")
     if "97C83D41E6A25BF0" in re.search(r"dependencies:\s*\[([^\]]*)\]", level_7, re.DOTALL).group(1):
         errors.append("Level 7 still depends on the poisonous-potato challenge")
+    if 'stage: "iron_age"' not in level_7 or 'dependencies: ["34B5DF088E2F447E"]' not in level_7:
+        errors.append("copper tools do not unlock the Ironworking quest path")
 
     recipes = (ROOT / "kubejs" / "server_scripts" / "recipes.js").read_text(encoding="utf-8")
     if recipes.count("remove({output: 'farmersdelight:wheat_dough'})") != 1:
@@ -106,7 +108,7 @@ def main() -> int:
         errors.append("invalid minecraft:tulip ID remains")
 
     stages = (ROOT / "scripts" / "gen_item_stages.zs").read_text(encoding="utf-8")
-    for stage in [*(f"level_{n}" for n in range(1, 9))]:
+    for stage in [*(f"level_{n}" for n in range(1, 9)), "iron_age"]:
         if f'"{stage}"' not in stages:
             errors.append(f"item staging never references {stage}")
     if '<item:minecraft:string>, "level_3"' not in stages or '<item:minecraft:string>, "level_4"' in stages:
@@ -115,8 +117,8 @@ def main() -> int:
         if f'createModRestriction("{mod_id}"' not in stages:
             errors.append(f"missing explicit integration policy for {mod_id}")
     for item in ("iron_pickaxe", "iron_sword", "iron_helmet", "iron_chestplate", "iron_leggings", "iron_boots"):
-        if f"<item:minecraft:{item}>, \"level_7\"" not in stages:
-            errors.append(f"minecraft:{item} leaks before level_7")
+        if f"<item:minecraft:{item}>, \"iron_age\"" not in stages:
+            errors.append(f"minecraft:{item} leaks before Ironworking")
 
     addons = instance["installedAddons"]
     addon_ids = [int(addon["addonID"]) for addon in addons]

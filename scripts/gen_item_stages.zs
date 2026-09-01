@@ -149,24 +149,24 @@ ItemStages.restrict(<item:minecraft:composter>, "level_7");
 ItemStages.restrict(<item:minecraft:decorated_pot>, "level_7");
 ItemStages.restrict(<item:minecraft:emerald>, "level_7");
 ItemStages.restrict(<item:minecraft:fishing_rod>, "level_7");
-// Iron equipment staged at Level 7 (legacy baseline).
-// The progression overhaul will space copper and iron several levels apart.
-ItemStages.restrict(<tag:items:minecraft:iron_ores>, "level_7");
-ItemStages.restrict(<item:minecraft:iron_nugget>, "level_7");
-ItemStages.restrict(<item:minecraft:raw_iron>, "level_7");
-ItemStages.restrict(<item:minecraft:raw_iron_block>, "level_7");
-ItemStages.restrict(<item:minecraft:iron_ingot>, "level_7");
-ItemStages.restrict(<item:minecraft:iron_block>, "level_7");
-ItemStages.restrict(<item:minecraft:iron_axe>, "level_7");
-ItemStages.restrict(<item:minecraft:iron_hoe>, "level_7");
-ItemStages.restrict(<item:minecraft:iron_pickaxe>, "level_7");
-ItemStages.restrict(<item:minecraft:iron_shovel>, "level_7");
-ItemStages.restrict(<item:minecraft:iron_sword>, "level_7");
-ItemStages.restrict(<item:minecraft:iron_helmet>, "level_7");
-ItemStages.restrict(<item:minecraft:iron_chestplate>, "level_7");
-ItemStages.restrict(<item:minecraft:iron_leggings>, "level_7");
-ItemStages.restrict(<item:minecraft:iron_boots>, "level_7");
-ItemStages.restrict(<item:minecraft:shield>, "level_7");
+// Ironworking is unlocked inside Level 7 after the copper-tool milestone.
+// Keeping the metal stages separate gives BetterCopper a real progression era.
+ItemStages.restrict(<tag:items:minecraft:iron_ores>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_nugget>, "iron_age");
+ItemStages.restrict(<item:minecraft:raw_iron>, "iron_age");
+ItemStages.restrict(<item:minecraft:raw_iron_block>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_ingot>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_block>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_axe>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_hoe>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_pickaxe>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_shovel>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_sword>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_helmet>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_chestplate>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_leggings>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_boots>, "iron_age");
+ItemStages.restrict(<item:minecraft:shield>, "iron_age");
 
 // Explicit integration policy for gameplay-changing systems. These namespace
 // gates prevent adventure and automation mods from bypassing the farm economy.

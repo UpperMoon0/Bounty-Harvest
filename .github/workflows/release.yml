@@ -150,11 +150,12 @@ jobs:
         shell: pwsh
         env:
           CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
+          CURSEFORGE_CORE_API_KEY: ${{ secrets.CURSEFORGE_CORE_API_KEY }}
         run: ./tools/publish_curseforge.ps1 -Version '${{ needs.release-gate.outputs.version }}' -ReleaseType '${{ needs.release-gate.outputs.release_type }}' -SkipBuild
 
   publish-github-release:
     if: needs.release-gate.outputs.should_release == 'true'
-    needs: [release-gate, build, publish-curseforge]
+    needs: [release-gate, build]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:

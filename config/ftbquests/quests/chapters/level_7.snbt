@@ -96,8 +96,70 @@
 			x: -1.5d
 			y: 4.0d
 		}
-{
-			dependencies: ["0A53CC520F7826A3"]
+		{
+			dependencies: ["6A5C20C31BD2649E"]
+			hide_until_deps_visible: false
+			id: "34B5DF088E2F447E"
+			rewards: [{
+				autoclaim: 1b
+				id: "74AE2B560D93C81F"
+				stage: "iron_age"
+				type: "stage"
+			}]
+			tasks: [
+				{
+					id: "1AC9E12AE8A09AC1"
+					item: {
+						Count: 1
+						id: "bettercopper:copper_shovel"
+						tag: { Damage: 0 }
+					}
+					type: "item"
+				}
+				{
+					id: "29DEA7E1C86699A5"
+					item: {
+						Count: 1
+						id: "bettercopper:copper_pickaxe"
+						tag: { Damage: 0 }
+					}
+					type: "item"
+				}
+				{
+					id: "198189A9FD436D17"
+					item: {
+						Count: 1
+						id: "bettercopper:copper_axe"
+						tag: { Damage: 0 }
+					}
+					type: "item"
+				}
+				{
+					id: "1356A443C9E0E10E"
+					item: {
+						Count: 1
+						id: "bettercopper:copper_hoe"
+						tag: { Damage: 0 }
+					}
+					type: "item"
+				}
+				{
+					id: "65DF3C2BBEFFA3BF"
+					item: {
+						Count: 1
+						id: "bettercopper:copper_sword"
+						tag: { Damage: 0 }
+					}
+					type: "item"
+				}
+			]
+			title: "Copper Tools"
+			description: ["Copper tools are the Level 7 metal tier. Completing this milestone automatically unlocks Ironworking."]
+			x: -3.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["34B5DF088E2F447E"]
 			hide_until_deps_visible: false
 			id: "557852FFD6F4D560"
 			description: ["Ironworking is now available. Raw iron also smelts into three nuggets, so plan the ore economy around three raw ore per ingot."]
@@ -150,7 +212,7 @@
 			x: 6.0d
 			y: 1.0d
 		}
-{
+		{
 			dependencies: ["6A5C20C31BD2649E"]
 			id: "1E3050BA6A45ECEA"
 			tasks: [{
