@@ -12,7 +12,8 @@
 		{
 			dependencies: ["D9D29B504CE79600"]
 			description: [
-				"Promotion contract: pay with goods and currency earned from the previous market tier."
+				"After the Level 7 Market Order, spend six iron coins and two apple pies to build out the Iron Kitchen. Both costs are consumed."
+				"Completing this promotion grants Level 8, opens the Level 8 kitchen integrations plus cabbage and rabbit shops, and awards your first Level 8 Decree."
 			]
 			icon: "farmersdelight:iron_knife"
 			id: "4003BF6FE565761F"
@@ -61,7 +62,8 @@
 		{
 			dependencies: ["4003BF6FE565761F"]
 			description: [
-				"Prove the new supply chain works before taking the level market order."
+				"Grow eight each of cabbage, tomato, onion, and rice to establish a diverse kitchen crop base."
+				"These tasks only detect the crops; keep them for recipes, bounties, and the Market Order."
 			]
 			icon: "farmersdelight:iron_knife"
 			id: "7D4D6172A5804B60"
@@ -98,7 +100,8 @@
 		{
 			dependencies: ["7D4D6172A5804B60"]
 			description: [
-				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+				"Ship two chicken sandwiches, two bacon and eggs, and eight cabbage. Every listed item is consumed."
+				"This is the first order centered on prepared meals rather than raw output. Completing it opens the Level 9 Corn Market promotion."
 			]
 			icon: "farmersdelight:iron_knife"
 			id: "F3FBD0BED43C89CC"

@@ -12,7 +12,8 @@
 		{
 			dependencies: ["759303985A706218"]
 			description: [
-				"Promotion contract: pay with goods and currency earned from the previous market tier."
+				"After the Level 2 Market Order, spend 12 copper coins and four cooked chicken to expand into cattle and leather. Both costs are consumed."
+				"Completing this promotion grants Level 3, unlocks the cow shop, and awards your first Level 3 Decree."
 			]
 			icon: "minecraft:leather"
 			id: "573FE8ED65790A78"
@@ -61,7 +62,8 @@
 		{
 			dependencies: ["573FE8ED65790A78"]
 			description: [
-				"Prove the new supply chain works before taking the level market order."
+				"Establish cattle production with four cooked beef and six leather. Leather becomes a long-lived farm resource rather than a one-tier checklist item."
+				"These tasks only detect the items; nothing is consumed here."
 			]
 			icon: "minecraft:leather"
 			id: "8CD41D2CB68F826E"
@@ -86,7 +88,8 @@
 		{
 			dependencies: ["8CD41D2CB68F826E"]
 			description: [
-				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+				"Ship four cooked beef, six leather, and four eggs. The order consumes all listed items."
+				"The egg requirement deliberately pulls Level 2 poultry back into the economy. Completing this contract opens the Level 4 promotion."
 			]
 			icon: "minecraft:leather"
 			id: "9131A689D31728C8"

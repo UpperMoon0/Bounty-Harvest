@@ -12,7 +12,8 @@
 		{
 			dependencies: ["A48274D6A8EE43B3"]
 			description: [
-				"Promotion contract: pay with goods and currency earned from the previous market tier."
+				"After the Level 13 Market Order, spend three gold coins and two bison burgers to open Deep Expeditions. Both costs are consumed."
+				"Completing this promotion grants Level 14, unlocks Alex's Caves item progression plus diamond and lapis access, and awards your first Level 14 Decree."
 			]
 			icon: "alexscaves:cave_tablet"
 			id: "4BB6B303F8005D7E"
@@ -61,7 +62,8 @@
 		{
 			dependencies: ["4BB6B303F8005D7E"]
 			description: [
-				"Prove the new supply chain works before taking the level market order."
+				"Obtain a Cave Tablet, four diamonds, and eight amethyst shards to prove the farm economy can support high-value exploration."
+				"These tasks only detect the items. Item access is staged here, but ItemStages cannot guarantee that every world-generation or exploration mechanic was inaccessible earlier."
 			]
 			icon: "alexscaves:cave_tablet"
 			id: "9524652C04DDDC53"
@@ -91,7 +93,8 @@
 		{
 			dependencies: ["9524652C04DDDC53"]
 			description: [
-				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+				"Ship one Cave Tablet, four diamonds, and eight amethyst shards. Every listed item is consumed, including the tablet."
+				"Completing this high-value expedition order opens the final current promotion: Level 15 Twilight Frontier."
 			]
 			icon: "alexscaves:cave_tablet"
 			id: "250184A59EA4EBA2"

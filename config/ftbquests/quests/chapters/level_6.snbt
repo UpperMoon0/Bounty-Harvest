@@ -12,7 +12,8 @@
 		{
 			dependencies: ["964E4E55A3EFB49E"]
 			description: [
-				"Promotion contract: pay with goods and currency earned from the previous market tier."
+				"After the Level 5 Market Order, spend 24 copper coins and four cooked salmon to expand the farm into sheep, sugar, and potatoes. Both costs are consumed."
+				"Completing this promotion grants Level 6, unlocks the sheep, sugar cane, and potato shops, and awards your first Level 6 Decree."
 			]
 			icon: "minecraft:white_wool"
 			id: "7297A69487BEE03D"
@@ -61,7 +62,8 @@
 		{
 			dependencies: ["7297A69487BEE03D"]
 			description: [
-				"Prove the new supply chain works before taking the level market order."
+				"Produce eight white wool, 12 baked potatoes, eight sugar, and four wool yarn to establish the new pantry and textile loops."
+				"These tasks only detect the items; nothing is consumed until you choose to submit the Market Order."
 			]
 			icon: "minecraft:white_wool"
 			id: "E77A040884D2FDC9"
@@ -98,7 +100,8 @@
 		{
 			dependencies: ["E77A040884D2FDC9"]
 			description: [
-				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+				"Ship eight wool, eight baked potatoes, eight sugar, and four wool yarn. All listed goods are consumed."
+				"Completing this one-time order opens Level 7, where the farm begins its copper workshop and the road toward Ironworking."
 			]
 			icon: "minecraft:white_wool"
 			id: "5EF6647A3BB43A42"

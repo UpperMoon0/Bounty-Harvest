@@ -12,7 +12,8 @@
 		{
 			dependencies: ["C249CFA083AB4179"]
 			description: [
-				"Promotion contract: pay with goods and currency earned from the previous market tier."
+				"After the Level 12 Market Order, spend two gold coins and one electric motor to open Wildlife Cuisine. Both costs are consumed."
+				"Completing this promotion grants Level 13 and unlocks the progression-facing Alex's Delight and Animal Dictionary content. Alex's Mobs entities themselves are not stage-gated."
 			]
 			icon: "alexsmobs:animal_dictionary"
 			id: "14A6F09E58565C89"
@@ -60,7 +61,8 @@
 		{
 			dependencies: ["14A6F09E58565C89"]
 			description: [
-				"Prove the new supply chain works before taking the level market order."
+				"Obtain the Animal Dictionary and prepare two bison burgers plus two acacia blossom soups to establish the wildlife-food branch."
+				"These are detection tasks. Wildlife may already exist in the world; this tier marks when the pack expects you to use its progression-facing tools and cuisine."
 			]
 			icon: "alexsmobs:animal_dictionary"
 			id: "2B337D14D79B9F50"
@@ -90,7 +92,8 @@
 		{
 			dependencies: ["2B337D14D79B9F50"]
 			description: [
-				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+				"Ship three bison burgers, two acacia blossom soups, and six leather. All listed goods are consumed."
+				"Leather returns from Level 3 on purpose, tying mature wildlife cuisine back to the cattle economy. Completing the order opens Level 14."
 			]
 			icon: "alexsmobs:animal_dictionary"
 			id: "A48274D6A8EE43B3"

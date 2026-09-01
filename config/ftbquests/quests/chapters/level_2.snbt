@@ -12,7 +12,8 @@
 		{
 			dependencies: ["A06092AE6EA56685"]
 			description: [
-				"Promotion contract: pay with goods and currency earned from the previous market tier."
+				"After the Level 1 Market Order, spend eight copper coins and four bread to expand into poultry. Both costs are consumed."
+				"Completing this promotion grants Level 2, unlocks the chicken shop, and awards your first Level 2 Decree."
 			]
 			icon: "minecraft:egg"
 			id: "7D3858343983B67A"
@@ -61,7 +62,8 @@
 		{
 			dependencies: ["7D3858343983B67A"]
 			description: [
-				"Prove the new supply chain works before taking the level market order."
+				"Raise chickens, collect eight eggs, cook four chicken, and make eight charcoal to establish the poultry-and-hearth loop."
+				"These are detection tasks; the items are not consumed here and can be saved for bounties or the Market Order."
 			]
 			icon: "minecraft:egg"
 			id: "AA4870BE13B7CF35"
@@ -92,7 +94,8 @@
 		{
 			dependencies: ["AA4870BE13B7CF35"]
 			description: [
-				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+				"Ship eight eggs, four cooked chicken, and eight charcoal. Every listed item is consumed when the order completes."
+				"Completing this one-time contract opens the Level 3 promotion and keeps poultry goods relevant in later orders."
 			]
 			icon: "minecraft:egg"
 			id: "759303985A706218"

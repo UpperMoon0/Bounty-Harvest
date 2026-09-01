@@ -12,7 +12,8 @@
 		{
 			dependencies: ["250184A59EA4EBA2"]
 			description: [
-				"Promotion contract: pay with goods and currency earned from the previous market tier."
+				"After the Level 14 Market Order, spend four gold coins and two diamonds to open the Twilight Frontier. Both costs are consumed."
+				"Completing this promotion grants Level 15 and unlocks the pack's Twilight Forest, Twilight's Flavors & Delight, and End's Delight integration tier."
 			]
 			icon: "twilightforest:magic_map"
 			id: "2820C98F56814014"
@@ -61,7 +62,8 @@
 		{
 			dependencies: ["2820C98F56814014"]
 			description: [
-				"Prove the new supply chain works before taking the level market order."
+				"Obtain a Twilight Forest Magic Map and prepare two Glowstew to establish the expedition-and-cuisine loop for the final current tier."
+				"These tasks only detect the items; keep them until you are ready to submit the final Market Order."
 			]
 			icon: "twilightforest:magic_map"
 			id: "8F6E2BD7AA1699E2"
@@ -85,7 +87,8 @@
 		{
 			dependencies: ["8F6E2BD7AA1699E2"]
 			description: [
-				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+				"Ship one Magic Map, two Glowstew, two tacos, and two pineapple pies. Every listed item is consumed."
+				"The older prepared foods are intentional carryover from Levels 9 and 11. Completing this order finishes the current 0.12 progression; there is no Level 16 yet."
 			]
 			icon: "twilightforest:magic_map"
 			id: "998D5FCA54B02B56"

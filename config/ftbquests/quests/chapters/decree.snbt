@@ -13,479 +13,165 @@
 	quests: [
 		{
 			dependencies: ["74402ECAFFAFAEC4"]
+			description: ["Repeatable replacement purchase for the Level 1 Bountiful order pool. Spend four copper coins and receive one Level 1 Decree; the coins are consumed.", "The Level 1 intro already gives you a starter decree for free. Buying another decree does not advance progression or complete a Market Order."]
 			icon: "minecraft:wheat"
 			id: "916C81461A9E39A4"
-			rewards: [
-				{
-					id: "315C70FC8B9E155D"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_1\"]}"
-							display: { Name: "{\"text\":\"Level 1 Decree\"}" }
-						}
-					}
-					type: "item"
-				}
-			]
-			tasks: [
-				{
-					consume_items: true
-					count: 4L
-					id: "14A9D8AB078669B5"
-					item: "kubejs:copper_coin"
-					type: "item"
-				}
-			]
+			rewards: [{id: "315C70FC8B9E155D", item: {Count: 1, id: "bountiful:decree", tag: {RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_1\"]}", display: {Name: "{\"text\":\"Level 1 Decree\"}"}}}, type: "item"}]
+			tasks: [{consume_items: true, count: 4L, id: "14A9D8AB078669B5", item: "kubejs:copper_coin", type: "item"}]
 			title: "Level 1 Decree"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["7D3858343983B67A"]
+			description: ["Repeatable replacement purchase unlocked with Level 2. Spend eight copper coins for one Level 2 Decree; the coins are consumed.", "This only restores access to Level 2 Bountiful orders. It does not grant a stage or count as a Market Order."]
 			icon: "minecraft:egg"
 			id: "6D5B5A59182E3F8D"
-			rewards: [
-				{
-					id: "615AC31DBA10C00D"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_2\"]}"
-							display: { Name: "{\"text\":\"Level 2 Decree\"}" }
-						}
-					}
-					type: "item"
-				}
-			]
-			tasks: [
-				{
-					consume_items: true
-					count: 8L
-					id: "27EA5C2902C3FFA8"
-					item: "kubejs:copper_coin"
-					type: "item"
-				}
-			]
+			rewards: [{id: "615AC31DBA10C00D", item: {Count: 1, id: "bountiful:decree", tag: {RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_2\"]}", display: {Name: "{\"text\":\"Level 2 Decree\"}"}}}, type: "item"}]
+			tasks: [{consume_items: true, count: 8L, id: "27EA5C2902C3FFA8", item: "kubejs:copper_coin", type: "item"}]
 			title: "Level 2 Decree"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["573FE8ED65790A78"]
+			description: ["Repeatable replacement purchase unlocked with Level 3. Spend 12 copper coins for one Level 3 Decree; the coins are consumed.", "This only restores access to Level 3 Bountiful orders. It does not grant a stage or count as a Market Order."]
 			icon: "minecraft:leather"
 			id: "AD87A02E08A25382"
-			rewards: [
-				{
-					id: "C582430E7804D041"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_3\"]}"
-							display: { Name: "{\"text\":\"Level 3 Decree\"}" }
-						}
-					}
-					type: "item"
-				}
-			]
-			tasks: [
-				{
-					consume_items: true
-					count: 12L
-					id: "3127A540AA2F2744"
-					item: "kubejs:copper_coin"
-					type: "item"
-				}
-			]
+			rewards: [{id: "C582430E7804D041", item: {Count: 1, id: "bountiful:decree", tag: {RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_3\"]}", display: {Name: "{\"text\":\"Level 3 Decree\"}"}}}, type: "item"}]
+			tasks: [{consume_items: true, count: 12L, id: "3127A540AA2F2744", item: "kubejs:copper_coin", type: "item"}]
 			title: "Level 3 Decree"
 			x: 4.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
+			description: ["Repeatable replacement purchase unlocked with Level 4. Spend 16 copper coins for one Level 4 Decree; the coins are consumed.", "This only restores access to Level 4 Bountiful orders. It does not grant a stage or count as a Market Order."]
 			icon: "minecraft:carrot"
 			id: "D12CA32740D40CEC"
-			rewards: [
-				{
-					id: "AF005675793DA892"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_4\"]}"
-							display: { Name: "{\"text\":\"Level 4 Decree\"}" }
-						}
-					}
-					type: "item"
-				}
-			]
-			tasks: [
-				{
-					consume_items: true
-					count: 16L
-					id: "74D7B3A4DF04C8AA"
-					item: "kubejs:copper_coin"
-					type: "item"
-				}
-			]
+			rewards: [{id: "AF005675793DA892", item: {Count: 1, id: "bountiful:decree", tag: {RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_4\"]}", display: {Name: "{\"text\":\"Level 4 Decree\"}"}}}, type: "item"}]
+			tasks: [{consume_items: true, count: 16L, id: "74D7B3A4DF04C8AA", item: "kubejs:copper_coin", type: "item"}]
 			title: "Level 4 Decree"
 			x: 6.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["29747D157C7F8C88"]
+			description: ["Repeatable replacement purchase unlocked with Level 5. Spend 20 copper coins for one Level 5 Decree; the coins are consumed.", "This only restores access to Level 5 Bountiful orders. It does not grant a stage or count as a Market Order."]
 			icon: "minecraft:fishing_rod"
 			id: "6815B26D9C609ECA"
-			rewards: [
-				{
-					id: "C0900590F9E8D7A0"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_5\"]}"
-							display: { Name: "{\"text\":\"Level 5 Decree\"}" }
-						}
-					}
-					type: "item"
-				}
-			]
-			tasks: [
-				{
-					consume_items: true
-					count: 20L
-					id: "442F0C84BB0FD497"
-					item: "kubejs:copper_coin"
-					type: "item"
-				}
-			]
+			rewards: [{id: "C0900590F9E8D7A0", item: {Count: 1, id: "bountiful:decree", tag: {RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_5\"]}", display: {Name: "{\"text\":\"Level 5 Decree\"}"}}}, type: "item"}]
+			tasks: [{consume_items: true, count: 20L, id: "442F0C84BB0FD497", item: "kubejs:copper_coin", type: "item"}]
 			title: "Level 5 Decree"
 			x: 8.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["7297A69487BEE03D"]
+			description: ["Repeatable replacement purchase unlocked with Level 6. Spend 24 copper coins for one Level 6 Decree; the coins are consumed.", "This only restores access to Level 6 Bountiful orders. It does not grant a stage or count as a Market Order."]
 			icon: "minecraft:white_wool"
 			id: "3558C4D36AD2F3D1"
-			rewards: [
-				{
-					id: "F48B929ED2E16438"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_6\"]}"
-							display: { Name: "{\"text\":\"Level 6 Decree\"}" }
-						}
-					}
-					type: "item"
-				}
-			]
-			tasks: [
-				{
-					consume_items: true
-					count: 24L
-					id: "315328A9C107EDA0"
-					item: "kubejs:copper_coin"
-					type: "item"
-				}
-			]
+			rewards: [{id: "F48B929ED2E16438", item: {Count: 1, id: "bountiful:decree", tag: {RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_6\"]}", display: {Name: "{\"text\":\"Level 6 Decree\"}"}}}, type: "item"}]
+			tasks: [{consume_items: true, count: 24L, id: "315328A9C107EDA0", item: "kubejs:copper_coin", type: "item"}]
 			title: "Level 6 Decree"
 			x: 10.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["0A53CC520F7826A3"]
+			description: ["Repeatable replacement purchase unlocked with Level 7. Spend four iron coins for one Level 7 Decree; the coins are consumed.", "This only restores access to Level 7 Bountiful orders. It does not unlock Ironworking; the Copper Tools milestone does that."]
 			icon: "minecraft:copper_ingot"
 			id: "25E7913F83B1BB18"
-			rewards: [
-				{
-					id: "98BB38F7DCF59E0F"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_7\"]}"
-							display: { Name: "{\"text\":\"Level 7 Decree\"}" }
-						}
-					}
-					type: "item"
-				}
-			]
-			tasks: [
-				{
-					consume_items: true
-					count: 4L
-					id: "BDA2E287F8890B64"
-					item: "kubejs:iron_coin"
-					type: "item"
-				}
-			]
+			rewards: [{id: "98BB38F7DCF59E0F", item: {Count: 1, id: "bountiful:decree", tag: {RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_7\"]}", display: {Name: "{\"text\":\"Level 7 Decree\"}"}}}, type: "item"}]
+			tasks: [{consume_items: true, count: 4L, id: "BDA2E287F8890B64", item: "kubejs:iron_coin", type: "item"}]
 			title: "Level 7 Decree"
 			x: 12.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["4003BF6FE565761F"]
+			description: ["Repeatable replacement purchase unlocked with Level 8. Spend six iron coins for one Level 8 Decree; the coins are consumed.", "This only restores access to Level 8 Bountiful orders. It does not grant a stage or count as a Market Order."]
 			icon: "farmersdelight:iron_knife"
 			id: "181C01B0489DBBB5"
-			rewards: [
-				{
-					id: "F2458704FFFE264D"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_8\"]}"
-							display: { Name: "{\"text\":\"Level 8 Decree\"}" }
-						}
-					}
-					type: "item"
-				}
-			]
-			tasks: [
-				{
-					consume_items: true
-					count: 6L
-					id: "B6A231773A3CCEA0"
-					item: "kubejs:iron_coin"
-					type: "item"
-				}
-			]
+			rewards: [{id: "F2458704FFFE264D", item: {Count: 1, id: "bountiful:decree", tag: {RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_8\"]}", display: {Name: "{\"text\":\"Level 8 Decree\"}"}}}, type: "item"}]
+			tasks: [{consume_items: true, count: 6L, id: "B6A231773A3CCEA0", item: "kubejs:iron_coin", type: "item"}]
 			title: "Level 8 Decree"
 			x: 14.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["C0B4AA32262BF02B"]
+			description: ["Repeatable replacement purchase unlocked with Level 9. Spend eight iron coins for one Level 9 Decree; the coins are consumed.", "This only restores access to Level 9 Bountiful orders. It does not grant a stage or count as a Market Order."]
 			icon: "corn_delight:corn"
 			id: "924CB57F949620C6"
-			rewards: [
-				{
-					id: "4308A24C116ACC7A"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_9\"]}"
-							display: { Name: "{\"text\":\"Level 9 Decree\"}" }
-						}
-					}
-					type: "item"
-				}
-			]
-			tasks: [
-				{
-					consume_items: true
-					count: 8L
-					id: "6BF58DA1E20D5DFA"
-					item: "kubejs:iron_coin"
-					type: "item"
-				}
-			]
+			rewards: [{id: "4308A24C116ACC7A", item: {Count: 1, id: "bountiful:decree", tag: {RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_9\"]}", display: {Name: "{\"text\":\"Level 9 Decree\"}"}}}, type: "item"}]
+			tasks: [{consume_items: true, count: 8L, id: "6BF58DA1E20D5DFA", item: "kubejs:iron_coin", type: "item"}]
 			title: "Level 9 Decree"
 			x: 0.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["201FA0D785EF1770"]
+			description: ["Repeatable replacement purchase unlocked with Level 10. Spend 10 iron coins for one Level 10 Decree; the coins are consumed.", "This only restores access to Level 10 Bountiful orders. It does not grant a stage or count as a Market Order."]
 			icon: "create:andesite_alloy"
 			id: "DEC262136C2F4068"
-			rewards: [
-				{
-					id: "0F1886F7E3ACA91C"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_10\"]}"
-							display: { Name: "{\"text\":\"Level 10 Decree\"}" }
-						}
-					}
-					type: "item"
-				}
-			]
-			tasks: [
-				{
-					consume_items: true
-					count: 10L
-					id: "888C5674CB07A1BC"
-					item: "kubejs:iron_coin"
-					type: "item"
-				}
-			]
+			rewards: [{id: "0F1886F7E3ACA91C", item: {Count: 1, id: "bountiful:decree", tag: {RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_10\"]}", display: {Name: "{\"text\":\"Level 10 Decree\"}"}}}, type: "item"}]
+			tasks: [{consume_items: true, count: 10L, id: "888C5674CB07A1BC", item: "kubejs:iron_coin", type: "item"}]
 			title: "Level 10 Decree"
 			x: 2.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["1FFCFC4EAF71D122"]
+			description: ["Repeatable replacement purchase unlocked with Level 11. Spend 12 iron coins for one Level 11 Decree; the coins are consumed.", "This only restores access to Level 11 Bountiful orders. It does not grant a stage or count as a Market Order."]
 			icon: "pineapple_delight:pineapple"
 			id: "CAA2A8768A00B9C4"
-			rewards: [
-				{
-					id: "C010A83E964865E3"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_11\"]}"
-							display: { Name: "{\"text\":\"Level 11 Decree\"}" }
-						}
-					}
-					type: "item"
-				}
-			]
-			tasks: [
-				{
-					consume_items: true
-					count: 12L
-					id: "C35DCC3B433DA05C"
-					item: "kubejs:iron_coin"
-					type: "item"
-				}
-			]
+			rewards: [{id: "C010A83E964865E3", item: {Count: 1, id: "bountiful:decree", tag: {RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_11\"]}", display: {Name: "{\"text\":\"Level 11 Decree\"}"}}}, type: "item"}]
+			tasks: [{consume_items: true, count: 12L, id: "C35DCC3B433DA05C", item: "kubejs:iron_coin", type: "item"}]
 			title: "Level 11 Decree"
 			x: 4.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["D147BB0FA78A2EFA"]
+			description: ["Repeatable replacement purchase unlocked with Level 12. Spend one gold coin for one Level 12 Decree; the coin is consumed.", "This only restores access to Level 12 Bountiful orders. It does not grant a stage or count as a Market Order."]
 			icon: "createaddition:electric_motor"
 			id: "33601D770267E745"
-			rewards: [
-				{
-					id: "D9EFC82A8A382C6C"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_12\"]}"
-							display: { Name: "{\"text\":\"Level 12 Decree\"}" }
-						}
-					}
-					type: "item"
-				}
-			]
-			tasks: [
-				{
-					consume_items: true
-					id: "951A1362D62FAB33"
-					item: "kubejs:gold_coin"
-					type: "item"
-				}
-			]
+			rewards: [{id: "D9EFC82A8A382C6C", item: {Count: 1, id: "bountiful:decree", tag: {RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_12\"]}", display: {Name: "{\"text\":\"Level 12 Decree\"}"}}}, type: "item"}]
+			tasks: [{consume_items: true, id: "951A1362D62FAB33", item: "kubejs:gold_coin", type: "item"}]
 			title: "Level 12 Decree"
 			x: 6.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["14A6F09E58565C89"]
+			description: ["Repeatable replacement purchase unlocked with Level 13. Spend two gold coins for one Level 13 Decree; the coins are consumed.", "This only restores access to Level 13 Bountiful orders. It does not grant a stage or count as a Market Order."]
 			icon: "alexsmobs:animal_dictionary"
 			id: "B2A37B618242AE2A"
-			rewards: [
-				{
-					id: "BC24844A9568E344"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_13\"]}"
-							display: { Name: "{\"text\":\"Level 13 Decree\"}" }
-						}
-					}
-					type: "item"
-				}
-			]
-			tasks: [
-				{
-					consume_items: true
-					count: 2L
-					id: "C13D3C70BC415EA2"
-					item: "kubejs:gold_coin"
-					type: "item"
-				}
-			]
+			rewards: [{id: "BC24844A9568E344", item: {Count: 1, id: "bountiful:decree", tag: {RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_13\"]}", display: {Name: "{\"text\":\"Level 13 Decree\"}"}}}, type: "item"}]
+			tasks: [{consume_items: true, count: 2L, id: "C13D3C70BC415EA2", item: "kubejs:gold_coin", type: "item"}]
 			title: "Level 13 Decree"
 			x: 8.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["4BB6B303F8005D7E"]
+			description: ["Repeatable replacement purchase unlocked with Level 14. Spend three gold coins for one Level 14 Decree; the coins are consumed.", "This only restores access to Level 14 Bountiful orders. It does not grant a stage or count as a Market Order."]
 			icon: "alexscaves:cave_tablet"
 			id: "7A8E853135258CC7"
-			rewards: [
-				{
-					id: "3D9BB21E5ECDE92B"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_14\"]}"
-							display: { Name: "{\"text\":\"Level 14 Decree\"}" }
-						}
-					}
-					type: "item"
-				}
-			]
-			tasks: [
-				{
-					consume_items: true
-					count: 3L
-					id: "F7EA3590E0CC6929"
-					item: "kubejs:gold_coin"
-					type: "item"
-				}
-			]
+			rewards: [{id: "3D9BB21E5ECDE92B", item: {Count: 1, id: "bountiful:decree", tag: {RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_14\"]}", display: {Name: "{\"text\":\"Level 14 Decree\"}"}}}, type: "item"}]
+			tasks: [{consume_items: true, count: 3L, id: "F7EA3590E0CC6929", item: "kubejs:gold_coin", type: "item"}]
 			title: "Level 14 Decree"
 			x: 10.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["2820C98F56814014"]
+			description: ["Repeatable replacement purchase unlocked with Level 15. Spend four gold coins for one Level 15 Decree; the coins are consumed.", "This only restores access to Level 15 Bountiful orders. It does not grant a stage or count as a Market Order."]
 			icon: "twilightforest:magic_map"
 			id: "84FC1EB69B599A11"
-			rewards: [
-				{
-					id: "CDD4DE546264D53E"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_15\"]}"
-							display: { Name: "{\"text\":\"Level 15 Decree\"}" }
-						}
-					}
-					type: "item"
-				}
-			]
-			tasks: [
-				{
-					consume_items: true
-					count: 4L
-					id: "382D1B133B9A3AC7"
-					item: "kubejs:gold_coin"
-					type: "item"
-				}
-			]
+			rewards: [{id: "CDD4DE546264D53E", item: {Count: 1, id: "bountiful:decree", tag: {RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_15\"]}", display: {Name: "{\"text\":\"Level 15 Decree\"}"}}}, type: "item"}]
+			tasks: [{consume_items: true, count: 4L, id: "382D1B133B9A3AC7", item: "kubejs:gold_coin", type: "item"}]
 			title: "Level 15 Decree"
 			x: 12.0d
 			y: 2.0d

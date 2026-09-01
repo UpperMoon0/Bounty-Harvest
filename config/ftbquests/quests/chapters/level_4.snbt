@@ -12,7 +12,8 @@
 		{
 			dependencies: ["9131A689D31728C8"]
 			description: [
-				"Promotion contract: pay with goods and currency earned from the previous market tier."
+				"After the Level 3 Market Order, spend 16 copper coins and four cooked beef to add roots, pigs, and a broader food chain. Both costs are consumed."
+				"Completing this promotion grants Level 4, unlocks the pig and carrot shops, and awards your first Level 4 Decree."
 			]
 			icon: "minecraft:carrot"
 			id: "1003C2B79F710366"
@@ -61,7 +62,8 @@
 		{
 			dependencies: ["1003C2B79F710366"]
 			description: [
-				"Prove the new supply chain works before taking the level market order."
+				"Produce 12 carrots, six cooked porkchops, and six Farmer's Delight wheat dough to connect crops, livestock, and cooking."
+				"These tasks only detect the items; save the stock for bounties and the Market Order."
 			]
 			icon: "minecraft:carrot"
 			id: "E1C4D64071102D60"
@@ -92,7 +94,8 @@
 		{
 			dependencies: ["E1C4D64071102D60"]
 			description: [
-				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+				"Ship 12 carrots, six cooked porkchops, and six wheat dough. All listed items are consumed."
+				"Completing this one-time contract opens the Level 5 promotion into fishing and coastal food."
 			]
 			icon: "minecraft:carrot"
 			id: "284BDA8AD6A1EE07"

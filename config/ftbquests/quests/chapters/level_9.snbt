@@ -12,7 +12,8 @@
 		{
 			dependencies: ["F3FBD0BED43C89CC"]
 			description: [
-				"Promotion contract: pay with goods and currency earned from the previous market tier."
+				"After the Level 8 Market Order, spend eight iron coins and two chicken sandwiches to open the Corn Market. Both costs are consumed."
+				"Completing this promotion grants Level 9, unlocks Corn Delight progression, and awards your first Level 9 Decree."
 			]
 			icon: "corn_delight:corn"
 			id: "C0B4AA32262BF02B"
@@ -61,7 +62,8 @@
 		{
 			dependencies: ["C0B4AA32262BF02B"]
 			description: [
-				"Prove the new supply chain works before taking the level market order."
+				"Harvest 12 corn and turn it into four cornbread, four tortillas, and two tacos to prove the crop has a complete processing chain."
+				"These tasks only detect the food; nothing is consumed here."
 			]
 			icon: "corn_delight:corn"
 			id: "547338FFDF3F8C9F"
@@ -98,7 +100,8 @@
 		{
 			dependencies: ["547338FFDF3F8C9F"]
 			description: [
-				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+				"Ship 12 corn, four cornbread, and two tacos. All listed goods are consumed; tortillas are a production proof but are not part of this shipment."
+				"Completing the order opens Level 10 and the first major mechanical-farm expansion."
 			]
 			icon: "corn_delight:corn"
 			id: "2A9904A355A5FE23"

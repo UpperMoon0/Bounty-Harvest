@@ -12,7 +12,8 @@
 		{
 			dependencies: ["C4F9E553B22E40CC"]
 			description: [
-				"Promotion contract: pay with goods and currency earned from the previous market tier."
+				"After the Level 10 Market Order, spend 16 iron coins and four andesite alloy to expand automation into tropical processing. Both costs are consumed."
+				"Completing this promotion grants Level 11, unlocks Pineapple Delight and Slice & Dice progression, and awards your first Level 11 Decree."
 			]
 			icon: "pineapple_delight:pineapple"
 			id: "1FFCFC4EAF71D122"
@@ -61,7 +62,8 @@
 		{
 			dependencies: ["1FFCFC4EAF71D122"]
 			description: [
-				"Prove the new supply chain works before taking the level market order."
+				"Harvest eight pineapple and turn the crop into two pineapple pies, two pineapple fried rice, and two pineapple juice."
+				"These are detection tasks; the food stays in your inventory for orders or further processing."
 			]
 			icon: "pineapple_delight:pineapple"
 			id: "CAD91105DBDBD22C"
@@ -98,7 +100,8 @@
 		{
 			dependencies: ["CAD91105DBDBD22C"]
 			description: [
-				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+				"Ship eight pineapple, two pineapple pies, and two tacos. Every listed item is consumed."
+				"The taco requirement deliberately keeps the Level 9 corn chain profitable. Completing this order opens Level 12 Power & Logistics."
 			]
 			icon: "pineapple_delight:pineapple"
 			id: "2507AB50F6CCD90E"

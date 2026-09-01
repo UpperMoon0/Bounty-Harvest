@@ -12,7 +12,8 @@
 		{
 			dependencies: ["284BDA8AD6A1EE07"]
 			description: [
-				"Promotion contract: pay with goods and currency earned from the previous market tier."
+				"After the Level 4 Market Order, spend 20 copper coins and six wheat dough to open the fishing economy. Both costs are consumed."
+				"Completing this promotion grants Level 5, unlocks Aquaculture and Ocean's Delight progression, and awards your first Level 5 Decree."
 			]
 			icon: "minecraft:fishing_rod"
 			id: "29747D157C7F8C88"
@@ -61,7 +62,8 @@
 		{
 			dependencies: ["29747D157C7F8C88"]
 			description: [
-				"Prove the new supply chain works before taking the level market order."
+				"Craft a fishing rod, catch eight cod and six salmon, then prepare two seagrass salads to prove the coastal supply chain."
+				"These tasks only detect items. The fishing route is intentionally available before Ironworking; you do not need iron to begin this tier."
 			]
 			icon: "minecraft:fishing_rod"
 			id: "DD0D246B33124C7D"
@@ -97,7 +99,8 @@
 		{
 			dependencies: ["DD0D246B33124C7D"]
 			description: [
-				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+				"Ship six cod, four salmon, and two seagrass salads. The fishing rod is not surrendered, but every listed shipment item is consumed."
+				"Completing this Market Order opens the Level 6 promotion into sheep, sugar, potatoes, and pantry production."
 			]
 			icon: "minecraft:fishing_rod"
 			id: "964E4E55A3EFB49E"

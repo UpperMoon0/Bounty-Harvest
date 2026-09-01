@@ -12,7 +12,8 @@
 		{
 			dependencies: ["2A9904A355A5FE23"]
 			description: [
-				"Promotion contract: pay with goods and currency earned from the previous market tier."
+				"After the Level 9 Market Order, spend 12 iron coins and two tacos to enter the Mechanical Farm tier. Both costs are consumed."
+				"Completing this promotion grants Level 10, unlocks Create progression and redstone access, and awards your first Level 10 Decree."
 			]
 			icon: "create:andesite_alloy"
 			id: "201FA0D785EF1770"
@@ -61,7 +62,8 @@
 		{
 			dependencies: ["201FA0D785EF1770"]
 			description: [
-				"Prove the new supply chain works before taking the level market order."
+				"Craft eight andesite alloy, eight shafts, and eight cogwheels to establish the basic components for Create-powered farm automation."
+				"This quest only detects the components. Keep them for machines, later bounties, and the Market Order."
 			]
 			icon: "create:andesite_alloy"
 			id: "525F40C497949612"
@@ -92,7 +94,8 @@
 		{
 			dependencies: ["525F40C497949612"]
 			description: [
-				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+				"Ship eight andesite alloy, eight shafts, and 16 wheat. All listed goods are consumed."
+				"Requiring wheat again is deliberate: automation should increase the value of the original farm rather than replace it. Completing the order opens Level 11."
 			]
 			icon: "create:andesite_alloy"
 			id: "C4F9E553B22E40CC"

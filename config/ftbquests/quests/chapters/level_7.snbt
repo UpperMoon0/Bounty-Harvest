@@ -12,7 +12,8 @@
 		{
 			dependencies: ["5EF6647A3BB43A42"]
 			description: [
-				"Promotion contract: pay with goods and currency earned from the previous market tier."
+				"After the Level 6 Market Order, spend 32 copper coins and eight baked potatoes to open the Copper Workshop. Both costs are consumed."
+				"Level 7 unlocks copper progression and Better Copper tools, but iron remains locked until you complete the full copper tool milestone below."
 			]
 			icon: "minecraft:copper_ingot"
 			id: "0A53CC520F7826A3"
@@ -60,6 +61,10 @@
 		}
 		{
 			dependencies: ["0A53CC520F7826A3"]
+			description: [
+				"Mine 12 raw copper and smelt six copper ingots to establish a reliable metal supply."
+				"This quest only detects the materials; keep them for the copper tools and later Market Order."
+			]
 			icon: "minecraft:copper_ingot"
 			id: "6A5C20C31BD2649E"
 			tasks: [
@@ -83,7 +88,8 @@
 		{
 			dependencies: ["6A5C20C31BD2649E"]
 			description: [
-				"Completing the full copper toolset unlocks Ironworking."
+				"Craft the complete Better Copper toolset: shovel, pickaxe, axe, hoe, and sword. The tools are detected, not consumed."
+				"Completing this milestone auto-grants the Ironworking stage. That is the real unlock for iron materials and vanilla iron equipment; simply reaching Level 7 is not enough."
 			]
 			icon: "bettercopper:copper_pickaxe"
 			id: "34B5DF088E2F447E"
@@ -129,6 +135,10 @@
 		}
 		{
 			dependencies: ["34B5DF088E2F447E"]
+			description: [
+				"With Ironworking active, collect six raw iron and smelt three iron ingots."
+				"This detection-only step verifies the copper-to-iron gate worked before the quest line asks for iron products."
+			]
 			icon: "minecraft:iron_ingot"
 			id: "557852FFD6F4D560"
 			tasks: [
@@ -151,6 +161,10 @@
 		}
 		{
 			dependencies: ["557852FFD6F4D560"]
+			description: [
+				"Turn the established cattle herd into a processed-food line with four milk bottles and two apple pies."
+				"These are detection tasks and do not consume the food; keep it for the Market Order."
+			]
 			icon: "farmersdelight:milk_bottle"
 			id: "B912F1FE8E149DE8"
 			tasks: [
@@ -174,7 +188,8 @@
 		{
 			dependencies: ["B912F1FE8E149DE8"]
 			description: [
-				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+				"Ship six copper ingots, four iron ingots, four milk bottles, and two apple pies. All listed goods are consumed."
+				"This order proves both the metal and dairy branches are established, then opens the Level 8 Iron Kitchen promotion."
 			]
 			icon: "minecraft:copper_ingot"
 			id: "D9D29B504CE79600"

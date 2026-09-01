@@ -11,6 +11,10 @@
 	quests: [{
 		can_repeat: true
 		dependencies: ["74402ECAFFAFAEC4"]
+		description: [
+			"Available from Level 1. Spend 10 copper coins to receive a torch."
+			"This repeatable trade is purely a convenience shop and does not advance progression; the coins are consumed."
+		]
 		hide_until_deps_visible: true
 		icon: "minecraft:torch"
 		id: "26532BF72C97D9E4"

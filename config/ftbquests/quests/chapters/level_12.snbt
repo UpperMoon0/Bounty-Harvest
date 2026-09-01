@@ -12,7 +12,8 @@
 		{
 			dependencies: ["2507AB50F6CCD90E"]
 			description: [
-				"Promotion contract: pay with goods and currency earned from the previous market tier."
+				"After the Level 11 Market Order, spend 20 iron coins and two pineapple pies to enter Power & Logistics. Both costs are consumed."
+				"Completing this promotion grants Level 12, unlocks Create Crafts & Additions plus gold access, and awards your first Level 12 Decree."
 			]
 			icon: "createaddition:electric_motor"
 			id: "D147BB0FA78A2EFA"
@@ -61,7 +62,8 @@
 		{
 			dependencies: ["D147BB0FA78A2EFA"]
 			description: [
-				"Prove the new supply chain works before taking the level market order."
+				"Build an electric motor, alternator, and accumulator, then secure four gold ingots to prove the farm can bridge mechanical and electrical infrastructure."
+				"These tasks only detect the components and gold; they are not consumed here."
 			]
 			icon: "createaddition:electric_motor"
 			id: "501EFA4FEC807009"
@@ -95,7 +97,8 @@
 		{
 			dependencies: ["501EFA4FEC807009"]
 			description: [
-				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+				"Ship one electric motor, one alternator, and four gold ingots. These shipment items are consumed; the accumulator remains yours."
+				"Completing the order opens Level 13 and moves the economy from infrastructure into wildlife cuisine."
 			]
 			icon: "createaddition:electric_motor"
 			id: "C249CFA083AB4179"

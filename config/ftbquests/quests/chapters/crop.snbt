@@ -12,6 +12,10 @@
 	quests: [
 		{
 			dependencies: ["74402ECAFFAFAEC4"]
+			description: [
+				"Available from Level 1. Spend 16 copper coins to receive two wheat seeds."
+				"Use this repeatable shop if you need to restart or expand the farm's staple crop; the coins are consumed."
+			]
 			hide_until_deps_visible: true
 			icon: "minecraft:wheat_seeds"
 			id: "69D0A2940723341A"
@@ -33,6 +37,10 @@
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
+			description: [
+				"Unlocked with Level 4. Spend 48 copper coins to receive two carrots."
+				"Plant them to expand the root-crop loop or use them for pig breeding and later orders. This repeatable purchase consumes the coins."
+			]
 			icon: "minecraft:carrot"
 			id: "42F61617476FBFCC"
 			rewards: [{
@@ -53,6 +61,10 @@
 		}
 		{
 			dependencies: ["7297A69487BEE03D"]
+			description: [
+				"Unlocked with Level 6. Spend 64 copper coins to receive two sugar cane."
+				"Sugar becomes a recurring pantry input from this tier onward. This repeatable purchase consumes the coins."
+			]
 			icon: "minecraft:sugar_cane"
 			id: "5EC3E67CEBBB2604"
 			rewards: [{
@@ -73,6 +85,10 @@
 		}
 		{
 			dependencies: ["7297A69487BEE03D"]
+			description: [
+				"Unlocked with Level 6. Spend 64 copper coins to receive two potatoes."
+				"Plant them for the baked-potato pantry loop and future market demand. This repeatable purchase consumes the coins."
+			]
 			icon: "minecraft:potato"
 			id: "139EDF3D2E9F5E13"
 			rewards: [{
@@ -93,6 +109,10 @@
 		}
 		{
 			dependencies: ["74402ECAFFAFAEC4"]
+			description: [
+				"Available from Level 1. Spend 16 copper coins to receive four bone meal."
+				"This repeatable convenience trade helps recover from a slow crop start; the coins are consumed."
+			]
 			hide_until_deps_visible: true
 			icon: "minecraft:bone_meal"
 			id: "0AF8D4DD44F1810B"
@@ -114,6 +134,10 @@
 		}
 		{
 			dependencies: ["4003BF6FE565761F"]
+			description: [
+				"Unlocked with Level 8. Spend eight iron coins to receive two cabbage seeds."
+				"Cabbage becomes a core Iron Kitchen crop and appears in the Level 8 Market Order. This repeatable purchase consumes the coins."
+			]
 			icon: "farmersdelight:cabbage"
 			id: "354D89A7217D2552"
 			rewards: [{

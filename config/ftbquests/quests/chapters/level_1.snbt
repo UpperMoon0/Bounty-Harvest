@@ -11,7 +11,8 @@
 	quests: [
 		{
 			description: [
-				"Build a tiny farm, make bread, and use the Bounty Board as your order board."
+				"Level 1 is granted automatically when you join, so the basic farm loop is available immediately."
+				"Build a Bounty Board and claim the starter Level 1 Decree here. The board turns farm output into repeatable coin-paying orders."
 			]
 			icon: "minecraft:wheat"
 			id: "74402ECAFFAFAEC4"
@@ -44,7 +45,8 @@
 		{
 			dependencies: ["74402ECAFFAFAEC4"]
 			description: [
-				"Prove the new supply chain works before taking the level market order."
+				"Grow at least 16 wheat and bake four bread to prove the starter production loop works."
+				"These tasks only detect the items; nothing is consumed here. Keep the stock for bounties and the Market Order."
 			]
 			icon: "minecraft:wheat"
 			id: "8270C1151D2C9EE7"
@@ -69,7 +71,8 @@
 		{
 			dependencies: ["8270C1151D2C9EE7"]
 			description: [
-				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+				"This one-time shipment consumes 12 wheat and four bread. Completing it opens the Level 2 promotion contract."
+				"Market Orders are progression gates, and later bounty pools will continue asking for older staples."
 			]
 			icon: "minecraft:wheat"
 			id: "A06092AE6EA56685"

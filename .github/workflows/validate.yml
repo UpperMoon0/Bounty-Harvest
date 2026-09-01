@@ -16,6 +16,8 @@ jobs:
           python-version: '3.11'
       - name: Validate quest graph
         run: python tools/validate_quests.py
+      - name: Validate quest descriptions
+        run: python tools/validate_descriptions.py
       - name: Validate progression, metadata, and runtime content
         run: python tools/validate_pack.py
       - name: Validate CurseForge publisher modes
