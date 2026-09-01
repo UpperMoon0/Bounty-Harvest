@@ -1,0 +1,135 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_9"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "corn_delight:corn"
+	id: "918AB9368B34E2D5"
+	order_index: 8
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["F3FBD0BED43C89CC"]
+			description: [
+				"Promotion contract: pay with goods and currency earned from the previous market tier."
+			]
+			icon: "corn_delight:corn"
+			id: "C0B4AA32262BF02B"
+			rewards: [
+				{
+					autoclaim: 1b
+					id: "3D1E76F5425C8727"
+					stage: "level_9"
+					type: "stage"
+				}
+				{
+					id: "739173F309692FDC"
+					item: {
+						Count: 1
+						id: "bountiful:decree"
+						tag: {
+							RepairCost: 0
+							"bountiful:decree_data": "{\"ids\":[\"level_9\"]}"
+							display: { Name: "{\"text\":\"Level 9 Decree\"}" }
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "octagon"
+			tasks: [
+				{
+					consume_items: true
+					count: 8L
+					id: "A52EC01776518BD5"
+					item: "kubejs:iron_coin"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 2L
+					id: "C16D4D6661677035"
+					item: "farmersdelight:chicken_sandwich"
+					type: "item"
+				}
+			]
+			title: "Level 9 · Corn Market"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["C0B4AA32262BF02B"]
+			description: [
+				"Prove the new supply chain works before taking the level market order."
+			]
+			icon: "corn_delight:corn"
+			id: "547338FFDF3F8C9F"
+			tasks: [
+				{
+					count: 12L
+					id: "C6046AB74D2BEFC7"
+					item: "corn_delight:corn"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "6F2AC460EFA39C93"
+					item: "corn_delight:cornbread"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "485F8F3EC8355404"
+					item: "corn_delight:tortilla"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "3D71DFA58C33C641"
+					item: "corn_delight:taco"
+					type: "item"
+				}
+			]
+			title: "Corn Market Production"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["547338FFDF3F8C9F"]
+			description: [
+				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+			]
+			icon: "corn_delight:corn"
+			id: "2A9904A355A5FE23"
+			shape: "hexagon"
+			tasks: [
+				{
+					consume_items: true
+					count: 12L
+					id: "8122153FC4A00C3D"
+					item: "corn_delight:corn"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 4L
+					id: "8EC3340438C18FD0"
+					item: "corn_delight:cornbread"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 2L
+					id: "66F2E6F1D3B01355"
+					item: "corn_delight:taco"
+					type: "item"
+				}
+			]
+			title: "Level 9 Market Order"
+			x: 4.0d
+			y: 0.0d
+		}
+	]
+	title: "Level 9 · Corn Market"
+}

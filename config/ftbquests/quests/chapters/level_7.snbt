@@ -5,36 +5,33 @@
 	group: "39B7846742C777FD"
 	hide_quest_until_deps_visible: true
 	icon: "minecraft:copper_ingot"
-	id: "257A8F10E2DBD05B"
+	id: "F0DA364F8ED578D3"
 	order_index: 6
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: [
-				"343DEFDA4A80BD80"
-				"015743E28B4488CE"
-				"66BB290DCD86866E"
+			dependencies: ["5EF6647A3BB43A42"]
+			description: [
+				"Promotion contract: pay with goods and currency earned from the previous market tier."
 			]
 			icon: "minecraft:copper_ingot"
 			id: "0A53CC520F7826A3"
 			rewards: [
 				{
 					autoclaim: 1b
-					id: "5F17EA48FD2E51D1"
+					id: "6372F008C4309D67"
 					stage: "level_7"
 					type: "stage"
 				}
 				{
-					id: "3EAAD3FF909BE248"
+					id: "0E0EB119548B44AD"
 					item: {
 						Count: 1
 						id: "bountiful:decree"
 						tag: {
 							RepairCost: 0
 							"bountiful:decree_data": "{\"ids\":[\"level_7\"]}"
-							display: {
-								Name: "{\"text\":\"Level 7 Decree\"}"
-							}
+							display: { Name: "{\"text\":\"Level 7 Decree\"}" }
 						}
 					}
 					type: "item"
@@ -44,269 +41,178 @@
 			tasks: [
 				{
 					consume_items: true
-					count: 10L
-					id: "1A54ACFC554590C8"
-					item: { Count: 10, id: "kubejs:gold_coin" }
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 1L
-					id: "3D4675D6BF568A80"
-					item: "minecraft:mushroom_stew"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 1L
-					id: "1B358C70AA1BEC71"
-					item: "kubejs:wool_sweater"
+					count: 32L
+					id: "D6EA2FCE5968CE3E"
+					item: "kubejs:copper_coin"
 					type: "item"
 				}
 				{
 					consume_items: true
 					count: 8L
-					id: "70DA258D3E2ED1DD"
-					item: { Count: 8, id: "minecraft:baked_potato" }
+					id: "655D9013D520FAEF"
+					item: "minecraft:baked_potato"
 					type: "item"
 				}
 			]
-			title: "Level 7"
+			title: "Level 7 · Copper Workshop"
 			x: 0.0d
-			y: 1.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["0A53CC520F7826A3"]
-			hide_until_deps_visible: false
+			icon: "minecraft:copper_ingot"
 			id: "6A5C20C31BD2649E"
-			description: ["Raw copper smelts into three nuggets, not a full ingot. Build a copper tool set to prove the copper industry before ironworking unlocks."]
 			tasks: [
 				{
-					id: "23232AF83E879BA3"
+					count: 12L
+					id: "B87584B2ECC4AE26"
 					item: "minecraft:raw_copper"
 					type: "item"
 				}
 				{
-					id: "78468E0A8A12BB94"
+					count: 6L
+					id: "CB25C097B7625710"
 					item: "minecraft:copper_ingot"
 					type: "item"
 				}
 			]
-			title: "Copper"
-			x: -1.5d
-			y: 4.0d
+			title: "Copper Supply"
+			x: 2.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["6A5C20C31BD2649E"]
-			hide_until_deps_visible: false
+			description: [
+				"Completing the full copper toolset unlocks Ironworking."
+			]
+			icon: "bettercopper:copper_pickaxe"
 			id: "34B5DF088E2F447E"
-			rewards: [{
-				autoclaim: 1b
-				id: "74AE2B560D93C81F"
-				stage: "iron_age"
-				type: "stage"
-			}]
+			rewards: [
+				{
+					autoclaim: 1b
+					id: "8DD7F047ECFEC4CD"
+					stage: "iron_age"
+					type: "stage"
+				}
+			]
+			shape: "diamond"
 			tasks: [
 				{
-					id: "1AC9E12AE8A09AC1"
-					item: {
-						Count: 1
-						id: "bettercopper:copper_shovel"
-						tag: { Damage: 0 }
-					}
+					id: "DE6A3852FA95E360"
+					item: "bettercopper:copper_shovel"
 					type: "item"
 				}
 				{
-					id: "29DEA7E1C86699A5"
-					item: {
-						Count: 1
-						id: "bettercopper:copper_pickaxe"
-						tag: { Damage: 0 }
-					}
+					id: "28CFF8532E328E97"
+					item: "bettercopper:copper_pickaxe"
 					type: "item"
 				}
 				{
-					id: "198189A9FD436D17"
-					item: {
-						Count: 1
-						id: "bettercopper:copper_axe"
-						tag: { Damage: 0 }
-					}
+					id: "D2878618C432C9C3"
+					item: "bettercopper:copper_axe"
 					type: "item"
 				}
 				{
-					id: "1356A443C9E0E10E"
-					item: {
-						Count: 1
-						id: "bettercopper:copper_hoe"
-						tag: { Damage: 0 }
-					}
+					id: "A956717649A785C6"
+					item: "bettercopper:copper_hoe"
 					type: "item"
 				}
 				{
-					id: "65DF3C2BBEFFA3BF"
-					item: {
-						Count: 1
-						id: "bettercopper:copper_sword"
-						tag: { Damage: 0 }
-					}
+					id: "B0FF0DA47B371738"
+					item: "bettercopper:copper_sword"
 					type: "item"
 				}
 			]
-			title: "Copper Tools"
-			description: ["Copper tools are the Level 7 metal tier. Completing this milestone automatically unlocks Ironworking."]
-			x: -3.5d
-			y: 2.5d
+			title: "Copper Tools · Unlock Ironworking"
+			x: 4.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["34B5DF088E2F447E"]
-			hide_until_deps_visible: false
+			icon: "minecraft:iron_ingot"
 			id: "557852FFD6F4D560"
-			description: ["Ironworking is now available. Raw iron also smelts into three nuggets, so plan the ore economy around three raw ore per ingot."]
 			tasks: [
 				{
-					id: "511E6646D44416DA"
+					count: 6L
+					id: "D1368579182B4441"
 					item: "minecraft:raw_iron"
 					type: "item"
 				}
 				{
-					id: "4AC85624B3D59722"
+					count: 3L
+					id: "6E70C88C1DDB2707"
 					item: "minecraft:iron_ingot"
 					type: "item"
 				}
 			]
-			title: "Iron"
-			x: 2.0d
+			title: "Iron Supply"
+			x: 6.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["557852FFD6F4D560"]
-			id: "1F768D9AE414C105"
-			tasks: [{
-				id: "47C974D26A075E5C"
-				item: "minecraft:bucket"
-				type: "item"
-			}]
-			x: 4.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["1F768D9AE414C105"]
-			id: "522AB9F276BC5735"
-			tasks: [{
-				id: "5AC6416680889A34"
-				item: "minecraft:water_bucket"
-				type: "item"
-			}]
-			x: 6.0d
-			y: -1.0d
-		}
-		{
-			dependencies: ["1F768D9AE414C105"]
-			id: "39A799527478DAF9"
-			tasks: [{
-				id: "682A841B041CFADC"
-				item: "minecraft:milk_bucket"
-				type: "item"
-			}]
-			x: 6.0d
-			y: 1.0d
-		}
-		{
-			dependencies: ["6A5C20C31BD2649E"]
-			id: "1E3050BA6A45ECEA"
-			tasks: [{
-				id: "56A5A43C9FABF3BC"
-				item: "minecraft:glass_bottle"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 4.0d
-		}
-		{
-			dependencies: ["0A53CC520F7826A3"]
-			id: "627A04ED165155B1"
-			tasks: [{
-				id: "5CDFE6B7C67A5E56"
-				item: "minecraft:apple"
-				type: "item"
-			}]
-			x: 2.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["39A799527478DAF9"]
-			hide_until_deps_visible: false
-			id: "40CF73DC10015083"
-			tasks: [{
-				id: "32C75B16274A5880"
-				item: "farmersdelight:pie_crust"
-				type: "item"
-			}]
-			x: 4.0d
-			y: 2.0d
-		}
-		{
-			dependencies: [
-				"40CF73DC10015083"
-				"627A04ED165155B1"
+			icon: "farmersdelight:milk_bottle"
+			id: "B912F1FE8E149DE8"
+			tasks: [
+				{
+					count: 4L
+					id: "D7873812059AC8E4"
+					item: "farmersdelight:milk_bottle"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "E0A077EB979C58E8"
+					item: "farmersdelight:apple_pie"
+					type: "item"
+				}
 			]
-			id: "0B7198D069D4E3D5"
-			tasks: [{
-				id: "3E04C97A22F77911"
-				item: "farmersdelight:apple_pie"
-				type: "item"
-			}]
-			x: 3.0d
-			y: 4.0d
+			title: "Dairy & Pies"
+			x: 8.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["557852FFD6F4D560"]
-			hide_until_deps_visible: false
-			id: "5C6BB14026AE99D5"
-			tasks: [{
-				id: "184F69C260A1025B"
-				item: {
-					Count: 1
-					id: "minecraft:fishing_rod"
-					tag: {
-						Damage: 0
-					}
+			dependencies: ["B912F1FE8E149DE8"]
+			description: [
+				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+			]
+			icon: "minecraft:copper_ingot"
+			id: "D9D29B504CE79600"
+			shape: "hexagon"
+			tasks: [
+				{
+					consume_items: true
+					count: 6L
+					id: "309E520F5F0D7DBC"
+					item: "minecraft:copper_ingot"
+					type: "item"
 				}
-				type: "item"
-			}]
-			x: 2.0d
-			y: -2.5d
-		}
-		{
-			dependencies: ["6A5C20C31BD2649E"]
-			id: "0F046D49DC4BDDE5"
-			tasks: [{
-				id: "0CF6C38E4C1AB728"
-				item: "minecraft:emerald"
-				type: "item"
-			}]
-			x: 0.0d
-			y: 8.5d
-		}
-		{
-			dependencies: ["6A5C20C31BD2649E"]
-			id: "0F3044742FD58877"
-			tasks: [{
-				id: "18576D7087B97DBF"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "minecraft:decorated_pot_sherds"
-					}
+				{
+					consume_items: true
+					count: 4L
+					id: "0BAB982F56535A06"
+					item: "minecraft:iron_ingot"
+					type: "item"
 				}
-				title: "Any #minecraft:decorated_pot_sherds"
-				type: "item"
-			}]
-			x: -3.0d
-			y: 8.5d
+				{
+					consume_items: true
+					count: 4L
+					id: "30046AED8B8F4CF5"
+					item: "farmersdelight:milk_bottle"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 2L
+					id: "F2745AA0FF11B3DC"
+					item: "farmersdelight:apple_pie"
+					type: "item"
+				}
+			]
+			title: "Level 7 Market Order"
+			x: 10.0d
+			y: 0.0d
 		}
 	]
-	title: "Level 7"
+	title: "Level 7 · Copper Workshop"
 }

@@ -1,0 +1,127 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_13"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "alexsmobs:animal_dictionary"
+	id: "5B2D1FD4B4C52838"
+	order_index: 12
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["C249CFA083AB4179"]
+			description: [
+				"Promotion contract: pay with goods and currency earned from the previous market tier."
+			]
+			icon: "alexsmobs:animal_dictionary"
+			id: "14A6F09E58565C89"
+			rewards: [
+				{
+					autoclaim: 1b
+					id: "61D2EAD62259F2F3"
+					stage: "level_13"
+					type: "stage"
+				}
+				{
+					id: "AF9FC5D3613900EB"
+					item: {
+						Count: 1
+						id: "bountiful:decree"
+						tag: {
+							RepairCost: 0
+							"bountiful:decree_data": "{\"ids\":[\"level_13\"]}"
+							display: { Name: "{\"text\":\"Level 13 Decree\"}" }
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "octagon"
+			tasks: [
+				{
+					consume_items: true
+					count: 2L
+					id: "B568D07135BF53DB"
+					item: "kubejs:gold_coin"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "32DE7DC1E8A60133"
+					item: "createaddition:electric_motor"
+					type: "item"
+				}
+			]
+			title: "Level 13 · Wildlife Cuisine"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["14A6F09E58565C89"]
+			description: [
+				"Prove the new supply chain works before taking the level market order."
+			]
+			icon: "alexsmobs:animal_dictionary"
+			id: "2B337D14D79B9F50"
+			tasks: [
+				{
+					id: "F427E711627D0CCF"
+					item: "alexsmobs:animal_dictionary"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "D768BFF63BC52EB9"
+					item: "alexsdelight:bison_burger"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "B70BE54324A8F9E1"
+					item: "alexsdelight:acacia_blossom_soup"
+					type: "item"
+				}
+			]
+			title: "Wildlife Cuisine Production"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2B337D14D79B9F50"]
+			description: [
+				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+			]
+			icon: "alexsmobs:animal_dictionary"
+			id: "A48274D6A8EE43B3"
+			shape: "hexagon"
+			tasks: [
+				{
+					consume_items: true
+					count: 3L
+					id: "E4898D4EA9AC51FD"
+					item: "alexsdelight:bison_burger"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 2L
+					id: "7B8C0C7A8371EF7E"
+					item: "alexsdelight:acacia_blossom_soup"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 6L
+					id: "04703023688A01EF"
+					item: "minecraft:leather"
+					type: "item"
+				}
+			]
+			title: "Level 13 Market Order"
+			x: 4.0d
+			y: 0.0d
+		}
+	]
+	title: "Level 13 · Wildlife Cuisine"
+}

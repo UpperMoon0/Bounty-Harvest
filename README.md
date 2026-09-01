@@ -6,17 +6,37 @@ Minecraft 1.20.1 · Forge 47.4.23 · Java 17 · Beta
 
 ![Bounty Harvest](https://i.imgur.com/qIHoZxx.png?1)
 
-Embark on an exciting journey with Bounty Harvest - a progression-based farming modpack! As you cultivate your farm, delve into the mines, forage for resources, and explore the vast landscapes, you’ll find yourself leveling up and unlocking new possibilities.
+Bounty Harvest is a progression-based farming and production modpack built around a 15-level farm economy. Grow crops, raise animals, process food, automate production, explore for specialist resources, and sell the results through Bountiful orders.
 
-Featuring over 155 quests that systematically guide you through various stages of the game.
+The level system follows a farm-management progression rather than a vanilla checklist:
 
-The Bountiful mods allow you to monetize your efforts by selling your products for coins. These coins serve as a currency to level up and unlock a plethora of new elements including crops, animals, products, and items.
+- every level introduces a coherent production expansion;
+- older crops and goods remain useful in later recipes and bounty pools;
+- each level ends with a one-time Market Order that proves the new supply chain works;
+- the Bounty Board is the repeatable order board that turns production into copper, iron, and gold coins;
+- coins remain globally usable and can be exchanged at 9:1 between denominations.
 
-The game is set against the backdrop of a breathtaking and diverse wilderness landscape. Most of the content will eventually be integrated into the modpack progression, providing a cohesive gaming experience.
+## Progression
 
-There are currently 8 playable levels, with more planned for the future.
+| Level | Economy expansion |
+| --- | --- |
+| 1 | Homestead, wheat, bread, Bounty Board |
+| 2 | Poultry, eggs, charcoal hearth |
+| 3 | Cattle, beef, leather |
+| 4 | Carrots, pork, Farmer's Delight dough |
+| 5 | Fishing, Aquaculture 2, Ocean's Delight |
+| 6 | Sheep, wool processing, potatoes, sugar, mushrooms |
+| 7 | Better Copper workshop → Copper Tools → Ironworking → dairy |
+| 8 | Farmer's Delight kitchen, core kitchen crops, Cooking for Blockheads |
+| 9 | Corn Delight production |
+| 10 | Create-powered mechanical farming and processing |
+| 11 | Pineapple Delight + Create Slice & Dice |
+| 12 | Create Crafts & Additions power and logistics |
+| 13 | Alex's Mobs fieldwork + Alex's Delight cuisine |
+| 14 | Alex's Caves expeditions and deep resources |
+| 15 | Twilight Forest frontier + Twilight's Flavors & Delight |
 
-Please note that as the modpack is in its early beta stage, you may encounter several bugs and unintentionally ungated items. I appreciate your understanding and patience as we work towards refining Bounty Harvest. Your feedback during this phase is invaluable to us. Enjoy your journey!
+ItemStages is used where item or namespace containment is reliable. The pack does **not** claim to stage entity spawning, dimensions, or arbitrary world systems that ItemStages cannot actually enforce.
 
 ![Quests](https://i.imgur.com/Gscc4gd.png)
 ![Bounties](https://i.imgur.com/ggEx4YP.png)
@@ -41,6 +61,6 @@ Outputs:
 - `dist/Bounty-Harvest-<version>.zip` — CurseForge client manifest with runtime overrides
 - `dist/Bounty-Harvest-<version>-server.zip` — dedicated server, Forge installer, and launchers
 
-Pull requests validate the quest graph, declared quest roots, critical progression gates, pack invariants, archive client/server split, and dedicated-server boot. A version change merged into `main` creates the GitHub release after a successful build; CurseForge publishing runs independently.
+Pull requests validate the 15-level quest graph, declared roots, market-order spine, critical copper/Ironworking gate, generated Bountiful data, pack invariants, archive client/server split, and dedicated-server boot. A version change merged into `main` creates the GitHub release after a successful build; CurseForge publishing runs independently.
 
 CurseForge publication is split into client and server-child jobs. After the client upload succeeds, its file ID and archive hash are persisted as a short-lived Actions artifact so **Re-run failed jobs** can retry a failed server-child upload without uploading the client again. `CURSEFORGE_API_TOKEN` is required for author uploads. `CURSEFORGE_CORE_API_KEY` remains optional but recommended for duplicate-file recovery across separate workflow runs or ambiguous upload responses.

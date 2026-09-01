@@ -1,0 +1,135 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_11"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "pineapple_delight:pineapple"
+	id: "371EB93C639E5C43"
+	order_index: 10
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["C4F9E553B22E40CC"]
+			description: [
+				"Promotion contract: pay with goods and currency earned from the previous market tier."
+			]
+			icon: "pineapple_delight:pineapple"
+			id: "1FFCFC4EAF71D122"
+			rewards: [
+				{
+					autoclaim: 1b
+					id: "81583BE1459E5091"
+					stage: "level_11"
+					type: "stage"
+				}
+				{
+					id: "217ACD66E95BED4E"
+					item: {
+						Count: 1
+						id: "bountiful:decree"
+						tag: {
+							RepairCost: 0
+							"bountiful:decree_data": "{\"ids\":[\"level_11\"]}"
+							display: { Name: "{\"text\":\"Level 11 Decree\"}" }
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "octagon"
+			tasks: [
+				{
+					consume_items: true
+					count: 16L
+					id: "1603C90A95D61164"
+					item: "kubejs:iron_coin"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 4L
+					id: "C20E0BA68E991DD3"
+					item: "create:andesite_alloy"
+					type: "item"
+				}
+			]
+			title: "Level 11 · Tropical Automation"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1FFCFC4EAF71D122"]
+			description: [
+				"Prove the new supply chain works before taking the level market order."
+			]
+			icon: "pineapple_delight:pineapple"
+			id: "CAD91105DBDBD22C"
+			tasks: [
+				{
+					count: 8L
+					id: "9B591478340B10CD"
+					item: "pineapple_delight:pineapple"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "E5606FAB78041A44"
+					item: "pineapple_delight:pineapple_pie"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "71B95DA0B5874F2D"
+					item: "pineapple_delight:pineapple_fried_rice"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "62DB1B640AE21CF1"
+					item: "pineapple_delight:pineapple_juice"
+					type: "item"
+				}
+			]
+			title: "Tropical Automation Production"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["CAD91105DBDBD22C"]
+			description: [
+				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+			]
+			icon: "pineapple_delight:pineapple"
+			id: "2507AB50F6CCD90E"
+			shape: "hexagon"
+			tasks: [
+				{
+					consume_items: true
+					count: 8L
+					id: "7F8EA5D220A8DFD8"
+					item: "pineapple_delight:pineapple"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 2L
+					id: "BA53F25915CDD83F"
+					item: "pineapple_delight:pineapple_pie"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 2L
+					id: "A5816E32E0CE275D"
+					item: "corn_delight:taco"
+					type: "item"
+				}
+			]
+			title: "Level 11 Market Order"
+			x: 4.0d
+			y: 0.0d
+		}
+	]
+	title: "Level 11 · Tropical Automation"
+}

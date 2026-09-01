@@ -1,0 +1,128 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_15"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "twilightforest:magic_map"
+	id: "608823887CE0D6FA"
+	order_index: 14
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["250184A59EA4EBA2"]
+			description: [
+				"Promotion contract: pay with goods and currency earned from the previous market tier."
+			]
+			icon: "twilightforest:magic_map"
+			id: "2820C98F56814014"
+			rewards: [
+				{
+					autoclaim: 1b
+					id: "EEF9AFDC58081119"
+					stage: "level_15"
+					type: "stage"
+				}
+				{
+					id: "E456E04499E66FF2"
+					item: {
+						Count: 1
+						id: "bountiful:decree"
+						tag: {
+							RepairCost: 0
+							"bountiful:decree_data": "{\"ids\":[\"level_15\"]}"
+							display: { Name: "{\"text\":\"Level 15 Decree\"}" }
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "octagon"
+			tasks: [
+				{
+					consume_items: true
+					count: 4L
+					id: "636ECB6DEAF090C1"
+					item: "kubejs:gold_coin"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 2L
+					id: "0B7702F072C9D32F"
+					item: "minecraft:diamond"
+					type: "item"
+				}
+			]
+			title: "Level 15 · Twilight Frontier"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2820C98F56814014"]
+			description: [
+				"Prove the new supply chain works before taking the level market order."
+			]
+			icon: "twilightforest:magic_map"
+			id: "8F6E2BD7AA1699E2"
+			tasks: [
+				{
+					id: "9036EBDDF44CE10D"
+					item: "twilightforest:magic_map"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "DDEE04D4B43C243B"
+					item: "twilightdelight:glowstew"
+					type: "item"
+				}
+			]
+			title: "Twilight Frontier Production"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["8F6E2BD7AA1699E2"]
+			description: [
+				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+			]
+			icon: "twilightforest:magic_map"
+			id: "998D5FCA54B02B56"
+			shape: "hexagon"
+			tasks: [
+				{
+					consume_items: true
+					id: "1101BD908BF9D250"
+					item: "twilightforest:magic_map"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 2L
+					id: "650E647F01E0FFC7"
+					item: "twilightdelight:glowstew"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 2L
+					id: "481917FABAD20920"
+					item: "corn_delight:taco"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 2L
+					id: "2ACE0D6E2A26F8B1"
+					item: "pineapple_delight:pineapple_pie"
+					type: "item"
+				}
+			]
+			title: "Level 15 Market Order"
+			x: 4.0d
+			y: 0.0d
+		}
+	]
+	title: "Level 15 · Twilight Frontier"
+}

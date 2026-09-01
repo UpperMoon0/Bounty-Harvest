@@ -1,37 +1,37 @@
 {
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
-	filename: "level_2"
+	filename: "level_10"
 	group: "39B7846742C777FD"
 	hide_quest_until_deps_visible: true
-	icon: "minecraft:egg"
-	id: "F06F067ACA021A86"
-	order_index: 1
+	icon: "create:andesite_alloy"
+	id: "515EA3009BB1E431"
+	order_index: 9
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["A06092AE6EA56685"]
+			dependencies: ["2A9904A355A5FE23"]
 			description: [
 				"Promotion contract: pay with goods and currency earned from the previous market tier."
 			]
-			icon: "minecraft:egg"
-			id: "7D3858343983B67A"
+			icon: "create:andesite_alloy"
+			id: "201FA0D785EF1770"
 			rewards: [
 				{
 					autoclaim: 1b
-					id: "6E0177B7A31A0222"
-					stage: "level_2"
+					id: "26B4E0A30A516A14"
+					stage: "level_10"
 					type: "stage"
 				}
 				{
-					id: "E4FBE5E89569ABD8"
+					id: "2E6B015BD6DC95DB"
 					item: {
 						Count: 1
 						id: "bountiful:decree"
 						tag: {
 							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_2\"]}"
-							display: { Name: "{\"text\":\"Level 2 Decree\"}" }
+							"bountiful:decree_data": "{\"ids\":[\"level_10\"]}"
+							display: { Name: "{\"text\":\"Level 10 Decree\"}" }
 						}
 					}
 					type: "item"
@@ -41,89 +41,89 @@
 			tasks: [
 				{
 					consume_items: true
-					count: 8L
-					id: "5D4334C23EA7F1EF"
-					item: "kubejs:copper_coin"
+					count: 12L
+					id: "F40F974AEF61FB8D"
+					item: "kubejs:iron_coin"
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 4L
-					id: "E1D1309C52BA97D6"
-					item: "minecraft:bread"
+					count: 2L
+					id: "DEED9A20DF169A0E"
+					item: "corn_delight:taco"
 					type: "item"
 				}
 			]
-			title: "Level 2 · Poultry & Hearth"
+			title: "Level 10 · Mechanical Farm"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["7D3858343983B67A"]
+			dependencies: ["201FA0D785EF1770"]
 			description: [
 				"Prove the new supply chain works before taking the level market order."
 			]
-			icon: "minecraft:egg"
-			id: "AA4870BE13B7CF35"
+			icon: "create:andesite_alloy"
+			id: "525F40C497949612"
 			tasks: [
 				{
 					count: 8L
-					id: "EC1F2F459D90A34E"
-					item: "minecraft:egg"
-					type: "item"
-				}
-				{
-					count: 4L
-					id: "4702CA4067B989B7"
-					item: "minecraft:cooked_chicken"
+					id: "16B11285B4E5277C"
+					item: "create:andesite_alloy"
 					type: "item"
 				}
 				{
 					count: 8L
-					id: "F360017C22C8F4FC"
-					item: "minecraft:charcoal"
+					id: "5B370692CBDAC124"
+					item: "create:shaft"
+					type: "item"
+				}
+				{
+					count: 8L
+					id: "5045FA1C2E22E962"
+					item: "create:cogwheel"
 					type: "item"
 				}
 			]
-			title: "Poultry & Hearth Production"
+			title: "Mechanical Farm Production"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["AA4870BE13B7CF35"]
+			dependencies: ["525F40C497949612"]
 			description: [
 				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
 			]
-			icon: "minecraft:egg"
-			id: "759303985A706218"
+			icon: "create:andesite_alloy"
+			id: "C4F9E553B22E40CC"
 			shape: "hexagon"
 			tasks: [
 				{
 					consume_items: true
 					count: 8L
-					id: "1D93EB70C10E148F"
-					item: "minecraft:egg"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 4L
-					id: "4CBC465560988B11"
-					item: "minecraft:cooked_chicken"
+					id: "D6A3BDF4A3E91202"
+					item: "create:andesite_alloy"
 					type: "item"
 				}
 				{
 					consume_items: true
 					count: 8L
-					id: "D14FDB24BF2E9E3A"
-					item: "minecraft:charcoal"
+					id: "7FCB2B28A5E9C4C5"
+					item: "create:shaft"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "28EC3B251E2F0575"
+					item: "minecraft:wheat"
 					type: "item"
 				}
 			]
-			title: "Level 2 Market Order"
+			title: "Level 10 Market Order"
 			x: 4.0d
 			y: 0.0d
 		}
 	]
-	title: "Level 2 · Poultry & Hearth"
+	title: "Level 10 · Mechanical Farm"
 }

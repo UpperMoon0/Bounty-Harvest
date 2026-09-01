@@ -52,7 +52,7 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["29747D157C7F8C88"]
+			dependencies: ["7297A69487BEE03D"]
 			icon: "minecraft:sugar_cane"
 			id: "5EC3E67CEBBB2604"
 			rewards: [{
@@ -62,7 +62,7 @@
 				type: "item"
 			}]
 			tasks: [{
-				count: 48L
+				count: 64L
 				id: "5EA228279EA3125F"
 				item: "kubejs:copper_coin"
 				type: "item"
@@ -124,9 +124,9 @@
 				type: "item"
 			}]
 			tasks: [{
-				count: 2L
+				count: 8L
 				id: "066AD2111C3911E8"
-				item: "kubejs:gold_coin"
+				item: "kubejs:iron_coin"
 				type: "item"
 			}]
 			title: "Buy Cabbage"

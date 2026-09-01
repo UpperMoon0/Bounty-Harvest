@@ -12,14 +12,15 @@ STAGE_SCRIPT = ROOT / "scripts" / "gen_item_stages.zs"
 ID_RE = re.compile(r'\bid:\s*"([0-9A-Fa-f]{16})"')
 DEPENDENCY_RE = re.compile(r"dependencies:\s*\[([^\]]*)\]", re.DOTALL)
 
-# These are intentional entry points into otherwise-connected quest content.
-# Any new dependency-free quest must be added here deliberately; this prevents
-# a detached DAG from silently becoming its own "root" and passing validation.
+# The questbook intentionally has exactly three entry points.
 KNOWN_ROOTS = {
     "74402ecaffafaec4": "chapters/level_1.snbt",
     "e60381a75a8c4d21": "chapters/research.snbt",
     "74be872a1ffe8d25": "chapters/currencies_exchange.snbt",
 }
+
+LEVEL_STAGE_IDS = {1: '74402ecaffafaec4', 2: '7d3858343983b67a', 3: '573fe8ed65790a78', 4: '1003c2b79f710366', 5: '29747d157c7f8c88', 6: '7297a69487bee03d', 7: '0a53cc520f7826a3', 8: '4003bf6fe565761f', 9: 'c0b4aa32262bf02b', 10: '201fa0d785ef1770', 11: '1ffcfc4eaf71d122', 12: 'd147bb0fa78a2efa', 13: '14a6f09e58565c89', 14: '4bb6b303f8005d7e', 15: '2820c98f56814014'}
+FINAL_MARKET_IDS = {1: 'a06092ae6ea56685', 2: '759303985a706218', 3: '9131a689d31728c8', 4: '284bda8ad6a1ee07', 5: '964e4e55a3efb49e', 6: '5ef6647a3bb43a42', 7: 'd9d29b504ce79600', 8: 'f3fbd0bed43c89cc', 9: '2a9904a355a5fe23', 10: 'c4f9e553b22e40cc', 11: '2507ab50f6ccd90e', 12: 'c249cfa083ab4179', 13: 'a48274d6a8ee43b3', 14: '250184a59ea4eba2', 15: '998d5fca54b02b56'}
 
 LEVEL_7_QUEST = "0a53cc520f7826a3"
 COPPER_QUEST = "6a5c20c31bd2649e"
@@ -147,9 +148,7 @@ def check_reachability(
             continue
         source = quest_sources[root].relative_to(QUEST_ROOT).as_posix()
         if source != expected_source:
-            errors.append(
-                f"declared quest root {root.upper()} moved to {source}; expected {expected_source}"
-            )
+            errors.append(f"declared quest root {root.upper()} moved to {source}; expected {expected_source}")
         if graph[root]:
             errors.append(
                 f"declared quest root {root.upper()} unexpectedly has dependencies: "
@@ -194,7 +193,42 @@ def check_reachability(
         errors.append(f"quests unreachable from declared roots: {preview}{suffix}")
 
 
-def check_progression_invariants(
+def check_level_spine(
+    graph: dict[str, set[str]], quest_blocks: dict[str, str], quest_sources: dict[str, Path], errors: list[str]
+) -> None:
+    for level in range(1, 16):
+        stage_id = LEVEL_STAGE_IDS[level]
+        market_id = FINAL_MARKET_IDS[level]
+        expected_file = f"chapters/level_{level}.snbt"
+        for quest_id, label in ((stage_id, "level milestone"), (market_id, "market order")):
+            if quest_id not in graph:
+                errors.append(f"Level {level} missing {label} {quest_id.upper()}")
+                continue
+            actual = quest_sources[quest_id].relative_to(QUEST_ROOT).as_posix()
+            if actual != expected_file:
+                errors.append(f"Level {level} {label} is in {actual}; expected {expected_file}")
+
+        if market_id in quest_blocks:
+            block = quest_blocks[market_id]
+            if "Market Order" not in block:
+                errors.append(f"Level {level} final milestone is not labelled as a Market Order")
+            if block.count("consume_items: true") < 2:
+                errors.append(f"Level {level} Market Order must consume at least two production outputs")
+
+        if level >= 2 and stage_id in graph:
+            expected_dep = {FINAL_MARKET_IDS[level - 1]}
+            if graph[stage_id] != expected_dep:
+                errors.append(
+                    f"Level {level} milestone dependencies are "
+                    f"{sorted(value.upper() for value in graph[stage_id])}; expected "
+                    f"{sorted(value.upper() for value in expected_dep)}"
+                )
+            block = quest_blocks[stage_id]
+            if "autoclaim: 1b" not in block or f'stage: "level_{level}"' not in block:
+                errors.append(f"Level {level} milestone must auto-claim stage level_{level}")
+
+
+def check_copper_iron_invariant(
     graph: dict[str, set[str]], quest_blocks: dict[str, str], errors: list[str]
 ) -> None:
     required = {
@@ -233,8 +267,7 @@ def check_progression_invariants(
         expected = f'ItemStages.restrict(<{selector}>, "{IRON_STAGE}");'
         if expected not in stages:
             errors.append(f"{selector} is not gated by Ironworking")
-        leaked = f'ItemStages.restrict(<{selector}>, "level_7");'
-        if leaked in stages:
+        if f'ItemStages.restrict(<{selector}>, "level_7");' in stages:
             errors.append(f"{selector} bypasses Ironworking through level_7")
 
 
@@ -279,7 +312,8 @@ def main() -> int:
 
     check_cycles(graph, errors)
     check_reachability(graph, quest_sources, errors)
-    check_progression_invariants(graph, quest_blocks, errors)
+    check_level_spine(graph, quest_blocks, quest_sources, errors)
+    check_copper_iron_invariant(graph, quest_blocks, errors)
 
     if errors:
         for error in errors:
@@ -289,7 +323,8 @@ def main() -> int:
     dependency_count = sum(len(dependencies) for dependencies in graph.values())
     print(
         f"Quest graph OK: {len(ids)} unique IDs / {dependency_count} quest dependencies; "
-        f"{len(KNOWN_ROOTS)} declared roots, cycle, reachability, and critical progression invariants valid."
+        "15 economic levels, market-order spine, 3 declared roots, cycles, reachability, "
+        "and copper-to-Ironworking invariants valid."
     )
     return 0
 

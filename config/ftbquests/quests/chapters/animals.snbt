@@ -21,7 +21,7 @@
 				type: "item"
 			}]
 			tasks: [{
-				count: 64L
+				count: 32L
 				id: "2D0CA01D7735EDA6"
 				item: "kubejs:copper_coin"
 				type: "item"
@@ -41,9 +41,9 @@
 				type: "item"
 			}]
 			tasks: [{
-				count: 8L
+				count: 48L
 				id: "17A0D0679A60DCA1"
-				item: "kubejs:iron_coin"
+				item: "kubejs:copper_coin"
 				type: "item"
 			}]
 			title: "Buy Cow"
@@ -60,25 +60,18 @@
 				item: "minecraft:pig_spawn_egg"
 				type: "item"
 			}]
-			tasks: [
-				{
-					id: "0EA6FD1AAB8847BE"
-					item: "kubejs:gold_coin"
-					type: "item"
-				}
-				{
-					count: 28L
-					id: "79A230B5B98CC5EE"
-					item: { Count: 28, id: "kubejs:copper_coin" }
-					type: "item"
-				}
-			]
+			tasks: [{
+				count: 64L
+				id: "79A230B5B98CC5EE"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
 			title: "Buy Pig"
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["29747D157C7F8C88"]
+			dependencies: ["7297A69487BEE03D"]
 			icon: "minecraft:sheep_spawn_egg"
 			id: "67B868D8EADB6BA2"
 			rewards: [{
@@ -87,25 +80,12 @@
 				item: "minecraft:sheep_spawn_egg"
 				type: "item"
 			}]
-			tasks: [
-				{
-					id: "0F4EE964CCC62E36"
-					item: "kubejs:gold_coin"
-					type: "item"
-				}
-				{
-					count: 6L
-					id: "45FC16EAB443D55A"
-					item: "kubejs:iron_coin"
-					type: "item"
-				}
-				{
-					count: 32L
-					id: "61FE9439CF1BFF58"
-					item: { Count: 32, id: "kubejs:copper_coin" }
-					type: "item"
-				}
-			]
+			tasks: [{
+				count: 96L
+				id: "61FE9439CF1BFF58"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
 			title: "Buy Sheep"
 			x: 6.0d
 			y: 0.0d
@@ -120,20 +100,12 @@
 				item: "minecraft:rabbit_spawn_egg"
 				type: "item"
 			}]
-			tasks: [
-				{
-					count: 3L
-					id: "4545453D5EC7279A"
-					item: "kubejs:gold_coin"
-					type: "item"
-				}
-				{
-					count: 2L
-					id: "083B1963139AB80B"
-					item: "kubejs:iron_coin"
-					type: "item"
-				}
-			]
+			tasks: [{
+				count: 12L
+				id: "083B1963139AB80B"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
 			title: "Buy Rabbit"
 			x: 8.0d
 			y: 0.0d

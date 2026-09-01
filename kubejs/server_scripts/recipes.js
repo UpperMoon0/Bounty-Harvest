@@ -1,5 +1,5 @@
 ServerEvents.recipes((e) => {
-    // Level 1  
+    // Level 1 · Homestead & Orders
     e.remove({id: 'bountiful:crafting/bountyboard'})
     e.shaped('bountiful:bountyboard', [
         'WWW',
@@ -10,7 +10,7 @@ ServerEvents.recipes((e) => {
         C: 'minecraft:wheat_seeds'
     })
 
-    // Level 2
+    // Level 2 · Poultry & Hearth
     e.remove({output: 'minecraft:torch'})
     e.shaped('2x minecraft:torch', [
         'C',
@@ -20,39 +20,7 @@ ServerEvents.recipes((e) => {
         S: 'minecraft:stick'
     })
 
-    // Level 3
-    e.remove({output: '#minecraft:boats'})
-
-    let boat_recipe = (wood_type) => {
-        if (Item.exists(wood_type.concat('_boat'))) {
-            e.shaped(wood_type.concat('_boat'), [
-                ' S ',
-                'WSW',
-                'WWW'
-            ], {
-                S: 'minecraft:wooden_shovel',
-                W: wood_type.concat('_planks')
-            });
-        }
-    
-        if (Item.exists(wood_type.concat('_chest_boat'))) {
-            e.shaped(wood_type.concat('_chest_boat'), [
-                'CB'
-            ], {
-                C: '#forge:chests/wooden',
-                B: wood_type.concat('_boat')
-            });
-        }
-    }    
-
-    Ingredient.of('#minecraft:planks').stacks.forEach(item => {
-        boat_recipe(item.id.replace('_planks', ''))
-    })
-
-    e.remove({id: 'minecraft:bone_meal'})
-    e.shapeless('2x minecraft:bone_meal', ['minecraft:bone'])
-
-    // Level 4
+    // Level 4 · Roots & Pork
     e.remove({id: 'create:smelting/bread'})
     e.remove({output: 'farmersdelight:wheat_dough'})
     e.shaped('2x farmersdelight:wheat_dough', [
@@ -63,60 +31,27 @@ ServerEvents.recipes((e) => {
         E: 'minecraft:egg'
     })
 
-    e.remove({id: 'minecraft:stone_pickaxe'})
-    e.shaped('minecraft:stone_pickaxe', [
-        'AAA',
-        ' B ',
-        ' B '
-    ], {
-        A: 'minecraft:flint',
-        B: 'minecraft:stick'
+    const flintTools = {
+        stone_pickaxe: ['AAA', ' B ', ' B '],
+        stone_axe: ['AA', 'AB', ' B'],
+        stone_shovel: ['A', 'B', 'B'],
+        stone_hoe: ['AA', ' B', ' B'],
+        stone_sword: ['A', 'A', 'B']
+    }
+    Object.entries(flintTools).forEach(([tool, pattern]) => {
+        e.remove({id: `minecraft:${tool}`})
+        e.shaped(`minecraft:${tool}`, pattern, {
+            A: 'minecraft:flint',
+            B: 'minecraft:stick'
+        })
     })
 
-    e.remove({id: 'minecraft:stone_axe'})
-    e.shaped('minecraft:stone_axe', [
-        'AA',
-        'AB',
-        ' B'
-    ], {
-        A: 'minecraft:flint',
-        B: 'minecraft:stick'
-    })
+    // Level 5 · Fisheries & Coast
+    // Keep the vanilla fishing-rod recipe. The previous iron-nugget replacement
+    // made the fisheries tier impossible before Level 7 Ironworking.
 
-    e.remove({id: 'minecraft:stone_shovel'})
-    e.shaped('minecraft:stone_shovel', [
-        'A',
-        'B',
-        'B'
-    ], {
-        A: 'minecraft:flint',
-        B: 'minecraft:stick'
-    })
-
-    e.remove({id: 'minecraft:stone_hoe'})
-    e.shaped('minecraft:stone_hoe', [
-        'AA',
-        ' B',
-        ' B'
-    ], {
-        A: 'minecraft:flint',
-        B: 'minecraft:stick'
-    })
-
-    e.remove({id: 'minecraft:stone_sword'})
-    e.shaped('minecraft:stone_sword', [
-        'A',
-        'A',
-        'B'
-    ], {
-        A: 'minecraft:flint',
-        B: 'minecraft:stick'
-    })
-
-    // Level 5
+    // Level 6 · Wool, Sugar & Pantry
     e.remove({id: 'minecraft:white_wool_from_string'})
-
-    // Level 6
     e.shaped('2x kubejs:wool_yarn', [
         'WS',
         'SW'
@@ -124,7 +59,6 @@ ServerEvents.recipes((e) => {
         W: '#minecraft:wool',
         S: 'minecraft:string'
     })
-
     e.shaped('kubejs:wool_sweater', [
         'W W',
         'WDW',
@@ -134,7 +68,7 @@ ServerEvents.recipes((e) => {
         D: 'minecraft:orange_dye'
     })
 
-    // Level 7
+    // Level 7 · Copper Workshop / Ironworking
     e.remove({id: 'minecraft:iron_ingot_from_smelting_iron_ore'})
     e.remove({id: 'minecraft:iron_ingot_from_smelting_deepslate_iron_ore'})
     e.remove({id: 'minecraft:iron_ingot_from_smelting_raw_iron'})
@@ -199,18 +133,7 @@ ServerEvents.recipes((e) => {
         B: 'minecraft:copper_ingot'
     })
 
-    e.remove({id: 'minecraft:fishing_rod'})
-    e.shaped('minecraft:fishing_rod', [
-        '  A',
-        ' AB',
-        'ACB'
-    ], {
-        A: 'minecraft:stick',
-        B: 'minecraft:string',
-        C: 'minecraft:iron_nugget'
-    })
-
-    // Level 8
+    // Level 8 · Iron Kitchen
     e.remove({id: 'bettercopper:copper_helmet'})
     e.remove({id: 'bettercopper:copper_chestplate'})
     e.remove({id: 'bettercopper:copper_leggings'})
@@ -225,32 +148,10 @@ ServerEvents.recipes((e) => {
         N: 'minecraft:iron_nugget',
         I: 'minecraft:iron_ingot'
     })
-    e.shaped('minecraft:chainmail_helmet', [
-        'III',
-        'I I'
-    ], {
-        I: 'minecraft:chain'
-    })
-    e.shaped('minecraft:chainmail_chestplate', [
-        'I I',
-        'III',
-        'III'
-    ], {
-        I: 'minecraft:chain'
-    })
-    e.shaped('minecraft:chainmail_leggings', [
-        'III',
-        'I I',
-        'I I'
-    ], {
-        I: 'minecraft:chain'
-    })
-    e.shaped('minecraft:chainmail_boots', [
-        'I I',
-        'I I'
-    ], {
-        I: 'minecraft:chain'
-    })
+    e.shaped('minecraft:chainmail_helmet', ['III', 'I I'], { I: 'minecraft:chain' })
+    e.shaped('minecraft:chainmail_chestplate', ['I I', 'III', 'III'], { I: 'minecraft:chain' })
+    e.shaped('minecraft:chainmail_leggings', ['III', 'I I', 'I I'], { I: 'minecraft:chain' })
+    e.shaped('minecraft:chainmail_boots', ['I I', 'I I'], { I: 'minecraft:chain' })
 
     e.shaped('farmersdelight:stuffed_potato', [
         'AB',
@@ -284,8 +185,8 @@ ServerEvents.recipes((e) => {
         D: 'minecraft:carrot'
     })
 
-    // Currency is exchanged at a crafting table instead of through repeatable
-    // quest claims. A 3x3 conversion is lossless and supports fast shift-clicking.
+    // Currency exchange remains lossless. Bounties introduce copper at Levels
+    // 1-6, iron at Levels 7-11, and gold at Levels 12-15.
     e.shaped('kubejs:iron_coin', [
         'CCC',
         'CCC',

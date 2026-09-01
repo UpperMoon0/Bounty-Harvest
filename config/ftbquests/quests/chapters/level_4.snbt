@@ -5,36 +5,33 @@
 	group: "39B7846742C777FD"
 	hide_quest_until_deps_visible: true
 	icon: "minecraft:carrot"
-	id: "2AF3D52E5E46A20F"
+	id: "D9DF46D28E381405"
 	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: [
-				"4D94846C7A3621E1"
-				"0F903402C0357CB1"
-				"43CD52707D5AC45C"
+			dependencies: ["9131A689D31728C8"]
+			description: [
+				"Promotion contract: pay with goods and currency earned from the previous market tier."
 			]
 			icon: "minecraft:carrot"
 			id: "1003C2B79F710366"
 			rewards: [
 				{
 					autoclaim: 1b
-					id: "2B1DDE4295CD60DD"
+					id: "474039432878481B"
 					stage: "level_4"
 					type: "stage"
 				}
 				{
-					id: "2295122A1560CAE1"
+					id: "082AECF3C6D6FF92"
 					item: {
 						Count: 1
 						id: "bountiful:decree"
 						tag: {
 							RepairCost: 0
 							"bountiful:decree_data": "{\"ids\":[\"level_4\"]}"
-							display: {
-								Name: "{\"text\":\"Level 4 Decree\"}"
-							}
+							display: { Name: "{\"text\":\"Level 4 Decree\"}" }
 						}
 					}
 					type: "item"
@@ -44,263 +41,89 @@
 			tasks: [
 				{
 					consume_items: true
-					count: 2L
-					id: "5CDAE6C6E830E3D0"
-					item: { Count: 2, id: "kubejs:gold_coin" }
+					count: 16L
+					id: "F59CADCF33F29592"
+					item: "kubejs:copper_coin"
 					type: "item"
 				}
 				{
 					consume_items: true
 					count: 4L
-					id: "148496AD041DB986"
-					item: { Count: 4, id: "kubejs:iron_coin" }
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 4L
-					id: "2DDA7D4B9E966C80"
-					item: { Count: 4, id: "minecraft:cooked_beef" }
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 4L
-					id: "690FB21FF4E312EC"
-					item: { Count: 4, id: "minecraft:leather" }
-					type: "item"
-				}
-				{
-					consume_items: false
-					id: "602BA0B766EB9931"
-					item: "minecraft:bow"
+					id: "DC624E929E2F8A43"
+					item: "minecraft:cooked_beef"
 					type: "item"
 				}
 			]
-			title: "Level 4"
+			title: "Level 4 · Roots & Pork"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
-			hide_until_deps_visible: false
-			id: "352F41B3BED0E086"
-			tasks: [{
-				id: "269DA89171668F2A"
-				item: "minecraft:carrot"
-				type: "item"
-			}]
-			x: 0.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["352F41B3BED0E086"]
-			hide_until_deps_visible: false
-			id: "58846BA779358FD2"
-			tasks: [{
-				id: "413A84E06FE1CFAA"
-				item: "minecraft:porkchop"
-				type: "item"
-			}]
-			title: "Pig"
-			x: -1.0d
-			y: 4.0d
-		}
-		{
-			dependencies: ["1003C2B79F710366"]
-			hide_until_deps_visible: false
-			id: "72CAF40486DF976F"
-			tasks: [{
-				id: "026B64363A5FE21E"
-				item: "farmersdelight:wheat_dough"
-				type: "item"
-			}]
-			x: 0.0d
-			y: -2.0d
-		}
-		{
-			dependencies: ["17F6492995529F96"]
-			id: "19A0223BFE395A14"
+			description: [
+				"Prove the new supply chain works before taking the level market order."
+			]
+			icon: "minecraft:carrot"
+			id: "E1C4D64071102D60"
 			tasks: [
 				{
-					id: "45A5573D47862E96"
-					item: {
-						Count: 1
-						id: "minecraft:stone_shovel"
-						tag: {
-							Damage: 0
-						}
-					}
+					count: 12L
+					id: "D4E776CC6ABEA4F6"
+					item: "minecraft:carrot"
 					type: "item"
 				}
 				{
-					id: "39C623F4A3918C9A"
-					item: {
-						Count: 1
-						id: "minecraft:stone_pickaxe"
-						tag: {
-							Damage: 0
-						}
-					}
+					count: 6L
+					id: "A6A6B420C821708B"
+					item: "minecraft:cooked_porkchop"
 					type: "item"
 				}
 				{
-					id: "3B4663CE58D98FD9"
-					item: {
-						Count: 1
-						id: "minecraft:stone_axe"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "1C188B295DD98031"
-					item: {
-						Count: 1
-						id: "minecraft:stone_hoe"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "330D6E427AAE1BF4"
-					item: {
-						Count: 1
-						id: "minecraft:stone_sword"
-						tag: {
-							Damage: 0
-						}
-					}
+					count: 6L
+					id: "5AB3F5F07481EEC8"
+					item: "farmersdelight:wheat_dough"
 					type: "item"
 				}
 			]
-			title: "Flint Tools"
-			x: 4.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["1003C2B79F710366"]
-			id: "382504BCFCC6B07A"
-			tasks: [{
-				id: "12F8A6CCF615292A"
-				item: "minecraft:gunpowder"
-				type: "item"
-			}]
-			title: "Creeper"
-			x: -2.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["1003C2B79F710366"]
-			id: "6A5228B39CFC9F88"
-			tasks: [
-				{
-					id: "77CA2E89333327E4"
-					item: "minecraft:string"
-					type: "item"
-				}
-				{
-					id: "2C5451DB682F750B"
-					item: "minecraft:spider_eye"
-					type: "item"
-				}
-			]
-			title: "Spider"
-			x: -1.5d
-			y: 1.5d
-		}
-		{
-			dependencies: ["1003C2B79F710366"]
-			hide_until_deps_visible: false
-			id: "12932CB774E66484"
-			tasks: [{
-				id: "7C2A27D31C954D1B"
-				item: "minecraft:glass"
-				type: "item"
-			}]
-			x: -1.5d
-			y: -1.5d
-		}
-		{
-			dependencies: ["1003C2B79F710366"]
-			hide_until_deps_visible: false
-			id: "7D811445066E0898"
-			tasks: [
-				{
-					id: "3181F287CBC9E103"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "minecraft:wooden_buttons"
-						}
-					}
-					title: "Any Wooden Button"
-					type: "item"
-				}
-				{
-					id: "104D55D30B2B309B"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "minecraft:wooden_pressure_plates"
-						}
-					}
-					title: "Any Wooden Pressure Plate"
-					type: "item"
-				}
-			]
-			title: "Wooden Button and Pressure Plate"
-			x: 1.5d
-			y: -1.5d
-		}
-		{
-			dependencies: ["1003C2B79F710366"]
-			id: "17F6492995529F96"
-			tasks: [{
-				id: "0799389515CA36EB"
-				item: "minecraft:flint"
-				type: "item"
-			}]
+			title: "Roots & Pork Production"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["1003C2B79F710366"]
-			hide_until_deps_visible: false
-			id: "3BA339E0640B6081"
-			tasks: [{
-				id: "4CBD4601C827EC15"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "forge:small_freshwater_fishes"
-					}
+			dependencies: ["E1C4D64071102D60"]
+			description: [
+				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+			]
+			icon: "minecraft:carrot"
+			id: "284BDA8AD6A1EE07"
+			shape: "hexagon"
+			tasks: [
+				{
+					consume_items: true
+					count: 12L
+					id: "8BB86A8D1082146D"
+					item: "minecraft:carrot"
+					type: "item"
 				}
-				title: "Any #forge:small_freshwater_fishes"
-				type: "item"
-			}]
-			title: "Small Freshwater Fishes"
-			x: 1.5d
-			y: 1.5d
-		}
-		{
-			dependencies: ["58846BA779358FD2"]
-			id: "6D3ECD5141AFA093"
-			tasks: [{
-				id: "2357515CE357A112"
-				item: "minecraft:cooked_porkchop"
-				type: "item"
-			}]
-			x: 1.0d
-			y: 4.0d
+				{
+					consume_items: true
+					count: 6L
+					id: "BEF6BA3047CC7BCB"
+					item: "minecraft:cooked_porkchop"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 6L
+					id: "5E14A94D6A00D6C2"
+					item: "farmersdelight:wheat_dough"
+					type: "item"
+				}
+			]
+			title: "Level 4 Market Order"
+			x: 4.0d
+			y: 0.0d
 		}
 	]
-	title: "Level 4"
+	title: "Level 4 · Roots & Pork"
 }

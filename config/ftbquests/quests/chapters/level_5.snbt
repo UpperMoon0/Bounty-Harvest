@@ -4,39 +4,34 @@
 	filename: "level_5"
 	group: "39B7846742C777FD"
 	hide_quest_until_deps_visible: true
-	icon: "minecraft:white_wool"
-	id: "4A5E5FEF0B33C7A3"
+	icon: "minecraft:fishing_rod"
+	id: "81FF50F3770D5144"
 	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: [
-				"352F41B3BED0E086"
-				"3BA339E0640B6081"
-				"58846BA779358FD2"
-				"17F6492995529F96"
-				"6D3ECD5141AFA093"
+			dependencies: ["284BDA8AD6A1EE07"]
+			description: [
+				"Promotion contract: pay with goods and currency earned from the previous market tier."
 			]
-			icon: "minecraft:white_wool"
+			icon: "minecraft:fishing_rod"
 			id: "29747D157C7F8C88"
 			rewards: [
 				{
 					autoclaim: 1b
-					id: "50A78B2A1AA05F04"
+					id: "2A2C22E8A7F6AC24"
 					stage: "level_5"
 					type: "stage"
 				}
 				{
-					id: "6341F0E8517F62A6"
+					id: "9F830E134367A85E"
 					item: {
 						Count: 1
 						id: "bountiful:decree"
 						tag: {
 							RepairCost: 0
 							"bountiful:decree_data": "{\"ids\":[\"level_5\"]}"
-							display: {
-								Name: "{\"text\":\"Level 5 Decree\"}"
-							}
+							display: { Name: "{\"text\":\"Level 5 Decree\"}" }
 						}
 					}
 					type: "item"
@@ -46,198 +41,94 @@
 			tasks: [
 				{
 					consume_items: true
-					count: 4L
-					id: "2E2F6426E598A287"
-					item: { Count: 4, id: "kubejs:gold_coin" }
+					count: 20L
+					id: "F94866F4527FF9AF"
+					item: "kubejs:copper_coin"
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 4L
-					id: "25177E75320B4917"
-					item: { Count: 4, id: "minecraft:flint" }
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 8L
-					id: "462540B1A26D11FF"
-					item: { Count: 8, id: "minecraft:carrot" }
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 4L
-					id: "58B489F58654D31A"
-					item: { Count: 4, id: "minecraft:cooked_porkchop" }
+					count: 6L
+					id: "AFD862127CB314EF"
+					item: "farmersdelight:wheat_dough"
 					type: "item"
 				}
 			]
-			title: "Level 5"
-			x: -0.5d
-			y: 0.5d
-		}
-		{
-			dependencies: ["29747D157C7F8C88"]
-			id: "1A4BBDAC32E8E8CB"
-			tasks: [{
-				id: "50FEBABB457853F1"
-				item: "farmersdelight:carrot_crate"
-				type: "item"
-			}]
-			x: -1.5d
-			y: -2.0d
-		}
-		{
-			dependencies: ["29747D157C7F8C88"]
-			hide_until_deps_visible: false
-			id: "1CCF7C805ED9FE8B"
-			tasks: [
-				{
-					icon: "minecraft:white_wool"
-					id: "4D8584A4BBCC99A6"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "minecraft:wool"
-						}
-					}
-					title: "Any Wool"
-					type: "item"
-				}
-				{
-					id: "4EAF16DDD91CBC09"
-					item: "minecraft:mutton"
-					type: "item"
-				}
-			]
-			title: "Sheep"
-			x: 1.0d
-			y: -1.0d
-		}
-		{
-			dependencies: ["1CCF7C805ED9FE8B"]
-			hide_until_deps_visible: false
-			icon: "minecraft:white_bed"
-			id: "6EA2798DA5176208"
-			tasks: [{
-				id: "38B1E9AAF89A0A04"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "minecraft:beds"
-					}
-				}
-				title: "Any Bed"
-				type: "item"
-			}]
-			title: "Bed"
-			x: 3.0d
-			y: -1.0d
-		}
-		{
-			dependencies: ["29747D157C7F8C88"]
-			hide_until_deps_visible: false
-			id: "1FD813E5CF445550"
-			tasks: [{
-				id: "6155F723394EBF70"
-				item: "minecraft:sugar_cane"
-				type: "item"
-			}]
-			x: -2.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["1FD813E5CF445550"]
-			id: "2DEC233FBECE5A0F"
-			tasks: [{
-				id: "6D4C4173A5CA0CE4"
-				item: "minecraft:sugar"
-				type: "item"
-			}]
-			x: -3.5d
-			y: 3.5d
-		}
-		{
-			dependencies: ["1FD813E5CF445550"]
-			id: "5217D4C2C241C0A9"
-			tasks: [{
-				id: "7C1C0CCBC519AC60"
-				item: "minecraft:paper"
-				type: "item"
-			}]
-			x: -0.5d
-			y: 3.5d
-		}
-		{
-			dependencies: ["5217D4C2C241C0A9"]
-			hide_until_deps_visible: false
-			id: "0139DF3D2C0E8D13"
-			tasks: [{
-				id: "45B67866D0205AF8"
-				item: "minecraft:book"
-				type: "item"
-			}]
-			x: 1.0d
-			y: 5.0d
-		}
-		{
-			dependencies: ["29747D157C7F8C88"]
-			hide_until_deps_visible: false
-			id: "185D159902032063"
-			tasks: [{
-				id: "25DD95773FB54E65"
-				item: "minecraft:tnt"
-				type: "item"
-			}]
-			x: 1.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["29747D157C7F8C88"]
-			hide_until_deps_visible: false
-			id: "617E16F23CADA562"
-			tasks: [{
-				id: "0F21B9E87227A382"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "forge:medium_freshwater_fishes"
-					}
-				}
-				title: "Any #forge:medium_freshwater_fishes"
-				type: "item"
-			}]
-			title: "Medium Freshwater Fishes"
-			x: -3.0d
+			title: "Level 5 · Fisheries & Coast"
+			x: 0.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["617E16F23CADA562"]
-			id: "43D5B92E7B462E7E"
-			tasks: [{
-				id: "6166F90E3CF06C3D"
-				item: "minecraft:ink_sac"
-				type: "item"
-			}]
-			title: "Squid"
-			x: -5.5d
-			y: -0.5d
+			dependencies: ["29747D157C7F8C88"]
+			description: [
+				"Prove the new supply chain works before taking the level market order."
+			]
+			icon: "minecraft:fishing_rod"
+			id: "DD0D246B33124C7D"
+			tasks: [
+				{
+					id: "2C51673F2E408CBB"
+					item: "minecraft:fishing_rod"
+					type: "item"
+				}
+				{
+					count: 8L
+					id: "9D7E8C6CEA4FA5A2"
+					item: "minecraft:cod"
+					type: "item"
+				}
+				{
+					count: 6L
+					id: "ED2D043191E767D1"
+					item: "minecraft:salmon"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "B8E87FAE60A2F272"
+					item: "oceansdelight:seagrass_salad"
+					type: "item"
+				}
+			]
+			title: "Fisheries & Coast Production"
+			x: 2.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["1CCF7C805ED9FE8B"]
-			id: "3EE0899DEAD2177C"
-			tasks: [{
-				id: "1675553DABE52B03"
-				item: "minecraft:cooked_mutton"
-				type: "item"
-			}]
-			x: 1.0d
-			y: -3.0d
+			dependencies: ["DD0D246B33124C7D"]
+			description: [
+				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+			]
+			icon: "minecraft:fishing_rod"
+			id: "964E4E55A3EFB49E"
+			shape: "hexagon"
+			tasks: [
+				{
+					consume_items: true
+					count: 6L
+					id: "8C977AE698316564"
+					item: "minecraft:cod"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 4L
+					id: "17D9A5CCE8F91BD0"
+					item: "minecraft:salmon"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 2L
+					id: "45357F990A681FD1"
+					item: "oceansdelight:seagrass_salad"
+					type: "item"
+				}
+			]
+			title: "Level 5 Market Order"
+			x: 4.0d
+			y: 0.0d
 		}
 	]
-	title: "Level 5"
+	title: "Level 5 · Fisheries & Coast"
 }

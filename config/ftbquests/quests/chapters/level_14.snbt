@@ -1,37 +1,37 @@
 {
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
-	filename: "level_2"
+	filename: "level_14"
 	group: "39B7846742C777FD"
 	hide_quest_until_deps_visible: true
-	icon: "minecraft:egg"
-	id: "F06F067ACA021A86"
-	order_index: 1
+	icon: "alexscaves:cave_tablet"
+	id: "B82C326C77BA544A"
+	order_index: 13
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["A06092AE6EA56685"]
+			dependencies: ["A48274D6A8EE43B3"]
 			description: [
 				"Promotion contract: pay with goods and currency earned from the previous market tier."
 			]
-			icon: "minecraft:egg"
-			id: "7D3858343983B67A"
+			icon: "alexscaves:cave_tablet"
+			id: "4BB6B303F8005D7E"
 			rewards: [
 				{
 					autoclaim: 1b
-					id: "6E0177B7A31A0222"
-					stage: "level_2"
+					id: "16712ED0A48B1B43"
+					stage: "level_14"
 					type: "stage"
 				}
 				{
-					id: "E4FBE5E89569ABD8"
+					id: "381D8D59B394C7E4"
 					item: {
 						Count: 1
 						id: "bountiful:decree"
 						tag: {
 							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_2\"]}"
-							display: { Name: "{\"text\":\"Level 2 Decree\"}" }
+							"bountiful:decree_data": "{\"ids\":[\"level_14\"]}"
+							display: { Name: "{\"text\":\"Level 14 Decree\"}" }
 						}
 					}
 					type: "item"
@@ -41,89 +41,87 @@
 			tasks: [
 				{
 					consume_items: true
-					count: 8L
-					id: "5D4334C23EA7F1EF"
-					item: "kubejs:copper_coin"
+					count: 3L
+					id: "C75EC8DAD60E0CC7"
+					item: "kubejs:gold_coin"
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 4L
-					id: "E1D1309C52BA97D6"
-					item: "minecraft:bread"
+					count: 2L
+					id: "57743A00B075B733"
+					item: "alexsdelight:bison_burger"
 					type: "item"
 				}
 			]
-			title: "Level 2 · Poultry & Hearth"
+			title: "Level 14 · Deep Expeditions"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["7D3858343983B67A"]
+			dependencies: ["4BB6B303F8005D7E"]
 			description: [
 				"Prove the new supply chain works before taking the level market order."
 			]
-			icon: "minecraft:egg"
-			id: "AA4870BE13B7CF35"
+			icon: "alexscaves:cave_tablet"
+			id: "9524652C04DDDC53"
 			tasks: [
 				{
-					count: 8L
-					id: "EC1F2F459D90A34E"
-					item: "minecraft:egg"
+					id: "02CD0FEE244A32B4"
+					item: "alexscaves:cave_tablet"
 					type: "item"
 				}
 				{
 					count: 4L
-					id: "4702CA4067B989B7"
-					item: "minecraft:cooked_chicken"
+					id: "C589F44D90ACEADA"
+					item: "minecraft:diamond"
 					type: "item"
 				}
 				{
 					count: 8L
-					id: "F360017C22C8F4FC"
-					item: "minecraft:charcoal"
+					id: "3245CA53AA21AD58"
+					item: "minecraft:amethyst_shard"
 					type: "item"
 				}
 			]
-			title: "Poultry & Hearth Production"
+			title: "Deep Expeditions Production"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["AA4870BE13B7CF35"]
+			dependencies: ["9524652C04DDDC53"]
 			description: [
 				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
 			]
-			icon: "minecraft:egg"
-			id: "759303985A706218"
+			icon: "alexscaves:cave_tablet"
+			id: "250184A59EA4EBA2"
 			shape: "hexagon"
 			tasks: [
 				{
 					consume_items: true
-					count: 8L
-					id: "1D93EB70C10E148F"
-					item: "minecraft:egg"
+					id: "E48AE20BE4D24194"
+					item: "alexscaves:cave_tablet"
 					type: "item"
 				}
 				{
 					consume_items: true
 					count: 4L
-					id: "4CBC465560988B11"
-					item: "minecraft:cooked_chicken"
+					id: "A5694C474A2BE8B4"
+					item: "minecraft:diamond"
 					type: "item"
 				}
 				{
 					consume_items: true
 					count: 8L
-					id: "D14FDB24BF2E9E3A"
-					item: "minecraft:charcoal"
+					id: "982A96F02AB0FC2A"
+					item: "minecraft:amethyst_shard"
 					type: "item"
 				}
 			]
-			title: "Level 2 Market Order"
+			title: "Level 14 Market Order"
 			x: 4.0d
 			y: 0.0d
 		}
 	]
-	title: "Level 2 · Poultry & Hearth"
+	title: "Level 14 · Deep Expeditions"
 }

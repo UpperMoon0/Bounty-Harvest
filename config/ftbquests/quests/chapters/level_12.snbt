@@ -1,0 +1,130 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_12"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "createaddition:electric_motor"
+	id: "E7117B605BB29F24"
+	order_index: 11
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["2507AB50F6CCD90E"]
+			description: [
+				"Promotion contract: pay with goods and currency earned from the previous market tier."
+			]
+			icon: "createaddition:electric_motor"
+			id: "D147BB0FA78A2EFA"
+			rewards: [
+				{
+					autoclaim: 1b
+					id: "BF3CF5CBBD3341E4"
+					stage: "level_12"
+					type: "stage"
+				}
+				{
+					id: "131A5C266BB3F6B0"
+					item: {
+						Count: 1
+						id: "bountiful:decree"
+						tag: {
+							RepairCost: 0
+							"bountiful:decree_data": "{\"ids\":[\"level_12\"]}"
+							display: { Name: "{\"text\":\"Level 12 Decree\"}" }
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "octagon"
+			tasks: [
+				{
+					consume_items: true
+					count: 20L
+					id: "813783EF161BFB9A"
+					item: "kubejs:iron_coin"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 2L
+					id: "2071092ABE824597"
+					item: "pineapple_delight:pineapple_pie"
+					type: "item"
+				}
+			]
+			title: "Level 12 · Power & Logistics"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["D147BB0FA78A2EFA"]
+			description: [
+				"Prove the new supply chain works before taking the level market order."
+			]
+			icon: "createaddition:electric_motor"
+			id: "501EFA4FEC807009"
+			tasks: [
+				{
+					id: "7E89D412FAD59CF8"
+					item: "createaddition:electric_motor"
+					type: "item"
+				}
+				{
+					id: "9ADF13B2B36816F4"
+					item: "createaddition:alternator"
+					type: "item"
+				}
+				{
+					id: "89AC322430D5BC6E"
+					item: "createaddition:accumulator"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "AF2D1CCE89E93896"
+					item: "minecraft:gold_ingot"
+					type: "item"
+				}
+			]
+			title: "Power & Logistics Production"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["501EFA4FEC807009"]
+			description: [
+				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+			]
+			icon: "createaddition:electric_motor"
+			id: "C249CFA083AB4179"
+			shape: "hexagon"
+			tasks: [
+				{
+					consume_items: true
+					id: "20025468EEB83B3E"
+					item: "createaddition:electric_motor"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "15BB02EC8EFCF1F5"
+					item: "createaddition:alternator"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 4L
+					id: "124B9527F3ED5B19"
+					item: "minecraft:gold_ingot"
+					type: "item"
+				}
+			]
+			title: "Level 12 Market Order"
+			x: 4.0d
+			y: 0.0d
+		}
+	]
+	title: "Level 12 · Power & Logistics"
+}

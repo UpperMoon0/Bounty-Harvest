@@ -4,38 +4,34 @@
 	filename: "level_6"
 	group: "39B7846742C777FD"
 	hide_quest_until_deps_visible: true
-	icon: "minecraft:potato"
-	id: "0E6B14941942FF66"
+	icon: "minecraft:white_wool"
+	id: "A48E5DB6433C5508"
 	order_index: 5
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: [
-				"43D5B92E7B462E7E"
-				"6EA2798DA5176208"
-				"3EE0899DEAD2177C"
-				"0139DF3D2C0E8D13"
+			dependencies: ["964E4E55A3EFB49E"]
+			description: [
+				"Promotion contract: pay with goods and currency earned from the previous market tier."
 			]
-			icon: "minecraft:potato"
+			icon: "minecraft:white_wool"
 			id: "7297A69487BEE03D"
 			rewards: [
 				{
 					autoclaim: 1b
-					id: "1F10B933EFFC1054"
+					id: "E55E9C9D954DF07E"
 					stage: "level_6"
 					type: "stage"
 				}
 				{
-					id: "581DA5988396076E"
+					id: "FB9C2664D1DD994C"
 					item: {
 						Count: 1
 						id: "bountiful:decree"
 						tag: {
 							RepairCost: 0
 							"bountiful:decree_data": "{\"ids\":[\"level_6\"]}"
-							display: {
-								Name: "{\"text\":\"Level 6 Decree\"}"
-							}
+							display: { Name: "{\"text\":\"Level 6 Decree\"}" }
 						}
 					}
 					type: "item"
@@ -45,287 +41,102 @@
 			tasks: [
 				{
 					consume_items: true
-					count: 6L
-					id: "6221AF20E1FF898D"
-					item: { Count: 6, id: "kubejs:gold_coin" }
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 1L
-					id: "6397DCE49D42D962"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "minecraft:beds"
-						}
-					}
-					title: "Any #minecraft:beds"
+					count: 24L
+					id: "8F8843CBF1FA5945"
+					item: "kubejs:copper_coin"
 					type: "item"
 				}
 				{
 					consume_items: true
 					count: 4L
-					id: "40CD2D206717F1CB"
-					item: { Count: 4, id: "minecraft:cooked_mutton" }
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 1L
-					id: "19981BE78849C36D"
-					item: "minecraft:book"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 1L
-					id: "6379A138E246177C"
-					item: "minecraft:ink_sac"
+					id: "E1CC786A72FA1CEF"
+					item: "minecraft:cooked_salmon"
 					type: "item"
 				}
 			]
-			title: "Level 6"
-			x: -0.5d
-			y: -0.5d
+			title: "Level 6 · Wool, Sugar & Pantry"
+			x: 0.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["7297A69487BEE03D"]
-			hide_until_deps_visible: false
-			id: "015743E28B4488CE"
-			description: ["Build a dependable potato crop, then bake part of the harvest. The random poisonous-potato drop is an optional challenge below."]
+			description: [
+				"Prove the new supply chain works before taking the level market order."
+			]
+			icon: "minecraft:white_wool"
+			id: "E77A040884D2FDC9"
 			tasks: [
 				{
-					count: 16L
-					id: "4566A41DD702A1FB"
-					item: { Count: 16, id: "minecraft:potato" }
+					count: 8L
+					id: "EF3C8A4D9C386AC4"
+					item: "minecraft:white_wool"
+					type: "item"
+				}
+				{
+					count: 12L
+					id: "907F5902E4B9C004"
+					item: "minecraft:baked_potato"
+					type: "item"
+				}
+				{
+					count: 8L
+					id: "E03CCC93B37251D9"
+					item: "minecraft:sugar"
 					type: "item"
 				}
 				{
 					count: 4L
-					id: "4D5CC65F27EE7B51"
-					item: { Count: 4, id: "minecraft:baked_potato" }
+					id: "80ECCF34873B8EF0"
+					item: "kubejs:wool_yarn"
 					type: "item"
 				}
 			]
-			title: "Potato harvest"
-			x: 1.0d
-			y: -2.0d
-		}
-		{
-			can_repeat: false
-			dependencies: ["015743E28B4488CE"]
-			description: ["A poisonous potato is a rare harvest bonus. It is never required for main progression."]
-			id: "97C83D41E6A25BF0"
-			rewards: [{
-				count: 9
-				id: "54B9A31E087C6D2F"
-				item: "kubejs:copper_coin"
-				type: "item"
-			}]
-			tasks: [{
-				id: "2081C939C9E624F2"
-				item: "minecraft:poisonous_potato"
-				type: "item"
-			}]
-			title: "Optional: poisonous potato"
-			x: 3.0d
-			y: -3.0d
-		}
-		{
-			dependencies: ["7297A69487BEE03D"]
-			id: "210D58BA749A0F47"
-			tasks: [
-				{
-					id: "5CB2F39948DA1CD4"
-					item: "minecraft:brown_mushroom"
-					type: "item"
-				}
-				{
-					id: "74FFE0DD29094CF5"
-					item: "minecraft:red_mushroom"
-					type: "item"
-				}
-			]
-			title: "Mushroom"
-			x: -0.5d
-			y: -3.0d
-		}
-		{
-			dependencies: ["210D58BA749A0F47"]
-			hide_until_deps_visible: false
-			id: "01B9DF675D81D290"
-			tasks: [{
-				id: "133B8FEA15EA803E"
-				item: "minecraft:bowl"
-				type: "item"
-			}]
-			x: 0.5d
-			y: -5.0d
-		}
-		{
-			dependencies: ["01B9DF675D81D290"]
-			id: "343DEFDA4A80BD80"
-			tasks: [{
-				id: "52B2C27427857FDD"
-				item: "minecraft:mushroom_stew"
-				type: "item"
-			}]
-			x: -1.5d
-			y: -5.0d
-		}
-		{
-			dependencies: ["7297A69487BEE03D"]
-			hide_until_deps_visible: false
-			id: "363EE262F4B948E6"
-			tasks: [{
-				id: "38DD6FBE56864414"
-				item: "minecraft:bookshelf"
-				type: "item"
-			}]
+			title: "Wool, Sugar & Pantry Production"
 			x: 2.0d
-			y: -0.5d
+			y: 0.0d
 		}
 		{
-			dependencies: ["7297A69487BEE03D"]
-			hide_until_deps_visible: false
-			id: "54F6ACDCF4631920"
-			tasks: [{
-				id: "1D063334752E08A6"
-				item: "minecraft:fermented_spider_eye"
-				type: "item"
-			}]
-			x: -3.0d
-			y: -0.5d
-		}
-		{
-			dependencies: ["7297A69487BEE03D"]
-			hide_until_deps_visible: false
-			id: "7E5E0232C32AA186"
+			dependencies: ["E77A040884D2FDC9"]
+			description: [
+				"A one-time bulk shipment. Later bounty tiers will keep reusing older farm goods."
+			]
+			icon: "minecraft:white_wool"
+			id: "5EF6647A3BB43A42"
+			shape: "hexagon"
 			tasks: [
 				{
-					id: "1C3AE9C6A2AE1E5B"
-					item: {
-						Count: 1
-						id: "immersive_armors:bone_helmet"
-						tag: {
-							Damage: 0
-						}
-					}
+					consume_items: true
+					count: 8L
+					id: "C1912E85AA12D35E"
+					item: "minecraft:white_wool"
 					type: "item"
 				}
 				{
-					id: "6D54EA222E8BAB54"
-					item: {
-						Count: 1
-						id: "immersive_armors:bone_chestplate"
-						tag: {
-							Damage: 0
-						}
-					}
+					consume_items: true
+					count: 8L
+					id: "60C5A35C6F79FC38"
+					item: "minecraft:baked_potato"
 					type: "item"
 				}
 				{
-					id: "3E0F1FBB2735230E"
-					item: {
-						Count: 1
-						id: "immersive_armors:bone_leggings"
-						tag: {
-							Damage: 0
-						}
-					}
+					consume_items: true
+					count: 8L
+					id: "5D5E412EC18528D9"
+					item: "minecraft:sugar"
 					type: "item"
 				}
 				{
-					id: "48A60D8FFC18B1FE"
-					item: {
-						Count: 1
-						id: "immersive_armors:bone_boots"
-						tag: {
-							Damage: 0
-						}
-					}
+					consume_items: true
+					count: 4L
+					id: "89BBF0EC9FFE21B1"
+					item: "kubejs:wool_yarn"
 					type: "item"
 				}
 			]
-			title: "Bone Armor"
-			x: -2.0d
-			y: -2.0d
-		}
-		{
-			dependencies: ["7297A69487BEE03D"]
-			id: "015061CA8AE2092C"
-			tasks: [
-				{
-					icon: "minecraft:dandelion"
-					id: "2B7606AC7DC6AC57"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "forge:yellow_flowers"
-						}
-					}
-					title: "Any Yellow Flower"
-					type: "item"
-				}
-				{
-					icon: "minecraft:poppy"
-					id: "783F3AB3A3CBB0EA"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "forge:red_flowers"
-						}
-					}
-					title: "Any Red Flower"
-					type: "item"
-				}
-			]
-			title: "Red and Yellow Flowers"
-			x: -1.5d
-			y: 1.5d
-		}
-		{
-			dependencies: ["7297A69487BEE03D"]
-			hide_until_deps_visible: false
-			id: "57165E328146D4DA"
-			tasks: [{
-				id: "6A224EDD6618F097"
-				item: "kubejs:wool_yarn"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 1.5d
-		}
-		{
-			dependencies: ["015061CA8AE2092C"]
-			hide_until_deps_visible: false
-			id: "46F26870382E1407"
-			tasks: [{
-				id: "7627042D71EC1783"
-				item: "minecraft:orange_dye"
-				type: "item"
-			}]
-			x: -2.5d
-			y: 3.5d
-		}
-		{
-			dependencies: [
-				"57165E328146D4DA"
-				"46F26870382E1407"
-			]
-			id: "66BB290DCD86866E"
-			tasks: [{
-				id: "14E0A7E0152E4D27"
-				item: "kubejs:wool_sweater"
-				type: "item"
-			}]
-			x: 1.5d
-			y: 3.5d
+			title: "Level 6 Market Order"
+			x: 4.0d
+			y: 0.0d
 		}
 	]
-	title: "Level 6"
+	title: "Level 6 · Wool, Sugar & Pantry"
 }

@@ -10,6 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 QUESTS = ROOT / "config" / "ftbquests" / "quests" / "chapters"
 DEFAULT_STAGES = ROOT / "scripts" / "default_stages.zs"
+BOUNTIFUL_DATA = ROOT / "kubejs" / "server_scripts" / "bountiful_data.js"
 
 
 def compounds(text: str):
@@ -58,21 +59,45 @@ def main() -> int:
         ROOT / "scripts" / "gen_item_stages.zs",
         DEFAULT_STAGES,
         ROOT / "resourcepacks" / "gen_bh_bounties.zip",
+        BOUNTIFUL_DATA,
         QUESTS / "research.snbt",
+        QUESTS / "decree.snbt",
     ]
+    for level in range(1, 16):
+        required_runtime.append(QUESTS / f"level_{level}.snbt")
     for path in required_runtime:
         if not path.is_file():
             errors.append(f"missing runtime file {path.relative_to(ROOT)}")
+
     archives = [path for path in QUESTS.iterdir() if path.is_file() and path.suffix != ".snbt"]
     if archives:
         errors.append("non-SNBT files in quest chapters: " + ", ".join(path.name for path in archives))
 
+    # The old binary pack remains as a compatibility fallback, but KubeJS high-priority
+    # data is now the readable source of truth for all 15 decree/order pools.
     with zipfile.ZipFile(ROOT / "resourcepacks" / "gen_bh_bounties.zip") as archive:
         names = archive.namelist()
         if not any(name.startswith("data/bountiful/bounty_decrees/") for name in names):
-            errors.append("Bountiful data pack has no bounty decrees")
+            errors.append("legacy Bountiful data pack has no bounty decrees")
         if not any(name.startswith("data/bountiful/bounty_pools/") for name in names):
-            errors.append("Bountiful data pack has no bounty pools")
+            errors.append("legacy Bountiful data pack has no bounty pools")
+
+    bounty_data = BOUNTIFUL_DATA.read_text(encoding="utf-8") if BOUNTIFUL_DATA.is_file() else ""
+    if "ServerEvents.highPriorityData" not in bounty_data:
+        errors.append("Bountiful level data is not registered as high-priority server data")
+    if "bountiful:bounty_decrees/bountiful/${level}" not in bounty_data:
+        errors.append("Bountiful generator does not register level decree resources")
+    if "bountiful:bounty_pools/bountiful/${pool}" not in bounty_data:
+        errors.append("Bountiful generator does not register level objective pools")
+    defined_levels = {int(value) for value in re.findall(r"^\s*(\d+): \{ reward:", bounty_data, re.MULTILINE)}
+    if defined_levels != set(range(1, 16)):
+        errors.append(f"Bountiful generator defines levels {sorted(defined_levels)}; expected 1-15")
+    for reward_pool in ("bh_copper_rews", "bh_iron_rews", "bh_gold_rews"):
+        if reward_pool not in bounty_data:
+            errors.append(f"missing Bountiful reward pool {reward_pool}")
+    for legacy_good in ("minecraft:wheat", "minecraft:egg", "minecraft:leather", "minecraft:carrot"):
+        if bounty_data.count(legacy_good) < 2:
+            errors.append(f"Hay Day reuse invariant: {legacy_good} does not recur across bounty tiers")
 
     all_quests = "\n".join(path.read_text(encoding="utf-8") for path in QUESTS.glob("*.snbt"))
     if "gamestage add" in all_quests:
@@ -88,41 +113,49 @@ def main() -> int:
     if 'StageHelper.grantStageOnJoin("level_1");' not in default_stages:
         errors.append("Level 1 is not granted automatically on player join")
 
-    for level in range(1, 9):
+    for level in range(1, 16):
         text = (QUESTS / f"level_{level}.snbt").read_text(encoding="utf-8")
         if level >= 2:
             expected = rf'autoclaim:\s*1b[\s\S]{{0,100}}stage:\s*"level_{level}"[\s\S]{{0,60}}type:\s*"stage"'
             if not re.search(expected, text):
                 errors.append(f"Level {level} lacks an auto-claimed stage reward")
+        if "Market Order" not in text:
+            errors.append(f"Level {level} has no market-order milestone")
         for block in compounds(text):
             if block.count('type: "item"') != 1:
                 continue
             outer = re.search(r"\bcount:\s*(\d+)L?", block)
             embedded = re.search(r"\bCount:\s*(\d+)", block)
             if outer and embedded and outer.group(1) != embedded.group(1):
-                errors.append(f"Level {level} has mismatched task counts {outer.group(1)} and {embedded.group(1)}")
+                errors.append(
+                    f"Level {level} has mismatched task counts {outer.group(1)} and {embedded.group(1)}"
+                )
                 break
 
-    level_6 = (QUESTS / "level_6.snbt").read_text(encoding="utf-8")
+    decree = (QUESTS / "decree.snbt").read_text(encoding="utf-8")
+    for level in range(1, 16):
+        if f'Level {level} Decree' not in decree or f'level_{level}' not in decree:
+            errors.append(f"decree market does not expose Level {level}")
+
     level_7 = (QUESTS / "level_7.snbt").read_text(encoding="utf-8")
-    if 'dependencies: ["015743E28B4488CE"]' not in level_6 or 'title: "Optional: poisonous potato"' not in level_6:
-        errors.append("poisonous potato is not isolated as an optional quest")
-    if "97C83D41E6A25BF0" in re.search(r"dependencies:\s*\[([^\]]*)\]", level_7, re.DOTALL).group(1):
-        errors.append("Level 7 still depends on the poisonous-potato challenge")
     if 'stage: "iron_age"' not in level_7 or 'dependencies: ["34B5DF088E2F447E"]' not in level_7:
         errors.append("copper tools do not unlock the Ironworking quest path")
 
     recipes = (ROOT / "kubejs" / "server_scripts" / "recipes.js").read_text(encoding="utf-8")
     if recipes.count("remove({output: 'farmersdelight:wheat_dough'})") != 1:
         errors.append("wheat dough must have exactly one global recipe removal")
-    if "minecraft:water_bucket'\n    })" in recipes and "wheat_dough" in recipes:
+    if "minecraft:water_bucket" in re.search(
+        r"wheat_dough[\s\S]{0,500}", recipes
+    ).group(0):
         errors.append("wheat dough still appears to require a water bucket")
+    if "remove({id: 'minecraft:fishing_rod'})" in recipes:
+        errors.append("fishing rod is still artificially locked behind a replacement recipe")
     tags = (ROOT / "kubejs" / "server_scripts" / "tags.js").read_text(encoding="utf-8")
     if "minecraft:tulip" in tags:
         errors.append("invalid minecraft:tulip ID remains")
 
     stages = (ROOT / "scripts" / "gen_item_stages.zs").read_text(encoding="utf-8")
-    for stage in [*(f"level_{n}" for n in range(1, 9)), "iron_age"]:
+    for stage in [*(f"level_{n}" for n in range(1, 16)), "iron_age"]:
         if f'"{stage}"' not in stages:
             errors.append(f"item staging never references {stage}")
     for coin in ("copper_coin", "iron_coin", "gold_coin"):
@@ -130,12 +163,44 @@ def main() -> int:
             errors.append(f"currency kubejs:{coin} must remain outside ItemStages")
     if '<item:minecraft:string>, "level_3"' not in stages or '<item:minecraft:string>, "level_4"' in stages:
         errors.append("string is not staged consistently with the Level 3 bow")
-    for mod_id in ("create", "createaddition", "sliceanddice", "alexscaves", "twilightforest", "alexsmobs", "cookingforblockheads"):
-        if f'createModRestriction("{mod_id}"' not in stages:
-            errors.append(f"missing explicit integration policy for {mod_id}")
+
+    expected_mod_policy = {
+        "aquaculture": "level_5",
+        "oceansdelight": "level_5",
+        "bettercopper": "level_7",
+        "cookingforblockheads": "level_8",
+        "delightful": "level_8",
+        "corn_delight": "level_9",
+        "create": "level_10",
+        "pineapple_delight": "level_11",
+        "sliceanddice": "level_11",
+        "createaddition": "level_12",
+        "alexsdelight": "level_13",
+        "alexscaves": "level_14",
+        "twilightforest": "level_15",
+        "twilightdelight": "level_15",
+        "ends_delight": "level_15",
+    }
+    for mod_id, stage in expected_mod_policy.items():
+        expected = f'createModRestriction("{mod_id}", "{stage}")'
+        if expected not in stages:
+            errors.append(f"missing integration policy {mod_id} -> {stage}")
+    if 'createModRestriction("alexsmobs"' in stages:
+        errors.append("Alex's Mobs must not be namespace-gated; ItemStages cannot gate its entities")
+    if '<item:alexsmobs:animal_dictionary>, "level_13"' not in stages:
+        errors.append("Alex's Mobs utility progression is not represented at Level 13")
+
     for item in ("iron_pickaxe", "iron_sword", "iron_helmet", "iron_chestplate", "iron_leggings", "iron_boots"):
-        if f"<item:minecraft:{item}>, \"iron_age\"" not in stages:
+        if f'<item:minecraft:{item}>, "iron_age"' not in stages:
             errors.append(f"minecraft:{item} leaks before Ironworking")
+    for selector, stage in (
+        ("item:minecraft:redstone", "level_10"),
+        ("item:minecraft:gold_ingot", "level_12"),
+        ("item:minecraft:diamond", "level_14"),
+        ("item:minecraft:lapis_lazuli", "level_14"),
+    ):
+        if f'ItemStages.restrict(<{selector}>, "{stage}");' not in stages:
+            errors.append(f"{selector} is not assigned to intended stage {stage}")
 
     addons = instance["installedAddons"]
     addon_ids = [int(addon["addonID"]) for addon in addons]
@@ -169,7 +234,10 @@ def main() -> int:
         for error in errors:
             print(f"ERROR: {error}")
         return 1
-    print(f"Pack invariants OK for Bounty Harvest {pack['version']} ({len(addons)} CurseForge projects).")
+    print(
+        f"Pack invariants OK for Bounty Harvest {pack['version']} "
+        f"({len(addons)} CurseForge projects, 15 economic levels)."
+    )
     return 0
 
 
