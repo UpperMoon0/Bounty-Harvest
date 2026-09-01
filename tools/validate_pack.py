@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 QUESTS = ROOT / "config" / "ftbquests" / "quests" / "chapters"
 DEFAULT_STAGES = ROOT / "scripts" / "default_stages.zs"
 BOUNTIFUL_DATA = ROOT / "kubejs" / "server_scripts" / "bountiful_data.js"
+DESIGN_DOC = ROOT / "PROGRESSION_DESIGN.md"
 
 
 def compounds(text: str):
@@ -54,6 +55,8 @@ def main() -> int:
         errors.append("Forge version differs between pack and instance metadata")
     if not (ROOT / "changelog" / f"{pack['version']}.md").is_file():
         errors.append(f"missing changelog/{pack['version']}.md")
+    if not DESIGN_DOC.is_file():
+        errors.append("missing PROGRESSION_DESIGN.md design contract")
 
     required_runtime = [
         ROOT / "scripts" / "gen_item_stages.zs",
@@ -95,9 +98,19 @@ def main() -> int:
     for reward_pool in ("bh_copper_rews", "bh_iron_rews", "bh_gold_rews"):
         if reward_pool not in bounty_data:
             errors.append(f"missing Bountiful reward pool {reward_pool}")
-    for legacy_good in ("minecraft:wheat", "minecraft:egg", "minecraft:leather", "minecraft:carrot"):
+
+    # Long-lived staples must recur, but processed reuse is the stronger invariant.
+    for legacy_good in ("minecraft:wheat", "minecraft:egg", "minecraft:leather", "minecraft:carrot", "minecraft:charcoal"):
         if bounty_data.count(legacy_good) < 2:
             errors.append(f"Hay Day reuse invariant: {legacy_good} does not recur across bounty tiers")
+    for layered_good in (
+        "farmersdelight:chicken_sandwich",
+        "farmersdelight:fish_stew",
+        "corn_delight:taco",
+        "farmersdelight:salmon_roll",
+    ):
+        if layered_good not in bounty_data:
+            errors.append(f"processed reuse invariant missing {layered_good} from repeatable markets")
 
     all_quests = "\n".join(path.read_text(encoding="utf-8") for path in QUESTS.glob("*.snbt"))
     if "gamestage add" in all_quests:
@@ -138,18 +151,33 @@ def main() -> int:
             errors.append(f"decree market does not expose Level {level}")
 
     level_7 = (QUESTS / "level_7.snbt").read_text(encoding="utf-8")
-    if 'stage: "iron_age"' not in level_7 or 'dependencies: ["34B5DF088E2F447E"]' not in level_7:
-        errors.append("copper tools do not unlock the Ironworking quest path")
+    level_10 = (QUESTS / "level_10.snbt").read_text(encoding="utf-8")
+    if 'stage: "iron_age"' in level_7:
+        errors.append("Level 7 still grants Ironworking; copper must remain active through Level 9")
+    if level_10.count('stage: "iron_age"') != 1:
+        errors.append("Level 10 promotion must be the single Ironworking grant")
+    for level in (8, 9):
+        if 'stage: "iron_age"' in (QUESTS / f"level_{level}.snbt").read_text(encoding="utf-8"):
+            errors.append(f"Level {level} grants Ironworking before Level 10")
 
     recipes = (ROOT / "kubejs" / "server_scripts" / "recipes.js").read_text(encoding="utf-8")
     if recipes.count("remove({output: 'farmersdelight:wheat_dough'})") != 1:
         errors.append("wheat dough must have exactly one global recipe removal")
-    if "minecraft:water_bucket" in re.search(
-        r"wheat_dough[\s\S]{0,500}", recipes
-    ).group(0):
+    dough_window = re.search(r"wheat_dough[\s\S]{0,500}", recipes)
+    if dough_window and "minecraft:water_bucket" in dough_window.group(0):
         errors.append("wheat dough still appears to require a water bucket")
     if "remove({id: 'minecraft:fishing_rod'})" in recipes:
         errors.append("fishing rod is still artificially locked behind a replacement recipe")
+    if "remove({id: 'bettercopper:copper_helmet'})" in recipes:
+        errors.append("copper armor is globally removed; the copper era needs viable equipment")
+    for required_recipe_output in (
+        "farmersdelight:chicken_sandwich",
+        "farmersdelight:fish_stew",
+        "farmersdelight:apple_pie",
+        "corn_delight:taco",
+    ):
+        if required_recipe_output not in recipes:
+            errors.append(f"missing layered pre-iron recipe for {required_recipe_output}")
     tags = (ROOT / "kubejs" / "server_scripts" / "tags.js").read_text(encoding="utf-8")
     if "minecraft:tulip" in tags:
         errors.append("invalid minecraft:tulip ID remains")
@@ -168,9 +196,9 @@ def main() -> int:
         "aquaculture": "level_5",
         "oceansdelight": "level_5",
         "bettercopper": "level_7",
-        "cookingforblockheads": "level_8",
-        "delightful": "level_8",
         "corn_delight": "level_9",
+        "cookingforblockheads": "level_10",
+        "delightful": "level_10",
         "create": "level_10",
         "pineapple_delight": "level_11",
         "sliceanddice": "level_11",
@@ -190,7 +218,18 @@ def main() -> int:
     if '<item:alexsmobs:animal_dictionary>, "level_13"' not in stages:
         errors.append("Alex's Mobs utility progression is not represented at Level 13")
 
-    for item in ("iron_pickaxe", "iron_sword", "iron_helmet", "iron_chestplate", "iron_leggings", "iron_boots"):
+    crop_stage_policy = {
+        "farmersdelight:cabbage": "level_8",
+        "farmersdelight:tomato": "level_9",
+        "farmersdelight:onion": "level_10",
+        "farmersdelight:rice": "level_11",
+    }
+    for item, stage in crop_stage_policy.items():
+        expected = f'ItemStages.restrict(<item:{item}>, "{stage}");'
+        if expected not in stages:
+            errors.append(f"crop pacing regression: {item} must unlock at {stage}")
+
+    for item in ("iron_pickaxe", "iron_sword", "iron_helmet", "iron_chestplate", "iron_leggings", "iron_boots", "bucket", "water_bucket", "milk_bucket"):
         if f'<item:minecraft:{item}>, "iron_age"' not in stages:
             errors.append(f"minecraft:{item} leaks before Ironworking")
     for selector, stage in (
@@ -236,7 +275,7 @@ def main() -> int:
         return 1
     print(
         f"Pack invariants OK for Bounty Harvest {pack['version']} "
-        f"({len(addons)} CurseForge projects, 15 economic levels)."
+        f"({len(addons)} CurseForge projects, 15 economic levels, delayed iron and crop pacing protected)."
     )
     return 0
 
