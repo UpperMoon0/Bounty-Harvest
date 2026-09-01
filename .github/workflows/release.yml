@@ -1,0 +1,210 @@
+name: Release modpack
+
+on:
+  push:
+    branches: [main]
+    paths: ['pack/pack.json']
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: CurseForge release channel
+        required: true
+        default: beta
+        type: choice
+        options: [alpha, beta, release]
+      publish:
+        description: Publish GitHub and CurseForge releases
+        required: true
+        default: false
+        type: boolean
+
+concurrency:
+  group: release-modpack
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  release-gate:
+    runs-on: ubuntu-latest
+    outputs:
+      should_release: ${{ steps.check.outputs.should_release }}
+      version: ${{ steps.check.outputs.version }}
+      release_type: ${{ steps.check.outputs.release_type }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check release trigger
+        id: check
+        shell: pwsh
+        env:
+          BEFORE: ${{ github.event.before }}
+          MANUAL_PUBLISH: ${{ inputs.publish || false }}
+          REQUESTED_RELEASE_TYPE: ${{ inputs.release_type }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $pack = Get-Content pack/pack.json -Raw | ConvertFrom-Json
+          $version = [string]$pack.version
+          $releaseType = [string]$pack.releaseType
+          $shouldRelease = $false
+
+          if ($env:GITHUB_EVENT_NAME -eq 'workflow_dispatch') {
+            if (-not [string]::IsNullOrWhiteSpace($env:REQUESTED_RELEASE_TYPE)) { $releaseType = $env:REQUESTED_RELEASE_TYPE }
+            $shouldRelease = ($env:GITHUB_REF -eq 'refs/heads/main') -and ($env:MANUAL_PUBLISH -eq 'true')
+          }
+          elseif ($env:GITHUB_REF -like 'refs/tags/*') {
+            $tag = $env:GITHUB_REF.Substring('refs/tags/'.Length)
+            if ($tag -ne "v$version") { throw "Tag $tag does not match pack version v$version." }
+            $shouldRelease = $true
+          }
+          elseif ($env:GITHUB_EVENT_NAME -eq 'push' -and $env:GITHUB_REF -eq 'refs/heads/main') {
+            $before = $env:BEFORE
+            if ($before -and $before -ne '0000000000000000000000000000000000000000') {
+              $ErrorActionPreference = 'Continue'
+              $previousJson = & git show "${before}:pack/pack.json" 2>$null
+              $gitExit = $LASTEXITCODE
+              $ErrorActionPreference = 'Stop'
+              if ($gitExit -eq 0 -and $previousJson) {
+                $previousVersion = [string](($previousJson | ConvertFrom-Json).version)
+                $shouldRelease = $previousVersion -ne $version
+              } else {
+                # Bootstrap exception:
+                # legacy main predates pack/pack.json.
+                # 0.11.0 is intentionally the first metadata-backed release.
+                # After this release, only an actual pack.version change releases.
+                $shouldRelease = $true
+              }
+            }
+          }
+
+          if ($shouldRelease -and -not (Test-Path "changelog/$version.md")) {
+            throw "Missing changelog/$version.md."
+          }
+          "should_release=$shouldRelease" >> $env:GITHUB_OUTPUT
+          "version=$version" >> $env:GITHUB_OUTPUT
+          "release_type=$releaseType" >> $env:GITHUB_OUTPUT
+
+  build:
+    needs: release-gate
+    runs-on: windows-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate progression and metadata
+        run: |
+          python tools/validate_quests.py
+          python tools/validate_pack.py
+      - name: Build archives
+        shell: pwsh
+        run: ./tools/build_modpack.ps1 -Version '${{ needs.release-gate.outputs.version }}'
+      - name: Verify archive contents and client/server split
+        run: python tools/verify_archives.py
+      - name: Boot dedicated server
+        shell: pwsh
+        run: ./tools/smoke_test_server.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Bounty-Harvest-${{ needs.release-gate.outputs.version }}
+          path: dist/*.zip
+          if-no-files-found: error
+
+  curseforge-preflight:
+    if: needs.release-gate.outputs.should_release == 'true'
+    needs: [release-gate, build]
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Bounty-Harvest-${{ needs.release-gate.outputs.version }}
+          path: dist
+      - name: CurseForge preflight
+        shell: pwsh
+        env:
+          CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
+        run: ./tools/publish_curseforge.ps1 -Version '${{ needs.release-gate.outputs.version }}' -ReleaseType '${{ needs.release-gate.outputs.release_type }}' -SkipBuild -Preflight
+
+  publish-curseforge-client:
+    if: needs.release-gate.outputs.should_release == 'true'
+    needs: [release-gate, build, curseforge-preflight]
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Bounty-Harvest-${{ needs.release-gate.outputs.version }}
+          path: dist
+      - name: Publish CurseForge client file
+        shell: pwsh
+        env:
+          CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
+          CURSEFORGE_CORE_API_KEY: ${{ secrets.CURSEFORGE_CORE_API_KEY }}
+        run: ./tools/publish_curseforge.ps1 -Version '${{ needs.release-gate.outputs.version }}' -ReleaseType '${{ needs.release-gate.outputs.release_type }}' -SkipBuild -Mode client -StateFile 'dist/curseforge-state.json'
+      - name: Persist CurseForge client file ID
+        uses: actions/upload-artifact@v4
+        with:
+          name: Bounty-Harvest-${{ needs.release-gate.outputs.version }}-curseforge-state
+          path: dist/curseforge-state.json
+          if-no-files-found: error
+          retention-days: 7
+
+  publish-curseforge-server:
+    if: needs.release-gate.outputs.should_release == 'true'
+    needs: [release-gate, build, curseforge-preflight, publish-curseforge-client]
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Bounty-Harvest-${{ needs.release-gate.outputs.version }}
+          path: dist
+      - uses: actions/download-artifact@v4
+        with:
+          name: Bounty-Harvest-${{ needs.release-gate.outputs.version }}-curseforge-state
+          path: dist
+      - name: Publish CurseForge server child file
+        shell: pwsh
+        env:
+          CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
+          CURSEFORGE_CORE_API_KEY: ${{ secrets.CURSEFORGE_CORE_API_KEY }}
+        run: ./tools/publish_curseforge.ps1 -Version '${{ needs.release-gate.outputs.version }}' -ReleaseType '${{ needs.release-gate.outputs.release_type }}' -SkipBuild -Mode server -StateFile 'dist/curseforge-state.json'
+
+  publish-github-release:
+    if: needs.release-gate.outputs.should_release == 'true'
+    needs: [release-gate, build]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          name: Bounty-Harvest-${{ needs.release-gate.outputs.version }}
+          path: dist
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ needs.release-gate.outputs.version }}
+          name: Bounty Harvest v${{ needs.release-gate.outputs.version }}
+          body_path: changelog/${{ needs.release-gate.outputs.version }}.md
+          fail_on_unmatched_files: true
+          files: dist/*.zip
+          draft: false
+          prerelease: ${{ needs.release-gate.outputs.release_type != 'release' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

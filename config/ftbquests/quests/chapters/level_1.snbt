@@ -11,18 +11,11 @@
 	quests: [
 		{
 			description: [
-				"Welcome to &2Level 1&r. In this level, you can gather wood by chopping trees, harvest wheat to craft bread, and more! "
+				"Welcome to &2Level 1&r. This is your starting tier and is already active when you enter the world. Gather wood, harvest wheat, complete bounties, and use this quest to begin the progression path."
 				""
-				"&4To learn more about the research system, please refer to the quest above this one.&r"
+				"The Research and Levels chapter explains how later staged unlocks work. Levels 2-8 grant their stages automatically when their level-up quests are completed."
 			]
 			id: "74402ECAFFAFAEC4"
-			rewards: [{
-				command: "/gamestage add @p level_1 true"
-				elevate_perms: true
-				id: "3E18DCE5422D221F"
-				title: "Level up to Level 1"
-				type: "command"
-			}]
 			shape: "octagon"
 			tasks: [{
 				id: "3B419ED582632769"
@@ -53,11 +46,7 @@
 		}
 		{
 			dependencies: ["7E05FEED92D53715"]
-			description: [
-				"\"Why do I have to make a full set of wooden tools instead of stone tools?\" "
-				""
-				"Sorry, but stone tools are not unlocked until &2Level 4&r, and they are made of flint, not stone."
-			]
+			description: ["Craft a wooden pickaxe for gathering and a wooden hoe for your first wheat field. Flint tools become available at &2Level 4&r."]
 			hide_until_deps_visible: true
 			id: "0A6DE571FAAFADA0"
 			rewards: [{
@@ -68,43 +57,10 @@
 			}]
 			tasks: [
 				{
-					id: "4978B29CD4ACDF16"
-					item: {
-						Count: 1
-						id: "minecraft:wooden_sword"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "00FC197B722ABBAF"
-					item: {
-						Count: 1
-						id: "minecraft:wooden_shovel"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
 					id: "0BE830BCE6BD2D0A"
 					item: {
 						Count: 1
 						id: "minecraft:wooden_pickaxe"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "0E5B3AC67A7A92E2"
-					item: {
-						Count: 1
-						id: "minecraft:wooden_axe"
 						tag: {
 							Damage: 0
 						}
@@ -274,8 +230,24 @@
 			y: 1.5d
 		}
 		{
+			dependencies: ["37DB727D93347A94"]
+			description: [
+				"Insert the Level 1 decree into your Bounty Board, accept a bounty, and complete it. Your first earned copper coin proves the farm economy is working."
+			]
+			hide_until_deps_visible: true
+			id: "A0B67F241C38D5E9"
+			tasks: [{
+				id: "BC9706D2E31A5F84"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
+			title: "Complete your first bounty"
+			x: 4.5d
+			y: 1.5d
+		}
+		{
 			dependencies: ["74402ECAFFAFAEC4"]
-			description: ["In the modpack Bountiful Harvest, the availability of most items is determined by your progress level. As you advance through the game stages, you unlock access to a wider range of items."]
+			description: ["In Bounty Harvest, Level 1 is available from the moment you join. Later levels unlock additional staged items as you progress through the quest book."]
 			icon: "create:crafting_blueprint"
 			id: "4CE5E3F960990234"
 			tasks: [{

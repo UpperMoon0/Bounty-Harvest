@@ -1,0 +1,39 @@
+{
+  "name": "Bounty Harvest",
+  "artifactName": "Bounty-Harvest",
+  "version": "0.11.0",
+  "author": "UpperMoon0",
+  "curseForgeProjectId": 968467,
+  "minecraftVersion": "1.20.1",
+  "forgeVersion": "47.4.23",
+  "javaVersion": 17,
+  "releaseType": "beta",
+  "embeddedProjectIds": [],
+  "clientOnlyProjectIds": [
+    32274,
+    238222,
+    248787,
+    250398,
+    314002,
+    324717,
+    385587,
+    581495,
+    854949,
+    908741
+  ],
+  "serverExcludedPaths": [
+    "kubejs/assets/*",
+    "kubejs/client_scripts/*",
+    "kubejs/config/client.properties",
+    "config/*-client.toml",
+    "config/l2_configs/*-client.toml",
+    "config/embeddium-*",
+    "config/forge-client.toml",
+    "config/jei/*",
+    "config/jei/**",
+    "config/oculus.properties",
+    "config/overloadedarmorbar-client.toml",
+    "config/roughlyenoughitems/*",
+    "config/rubidium_extras.toml"
+  ]
+}

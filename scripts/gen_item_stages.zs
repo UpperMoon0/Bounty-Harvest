@@ -2,9 +2,6 @@ import mods.itemstages.ItemStages;
 
 // Level 1
 ItemStages.restrict(<tag:items:minecraft:planks>, "level_1");
-ItemStages.restrict(<item:kubejs:copper_coin>, "level_1");
-ItemStages.restrict(<item:kubejs:gold_coin>, "level_1");
-ItemStages.restrict(<item:kubejs:iron_coin>, "level_1");
 ItemStages.restrict(<item:minecraft:bone_meal>, "level_1");
 ItemStages.restrict(<item:minecraft:crafting_table>, "level_1");
 ItemStages.restrict(<item:minecraft:stick>, "level_1");
@@ -56,6 +53,7 @@ ItemStages.restrict(<tag:items:minecraft:wooden_fences>, "level_3");
 ItemStages.restrict(<item:farmersdelight:fried_egg>, "level_3");
 ItemStages.restrict(<item:minecraft:bone>, "level_3");
 ItemStages.restrict(<item:minecraft:bow>, "level_3");
+ItemStages.restrict(<item:minecraft:string>, "level_3");
 ItemStages.restrict(<item:minecraft:bricks>, "level_3");
 ItemStages.restrict(<item:minecraft:cooked_beef>, "level_3");
 ItemStages.restrict(<item:minecraft:flower_pot>, "level_3");
@@ -82,7 +80,6 @@ ItemStages.restrict(<item:minecraft:stone_hoe>, "level_4");
 ItemStages.restrict(<item:minecraft:stone_pickaxe>, "level_4");
 ItemStages.restrict(<item:minecraft:stone_shovel>, "level_4");
 ItemStages.restrict(<item:minecraft:stone_sword>, "level_4");
-ItemStages.restrict(<item:minecraft:string>, "level_4");
 
 // Level 5
 ItemStages.restrict(<tag:items:minecraft:wool>, "level_5");
@@ -125,19 +122,15 @@ ItemStages.restrict(<item:minecraft:potato>, "level_6");
 // Level 7
 ItemStages.restrict(<tag:items:minecraft:copper_ores>, "level_7");
 ItemStages.restrict(<tag:items:minecraft:decorated_pot_sherds>, "level_7");
-ItemStages.restrict(<tag:items:minecraft:iron_ores>, "level_7");
 ItemStages.restrict(<item:bettercopper:copper_nugget>, "level_7");
 ItemStages.restrict(<item:farmersdelight:milk_bottle>, "level_7");
 ItemStages.restrict(<item:farmersdelight:pie_crust>, "level_7");
 ItemStages.restrict(<item:minecraft:bucket>, "level_7");
 ItemStages.restrict(<item:minecraft:copper_ingot>, "level_7");
 ItemStages.restrict(<item:minecraft:glass_bottle>, "level_7");
-ItemStages.restrict(<item:minecraft:iron_nugget>, "level_7");
 ItemStages.restrict(<item:minecraft:milk_bucket>, "level_7");
 ItemStages.restrict(<item:minecraft:raw_copper>, "level_7");
 ItemStages.restrict(<item:minecraft:raw_copper_block>, "level_7");
-ItemStages.restrict(<item:minecraft:raw_iron>, "level_7");
-ItemStages.restrict(<item:minecraft:raw_iron_block>, "level_7");
 ItemStages.restrict(<item:minecraft:water_bucket>, "level_7");
 ItemStages.restrict(<item:bettercopper:copper_axe>, "level_7");
 ItemStages.restrict(<item:bettercopper:copper_hoe>, "level_7");
@@ -153,7 +146,73 @@ ItemStages.restrict(<item:minecraft:composter>, "level_7");
 ItemStages.restrict(<item:minecraft:decorated_pot>, "level_7");
 ItemStages.restrict(<item:minecraft:emerald>, "level_7");
 ItemStages.restrict(<item:minecraft:fishing_rod>, "level_7");
-ItemStages.restrict(<item:minecraft:iron_ingot>, "level_7");
+// Ironworking is unlocked inside Level 7 after the copper-tool milestone.
+// Keeping the metal stages separate gives BetterCopper a real progression era.
+ItemStages.restrict(<tag:items:minecraft:iron_ores>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_nugget>, "iron_age");
+ItemStages.restrict(<item:minecraft:raw_iron>, "iron_age");
+ItemStages.restrict(<item:minecraft:raw_iron_block>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_ingot>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_block>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_axe>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_hoe>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_pickaxe>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_shovel>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_sword>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_helmet>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_chestplate>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_leggings>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_boots>, "iron_age");
+ItemStages.restrict(<item:minecraft:shield>, "iron_age");
+
+// Explicit integration policy for gameplay-changing systems. These namespace
+// gates prevent adventure and automation mods from bypassing the farm economy.
+// Temporary item-level containment pending full progression integration.
+// This prevents obvious item bypasses but does not define final unlock levels.
+ItemStages.createModRestriction("alexsmobs", "level_4");
+ItemStages.createModRestriction("cookingforblockheads", "level_7");
+ItemStages.createModRestriction("create", "level_8");
+ItemStages.createModRestriction("createaddition", "level_8");
+ItemStages.createModRestriction("sliceanddice", "level_8");
+ItemStages.createModRestriction("alexscaves", "level_8");
+ItemStages.createModRestriction("twilightforest", "level_8");
+
+// TEMPORARY: unfinished progression boundary; revisit in progression overhaul.
+// Stage diamond, redstone, lapis, and gold at level_8 to prevent L7 iron pickaxe
+// from making the entire unfinished vanilla tech tree immediately available.
+// This is not final progression design.
+ItemStages.restrict(<tag:items:minecraft:diamond_ores>, "level_8");
+ItemStages.restrict(<item:minecraft:diamond>, "level_8");
+ItemStages.restrict(<item:minecraft:diamond_block>, "level_8");
+ItemStages.restrict(<item:minecraft:diamond_axe>, "level_8");
+ItemStages.restrict(<item:minecraft:diamond_hoe>, "level_8");
+ItemStages.restrict(<item:minecraft:diamond_pickaxe>, "level_8");
+ItemStages.restrict(<item:minecraft:diamond_shovel>, "level_8");
+ItemStages.restrict(<item:minecraft:diamond_sword>, "level_8");
+ItemStages.restrict(<item:minecraft:diamond_helmet>, "level_8");
+ItemStages.restrict(<item:minecraft:diamond_chestplate>, "level_8");
+ItemStages.restrict(<item:minecraft:diamond_leggings>, "level_8");
+ItemStages.restrict(<item:minecraft:diamond_boots>, "level_8");
+ItemStages.restrict(<tag:items:minecraft:redstone_ores>, "level_8");
+ItemStages.restrict(<item:minecraft:redstone>, "level_8");
+ItemStages.restrict(<item:minecraft:redstone_block>, "level_8");
+ItemStages.restrict(<tag:items:minecraft:lapis_ores>, "level_8");
+ItemStages.restrict(<item:minecraft:lapis_lazuli>, "level_8");
+ItemStages.restrict(<item:minecraft:lapis_block>, "level_8");
+ItemStages.restrict(<tag:items:minecraft:gold_ores>, "level_8");
+ItemStages.restrict(<item:minecraft:raw_gold>, "level_8");
+ItemStages.restrict(<item:minecraft:raw_gold_block>, "level_8");
+ItemStages.restrict(<item:minecraft:gold_ingot>, "level_8");
+ItemStages.restrict(<item:minecraft:gold_block>, "level_8");
+ItemStages.restrict(<item:minecraft:golden_axe>, "level_8");
+ItemStages.restrict(<item:minecraft:golden_hoe>, "level_8");
+ItemStages.restrict(<item:minecraft:golden_pickaxe>, "level_8");
+ItemStages.restrict(<item:minecraft:golden_shovel>, "level_8");
+ItemStages.restrict(<item:minecraft:golden_sword>, "level_8");
+ItemStages.restrict(<item:minecraft:golden_helmet>, "level_8");
+ItemStages.restrict(<item:minecraft:golden_chestplate>, "level_8");
+ItemStages.restrict(<item:minecraft:golden_leggings>, "level_8");
+ItemStages.restrict(<item:minecraft:golden_boots>, "level_8");
 
 // Level 8
 ItemStages.restrict(<item:aquaculture:fish_fillet_raw>, "level_8");

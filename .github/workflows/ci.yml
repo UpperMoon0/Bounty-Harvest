@@ -1,0 +1,32 @@
+name: Build and server smoke test
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  release-archives:
+    runs-on: windows-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build client and dedicated-server archives
+        shell: pwsh
+        run: ./tools/build_modpack.ps1
+      - name: Verify archive contents and client/server split
+        run: python tools/verify_archives.py
+      - name: Boot dedicated server
+        shell: pwsh
+        run: ./tools/smoke_test_server.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Bounty-Harvest-${{ github.event.pull_request.head.sha }}
+          path: dist/*.zip
+          if-no-files-found: error

@@ -11,20 +11,18 @@
 	quests: [
 		{
 			dependencies: [
-				"4967B23E5A19ADB4"
-				"354771AEA610B772"
 				"4D94846C7A3621E1"
+				"0F903402C0357CB1"
+				"43CD52707D5AC45C"
 			]
 			icon: "minecraft:carrot"
 			id: "1003C2B79F710366"
 			rewards: [
 				{
-					command: "/gamestage add @p level_4 true"
-					elevate_perms: true
+					autoclaim: 1b
 					id: "2B1DDE4295CD60DD"
-					silent: true
-					title: "Level up to Level 4"
-					type: "command"
+					stage: "level_4"
+					type: "stage"
 				}
 				{
 					id: "2295122A1560CAE1"
@@ -46,36 +44,36 @@
 			tasks: [
 				{
 					consume_items: true
+					count: 2L
 					id: "5CDAE6C6E830E3D0"
-					item: "kubejs:gold_coin"
+					item: { Count: 2, id: "kubejs:gold_coin" }
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 8L
+					count: 4L
 					id: "148496AD041DB986"
-					item: { Count: 8, id: "kubejs:iron_coin" }
+					item: { Count: 4, id: "kubejs:iron_coin" }
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 12L
+					count: 4L
 					id: "2DDA7D4B9E966C80"
-					item: { Count: 8, id: "minecraft:cooked_beef" }
+					item: { Count: 4, id: "minecraft:cooked_beef" }
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 12L
+					count: 4L
 					id: "690FB21FF4E312EC"
-					item: { Count: 8, id: "minecraft:leather" }
+					item: { Count: 4, id: "minecraft:leather" }
 					type: "item"
 				}
 				{
-					consume_items: true
-					count: 12L
+					consume_items: false
 					id: "602BA0B766EB9931"
-					item: { Count: 8, id: "minecraft:bone" }
+					item: "minecraft:bow"
 					type: "item"
 				}
 			]

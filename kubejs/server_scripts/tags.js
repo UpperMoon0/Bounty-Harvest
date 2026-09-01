@@ -7,7 +7,7 @@ ServerEvents.tags('item', event => {
     // Red Flowers
     event.add('forge:red_flowers', 'minecraft:poppy')
     event.add('forge:red_flowers', 'minecraft:rose_bush')
-    event.add('forge:red_flowers', 'minecraft:tulip')
+    event.add('forge:red_flowers', 'minecraft:red_tulip')
     event.add('forge:red_flowers', 'twilightforest:thorn_rose')
     event.add('forge:red_flowers', 'biomesoplenty:waterlily')
     event.add('forge:red_flowers', 'biomesoplenty:rose')

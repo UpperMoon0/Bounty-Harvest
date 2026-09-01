@@ -14,18 +14,15 @@
 				"46299A2CF9119F73"
 				"6136AD91428A0801"
 				"175C3116B3681471"
-				"6ABD336C3EB9F503"
 			]
 			icon: "minecraft:leather"
 			id: "573FE8ED65790A78"
 			rewards: [
 				{
-					command: "/gamestage add @p level_3 true"
-					elevate_perms: true
+					autoclaim: 1b
 					id: "6629D8529763B34A"
-					silent: true
-					title: "Level up to Level 3"
-					type: "command"
+					stage: "level_3"
+					type: "stage"
 				}
 				{
 					id: "2FD553EA8B8C5325"
@@ -47,15 +44,16 @@
 			tasks: [
 				{
 					consume_items: true
+					count: 2L
 					id: "51C23B8B5D40946D"
-					item: "kubejs:gold_coin"
+					item: { Count: 2, id: "kubejs:gold_coin" }
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 8L
+					count: 4L
 					id: "4CD5AB29DD021E1C"
-					item: { Count: 8, id: "minecraft:cooked_chicken" }
+					item: { Count: 4, id: "minecraft:cooked_chicken" }
 					type: "item"
 				}
 				{
@@ -67,16 +65,9 @@
 				}
 				{
 					consume_items: true
-					count: 8L
+					count: 4L
 					id: "05AAABC40A80D038"
-					item: "minecraft:terracotta"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 8L
-					id: "726821DC61D877A1"
-					item: { Count: 8, id: "minecraft:rotten_flesh" }
+					item: { Count: 4, id: "minecraft:terracotta" }
 					type: "item"
 				}
 			]

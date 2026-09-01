@@ -1,0 +1,1479 @@
+{
+    "name":  "Bounty Harvest",
+    "gameVersion":  "1.20.1",
+    "baseModLoader":  {
+                          "name":  "forge-47.4.23",
+                          "forgeVersion":  "47.4.23",
+                          "type":  0
+                      },
+    "installedAddons":  [
+                            {
+                                "addonID":  556448,
+                                "name":  "Alex\u0027s Delight",
+                                "primaryAuthor":  "Baisylia",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/alexs-delight",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  5028450,
+                                                      "fileName":  "alexsdelight-1.5.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/5028/450/alexsdelight-1.5.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "ef7049ba6f16df22c8d98dd4dad2d9dc2aa6b6ba"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "b969e136e1f9a70c42dd102ed8359b40"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  841262,
+                                "name":  "Ocean\u0027sÂ Delight",
+                                "primaryAuthor":  "scouter567",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/oceans-delight",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  4652060,
+                                                      "fileName":  "oceansdelight-1.0.2-1.20.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/4652/60/oceansdelight-1.0.2-1.20.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "32af985453bde77bfa56d59cdfb11cab5662c8e1"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "eaa8c0ba3771042829fd5396ad8b5e06"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  60028,
+                                "name":  "Aquaculture 2",
+                                "primaryAuthor":  "Shadow",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/aquaculture",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  7331172,
+                                                      "fileName":  "Aquaculture-1.20.1-2.5.7.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/7331/172/Aquaculture-1.20.1-2.5.7.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "308a0e92401e29bdb9cae24532a3b07a1bf6e757"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "f39d02c30d59ec516e3221f9f7643909"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  280316,
+                                "name":  "Item Stages",
+                                "primaryAuthor":  "DarkhaxDev",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/item-stages",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  5214094,
+                                                      "fileName":  "ItemStages-Forge-1.20.1-8.0.3.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/5214/94/ItemStages-Forge-1.20.1-8.0.3.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "806bfd896cb9af31016d26566406beb5859ff94b"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "ed710102a7c62a28e6d3f14657c9a396"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  238222,
+                                "name":  "Just Enough Items (JEI)",
+                                "primaryAuthor":  "mezz",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/jei",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8759243,
+                                                      "fileName":  "jei-1.20.1-forge-15.49.0.200.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8759/243/jei-1.20.1-forge-15.49.0.200.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "f5c97463ace7595faf6356f67ac91a33399152e5"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "60adfcfe7322e6dd74b9f2edc78d4324"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  250398,
+                                "name":  "Controlling",
+                                "primaryAuthor":  "Jaredlll08",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/controlling",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  4646682,
+                                                      "fileName":  "Controlling-forge-1.20.1-12.0.2.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/4646/682/Controlling-forge-1.20.1-12.0.2.jar",
+                                                      "hashes":  [
+
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  404465,
+                                "name":  "FTB Library (NeoForge)",
+                                "primaryAuthor":  "FTB",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/ftb-library-forge",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8226927,
+                                                      "fileName":  "ftb-library-forge-2001.2.13.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8226/927/ftb-library-forge-2001.2.13.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "a5427d5ff07eb044144ed0b54308370d88bce17e"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "9de2c76938392445e735a98b352da9d4"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  388172,
+                                "name":  "GeckoLib",
+                                "primaryAuthor":  "Gecko",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/geckolib",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8285794,
+                                                      "fileName":  "geckolib-forge-1.20.1-4.8.4.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8285/794/geckolib-forge-1.20.1-4.8.4.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "81982cc287f80ffabb2fd36d22cc95e4255c739d"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "83c73bcbf5778235569025ed968dc3ec"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  309674,
+                                "name":  "Item Filters",
+                                "primaryAuthor":  "Lat",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/item-filters",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  4838266,
+                                                      "fileName":  "item-filters-forge-2001.1.0-build.59.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/4838/266/item-filters-forge-2001.1.0-build.59.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "55a7f032c59489eca96069a7841601de2ff97590"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "4155fd7faf7daf46f9dcb914e93893e1"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  230976,
+                                "name":  "Fast Leaf Decay",
+                                "primaryAuthor":  "olafskiii",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/fast-leaf-decay",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  5375681,
+                                                      "fileName":  "FastLeafDecay-32.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/5375/681/FastLeafDecay-32.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "4a76af4ca71dd9939d3c21206792c0d5f75b93a7"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "20df3e3525622d6ea38a243be828ef38"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  908741,
+                                "name":  "Embeddium",
+                                "primaryAuthor":  "FiniteReality",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/embeddium",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  5681725,
+                                                      "fileName":  "embeddium-0.3.31+mc1.20.1.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/5681/725/embeddium-0.3.31%2bmc1.20.1.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "bb2fa8f3e493af16af9160d049f96c614a1faf2f"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "1dfb2ee49ce9ad5d484ff3eea0d628b7"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  280510,
+                                "name":  "AttributeFix",
+                                "primaryAuthor":  "DarkhaxDev",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/attributefix",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  7612291,
+                                                      "fileName":  "AttributeFix-Forge-1.20.1-21.0.5.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/7612/291/AttributeFix-Forge-1.20.1-21.0.5.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "76d6b2d0f2a3c9842587ad20666ba419cd8c1efa"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "e43cd5f7fc4b04e20127359e5bf9af80"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  328085,
+                                "name":  "Create",
+                                "primaryAuthor":  "simibubi",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/create",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  7178761,
+                                                      "fileName":  "create-1.20.1-6.0.8.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/7178/761/create-1.20.1-6.0.8.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "b13d912b9247a38d66d11598c121442585a1c1e9"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "6ebc5c57638c1678359eac65b924c310"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  687974,
+                                "name":  "Pineapple Delight",
+                                "primaryAuthor":  "AmarokIce",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/pineapple-delight",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8633964,
+                                                      "fileName":  "PineappleDelight-1.2.0-1.20.1-forge.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8633/964/PineappleDelight-1.2.0-1.20.1-forge.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "53e3e176f7ab809bfe3d0d24f877d0d6d2372b7b"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "37f379ef6a697d6b077f1895f16fe9a1"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  790626,
+                                "name":  "ModernFix",
+                                "primaryAuthor":  "embeddedt",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/modernfix",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8774721,
+                                                      "fileName":  "modernfix-forge-5.27.83+mc1.20.1.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8774/721/modernfix-forge-5.27.83%2Bmc1.20.1.jar",
+                                                      "hashes":  [
+
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  416294,
+                                "name":  "Rhino",
+                                "primaryAuthor":  "Lat",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/rhino",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  6186971,
+                                                      "fileName":  "rhino-forge-2001.2.3-build.10.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/6186/971/rhino-forge-2001.2.3-build.10.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "c83c9b719a6bab33fbd2b3f2f680eb3adbfc1aa1"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "59387620b0ef6becbff02c7c1636ad3e"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  711672,
+                                "name":  "Festive Delight - Christmas eve",
+                                "primaryAuthor":  "To0pa",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/festive-delight",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  7884694,
+                                                      "fileName":  "festive_delight-2.0.0-forge-1.20.1.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/7884/694/festive_delight-2.0.0-forge-1.20.1.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "445d002a5e15e231f4489858543ac1bc40d6291d"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "91374166b611e1b3b3a00074b771922e"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  324717,
+                                "name":  "Jade ðŸ”",
+                                "primaryAuthor":  "Snownee",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/jade",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8479276,
+                                                      "fileName":  "Jade-1.20.1-Forge-11.13.3.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8479/276/Jade-1.20.1-Forge-11.13.3.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "d08e64e66521d69e083c8525f1fc507f1c202384"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "a53aade6b5915ebe8357abb68cf1f778"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  306770,
+                                "name":  "Patchouli",
+                                "primaryAuthor":  "Vazkii",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/patchouli",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  7731017,
+                                                      "fileName":  "Patchouli-1.20.1-85-FORGE.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/7731/17/Patchouli-1.20.1-85-FORGE.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "d4614507d6e4c7cb464bba5eca891978272062ef"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "78bd223d069fa9491e940d99a8f426b3"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  888624,
+                                "name":  "Rechiseled: Create",
+                                "primaryAuthor":  "SuperMartijn642",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/rechiseled-create",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8302800,
+                                                      "fileName":  "rechiseledcreate-1.1.1-forge-mc1.20.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8302/800/rechiseledcreate-1.1.1-forge-mc1.20.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "e5b7ac2e58ef763d67ff9ab1c3a455707b77be50"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "ec81ff98922ed3103fe69b1824360dcf"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  889915,
+                                "name":  "FTB XMod Compat",
+                                "primaryAuthor":  "FTB",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/ftb-xmod-compat",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  6402486,
+                                                      "fileName":  "ftb-xmod-compat-forge-2.1.3.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/6402/486/ftb-xmod-compat-forge-2.1.3.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "0584f628d2bc6a612d79dee368324357ebae1423"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "6d01bd4bc73c6ce36d0d91c56bb27772"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  404468,
+                                "name":  "FTB Teams (NeoForge)",
+                                "primaryAuthor":  "FTB",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/ftb-teams-forge",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  7499810,
+                                                      "fileName":  "ftb-teams-forge-2001.3.2.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/7499/810/ftb-teams-forge-2001.3.2.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "c49023f5d471aa1ba7fc624d2565fe9e82b7117e"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "1c547d6f1b22f461f84c5fb79067b0ec"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  32274,
+                                "name":  "JourneyMap",
+                                "primaryAuthor":  "techbrew",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/journeymap",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8764299,
+                                                      "fileName":  "journeymap-forge-1.20.1-6.0.4.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8764/299/journeymap-forge-1.20.1-6.0.4.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "bb8502db57ced907e230fe44aea60c794237742a"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "4dee66488a5952f958e9a94419705f86"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  570630,
+                                "name":  "LootJS: KubeJS Addon",
+                                "primaryAuthor":  "Lytho",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/lootjs",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  7551186,
+                                                      "fileName":  "lootjs-forge-1.20.1-2.13.1.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/7551/186/lootjs-forge-1.20.1-2.13.1.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "804deb0bd34d69cad873170642b9d7e47fa0d6ad"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "0fbdbf49778f694de153bf5962ec03ee"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  558998,
+                                "name":  "Rechiseled",
+                                "primaryAuthor":  "SuperMartijn642",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/rechiseled",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8301383,
+                                                      "fileName":  "rechiseled-1.2.5-forge-mc1.20.1.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8301/383/rechiseled-1.2.5-forge-mc1.20.1.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "04228228e58a36c921474388361ab2361c1f527f"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "bd1cccb0cf12ec2a456e5a5af3a1f7a8"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  854949,
+                                "name":  "Fusion (Connected Textures)",
+                                "primaryAuthor":  "SuperMartijn642",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/fusion-connected-textures",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8721856,
+                                                      "fileName":  "fusion-1.3.14a-forge-mc1.20.1.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8721/856/fusion-1.3.14a-forge-mc1.20.1.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "75983e3723c9f05c105301ccf227de242f0e2a43"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "da8056cfe95879d6fd2bfc39e1da9000"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  248787,
+                                "name":  "AppleSkin",
+                                "primaryAuthor":  "squeek502",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/appleskin",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  4770828,
+                                                      "fileName":  "appleskin-forge-mc1.20.1-2.5.1.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/4770/828/appleskin-forge-mc1.20.1-2.5.1.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "81919356f84eab14258db98924b66c3c38e372b1"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "dae63cea9c951dda542a4005ceef3953"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  758284,
+                                "name":  "Better Copper / Armor and Tools",
+                                "primaryAuthor":  "Anto1_12",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/better-copper-armor-and-tools",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  6059681,
+                                                      "fileName":  "BetterCopper 1.20.1-1.3.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/6059/681/BetterCopper%201.20.1-1.3.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "602ea289b48a6dda513015348ade908fcccec2b9"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "2f0ba355d196c19dc324b92529008820"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  924854,
+                                "name":  "Alex\u0027s Caves",
+                                "primaryAuthor":  "sbom_xela",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/alexs-caves",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  5848216,
+                                                      "fileName":  "alexscaves-2.0.2.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/5848/216/alexscaves-2.0.2.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "a1e5c7b7c7eadda4c8e954acbcbaf75a7b500d53"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "6c8793ee5e1aa852fdb430a9cdaccdc5"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  231484,
+                                "name":  "Cooking for Blockheads",
+                                "primaryAuthor":  "BlayTheNinth",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/cooking-for-blockheads",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  7454483,
+                                                      "fileName":  "cookingforblockheads-forge-1.20.1-16.0.15.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/7454/483/cookingforblockheads-forge-1.20.1-16.0.15.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "fb53bdb2f667f6289ccd97e807a7fbb7ad93c733"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "d348d9cbbf76348a724acc16edcc5478"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  454372,
+                                "name":  "SuperMartijn642\u0027s Core Lib",
+                                "primaryAuthor":  "SuperMartijn642",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/supermartijn642s-core-lib",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8677304,
+                                                      "fileName":  "supermartijn642corelib-1.1.24a-forge-mc1.20.1.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8677/304/supermartijn642corelib-1.1.24a-forge-mc1.20.1.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "3d0171588c7d1e4d1ab741dd864763b25dfcd75f"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "c359abf089b61a23f4d72de4d6edb26f"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  439890,
+                                "name":  "Create Crafts \u0026 Additions",
+                                "primaryAuthor":  "MRHminer",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/createaddition",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  7208610,
+                                                      "fileName":  "createaddition-1.20.1-1.3.3.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/7208/610/createaddition-1.20.1-1.3.3.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "c7d464c451fdc2979bc29a67d7eec2a30858af12"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "1c0d2275ead3e4756d77ac5a86f135ab"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  662675,
+                                "name":  "End\u0027s Delight",
+                                "primaryAuthor":  "foggyhillside",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/ends-delight",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8675193,
+                                                      "fileName":  "ends_delight-2.6.1+forge.1.20.1.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8675/193/ends_delight-2.6.1%2bforge.1.20.1.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "92158881934f91b125a8d4699eb9e33317fc485b"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "f078440f68f6273419fda69f21a8bd2c"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  268655,
+                                "name":  "Game Stages",
+                                "primaryAuthor":  "DarkhaxDev",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/game-stages",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  5790361,
+                                                      "fileName":  "GameStages-Forge-1.20.1-15.0.2.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/5790/361/GameStages-Forge-1.20.1-15.0.2.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "e17306593188b9fd16170a9dc47a8e0051a9f1e7"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "bddb7414b6e27fcb60e20f9eedea4333"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  622737,
+                                "name":  "FTB Backups 2",
+                                "primaryAuthor":  "FTB",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/ftb-backups-2",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  4834403,
+                                                      "fileName":  "ftbbackups2-forge-1.20-1.0.23.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/4834/403/ftbbackups2-forge-1.20-1.0.23.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "4b100de40338247a3fbf4d1fd1846257c5338189"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "d03cc8191ad47156c977d53468421559"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  871735,
+                                "name":  "Twilight\u0027s Flavors \u0026 Delight",
+                                "primaryAuthor":  "lcy0x1",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/twilights-flavors-delight",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8208651,
+                                                      "fileName":  "twilightdelight-2.2.2.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8208/651/twilightdelight-2.2.2.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "8c3a5c0e18acf3f0999dc2aeeef7c09477302d1c"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "88c3bb1f5c3b362e4bfadd862f007dc8"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  388800,
+                                "name":  "Polymorph (Fabric/Forge/Quilt)",
+                                "primaryAuthor":  "TheIllusiveC4",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/polymorph",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  6450982,
+                                                      "fileName":  "polymorph-forge-0.49.10+1.20.1.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/6450/982/polymorph-forge-0.49.10%2B1.20.1.jar",
+                                                      "hashes":  [
+
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  580681,
+                                "name":  "Immersive Armors",
+                                "primaryAuthor":  "Conczin",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/immersive-armors",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8076909,
+                                                      "fileName":  "immersive_armors-1.7.2+1.20.1-forge.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8076/909/immersive_armors-1.7.2%2b1.20.1-forge.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "9c4fb7f1287470353125a9c4b61047c7009e1949"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "42bd170e4281c34d01c971ef58e949d3"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  429371,
+                                "name":  "KubeJS Create",
+                                "primaryAuthor":  "Lat",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/kubejs-create",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  6265498,
+                                                      "fileName":  "kubejs-create-forge-2001.3.0-build.8.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/6265/498/kubejs-create-forge-2001.3.0-build.8.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "cbeb6643d1cea979a7e01c87cfb08b9210a1c393"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "c76f71ba6d16e6fe50e76b1862b58dff"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  314002,
+                                "name":  "Overloaded Armor Bar",
+                                "primaryAuthor":  "tfarecnim",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/overloaded-armor-bar",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  4631133,
+                                                      "fileName":  "overloadedarmorbar-1.20.1-1.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/4631/133/overloadedarmorbar-1.20.1-1.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "78be460fbca8978ab3ac8f81f28f1ced832ce80a"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "804052a816800c4cf93b6b472559ea70"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  426558,
+                                "name":  "Alex\u0027s Mobs",
+                                "primaryAuthor":  "sbom_xela",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/alexs-mobs",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  5698791,
+                                                      "fileName":  "alexsmobs-1.22.9.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/5698/791/alexsmobs-1.22.9.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "dbf93d2f1da19e16739e91e8ea0fc6f4bc2f228f"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "504050d1f2e2c3019b6f53377ca354c6"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  531761,
+                                "name":  "Balm",
+                                "primaryAuthor":  "BlayTheNinth",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/balm",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8545415,
+                                                      "fileName":  "balm-forge-1.20.1-7.3.42.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8545/415/balm-forge-1.20.1-7.3.42.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "d22394596e9f845c0a9a6e45575dbfbfec6b25d9"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "d2e369fb61ea048f1a24c6d467f784a0"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  513688,
+                                "name":  "Terralith",
+                                "primaryAuthor":  "Starmute",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/terralith",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  5512076,
+                                                      "fileName":  "Terralith_1.20.x_v2.5.4.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/5512/76/Terralith_1.20.x_v2.5.4.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "79e1409b8db4ce86df9d6d6730f09c4bd8860a30"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "b143cfd648086c68d7f47a86b8994ee3"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  637529,
+                                "name":  "Delightful",
+                                "primaryAuthor":  "brnbrd",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/delightful",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8203343,
+                                                      "fileName":  "Delightful-1.20.1-3.8.1.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8203/343/Delightful-1.20.1-3.8.1.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "4fff88037d3535158e0ab19525887768e9fc647a"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "d95e4f10a7eb9df2c11c3263dcef11c0"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  314906,
+                                "name":  "FTB Chunks (NeoForge)",
+                                "primaryAuthor":  "FTB",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/ftb-chunks-forge",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8216874,
+                                                      "fileName":  "ftb-chunks-forge-2001.3.8.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8216/874/ftb-chunks-forge-2001.3.8.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "ee2d0cdac6d2ca31f43da30f76dff8c6bae9d687"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "c9c17e13f616fd5ff2f83429e7ae512d"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  577805,
+                                "name":  "Corn Delight[Forge]",
+                                "primaryAuthor":  "SyameimaruZheng",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/corn-delight",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8219677,
+                                                      "fileName":  "corn_delight-1.2.11-1.20.1.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8219/677/corn_delight-1.2.11-1.20.1.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "9a4d595db7dac51f0d6c4b60b568cf6b2f89a3ab"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "a842f5b9fe6b1e87ba4a6a958ab2419b"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  368098,
+                                "name":  "Mysterious Mountain Lib",
+                                "primaryAuthor":  "SyameimaruZheng",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/mysterious-mountain-lib",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  7636232,
+                                                      "fileName":  "mysterious_mountain_lib-1.6.34-1.20.1.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/7636/232/mysterious_mountain_lib-1.6.34-1.20.1.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "4fb6e35edf9384fde736cd9ee972468d65f61dce"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "8bdcbdb09e08e9ba79dc8f8c3b4215bc"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  238551,
+                                "name":  "GraveStone Mod",
+                                "primaryAuthor":  "henkelmax",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/gravestone-mod",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  7099725,
+                                                      "fileName":  "gravestone-forge-1.20.1-1.0.35.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/7099/725/gravestone-forge-1.20.1-1.0.35.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "a5592ab84eae317907e5003f590cc4a8ba9cbe49"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "1670e9771981e234ecca27bf0106d5cd"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  239197,
+                                "name":  "CraftTweaker",
+                                "primaryAuthor":  "Jaredlll08",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/crafttweaker",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  7772873,
+                                                      "fileName":  "CraftTweaker-forge-1.20.1-14.0.60.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/7772/873/CraftTweaker-forge-1.20.1-14.0.60.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "79ddddd3f14f8d4992ba90a7a8980918ed1b9ff8"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "dae54b74794b5f3391e95bf0ae6b0c87"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  576589,
+                                "name":  "PolyLib",
+                                "primaryAuthor":  "Official_CreeperHost",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/polylib",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  5350440,
+                                                      "fileName":  "polylib-forge-2000.0.3-build.143.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/5350/440/polylib-forge-2000.0.3-build.143.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "bf49919adc9e9109196762ff20030f823790e2db"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "ffb6c10b010e7e4fd5eba9f864182593"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  385587,
+                                "name":  "Complementary Shaders - Unbound",
+                                "primaryAuthor":  "EminGT",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/shaders/complementary-unbound",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  5874235,
+                                                      "fileName":  "ComplementaryUnbound_r5.3.zip",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/5874/235/ComplementaryUnbound_r5.3.zip",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "9474a8bc55e4f37786568ae532e4336aab72ba42"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "50893f00c06b63dfd140dbcac22cc69f"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  438332,
+                                "name":  "SuperMartijn642\u0027s Config Lib",
+                                "primaryAuthor":  "SuperMartijn642",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/supermartijn642s-config-lib",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  4715408,
+                                                      "fileName":  "supermartijn642configlib-1.1.8-forge-mc1.20.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/4715/408/supermartijn642configlib-1.1.8-forge-mc1.20.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "f80f9eed728966adcfbcc848633e789645057281"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "cbece61946d4e059e90806c19dd66082"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  331936,
+                                "name":  "Citadel",
+                                "primaryAuthor":  "sbom_xela",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/citadel",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  7476570,
+                                                      "fileName":  "citadel-2.6.3-1.20.1.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/7476/570/citadel-2.6.3-1.20.1.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "fb0b1fa96ce28e4be77b38ad95d83c3da7ec8316"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "da80c09b998d829b6d580e5be76dcc7b"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  563928,
+                                "name":  "TerraBlender (Forge)",
+                                "primaryAuthor":  "TheAdubbz",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/terrablender",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  6290448,
+                                                      "fileName":  "TerraBlender-forge-1.20.1-3.0.1.10.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/6290/448/TerraBlender-forge-1.20.1-3.0.1.10.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "3bd99fb59e8b06b04e78b5153790c1e08b2be5dc"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "9d8e305b95ae5a8f7b446d6346324267"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  228525,
+                                "name":  "Bookshelf",
+                                "primaryAuthor":  "DarkhaxDev",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/bookshelf",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  7612389,
+                                                      "fileName":  "Bookshelf-Forge-1.20.1-20.2.15.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/7612/389/Bookshelf-Forge-1.20.1-20.2.15.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "9df4908f606c6dc62a358b3e04e3fdedba59a12c"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "984cc53b314436f57e3bf72b8a1ba62b"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  317134,
+                                "name":  "Global Packs",
+                                "primaryAuthor":  "JTK222",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/globalpacks",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  4573646,
+                                                      "fileName":  "global_packs-forge-1.19.4-1.16.2_forge.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/4573/646/global_packs-forge-1.19.4-1.16.2_forge.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "89e65a136c646e168060c3a7cf9a314487ed0f4f"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "cbd0adc9a47ffa6bf5e8ea9f7848b534"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  455585,
+                                "name":  "Kambrik",
+                                "primaryAuthor":  "Ejektaflex",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/kambrik",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  4654401,
+                                                      "fileName":  "Kambrik-6.1.1+1.20.1-forge.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/4654/401/Kambrik-6.1.1%2b1.20.1-forge.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "48cdc22a0f6698c9059f437538e5546f74900541"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "5cb26d3e599145ca834e736f64dcd363"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  351264,
+                                "name":  "Kotlin for Forge",
+                                "primaryAuthor":  "thedarkcolour",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/kotlin-for-forge",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  7291067,
+                                                      "fileName":  "kotlinforforge-4.12.0-all.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/7291/67/kotlinforforge-4.12.0-all.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "962fdb760409d6d71cbf079235f1ca94e3863a22"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "d6a40dede74edbe646b34a1bafd53b4d"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  227639,
+                                "name":  "The Twilight Forest",
+                                "primaryAuthor":  "Benimatic",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  5468648,
+                                                      "fileName":  "twilightforest-1.20.1-4.3.2508-universal.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/5468/648/twilightforest-1.20.1-4.3.2508-universal.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "fa3b506a45d3e9c465551cd533fd50c899496e9f"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "0e1ca36ec2ca7e35059dea1600aa31ee"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  398521,
+                                "name":  "Farmer\u0027s Delight",
+                                "primaryAuthor":  "vectorwing",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/farmers-delight",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8765179,
+                                                      "fileName":  "FarmersDelight-1.20.1-1.3.4.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8765/179/FarmersDelight-1.20.1-1.3.4.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "26f615fd35f652021f5b0f1cba68afa7d578fe15"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "a61302a31849ad9c37c6ac6e59268b75"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  581495,
+                                "name":  "Oculus",
+                                "primaryAuthor":  "Asek3",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/oculus",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  6020952,
+                                                      "fileName":  "oculus-mc1.20.1-1.8.0.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/6020/952/oculus-mc1.20.1-1.8.0.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "984f774e71790deaec674c7587bd24e0711871b2"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "1dd891634ac21591b5a692471f112572"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  289412,
+                                "name":  "FTB Quests (NeoForge)",
+                                "primaryAuthor":  "FTB",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/ftb-quests-forge",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8078538,
+                                                      "fileName":  "ftb-quests-forge-2001.4.22.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8078/538/ftb-quests-forge-2001.4.22.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "70f3bd771ab3b5921ce1ff5f14166fab694ca1aa"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "a05a49243da4a2505413d74e13102b16"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  309516,
+                                "name":  "Bountiful",
+                                "primaryAuthor":  "Ejektaflex",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/bountiful",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  5937417,
+                                                      "fileName":  "Bountiful-6.0.4+1.20.1-forge.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/5937/417/Bountiful-6.0.4%2b1.20.1-forge.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "3627112f17aeef9018d98883a2469e7f90afc3c4"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "14437740bee567400d0bafbf028434b6"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  238086,
+                                "name":  "KubeJS",
+                                "primaryAuthor":  "Lat",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/kubejs",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  8020595,
+                                                      "fileName":  "kubejs-forge-2001.6.5-build.26.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/8020/595/kubejs-forge-2001.6.5-build.26.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "8b0cc9797d4ed00fd2d1002d58960af8b32012ae"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "64ee6615f19fb9b2b11fee8b7385eaaf"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  659674,
+                                "name":  "Create Slice \u0026 Dice",
+                                "primaryAuthor":  "possible_triangle",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/slice-and-dice",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  7184951,
+                                                      "fileName":  "sliceanddice-forge-3.6.0.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/7184/951/sliceanddice-forge-3.6.0.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "a4e47dbf4382ebe092b6c2cb71919e412b456d84"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "d32f1794294f473f0a63296cac72802d"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  429235,
+                                "name":  "FerriteCore ((Neo)Forge)",
+                                "primaryAuthor":  "malte0811",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/ferritecore",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  4810975,
+                                                      "fileName":  "ferritecore-6.0.1-forge.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/4810/975/ferritecore-6.0.1-forge.jar",
+                                                      "hashes":  [
+
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  419699,
+                                "name":  "Architectury API",
+                                "primaryAuthor":  "shedaniel",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/architectury-api",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  5137938,
+                                                      "fileName":  "architectury-9.2.14-forge.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/5137/938/architectury-9.2.14-forge.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "a52918a500ff421180a1cbd1a0cabee712134ec4"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "76b40d407b6bf0257dd1dab6d3d395d5"
+                                                                     }
+                                                                 ]
+                                                  }
+                            },
+                            {
+                                "addonID":  348521,
+                                "name":  "Cloth Config API (Fabric/Forge/NeoForge)",
+                                "primaryAuthor":  "shedaniel",
+                                "webSiteURL":  "https://www.curseforge.com/minecraft/mc-mods/cloth-config",
+                                "isEnabled":  true,
+                                "installedFile":  {
+                                                      "id":  5729105,
+                                                      "fileName":  "cloth-config-11.1.136-forge.jar",
+                                                      "downloadUrl":  "https://edge.forgecdn.net/files/5729/105/cloth-config-11.1.136-forge.jar",
+                                                      "hashes":  [
+                                                                     {
+                                                                         "type":  1,
+                                                                         "value":  "c65d07748acc57ceb45d53b3964368b84f34d54f"
+                                                                     },
+                                                                     {
+                                                                         "type":  2,
+                                                                         "value":  "ca5de5acbcb4a30c010aa6953bd7ef53"
+                                                                     }
+                                                                 ]
+                                                  }
+                            }
+                        ]
+}
