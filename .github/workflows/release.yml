@@ -3,7 +3,7 @@ name: Release modpack
 on:
   push:
     branches: [main]
-    paths: ['pack/pack.json']
+    paths: ['pack/pack.json', '.github/workflows/release.yml']
     tags: ['v*']
   workflow_dispatch:
     inputs:
@@ -62,28 +62,37 @@ jobs:
           }
           elseif ($env:GITHUB_EVENT_NAME -eq 'push' -and $env:GITHUB_REF -eq 'refs/heads/main') {
             $before = $env:BEFORE
+            $previousVersion = $null
+            $hasPreviousPack = $false
+
             if ($before -and $before -ne '0000000000000000000000000000000000000000') {
-              $ErrorActionPreference = 'Continue'
-              $previousJson = & git show "${before}:pack/pack.json" 2>$null
-              $gitExit = $LASTEXITCODE
-              $ErrorActionPreference = 'Stop'
-              if ($gitExit -eq 0 -and $previousJson) {
+              # Probe the tree first instead of intentionally running a failing
+              # `git show` when legacy main does not have pack/pack.json.
+              $previousPath = ((& git ls-tree -r --name-only $before -- pack/pack.json) -join "`n").Trim()
+              if ($LASTEXITCODE -ne 0) { throw "Failed to inspect previous commit $before." }
+
+              if ($previousPath -eq 'pack/pack.json') {
+                $previousJson = (& git show "${before}:pack/pack.json") -join "`n"
+                if ($LASTEXITCODE -ne 0) { throw "Failed to read pack/pack.json from previous commit $before." }
                 $previousVersion = [string](($previousJson | ConvertFrom-Json).version)
-                $shouldRelease = $previousVersion -ne $version
-              } else {
-                # Bootstrap exception:
-                # legacy main predates pack/pack.json.
-                # 0.11.0 is intentionally the first metadata-backed release.
-                # After this release, only an actual pack.version change releases.
-                $shouldRelease = $true
+                $hasPreviousPack = $true
               }
             }
+
+            # A missing release tag means the current version was never fully
+            # published. This makes workflow-only fixes able to retry a failed
+            # release without requiring a fake version bump.
+            $releaseTag = "v$version"
+            $tagExists = -not [string]::IsNullOrWhiteSpace(((& git tag --list $releaseTag) -join "`n"))
+            if ($LASTEXITCODE -ne 0) { throw "Failed to inspect release tags." }
+
+            $shouldRelease = (-not $hasPreviousPack) -or ($previousVersion -ne $version) -or (-not $tagExists)
           }
 
           if ($shouldRelease -and -not (Test-Path "changelog/$version.md")) {
             throw "Missing changelog/$version.md."
           }
-          "should_release=$shouldRelease" >> $env:GITHUB_OUTPUT
+          "should_release=$($shouldRelease.ToString().ToLowerInvariant())" >> $env:GITHUB_OUTPUT
           "version=$version" >> $env:GITHUB_OUTPUT
           "release_type=$releaseType" >> $env:GITHUB_OUTPUT
 
