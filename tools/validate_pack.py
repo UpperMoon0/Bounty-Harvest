@@ -85,7 +85,7 @@ def main() -> int:
     bounty_data = BOUNTIFUL_DATA.read_text(encoding="utf-8") if BOUNTIFUL_DATA.is_file() else ""
     if "ServerEvents.highPriorityData" not in bounty_data:
         errors.append("Bountiful level data is not registered as high-priority server data")
-    if "bountiful:bounty_decrees/bountiful/${level}" not in bounty_data:
+    if "bountiful:bounty_decrees/bountiful/level_${level}" not in bounty_data:
         errors.append("Bountiful generator does not register level decree resources")
     if "bountiful:bounty_pools/bountiful/${pool}" not in bounty_data:
         errors.append("Bountiful generator does not register level objective pools")
