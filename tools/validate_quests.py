@@ -23,6 +23,7 @@ LEVEL_STAGE_IDS = {1: '74402ecaffafaec4', 2: '7d3858343983b67a', 3: '573fe8ed657
 FINAL_MARKET_IDS = {1: 'a06092ae6ea56685', 2: '759303985a706218', 3: '9131a689d31728c8', 4: '284bda8ad6a1ee07', 5: '964e4e55a3efb49e', 6: '5ef6647a3bb43a42', 7: 'd9d29b504ce79600', 8: 'f3fbd0bed43c89cc', 9: '2a9904a355a5fe23', 10: 'c4f9e553b22e40cc', 11: '2507ab50f6ccd90e', 12: 'c249cfa083ab4179', 13: 'a48274d6a8ee43b3', 14: '250184a59ea4eba2', 15: '998d5fca54b02b56'}
 
 LEVEL_7_QUEST = "0a53cc520f7826a3"
+LEVEL_10_QUEST = "201fa0d785ef1770"
 COPPER_QUEST = "6a5c20c31bd2649e"
 COPPER_TOOLS_QUEST = "34b5df088e2f447e"
 IRON_QUEST = "557852ffd6f4d560"
@@ -229,13 +230,14 @@ def check_level_spine(
 
 
 def check_copper_iron_invariant(
-    graph: dict[str, set[str]], quest_blocks: dict[str, str], errors: list[str]
+    graph: dict[str, set[str]], quest_blocks: dict[str, str], quest_sources: dict[str, Path], errors: list[str]
 ) -> None:
     required = {
         LEVEL_7_QUEST: "Level 7",
         COPPER_QUEST: "Copper",
         COPPER_TOOLS_QUEST: "Copper Tools",
-        IRON_QUEST: "Iron",
+        LEVEL_10_QUEST: "Level 10",
+        IRON_QUEST: "Iron Supply",
     }
     missing = [name for quest_id, name in required.items() if quest_id not in graph]
     if missing:
@@ -245,7 +247,7 @@ def check_copper_iron_invariant(
     expected_dependencies = {
         COPPER_QUEST: {LEVEL_7_QUEST},
         COPPER_TOOLS_QUEST: {COPPER_QUEST},
-        IRON_QUEST: {COPPER_TOOLS_QUEST},
+        IRON_QUEST: {LEVEL_10_QUEST},
     }
     for quest_id, expected in expected_dependencies.items():
         if graph[quest_id] != expected:
@@ -256,19 +258,40 @@ def check_copper_iron_invariant(
             )
 
     copper_tools = quest_blocks[COPPER_TOOLS_QUEST]
-    if 'autoclaim: 1b' not in copper_tools or f'stage: "{IRON_STAGE}"' not in copper_tools:
-        errors.append("Copper Tools must auto-claim the iron_age (Ironworking) stage")
+    if f'stage: "{IRON_STAGE}"' in copper_tools:
+        errors.append("Copper Tools must not grant Ironworking; copper must remain active through Level 9")
     for item in COPPER_TOOLS:
         if item not in copper_tools:
             errors.append(f"Copper Tools milestone is missing {item}")
+
+    iron_grants = [quest_id for quest_id, block in quest_blocks.items() if f'stage: "{IRON_STAGE}"' in block]
+    if iron_grants != [LEVEL_10_QUEST]:
+        errors.append(
+            "iron_age must be granted exactly once by the Level 10 promotion; found "
+            + ", ".join(value.upper() for value in iron_grants)
+        )
+
+    level_10 = quest_blocks[LEVEL_10_QUEST]
+    if level_10.count("autoclaim: 1b") < 2 or f'stage: "{IRON_STAGE}"' not in level_10:
+        errors.append("Level 10 promotion must auto-claim both level_10 and iron_age")
+
+    iron_source = quest_sources[IRON_QUEST].relative_to(QUEST_ROOT).as_posix()
+    if iron_source != "chapters/level_10.snbt":
+        errors.append(f"Iron Supply moved to {iron_source}; expected chapters/level_10.snbt")
+
+    for level in (7, 8, 9):
+        text = (QUEST_ROOT / "chapters" / f"level_{level}.snbt").read_text(encoding="utf-8")
+        if f'stage: "{IRON_STAGE}"' in text:
+            errors.append(f"Level {level} illegally grants Ironworking before Level 10")
 
     stages = STAGE_SCRIPT.read_text(encoding="utf-8")
     for selector in IRON_SELECTORS:
         expected = f'ItemStages.restrict(<{selector}>, "{IRON_STAGE}");'
         if expected not in stages:
             errors.append(f"{selector} is not gated by Ironworking")
-        if f'ItemStages.restrict(<{selector}>, "level_7");' in stages:
-            errors.append(f"{selector} bypasses Ironworking through level_7")
+        for early_stage in ("level_7", "level_8", "level_9"):
+            if f'ItemStages.restrict(<{selector}>, "{early_stage}");' in stages:
+                errors.append(f"{selector} bypasses Ironworking through {early_stage}")
 
 
 def main() -> int:
@@ -313,7 +336,7 @@ def main() -> int:
     check_cycles(graph, errors)
     check_reachability(graph, quest_sources, errors)
     check_level_spine(graph, quest_blocks, quest_sources, errors)
-    check_copper_iron_invariant(graph, quest_blocks, errors)
+    check_copper_iron_invariant(graph, quest_blocks, quest_sources, errors)
 
     if errors:
         for error in errors:
@@ -324,7 +347,7 @@ def main() -> int:
     print(
         f"Quest graph OK: {len(ids)} unique IDs / {dependency_count} quest dependencies; "
         "15 economic levels, market-order spine, 3 declared roots, cycles, reachability, "
-        "and copper-to-Ironworking invariants valid."
+        "and delayed Level 10 Ironworking invariants valid."
     )
     return 0
 
