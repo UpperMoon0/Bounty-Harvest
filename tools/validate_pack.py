@@ -9,6 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 QUESTS = ROOT / "config" / "ftbquests" / "quests" / "chapters"
+DEFAULT_STAGES = ROOT / "scripts" / "default_stages.zs"
 
 
 def compounds(text: str):
@@ -55,6 +56,7 @@ def main() -> int:
 
     required_runtime = [
         ROOT / "scripts" / "gen_item_stages.zs",
+        DEFAULT_STAGES,
         ROOT / "resourcepacks" / "gen_bh_bounties.zip",
         QUESTS / "research.snbt",
     ]
@@ -75,11 +77,23 @@ def main() -> int:
     all_quests = "\n".join(path.read_text(encoding="utf-8") for path in QUESTS.glob("*.snbt"))
     if "gamestage add" in all_quests:
         errors.append("manual gamestage command reward remains")
+
+    level_1 = (QUESTS / "level_1.snbt").read_text(encoding="utf-8")
+    if re.search(r'stage:\s*"level_1"[\s\S]{0,60}type:\s*"stage"', level_1):
+        errors.append("Level 1 must not expose a stage reward; it is the default player stage")
+
+    default_stages = DEFAULT_STAGES.read_text(encoding="utf-8") if DEFAULT_STAGES.is_file() else ""
+    if "import mods.gamestages.StageHelper;" not in default_stages:
+        errors.append("default_stages.zs does not import GameStages StageHelper")
+    if 'StageHelper.grantStageOnJoin("level_1");' not in default_stages:
+        errors.append("Level 1 is not granted automatically on player join")
+
     for level in range(1, 9):
         text = (QUESTS / f"level_{level}.snbt").read_text(encoding="utf-8")
-        expected = rf'autoclaim:\s*1b[\s\S]{{0,100}}stage:\s*"level_{level}"[\s\S]{{0,60}}type:\s*"stage"'
-        if not re.search(expected, text):
-            errors.append(f"Level {level} lacks an auto-claimed stage reward")
+        if level >= 2:
+            expected = rf'autoclaim:\s*1b[\s\S]{{0,100}}stage:\s*"level_{level}"[\s\S]{{0,60}}type:\s*"stage"'
+            if not re.search(expected, text):
+                errors.append(f"Level {level} lacks an auto-claimed stage reward")
         for block in compounds(text):
             if block.count('type: "item"') != 1:
                 continue
@@ -111,6 +125,9 @@ def main() -> int:
     for stage in [*(f"level_{n}" for n in range(1, 9)), "iron_age"]:
         if f'"{stage}"' not in stages:
             errors.append(f"item staging never references {stage}")
+    for coin in ("copper_coin", "iron_coin", "gold_coin"):
+        if f"<item:kubejs:{coin}>" in stages:
+            errors.append(f"currency kubejs:{coin} must remain outside ItemStages")
     if '<item:minecraft:string>, "level_3"' not in stages or '<item:minecraft:string>, "level_4"' in stages:
         errors.append("string is not staged consistently with the Level 3 bow")
     for mod_id in ("create", "createaddition", "sliceanddice", "alexscaves", "twilightforest", "alexsmobs", "cookingforblockheads"):
