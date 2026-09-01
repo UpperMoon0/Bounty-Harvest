@@ -10,7 +10,7 @@
 	quests: [
 		{
 			description: [
-				"Bounty Harvest uses levels as research milestones. Completing a level-up quest automatically grants its stage; ItemStages uses those stages to gate selected items and selected mod namespaces."
+				"Bounty Harvest uses levels as research milestones. Level 1 is granted automatically when you join; completing the Level 2-8 level-up quests grants their stages. ItemStages uses those stages to gate selected items and selected mod namespaces."
 				""
 				"Locked items show their required stage in their tooltip and are hidden or marked in JEI until that stage is available."
 			]
