@@ -11,17 +11,11 @@
 	quests: [
 		{
 			description: [
-				"Welcome to &2Level 1&r. In this level, you can gather wood by chopping trees, harvest wheat to craft bread, and more! "
+				"Welcome to &2Level 1&r. This is your starting tier and is already active when you enter the world. Gather wood, harvest wheat, complete bounties, and use this quest to begin the progression path."
 				""
-				"The Research and Levels chapter explains how staged unlocks work. Level rewards are granted automatically when their quest is completed."
+				"The Research and Levels chapter explains how later staged unlocks work. Levels 2-8 grant their stages automatically when their level-up quests are completed."
 			]
 			id: "74402ECAFFAFAEC4"
-			rewards: [{
-				autoclaim: 1b
-				id: "3E18DCE5422D221F"
-				stage: "level_1"
-				type: "stage"
-			}]
 			shape: "octagon"
 			tasks: [{
 				id: "3B419ED582632769"
@@ -232,8 +226,8 @@
 				item: "bountiful:bountyboard"
 				type: "item"
 			}]
-				x: 3.0d
-				y: 1.5d
+			x: 3.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["37DB727D93347A94"]
@@ -253,7 +247,7 @@
 		}
 		{
 			dependencies: ["74402ECAFFAFAEC4"]
-			description: ["In the modpack Bountiful Harvest, the availability of most items is determined by your progress level. As you advance through the game stages, you unlock access to a wider range of items."]
+			description: ["In Bounty Harvest, Level 1 is available from the moment you join. Later levels unlock additional staged items as you progress through the quest book."]
 			icon: "create:crafting_blueprint"
 			id: "4CE5E3F960990234"
 			tasks: [{
