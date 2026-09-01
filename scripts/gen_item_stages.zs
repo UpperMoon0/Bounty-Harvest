@@ -2,9 +2,6 @@ import mods.itemstages.ItemStages;
 
 // Level 1
 ItemStages.restrict(<tag:items:minecraft:planks>, "level_1");
-ItemStages.restrict(<item:kubejs:copper_coin>, "level_1");
-ItemStages.restrict(<item:kubejs:gold_coin>, "level_1");
-ItemStages.restrict(<item:kubejs:iron_coin>, "level_1");
 ItemStages.restrict(<item:minecraft:bone_meal>, "level_1");
 ItemStages.restrict(<item:minecraft:crafting_table>, "level_1");
 ItemStages.restrict(<item:minecraft:stick>, "level_1");
