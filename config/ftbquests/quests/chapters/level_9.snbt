@@ -12,127 +12,66 @@
 		{
 			dependencies: ["F3FBD0BED43C89CC"]
 			description: [
-				"After the Level 8 Market Order, spend eight iron coins and two chicken sandwiches to open the Corn Market. Both costs are consumed."
-				"Completing this promotion grants Level 9, unlocks Corn Delight progression, and awards your first Level 9 Decree."
+				"After the Level 8 Market Order, spend eight iron coins and two fish stew to open the Corn Market. Both costs are consumed."
+				"Level 9 adds corn plus one new supporting crop, tomato. The new taco chain deliberately combines Level 4 pork, Level 8 cabbage, and the new Level 9 crops while copper remains the active metal tier."
 			]
 			icon: "corn_delight:corn"
 			id: "C0B4AA32262BF02B"
 			rewards: [
-				{
-					autoclaim: 1b
-					id: "3D1E76F5425C8727"
-					stage: "level_9"
-					type: "stage"
-				}
+				{ autoclaim: 1b, id: "3D1E76F5425C8727", stage: "level_9", type: "stage" }
 				{
 					id: "739173F309692FDC"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_9\"]}"
-							display: { Name: "{\"text\":\"Level 9 Decree\"}" }
-						}
-					}
+					item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_9\"]}", display: { Name: "{\"text\":\"Level 9 Decree\"}" } } }
 					type: "item"
 				}
 			]
 			shape: "octagon"
 			tasks: [
-				{
-					consume_items: true
-					count: 8L
-					id: "A52EC01776518BD5"
-					item: "kubejs:iron_coin"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 2L
-					id: "C16D4D6661677035"
-					item: "farmersdelight:chicken_sandwich"
-					type: "item"
-				}
+				{ consume_items: true, count: 8L, id: "A52EC01776518BD5", item: "kubejs:iron_coin", type: "item" }
+				{ consume_items: true, count: 2L, id: "C16D4D6661677035", item: "farmersdelight:fish_stew", type: "item" }
 			]
-			title: "Level 9 · Corn Market"
+			title: "Level 9 · Corn & Tomato Market"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["C0B4AA32262BF02B"]
 			description: [
-				"Harvest 12 corn and turn it into four cornbread, four tortillas, and two tacos to prove the crop has a complete processing chain."
-				"These tasks only detect the food; nothing is consumed here."
+				"Harvest 12 corn and eight tomatoes, then make four cornbread, four tortillas, and two tacos."
+				"These tasks only detect the food. The custom taco recipe is a deliberate cross-level product: tortilla + cooked pork + tomato + cabbage."
 			]
-			icon: "corn_delight:corn"
+			icon: "corn_delight:taco"
 			id: "547338FFDF3F8C9F"
 			tasks: [
-				{
-					count: 12L
-					id: "C6046AB74D2BEFC7"
-					item: "corn_delight:corn"
-					type: "item"
-				}
-				{
-					count: 4L
-					id: "6F2AC460EFA39C93"
-					item: "corn_delight:cornbread"
-					type: "item"
-				}
-				{
-					count: 4L
-					id: "485F8F3EC8355404"
-					item: "corn_delight:tortilla"
-					type: "item"
-				}
-				{
-					count: 2L
-					id: "3D71DFA58C33C641"
-					item: "corn_delight:taco"
-					type: "item"
-				}
+				{ count: 12L, id: "C6046AB74D2BEFC7", item: "corn_delight:corn", type: "item" }
+				{ count: 8L, id: "359B446432579DB4", item: "farmersdelight:tomato", type: "item" }
+				{ count: 4L, id: "6F2AC460EFA39C93", item: "corn_delight:cornbread", type: "item" }
+				{ count: 4L, id: "485F8F3EC8355404", item: "corn_delight:tortilla", type: "item" }
+				{ count: 2L, id: "3D71DFA58C33C641", item: "corn_delight:taco", type: "item" }
 			]
-			title: "Corn Market Production"
+			title: "Corn & Tomato Production"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["547338FFDF3F8C9F"]
 			description: [
-				"Ship 12 corn, four cornbread, and two tacos. All listed goods are consumed; tortillas are a production proof but are not part of this shipment."
-				"Completing the order opens Level 10 and the first major mechanical-farm expansion."
+				"Ship eight corn, eight tomatoes, four cornbread, and two tacos. All listed goods are consumed."
+				"The taco requirement keeps pork and cabbage valuable while the tomato crop gets an immediate processed use. Completing this order opens Level 10 Ironworking."
 			]
 			icon: "corn_delight:corn"
 			id: "2A9904A355A5FE23"
 			shape: "hexagon"
 			tasks: [
-				{
-					consume_items: true
-					count: 12L
-					id: "8122153FC4A00C3D"
-					item: "corn_delight:corn"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 4L
-					id: "8EC3340438C18FD0"
-					item: "corn_delight:cornbread"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 2L
-					id: "66F2E6F1D3B01355"
-					item: "corn_delight:taco"
-					type: "item"
-				}
+				{ consume_items: true, count: 8L, id: "8122153FC4A00C3D", item: "corn_delight:corn", type: "item" }
+				{ consume_items: true, count: 8L, id: "08B87FF70F9AA4D2", item: "farmersdelight:tomato", type: "item" }
+				{ consume_items: true, count: 4L, id: "8EC3340438C18FD0", item: "corn_delight:cornbread", type: "item" }
+				{ consume_items: true, count: 2L, id: "66F2E6F1D3B01355", item: "corn_delight:taco", type: "item" }
 			]
 			title: "Level 9 Market Order"
 			x: 4.0d
 			y: 0.0d
 		}
 	]
-	title: "Level 9 · Corn Market"
+	title: "Level 9 · Corn & Tomato Market"
 }

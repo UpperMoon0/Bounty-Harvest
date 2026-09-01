@@ -12,48 +12,23 @@
 		{
 			dependencies: ["C4F9E553B22E40CC"]
 			description: [
-				"After the Level 10 Market Order, spend 16 iron coins and four andesite alloy to expand automation into tropical processing. Both costs are consumed."
-				"Completing this promotion grants Level 11, unlocks Pineapple Delight and Slice & Dice progression, and awards your first Level 11 Decree."
+				"After the Level 10 Market Order, spend 16 iron coins and four andesite alloy to expand industrial farming into tropical processing. Both costs are consumed."
+				"Level 11 adds pineapple and exactly one delayed kitchen crop, rice. Rice immediately connects the old fishing economy to salmon rolls and the new tropical economy to pineapple fried rice."
 			]
 			icon: "pineapple_delight:pineapple"
 			id: "1FFCFC4EAF71D122"
 			rewards: [
-				{
-					autoclaim: 1b
-					id: "81583BE1459E5091"
-					stage: "level_11"
-					type: "stage"
-				}
+				{ autoclaim: 1b, id: "81583BE1459E5091", stage: "level_11", type: "stage" }
 				{
 					id: "217ACD66E95BED4E"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_11\"]}"
-							display: { Name: "{\"text\":\"Level 11 Decree\"}" }
-						}
-					}
+					item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_11\"]}", display: { Name: "{\"text\":\"Level 11 Decree\"}" } } }
 					type: "item"
 				}
 			]
 			shape: "octagon"
 			tasks: [
-				{
-					consume_items: true
-					count: 16L
-					id: "1603C90A95D61164"
-					item: "kubejs:iron_coin"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 4L
-					id: "C20E0BA68E991DD3"
-					item: "create:andesite_alloy"
-					type: "item"
-				}
+				{ consume_items: true, count: 16L, id: "1603C90A95D61164", item: "kubejs:iron_coin", type: "item" }
+				{ consume_items: true, count: 4L, id: "C20E0BA68E991DD3", item: "create:andesite_alloy", type: "item" }
 			]
 			title: "Level 11 · Tropical Automation"
 			x: 0.0d
@@ -62,72 +37,36 @@
 		{
 			dependencies: ["1FFCFC4EAF71D122"]
 			description: [
-				"Harvest eight pineapple and turn the crop into two pineapple pies, two pineapple fried rice, and two pineapple juice."
-				"These are detection tasks; the food stays in your inventory for orders or further processing."
+				"Harvest eight pineapple and eight rice, then prepare two pineapple pies, two pineapple fried rice, and two salmon rolls."
+				"These are detection tasks. Rice is not filler: it immediately creates a new layer for Level 5 salmon while supporting the new tropical processing chain."
 			]
-			icon: "pineapple_delight:pineapple"
+			icon: "pineapple_delight:pineapple_fried_rice"
 			id: "CAD91105DBDBD22C"
 			tasks: [
-				{
-					count: 8L
-					id: "9B591478340B10CD"
-					item: "pineapple_delight:pineapple"
-					type: "item"
-				}
-				{
-					count: 2L
-					id: "E5606FAB78041A44"
-					item: "pineapple_delight:pineapple_pie"
-					type: "item"
-				}
-				{
-					count: 2L
-					id: "71B95DA0B5874F2D"
-					item: "pineapple_delight:pineapple_fried_rice"
-					type: "item"
-				}
-				{
-					count: 2L
-					id: "62DB1B640AE21CF1"
-					item: "pineapple_delight:pineapple_juice"
-					type: "item"
-				}
+				{ count: 8L, id: "9B591478340B10CD", item: "pineapple_delight:pineapple", type: "item" }
+				{ count: 8L, id: "E5606FAB78041A44", item: "farmersdelight:rice", type: "item" }
+				{ count: 2L, id: "71B95DA0B5874F2D", item: "pineapple_delight:pineapple_fried_rice", type: "item" }
+				{ count: 2L, id: "62DB1B640AE21CF1", item: "pineapple_delight:pineapple_pie", type: "item" }
+				{ count: 2L, id: "7C954321D8C340DD", item: "farmersdelight:salmon_roll", type: "item" }
 			]
-			title: "Tropical Automation Production"
+			title: "Rice & Tropical Production"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["CAD91105DBDBD22C"]
 			description: [
-				"Ship eight pineapple, two pineapple pies, and two tacos. Every listed item is consumed."
-				"The taco requirement deliberately keeps the Level 9 corn chain profitable. Completing this order opens Level 12 Power & Logistics."
+				"Ship two pineapple fried rice, two pineapple pies, two salmon rolls, and two tacos. Every listed item is consumed."
+				"This is a deliberately layered order: tropical crops reuse rice, salmon reactivates fisheries, and tacos keep the corn/pork/tomato/cabbage chain profitable. Completing it opens Level 12."
 			]
-			icon: "pineapple_delight:pineapple"
+			icon: "pineapple_delight:pineapple_fried_rice"
 			id: "2507AB50F6CCD90E"
 			shape: "hexagon"
 			tasks: [
-				{
-					consume_items: true
-					count: 8L
-					id: "7F8EA5D220A8DFD8"
-					item: "pineapple_delight:pineapple"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 2L
-					id: "BA53F25915CDD83F"
-					item: "pineapple_delight:pineapple_pie"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 2L
-					id: "A5816E32E0CE275D"
-					item: "corn_delight:taco"
-					type: "item"
-				}
+				{ consume_items: true, count: 2L, id: "7F8EA5D220A8DFD8", item: "pineapple_delight:pineapple_fried_rice", type: "item" }
+				{ consume_items: true, count: 2L, id: "BA53F25915CDD83F", item: "pineapple_delight:pineapple_pie", type: "item" }
+				{ consume_items: true, count: 2L, id: "AD29017F9F0A9E57", item: "farmersdelight:salmon_roll", type: "item" }
+				{ consume_items: true, count: 2L, id: "A5816E32E0CE275D", item: "corn_delight:taco", type: "item" }
 			]
 			title: "Level 11 Market Order"
 			x: 4.0d

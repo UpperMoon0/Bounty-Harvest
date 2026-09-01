@@ -47,8 +47,7 @@ ServerEvents.recipes((e) => {
     })
 
     // Level 5 · Fisheries & Coast
-    // Keep the vanilla fishing-rod recipe. The previous iron-nugget replacement
-    // made the fisheries tier impossible before Level 7 Ironworking.
+    // Keep the vanilla fishing-rod recipe. Fisheries must remain available before Ironworking.
 
     // Level 6 · Wool, Sugar & Pantry
     e.remove({id: 'minecraft:white_wool_from_string'})
@@ -68,7 +67,9 @@ ServerEvents.recipes((e) => {
         D: 'minecraft:orange_dye'
     })
 
-    // Level 7 · Copper Workshop / Ironworking
+    // Level 7 · Copper Workshop
+    // Iron recipes exist globally, but ItemStages keeps every iron input/output behind
+    // the Ironworking stage granted by the Level 10 promotion.
     e.remove({id: 'minecraft:iron_ingot_from_smelting_iron_ore'})
     e.remove({id: 'minecraft:iron_ingot_from_smelting_deepslate_iron_ore'})
     e.remove({id: 'minecraft:iron_ingot_from_smelting_raw_iron'})
@@ -80,25 +81,8 @@ ServerEvents.recipes((e) => {
     e.remove({id: 'minecraft:copper_ingot_from_smelting_raw_copper'})
     e.smelting('3x bettercopper:copper_nugget', 'minecraft:raw_copper').xp(0.7)
 
-    e.remove({id: 'farmersdelight:stuffed_potato'})
-    e.shaped('farmersdelight:stuffed_potato', [
-        'AB',
-        'C '
-    ], {
-        A: 'minecraft:baked_potato',
-        B: 'minecraft:cooked_beef',
-        C: 'minecraft:milk_bucket'
-    })
-
-    e.remove({id: 'farmersdelight:pie_crust'})
-    e.shaped('farmersdelight:pie_crust', [
-        'WMW',
-        ' W '
-    ], {
-        W: 'minecraft:wheat',
-        M: 'minecraft:milk_bucket'
-    })
-
+    // Copper has utility recipes across the whole L7-L9 era instead of existing only
+    // as a five-minute tool prerequisite.
     e.remove({id: 'minecraft:glass_bottle'})
     e.shaped('3x minecraft:glass_bottle', [
         ' C ',
@@ -108,6 +92,95 @@ ServerEvents.recipes((e) => {
         C: 'bettercopper:copper_nugget',
         G: '#forge:glass'
     })
+
+    e.remove({id: 'minecraft:composter'})
+    e.shaped('minecraft:composter', [
+        'A A',
+        'A A',
+        'ABA'
+    ], {
+        A: '#minecraft:wooden_slabs',
+        B: 'minecraft:copper_ingot'
+    })
+
+    // Level 8 · Market Garden & Hearth
+    // Pre-iron cooking must still gain complexity. These recipes deliberately combine
+    // old production lines with the one new L8 crop, cabbage.
+    e.remove({output: 'farmersdelight:chicken_sandwich'})
+    e.shaped('farmersdelight:chicken_sandwich', [
+        'BC',
+        'DR'
+    ], {
+        B: 'minecraft:bread',
+        C: 'minecraft:cooked_chicken',
+        D: 'farmersdelight:cabbage',
+        R: 'minecraft:carrot'
+    })
+
+    e.remove({output: 'farmersdelight:fish_stew'})
+    e.shapeless('farmersdelight:fish_stew', [
+        'minecraft:bowl',
+        'minecraft:cooked_cod',
+        'minecraft:cooked_salmon',
+        'minecraft:baked_potato',
+        'minecraft:carrot'
+    ])
+
+    e.remove({output: 'farmersdelight:stuffed_potato'})
+    e.shaped('farmersdelight:stuffed_potato', [
+        'AB',
+        'C '
+    ], {
+        A: 'minecraft:baked_potato',
+        B: 'minecraft:cooked_beef',
+        C: 'farmersdelight:cabbage'
+    })
+
+    // Apple finally becomes a processed product without waiting for an iron bucket.
+    e.remove({output: 'farmersdelight:pie_crust'})
+    e.shaped('farmersdelight:pie_crust', [
+        'DDD',
+        ' E '
+    ], {
+        D: 'farmersdelight:wheat_dough',
+        E: 'minecraft:egg'
+    })
+
+    e.remove({output: 'farmersdelight:apple_pie'})
+    e.shaped('farmersdelight:apple_pie', [
+        'AAA',
+        ' S ',
+        ' C '
+    ], {
+        A: 'minecraft:apple',
+        S: 'minecraft:sugar',
+        C: 'farmersdelight:pie_crust'
+    })
+
+    // Level 9 · Corn & Tomato Market
+    // The taco is the main cross-level product: L9 corn/tomato + L8 cabbage + L4 pork.
+    e.remove({output: 'corn_delight:taco'})
+    e.shapeless('2x corn_delight:taco', [
+        'corn_delight:tortilla',
+        'minecraft:cooked_porkchop',
+        'farmersdelight:tomato',
+        'farmersdelight:cabbage'
+    ])
+
+    // Level 10 · Iron & Industry
+    e.remove({id: 'minecraft:chain'})
+    e.shaped('3x minecraft:chain', [
+        ' N ',
+        ' I ',
+        ' N '
+    ], {
+        N: 'minecraft:iron_nugget',
+        I: 'minecraft:iron_ingot'
+    })
+    e.shaped('minecraft:chainmail_helmet', ['III', 'I I'], { I: 'minecraft:chain' })
+    e.shaped('minecraft:chainmail_chestplate', ['I I', 'III', 'III'], { I: 'minecraft:chain' })
+    e.shaped('minecraft:chainmail_leggings', ['III', 'I I', 'I I'], { I: 'minecraft:chain' })
+    e.shaped('minecraft:chainmail_boots', ['I I', 'I I'], { I: 'minecraft:chain' })
 
     e.remove({id: 'minecraft:cake'})
     e.remove({id: 'farmersdelight:cake_from_milk_bottle'})
@@ -123,70 +196,8 @@ ServerEvents.recipes((e) => {
         C: 'farmersdelight:wheat_dough'
     })
 
-    e.remove({id: 'minecraft:composter'})
-    e.shaped('minecraft:composter', [
-        'A A',
-        'A A',
-        'ABA'
-    ], {
-        A: '#minecraft:wooden_slabs',
-        B: 'minecraft:copper_ingot'
-    })
-
-    // Level 8 · Iron Kitchen
-    e.remove({id: 'bettercopper:copper_helmet'})
-    e.remove({id: 'bettercopper:copper_chestplate'})
-    e.remove({id: 'bettercopper:copper_leggings'})
-    e.remove({id: 'bettercopper:copper_boots'})
-
-    e.remove({id: 'minecraft:chain'})
-    e.shaped('3x minecraft:chain', [
-        ' N ',
-        ' I ',
-        ' N '
-    ], {
-        N: 'minecraft:iron_nugget',
-        I: 'minecraft:iron_ingot'
-    })
-    e.shaped('minecraft:chainmail_helmet', ['III', 'I I'], { I: 'minecraft:chain' })
-    e.shaped('minecraft:chainmail_chestplate', ['I I', 'III', 'III'], { I: 'minecraft:chain' })
-    e.shaped('minecraft:chainmail_leggings', ['III', 'I I', 'I I'], { I: 'minecraft:chain' })
-    e.shaped('minecraft:chainmail_boots', ['I I', 'I I'], { I: 'minecraft:chain' })
-
-    e.shaped('farmersdelight:stuffed_potato', [
-        'AB',
-        'C '
-    ], {
-        A: 'minecraft:baked_potato',
-        B: 'farmersdelight:beef_patty',
-        C: 'farmersdelight:milk_bottle'
-    })
-
-    e.remove({id: 'farmersdelight:cutting/cooked_chicken'})
-    e.remove({id: 'farmersdelight:cabbage_from_leaves'})
-
-    e.remove({id: 'farmersdelight:chicken_sandwich'})
-    e.shaped('farmersdelight:chicken_sandwich', [
-        'AB',
-        'CD'
-    ], {
-        A: 'minecraft:bread',
-        B: 'farmersdelight:cooked_chicken_cuts',
-        C: 'farmersdelight:cabbage_leaf',
-        D: 'minecraft:carrot'
-    })
-    e.shaped('farmersdelight:chicken_sandwich', [
-        'AB',
-        'CD'
-    ], {
-        A: 'minecraft:bread',
-        B: 'farmersdelight:cooked_chicken_cuts',
-        C: 'delightful:chopped_clover',
-        D: 'minecraft:carrot'
-    })
-
-    // Currency exchange remains lossless. Bounties introduce copper at Levels
-    // 1-6, iron at Levels 7-11, and gold at Levels 12-15.
+    // Currency exchange remains lossless. Currency denomination is an economic tier,
+    // not proof that the matching metal material is already unlocked.
     e.shaped('kubejs:iron_coin', [
         'CCC',
         'CCC',

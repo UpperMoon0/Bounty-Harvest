@@ -4,7 +4,7 @@
 	filename: "level_8"
 	group: "39B7846742C777FD"
 	hide_quest_until_deps_visible: true
-	icon: "farmersdelight:iron_knife"
+	icon: "farmersdelight:cabbage"
 	id: "D7EB07F0FB80C04B"
 	order_index: 7
 	quest_links: [ ]
@@ -12,127 +12,65 @@
 		{
 			dependencies: ["D9D29B504CE79600"]
 			description: [
-				"After the Level 7 Market Order, spend six iron coins and two apple pies to build out the Iron Kitchen. Both costs are consumed."
-				"Completing this promotion grants Level 8, opens the Level 8 kitchen integrations plus cabbage and rabbit shops, and awards your first Level 8 Decree."
+				"After the Level 7 Market Order, spend six iron coins and two bookshelves to open the Market Garden. Both costs are consumed."
+				"Level 8 introduces only one major new crop: cabbage. It also opens pre-iron food processing with the flint knife and cutting board; iron tools and the Cooking Pot remain locked until Level 10."
 			]
-			icon: "farmersdelight:iron_knife"
+			icon: "farmersdelight:cabbage"
 			id: "4003BF6FE565761F"
 			rewards: [
-				{
-					autoclaim: 1b
-					id: "AD619F0417856A12"
-					stage: "level_8"
-					type: "stage"
-				}
+				{ autoclaim: 1b, id: "AD619F0417856A12", stage: "level_8", type: "stage" }
 				{
 					id: "022725D8444A224C"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_8\"]}"
-							display: { Name: "{\"text\":\"Level 8 Decree\"}" }
-						}
-					}
+					item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_8\"]}", display: { Name: "{\"text\":\"Level 8 Decree\"}" } } }
 					type: "item"
 				}
 			]
 			shape: "octagon"
 			tasks: [
-				{
-					consume_items: true
-					count: 6L
-					id: "93320D29B44A8395"
-					item: "kubejs:iron_coin"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 2L
-					id: "43BCBCA21208846F"
-					item: "farmersdelight:apple_pie"
-					type: "item"
-				}
+				{ consume_items: true, count: 6L, id: "93320D29B44A8395", item: "kubejs:iron_coin", type: "item" }
+				{ consume_items: true, count: 2L, id: "43BCBCA21208846F", item: "minecraft:bookshelf", type: "item" }
 			]
-			title: "Level 8 · Iron Kitchen"
+			title: "Level 8 · Market Garden & Hearth"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["4003BF6FE565761F"]
 			description: [
-				"Grow eight each of cabbage, tomato, onion, and rice to establish a diverse kitchen crop base."
-				"These tasks only detect the crops; keep them for recipes, bounties, and the Market Order."
+				"Grow eight cabbage, then turn older farm goods into two chicken sandwiches, two fish stew, and one apple pie."
+				"These tasks only detect the food. Chicken returns from Level 2, fish from Level 5, and apples, dough, sugar, carrots, and potatoes all gain higher-value prepared uses before iron exists."
 			]
-			icon: "farmersdelight:iron_knife"
+			icon: "farmersdelight:chicken_sandwich"
 			id: "7D4D6172A5804B60"
 			tasks: [
-				{
-					count: 8L
-					id: "8B303B36507FE0DD"
-					item: "farmersdelight:cabbage"
-					type: "item"
-				}
-				{
-					count: 8L
-					id: "28EAA3E841484561"
-					item: "farmersdelight:tomato"
-					type: "item"
-				}
-				{
-					count: 8L
-					id: "DA512531A1F37E6E"
-					item: "farmersdelight:onion"
-					type: "item"
-				}
-				{
-					count: 8L
-					id: "ECACB203269C51AE"
-					item: "farmersdelight:rice"
-					type: "item"
-				}
+				{ count: 8L, id: "8B303B36507FE0DD", item: "farmersdelight:cabbage", type: "item" }
+				{ count: 2L, id: "28EAA3E841484561", item: "farmersdelight:chicken_sandwich", type: "item" }
+				{ count: 2L, id: "DA512531A1F37E6E", item: "farmersdelight:fish_stew", type: "item" }
+				{ id: "ECACB203269C51AE", item: "farmersdelight:apple_pie", type: "item" }
 			]
-			title: "Iron Kitchen Production"
+			title: "Cabbage & Prepared Foods"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["7D4D6172A5804B60"]
 			description: [
-				"Ship two chicken sandwiches, two bacon and eggs, and eight cabbage. Every listed item is consumed."
-				"This is the first order centered on prepared meals rather than raw output. Completing it opens the Level 9 Corn Market promotion."
+				"Ship eight cabbage, two chicken sandwiches, two fish stew, and one apple pie. Every listed item is consumed."
+				"This order proves that the pre-iron kitchen can multiply the value of old production lines. Completing it opens the Level 9 corn-and-tomato economy."
 			]
-			icon: "farmersdelight:iron_knife"
+			icon: "farmersdelight:cabbage"
 			id: "F3FBD0BED43C89CC"
 			shape: "hexagon"
 			tasks: [
-				{
-					consume_items: true
-					count: 2L
-					id: "9A1CC27DCF25DF9B"
-					item: "farmersdelight:chicken_sandwich"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 2L
-					id: "4F290F6A3A13EE67"
-					item: "farmersdelight:bacon_and_eggs"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 8L
-					id: "2254DCBF0BD37269"
-					item: "farmersdelight:cabbage"
-					type: "item"
-				}
+				{ consume_items: true, count: 8L, id: "2254DCBF0BD37269", item: "farmersdelight:cabbage", type: "item" }
+				{ consume_items: true, count: 2L, id: "9A1CC27DCF25DF9B", item: "farmersdelight:chicken_sandwich", type: "item" }
+				{ consume_items: true, count: 2L, id: "4F290F6A3A13EE67", item: "farmersdelight:fish_stew", type: "item" }
+				{ consume_items: true, id: "4BE4445A9FBFBA2C", item: "farmersdelight:apple_pie", type: "item" }
 			]
 			title: "Level 8 Market Order"
 			x: 4.0d
 			y: 0.0d
 		}
 	]
-	title: "Level 8 · Iron Kitchen"
+	title: "Level 8 · Market Garden & Hearth"
 }

@@ -4,7 +4,7 @@
 	filename: "level_10"
 	group: "39B7846742C777FD"
 	hide_quest_until_deps_visible: true
-	icon: "create:andesite_alloy"
+	icon: "minecraft:iron_ingot"
 	id: "515EA3009BB1E431"
 	order_index: 9
 	quest_links: [ ]
@@ -12,121 +12,100 @@
 		{
 			dependencies: ["2A9904A355A5FE23"]
 			description: [
-				"After the Level 9 Market Order, spend 12 iron coins and two tacos to enter the Mechanical Farm tier. Both costs are consumed."
-				"Completing this promotion grants Level 10, unlocks Create progression and redstone access, and awards your first Level 10 Decree."
+				"After the Level 9 Market Order, spend 12 iron coins, 12 charcoal, and eight copper ingots to fund the jump from the mature copper economy into Ironworking. Every cost is consumed."
+				"Completing this promotion grants Level 10 and the Ironworking stage together. Iron is intentionally impossible before this point. Level 10 also opens onion, the iron kitchen, Create, and redstone."
 			]
-			icon: "create:andesite_alloy"
+			icon: "minecraft:iron_ingot"
 			id: "201FA0D785EF1770"
 			rewards: [
-				{
-					autoclaim: 1b
-					id: "26B4E0A30A516A14"
-					stage: "level_10"
-					type: "stage"
-				}
+				{ autoclaim: 1b, id: "26B4E0A30A516A14", stage: "level_10", type: "stage" }
+				{ autoclaim: 1b, id: "43A39CA00648358B", stage: "iron_age", type: "stage" }
 				{
 					id: "2E6B015BD6DC95DB"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_10\"]}"
-							display: { Name: "{\"text\":\"Level 10 Decree\"}" }
-						}
-					}
+					item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_10\"]}", display: { Name: "{\"text\":\"Level 10 Decree\"}" } } }
 					type: "item"
 				}
 			]
 			shape: "octagon"
 			tasks: [
-				{
-					consume_items: true
-					count: 12L
-					id: "F40F974AEF61FB8D"
-					item: "kubejs:iron_coin"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 2L
-					id: "DEED9A20DF169A0E"
-					item: "corn_delight:taco"
-					type: "item"
-				}
+				{ consume_items: true, count: 12L, id: "F40F974AEF61FB8D", item: "kubejs:iron_coin", type: "item" }
+				{ consume_items: true, count: 12L, id: "DEED9A20DF169A0E", item: "minecraft:charcoal", type: "item" }
+				{ consume_items: true, count: 8L, id: "9FBCD7CE6A2827CD", item: "minecraft:copper_ingot", type: "item" }
 			]
-			title: "Level 10 · Mechanical Farm"
+			title: "Level 10 · Iron & Industry"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["201FA0D785EF1770"]
 			description: [
-				"Craft eight andesite alloy, eight shafts, and eight cogwheels to establish the basic components for Create-powered farm automation."
-				"This quest only detects the components. Keep them for machines, later bounties, and the Market Order."
+				"Ironworking is now active. Collect nine raw iron and smelt six iron ingots to establish the new metal supply."
+				"This is detection-only. The three-nugget ore economy still applies, so the first iron tools and machines represent a real investment."
+			]
+			icon: "minecraft:iron_ingot"
+			id: "557852FFD6F4D560"
+			tasks: [
+				{ count: 9L, id: "D1368579182B4441", item: "minecraft:raw_iron", type: "item" }
+				{ count: 6L, id: "6E70C88C1DDB2707", item: "minecraft:iron_ingot", type: "item" }
+			]
+			title: "Iron Supply"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["557852FFD6F4D560"]
+			description: [
+				"Add one new crop, onion, and use iron-enabled buckets and kitchen equipment to make four milk bottles and two bacon and eggs."
+				"These tasks only detect the goods. Cattle gains a dairy branch, pork and eggs gain a more complex breakfast product, and onion gets an immediate kitchen role instead of becoming another checklist crop."
+			]
+			icon: "farmersdelight:iron_knife"
+			id: "B912F1FE8E149DE8"
+			tasks: [
+				{ count: 8L, id: "D7873812059AC8E4", item: "farmersdelight:onion", type: "item" }
+				{ count: 4L, id: "E0A077EB979C58E8", item: "farmersdelight:milk_bottle", type: "item" }
+				{ count: 2L, id: "CAD6AF4A6BD802E7", item: "farmersdelight:bacon_and_eggs", type: "item" }
+			]
+			title: "Iron Kitchen & Onion"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["B912F1FE8E149DE8"]
+			description: [
+				"Craft eight andesite alloy, eight shafts, and eight cogwheels to turn the new iron tier into practical Create infrastructure."
+				"This quest only detects the components. Create arrives after Ironworking instead of replacing the copper era prematurely."
 			]
 			icon: "create:andesite_alloy"
 			id: "525F40C497949612"
 			tasks: [
-				{
-					count: 8L
-					id: "16B11285B4E5277C"
-					item: "create:andesite_alloy"
-					type: "item"
-				}
-				{
-					count: 8L
-					id: "5B370692CBDAC124"
-					item: "create:shaft"
-					type: "item"
-				}
-				{
-					count: 8L
-					id: "5045FA1C2E22E962"
-					item: "create:cogwheel"
-					type: "item"
-				}
+				{ count: 8L, id: "16B11285B4E5277C", item: "create:andesite_alloy", type: "item" }
+				{ count: 8L, id: "5B370692CBDAC124", item: "create:shaft", type: "item" }
+				{ count: 8L, id: "5045FA1C2E22E962", item: "create:cogwheel", type: "item" }
 			]
-			title: "Mechanical Farm Production"
-			x: 2.0d
+			title: "Mechanical Farm Foundations"
+			x: 6.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["525F40C497949612"]
 			description: [
-				"Ship eight andesite alloy, eight shafts, and 16 wheat. All listed goods are consumed."
-				"Requiring wheat again is deliberate: automation should increase the value of the original farm rather than replace it. Completing the order opens Level 11."
+				"Ship six iron ingots, four andesite alloy, eight onions, two bacon and eggs, and 16 wheat. Every listed good is consumed."
+				"The first industrial order deliberately combines the new iron/Create economy with old wheat, pork, and eggs. Completing it opens Level 11 Tropical Automation."
 			]
-			icon: "create:andesite_alloy"
+			icon: "minecraft:iron_ingot"
 			id: "C4F9E553B22E40CC"
 			shape: "hexagon"
 			tasks: [
-				{
-					consume_items: true
-					count: 8L
-					id: "D6A3BDF4A3E91202"
-					item: "create:andesite_alloy"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 8L
-					id: "7FCB2B28A5E9C4C5"
-					item: "create:shaft"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 16L
-					id: "28EC3B251E2F0575"
-					item: "minecraft:wheat"
-					type: "item"
-				}
+				{ consume_items: true, count: 6L, id: "D6A3BDF4A3E91202", item: "minecraft:iron_ingot", type: "item" }
+				{ consume_items: true, count: 4L, id: "7FCB2B28A5E9C4C5", item: "create:andesite_alloy", type: "item" }
+				{ consume_items: true, count: 8L, id: "929C421DFC82013C", item: "farmersdelight:onion", type: "item" }
+				{ consume_items: true, count: 2L, id: "1E17A59F4EE17CCA", item: "farmersdelight:bacon_and_eggs", type: "item" }
+				{ consume_items: true, count: 16L, id: "28EC3B251E2F0575", item: "minecraft:wheat", type: "item" }
 			]
 			title: "Level 10 Market Order"
-			x: 4.0d
+			x: 8.0d
 			y: 0.0d
 		}
 	]
-	title: "Level 10 · Mechanical Farm"
+	title: "Level 10 · Iron & Industry"
 }

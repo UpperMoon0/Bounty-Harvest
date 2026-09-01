@@ -13,7 +13,7 @@
 			dependencies: ["5EF6647A3BB43A42"]
 			description: [
 				"After the Level 6 Market Order, spend 32 copper coins and eight baked potatoes to open the Copper Workshop. Both costs are consumed."
-				"Level 7 unlocks copper progression and Better Copper tools, but iron remains locked until you complete the full copper tool milestone below."
+				"Level 7 begins a real copper era. Copper remains the active metal through Levels 7-9; Ironworking does not unlock until the Level 10 promotion."
 			]
 			icon: "minecraft:copper_ingot"
 			id: "0A53CC520F7826A3"
@@ -62,8 +62,8 @@
 		{
 			dependencies: ["0A53CC520F7826A3"]
 			description: [
-				"Mine 12 raw copper and smelt six copper ingots to establish a reliable metal supply."
-				"This quest only detects the materials; keep them for the copper tools and later Market Order."
+				"Mine 12 raw copper and smelt six copper ingots to establish a reliable metal supply. Raw copper still yields only three nuggets, so ore efficiency matters."
+				"This quest only detects the materials; keep them for tools, workshop recipes, bounties, and the Market Order."
 			]
 			icon: "minecraft:copper_ingot"
 			id: "6A5C20C31BD2649E"
@@ -89,143 +89,56 @@
 			dependencies: ["6A5C20C31BD2649E"]
 			description: [
 				"Craft the complete Better Copper toolset: shovel, pickaxe, axe, hoe, and sword. The tools are detected, not consumed."
-				"Completing this milestone auto-grants the Ironworking stage. That is the real unlock for iron materials and vanilla iron equipment; simply reaching Level 7 is not enough."
+				"This proves copper-tool mastery but deliberately does not unlock iron. The copper era continues through two more economic levels before Ironworking at Level 10."
 			]
 			icon: "bettercopper:copper_pickaxe"
 			id: "34B5DF088E2F447E"
-			rewards: [
-				{
-					autoclaim: 1b
-					id: "8DD7F047ECFEC4CD"
-					stage: "iron_age"
-					type: "stage"
-				}
-			]
 			shape: "diamond"
 			tasks: [
-				{
-					id: "DE6A3852FA95E360"
-					item: "bettercopper:copper_shovel"
-					type: "item"
-				}
-				{
-					id: "28CFF8532E328E97"
-					item: "bettercopper:copper_pickaxe"
-					type: "item"
-				}
-				{
-					id: "D2878618C432C9C3"
-					item: "bettercopper:copper_axe"
-					type: "item"
-				}
-				{
-					id: "A956717649A785C6"
-					item: "bettercopper:copper_hoe"
-					type: "item"
-				}
-				{
-					id: "B0FF0DA47B371738"
-					item: "bettercopper:copper_sword"
-					type: "item"
-				}
+				{ id: "DE6A3852FA95E360", item: "bettercopper:copper_shovel", type: "item" }
+				{ id: "28CFF8532E328E97", item: "bettercopper:copper_pickaxe", type: "item" }
+				{ id: "D2878618C432C9C3", item: "bettercopper:copper_axe", type: "item" }
+				{ id: "A956717649A785C6", item: "bettercopper:copper_hoe", type: "item" }
+				{ id: "B0FF0DA47B371738", item: "bettercopper:copper_sword", type: "item" }
 			]
-			title: "Copper Tools · Unlock Ironworking"
+			title: "Copper Tools"
 			x: 4.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["34B5DF088E2F447E"]
 			description: [
-				"With Ironworking active, collect six raw iron and smelt three iron ingots."
-				"This detection-only step verifies the copper-to-iron gate worked before the quest line asks for iron products."
+				"Turn older farm industries into workshop supplies: stock charcoal for heat, craft bookshelves from the leather-and-paper chain, and finish a wool sweater from your textile line."
+				"These tasks only detect the goods. This is the first deliberate copper-era test that asks several older production lines to support the new technology tier."
 			]
-			icon: "minecraft:iron_ingot"
-			id: "557852FFD6F4D560"
+			icon: "minecraft:bookshelf"
+			id: "824E1F00FADDCB4D"
 			tasks: [
-				{
-					count: 6L
-					id: "D1368579182B4441"
-					item: "minecraft:raw_iron"
-					type: "item"
-				}
-				{
-					count: 3L
-					id: "6E70C88C1DDB2707"
-					item: "minecraft:iron_ingot"
-					type: "item"
-				}
+				{ count: 16L, id: "3A78A6B3BD08088A", item: "minecraft:charcoal", type: "item" }
+				{ count: 2L, id: "64A092950EFF9947", item: "minecraft:bookshelf", type: "item" }
+				{ id: "365C55FE463DFEC9", item: "kubejs:wool_sweater", type: "item" }
 			]
-			title: "Iron Supply"
+			title: "Workshop Supplies"
 			x: 6.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["557852FFD6F4D560"]
+			dependencies: ["824E1F00FADDCB4D"]
 			description: [
-				"Turn the established cattle herd into a processed-food line with four milk bottles and two apple pies."
-				"These are detection tasks and do not consume the food; keep it for the Market Order."
-			]
-			icon: "farmersdelight:milk_bottle"
-			id: "B912F1FE8E149DE8"
-			tasks: [
-				{
-					count: 4L
-					id: "D7873812059AC8E4"
-					item: "farmersdelight:milk_bottle"
-					type: "item"
-				}
-				{
-					count: 2L
-					id: "E0A077EB979C58E8"
-					item: "farmersdelight:apple_pie"
-					type: "item"
-				}
-			]
-			title: "Dairy & Pies"
-			x: 8.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["B912F1FE8E149DE8"]
-			description: [
-				"Ship six copper ingots, four iron ingots, four milk bottles, and two apple pies. All listed goods are consumed."
-				"This order proves both the metal and dairy branches are established, then opens the Level 8 Iron Kitchen promotion."
+				"Ship eight copper ingots, two bookshelves, one wool sweater, and 12 charcoal. Every listed good is consumed."
+				"The order keeps leather, sugar cane, wool, wood, and charcoal economically relevant while copper becomes the main technology. Completing it opens the Level 8 Market Garden."
 			]
 			icon: "minecraft:copper_ingot"
 			id: "D9D29B504CE79600"
 			shape: "hexagon"
 			tasks: [
-				{
-					consume_items: true
-					count: 6L
-					id: "309E520F5F0D7DBC"
-					item: "minecraft:copper_ingot"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 4L
-					id: "0BAB982F56535A06"
-					item: "minecraft:iron_ingot"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 4L
-					id: "30046AED8B8F4CF5"
-					item: "farmersdelight:milk_bottle"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 2L
-					id: "F2745AA0FF11B3DC"
-					item: "farmersdelight:apple_pie"
-					type: "item"
-				}
+				{ consume_items: true, count: 8L, id: "309E520F5F0D7DBC", item: "minecraft:copper_ingot", type: "item" }
+				{ consume_items: true, count: 2L, id: "0BAB982F56535A06", item: "minecraft:bookshelf", type: "item" }
+				{ consume_items: true, id: "30046AED8B8F4CF5", item: "kubejs:wool_sweater", type: "item" }
+				{ consume_items: true, count: 12L, id: "F2745AA0FF11B3DC", item: "minecraft:charcoal", type: "item" }
 			]
 			title: "Level 7 Market Order"
-			x: 10.0d
+			x: 8.0d
 			y: 0.0d
 		}
 	]

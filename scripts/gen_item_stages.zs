@@ -79,14 +79,9 @@ ItemStages.restrict(<tag:items:minecraft:copper_ores>, "level_7");
 ItemStages.restrict(<item:minecraft:raw_copper>, "level_7");
 ItemStages.restrict(<item:minecraft:raw_copper_block>, "level_7");
 ItemStages.restrict(<item:minecraft:copper_ingot>, "level_7");
-ItemStages.restrict(<item:minecraft:bucket>, "level_7");
-ItemStages.restrict(<item:minecraft:water_bucket>, "level_7");
-ItemStages.restrict(<item:minecraft:milk_bucket>, "level_7");
-ItemStages.restrict(<item:farmersdelight:milk_bottle>, "level_7");
-ItemStages.restrict(<item:farmersdelight:pie_crust>, "level_7");
-ItemStages.restrict(<item:farmersdelight:apple_pie>, "level_7");
 
-// Ironworking is a sub-stage inside Level 7. Copper tools are the only unlock.
+// Ironworking is not a Level 7 sub-stage. The Level 10 promotion is the only
+// progression reward that grants iron_age.
 ItemStages.restrict(<tag:items:minecraft:iron_ores>, "iron_age");
 ItemStages.restrict(<item:minecraft:iron_nugget>, "iron_age");
 ItemStages.restrict(<item:minecraft:raw_iron>, "iron_age");
@@ -103,40 +98,57 @@ ItemStages.restrict(<item:minecraft:iron_chestplate>, "iron_age");
 ItemStages.restrict(<item:minecraft:iron_leggings>, "iron_age");
 ItemStages.restrict(<item:minecraft:iron_boots>, "iron_age");
 ItemStages.restrict(<item:minecraft:shield>, "iron_age");
+ItemStages.restrict(<item:minecraft:bucket>, "iron_age");
+ItemStages.restrict(<item:minecraft:water_bucket>, "iron_age");
+ItemStages.restrict(<item:minecraft:milk_bucket>, "iron_age");
 
-// Level 8 · Iron Kitchen
+// Level 8 · Market Garden & Hearth — one new crop: cabbage.
 ItemStages.restrict(<item:farmersdelight:cabbage>, "level_8");
 ItemStages.restrict(<item:farmersdelight:cabbage_seeds>, "level_8");
-ItemStages.restrict(<item:farmersdelight:tomato>, "level_8");
-ItemStages.restrict(<item:farmersdelight:tomato_seeds>, "level_8");
-ItemStages.restrict(<item:farmersdelight:onion>, "level_8");
-ItemStages.restrict(<item:farmersdelight:rice>, "level_8");
-ItemStages.restrict(<item:farmersdelight:rice_panicle>, "level_8");
 ItemStages.restrict(<item:farmersdelight:cutting_board>, "level_8");
-ItemStages.restrict(<item:farmersdelight:iron_knife>, "level_8");
-ItemStages.restrict(<item:farmersdelight:cooking_pot>, "level_8");
-ItemStages.restrict(<item:farmersdelight:skillet>, "level_8");
-ItemStages.restrict(<item:farmersdelight:stove>, "level_8");
+ItemStages.restrict(<item:farmersdelight:flint_knife>, "level_8");
 ItemStages.restrict(<item:farmersdelight:bacon>, "level_8");
 ItemStages.restrict(<item:farmersdelight:cooked_bacon>, "level_8");
 ItemStages.restrict(<item:farmersdelight:beef_patty>, "level_8");
 ItemStages.restrict(<item:farmersdelight:chicken_cuts>, "level_8");
 ItemStages.restrict(<item:farmersdelight:cooked_chicken_cuts>, "level_8");
-ItemStages.restrict(<item:farmersdelight:bacon_and_eggs>, "level_8");
+ItemStages.restrict(<item:farmersdelight:cod_slice>, "level_8");
+ItemStages.restrict(<item:farmersdelight:cooked_cod_slice>, "level_8");
+ItemStages.restrict(<item:farmersdelight:salmon_slice>, "level_8");
+ItemStages.restrict(<item:farmersdelight:cooked_salmon_slice>, "level_8");
 ItemStages.restrict(<item:farmersdelight:chicken_sandwich>, "level_8");
-ItemStages.createModRestriction("cookingforblockheads", "level_8");
-ItemStages.createModRestriction("delightful", "level_8");
+ItemStages.restrict(<item:farmersdelight:fish_stew>, "level_8");
+ItemStages.restrict(<item:farmersdelight:stuffed_potato>, "level_8");
+ItemStages.restrict(<item:farmersdelight:pie_crust>, "level_8");
+ItemStages.restrict(<item:farmersdelight:apple_pie>, "level_8");
 
-// Level 9 · Corn Market
+// Level 9 · Corn & Tomato Market — one new supporting crop: tomato.
+ItemStages.restrict(<item:farmersdelight:tomato>, "level_9");
+ItemStages.restrict(<item:farmersdelight:tomato_seeds>, "level_9");
 ItemStages.createModRestriction("corn_delight", "level_9");
 
-// Level 10 · Mechanical Farm
+// Level 10 · Iron & Industry — one new crop: onion, plus the iron kitchen/Create.
+ItemStages.restrict(<item:farmersdelight:onion>, "level_10");
+ItemStages.restrict(<item:farmersdelight:milk_bottle>, "level_10");
+ItemStages.restrict(<item:farmersdelight:iron_knife>, "level_10");
+ItemStages.restrict(<item:farmersdelight:cooking_pot>, "level_10");
+ItemStages.restrict(<item:farmersdelight:skillet>, "level_10");
+ItemStages.restrict(<item:farmersdelight:stove>, "level_10");
+ItemStages.restrict(<item:farmersdelight:bacon_and_eggs>, "level_10");
+ItemStages.createModRestriction("cookingforblockheads", "level_10");
+ItemStages.createModRestriction("delightful", "level_10");
 ItemStages.createModRestriction("create", "level_10");
 ItemStages.restrict(<tag:items:minecraft:redstone_ores>, "level_10");
 ItemStages.restrict(<item:minecraft:redstone>, "level_10");
 ItemStages.restrict(<item:minecraft:redstone_block>, "level_10");
 
-// Level 11 · Tropical Automation
+// Level 11 · Tropical Automation — rice arrives here because it immediately
+// connects pineapple fried rice to the old fisheries through fish rolls.
+ItemStages.restrict(<item:farmersdelight:rice>, "level_11");
+ItemStages.restrict(<item:farmersdelight:rice_panicle>, "level_11");
+ItemStages.restrict(<item:farmersdelight:cooked_rice>, "level_11");
+ItemStages.restrict(<item:farmersdelight:salmon_roll>, "level_11");
+ItemStages.restrict(<item:farmersdelight:cod_roll>, "level_11");
 ItemStages.createModRestriction("pineapple_delight", "level_11");
 ItemStages.createModRestriction("sliceanddice", "level_11");
 

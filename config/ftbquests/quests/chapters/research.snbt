@@ -11,18 +11,15 @@
 	quests: [
 		{
 			description: [
-				"Bounty Harvest uses 15 economic levels. Level 1 is granted automatically when you join."
+				"Bounty Harvest uses 15 economic levels. Level 1 is granted when you join; each later level is a promotion contract unlocked by the previous tier's Market Order."
 				""
-				"For each later level, finish the current Market Order and then complete the next promotion contract. The new GameStage is auto-claimed, and the promotion quest awards that level's first decree."
+				"Think like a farm-management game: each level adds a crop, animal, processor, machine, cuisine, or expedition that creates new products. Older goods must keep gaining new recipes and market demand instead of becoming dead inventory."
 				""
-				"Each level adds a crop, animal, processor, machine, cuisine, or expedition. Older goods remain useful in later recipes and bounty pools, so expanding the farm is better than abandoning yesterday's production."
+				"Copper is a full era across Levels 7-9. Copper Tools prove mastery but do not grant Ironworking. Level 10 is the deliberate iron breakthrough."
 			]
 			icon: "bountiful:bountyboard"
 			id: "E60381A75A8C4D21"
-			tasks: [{
-				id: "D8414AB6A86181F6"
-				type: "checkmark"
-			}]
+			tasks: [{ id: "D8414AB6A86181F6", type: "checkmark" }]
 			title: "How progression works"
 			x: 0.0d
 			y: 0.0d
@@ -32,17 +29,14 @@
 			description: [
 				"ItemStages enforces item and namespace access where that is technically reliable. It does not pretend to stop mobs from spawning, block exploration systems, or gate every world mechanic."
 				""
-				"Normal production quests only detect their listed items. Promotion contracts, Market Orders, and shop purchases explicitly consume their listed inputs, so read the task before handing over scarce goods."
+				"Your Bounty Board is the repeatable market layer. Later decree pools mix new goods with older staples and increasingly processed products. Major production lines should gain a new layer within about two levels and meaningful demand within about three."
 				""
-				"A Bounty Board uses the inserted decree to choose a level-specific order pool. If a decree is lost, the Replacement Decrees chapter sells another after that level is unlocked; buying one does not advance your level."
+				"Crop pacing follows the same rule: Level 8 introduces cabbage, Level 9 tomato, Level 10 onion, and Level 11 rice so each crop has room to become economically meaningful."
 			]
 			icon: "kubejs:copper_coin"
 			id: "E5CA8B613D89274F"
-			tasks: [{
-				id: "D79E13EE3D1802BF"
-				type: "checkmark"
-			}]
-			title: "Stages, decrees, and orders"
+			tasks: [{ id: "D79E13EE3D1802BF", type: "checkmark" }]
+			title: "Stages, decrees, and reuse"
 			x: 2.0d
 			y: 0.0d
 		}

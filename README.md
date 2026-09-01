@@ -16,6 +16,8 @@ The level system follows a farm-management progression rather than a vanilla che
 - the Bounty Board is the repeatable order board that turns production into copper, iron, and gold coins;
 - coins remain globally usable and can be exchanged at 9:1 between denominations.
 
+The detailed design contract lives in [`PROGRESSION_DESIGN.md`](PROGRESSION_DESIGN.md). In particular, major production lines should gain a new processing layer within roughly two levels and meaningful demand within roughly three; technology eras must have room to breathe instead of acting as instant prerequisites.
+
 ## Progression
 
 | Level | Economy expansion |
@@ -26,15 +28,17 @@ The level system follows a farm-management progression rather than a vanilla che
 | 4 | Carrots, pork, Farmer's Delight dough |
 | 5 | Fishing, Aquaculture 2, Ocean's Delight |
 | 6 | Sheep, wool processing, potatoes, sugar, mushrooms |
-| 7 | Better Copper workshop → Copper Tools → Ironworking → dairy |
-| 8 | Farmer's Delight kitchen, core kitchen crops, Cooking for Blockheads |
-| 9 | Corn Delight production |
-| 10 | Create-powered mechanical farming and processing |
-| 11 | Pineapple Delight + Create Slice & Dice |
+| 7 | Better Copper workshop, copper tools, workshop supplies; copper era begins |
+| 8 | Cabbage Market Garden, flint-knife processing, chicken/fish/apple prepared foods |
+| 9 | Corn Delight + tomato; tacos reconnect pork and cabbage to the new crops |
+| 10 | Ironworking, onion, iron kitchen, Create foundations and redstone |
+| 11 | Pineapple Delight + rice + Slice & Dice; rice reconnects fisheries through fish rolls |
 | 12 | Create Crafts & Additions power and logistics |
 | 13 | Alex's Mobs fieldwork + Alex's Delight cuisine |
 | 14 | Alex's Caves expeditions and deep resources |
 | 15 | Twilight Forest frontier + Twilight's Flavors & Delight |
+
+Copper is intentionally the active metal across Levels 7-9. Completing the copper tool milestone does **not** unlock iron; the Level 10 promotion is the only main-progression reward that grants Ironworking.
 
 ItemStages is used where item or namespace containment is reliable. The pack does **not** claim to stage entity spawning, dimensions, or arbitrary world systems that ItemStages cannot actually enforce.
 
@@ -61,6 +65,6 @@ Outputs:
 - `dist/Bounty-Harvest-<version>.zip` — CurseForge client manifest with runtime overrides
 - `dist/Bounty-Harvest-<version>-server.zip` — dedicated server, Forge installer, and launchers
 
-Pull requests validate the 15-level quest graph, declared roots, market-order spine, critical copper/Ironworking gate, generated Bountiful data, pack invariants, archive client/server split, and dedicated-server boot. A version change merged into `main` creates the GitHub release after a successful build; CurseForge publishing runs independently.
+Pull requests validate the 15-level quest graph, declared roots, market-order spine, delayed Ironworking gate, generated Bountiful data, pack invariants, archive client/server split, and dedicated-server boot. A version change merged into `main` creates the GitHub release after a successful build; CurseForge publishing runs independently.
 
 CurseForge publication is split into client and server-child jobs. After the client upload succeeds, its file ID and archive hash are persisted as a short-lived Actions artifact so **Re-run failed jobs** can retry a failed server-child upload without uploading the client again. `CURSEFORGE_API_TOKEN` is required for author uploads. `CURSEFORGE_CORE_API_KEY` remains optional but recommended for duplicate-file recovery across separate workflow runs or ambiguous upload responses.
