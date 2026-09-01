@@ -55,7 +55,7 @@ function Test-ServerPath {
 }
 
 function Get-TrackedRuntimeFiles {
-    $paths = @(& git -C $repoRoot ls-files --cached --others --exclude-standard -- config kubejs defaultconfigs scripts resourcepacks)
+    $paths = @(& git -C $repoRoot ls-files --cached -- config kubejs defaultconfigs scripts resourcepacks)
     if ($LASTEXITCODE -ne 0) { throw 'Unable to enumerate tracked runtime files with git.' }
     return $paths | Where-Object {
         $_ -and
@@ -68,14 +68,14 @@ function Get-CurseForgeFiles {
     $embedded = @($pack.embeddedProjectIds | ForEach-Object { [long]$_ })
     return @($instance.installedAddons |
         Where-Object {
-            $_.addonID -and $_.installedFile.id -and ([long]$_.addonID -notin $embedded)
+            $_.addonID -and $_.installedFile.id -and ([long]$_.addonID -notin $embedded) -and ($_.isEnabled -ne $false)
         } |
         Sort-Object { [long]$_.addonID } |
         ForEach-Object {
             [ordered]@{
                 projectID = [long]$_.addonID
                 fileID = [long]$_.installedFile.id
-                required = ($_.isEnabled -ne $false)
+                required = $true
             }
         })
 }

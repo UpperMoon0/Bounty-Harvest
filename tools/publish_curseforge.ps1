@@ -4,7 +4,8 @@ param(
     [ValidateSet('alpha', 'beta', 'release')] [string]$ReleaseType,
     [string]$ChangelogFile,
     [switch]$SkipBuild,
-    [switch]$DryRun
+    [switch]$DryRun,
+    [switch]$Preflight
 )
 
 $ErrorActionPreference = 'Stop'
@@ -27,7 +28,12 @@ $mainMetadata = [ordered]@{
     changelog = $changelog
     changelogType = 'markdown'
     displayName = "$($pack.name) $Version"
-    gameVersionNames = @('Client', [string]$pack.minecraftVersion, 'Forge')
+    gameVersionNames = @(
+        [string]$pack.minecraftVersion,
+        'Forge',
+        "Java $($pack.javaVersion)",
+        'Client'
+    )
     releaseType = $ReleaseType
 }
 
@@ -35,6 +41,45 @@ if ($DryRun) {
     Write-Host "DRY RUN: would upload $clientArchive"
     Write-Host ($mainMetadata | ConvertTo-Json -Depth 5)
     Write-Host "DRY RUN: would attach $serverArchive as the server child file"
+    exit 0
+}
+
+if ($Preflight) {
+    Write-Host "PREFLIGHT: validating CurseForge upload prerequisites"
+    if (-not (Test-Path -LiteralPath $clientArchive -PathType Leaf)) {
+        throw "Missing client archive: $clientArchive"
+    }
+    if (-not (Test-Path -LiteralPath $serverArchive -PathType Leaf)) {
+        throw "Missing server archive: $serverArchive"
+    }
+    if (-not (Test-Path -LiteralPath $ChangelogFile -PathType Leaf)) {
+        throw "Missing changelog: $ChangelogFile"
+    }
+    $token = [Environment]::GetEnvironmentVariable('CURSEFORGE_API_TOKEN')
+    if ([string]::IsNullOrWhiteSpace($token)) { throw 'CURSEFORGE_API_TOKEN is required for preflight.' }
+    if (-not $pack.curseForgeProjectId -or $pack.curseForgeProjectId -eq 0) { throw 'CurseForge project ID is required.' }
+    $headers = @{ 'X-Api-Token' = $token }
+    $gameVersionsEndpoint = "https://api.curseforge.com/v1/mods/$($pack.curseForgeProjectId)/files/game-versions"
+    try {
+        $gameVersions = Invoke-RestMethod -Uri $gameVersionsEndpoint -Headers $headers
+        $availableNames = @($gameVersions.data | ForEach-Object { [string]$_.name })
+        $requiredNames = @(
+            [string]$pack.minecraftVersion,
+            'Forge',
+            "Java $($pack.javaVersion)",
+            'Client'
+        )
+        foreach ($required in $requiredNames) {
+            if ($availableNames -notcontains $required) {
+                throw "CurseForge does not recognize required game version '$required'. Available: $($availableNames -join ', ')"
+            }
+        }
+        Write-Host "PREFLIGHT: All required game version names are recognized by CurseForge."
+    }
+    catch {
+        throw "PREFLIGHT: CurseForge API reachability or game-version check failed: $($_.Exception.Message)"
+    }
+    Write-Host "PREFLIGHT: All checks passed."
     exit 0
 }
 

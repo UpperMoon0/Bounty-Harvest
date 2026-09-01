@@ -15,6 +15,35 @@ $smokeParent = Join-Path $repoRoot '.server-smoke'
 $smokeRoot = Join-Path $smokeParent ([guid]::NewGuid().ToString('N'))
 $null = New-Item -ItemType Directory -Path $smokeRoot -Force
 
+$logDir = Join-Path $repoRoot 'dist/smoke-logs'
+$null = New-Item -ItemType Directory -Path $logDir -Force
+
+$fatalPatterns = @(
+    'Failed to load KubeJS script',
+    'Error loading KubeJS script',
+    "Couldn't parse recipe",
+    "Couldn't parse data file",
+    'Failed to load datapacks',
+    'CraftTweaker.*compile',
+    'CraftTweaker.*error',
+    'Error while executing script',
+    'Unknown item.*in KubeJS',
+    'Unknown item.*in CraftTweaker'
+)
+
+function Test-FatalPatterns($output) {
+    foreach ($pattern in $fatalPatterns) {
+        if ($output -match $pattern) {
+            $matches = [regex]::Matches($output, $pattern)
+            foreach ($match in $matches) {
+                Write-Error "FATAL PATTERN DETECTED: $($match.Value)"
+            }
+            return $true
+        }
+    }
+    return $false
+}
+
 function Invoke-JavaProcess {
     param([string[]]$Arguments, [int]$Timeout, [switch]$WatchForDone)
 
@@ -59,8 +88,48 @@ try {
     [System.IO.File]::WriteAllText((Join-Path $smokeRoot 'eula.txt'), "eula=true`n")
     [System.IO.File]::WriteAllText((Join-Path $smokeRoot 'user_jvm_args.txt'), "-Xms1G`n-Xmx4G`n-XX:+UseG1GC`n")
     $argsFile = "@libraries/net/minecraftforge/forge/$coordinate/win_args.txt"
-    Invoke-JavaProcess -Arguments @('@user_jvm_args.txt', $argsFile, 'nogui') -Timeout $TimeoutSeconds -WatchForDone | Out-Null
+    $startupOutput = Invoke-JavaProcess -Arguments @('@user_jvm_args.txt', $argsFile, 'nogui') -Timeout $TimeoutSeconds -WatchForDone
+    
+    # Check for fatal patterns in startup output
+    if (Test-FatalPatterns $startupOutput) {
+        throw "Server startup contained fatal script/config errors."
+    }
+    
+    # Also check latest.log and KubeJS/CraftTweaker logs if they exist
+    $latestLog = Join-Path $smokeRoot 'logs/latest.log'
+    if (Test-Path $latestLog) {
+        $latestContent = Get-Content -Raw -LiteralPath $latestLog
+        if (Test-FatalPatterns $latestContent) {
+            throw "Server logs contain fatal script/config errors."
+        }
+    }
+    
+    # Check KubeJS logs
+    $kubejsLogs = Get-ChildItem -LiteralPath (Join-Path $smokeRoot 'logs') -Filter 'kubejs*.log' -ErrorAction SilentlyContinue
+    foreach ($log in $kubejsLogs) {
+        $content = Get-Content -Raw -LiteralPath $log.FullName
+        if (Test-FatalPatterns $content) {
+            throw "KubeJS logs contain fatal script/config errors."
+        }
+    }
+    
+    # Check CraftTweaker logs
+    $ctLogs = Get-ChildItem -LiteralPath (Join-Path $smokeRoot 'logs') -Filter 'crafttweaker*.log' -ErrorAction SilentlyContinue
+    foreach ($log in $ctLogs) {
+        $content = Get-Content -Raw -LiteralPath $log.FullName
+        if (Test-FatalPatterns $content) {
+            throw "CraftTweaker logs contain fatal script/config errors."
+        }
+    }
+    
     Write-Host 'Dedicated server smoke test reached Done.'
+}
+catch {
+    # Preserve logs for diagnosis
+    $failureLogDir = Join-Path $logDir "$(Get-Date -Format 'yyyyMMdd-HHmmss')"
+    Copy-Item -LiteralPath $smokeRoot -Destination $failureLogDir -Recurse -Force
+    Write-Error "Smoke test failed. Logs preserved to $failureLogDir"
+    throw
 }
 finally {
     $resolved = [System.IO.Path]::GetFullPath($smokeRoot)

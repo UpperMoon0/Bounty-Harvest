@@ -96,8 +96,8 @@
 			x: -1.5d
 			y: 4.0d
 		}
-		{
-			dependencies: ["34B5DF088E2F447E"]
+{
+			dependencies: ["0A53CC520F7826A3"]
 			hide_until_deps_visible: false
 			id: "557852FFD6F4D560"
 			description: ["Ironworking is now available. Raw iron also smelts into three nuggets, so plan the ore economy around three raw ore per ingot."]
@@ -150,7 +150,7 @@
 			x: 6.0d
 			y: 1.0d
 		}
-		{
+{
 			dependencies: ["6A5C20C31BD2649E"]
 			id: "1E3050BA6A45ECEA"
 			tasks: [{
@@ -199,143 +199,6 @@
 			y: 4.0d
 		}
 		{
-			dependencies: ["6A5C20C31BD2649E"]
-			hide_until_deps_visible: false
-			id: "39CB53749B785E72"
-			tasks: [{
-				id: "6DC13AEE2CBF4CAC"
-				item: "minecraft:composter"
-				type: "item"
-			}]
-			x: -3.5d
-			y: 5.5d
-		}
-		{
-			dependencies: ["6A5C20C31BD2649E"]
-			hide_until_deps_visible: false
-			id: "73620329AFAF2DA2"
-			tasks: [{
-				id: "59C8AABD1B5C9465"
-				item: {
-					Count: 1
-					id: "minecraft:brush"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: -1.5d
-			y: 6.5d
-		}
-		{
-			dependencies: ["0A53CC520F7826A3"]
-			id: "721756E8B627DC24"
-			tasks: [{
-				id: "1406B7F996F1F4B7"
-				item: "farmersdelight:potato_crate"
-				type: "item"
-			}]
-			x: -1.5d
-			y: -2.0d
-		}
-		{
-			dependencies: ["721756E8B627DC24"]
-			hide_until_deps_visible: false
-			id: "598AE7CCA471A40A"
-			tasks: [{
-				id: "5AE29D483BB1F243"
-				item: "farmersdelight:stuffed_potato"
-				type: "item"
-			}]
-			x: -3.5d
-			y: -2.0d
-		}
-		{
-			dependencies: ["39A799527478DAF9"]
-			hide_until_deps_visible: false
-			id: "39F7E07DCC2152F6"
-			tasks: [{
-				id: "7FDDD285C3F485D0"
-				item: "minecraft:cake"
-				type: "item"
-			}]
-			x: 8.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["6A5C20C31BD2649E"]
-			hide_until_deps_visible: false
-			id: "34B5DF088E2F447E"
-			rewards: [{
-				autoclaim: 1b
-				id: "74AE2B560D93C81F"
-				stage: "iron_age"
-				type: "stage"
-			}]
-			tasks: [
-				{
-					id: "1AC9E12AE8A09AC1"
-					item: {
-						Count: 1
-						id: "bettercopper:copper_shovel"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "29DEA7E1C86699A5"
-					item: {
-						Count: 1
-						id: "bettercopper:copper_pickaxe"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "198189A9FD436D17"
-					item: {
-						Count: 1
-						id: "bettercopper:copper_axe"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "1356A443C9E0E10E"
-					item: {
-						Count: 1
-						id: "bettercopper:copper_hoe"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "65DF3C2BBEFFA3BF"
-					item: {
-						Count: 1
-						id: "bettercopper:copper_sword"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-			]
-			title: "Copper Tools"
-			description: ["Copper tools are the Level 7 metal tier. Completing this milestone automatically unlocks Ironworking."]
-			x: -3.5d
-			y: 2.5d
-		}
-		{
 			dependencies: ["557852FFD6F4D560"]
 			hide_until_deps_visible: false
 			id: "5C6BB14026AE99D5"
@@ -354,7 +217,7 @@
 			y: -2.5d
 		}
 		{
-			dependencies: ["73620329AFAF2DA2"]
+			dependencies: ["6A5C20C31BD2649E"]
 			id: "0F046D49DC4BDDE5"
 			tasks: [{
 				id: "0CF6C38E4C1AB728"
@@ -365,7 +228,7 @@
 			y: 8.5d
 		}
 		{
-			dependencies: ["73620329AFAF2DA2"]
+			dependencies: ["6A5C20C31BD2649E"]
 			id: "0F3044742FD58877"
 			tasks: [{
 				id: "18576D7087B97DBF"

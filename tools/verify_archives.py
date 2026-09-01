@@ -23,6 +23,13 @@ def main() -> int:
         print("\n".join(f"ERROR: {error}" for error in errors))
         return 1
 
+    # Build expected enabled addon set from instance metadata
+    enabled_addons = {
+        (int(addon["addonID"]), int(addon["installedFile"]["id"]))
+        for addon in instance["installedAddons"]
+        if addon.get("isEnabled", True)
+    }
+
     with zipfile.ZipFile(client_path) as archive:
         names = set(archive.namelist())
         for required in (
@@ -39,13 +46,14 @@ def main() -> int:
         manifest = json.loads(archive.read("manifest.json"))
         if manifest["minecraft"]["modLoaders"][0]["id"] != f"forge-{pack['forgeVersion']}":
             errors.append("client manifest has the wrong Forge version")
-        expected = {
-            (int(addon["addonID"]), int(addon["installedFile"]["id"]))
-            for addon in instance["installedAddons"] if addon.get("isEnabled", True)
-        }
         actual = {(int(item["projectID"]), int(item["fileID"])) for item in manifest["files"]}
-        if actual != expected:
-            errors.append("client manifest project/file pairs differ from minecraftinstance.json")
+        if actual != enabled_addons:
+            missing = sorted(enabled_addons - actual)
+            extra = sorted(actual - enabled_addons)
+            errors.append(
+                "client manifest project/file pairs differ from enabled minecraftinstance.json addons; "
+                f"missing={missing}, extra={extra}"
+            )
 
     client_only = {int(value) for value in pack["clientOnlyProjectIds"]}
     expected_server_mods = {
@@ -79,6 +87,16 @@ def main() -> int:
             missing = sorted(expected_server_mods - actual_server_mods)
             extra = sorted(actual_server_mods - expected_server_mods)
             errors.append(f"server mod split mismatch; missing={missing}, extra={extra}")
+
+        # Validate server launcher metadata against pack.json
+        for launcher_name, launcher_content in (
+            ("start-server.bat", archive.read("start-server.bat").decode("utf-8")),
+            ("start-server.sh", archive.read("start-server.sh").decode("utf-8")),
+        ):
+            if pack["minecraftVersion"] not in launcher_content:
+                errors.append(f"{launcher_name} does not reference minecraftVersion {pack['minecraftVersion']}")
+            if pack["forgeVersion"] not in launcher_content:
+                errors.append(f"{launcher_name} does not reference forgeVersion {pack['forgeVersion']}")
 
     if errors:
         for error in errors:

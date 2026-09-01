@@ -7,10 +7,6 @@ on:
     tags: ['v*']
   workflow_dispatch:
     inputs:
-      version:
-        description: Version override for build-only verification
-        required: false
-        type: string
       release_type:
         description: CurseForge release channel
         required: true
@@ -47,7 +43,6 @@ jobs:
         env:
           BEFORE: ${{ github.event.before }}
           MANUAL_PUBLISH: ${{ inputs.publish || false }}
-          REQUESTED_VERSION: ${{ inputs.version }}
           REQUESTED_RELEASE_TYPE: ${{ inputs.release_type }}
         run: |
           $ErrorActionPreference = 'Stop'
@@ -57,7 +52,6 @@ jobs:
           $shouldRelease = $false
 
           if ($env:GITHUB_EVENT_NAME -eq 'workflow_dispatch') {
-            if (-not [string]::IsNullOrWhiteSpace($env:REQUESTED_VERSION)) { $version = $env:REQUESTED_VERSION }
             if (-not [string]::IsNullOrWhiteSpace($env:REQUESTED_RELEASE_TYPE)) { $releaseType = $env:REQUESTED_RELEASE_TYPE }
             $shouldRelease = ($env:GITHUB_REF -eq 'refs/heads/main') -and ($env:MANUAL_PUBLISH -eq 'true')
           }
@@ -77,15 +71,15 @@ jobs:
                 $previousVersion = [string](($previousJson | ConvertFrom-Json).version)
                 $shouldRelease = $previousVersion -ne $version
               } else {
-                # The first metadata-backed release has no pack/pack.json on the parent commit.
+                # Bootstrap exception:
+                # legacy main predates pack/pack.json.
+                # 0.11.0 is intentionally the first metadata-backed release.
+                # After this release, only an actual pack.version change releases.
                 $shouldRelease = $true
               }
             }
           }
 
-          if ($shouldRelease -and $version -ne [string]$pack.version) {
-            throw 'Publishing requires the version stored in pack/pack.json.'
-          }
           if ($shouldRelease -and -not (Test-Path "changelog/$version.md")) {
             throw "Missing changelog/$version.md."
           }
@@ -99,7 +93,7 @@ jobs:
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
@@ -124,41 +118,55 @@ jobs:
           path: dist/*.zip
           if-no-files-found: error
 
-  publish:
+  curseforge-preflight:
     if: needs.release-gate.outputs.should_release == 'true'
     needs: [release-gate, build]
     runs-on: windows-latest
-    timeout-minutes: 20
-    permissions:
-      contents: write
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
         with:
           name: Bounty-Harvest-${{ needs.release-gate.outputs.version }}
           path: dist
-      - name: Ensure release tag points at this commit
+      - name: CurseForge preflight
         shell: pwsh
-        run: |
-          $version = '${{ needs.release-gate.outputs.version }}'
-          $tag = "v$version"
-          $head = git rev-parse HEAD
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          $refs = & git ls-remote --tags origin "refs/tags/$tag" "refs/tags/$tag^{}"
-          if ($LASTEXITCODE -ne 0) { throw "git ls-remote failed for $tag." }
-          if ($refs) {
-            $taggedCommit = $null
-            foreach ($line in @($refs)) {
-              $parts = $line -split '\s+'
-              if ($parts[1] -eq "refs/tags/$tag^{}") { $taggedCommit = $parts[0] }
-            }
-            if (-not $taggedCommit) { $taggedCommit = (@($refs)[0] -split '\s+')[0] }
-            if ($taggedCommit -ne $head) { throw "$tag already points at another commit." }
-          } else {
-            git tag -a "$tag" -m "Bounty Harvest $version"
-            git push origin "$tag"
-          }
+        env:
+          CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
+        run: ./tools/publish_curseforge.ps1 -Version '${{ needs.release-gate.outputs.version }}' -ReleaseType '${{ needs.release-gate.outputs.release_type }}' -SkipBuild -Preflight
+
+  publish-curseforge:
+    if: needs.release-gate.outputs.should_release == 'true'
+    needs: [release-gate, build, curseforge-preflight]
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Bounty-Harvest-${{ needs.release-gate.outputs.version }}
+          path: dist
+      - name: Publish client and server child file to CurseForge
+        shell: pwsh
+        env:
+          CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
+        run: ./tools/publish_curseforge.ps1 -Version '${{ needs.release-gate.outputs.version }}' -ReleaseType '${{ needs.release-gate.outputs.release_type }}' -SkipBuild
+
+  publish-github-release:
+    if: needs.release-gate.outputs.should_release == 'true'
+    needs: [release-gate, build, publish-curseforge]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          name: Bounty-Harvest-${{ needs.release-gate.outputs.version }}
+          path: dist
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ needs.release-gate.outputs.version }}
@@ -170,8 +178,3 @@ jobs:
           prerelease: ${{ needs.release-gate.outputs.release_type != 'release' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Publish client and server child file to CurseForge
-        shell: pwsh
-        env:
-          CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
-        run: ./tools/publish_curseforge.ps1 -Version '${{ needs.release-gate.outputs.version }}' -ReleaseType '${{ needs.release-gate.outputs.release_type }}' -SkipBuild
