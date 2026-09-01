@@ -15,19 +15,16 @@
 				"3BA339E0640B6081"
 				"58846BA779358FD2"
 				"17F6492995529F96"
-				"382504BCFCC6B07A"
-				"6A5228B39CFC9F88"
+				"6D3ECD5141AFA093"
 			]
 			icon: "minecraft:white_wool"
 			id: "29747D157C7F8C88"
 			rewards: [
 				{
-					command: "/gamestage add @p level_5 true"
-					elevate_perms: true
+					autoclaim: 1b
 					id: "50A78B2A1AA05F04"
-					silent: true
-					title: "Level up to Level 5"
-					type: "command"
+					stage: "level_5"
+					type: "stage"
 				}
 				{
 					id: "6341F0E8517F62A6"
@@ -49,44 +46,30 @@
 			tasks: [
 				{
 					consume_items: true
-					count: 3L
+					count: 4L
 					id: "2E2F6426E598A287"
-					item: "kubejs:gold_coin"
+					item: { Count: 4, id: "kubejs:gold_coin" }
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 20L
+					count: 4L
 					id: "25177E75320B4917"
-					item: { Count: 20, id: "minecraft:flint" }
+					item: { Count: 4, id: "minecraft:flint" }
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 24L
+					count: 8L
 					id: "462540B1A26D11FF"
-					item: { Count: 24, id: "minecraft:carrot" }
+					item: { Count: 8, id: "minecraft:carrot" }
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 16L
+					count: 4L
 					id: "58B489F58654D31A"
-					item: { Count: 16, id: "minecraft:cooked_porkchop" }
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 6L
-					id: "2E12CA8D9AC5A7F6"
-					item: { Count: 6, id: "minecraft:spider_eye" }
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 16L
-					id: "05AF041D1BE9581F"
-					item: { Count: 16, id: "minecraft:gunpowder" }
+					item: { Count: 4, id: "minecraft:cooked_porkchop" }
 					type: "item"
 				}
 			]

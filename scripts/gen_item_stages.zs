@@ -56,6 +56,7 @@ ItemStages.restrict(<tag:items:minecraft:wooden_fences>, "level_3");
 ItemStages.restrict(<item:farmersdelight:fried_egg>, "level_3");
 ItemStages.restrict(<item:minecraft:bone>, "level_3");
 ItemStages.restrict(<item:minecraft:bow>, "level_3");
+ItemStages.restrict(<item:minecraft:string>, "level_3");
 ItemStages.restrict(<item:minecraft:bricks>, "level_3");
 ItemStages.restrict(<item:minecraft:cooked_beef>, "level_3");
 ItemStages.restrict(<item:minecraft:flower_pot>, "level_3");
@@ -82,7 +83,6 @@ ItemStages.restrict(<item:minecraft:stone_hoe>, "level_4");
 ItemStages.restrict(<item:minecraft:stone_pickaxe>, "level_4");
 ItemStages.restrict(<item:minecraft:stone_shovel>, "level_4");
 ItemStages.restrict(<item:minecraft:stone_sword>, "level_4");
-ItemStages.restrict(<item:minecraft:string>, "level_4");
 
 // Level 5
 ItemStages.restrict(<tag:items:minecraft:wool>, "level_5");
@@ -125,19 +125,15 @@ ItemStages.restrict(<item:minecraft:potato>, "level_6");
 // Level 7
 ItemStages.restrict(<tag:items:minecraft:copper_ores>, "level_7");
 ItemStages.restrict(<tag:items:minecraft:decorated_pot_sherds>, "level_7");
-ItemStages.restrict(<tag:items:minecraft:iron_ores>, "level_7");
 ItemStages.restrict(<item:bettercopper:copper_nugget>, "level_7");
 ItemStages.restrict(<item:farmersdelight:milk_bottle>, "level_7");
 ItemStages.restrict(<item:farmersdelight:pie_crust>, "level_7");
 ItemStages.restrict(<item:minecraft:bucket>, "level_7");
 ItemStages.restrict(<item:minecraft:copper_ingot>, "level_7");
 ItemStages.restrict(<item:minecraft:glass_bottle>, "level_7");
-ItemStages.restrict(<item:minecraft:iron_nugget>, "level_7");
 ItemStages.restrict(<item:minecraft:milk_bucket>, "level_7");
 ItemStages.restrict(<item:minecraft:raw_copper>, "level_7");
 ItemStages.restrict(<item:minecraft:raw_copper_block>, "level_7");
-ItemStages.restrict(<item:minecraft:raw_iron>, "level_7");
-ItemStages.restrict(<item:minecraft:raw_iron_block>, "level_7");
 ItemStages.restrict(<item:minecraft:water_bucket>, "level_7");
 ItemStages.restrict(<item:bettercopper:copper_axe>, "level_7");
 ItemStages.restrict(<item:bettercopper:copper_hoe>, "level_7");
@@ -153,7 +149,34 @@ ItemStages.restrict(<item:minecraft:composter>, "level_7");
 ItemStages.restrict(<item:minecraft:decorated_pot>, "level_7");
 ItemStages.restrict(<item:minecraft:emerald>, "level_7");
 ItemStages.restrict(<item:minecraft:fishing_rod>, "level_7");
-ItemStages.restrict(<item:minecraft:iron_ingot>, "level_7");
+// Ironworking is unlocked inside Level 7 after the copper-tool milestone.
+// Keeping the metal stages separate gives BetterCopper a real progression era.
+ItemStages.restrict(<tag:items:minecraft:iron_ores>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_nugget>, "iron_age");
+ItemStages.restrict(<item:minecraft:raw_iron>, "iron_age");
+ItemStages.restrict(<item:minecraft:raw_iron_block>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_ingot>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_block>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_axe>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_hoe>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_pickaxe>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_shovel>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_sword>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_helmet>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_chestplate>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_leggings>, "iron_age");
+ItemStages.restrict(<item:minecraft:iron_boots>, "iron_age");
+ItemStages.restrict(<item:minecraft:shield>, "iron_age");
+
+// Explicit integration policy for gameplay-changing systems. These namespace
+// gates prevent adventure and automation mods from bypassing the farm economy.
+ItemStages.createModRestriction("alexsmobs", "level_4");
+ItemStages.createModRestriction("cookingforblockheads", "level_7");
+ItemStages.createModRestriction("create", "level_8");
+ItemStages.createModRestriction("createaddition", "level_8");
+ItemStages.createModRestriction("sliceanddice", "level_8");
+ItemStages.createModRestriction("alexscaves", "level_8");
+ItemStages.createModRestriction("twilightforest", "level_8");
 
 // Level 8
 ItemStages.restrict(<item:aquaculture:fish_fillet_raw>, "level_8");

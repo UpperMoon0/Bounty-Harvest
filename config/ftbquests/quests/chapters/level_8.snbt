@@ -30,11 +30,10 @@
 			id: "4003BF6FE565761F"
 			rewards: [
 				{
-					command: "/gamestage add @p level_8 true"
+					autoclaim: 1b
 					id: "37252479FFAC6A0F"
-					silent: true
-					title: "Level up to Level 8"
-					type: "command"
+					stage: "level_8"
+					type: "stage"
 				}
 				{
 					id: "044FBD3F543A7EF9"
@@ -56,37 +55,37 @@
 			tasks: [
 				{
 					consume_items: true
-					count: 10L
+					count: 12L
 					id: "2E5CA35378F340E9"
-					item: "kubejs:gold_coin"
+					item: { Count: 12, id: "kubejs:gold_coin" }
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 3L
+					count: 1L
 					id: "2FE8400B35D5988D"
 					item: "minecraft:copper_block"
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 12L
+					count: 1L
 					id: "00C2B0B2D61D5B5D"
-					item: { Count: 8, id: "minecraft:cake" }
+					item: "minecraft:cake"
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 12L
+					count: 1L
 					id: "2B17C1C4762C593F"
-					item: { Count: 8, id: "farmersdelight:apple_pie" }
+					item: "farmersdelight:apple_pie"
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 16L
+					count: 1L
 					id: "37D93A40E0FB9910"
-					item: { Count: 12, id: "farmersdelight:stuffed_potato" }
+					item: "farmersdelight:stuffed_potato"
 					type: "item"
 				}
 			]

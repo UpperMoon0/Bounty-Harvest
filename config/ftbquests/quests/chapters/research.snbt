@@ -1,0 +1,40 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "research"
+	group: "39B7846742C777FD"
+	icon: "create:crafting_blueprint"
+	id: "2C72C819BFA43E10"
+	order_index: -1
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Bounty Harvest uses levels as research milestones. Completing a level-up quest automatically grants its stage and unlocks the items, recipes, creatures, and systems assigned to that level."
+				""
+				"Locked items show their required stage in their tooltip and are hidden or marked in JEI until that stage is available."
+			]
+			id: "E60381A75A8C4D21"
+			tasks: [{
+				id: "18A9C17BEA7F302D"
+				type: "checkmark"
+			}]
+			title: "How research works"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["E60381A75A8C4D21"]
+			description: ["The quest book is the authoritative progression map. Locked-item tooltips identify later-level recipe requirements."]
+			id: "E5CA8B613D89274F"
+			tasks: [{
+				id: "435E9C0AD162A8BF"
+				type: "checkmark"
+			}]
+			title: "Reading the progression"
+			x: 2.0d
+			y: 0.0d
+		}
+	]
+	title: "Research and Levels"
+}

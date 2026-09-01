@@ -12,20 +12,18 @@
 		{
 			dependencies: [
 				"43D5B92E7B462E7E"
-				"1CCF7C805ED9FE8B"
-				"185D159902032063"
-				"1FD813E5CF445550"
+				"6EA2798DA5176208"
+				"3EE0899DEAD2177C"
+				"0139DF3D2C0E8D13"
 			]
 			icon: "minecraft:potato"
 			id: "7297A69487BEE03D"
 			rewards: [
 				{
-					command: "/gamestage add @p level_6 true"
-					elevate_perms: true
+					autoclaim: 1b
 					id: "1F10B933EFFC1054"
-					silent: true
-					title: "Level up to Level 6"
-					type: "command"
+					stage: "level_6"
+					type: "stage"
 				}
 				{
 					id: "581DA5988396076E"
@@ -47,14 +45,14 @@
 			tasks: [
 				{
 					consume_items: true
-					count: 5L
+					count: 6L
 					id: "6221AF20E1FF898D"
-					item: "kubejs:gold_coin"
+					item: { Count: 6, id: "kubejs:gold_coin" }
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 4L
+					count: 1L
 					id: "6397DCE49D42D962"
 					item: {
 						Count: 1
@@ -68,30 +66,23 @@
 				}
 				{
 					consume_items: true
-					count: 20L
+					count: 4L
 					id: "40CD2D206717F1CB"
-					item: { Count: 20, id: "minecraft:cooked_mutton" }
+					item: { Count: 4, id: "minecraft:cooked_mutton" }
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 12L
-					id: "33143B6F397732D1"
-					item: { Count: 12, id: "minecraft:tnt" }
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 12L
+					count: 1L
 					id: "19981BE78849C36D"
-					item: { Count: 12, id: "minecraft:book" }
+					item: "minecraft:book"
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 12L
+					count: 1L
 					id: "6379A138E246177C"
-					item: { Count: 12, id: "minecraft:ink_sac" }
+					item: "minecraft:ink_sac"
 					type: "item"
 				}
 			]
@@ -103,25 +94,44 @@
 			dependencies: ["7297A69487BEE03D"]
 			hide_until_deps_visible: false
 			id: "015743E28B4488CE"
+			description: ["Build a dependable potato crop, then bake part of the harvest. The random poisonous-potato drop is an optional challenge below."]
 			tasks: [
 				{
+					count: 16L
 					id: "4566A41DD702A1FB"
-					item: "minecraft:potato"
+					item: { Count: 16, id: "minecraft:potato" }
 					type: "item"
 				}
 				{
+					count: 4L
 					id: "4D5CC65F27EE7B51"
-					item: "minecraft:baked_potato"
-					type: "item"
-				}
-				{
-					id: "2081C939C9E624F2"
-					item: "minecraft:poisonous_potato"
+					item: { Count: 4, id: "minecraft:baked_potato" }
 					type: "item"
 				}
 			]
+			title: "Potato harvest"
 			x: 1.0d
 			y: -2.0d
+		}
+		{
+			can_repeat: false
+			dependencies: ["015743E28B4488CE"]
+			description: ["A poisonous potato is a rare harvest bonus. It is never required for main progression."]
+			id: "97C83D41E6A25BF0"
+			rewards: [{
+				count: 9
+				id: "54B9A31E087C6D2F"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "2081C939C9E624F2"
+				item: "minecraft:poisonous_potato"
+				type: "item"
+			}]
+			title: "Optional: poisonous potato"
+			x: 3.0d
+			y: -3.0d
 		}
 		{
 			dependencies: ["7297A69487BEE03D"]

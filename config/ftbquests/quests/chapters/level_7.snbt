@@ -11,7 +11,7 @@
 	quests: [
 		{
 			dependencies: [
-				"210D58BA749A0F47"
+				"343DEFDA4A80BD80"
 				"015743E28B4488CE"
 				"66BB290DCD86866E"
 			]
@@ -19,12 +19,10 @@
 			id: "0A53CC520F7826A3"
 			rewards: [
 				{
-					command: "/gamestage add @p level_7 true"
-					elevate_perms: true
+					autoclaim: 1b
 					id: "5F17EA48FD2E51D1"
-					silent: true
-					title: "Level up to Level 7"
-					type: "command"
+					stage: "level_7"
+					type: "stage"
 				}
 				{
 					id: "3EAAD3FF909BE248"
@@ -46,30 +44,30 @@
 			tasks: [
 				{
 					consume_items: true
-					count: 8L
+					count: 10L
 					id: "1A54ACFC554590C8"
-					item: "kubejs:gold_coin"
+					item: { Count: 10, id: "kubejs:gold_coin" }
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 12L
+					count: 1L
 					id: "3D4675D6BF568A80"
-					item: { Count: 8, id: "minecraft:mushroom_stew" }
+					item: "minecraft:mushroom_stew"
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 9L
+					count: 1L
 					id: "1B358C70AA1BEC71"
-					item: { Count: 6, id: "kubejs:wool_sweater" }
+					item: "kubejs:wool_sweater"
 					type: "item"
 				}
 				{
 					consume_items: true
-					count: 36L
+					count: 8L
 					id: "70DA258D3E2ED1DD"
-					item: { Count: 28, id: "minecraft:baked_potato" }
+					item: { Count: 8, id: "minecraft:baked_potato" }
 					type: "item"
 				}
 			]
@@ -81,6 +79,7 @@
 			dependencies: ["0A53CC520F7826A3"]
 			hide_until_deps_visible: false
 			id: "6A5C20C31BD2649E"
+			description: ["Raw copper smelts into three nuggets, not a full ingot. Build a copper tool set to prove the copper industry before ironworking unlocks."]
 			tasks: [
 				{
 					id: "23232AF83E879BA3"
@@ -98,9 +97,10 @@
 			y: 4.0d
 		}
 		{
-			dependencies: ["0A53CC520F7826A3"]
+			dependencies: ["34B5DF088E2F447E"]
 			hide_until_deps_visible: false
 			id: "557852FFD6F4D560"
+			description: ["Ironworking is now available. Raw iron also smelts into three nuggets, so plan the ore economy around three raw ore per ingot."]
 			tasks: [
 				{
 					id: "511E6646D44416DA"
@@ -267,6 +267,12 @@
 			dependencies: ["6A5C20C31BD2649E"]
 			hide_until_deps_visible: false
 			id: "34B5DF088E2F447E"
+			rewards: [{
+				autoclaim: 1b
+				id: "74AE2B560D93C81F"
+				stage: "iron_age"
+				type: "stage"
+			}]
 			tasks: [
 				{
 					id: "1AC9E12AE8A09AC1"
@@ -325,6 +331,7 @@
 				}
 			]
 			title: "Copper Tools"
+			description: ["Copper tools are the Level 7 metal tier. Completing this milestone automatically unlocks Ironworking."]
 			x: -3.5d
 			y: 2.5d
 		}

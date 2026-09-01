@@ -199,17 +199,6 @@ ServerEvents.recipes((e) => {
         B: 'minecraft:copper_ingot'
     })
 
-    e.remove({id: 'create:smelting/bread'})
-    e.remove({output: 'farmersdelight:wheat_dough'})
-    e.shaped('3x farmersdelight:wheat_dough', [
-        'WWA',
-        'WE '
-    ], {
-        W: 'minecraft:wheat',
-        E: 'minecraft:egg',
-        A: 'minecraft:water_bucket'
-    })
-
     e.remove({id: 'minecraft:fishing_rod'})
     e.shaped('minecraft:fishing_rod', [
         '  A',
@@ -294,4 +283,19 @@ ServerEvents.recipes((e) => {
         C: 'delightful:chopped_clover',
         D: 'minecraft:carrot'
     })
+
+    // Currency is exchanged at a crafting table instead of through repeatable
+    // quest claims. A 3x3 conversion is lossless and supports fast shift-clicking.
+    e.shaped('kubejs:iron_coin', [
+        'CCC',
+        'CCC',
+        'CCC'
+    ], { C: 'kubejs:copper_coin' })
+    e.shapeless('9x kubejs:copper_coin', ['kubejs:iron_coin'])
+    e.shaped('kubejs:gold_coin', [
+        'III',
+        'III',
+        'III'
+    ], { I: 'kubejs:iron_coin' })
+    e.shapeless('9x kubejs:iron_coin', ['kubejs:gold_coin'])
 })

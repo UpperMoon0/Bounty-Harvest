@@ -11,20 +11,17 @@
 	quests: [
 		{
 			dependencies: [
-				"44559F724FDC9994"
 				"5918C8C324EC380B"
-				"44F6F42801500C65"
+				"A0B67F241C38D5E9"
 			]
 			icon: "minecraft:egg"
 			id: "7D3858343983B67A"
 			rewards: [
 				{
-					command: "/gamestage add @p level_2 true"
-					elevate_perms: true
+					autoclaim: 1b
 					id: "4CAE7972E362E1D6"
-					silent: true
-					title: "Level up to Level 2"
-					type: "command"
+					stage: "level_2"
+					type: "stage"
 				}
 				{
 					id: "3BCB555692378DB7"
@@ -53,51 +50,9 @@
 				}
 				{
 					consume_items: true
-					count: 3L
+					count: 8L
 					id: "52B8230BBFDE2E89"
-					item: "minecraft:bread"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 5L
-					id: "2ED32D5F67BFC5D2"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "forge:chests"
-						}
-					}
-					title: "Any #forge:chests"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 12L
-					id: "0FED66D5BBA09D04"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "forge:sand"
-						}
-					}
-					title: "Any #forge:sand"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 12L
-					id: "1A90758BE2ACF9B5"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "forge:gravel"
-						}
-					}
-					title: "Any #forge:gravel"
+					item: { Count: 8, id: "minecraft:bread" }
 					type: "item"
 				}
 			]

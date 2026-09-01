@@ -1,0 +1,39 @@
+# Minecraft runtime and user data
+mods/*.jar
+.curseclient
+user-prefs.json
+options.txt
+servers.dat*
+usercache.json
+usernamecache.json
+logs/
+crash-reports/
+saves/
+backups/
+screenshots/
+shaderpacks/
+downloads/
+local/
+debug/
+command_history.txt
+hs_err_pid*.log
+
+# Per-world JEI state
+config/jei/world/
+config/embeddium-fingerprint.json
+
+# Generated and local tooling files
+dist/
+.pack-build/
+.server-smoke/
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Auto-generated config backups
+config/*.bak
+thread_dump*.txt
