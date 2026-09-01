@@ -3,6 +3,9 @@ param(
     [string]$Version,
     [ValidateSet('alpha', 'beta', 'release')] [string]$ReleaseType,
     [string]$ChangelogFile,
+    [ValidateSet('all', 'client', 'server')] [string]$Mode = 'all',
+    [string]$ParentFileId,
+    [string]$StateFile,
     [switch]$SkipBuild,
     [switch]$DryRun,
     [switch]$Preflight
@@ -17,6 +20,9 @@ if ([string]::IsNullOrWhiteSpace($Version)) { $Version = [string]$pack.version }
 if ([string]::IsNullOrWhiteSpace($ReleaseType)) { $ReleaseType = [string]$pack.releaseType }
 if ([string]::IsNullOrWhiteSpace($ChangelogFile)) {
     $ChangelogFile = Join-Path $repoRoot "changelog/$Version.md"
+}
+if ([string]::IsNullOrWhiteSpace($StateFile)) {
+    $StateFile = Join-Path $repoRoot "dist/curseforge-$Version-state.json"
 }
 
 $artifact = [string]$pack.artifactName
@@ -39,9 +45,14 @@ $mainMetadata = [ordered]@{
 }
 
 if ($DryRun) {
-    Write-Host "DRY RUN: would upload $clientArchive"
-    Write-Host ($mainMetadata | ConvertTo-Json -Depth 5)
-    Write-Host "DRY RUN: would attach $serverArchive as the server child file"
+    if ($Mode -in @('all', 'client')) {
+        Write-Host "DRY RUN: would upload $clientArchive"
+        Write-Host ($mainMetadata | ConvertTo-Json -Depth 5)
+        Write-Host "DRY RUN: would persist the returned client file ID to $StateFile"
+    }
+    if ($Mode -in @('all', 'server')) {
+        Write-Host "DRY RUN: would attach $serverArchive as the server child file"
+    }
     exit 0
 }
 
@@ -57,11 +68,10 @@ $authorHeaders = @{ 'X-Api-Token' = $token }
 
 if ($Preflight) {
     Write-Host "PREFLIGHT: validating CurseForge upload prerequisites"
-    if (-not (Test-Path -LiteralPath $clientArchive -PathType Leaf)) {
-        throw "Missing client archive: $clientArchive"
-    }
-    if (-not (Test-Path -LiteralPath $serverArchive -PathType Leaf)) {
-        throw "Missing server archive: $serverArchive"
+    foreach ($archive in @($clientArchive, $serverArchive)) {
+        if (-not (Test-Path -LiteralPath $archive -PathType Leaf)) {
+            throw "Missing release archive: $archive"
+        }
     }
     if (-not (Test-Path -LiteralPath $ChangelogFile -PathType Leaf)) {
         throw "Missing changelog: $ChangelogFile"
@@ -94,7 +104,10 @@ if ($Preflight) {
 }
 
 if (-not $SkipBuild) { & (Join-Path $PSScriptRoot 'build_modpack.ps1') -Version $Version }
-foreach ($archive in @($clientArchive, $serverArchive)) {
+$requiredArchives = @()
+if ($Mode -in @('all', 'client')) { $requiredArchives += $clientArchive }
+if ($Mode -in @('all', 'server')) { $requiredArchives += $serverArchive }
+foreach ($archive in $requiredArchives) {
     if (-not (Test-Path -LiteralPath $archive -PathType Leaf)) {
         throw "Missing release archive: $archive"
     }
@@ -154,20 +167,89 @@ function Publish-File($Metadata, $Archive) {
                 return $existing
             }
             if ($null -eq $coreHeaders) {
-                Write-Warning 'CurseForge reported a duplicate. Configure CURSEFORGE_CORE_API_KEY to enable idempotent duplicate lookup.'
+                Write-Warning 'CurseForge reported a duplicate. A saved publish-state file can recover the client ID for server retries; CURSEFORGE_CORE_API_KEY is still recommended for duplicate recovery across separate workflow runs.'
             }
         }
         throw "CurseForge upload failed for ${Archive}: $body"
     }
 }
 
-$clientFileId = Publish-File $mainMetadata $clientArchive
-$serverMetadata = [ordered]@{
-    changelog = $changelog
-    changelogType = 'markdown'
-    displayName = "$($pack.name) $Version Server Pack"
-    parentFileID = [long]$clientFileId
-    releaseType = $ReleaseType
+function Save-ClientPublishState($ClientFileId) {
+    $stateDirectory = Split-Path -Parent $StateFile
+    if (-not [string]::IsNullOrWhiteSpace($stateDirectory)) {
+        $null = New-Item -ItemType Directory -Path $stateDirectory -Force
+    }
+    $state = [ordered]@{
+        version = $Version
+        curseForgeProjectId = [long]$pack.curseForgeProjectId
+        clientDisplayName = [string]$mainMetadata.displayName
+        clientFileId = [long]$ClientFileId
+        clientArchiveSha256 = (Get-FileHash -LiteralPath $clientArchive -Algorithm SHA256).Hash.ToLowerInvariant()
+    }
+    $state | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath $StateFile -Encoding utf8
+    Write-Host "Saved CurseForge client publish state to $StateFile."
 }
-$serverFileId = Publish-File $serverMetadata $serverArchive
-Write-Host "Client file $clientFileId and server child file $serverFileId are present on CurseForge."
+
+function Get-SavedClientFileId {
+    if (-not (Test-Path -LiteralPath $StateFile -PathType Leaf)) { return $null }
+
+    $state = Get-Content -LiteralPath $StateFile -Raw -Encoding utf8 | ConvertFrom-Json
+    if ([string]$state.version -ne $Version) {
+        throw "CurseForge state file version '$($state.version)' does not match requested version '$Version'."
+    }
+    if ([long]$state.curseForgeProjectId -ne [long]$pack.curseForgeProjectId) {
+        throw "CurseForge state file project ID '$($state.curseForgeProjectId)' does not match '$($pack.curseForgeProjectId)'."
+    }
+    if (-not $state.clientFileId) {
+        throw "CurseForge state file has no clientFileId: $StateFile"
+    }
+    if ($state.clientArchiveSha256 -and (Test-Path -LiteralPath $clientArchive -PathType Leaf)) {
+        $currentHash = (Get-FileHash -LiteralPath $clientArchive -Algorithm SHA256).Hash.ToLowerInvariant()
+        if ([string]$state.clientArchiveSha256 -ne $currentHash) {
+            throw "CurseForge state file client archive hash does not match $clientArchive."
+        }
+    }
+    return [string]$state.clientFileId
+}
+
+function Resolve-ClientFileId {
+    if (-not [string]::IsNullOrWhiteSpace($ParentFileId)) {
+        return $ParentFileId
+    }
+
+    $saved = Get-SavedClientFileId
+    if ($saved) {
+        Write-Host "Reusing saved CurseForge client file $saved from $StateFile."
+        return $saved
+    }
+
+    $existing = Get-ExistingFileId $mainMetadata.displayName
+    if ($existing) {
+        Write-Host "Recovered existing CurseForge client file $existing through the Core API."
+        return $existing
+    }
+
+    throw "Server publication needs a client file ID. Provide -ParentFileId, restore the saved state file '$StateFile', or configure CURSEFORGE_CORE_API_KEY for cross-run recovery."
+}
+
+$clientFileId = $null
+if ($Mode -in @('all', 'client')) {
+    $clientFileId = Publish-File $mainMetadata $clientArchive
+    Save-ClientPublishState $clientFileId
+    Write-Host "Client file $clientFileId is present on CurseForge."
+}
+
+if ($Mode -in @('all', 'server')) {
+    if ([string]::IsNullOrWhiteSpace([string]$clientFileId)) {
+        $clientFileId = Resolve-ClientFileId
+    }
+    $serverMetadata = [ordered]@{
+        changelog = $changelog
+        changelogType = 'markdown'
+        displayName = "$($pack.name) $Version Server Pack"
+        parentFileID = [long]$clientFileId
+        releaseType = $ReleaseType
+    }
+    $serverFileId = Publish-File $serverMetadata $serverArchive
+    Write-Host "Server child file $serverFileId is attached to CurseForge client file $clientFileId."
+}

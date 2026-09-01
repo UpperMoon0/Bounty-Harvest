@@ -135,23 +135,52 @@ jobs:
           CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
         run: ./tools/publish_curseforge.ps1 -Version '${{ needs.release-gate.outputs.version }}' -ReleaseType '${{ needs.release-gate.outputs.release_type }}' -SkipBuild -Preflight
 
-  publish-curseforge:
+  publish-curseforge-client:
     if: needs.release-gate.outputs.should_release == 'true'
     needs: [release-gate, build, curseforge-preflight]
     runs-on: windows-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
         with:
           name: Bounty-Harvest-${{ needs.release-gate.outputs.version }}
           path: dist
-      - name: Publish client and server child file to CurseForge
+      - name: Publish CurseForge client file
         shell: pwsh
         env:
           CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
           CURSEFORGE_CORE_API_KEY: ${{ secrets.CURSEFORGE_CORE_API_KEY }}
-        run: ./tools/publish_curseforge.ps1 -Version '${{ needs.release-gate.outputs.version }}' -ReleaseType '${{ needs.release-gate.outputs.release_type }}' -SkipBuild
+        run: ./tools/publish_curseforge.ps1 -Version '${{ needs.release-gate.outputs.version }}' -ReleaseType '${{ needs.release-gate.outputs.release_type }}' -SkipBuild -Mode client -StateFile 'dist/curseforge-state.json'
+      - name: Persist CurseForge client file ID
+        uses: actions/upload-artifact@v4
+        with:
+          name: Bounty-Harvest-${{ needs.release-gate.outputs.version }}-curseforge-state
+          path: dist/curseforge-state.json
+          if-no-files-found: error
+          retention-days: 7
+
+  publish-curseforge-server:
+    if: needs.release-gate.outputs.should_release == 'true'
+    needs: [release-gate, build, curseforge-preflight, publish-curseforge-client]
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Bounty-Harvest-${{ needs.release-gate.outputs.version }}
+          path: dist
+      - uses: actions/download-artifact@v4
+        with:
+          name: Bounty-Harvest-${{ needs.release-gate.outputs.version }}-curseforge-state
+          path: dist
+      - name: Publish CurseForge server child file
+        shell: pwsh
+        env:
+          CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
+          CURSEFORGE_CORE_API_KEY: ${{ secrets.CURSEFORGE_CORE_API_KEY }}
+        run: ./tools/publish_curseforge.ps1 -Version '${{ needs.release-gate.outputs.version }}' -ReleaseType '${{ needs.release-gate.outputs.release_type }}' -SkipBuild -Mode server -StateFile 'dist/curseforge-state.json'
 
   publish-github-release:
     if: needs.release-gate.outputs.should_release == 'true'

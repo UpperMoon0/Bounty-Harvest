@@ -12,6 +12,15 @@ STAGE_SCRIPT = ROOT / "scripts" / "gen_item_stages.zs"
 ID_RE = re.compile(r'\bid:\s*"([0-9A-Fa-f]{16})"')
 DEPENDENCY_RE = re.compile(r"dependencies:\s*\[([^\]]*)\]", re.DOTALL)
 
+# These are intentional entry points into otherwise-connected quest content.
+# Any new dependency-free quest must be added here deliberately; this prevents
+# a detached DAG from silently becoming its own "root" and passing validation.
+KNOWN_ROOTS = {
+    "74402ecaffafaec4": "chapters/level_1.snbt",
+    "e60381a75a8c4d21": "chapters/research.snbt",
+    "74be872a1ffe8d25": "chapters/currencies_exchange.snbt",
+}
+
 LEVEL_7_QUEST = "0a53cc520f7826a3"
 COPPER_QUEST = "6a5c20c31bd2649e"
 COPPER_TOOLS_QUEST = "34b5df088e2f447e"
@@ -126,14 +135,46 @@ def check_cycles(graph: dict[str, set[str]], errors: list[str]) -> None:
             visit(node)
 
 
-def check_reachability(graph: dict[str, set[str]], errors: list[str]) -> None:
-    roots = [node for node, dependencies in graph.items() if not dependencies]
+def check_reachability(
+    graph: dict[str, set[str]], quest_sources: dict[str, Path], errors: list[str]
+) -> None:
+    declared_roots = set(KNOWN_ROOTS)
+    actual_roots = {node for node, dependencies in graph.items() if not dependencies}
+
+    for root, expected_source in KNOWN_ROOTS.items():
+        if root not in graph:
+            errors.append(f"missing declared quest root {root.upper()} ({expected_source})")
+            continue
+        source = quest_sources[root].relative_to(QUEST_ROOT).as_posix()
+        if source != expected_source:
+            errors.append(
+                f"declared quest root {root.upper()} moved to {source}; expected {expected_source}"
+            )
+        if graph[root]:
+            errors.append(
+                f"declared quest root {root.upper()} unexpectedly has dependencies: "
+                + ", ".join(value.upper() for value in sorted(graph[root]))
+            )
+
+    unexpected_roots = sorted(actual_roots - declared_roots)
+    if unexpected_roots:
+        preview = ", ".join(
+            f"{value.upper()} ({quest_sources[value].relative_to(QUEST_ROOT).as_posix()})"
+            for value in unexpected_roots[:8]
+        )
+        suffix = " ..." if len(unexpected_roots) > 8 else ""
+        errors.append(
+            "undeclared dependency-free quest roots detected; connect them to the graph "
+            f"or add them to KNOWN_ROOTS intentionally: {preview}{suffix}"
+        )
+
     dependents: dict[str, set[str]] = {node: set() for node in graph}
     for node, dependencies in graph.items():
         for dependency in dependencies:
             if dependency in graph:
                 dependents[dependency].add(node)
 
+    roots = [root for root in declared_roots if root in graph]
     reachable = set(roots)
     queue = deque(roots)
     while queue:
@@ -145,9 +186,12 @@ def check_reachability(graph: dict[str, set[str]], errors: list[str]) -> None:
 
     unreachable = sorted(set(graph) - reachable)
     if unreachable:
-        preview = ", ".join(value.upper() for value in unreachable[:8])
+        preview = ", ".join(
+            f"{value.upper()} ({quest_sources[value].relative_to(QUEST_ROOT).as_posix()})"
+            for value in unreachable[:8]
+        )
         suffix = " ..." if len(unreachable) > 8 else ""
-        errors.append(f"unreachable quests from dependency roots: {preview}{suffix}")
+        errors.append(f"quests unreachable from declared roots: {preview}{suffix}")
 
 
 def check_progression_invariants(
@@ -234,7 +278,7 @@ def main() -> int:
                 )
 
     check_cycles(graph, errors)
-    check_reachability(graph, errors)
+    check_reachability(graph, quest_sources, errors)
     check_progression_invariants(graph, quest_blocks, errors)
 
     if errors:
@@ -245,7 +289,7 @@ def main() -> int:
     dependency_count = sum(len(dependencies) for dependencies in graph.values())
     print(
         f"Quest graph OK: {len(ids)} unique IDs / {dependency_count} quest dependencies; "
-        "cycle, reachability, and critical progression invariants valid."
+        f"{len(KNOWN_ROOTS)} declared roots, cycle, reachability, and critical progression invariants valid."
     )
     return 0
 

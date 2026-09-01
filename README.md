@@ -16,7 +16,7 @@ The game is set against the backdrop of a breathtaking and diverse wilderness la
 
 There are currently 8 playable levels, with more planned for the future.
 
-Please note that as the modpack is in its early alpha stage, you may encounter several bugs and unintentionally ungated items. I appreciate your understanding and patience as we work towards refining Bounty Harvest. Your feedback during this phase is invaluable to us. Enjoy your journey!
+Please note that as the modpack is in its early beta stage, you may encounter several bugs and unintentionally ungated items. I appreciate your understanding and patience as we work towards refining Bounty Harvest. Your feedback during this phase is invaluable to us. Enjoy your journey!
 
 ![Quests](https://i.imgur.com/Gscc4gd.png)
 ![Bounties](https://i.imgur.com/ggEx4YP.png)
@@ -41,4 +41,6 @@ Outputs:
 - `dist/Bounty-Harvest-<version>.zip` — CurseForge client manifest with runtime overrides
 - `dist/Bounty-Harvest-<version>-server.zip` — dedicated server, Forge installer, and launchers
 
-Pull requests validate the quest graph, critical progression gates, pack invariants, archive client/server split, and dedicated-server boot. A version change merged into `main` creates the GitHub release after a successful build; CurseForge preflight/publishing runs independently and requires the `CURSEFORGE_API_TOKEN` repository secret. `CURSEFORGE_CORE_API_KEY` is optional and is used only for idempotent duplicate-file lookup through the separate CurseForge Core API.
+Pull requests validate the quest graph, declared quest roots, critical progression gates, pack invariants, archive client/server split, and dedicated-server boot. A version change merged into `main` creates the GitHub release after a successful build; CurseForge publishing runs independently.
+
+CurseForge publication is split into client and server-child jobs. After the client upload succeeds, its file ID and archive hash are persisted as a short-lived Actions artifact so **Re-run failed jobs** can retry a failed server-child upload without uploading the client again. `CURSEFORGE_API_TOKEN` is required for author uploads. `CURSEFORGE_CORE_API_KEY` remains optional but recommended for duplicate-file recovery across separate workflow runs or ambiguous upload responses.
