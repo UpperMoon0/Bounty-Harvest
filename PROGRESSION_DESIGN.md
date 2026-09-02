@@ -137,6 +137,8 @@ Do not describe or design a stage as if it blocks systems that technically remai
 
 Do not stage an entire integration merely because it is installed. If a mod has no progression branch, meaningful order demand, or intentional support role yet, leave it out of the level contract until it does.
 
+A staged integration is justified when the level actually establishes and retains its economy. Level 15 End's Delight is the reference example: the stage unlocks a chorus-fruit production branch, that branch consumes older farm inputs such as wheat, sugar, and pie crust, the one-time Market Order consumes the resulting pies at industrial scale, and repeatable Bountiful orders keep the product relevant afterward.
+
 ## 13. Validate the progression contract
 
 Automated validation should protect structural rules that are easy to regress, including:
@@ -152,6 +154,7 @@ Automated validation should protect structural rules that are easy to regress, i
 - required crops have deterministic recovery paths when world generation can fail the player;
 - processors used by the design cannot be bypassed by required recipes;
 - automation-era promotion costs and Bountiful demand preserve the intended growth curve;
-- infrastructure objects are retained where the economic test is supposed to be throughput.
+- infrastructure objects are retained where the economic test is supposed to be throughput;
+- staged late-game integrations must have both a real progression objective and recurring economic demand.
 
 When a validator cannot prove a qualitative rule, review the progression manually against this document before merging.
