@@ -1,72 +1,79 @@
 # Bounty Harvest
 
-CurseForge page: https://legacy.curseforge.com/minecraft/modpacks/bounty-harvest
+Bounty Harvest is a Forge 1.20.1 farm-management modpack built around a staged agricultural economy. Instead of treating progression as a vanilla checklist, the pack asks you to grow an increasingly interconnected farm, turn production into repeatable Bountiful income, fund level promotions, and eventually automate industrial-scale orders.
 
-Minecraft 1.20.1 · Forge 47.4.23 · Java 17 · Beta
+## Progression model
 
-![Bounty Harvest](https://i.imgur.com/qIHoZxx.png?1)
+The main game is organized into 15 economic levels. Every level expands the farm with new crops, animals, processors, technology, cuisine, or exploration systems and ends in a one-time Market Order.
 
-Bounty Harvest is a progression-based farming and production modpack built around a 15-level farm economy. Grow crops, raise animals, process food, automate production, explore for specialist resources, and sell the results through Bountiful orders.
+The quest book is intentionally **branched** rather than a straight promotion -> production -> order line. Each level exposes the relevant crop, livestock, processing, technology, exploration, and support paths separately, then converges the important branches on the Market Order. Optional guidance can remain visible without becoming a mandatory progression tax.
 
-The level system follows a farm-management progression rather than a vanilla checklist:
+Quest descriptions are formatted for the compact FTB Quests window: distinct ideas are separated into paragraphs and long prose is reflowed instead of appearing as a wall of text. Natural-language ampersands are avoided because FTB Quests interprets `&` as a formatting prefix.
 
-- every level introduces a coherent production expansion;
-- older crops and goods remain useful in later recipes and bounty pools;
-- each level ends with a one-time Market Order that proves the new supply chain works;
-- the Bounty Board is the repeatable order board that turns production into copper, iron, and gold coins;
-- coins remain globally usable and can be exchanged at 9:1 between denominations.
-
-The detailed design contract lives in [`PROGRESSION_DESIGN.md`](PROGRESSION_DESIGN.md). In particular, major production lines should gain a new processing layer within roughly two levels and meaningful demand within roughly three; technology eras must have room to breathe instead of acting as instant prerequisites.
-
-## Progression
-
-| Level | Economy expansion |
+| Level | Economy focus |
 | --- | --- |
-| 1 | Homestead, wheat, bread, Bounty Board |
-| 2 | Poultry, eggs, charcoal hearth |
-| 3 | Cattle, beef, leather |
-| 4 | Carrots, pork, Farmer's Delight dough |
-| 5 | Fishing, Aquaculture 2, Ocean's Delight |
-| 6 | Sheep, wool processing, potatoes, sugar, mushrooms |
-| 7 | Better Copper workshop, copper tools, workshop supplies; copper era begins |
-| 8 | Cabbage Market Garden, flint-knife processing, chicken/fish/apple prepared foods |
-| 9 | Corn Delight + tomato; tacos reconnect pork and cabbage to the new crops |
-| 10 | Ironworking, onion, iron kitchen, Create foundations and redstone |
-| 11 | Pineapple Delight + rice + Slice & Dice; rice reconnects fisheries through fish rolls |
-| 12 | Create Crafts & Additions power and logistics |
-| 13 | Alex's Mobs fieldwork + Alex's Delight cuisine |
-| 14 | Alex's Caves expeditions and deep resources |
-| 15 | Twilight Forest + Twilight's Flavors & Delight + End's Delight frontier economy |
+| 1 | Homestead, wheat, tools, storage, Bounty Board and first sale |
+| 2 | Poultry, hearth, fuel, clay and shelter |
+| 3 | Cattle, leather, fertilizer, ranching and brickwork |
+| 4 | Carrots, pigs, wheat dough, flint tools and glass |
+| 5 | Fishing, Aquaculture and Ocean's Delight |
+| 6 | Sheep, textiles, potatoes, sugar and pantry production |
+| 7 | Copper Workshop, copper tools and workshop supplies |
+| 8 | Cabbage Market Garden, Cutting Board and pre-iron prepared food |
+| 9 | Corn, tomato, cornbread, tortillas and tacos |
+| 10 | Ironworking, onion, Iron Kitchen, Create and redstone |
+| 11 | Pineapple, rice, Slice and Dice and tropical automation |
+| 12 | Create Crafts and Additions power, storage and logistics |
+| 13 | Wildlife cuisine and mature farm exports |
+| 14 | Alex's Caves deep expeditions and industrial provisioning |
+| 15 | Twilight/End frontier, Twilight's Flavors and Delight, and End's Delight |
 
-Copper is intentionally the active metal across Levels 7-9. Completing the copper tool milestone does **not** unlock iron; the Level 10 promotion is the only main-progression reward that grants Ironworking.
+Copper deliberately remains the active technology tier through Levels 7-9. Ironworking unlocks only at Level 10, when Create arrives and the economy begins shifting from hand production toward automation.
 
-Create begins the automation era at Level 10. Repeatable renewable order demand then scales geometrically from 4x at Level 10 to 128x at Level 15, while rare maps, tablets, and enabling machines stay out of bulk repeatable objectives. The late game is deliberately balanced around automated farms, kitchens, storage, and logistics rather than manual crafting hundreds of items.
+## Automation curve
 
-ItemStages is used where item or namespace containment is reliable. The pack does **not** claim to stage entity spawning, dimensions, or arbitrary world systems that ItemStages cannot actually enforce.
+Level 9 is the last intentionally hand-manageable tier. After Create unlocks, renewable Bountiful demand grows geometrically:
 
-![Quests](https://i.imgur.com/Gscc4gd.png)
-![Bounties](https://i.imgur.com/ggEx4YP.png)
-![Farm](https://i.imgur.com/jcWJjKg.png)
-![Wilderness](https://i.imgur.com/hYRrwNi.png)
+- Level 10: 4x
+- Level 11: 8x
+- Level 12: 16x
+- Level 13: 32x
+- Level 14: 64x
+- Level 15: 128x
 
-## Reproducible releases
+Late promotions and Market Orders also grow sharply. By the final levels, a player is expected to operate automated farms, kitchens, storage, processing, and logistics rather than hand-crafting hundreds of products.
 
-`pack/pack.json` is the source of truth for the pack version, Minecraft/Forge versions, Java requirement, release channel, and client/server exclusions. `minecraftinstance.json` stores sanitized CurseForge project/file metadata from the tested launcher profile.
+Permanent infrastructure is normally retained. Motors, accumulators, Cave Tablets, and navigation maps prove capability or enable the economy; orders consume the renewable production they make possible instead of requiring the player to throw expensive machines away.
 
-The local CurseForge Dev profile can use `tools/link_curseforge_instance.ps1` from an elevated PowerShell window to link its metadata to this repository. After changing mods in CurseForge, run `./tools/sanitize_minecraftinstance.ps1` before validating or committing so launcher paths and local state are not published.
+## Repeatable market
 
-Build both release archives from PowerShell:
+Bountiful is the repeatable market layer. Each level awards a decree for that tier, and later bounty pools intentionally mix newly unlocked goods with older staples and increasingly processed products.
 
-```powershell
-./tools/build_modpack.ps1
-python tools/verify_archives.py
-```
+The goal is for old production to gain value as the farm grows. Wheat, livestock products, fish, corn, prepared foods, and other early chains continue to appear in later recipes, promotions, Market Orders, and repeatable bounties.
 
-Outputs:
+Required renewable inputs that can otherwise depend on world-generation luck have expensive deterministic recovery routes. Natural exploration remains cheaper, but a bad seed or biome location should not permanently block progression.
 
-- `dist/Bounty-Harvest-<version>.zip` — CurseForge client manifest with runtime overrides
-- `dist/Bounty-Harvest-<version>-server.zip` — dedicated server, Forge installer, and launchers
+## Validation
 
-Pull requests validate the 15-level quest graph, declared roots, market-order spine, delayed Ironworking gate, generated Bountiful data, deterministic crop recovery, processor use, automation-economy scaling, retained infrastructure, late-game integration branches, pack invariants, archive client/server split, and dedicated-server boot. A version change merged into `main` creates the GitHub release after a successful build; CurseForge publishing runs independently.
+The repository contains automated progression checks for:
 
-CurseForge publication is split into client and server-child jobs. After the client upload succeeds, its file ID and archive hash are persisted as a short-lived Actions artifact so **Re-run failed jobs** can retry a failed server-child upload without uploading the client again. `CURSEFORGE_API_TOKEN` is required for author uploads. `CURSEFORGE_CORE_API_KEY` remains optional but recommended for duplicate-file recovery across separate workflow runs or ambiguous upload responses.
+- quest IDs, dependencies, cycles and reachability;
+- the complete 15-level Market Order spine;
+- branched level structure rather than three-node linear chapters;
+- readable paragraph spacing and safe FTB quest-text formatting;
+- non-empty quest descriptions;
+- delayed Level 10 Ironworking;
+- crop pacing and recovery paths;
+- processor use;
+- promotion and automation-demand scaling;
+- retained infrastructure;
+- late-game integration demand;
+- client/server archive construction and dedicated-server smoke boot.
+
+For the design rules behind these checks, see `PROGRESSION_DESIGN.md`.
+
+## Building the pack
+
+The repository includes PowerShell tooling for constructing the client and dedicated-server archives and for publishing CurseForge builds. CI validates both archive variants and performs a dedicated Forge server boot before release changes are considered safe.
+
+Version: **0.12.0**
