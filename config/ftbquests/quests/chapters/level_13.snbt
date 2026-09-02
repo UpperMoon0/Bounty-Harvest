@@ -13,17 +13,13 @@
 			dependencies: ["C249CFA083AB4179"]
 			description: [
 				"After the Level 12 Market Order, spend 48 gold coins and 128 pineapple pies to open Wildlife Cuisine. Both costs are consumed."
-				"The electrical infrastructure stays on the farm; promotions now consume the output it enabled. Level 13 unlocks Alex's Delight and Animal Dictionary content, while Alex's Mobs entities themselves remain outside ItemStages."
+				"Field research, bison cuisine, blossom cuisine, and mature old-farm exports now form separate branches. Wildlife ingredients add specialization without replacing the automated farm economy."
 			]
 			icon: "alexsmobs:animal_dictionary"
 			id: "14A6F09E58565C89"
 			rewards: [
 				{ autoclaim: 1b, id: "61D2EAD62259F2F3", stage: "level_13", type: "stage" }
-				{
-					id: "AF9FC5D3613900EB"
-					item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_13\"]}", display: { Name: "{\"text\":\"Level 13 Decree\"}" } } }
-					type: "item"
-				}
+				{ id: "AF9FC5D3613900EB", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_13\"]}", display: { Name: "{\"text\":\"Level 13 Decree\"}" } } }, type: "item" }
 			]
 			shape: "octagon"
 			tasks: [
@@ -36,27 +32,53 @@
 		}
 		{
 			dependencies: ["14A6F09E58565C89"]
-			description: [
-				"Obtain the Animal Dictionary and prepare eight bison burgers plus eight acacia blossom soups to establish the wildlife-food branch."
-				"Wildlife ingredients are a specialist input, not the entire throughput burden. The larger order below deliberately leans on established farm goods that can be automated reliably."
-			]
+			description: ["Obtain the Animal Dictionary as the field-research branch. Alex's Mobs entities are not item-staged, so the book represents knowledge rather than pretending entity spawning is gated."]
 			icon: "alexsmobs:animal_dictionary"
-			id: "2B337D14D79B9F50"
-			tasks: [
-				{ id: "F427E711627D0CCF", item: "alexsmobs:animal_dictionary", type: "item" }
-				{ count: 8L, id: "D768BFF63BC52EB9", item: "alexsdelight:bison_burger", type: "item" }
-				{ count: 8L, id: "B70BE54324A8F9E1", item: "alexsdelight:acacia_blossom_soup", type: "item" }
-			]
-			title: "Wildlife Cuisine Production"
-			x: 2.0d
-			y: 0.0d
+			id: "D130000000000001"
+			tasks: [{ id: "F427E711627D0CCF", item: "alexsmobs:animal_dictionary", type: "item" }]
+			title: "Wildlife Field Guide"
+			x: -1.5d
+			y: 2.0d
 		}
 		{
-			dependencies: ["2B337D14D79B9F50"]
-			description: [
-				"Ship 32 bison burgers, 32 acacia blossom soups, 256 leather, and 256 cornbread. All listed goods are consumed."
-				"Specialist wildlife cuisine proves the new branch works; the huge leather and corn demand proves the older cattle and crop industries can feed a mature automated economy."
-			]
+			dependencies: ["D130000000000001"]
+			description: ["Prepare eight bison burgers. This branch turns specialist wildlife meat into a Farmer's Delight-style premium food line."]
+			id: "D130000000000002"
+			tasks: [{ count: 8L, id: "D768BFF63BC52EB9", item: "alexsdelight:bison_burger", type: "item" }]
+			title: "Bison Burger Line"
+			x: -2.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["D130000000000001"]
+			description: ["Prepare eight acacia blossom soups as a second independent wildlife-cuisine branch instead of hiding all specialist foods inside one combined task."]
+			id: "D130000000000003"
+			tasks: [{ count: 8L, id: "B70BE54324A8F9E1", item: "alexsdelight:acacia_blossom_soup", type: "item" }]
+			title: "Blossom Soup Line"
+			x: 0.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["14A6F09E58565C89"]
+			description: ["Stage 256 leather from the cattle economy. This huge old-resource branch is where mature automation carries most of the throughput burden."]
+			id: "D130000000000004"
+			tasks: [{ count: 256L, id: "D130000000000005", item: "minecraft:leather", type: "item" }]
+			title: "Industrial Leather Supply"
+			x: 2.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["14A6F09E58565C89"]
+			description: ["Stage 256 cornbread from the corn economy. The new wildlife tier therefore strengthens rather than replaces an older crop-processing line."]
+			id: "D130000000000006"
+			tasks: [{ count: 256L, id: "D130000000000007", item: "corn_delight:cornbread", type: "item" }]
+			title: "Industrial Cornbread Supply"
+			x: 3.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["D130000000000002", "D130000000000003", "D130000000000004", "D130000000000006"]
+			description: ["Wildlife cuisine and old-farm industrial branches converge here. Ship 32 bison burgers, 32 blossom soups, 256 leather, and 256 cornbread."]
 			icon: "alexsmobs:animal_dictionary"
 			id: "A48274D6A8EE43B3"
 			shape: "hexagon"
@@ -67,8 +89,8 @@
 				{ consume_items: true, count: 256L, id: "7F31DA8C265BE409", item: "corn_delight:cornbread", type: "item" }
 			]
 			title: "Level 13 Market Order"
-			x: 4.0d
-			y: 0.0d
+			x: 6.0d
+			y: 5.0d
 		}
 	]
 	title: "Level 13 · Wildlife Cuisine"
