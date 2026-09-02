@@ -17,9 +17,9 @@ ServerEvents.highPriorityData(event => {
 
     // Demand stays human-scale before Create. Once industrial progression begins,
     // repeatable farm/food objectives grow geometrically: L10=4x, L11=8x,
-    // L12=16x, L13=32x, L14=64x, L15=128x. Rare navigation, machine and
-    // expedition artifacts are intentionally exempt; automation pressure belongs on
-    // renewable production, not RNG or repeatedly rebuilding infrastructure.
+    // L12=16x, L13=32x, L14=64x, L15=128x. Navigation tools, expedition keys,
+    // and enabling machines are excluded from repeatable orders entirely: automation
+    // pressure belongs on renewable output, not repeatedly rebuilding infrastructure.
     const bulkScale = {
         1: 1,
         2: 1,
@@ -118,9 +118,6 @@ ServerEvents.highPriorityData(event => {
             taco: { type: 'item', content: 'corn_delight:taco', amount: bulk(11, 1, 5), unitWorth: 460 }
         } },
         12: { reward: 'bh_gold_rews', content: {
-            motor: { type: 'item', content: 'createaddition:electric_motor', amount: { min: 1, max: 3 }, unitWorth: 950 },
-            alternator: { type: 'item', content: 'createaddition:alternator', amount: { min: 1, max: 3 }, unitWorth: 900 },
-            accumulator: { type: 'item', content: 'createaddition:accumulator', amount: { min: 1, max: 3 }, unitWorth: 850 },
             wheat: { type: 'item', content: 'minecraft:wheat', amount: bulk(12, 8, 32), unitWorth: 40 },
             taco: { type: 'item', content: 'corn_delight:taco', amount: bulk(12, 1, 5), unitWorth: 460 },
             fried_rice: { type: 'item', content: 'pineapple_delight:pineapple_fried_rice', amount: bulk(12, 1, 5), unitWorth: 520 },
@@ -136,13 +133,11 @@ ServerEvents.highPriorityData(event => {
         14: { reward: 'bh_gold_rews', content: {
             diamond: { type: 'item', content: 'minecraft:diamond', amount: { min: 4, max: 24 }, unitWorth: 1100 },
             amethyst: { type: 'item', content: 'minecraft:amethyst_shard', amount: { min: 8, max: 48 }, unitWorth: 320 },
-            tablet: { type: 'item', content: 'alexscaves:cave_tablet', amount: { min: 1, max: 2 }, unitWorth: 1400 },
             sandwich: { type: 'item', content: 'farmersdelight:chicken_sandwich', amount: bulk(14, 1, 5), unitWorth: 420 },
             pineapple_pie: { type: 'item', content: 'pineapple_delight:pineapple_pie', amount: bulk(14, 1, 5), unitWorth: 480 },
             taco: { type: 'item', content: 'corn_delight:taco', amount: bulk(14, 1, 5), unitWorth: 460 }
         } },
         15: { reward: 'bh_gold_rews', content: {
-            magic_map: { type: 'item', content: 'twilightforest:magic_map', amount: { min: 1, max: 2 }, unitWorth: 1800 },
             glowstew: { type: 'item', content: 'twilightdelight:glowstew', amount: { min: 16, max: 64 }, unitWorth: 720 },
             taco: { type: 'item', content: 'corn_delight:taco', amount: bulk(15, 1, 5), unitWorth: 460 },
             pineapple_pie: { type: 'item', content: 'pineapple_delight:pineapple_pie', amount: bulk(15, 1, 5), unitWorth: 480 },
