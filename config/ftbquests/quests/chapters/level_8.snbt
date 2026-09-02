@@ -12,7 +12,7 @@
 		{
 			dependencies: ["D9D29B504CE79600"]
 			description: [
-				"After the Level 7 Market Order, spend six iron coins and two bookshelves to open the Market Garden. Both costs are consumed."
+				"After the Level 7 Market Order, spend 12 iron coins and four bookshelves to open the Market Garden. Both costs are consumed."
 				"Level 8 introduces only one major new crop: cabbage. It also opens pre-iron food processing with the flint knife and cutting board; iron tools and the Cooking Pot remain locked until Level 10."
 			]
 			icon: "farmersdelight:cabbage"
@@ -27,8 +27,8 @@
 			]
 			shape: "octagon"
 			tasks: [
-				{ consume_items: true, count: 6L, id: "93320D29B44A8395", item: "kubejs:iron_coin", type: "item" }
-				{ consume_items: true, count: 2L, id: "43BCBCA21208846F", item: "minecraft:bookshelf", type: "item" }
+				{ consume_items: true, count: 12L, id: "93320D29B44A8395", item: "kubejs:iron_coin", type: "item" }
+				{ consume_items: true, count: 4L, id: "43BCBCA21208846F", item: "minecraft:bookshelf", type: "item" }
 			]
 			title: "Level 8 · Market Garden & Hearth"
 			x: 0.0d
@@ -37,35 +37,37 @@
 		{
 			dependencies: ["4003BF6FE565761F"]
 			description: [
-				"Grow eight cabbage, then turn older farm goods into two chicken sandwiches, two fish stew, and one apple pie."
-				"These tasks only detect the food. Chicken returns from Level 2, fish from Level 5, and apples, dough, sugar, carrots, and potatoes all gain higher-value prepared uses before iron exists."
+				"Build a Cutting Board and flint knife, grow 16 cabbage, then prepare four chicken sandwiches, four fish stew, and two apple pies."
+				"The sandwich and stew recipes now require knife-processed cuts and fish slices, so this tier cannot be bypassed with whole cooked meat. Chicken returns from Level 2 and fish from Level 5."
 			]
-			icon: "farmersdelight:chicken_sandwich"
+			icon: "farmersdelight:cutting_board"
 			id: "7D4D6172A5804B60"
 			tasks: [
-				{ count: 8L, id: "8B303B36507FE0DD", item: "farmersdelight:cabbage", type: "item" }
-				{ count: 2L, id: "28EAA3E841484561", item: "farmersdelight:chicken_sandwich", type: "item" }
-				{ count: 2L, id: "DA512531A1F37E6E", item: "farmersdelight:fish_stew", type: "item" }
-				{ id: "ECACB203269C51AE", item: "farmersdelight:apple_pie", type: "item" }
+				{ id: "6F91C5A327D84BE0", item: "farmersdelight:cutting_board", type: "item" }
+				{ id: "AA4E23D1975C60BF", item: "farmersdelight:flint_knife", type: "item" }
+				{ count: 16L, id: "8B303B36507FE0DD", item: "farmersdelight:cabbage", type: "item" }
+				{ count: 4L, id: "28EAA3E841484561", item: "farmersdelight:chicken_sandwich", type: "item" }
+				{ count: 4L, id: "DA512531A1F37E6E", item: "farmersdelight:fish_stew", type: "item" }
+				{ count: 2L, id: "ECACB203269C51AE", item: "farmersdelight:apple_pie", type: "item" }
 			]
-			title: "Cabbage & Prepared Foods"
+			title: "Cutting Board & Prepared Foods"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["7D4D6172A5804B60"]
 			description: [
-				"Ship eight cabbage, two chicken sandwiches, two fish stew, and one apple pie. Every listed item is consumed."
-				"This order proves that the pre-iron kitchen can multiply the value of old production lines. Completing it opens the Level 9 corn-and-tomato economy."
+				"Ship 16 cabbage, four chicken sandwiches, four fish stew, and two apple pies. Every listed item is consumed."
+				"This order proves that the pre-iron kitchen can multiply the value of old production lines while demand begins ramping toward the industrial era."
 			]
 			icon: "farmersdelight:cabbage"
 			id: "F3FBD0BED43C89CC"
 			shape: "hexagon"
 			tasks: [
-				{ consume_items: true, count: 8L, id: "2254DCBF0BD37269", item: "farmersdelight:cabbage", type: "item" }
-				{ consume_items: true, count: 2L, id: "9A1CC27DCF25DF9B", item: "farmersdelight:chicken_sandwich", type: "item" }
-				{ consume_items: true, count: 2L, id: "4F290F6A3A13EE67", item: "farmersdelight:fish_stew", type: "item" }
-				{ consume_items: true, id: "4BE4445A9FBFBA2C", item: "farmersdelight:apple_pie", type: "item" }
+				{ consume_items: true, count: 16L, id: "2254DCBF0BD37269", item: "farmersdelight:cabbage", type: "item" }
+				{ consume_items: true, count: 4L, id: "9A1CC27DCF25DF9B", item: "farmersdelight:chicken_sandwich", type: "item" }
+				{ consume_items: true, count: 4L, id: "4F290F6A3A13EE67", item: "farmersdelight:fish_stew", type: "item" }
+				{ consume_items: true, count: 2L, id: "4BE4445A9FBFBA2C", item: "farmersdelight:apple_pie", type: "item" }
 			]
 			title: "Level 8 Market Order"
 			x: 4.0d
