@@ -20,6 +20,8 @@ jobs:
         run: python tools/validate_descriptions.py
       - name: Validate progression, metadata, and runtime content
         run: python tools/validate_pack.py
+      - name: Validate automation economy curve
+        run: python tools/validate_economy_curve.py
       - name: Validate CurseForge publisher modes
         shell: pwsh
         run: |
