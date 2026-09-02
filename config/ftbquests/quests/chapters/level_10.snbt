@@ -1,0 +1,200 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_10"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "farmersdelight:cabbage"
+	id: "D00000000000000A"
+	order_index: 9
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["A00000000000095A"]
+			description: [
+				"Advance into Level 10: Market Garden and Butchery."
+				""
+				"This promotion consumes value from the previous economy before opening the next production layer."
+			]
+			icon: "farmersdelight:cabbage"
+			id: "A000000000000A01"
+			rewards: [
+				{ autoclaim: 1b, id: "C0000000000A0101", stage: "level_10", type: "stage" }
+				{ id: "C0000000000A0102", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_10\"]}", display: { Name: "{\"text\":\"Level 10 Decree\"}" } } }, type: "item" }
+			]
+			shape: "octagon"
+			tasks: [
+				{ consume_items: true, count: 8L, id: "B0000000000A0101", item: "kubejs:iron_coin", type: "item" }
+				{ consume_items: true, count: 16L, id: "B0000000000A0102", item: "minecraft:copper_ingot", type: "item" }
+			]
+			title: "Level 10 · Market Garden and Butchery"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A000000000000A01"]
+			description: [
+				"Establish cabbage as this level's one new crop."
+				""
+				"It will tie several older meat and root lines together after the kitchen is prepared."
+			]
+			icon: "farmersdelight:cabbage"
+			id: "A000000000000A02"
+			tasks: [
+				{ count: 20L, id: "B0000000000A0201", item: "farmersdelight:cabbage", type: "item" }
+			]
+			title: "Cabbage Garden"
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000000A01"]
+			description: [
+				"Build the pre-iron processing workstation."
+				""
+				"Required foods use its processed cuts, so it cannot be bypassed."
+			]
+			icon: "farmersdelight:cutting_board"
+			id: "A000000000000A03"
+			tasks: [
+				{ id: "B0000000000A0301", item: "farmersdelight:cutting_board", type: "item" }
+				{ id: "B0000000000A0302", item: "farmersdelight:flint_knife", type: "item" }
+			]
+			title: "Knife and Cutting Board"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000000A03"]
+			description: [
+				"Upgrade the Level 2 chicken line into processed cuts."
+			]
+			icon: "farmersdelight:cooked_chicken_cuts"
+			id: "A000000000000A04"
+			tasks: [
+				{ count: 6L, id: "B0000000000A0401", item: "farmersdelight:cooked_chicken_cuts", type: "item" }
+			]
+			title: "Poultry Butchery"
+			x: -0.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000000A03"]
+			description: [
+				"Bring the Level 5 fisheries back as processed kitchen ingredients."
+			]
+			icon: "farmersdelight:cooked_salmon_slice"
+			id: "A000000000000A05"
+			tasks: [
+				{ count: 4L, id: "B0000000000A0501", item: "farmersdelight:cooked_cod_slice", type: "item" }
+				{ count: 4L, id: "B0000000000A0502", item: "farmersdelight:cooked_salmon_slice", type: "item" }
+			]
+			title: "Fish Butchery"
+			x: 1.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000000A02", "A000000000000A04", "A000000000000A05"]
+			description: [
+				"Stock bread, carrots, and potatoes after establishing cabbage plus processed meat and fish."
+				""
+				"Completing this milestone unlocks the prepared-food outputs instead of dumping every cabbage recipe at promotion."
+			]
+			icon: "minecraft:bread"
+			id: "A000000000000A06"
+			rewards: [
+				{ autoclaim: 1b, id: "C0000000000A0601", stage: "level_10_kitchen", type: "stage" }
+			]
+			shape: "diamond"
+			tasks: [
+				{ count: 8L, id: "B0000000000A0601", item: "minecraft:bread", type: "item" }
+				{ count: 12L, id: "B0000000000A0602", item: "minecraft:carrot", type: "item" }
+				{ count: 12L, id: "B0000000000A0603", item: "minecraft:baked_potato", type: "item" }
+			]
+			title: "Prepared Kitchen"
+			x: 0.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000000A06"]
+			description: [
+				"Combine cabbage with old bread, carrots, and processed chicken."
+			]
+			icon: "farmersdelight:chicken_sandwich"
+			id: "A000000000000A07"
+			tasks: [
+				{ count: 6L, id: "B0000000000A0701", item: "farmersdelight:chicken_sandwich", type: "item" }
+			]
+			title: "Chicken Sandwiches"
+			x: -1.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["A000000000000A06"]
+			description: [
+				"Combine processed fish with the established potato and carrot economy."
+			]
+			icon: "farmersdelight:fish_stew"
+			id: "A000000000000A08"
+			tasks: [
+				{ count: 6L, id: "B0000000000A0801", item: "farmersdelight:fish_stew", type: "item" }
+			]
+			title: "Fish Stew"
+			x: 2.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["A000000000000A06"]
+			description: [
+				"Optional kitchen breadth: reconnect cattle and potatoes through beef patties and stuffed potatoes."
+			]
+			icon: "farmersdelight:stuffed_potato"
+			id: "A000000000000A09"
+			tasks: [
+				{ count: 2L, id: "B0000000000A0901", item: "farmersdelight:beef_patty", type: "item" }
+				{ count: 2L, id: "B0000000000A0902", item: "farmersdelight:stuffed_potato", type: "item" }
+			]
+			title: "Optional Stuffed Potatoes"
+			x: 4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000000A5A", "A000000000000A09"]
+			description: [
+				"Finish the optional stuffed-potato branch after satisfying the required shipment."
+				""
+				"The side chain reconnects here instead of visually terminating."
+			]
+			icon: "farmersdelight:stuffed_potato"
+			id: "A000000000000A0A"
+			rewards: [
+				{ count: 6, id: "C0000000000A0A01", item: "kubejs:iron_coin", type: "item" }
+			]
+			shape: "diamond"
+			tasks: [{ id: "B0000000000A0A01", type: "checkmark" }]
+			title: "Level 10 Kitchen Mastery"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000000A07", "A000000000000A08"]
+			description: [
+				"Ship cabbage, chicken sandwiches, and fish stew."
+				""
+				"Cabbage gets one coherent kitchen layer; unrelated new crops wait for later levels."
+			]
+			icon: "farmersdelight:cabbage"
+			id: "A000000000000A5A"
+			shape: "hexagon"
+			tasks: [
+				{ consume_items: true, count: 20L, id: "B0000000000A5A01", item: "farmersdelight:cabbage", type: "item" }
+				{ consume_items: true, count: 6L, id: "B0000000000A5A02", item: "farmersdelight:chicken_sandwich", type: "item" }
+				{ consume_items: true, count: 6L, id: "B0000000000A5A03", item: "farmersdelight:fish_stew", type: "item" }
+			]
+			title: "Level 10 Market Order"
+			x: 6.0d
+			y: 6.0d
+		}
+	]
+	title: "Level 10 · Market Garden and Butchery"
+}

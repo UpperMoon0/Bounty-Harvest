@@ -1,0 +1,136 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_11"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "corn_delight:corn"
+	id: "D00000000000000B"
+	order_index: 10
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["A000000000000A5A"]
+			description: [
+				"Advance into Level 11: Corn Milling."
+				""
+				"This promotion consumes value from the previous economy before opening the next production layer."
+			]
+			icon: "corn_delight:corn"
+			id: "A000000000000B01"
+			rewards: [
+				{ autoclaim: 1b, id: "C0000000000B0101", stage: "level_11", type: "stage" }
+				{ id: "C0000000000B0102", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_11\"]}", display: { Name: "{\"text\":\"Level 11 Decree\"}" } } }, type: "item" }
+			]
+			shape: "octagon"
+			tasks: [
+				{ consume_items: true, count: 16L, id: "B0000000000B0101", item: "kubejs:iron_coin", type: "item" }
+				{ consume_items: true, count: 8L, id: "B0000000000B0102", item: "farmersdelight:chicken_sandwich", type: "item" }
+			]
+			title: "Level 11 · Corn Milling"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A000000000000B01"]
+			description: [
+				"Establish corn as this level's single new crop."
+				""
+				"An expensive Crop Shop recovery route prevents world-generation luck from hard-locking progression."
+			]
+			icon: "corn_delight:corn"
+			id: "A000000000000B02"
+			tasks: [
+				{ count: 24L, id: "B0000000000B0201", item: "corn_delight:corn", type: "item" }
+			]
+			title: "Corn Field"
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000000B02"]
+			description: [
+				"Bake corn into a first finished product."
+				""
+				"Completing this milestone unlocks the next milling step rather than exposing every corn product immediately."
+			]
+			icon: "corn_delight:cornbread"
+			id: "A000000000000B03"
+			rewards: [
+				{ autoclaim: 1b, id: "C0000000000B0301", stage: "level_11_milling", type: "stage" }
+			]
+			shape: "diamond"
+			tasks: [
+				{ count: 8L, id: "B0000000000B0301", item: "corn_delight:cornbread", type: "item" }
+			]
+			title: "Cornbread"
+			x: -3.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000000B03"]
+			description: [
+				"Mill the established corn line into tortillas."
+				""
+				"Tacos still wait for tomato in the next level."
+			]
+			icon: "corn_delight:tortilla"
+			id: "A000000000000B04"
+			tasks: [
+				{ count: 8L, id: "B0000000000B0401", item: "corn_delight:tortilla", type: "item" }
+			]
+			title: "Tortilla Milling"
+			x: -2.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000000B01"]
+			description: [
+				"Scale the Level 4 pork line in preparation for the next composite food."
+			]
+			icon: "minecraft:cooked_porkchop"
+			id: "A000000000000B05"
+			tasks: [
+				{ count: 12L, id: "B0000000000B0501", item: "minecraft:cooked_porkchop", type: "item" }
+			]
+			title: "Pork Carryover"
+			x: 1.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["A000000000000B01"]
+			description: [
+				"Keep the Level 10 market garden active while corn establishes its own identity."
+			]
+			icon: "farmersdelight:cabbage"
+			id: "A000000000000B06"
+			tasks: [
+				{ count: 16L, id: "B0000000000B0601", item: "farmersdelight:cabbage", type: "item" }
+			]
+			title: "Cabbage Carryover"
+			x: 2.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000000B04", "A000000000000B05", "A000000000000B06"]
+			description: [
+				"Ship corn across raw, baked, and milled forms plus old pork."
+				""
+				"The tier stops at tortilla so the crop has room to develop before tomato enables tacos."
+			]
+			icon: "corn_delight:corn"
+			id: "A000000000000B5A"
+			shape: "hexagon"
+			tasks: [
+				{ consume_items: true, count: 24L, id: "B0000000000B5A01", item: "corn_delight:corn", type: "item" }
+				{ consume_items: true, count: 8L, id: "B0000000000B5A02", item: "corn_delight:cornbread", type: "item" }
+				{ consume_items: true, count: 8L, id: "B0000000000B5A03", item: "corn_delight:tortilla", type: "item" }
+				{ consume_items: true, count: 12L, id: "B0000000000B5A04", item: "minecraft:cooked_porkchop", type: "item" }
+			]
+			title: "Level 11 Market Order"
+			x: 6.0d
+			y: 6.0d
+		}
+	]
+	title: "Level 11 · Corn Milling"
+}

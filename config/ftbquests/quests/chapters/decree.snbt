@@ -6,39 +6,31 @@
 	filename: "decree"
 	group: "189D77A4C52994B6"
 	hide_quest_until_deps_visible: true
-	icon: {
-		Count: 1
-		id: "bountiful:decree"
-		tag: {
-			"bountiful:decree_data": "{\"ids\":[\"level_1\"]}"
-		}
-	}
+	icon: "bountiful:decree"
 	id: "2DF5275C33DDF6E4"
 	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["37DB727D93347A94"]
+			dependencies: ["74402ECAFFAFAEC4"]
+			description: [
+				"Repeatable replacement purchase for the Level 1 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
 			icon: "minecraft:wheat"
-			id: "46C535480DDE5E57"
+			id: "E00000000000D001"
 			rewards: [{
-				id: "2245CA0B152D4FD9"
-				item: {
-					Count: 1
-					id: "bountiful:decree"
-					tag: {
-						RepairCost: 0
-						"bountiful:decree_data": "{\"ids\":[\"level_1\"]}"
-						display: {
-							Name: "{\"text\":\"Level 1 Decree\"}"
-						}
-					}
-				}
+				id: "E0000000000D1001"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_1\"]}", display: { Name: "{\"text\":\"Level 1 Decree\"}" } } }
 				type: "item"
 			}]
 			tasks: [{
-				id: "3D140B33CBC6CA81"
-				type: "checkmark"
+				consume_items: true
+				count: 4L
+				id: "E0000000000D2001"
+				item: "kubejs:copper_coin"
+				type: "item"
 			}]
 			title: "Level 1 Decree"
 			x: 0.0d
@@ -46,52 +38,49 @@
 		}
 		{
 			dependencies: ["7D3858343983B67A"]
+			description: [
+				"Repeatable replacement purchase for the Level 2 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
 			icon: "minecraft:egg"
-			id: "71447B54165CE531"
+			id: "E00000000000D002"
 			rewards: [{
-				id: "6B8F27E7222FE295"
-				item: {
-					Count: 1
-					id: "bountiful:decree"
-					tag: {
-						RepairCost: 0
-						"bountiful:decree_data": "{\"ids\":[\"level_2\"]}"
-						display: {
-							Name: "{\"text\":\"Level 2 Decree\"}"
-						}
-					}
-				}
+				id: "E0000000000D1002"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_2\"]}", display: { Name: "{\"text\":\"Level 2 Decree\"}" } } }
 				type: "item"
 			}]
 			tasks: [{
-				id: "448D2E3D2008F230"
-				type: "checkmark"
+				consume_items: true
+				count: 8L
+				id: "E0000000000D2002"
+				item: "kubejs:copper_coin"
+				type: "item"
 			}]
+			title: "Level 2 Decree"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["573FE8ED65790A78"]
+			description: [
+				"Repeatable replacement purchase for the Level 3 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
 			icon: "minecraft:leather"
-			id: "06C6A0F67450B4E6"
+			id: "E00000000000D003"
 			rewards: [{
-				id: "7304A87D32FAD1DA"
-				item: {
-					Count: 1
-					id: "bountiful:decree"
-					tag: {
-						RepairCost: 0
-						"bountiful:decree_data": "{\"ids\":[\"level_3\"]}"
-						display: {
-							Name: "{\"text\":\"Level 3 Decree\"}"
-						}
-					}
-				}
+				id: "E0000000000D1003"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_3\"]}", display: { Name: "{\"text\":\"Level 3 Decree\"}" } } }
 				type: "item"
 			}]
 			tasks: [{
-				id: "497FFF92D0C52D4F"
-				type: "checkmark"
+				consume_items: true
+				count: 12L
+				id: "E0000000000D2003"
+				item: "kubejs:copper_coin"
+				type: "item"
 			}]
 			title: "Level 3 Decree"
 			x: 4.0d
@@ -99,26 +88,24 @@
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
+			description: [
+				"Repeatable replacement purchase for the Level 4 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
 			icon: "minecraft:carrot"
-			id: "044F309535FBB4A6"
+			id: "E00000000000D004"
 			rewards: [{
-				id: "6ED8E0890F8B5F1A"
-				item: {
-					Count: 1
-					id: "bountiful:decree"
-					tag: {
-						RepairCost: 0
-						"bountiful:decree_data": "{\"ids\":[\"level_4\"]}"
-						display: {
-							Name: "{\"text\":\"Level 4 Decree\"}"
-						}
-					}
-				}
+				id: "E0000000000D1004"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_4\"]}", display: { Name: "{\"text\":\"Level 4 Decree\"}" } } }
 				type: "item"
 			}]
 			tasks: [{
-				id: "0C0908690CF55AD4"
-				type: "checkmark"
+				consume_items: true
+				count: 16L
+				id: "E0000000000D2004"
+				item: "kubejs:copper_coin"
+				type: "item"
 			}]
 			title: "Level 4 Decree"
 			x: 6.0d
@@ -126,119 +113,478 @@
 		}
 		{
 			dependencies: ["29747D157C7F8C88"]
-			icon: "minecraft:white_wool"
-			id: "4920B20782F90919"
+			description: [
+				"Repeatable replacement purchase for the Level 5 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
+			icon: "minecraft:fishing_rod"
+			id: "E00000000000D005"
 			rewards: [{
-				id: "572FB2AB8FD04883"
-				item: {
-					Count: 1
-					id: "bountiful:decree"
-					tag: {
-						RepairCost: 0
-						"bountiful:decree_data": "{\"ids\":[\"level_5\"]}"
-						display: {
-							Name: "{\"text\":\"Level 5 Decree\"}"
-						}
-					}
-				}
+				id: "E0000000000D1005"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_5\"]}", display: { Name: "{\"text\":\"Level 5 Decree\"}" } } }
 				type: "item"
 			}]
 			tasks: [{
-				id: "03133192824392A4"
-				type: "checkmark"
+				consume_items: true
+				count: 20L
+				id: "E0000000000D2005"
+				item: "kubejs:copper_coin"
+				type: "item"
 			}]
 			title: "Level 5 Decree"
 			x: 8.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["7297A69487BEE03D"]
-			icon: "minecraft:potato"
-			id: "27F11AC0D93891A9"
+			dependencies: ["A000000000000601"]
+			description: [
+				"Repeatable replacement purchase for the Level 6 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
+			icon: "minecraft:white_wool"
+			id: "E00000000000D006"
 			rewards: [{
-				id: "1CCE421EAA28E102"
-				item: {
-					Count: 1
-					id: "bountiful:decree"
-					tag: {
-						RepairCost: 0
-						"bountiful:decree_data": "{\"ids\":[\"level_6\"]}"
-						display: {
-							Name: "{\"text\":\"Level 6 Decree\"}"
-						}
-					}
-				}
+				id: "E0000000000D1006"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_6\"]}", display: { Name: "{\"text\":\"Level 6 Decree\"}" } } }
 				type: "item"
 			}]
 			tasks: [{
-				id: "59DA64934FE490FB"
-				type: "checkmark"
+				consume_items: true
+				count: 24L
+				id: "E0000000000D2006"
+				item: "kubejs:copper_coin"
+				type: "item"
 			}]
 			title: "Level 6 Decree"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A000000000000701"]
+			description: [
+				"Repeatable replacement purchase for the Level 7 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
+			icon: "minecraft:potato"
+			id: "E00000000000D007"
+			rewards: [{
+				id: "E0000000000D1007"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_7\"]}", display: { Name: "{\"text\":\"Level 7 Decree\"}" } } }
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 32L
+				id: "E0000000000D2007"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
+			title: "Level 7 Decree"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A000000000000801"]
+			description: [
+				"Repeatable replacement purchase for the Level 8 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
+			icon: "minecraft:sugar"
+			id: "E00000000000D008"
+			rewards: [{
+				id: "E0000000000D1008"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_8\"]}", display: { Name: "{\"text\":\"Level 8 Decree\"}" } } }
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 48L
+				id: "E0000000000D2008"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
+			title: "Level 8 Decree"
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A000000000000901"]
+			description: [
+				"Repeatable replacement purchase for the Level 9 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
+			icon: "minecraft:copper_ingot"
+			id: "E00000000000D009"
+			rewards: [{
+				id: "E0000000000D1009"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_9\"]}", display: { Name: "{\"text\":\"Level 9 Decree\"}" } } }
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 4L
+				id: "E0000000000D2009"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			title: "Level 9 Decree"
 			x: 0.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["0A53CC520F7826A3"]
-			icon: "minecraft:copper_ingot"
-			id: "3C1EA2C1A0DF86E5"
+			dependencies: ["A000000000000A01"]
+			description: [
+				"Repeatable replacement purchase for the Level 10 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
+			icon: "farmersdelight:cabbage"
+			id: "E00000000000D00A"
 			rewards: [{
-				id: "68B693D70840F6FD"
-				item: {
-					Count: 1
-					id: "bountiful:decree"
-					tag: {
-						RepairCost: 0
-						"bountiful:decree_data": "{\"ids\":[\"level_7\"]}"
-						display: {
-							Name: "{\"text\":\"Level 7 Decree\"}"
-						}
-					}
-				}
-				title: "Level 7 Decree"
+				id: "E0000000000D100A"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_10\"]}", display: { Name: "{\"text\":\"Level 10 Decree\"}" } } }
 				type: "item"
 			}]
 			tasks: [{
-				id: "23AC750B5F27E59D"
-				type: "checkmark"
+				consume_items: true
+				count: 6L
+				id: "E0000000000D200A"
+				item: "kubejs:iron_coin"
+				type: "item"
 			}]
-			title: "Level 7 Decree"
+			title: "Level 10 Decree"
 			x: 2.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["4003BF6FE565761F"]
-			icon: {
-				Count: 1
-				id: "farmersdelight:iron_knife"
-				tag: {
-					Damage: 0
-				}
-			}
-			id: "6A94E9EC9DEA65D0"
+			dependencies: ["A000000000000B01"]
+			description: [
+				"Repeatable replacement purchase for the Level 11 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
+			icon: "corn_delight:corn"
+			id: "E00000000000D00B"
 			rewards: [{
-				id: "1D605AEACC533768"
-				item: {
-					Count: 1
-					id: "bountiful:decree"
-					tag: {
-						RepairCost: 0
-						"bountiful:decree_data": "{\"ids\":[\"level_8\"]}"
-						display: {
-							Name: "{\"text\":\"Level 8 Decree\"}"
-						}
-					}
-				}
-				title: "Level 7 Decree"
+				id: "E0000000000D100B"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_11\"]}", display: { Name: "{\"text\":\"Level 11 Decree\"}" } } }
 				type: "item"
 			}]
 			tasks: [{
-				id: "569F40A0400DC8F9"
-				type: "checkmark"
+				consume_items: true
+				count: 8L
+				id: "E0000000000D200B"
+				item: "kubejs:iron_coin"
+				type: "item"
 			}]
-			title: "Level 8 Decree"
+			title: "Level 11 Decree"
 			x: 4.0d
 			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000000C01"]
+			description: [
+				"Repeatable replacement purchase for the Level 12 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
+			icon: "farmersdelight:tomato"
+			id: "E00000000000D00C"
+			rewards: [{
+				id: "E0000000000D100C"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_12\"]}", display: { Name: "{\"text\":\"Level 12 Decree\"}" } } }
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 10L
+				id: "E0000000000D200C"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			title: "Level 12 Decree"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000000D01"]
+			description: [
+				"Repeatable replacement purchase for the Level 13 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
+			icon: "minecraft:iron_ingot"
+			id: "E00000000000D00D"
+			rewards: [{
+				id: "E0000000000D100D"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_13\"]}", display: { Name: "{\"text\":\"Level 13 Decree\"}" } } }
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 12L
+				id: "E0000000000D200D"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			title: "Level 13 Decree"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000000E01"]
+			description: [
+				"Repeatable replacement purchase for the Level 14 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
+			icon: "farmersdelight:onion"
+			id: "E00000000000D00E"
+			rewards: [{
+				id: "E0000000000D100E"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_14\"]}", display: { Name: "{\"text\":\"Level 14 Decree\"}" } } }
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 16L
+				id: "E0000000000D200E"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			title: "Level 14 Decree"
+			x: 10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000000F01"]
+			description: [
+				"Repeatable replacement purchase for the Level 15 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
+			icon: "create:mechanical_harvester"
+			id: "E00000000000D00F"
+			rewards: [{
+				id: "E0000000000D100F"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_15\"]}", display: { Name: "{\"text\":\"Level 15 Decree\"}" } } }
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 24L
+				id: "E0000000000D200F"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			title: "Level 15 Decree"
+			x: 12.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000001001"]
+			description: [
+				"Repeatable replacement purchase for the Level 16 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
+			icon: "pineapple_delight:pineapple"
+			id: "E00000000000D010"
+			rewards: [{
+				id: "E0000000000D1010"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_16\"]}", display: { Name: "{\"text\":\"Level 16 Decree\"}" } } }
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 32L
+				id: "E0000000000D2010"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			title: "Level 16 Decree"
+			x: 14.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000001101"]
+			description: [
+				"Repeatable replacement purchase for the Level 17 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
+			icon: "farmersdelight:rice"
+			id: "E00000000000D011"
+			rewards: [{
+				id: "E0000000000D1011"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_17\"]}", display: { Name: "{\"text\":\"Level 17 Decree\"}" } } }
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 48L
+				id: "E0000000000D2011"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			title: "Level 17 Decree"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000001201"]
+			description: [
+				"Repeatable replacement purchase for the Level 18 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
+			icon: "createaddition:alternator"
+			id: "E00000000000D012"
+			rewards: [{
+				id: "E0000000000D1012"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_18\"]}", display: { Name: "{\"text\":\"Level 18 Decree\"}" } } }
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 64L
+				id: "E0000000000D2012"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			title: "Level 18 Decree"
+			x: 2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000001301"]
+			description: [
+				"Repeatable replacement purchase for the Level 19 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
+			icon: "createaddition:electric_motor"
+			id: "E00000000000D013"
+			rewards: [{
+				id: "E0000000000D1013"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_19\"]}", display: { Name: "{\"text\":\"Level 19 Decree\"}" } } }
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 2L
+				id: "E0000000000D2013"
+				item: "kubejs:gold_coin"
+				type: "item"
+			}]
+			title: "Level 19 Decree"
+			x: 4.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000001401"]
+			description: [
+				"Repeatable replacement purchase for the Level 20 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
+			icon: "alexsmobs:animal_dictionary"
+			id: "E00000000000D014"
+			rewards: [{
+				id: "E0000000000D1014"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_20\"]}", display: { Name: "{\"text\":\"Level 20 Decree\"}" } } }
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 4L
+				id: "E0000000000D2014"
+				item: "kubejs:gold_coin"
+				type: "item"
+			}]
+			title: "Level 20 Decree"
+			x: 6.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000001501"]
+			description: [
+				"Repeatable replacement purchase for the Level 21 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
+			icon: "alexscaves:cave_tablet"
+			id: "E00000000000D015"
+			rewards: [{
+				id: "E0000000000D1015"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_21\"]}", display: { Name: "{\"text\":\"Level 21 Decree\"}" } } }
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 8L
+				id: "E0000000000D2015"
+				item: "kubejs:gold_coin"
+				type: "item"
+			}]
+			title: "Level 21 Decree"
+			x: 8.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000001601"]
+			description: [
+				"Repeatable replacement purchase for the Level 22 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
+			icon: "twilightforest:magic_map"
+			id: "E00000000000D016"
+			rewards: [{
+				id: "E0000000000D1016"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_22\"]}", display: { Name: "{\"text\":\"Level 22 Decree\"}" } } }
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 12L
+				id: "E0000000000D2016"
+				item: "kubejs:gold_coin"
+				type: "item"
+			}]
+			title: "Level 22 Decree"
+			x: 10.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000001701"]
+			description: [
+				"Repeatable replacement purchase for the Level 23 Bountiful order pool."
+				""
+				"Buying another decree restores repeatable market access only; it never advances the main progression spine."
+			]
+			icon: "minecraft:chorus_fruit"
+			id: "E00000000000D017"
+			rewards: [{
+				id: "E0000000000D1017"
+				item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_23\"]}", display: { Name: "{\"text\":\"Level 23 Decree\"}" } } }
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 16L
+				id: "E0000000000D2017"
+				item: "kubejs:gold_coin"
+				type: "item"
+			}]
+			title: "Level 23 Decree"
+			x: 12.0d
+			y: 4.0d
 		}
 	]
 	title: "Decrees"

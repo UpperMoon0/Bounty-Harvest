@@ -3,11 +3,42 @@ name: Build and server smoke test
 on:
   pull_request:
     branches: [main]
+    paths:
+      - 'config/**'
+      - 'kubejs/**'
+      - 'scripts/**'
+      - 'resourcepacks/**'
+      - 'pack/**'
+      - 'minecraftinstance.json'
+      - 'tools/**'
+      - '.github/workflows/ci.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: server-smoke-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Reject known-bad progression/runtime commits before Windows smoke
+        run: |
+          python tools/format_quest_text.py
+          python tools/validate_quests.py
+          python tools/validate_descriptions.py
+          python tools/validate_pack.py
+          python tools/validate_economy_curve.py
+          python tools/validate_bounty_infrastructure.py
+
   release-archives:
+    needs: preflight
     runs-on: windows-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v5
@@ -24,9 +55,12 @@ jobs:
         run: python tools/verify_archives.py
       - name: Boot dedicated server
         shell: pwsh
-        run: ./tools/smoke_test_server.ps1
+        run: ./tools/smoke_test_server.ps1 -TimeoutSeconds 600
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: Bounty-Harvest-${{ github.event.pull_request.head.sha }}
-          path: dist/*.zip
-          if-no-files-found: error
+          name: Bounty-Harvest-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            dist/*.zip
+            dist/smoke-logs/**
+          if-no-files-found: warn

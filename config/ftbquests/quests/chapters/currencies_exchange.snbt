@@ -11,7 +11,9 @@
 		description: [
 			"Coins now exchange directly in a crafting table. Fill a 3x3 grid with copper coins to make an iron coin, or with iron coins to make a gold coin."
 			""
-			"Place one higher-value coin anywhere in the grid to split it back into nine lower-value coins. Shift-clicking makes bulk exchange fast and requires no reward claiming."
+			"Place one higher-value coin anywhere in the grid to split it back into nine lower-value coins."
+			""
+			"Shift-clicking makes bulk exchange fast and requires no reward claiming."
 		]
 		icon: "minecraft:crafting_table"
 		id: "74BE872A1FFE8D25"

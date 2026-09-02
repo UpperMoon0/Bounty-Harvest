@@ -1,0 +1,122 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_19"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "createaddition:electric_motor"
+	id: "D000000000000013"
+	order_index: 18
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["A00000000000125A"]
+			description: [
+				"Advance into Level 19: Electric Drive and Storage."
+				""
+				"This promotion consumes value from the previous economy before opening the next production layer."
+			]
+			icon: "createaddition:electric_motor"
+			id: "A000000000001301"
+			rewards: [
+				{ autoclaim: 1b, id: "C000000000130101", stage: "level_19", type: "stage" }
+				{ id: "C000000000130102", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_19\"]}", display: { Name: "{\"text\":\"Level 19 Decree\"}" } } }, type: "item" }
+			]
+			shape: "octagon"
+			tasks: [
+				{ consume_items: true, count: 384L, id: "B000000000130101", item: "kubejs:gold_coin", type: "item" }
+				{ consume_items: true, count: 16L, id: "B000000000130102", item: "minecraft:gold_ingot", type: "item" }
+				{ consume_items: true, count: 256L, id: "B000000000130103", item: "pineapple_delight:pineapple_fried_rice", type: "item" }
+			]
+			title: "Level 19 · Electric Drive and Storage"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A000000000001301"]
+			description: [
+				"Build an electric motor to turn stored power back into rotational force."
+				""
+				"Completing it unlocks storage rather than exposing the whole electrical tier at once."
+			]
+			icon: "createaddition:electric_motor"
+			id: "A000000000001302"
+			rewards: [
+				{ autoclaim: 1b, id: "C000000000130201", stage: "level_19_storage", type: "stage" }
+			]
+			shape: "diamond"
+			tasks: [
+				{ id: "B000000000130201", item: "createaddition:electric_motor", type: "item" }
+			]
+			title: "Electric Motor"
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000001302"]
+			description: [
+				"Add an accumulator after establishing electric drive."
+				""
+				"Motor and storage form a sequential infrastructure chain, not a three-item checklist."
+			]
+			icon: "createaddition:accumulator"
+			id: "A000000000001303"
+			tasks: [
+				{ id: "B000000000130301", item: "createaddition:accumulator", type: "item" }
+			]
+			title: "Accumulator"
+			x: -3.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000001303"]
+			description: [
+				"Prove the electrical network can sustain the next order-of-magnitude throughput step."
+			]
+			icon: "minecraft:wheat"
+			id: "A000000000001304"
+			tasks: [
+				{ count: 1024L, id: "B000000000130401", item: "minecraft:wheat", type: "item" }
+				{ count: 512L, id: "B000000000130402", item: "corn_delight:taco", type: "item" }
+				{ count: 512L, id: "B000000000130403", item: "pineapple_delight:pineapple_fried_rice", type: "item" }
+				{ count: 384L, id: "B000000000130404", item: "farmersdelight:salmon_roll", type: "item" }
+			]
+			title: "Powered Logistics Stockpile"
+			x: 0.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["A000000000001301"]
+			description: [
+				"Bring cattle into the automation era with industrial leather output."
+			]
+			icon: "minecraft:leather"
+			id: "A000000000001305"
+			tasks: [
+				{ count: 512L, id: "B000000000130501", item: "minecraft:leather", type: "item" }
+			]
+			title: "Automated Ranch Output"
+			x: 2.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["A000000000001304", "A000000000001305", "A000000000001303"]
+			description: [
+				"Ship powered logistics output and industrial leather while retaining motor and accumulator infrastructure."
+			]
+			icon: "createaddition:electric_motor"
+			id: "A00000000000135A"
+			shape: "hexagon"
+			tasks: [
+				{ consume_items: true, count: 1024L, id: "B000000000135A01", item: "minecraft:wheat", type: "item" }
+				{ consume_items: true, count: 512L, id: "B000000000135A02", item: "corn_delight:taco", type: "item" }
+				{ consume_items: true, count: 512L, id: "B000000000135A03", item: "pineapple_delight:pineapple_fried_rice", type: "item" }
+				{ consume_items: true, count: 512L, id: "B000000000135A04", item: "minecraft:leather", type: "item" }
+			]
+			title: "Level 19 Market Order"
+			x: 6.0d
+			y: 6.0d
+		}
+	]
+	title: "Level 19 · Electric Drive and Storage"
+}

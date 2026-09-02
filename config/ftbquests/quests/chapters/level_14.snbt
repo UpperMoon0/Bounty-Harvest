@@ -1,0 +1,148 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_14"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "farmersdelight:onion"
+	id: "D00000000000000E"
+	order_index: 13
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["A000000000000D5A"]
+			description: [
+				"Advance into Level 14: Onion Kitchen."
+				""
+				"This promotion consumes value from the previous economy before opening the next production layer."
+			]
+			icon: "farmersdelight:onion"
+			id: "A000000000000E01"
+			rewards: [
+				{ autoclaim: 1b, id: "C0000000000E0101", stage: "level_14", type: "stage" }
+				{ id: "C0000000000E0102", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_14\"]}", display: { Name: "{\"text\":\"Level 14 Decree\"}" } } }, type: "item" }
+			]
+			shape: "octagon"
+			tasks: [
+				{ consume_items: true, count: 96L, id: "B0000000000E0101", item: "kubejs:iron_coin", type: "item" }
+				{ consume_items: true, count: 32L, id: "B0000000000E0102", item: "minecraft:iron_ingot", type: "item" }
+			]
+			title: "Level 14 · Onion Kitchen"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A000000000000E01"]
+			description: [
+				"Establish onion as this level's only new crop."
+				""
+				"It immediately upgrades older bread, beef, cabbage, and tomato into higher-value meals."
+			]
+			icon: "farmersdelight:onion"
+			id: "A000000000000E02"
+			tasks: [
+				{ count: 32L, id: "B0000000000E0201", item: "farmersdelight:onion", type: "item" }
+			]
+			title: "Onion Field"
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000000E01"]
+			description: [
+				"Build the iron-era kitchen infrastructure and keep it installed."
+			]
+			icon: "farmersdelight:cooking_pot"
+			id: "A000000000000E03"
+			tasks: [
+				{ id: "B0000000000E0301", item: "farmersdelight:iron_knife", type: "item" }
+				{ id: "B0000000000E0302", item: "farmersdelight:cooking_pot", type: "item" }
+				{ id: "B0000000000E0303", item: "farmersdelight:skillet", type: "item" }
+				{ id: "B0000000000E0304", item: "farmersdelight:stove", type: "item" }
+			]
+			title: "Iron Kitchen Infrastructure"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000000E03"]
+			description: [
+				"Add a dairy-processing layer to the old cattle economy."
+			]
+			icon: "farmersdelight:milk_bottle"
+			id: "A000000000000E04"
+			tasks: [
+				{ count: 12L, id: "B0000000000E0401", item: "farmersdelight:milk_bottle", type: "item" }
+			]
+			title: "Dairy Bottling"
+			x: 1.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000000E02", "A000000000000E03"]
+			description: [
+				"Combine onion with old bread, beef patties, cabbage, and tomato."
+				""
+				"One new crop multiplies several established production lines."
+			]
+			icon: "farmersdelight:hamburger"
+			id: "A000000000000E05"
+			tasks: [
+				{ count: 12L, id: "B0000000000E0501", item: "farmersdelight:hamburger", type: "item" }
+			]
+			title: "Hamburgers"
+			x: -1.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["A000000000000E03"]
+			description: [
+				"Upgrade old pork and poultry into an iron-kitchen breakfast product."
+			]
+			icon: "farmersdelight:bacon_and_eggs"
+			id: "A000000000000E06"
+			tasks: [
+				{ count: 12L, id: "B0000000000E0601", item: "farmersdelight:bacon_and_eggs", type: "item" }
+			]
+			title: "Bacon and Eggs"
+			x: 2.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000000E01"]
+			description: [
+				"Scale the older garden crops that feed this level's composite foods."
+			]
+			icon: "farmersdelight:tomato"
+			id: "A000000000000E07"
+			tasks: [
+				{ count: 32L, id: "B0000000000E0701", item: "farmersdelight:tomato", type: "item" }
+				{ count: 32L, id: "B0000000000E0702", item: "farmersdelight:cabbage", type: "item" }
+			]
+			title: "Old Garden Supply"
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["A000000000000E05", "A000000000000E06", "A000000000000E04", "A000000000000E07"]
+			description: [
+				"Ship onions, hamburgers, breakfast plates, and tomatoes."
+				""
+				"The iron kitchen gets its own economic tier instead of being bundled with Create."
+			]
+			icon: "farmersdelight:onion"
+			id: "A000000000000E5A"
+			shape: "hexagon"
+			tasks: [
+				{ consume_items: true, count: 32L, id: "B0000000000E5A01", item: "farmersdelight:onion", type: "item" }
+				{ consume_items: true, count: 24L, id: "B0000000000E5A02", item: "farmersdelight:hamburger", type: "item" }
+				{ consume_items: true, count: 24L, id: "B0000000000E5A03", item: "farmersdelight:bacon_and_eggs", type: "item" }
+				{ consume_items: true, count: 32L, id: "B0000000000E5A04", item: "farmersdelight:tomato", type: "item" }
+			]
+			title: "Level 14 Market Order"
+			x: 6.0d
+			y: 6.0d
+		}
+	]
+	title: "Level 14 · Onion Kitchen"
+}

@@ -5,6 +5,7 @@
 	default_repeatable_quest: true
 	filename: "animals"
 	group: "189D77A4C52994B6"
+	hide_quest_until_deps_visible: true
 	icon: "minecraft:egg"
 	id: "61E938A5BAC6BD4B"
 	order_index: 1
@@ -12,17 +13,23 @@
 	quests: [
 		{
 			dependencies: ["7D3858343983B67A"]
+			description: [
+				"Available from Level 2."
+				""
+				"This repeatable livestock support trade consumes currency and does not replace the main production quest."
+			]
 			icon: "minecraft:chicken_spawn_egg"
-			id: "2C89F326D1B02E2B"
+			id: "E00000000000A001"
 			rewards: [{
 				count: 2
-				id: "0D7378CBBEEA0991"
+				id: "E0000000000A1001"
 				item: "minecraft:chicken_spawn_egg"
 				type: "item"
 			}]
 			tasks: [{
-				count: 64L
-				id: "2D0CA01D7735EDA6"
+				consume_items: true
+				count: 32L
+				id: "E0000000000A2001"
 				item: "kubejs:copper_coin"
 				type: "item"
 			}]
@@ -32,18 +39,24 @@
 		}
 		{
 			dependencies: ["573FE8ED65790A78"]
+			description: [
+				"Available from Level 3."
+				""
+				"This repeatable livestock support trade consumes currency and does not replace the main production quest."
+			]
 			icon: "minecraft:cow_spawn_egg"
-			id: "1CDC85097BF0DB3D"
+			id: "E00000000000A002"
 			rewards: [{
 				count: 2
-				id: "5DBEBC70EE29ED35"
+				id: "E0000000000A1002"
 				item: "minecraft:cow_spawn_egg"
 				type: "item"
 			}]
 			tasks: [{
-				count: 8L
-				id: "17A0D0679A60DCA1"
-				item: "kubejs:iron_coin"
+				consume_items: true
+				count: 48L
+				id: "E0000000000A2002"
+				item: "kubejs:copper_coin"
 				type: "item"
 			}]
 			title: "Buy Cow"
@@ -52,88 +65,78 @@
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
+			description: [
+				"Available from Level 4."
+				""
+				"This repeatable livestock support trade consumes currency and does not replace the main production quest."
+			]
 			icon: "minecraft:pig_spawn_egg"
-			id: "3A11E98249BA4F92"
+			id: "E00000000000A003"
 			rewards: [{
 				count: 2
-				id: "4EECB20CFAB3C024"
+				id: "E0000000000A1003"
 				item: "minecraft:pig_spawn_egg"
 				type: "item"
 			}]
-			tasks: [
-				{
-					id: "0EA6FD1AAB8847BE"
-					item: "kubejs:gold_coin"
-					type: "item"
-				}
-				{
-					count: 28L
-					id: "79A230B5B98CC5EE"
-					item: { Count: 28, id: "kubejs:copper_coin" }
-					type: "item"
-				}
-			]
+			tasks: [{
+				consume_items: true
+				count: 64L
+				id: "E0000000000A2003"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
 			title: "Buy Pig"
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["29747D157C7F8C88"]
+			dependencies: ["A000000000000601"]
+			description: [
+				"Available from Level 6."
+				""
+				"This repeatable livestock support trade consumes currency and does not replace the main production quest."
+			]
 			icon: "minecraft:sheep_spawn_egg"
-			id: "67B868D8EADB6BA2"
+			id: "E00000000000A004"
 			rewards: [{
 				count: 2
-				id: "6D62AE0A9011637B"
+				id: "E0000000000A1004"
 				item: "minecraft:sheep_spawn_egg"
 				type: "item"
 			}]
-			tasks: [
-				{
-					id: "0F4EE964CCC62E36"
-					item: "kubejs:gold_coin"
-					type: "item"
-				}
-				{
-					count: 6L
-					id: "45FC16EAB443D55A"
-					item: "kubejs:iron_coin"
-					type: "item"
-				}
-				{
-					count: 32L
-					id: "61FE9439CF1BFF58"
-					item: { Count: 32, id: "kubejs:copper_coin" }
-					type: "item"
-				}
-			]
+			tasks: [{
+				consume_items: true
+				count: 96L
+				id: "E0000000000A2004"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
 			title: "Buy Sheep"
 			x: 6.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["4003BF6FE565761F"]
+			dependencies: ["A000000000000A01"]
+			description: [
+				"Available from Level 10."
+				""
+				"This repeatable livestock support trade consumes currency and does not replace the main production quest."
+			]
 			icon: "minecraft:rabbit_spawn_egg"
-			id: "182F14B598A346E6"
+			id: "E00000000000A005"
 			rewards: [{
 				count: 2
-				id: "4A69A7F57493EDBA"
+				id: "E0000000000A1005"
 				item: "minecraft:rabbit_spawn_egg"
 				type: "item"
 			}]
-			tasks: [
-				{
-					count: 3L
-					id: "4545453D5EC7279A"
-					item: "kubejs:gold_coin"
-					type: "item"
-				}
-				{
-					count: 2L
-					id: "083B1963139AB80B"
-					item: "kubejs:iron_coin"
-					type: "item"
-				}
-			]
+			tasks: [{
+				consume_items: true
+				count: 12L
+				id: "E0000000000A2005"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
 			title: "Buy Rabbit"
 			x: 8.0d
 			y: 0.0d
