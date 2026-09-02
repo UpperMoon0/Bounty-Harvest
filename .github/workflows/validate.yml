@@ -14,6 +14,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Validate quest text formatting
+        run: python tools/format_quest_text.py
       - name: Validate quest graph
         run: python tools/validate_quests.py
       - name: Validate quest descriptions
