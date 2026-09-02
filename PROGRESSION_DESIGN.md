@@ -139,12 +139,35 @@ Do not stage an entire integration merely because it is installed. If a mod has 
 
 A staged integration is justified when the level actually establishes and retains its economy. Level 15 End's Delight is the reference example: the stage unlocks a chorus-fruit production branch, that branch consumes older farm inputs such as wheat, sugar, and pie crust, the one-time Market Order consumes the resulting pies at industrial scale, and repeatable Bountiful orders keep the product relevant afterward.
 
-## 13. Validate the progression contract
+## 13. Quest chapters are maps of the level, not a straight progression line
+
+The quest book is both progression and documentation. A chapter should show the player what the whole level contains, not compress the design into `promotion -> production -> Market Order`.
+
+Each main level should visibly branch into the systems that define it. Depending on the level, those branches can include:
+
+- crop or animal production;
+- processing steps and intermediate ingredients;
+- tools, machines, power, storage, or logistics infrastructure;
+- food or manufactured-product chains;
+- exploration and specialist resources;
+- optional side goals that teach useful content without blocking advancement;
+- carryover branches that show how older production gains new value.
+
+Branches should converge where the economy actually converges. The final Market Order should require multiple established production branches, while optional guidance branches may remain non-blocking.
+
+Do not delete useful detail merely because it is not required by the level-up spine. Reorganize old detail to fit the current level theme when progression moves, rather than replacing a rich chapter with one combined checklist quest.
+
+FTB Quests treats `&` as a legacy formatting prefix. Main level quest text should spell out `and` instead of using a literal ampersand so titles and descriptions cannot render as invalid formatting.
+
+## 14. Validate the progression contract
 
 Automated validation should protect structural rules that are easy to regress, including:
 
 - every quest has a useful description;
 - all 15 main levels remain connected;
+- every main level remains a branched chapter with multiple system quests rather than a three-node straight line;
+- multiple production branches converge on each final Market Order;
+- main level text contains no literal ampersands that FTB Quests can misinterpret as formatting;
 - every level has a Market Order;
 - the promotion spine has no cycles or dangling dependencies;
 - currency tiers are coherent;
