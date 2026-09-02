@@ -5,167 +5,123 @@
 	group: "39B7846742C777FD"
 	hide_quest_until_deps_visible: true
 	icon: "minecraft:white_wool"
-	id: "A48E5DB6433C5508"
+	id: "D000000000000006"
 	order_index: 5
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["964E4E55A3EFB49E"]
 			description: [
-				"After the Level 5 Market Order, spend 24 copper coins and four cooked salmon to expand the farm into sheep, sugar, potatoes, and pantry production."
+				"Advance into Level 6: Wool and Textiles."
 				""
-				"Both costs are consumed."
-				""
-				"Textiles, root crops, sugar, mushrooms, and optional harvest side goals now occupy distinct branches before the copper era begins."
+				"This promotion consumes value from the previous economy before opening the next production layer."
 			]
 			icon: "minecraft:white_wool"
-			id: "7297A69487BEE03D"
+			id: "A000000000000601"
 			rewards: [
-				{ autoclaim: 1b, id: "E55E9C9D954DF07E", stage: "level_6", type: "stage" }
-				{ id: "FB9C2664D1DD994C", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_6\"]}", display: { Name: "{\"text\":\"Level 6 Decree\"}" } } }, type: "item" }
+				{ autoclaim: 1b, id: "C000000000060101", stage: "level_6", type: "stage" }
+				{ id: "C000000000060102", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_6\"]}", display: { Name: "{\"text\":\"Level 6 Decree\"}" } } }, type: "item" }
 			]
 			shape: "octagon"
 			tasks: [
-				{ consume_items: true, count: 24L, id: "8F8843CBF1FA5945", item: "kubejs:copper_coin", type: "item" }
-				{ consume_items: true, count: 4L, id: "E1CC786A72FA1CEF", item: "minecraft:cooked_salmon", type: "item" }
+				{ consume_items: true, count: 24L, id: "B000000000060101", item: "kubejs:copper_coin", type: "item" }
+				{ consume_items: true, count: 4L, id: "B000000000060102", item: "minecraft:cooked_salmon", type: "item" }
 			]
-			title: "Level 6 · Wool, Sugar and Pantry"
+			title: "Level 6 · Wool and Textiles"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["7297A69487BEE03D"]
+			dependencies: ["A000000000000601"]
 			description: [
-				"Raise sheep and collect wool. This creates the textile branch that later feeds yarn, sweaters, and Level 7 workshop exports."
+				"Establish a sheep flock and collect wool plus mutton."
+				""
+				"Wool starts a textile economy rather than becoming another raw shipment."
 			]
-			id: "6EA2798DA5176208"
+			icon: "minecraft:white_wool"
+			id: "A000000000000602"
 			tasks: [
-				{ count: 8L, id: "4D8584A4BBCC99A6", item: "minecraft:white_wool", type: "item" }
-				{ count: 4L, id: "4EAF16DDD91CBC09", item: "minecraft:mutton", type: "item" }
+				{ count: 8L, id: "B000000000060201", item: "minecraft:white_wool", type: "item" }
+				{ count: 4L, id: "B000000000060202", item: "minecraft:mutton", type: "item" }
 			]
 			title: "Sheep Flock"
 			x: -2.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["6EA2798DA5176208"]
+			dependencies: ["A000000000000602"]
 			description: [
-				"Spin wool into yarn. Yarn is the first textile-processing layer rather than selling raw wool forever."
+				"Process wool into yarn."
+				""
+				"This is the first value-added textile step, and later workshop orders keep the yarn line relevant."
 			]
-			id: "57165E328146D4DA"
-			tasks: [{ count: 4L, id: "6A224EDD6618F097", item: "kubejs:wool_yarn", type: "item" }]
-			title: "Wool Yarn"
+			icon: "kubejs:wool_yarn"
+			id: "A000000000000603"
+			tasks: [{ count: 4L, id: "B000000000060301", item: "kubejs:wool_yarn", type: "item" }]
+			title: "Spin Wool Yarn"
 			x: -3.0d
 			y: 4.0d
 		}
 		{
-			dependencies: ["57165E328146D4DA"]
+			dependencies: ["A000000000000603"]
 			description: [
-				"Craft a wool sweater. The sweater is retained and later appears as a workshop export, giving the textile line a life beyond this level."
+				"Turn yarn into a finished sweater."
+				""
+				"The textile chain now has a premium endpoint instead of stopping at raw wool."
 			]
-			id: "66BB290DCD86866E"
-			tasks: [{ id: "14E0A7E0152E4D27", item: "kubejs:wool_sweater", type: "item" }]
-			title: "Wool Sweater"
+			icon: "kubejs:wool_sweater"
+			id: "A000000000000604"
+			tasks: [{ id: "B000000000060401", item: "kubejs:wool_sweater", type: "item" }]
+			title: "Finished Sweater"
 			x: -4.0d
 			y: 6.0d
 		}
 		{
-			dependencies: ["7297A69487BEE03D"]
-			description: [
-				"Build a dependable potato crop and bake part of the harvest. Potatoes become both food and a promotion input for the copper workshop."
-			]
-			id: "015743E28B4488CE"
+			dependencies: ["A000000000000601"]
+			description: ["Keep the older wheat and poultry economy productive while the textile branch comes online."]
+			icon: "minecraft:bread"
+			id: "A000000000000605"
 			tasks: [
-				{ count: 16L, id: "4566A41DD702A1FB", item: "minecraft:potato", type: "item" }
-				{ count: 12L, id: "4D5CC65F27EE7B51", item: "minecraft:baked_potato", type: "item" }
+				{ count: 12L, id: "B000000000060501", item: "minecraft:bread", type: "item" }
+				{ count: 8L, id: "B000000000060502", item: "minecraft:egg", type: "item" }
 			]
-			title: "Potato Harvest"
-			x: 0.0d
-			y: 2.5d
-		}
-		{
-			dependencies: ["015743E28B4488CE"]
-			description: [
-				"A poisonous potato is a rare harvest bonus. It rewards exploration of the crop system but never blocks main progression."
-			]
-			id: "97C83D41E6A25BF0"
-			rewards: [{ count: 9, id: "54B9A31E087C6D2F", item: "kubejs:copper_coin", type: "item" }]
-			tasks: [{ id: "2081C939C9E624F2", item: "minecraft:poisonous_potato", type: "item" }]
-			title: "Optional: Poisonous Potato"
+			title: "Homestead Supply"
 			x: 1.5d
-			y: 4.5d
-		}
-		{
-			dependencies: ["7297A69487BEE03D"]
-			description: [
-				"Grow sugar cane, then process it into sugar. This branch later reconnects to pies, prepared foods, and the End frontier."
-			]
-			id: "1FD813E5CF445550"
-			tasks: [{ count: 12L, id: "6155F723394EBF70", item: "minecraft:sugar_cane", type: "item" }]
-			title: "Sugar Cane"
-			x: 2.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["1FD813E5CF445550"]
-			id: "2DEC233FBECE5A0F"
-			description: [
-				"Process the cane into at least eight sugar for the pantry and Market Order."
-			]
-			tasks: [{ count: 8L, id: "6D4C4173A5CA0CE4", item: "minecraft:sugar", type: "item" }]
-			title: "Sugar"
-			x: 3.5d
-			y: 3.5d
-		}
-		{
-			dependencies: ["7297A69487BEE03D"]
-			description: [
-				"Collect both common mushrooms and cook mushroom stew."
-				""
-				"This pantry branch is not part of the shipment, but it restores the broader food exploration present in the older quest book."
-			]
-			id: "210D58BA749A0F47"
+			dependencies: ["A000000000000603"]
+			description: ["Scale the new textile line enough to prove sheep and yarn are sustainable outputs."]
+			icon: "kubejs:wool_yarn"
+			id: "A000000000000606"
 			tasks: [
-				{ id: "5CB2F39948DA1CD4", item: "minecraft:brown_mushroom", type: "item" }
-				{ id: "74FFE0DD29094CF5", item: "minecraft:red_mushroom", type: "item" }
+				{ count: 16L, id: "B000000000060601", item: "minecraft:white_wool", type: "item" }
+				{ count: 8L, id: "B000000000060602", item: "kubejs:wool_yarn", type: "item" }
 			]
-			title: "Mushroom Pantry"
-			x: 2.0d
-			y: -2.0d
+			title: "Textile Stockpile"
+			x: 0.0d
+			y: 5.0d
 		}
 		{
-			dependencies: ["210D58BA749A0F47"]
+			dependencies: ["A000000000000604", "A000000000000606", "A000000000000605"]
 			description: [
-				"Combine the mushroom harvest into stew as the prepared endpoint of the pantry side branch."
+				"Ship wool, yarn, a finished sweater, and bread."
 				""
-				"It broadens the food guide without adding another mandatory Market Order tax."
-			]
-			id: "343DEFDA4A80BD80"
-			tasks: [{ id: "52B2C27427857FDD", item: "minecraft:mushroom_stew", type: "item" }]
-			title: "Mushroom Stew"
-			x: 3.5d
-			y: -3.5d
-		}
-		{
-			dependencies: ["57165E328146D4DA", "015743E28B4488CE", "2DEC233FBECE5A0F"]
-			description: [
-				"The textile, potato, and sugar branches converge here. Ship eight wool, eight baked potatoes, eight sugar, and four yarn."
-				""
-				"The sweater and pantry side branches remain yours."
+				"The first textile tier therefore consumes both new production and an older staple."
 			]
 			icon: "minecraft:white_wool"
-			id: "5EF6647A3BB43A42"
+			id: "A00000000000065A"
 			shape: "hexagon"
 			tasks: [
-				{ consume_items: true, count: 8L, id: "C1912E85AA12D35E", item: "minecraft:white_wool", type: "item" }
-				{ consume_items: true, count: 8L, id: "60C5A35C6F79FC38", item: "minecraft:baked_potato", type: "item" }
-				{ consume_items: true, count: 8L, id: "5D5E412EC18528D9", item: "minecraft:sugar", type: "item" }
-				{ consume_items: true, count: 4L, id: "89BBF0EC9FFE21B1", item: "kubejs:wool_yarn", type: "item" }
+				{ consume_items: true, count: 12L, id: "B000000000065A01", item: "minecraft:white_wool", type: "item" }
+				{ consume_items: true, count: 6L, id: "B000000000065A02", item: "kubejs:wool_yarn", type: "item" }
+				{ consume_items: true, id: "B000000000065A03", item: "kubejs:wool_sweater", type: "item" }
+				{ consume_items: true, count: 8L, id: "B000000000065A04", item: "minecraft:bread", type: "item" }
 			]
 			title: "Level 6 Market Order"
 			x: 6.0d
-			y: 4.0d
+			y: 6.0d
 		}
 	]
-	title: "Level 6 · Wool, Sugar and Pantry"
+	title: "Level 6 · Wool and Textiles"
 }
