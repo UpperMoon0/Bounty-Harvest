@@ -12,7 +12,7 @@
 		{
 			dependencies: ["5EF6647A3BB43A42"]
 			description: [
-				"After the Level 6 Market Order, spend 32 copper coins and eight baked potatoes to open the Copper Workshop. Both costs are consumed."
+				"After the Level 6 Market Order, spend 64 copper coins and 16 baked potatoes to open the Copper Workshop. Both costs are consumed."
 				"Level 7 begins a real copper era. Copper remains the active metal through Levels 7-9; Ironworking does not unlock until the Level 10 promotion."
 			]
 			icon: "minecraft:copper_ingot"
@@ -40,20 +40,8 @@
 			]
 			shape: "octagon"
 			tasks: [
-				{
-					consume_items: true
-					count: 32L
-					id: "D6EA2FCE5968CE3E"
-					item: "kubejs:copper_coin"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 8L
-					id: "655D9013D520FAEF"
-					item: "minecraft:baked_potato"
-					type: "item"
-				}
+				{ consume_items: true, count: 64L, id: "D6EA2FCE5968CE3E", item: "kubejs:copper_coin", type: "item" }
+				{ consume_items: true, count: 16L, id: "655D9013D520FAEF", item: "minecraft:baked_potato", type: "item" }
 			]
 			title: "Level 7 · Copper Workshop"
 			x: 0.0d
@@ -68,18 +56,8 @@
 			icon: "minecraft:copper_ingot"
 			id: "6A5C20C31BD2649E"
 			tasks: [
-				{
-					count: 12L
-					id: "B87584B2ECC4AE26"
-					item: "minecraft:raw_copper"
-					type: "item"
-				}
-				{
-					count: 6L
-					id: "CB25C097B7625710"
-					item: "minecraft:copper_ingot"
-					type: "item"
-				}
+				{ count: 12L, id: "B87584B2ECC4AE26", item: "minecraft:raw_copper", type: "item" }
+				{ count: 6L, id: "CB25C097B7625710", item: "minecraft:copper_ingot", type: "item" }
 			]
 			title: "Copper Supply"
 			x: 2.0d
@@ -125,17 +103,17 @@
 		{
 			dependencies: ["824E1F00FADDCB4D"]
 			description: [
-				"Ship eight copper ingots, two bookshelves, one wool sweater, and 12 charcoal. Every listed good is consumed."
-				"The order keeps leather, sugar cane, wool, wood, and charcoal economically relevant while copper becomes the main technology. Completing it opens the Level 8 Market Garden."
+				"Ship 16 copper ingots, four bookshelves, two wool sweaters, and 24 charcoal. Every listed good is consumed."
+				"Volume starts climbing here, but remains human-scale before Create. The order keeps leather, paper, wool, wood, and charcoal economically relevant while copper becomes the main technology."
 			]
 			icon: "minecraft:copper_ingot"
 			id: "D9D29B504CE79600"
 			shape: "hexagon"
 			tasks: [
-				{ consume_items: true, count: 8L, id: "309E520F5F0D7DBC", item: "minecraft:copper_ingot", type: "item" }
-				{ consume_items: true, count: 2L, id: "0BAB982F56535A06", item: "minecraft:bookshelf", type: "item" }
-				{ consume_items: true, id: "30046AED8B8F4CF5", item: "kubejs:wool_sweater", type: "item" }
-				{ consume_items: true, count: 12L, id: "F2745AA0FF11B3DC", item: "minecraft:charcoal", type: "item" }
+				{ consume_items: true, count: 16L, id: "309E520F5F0D7DBC", item: "minecraft:copper_ingot", type: "item" }
+				{ consume_items: true, count: 4L, id: "0BAB982F56535A06", item: "minecraft:bookshelf", type: "item" }
+				{ consume_items: true, count: 2L, id: "30046AED8B8F4CF5", item: "kubejs:wool_sweater", type: "item" }
+				{ consume_items: true, count: 24L, id: "F2745AA0FF11B3DC", item: "minecraft:charcoal", type: "item" }
 			]
 			title: "Level 7 Market Order"
 			x: 8.0d
