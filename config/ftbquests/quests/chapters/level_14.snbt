@@ -13,7 +13,10 @@
 			dependencies: ["A48274D6A8EE43B3"]
 			description: [
 				"After the Level 13 Market Order, spend 96 gold coins, 128 tacos, and 128 pineapple pies to provision Deep Expeditions. Every cost is consumed."
-				"Navigation, diamonds, amethyst, optional lapis, and expedition food now form distinct branches. The Cave Tablet is permanent infrastructure and the farm must provision the trip at industrial scale."
+				""
+				"Navigation, diamonds, amethyst, optional lapis, and expedition food now form distinct branches."
+				""
+				"The Cave Tablet is permanent infrastructure and the farm must provision the trip at industrial scale."
 			]
 			icon: "alexscaves:cave_tablet"
 			id: "4BB6B303F8005D7E"
@@ -33,7 +36,9 @@
 		}
 		{
 			dependencies: ["4BB6B303F8005D7E"]
-			description: ["Obtain a Cave Tablet. It is the navigation and research key for this expedition and is retained permanently rather than sold to the market."]
+			description: [
+				"Obtain a Cave Tablet. It is the navigation and research key for this expedition and is retained permanently rather than sold to the market."
+			]
 			icon: "alexscaves:cave_tablet"
 			id: "E140000000000001"
 			tasks: [{ id: "02CD0FEE244A32B4", item: "alexscaves:cave_tablet", type: "item" }]
@@ -43,7 +48,11 @@
 		}
 		{
 			dependencies: ["4BB6B303F8005D7E"]
-			description: ["Secure 16 diamonds as the premium deep-mining branch. Their scarcity stays meaningful, but the Market Order combines them with farm throughput rather than ending here."]
+			description: [
+				"Secure 16 diamonds as the premium deep-mining branch."
+				""
+				"Their scarcity stays meaningful, but the Market Order combines them with farm throughput rather than ending here."
+			]
 			id: "E140000000000002"
 			tasks: [{ count: 16L, id: "C589F44D90ACEADA", item: "minecraft:diamond", type: "item" }]
 			title: "Diamond Supply"
@@ -52,7 +61,9 @@
 		}
 		{
 			dependencies: ["4BB6B303F8005D7E"]
-			description: ["Gather 64 amethyst shards. This is a separate renewable-or-exploration resource branch rather than being hidden inside one three-item checklist."]
+			description: [
+				"Gather 64 amethyst shards. This is a separate renewable-or-exploration resource branch rather than being hidden inside one three-item checklist."
+			]
 			id: "E140000000000003"
 			tasks: [{ count: 64L, id: "3245CA53AA21AD58", item: "minecraft:amethyst_shard", type: "item" }]
 			title: "Amethyst Supply"
@@ -61,7 +72,11 @@
 		}
 		{
 			dependencies: ["4BB6B303F8005D7E"]
-			description: ["Optional deep-mining breadth: collect lapis after the Level 14 gate opens. It is useful for enchanting and proves the level contains more than exactly the items sold in its final order."]
+			description: [
+				"Optional deep-mining breadth: collect lapis after the Level 14 gate opens."
+				""
+				"It is useful for enchanting and proves the level contains more than exactly the items sold in its final order."
+			]
 			id: "E140000000000004"
 			tasks: [{ count: 32L, id: "E140000000000005", item: "minecraft:lapis_lazuli", type: "item" }]
 			title: "Lapis Side Branch"
@@ -70,7 +85,11 @@
 		}
 		{
 			dependencies: ["4BB6B303F8005D7E"]
-			description: ["Stage the food needed to support repeated deep expeditions: chicken sandwiches, pineapple pies, and tacos. These old automated lines carry most of the level's volume."]
+			description: [
+				"Stage the food needed to support repeated deep expeditions: chicken sandwiches, pineapple pies, and tacos."
+				""
+				"These old automated lines carry most of the level's volume."
+			]
 			id: "E140000000000006"
 			tasks: [
 				{ count: 256L, id: "E140000000000007", item: "farmersdelight:chicken_sandwich", type: "item" }
@@ -83,7 +102,11 @@
 		}
 		{
 			dependencies: ["E140000000000001", "E140000000000002", "E140000000000003", "E140000000000006"]
-			description: ["Navigation, deep resources, and farm provisioning converge here. Ship the diamonds, amethyst, and prepared foods while keeping the Cave Tablet for future expeditions."]
+			description: [
+				"Navigation, deep resources, and farm provisioning converge here."
+				""
+				"Ship the diamonds, amethyst, and prepared foods while keeping the Cave Tablet for future expeditions."
+			]
 			icon: "alexscaves:cave_tablet"
 			id: "250184A59EA4EBA2"
 			shape: "hexagon"

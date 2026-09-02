@@ -14,6 +14,7 @@
 			dependencies: ["7D3858343983B67A"]
 			description: [
 				"Unlocked with Level 2. Spend 32 copper coins to receive two chicken spawn eggs."
+				""
 				"This repeatable purchase is a convenience route for starting or expanding poultry; the coins are consumed."
 			]
 			icon: "minecraft:chicken_spawn_egg"
@@ -38,6 +39,7 @@
 			dependencies: ["573FE8ED65790A78"]
 			description: [
 				"Unlocked with Level 3. Spend 48 copper coins to receive two cow spawn eggs."
+				""
 				"Use this repeatable purchase to establish cattle for beef, leather, and later dairy production; the coins are consumed."
 			]
 			icon: "minecraft:cow_spawn_egg"
@@ -62,6 +64,7 @@
 			dependencies: ["1003C2B79F710366"]
 			description: [
 				"Unlocked with Level 4. Spend 64 copper coins to receive two pig spawn eggs."
+				""
 				"This repeatable purchase lets you scale pork production without waiting for natural animals; the coins are consumed."
 			]
 			icon: "minecraft:pig_spawn_egg"
@@ -86,6 +89,7 @@
 			dependencies: ["7297A69487BEE03D"]
 			description: [
 				"Unlocked with Level 6. Spend 96 copper coins to receive two sheep spawn eggs."
+				""
 				"Sheep support the wool and yarn loop introduced at this tier. This purchase is repeatable and consumes the coins."
 			]
 			icon: "minecraft:sheep_spawn_egg"
@@ -110,6 +114,7 @@
 			dependencies: ["4003BF6FE565761F"]
 			description: [
 				"Unlocked with Level 8. Spend 12 iron coins to receive two rabbit spawn eggs."
+				""
 				"This is an optional repeatable livestock expansion for the mature farm; the iron coins are consumed."
 			]
 			icon: "minecraft:rabbit_spawn_egg"

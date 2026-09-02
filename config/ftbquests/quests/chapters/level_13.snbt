@@ -13,7 +13,10 @@
 			dependencies: ["C249CFA083AB4179"]
 			description: [
 				"After the Level 12 Market Order, spend 48 gold coins and 128 pineapple pies to open Wildlife Cuisine. Both costs are consumed."
-				"Field research, bison cuisine, blossom cuisine, and mature old-farm exports now form separate branches. Wildlife ingredients add specialization without replacing the automated farm economy."
+				""
+				"Field research, bison cuisine, blossom cuisine, and mature old-farm exports now form separate branches."
+				""
+				"Wildlife ingredients add specialization without replacing the automated farm economy."
 			]
 			icon: "alexsmobs:animal_dictionary"
 			id: "14A6F09E58565C89"
@@ -32,7 +35,11 @@
 		}
 		{
 			dependencies: ["14A6F09E58565C89"]
-			description: ["Obtain the Animal Dictionary as the field-research branch. Alex's Mobs entities are not item-staged, so the book represents knowledge rather than pretending entity spawning is gated."]
+			description: [
+				"Obtain the Animal Dictionary as the field-research branch."
+				""
+				"Alex's Mobs entities are not item-staged, so the book represents knowledge rather than pretending entity spawning is gated."
+			]
 			icon: "alexsmobs:animal_dictionary"
 			id: "D130000000000001"
 			tasks: [{ id: "F427E711627D0CCF", item: "alexsmobs:animal_dictionary", type: "item" }]
@@ -42,7 +49,9 @@
 		}
 		{
 			dependencies: ["D130000000000001"]
-			description: ["Prepare eight bison burgers. This branch turns specialist wildlife meat into a Farmer's Delight-style premium food line."]
+			description: [
+				"Prepare eight bison burgers. This branch turns specialist wildlife meat into a Farmer's Delight-style premium food line."
+			]
 			id: "D130000000000002"
 			tasks: [{ count: 8L, id: "D768BFF63BC52EB9", item: "alexsdelight:bison_burger", type: "item" }]
 			title: "Bison Burger Line"
@@ -51,7 +60,9 @@
 		}
 		{
 			dependencies: ["D130000000000001"]
-			description: ["Prepare eight acacia blossom soups as a second independent wildlife-cuisine branch instead of hiding all specialist foods inside one combined task."]
+			description: [
+				"Prepare eight acacia blossom soups as a second independent wildlife-cuisine branch instead of hiding all specialist foods inside one combined task."
+			]
 			id: "D130000000000003"
 			tasks: [{ count: 8L, id: "B70BE54324A8F9E1", item: "alexsdelight:acacia_blossom_soup", type: "item" }]
 			title: "Blossom Soup Line"
@@ -60,7 +71,9 @@
 		}
 		{
 			dependencies: ["14A6F09E58565C89"]
-			description: ["Stage 256 leather from the cattle economy. This huge old-resource branch is where mature automation carries most of the throughput burden."]
+			description: [
+				"Stage 256 leather from the cattle economy. This huge old-resource branch is where mature automation carries most of the throughput burden."
+			]
 			id: "D130000000000004"
 			tasks: [{ count: 256L, id: "D130000000000005", item: "minecraft:leather", type: "item" }]
 			title: "Industrial Leather Supply"
@@ -69,7 +82,9 @@
 		}
 		{
 			dependencies: ["14A6F09E58565C89"]
-			description: ["Stage 256 cornbread from the corn economy. The new wildlife tier therefore strengthens rather than replaces an older crop-processing line."]
+			description: [
+				"Stage 256 cornbread from the corn economy. The new wildlife tier therefore strengthens rather than replaces an older crop-processing line."
+			]
 			id: "D130000000000006"
 			tasks: [{ count: 256L, id: "D130000000000007", item: "corn_delight:cornbread", type: "item" }]
 			title: "Industrial Cornbread Supply"
@@ -78,7 +93,9 @@
 		}
 		{
 			dependencies: ["D130000000000002", "D130000000000003", "D130000000000004", "D130000000000006"]
-			description: ["Wildlife cuisine and old-farm industrial branches converge here. Ship 32 bison burgers, 32 blossom soups, 256 leather, and 256 cornbread."]
+			description: [
+				"Wildlife cuisine and old-farm industrial branches converge here. Ship 32 bison burgers, 32 blossom soups, 256 leather, and 256 cornbread."
+			]
 			icon: "alexsmobs:animal_dictionary"
 			id: "A48274D6A8EE43B3"
 			shape: "hexagon"

@@ -12,7 +12,10 @@
 		{
 			dependencies: ["C4F9E553B22E40CC"]
 			description: [
-				"After the Level 10 Market Order, spend 96 iron coins and 48 andesite alloy to expand industrial farming into tropical automation. Both costs are consumed."
+				"After the Level 10 Market Order, spend 96 iron coins and 48 andesite alloy to expand industrial farming into tropical automation."
+				""
+				"Both costs are consumed."
+				""
 				"Pineapple, rice, Slice and Dice infrastructure, fried rice, pies, and salmon rolls now branch separately so the tropical tier feels like a production network rather than one oversized task."
 			]
 			icon: "pineapple_delight:pineapple"
@@ -32,7 +35,9 @@
 		}
 		{
 			dependencies: ["1FFCFC4EAF71D122"]
-			description: ["Establish a 32-pineapple harvest. If exploration never finds the crop, the expensive recovery trade in the Crop Shop prevents a progression hard lock."]
+			description: [
+				"Establish a 32-pineapple harvest. If exploration never finds the crop, the expensive recovery trade in the Crop Shop prevents a progression hard lock."
+			]
 			id: "B110000000000001"
 			tasks: [{ count: 32L, id: "9B591478340B10CD", item: "pineapple_delight:pineapple", type: "item" }]
 			title: "Pineapple Plantation"
@@ -41,7 +46,9 @@
 		}
 		{
 			dependencies: ["1FFCFC4EAF71D122"]
-			description: ["Grow 32 rice. Rice immediately reconnects the fisheries economy through rolls and combines with pineapple in the tropical kitchen."]
+			description: [
+				"Grow 32 rice. Rice immediately reconnects the fisheries economy through rolls and combines with pineapple in the tropical kitchen."
+			]
 			id: "B110000000000002"
 			tasks: [{ count: 32L, id: "E5606FAB78041A44", item: "farmersdelight:rice", type: "item" }]
 			title: "Rice Paddies"
@@ -50,7 +57,11 @@
 		}
 		{
 			dependencies: ["1FFCFC4EAF71D122"]
-			description: ["Build the Slice and Dice Slicer. It is permanent infrastructure and is required by actual food-production branches, not merely checked as an unused unlock."]
+			description: [
+				"Build the Slice and Dice Slicer."
+				""
+				"It is permanent infrastructure and is required by actual food-production branches, not merely checked as an unused unlock."
+			]
 			icon: "sliceanddice:slicer"
 			id: "CAD91105DBDBD22C"
 			tasks: [{ id: "4DE137A9B65C82F0", item: "sliceanddice:slicer", type: "item" }]
@@ -60,7 +71,9 @@
 		}
 		{
 			dependencies: ["B110000000000001", "B110000000000002", "CAD91105DBDBD22C"]
-			description: ["Automate 16 pineapple fried rice. This branch combines both new crops and demonstrates why the Slicer exists in progression."]
+			description: [
+				"Automate 16 pineapple fried rice. This branch combines both new crops and demonstrates why the Slicer exists in progression."
+			]
 			id: "B110000000000003"
 			tasks: [{ count: 16L, id: "71B95DA0B5874F2D", item: "pineapple_delight:pineapple_fried_rice", type: "item" }]
 			title: "Pineapple Fried Rice"
@@ -69,7 +82,9 @@
 		}
 		{
 			dependencies: ["B110000000000001"]
-			description: ["Bake 16 pineapple pies. The pie line reuses the crust, wheat, egg, and sugar economy established long before this level."]
+			description: [
+				"Bake 16 pineapple pies. The pie line reuses the crust, wheat, egg, and sugar economy established long before this level."
+			]
 			id: "B110000000000004"
 			tasks: [{ count: 16L, id: "62DB1B640AE21CF1", item: "pineapple_delight:pineapple_pie", type: "item" }]
 			title: "Pineapple Pies"
@@ -78,7 +93,9 @@
 		}
 		{
 			dependencies: ["B110000000000002", "CAD91105DBDBD22C"]
-			description: ["Produce 16 salmon rolls. This branch deliberately reactivates the Level 5 salmon supply instead of letting fisheries become obsolete."]
+			description: [
+				"Produce 16 salmon rolls. This branch deliberately reactivates the Level 5 salmon supply instead of letting fisheries become obsolete."
+			]
 			id: "B110000000000005"
 			tasks: [{ count: 16L, id: "7C954321D8C340DD", item: "farmersdelight:salmon_roll", type: "item" }]
 			title: "Salmon Rolls"
@@ -87,7 +104,9 @@
 		}
 		{
 			dependencies: ["B110000000000003", "B110000000000004", "B110000000000005"]
-			description: ["The tropical crop, automated processing, pie, and fish branches converge here. Ship 64 fried rice, 64 pineapple pies, 64 salmon rolls, and 64 tacos."]
+			description: [
+				"The tropical crop, automated processing, pie, and fish branches converge here. Ship 64 fried rice, 64 pineapple pies, 64 salmon rolls, and 64 tacos."
+			]
 			icon: "pineapple_delight:pineapple_fried_rice"
 			id: "2507AB50F6CCD90E"
 			shape: "hexagon"

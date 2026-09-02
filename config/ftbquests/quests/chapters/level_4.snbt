@@ -13,6 +13,7 @@
 			dependencies: ["9131A689D31728C8"]
 			description: [
 				"After the Level 3 Market Order, spend 16 copper coins and four cooked beef to add roots, pigs, and a broader food chain. Both costs are consumed."
+				""
 				"Carrots, pigs, Farmer's Delight dough, flint tools, and common mob or glass resources now branch independently before converging on the Market Order."
 			]
 			icon: "minecraft:carrot"
@@ -32,7 +33,9 @@
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
-			description: ["Acquire and expand carrots into a reliable crop. This is the crop branch that supports both the pig line and later prepared foods."]
+			description: [
+				"Acquire and expand carrots into a reliable crop. This is the crop branch that supports both the pig line and later prepared foods."
+			]
 			id: "352F41B3BED0E086"
 			tasks: [{ count: 12L, id: "269DA89171668F2A", item: "minecraft:carrot", type: "item" }]
 			title: "Carrot Field"
@@ -41,7 +44,9 @@
 		}
 		{
 			dependencies: ["352F41B3BED0E086"]
-			description: ["Raise pigs using the new root crop and establish pork as the third animal food line."]
+			description: [
+				"Raise pigs using the new root crop and establish pork as the third animal food line."
+			]
 			id: "58846BA779358FD2"
 			tasks: [{ count: 4L, id: "413A84E06FE1CFAA", item: "minecraft:porkchop", type: "item" }]
 			title: "Pig Pen"
@@ -50,7 +55,9 @@
 		}
 		{
 			dependencies: ["58846BA779358FD2"]
-			description: ["Cook six porkchops. This becomes the sale-ready endpoint of the pig branch and returns again in the taco chain at Level 9."]
+			description: [
+				"Cook six porkchops. This becomes the sale-ready endpoint of the pig branch and returns again in the taco chain at Level 9."
+			]
 			id: "6D3ECD5141AFA093"
 			tasks: [{ count: 6L, id: "2357515CE357A112", item: "minecraft:cooked_porkchop", type: "item" }]
 			title: "Cooked Pork"
@@ -59,7 +66,9 @@
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
-			description: ["Make Farmer's Delight wheat dough from the older wheat and egg economy. New food tiers should multiply old production instead of replacing it."]
+			description: [
+				"Make Farmer's Delight wheat dough from the older wheat and egg economy. New food tiers should multiply old production instead of replacing it."
+			]
 			id: "72CAF40486DF976F"
 			tasks: [{ count: 6L, id: "026B64363A5FE21E", item: "farmersdelight:wheat_dough", type: "item" }]
 			title: "Wheat Dough"
@@ -68,7 +77,9 @@
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
-			description: ["Collect flint from the gravel branch introduced at Level 1. This turns an old low-value material into the next tool tier."]
+			description: [
+				"Collect flint from the gravel branch introduced at Level 1. This turns an old low-value material into the next tool tier."
+			]
 			id: "17F6492995529F96"
 			tasks: [{ count: 5L, id: "0799389515CA36EB", item: "minecraft:flint", type: "item" }]
 			title: "Flint Supply"
@@ -77,7 +88,9 @@
 		}
 		{
 			dependencies: ["17F6492995529F96"]
-			description: ["Craft the complete flint tool set using the modified stone-tool recipes. This is a real pre-copper equipment tier, not a one-item unlock."]
+			description: [
+				"Craft the complete flint tool set using the modified stone-tool recipes. This is a real pre-copper equipment tier, not a one-item unlock."
+			]
 			id: "19A0223BFE395A14"
 			tasks: [
 				{ id: "45A5573D47862E96", item: "minecraft:stone_shovel", type: "item" }
@@ -92,7 +105,9 @@
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
-			description: ["Smelt the sand gathered earlier into glass. This is a separate materials branch that later feeds bottles and copper utility recipes."]
+			description: [
+				"Smelt the sand gathered earlier into glass. This is a separate materials branch that later feeds bottles and copper utility recipes."
+			]
 			id: "12932CB774E66484"
 			tasks: [{ count: 6L, id: "7C2A27D31C954D1B", item: "minecraft:glass", type: "item" }]
 			title: "Glassmaking"
@@ -101,7 +116,9 @@
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
-			description: ["Collect string and a spider eye. Mob resources remain useful side branches without becoming mandatory grind for every promotion."]
+			description: [
+				"Collect string and a spider eye. Mob resources remain useful side branches without becoming mandatory grind for every promotion."
+			]
 			id: "6A5228B39CFC9F88"
 			tasks: [
 				{ count: 2L, id: "77CA2E89333327E4", item: "minecraft:string", type: "item" }
@@ -113,7 +130,11 @@
 		}
 		{
 			dependencies: ["6D3ECD5141AFA093", "72CAF40486DF976F", "19A0223BFE395A14"]
-			description: ["The crop, livestock, food-processing, and tool branches converge here. Ship 12 carrots, six cooked porkchops, and six wheat dough; the flint tools are retained."]
+			description: [
+				"The crop, livestock, food-processing, and tool branches converge here."
+				""
+				"Ship 12 carrots, six cooked porkchops, and six wheat dough; the flint tools are retained."
+			]
 			icon: "minecraft:carrot"
 			id: "284BDA8AD6A1EE07"
 			shape: "hexagon"

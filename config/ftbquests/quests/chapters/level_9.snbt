@@ -13,7 +13,10 @@
 			dependencies: ["F3FBD0BED43C89CC"]
 			description: [
 				"After the Level 8 Market Order, spend 24 iron coins and eight fish stew to open the Corn Market. Both costs are consumed."
-				"Corn, tomato, corn processing, and the cross-level taco line now branch independently. This is the last tier intended to remain comfortable without Create automation."
+				""
+				"Corn, tomato, corn processing, and the cross-level taco line now branch independently."
+				""
+				"This is the last tier intended to remain comfortable without Create automation."
 			]
 			icon: "corn_delight:corn"
 			id: "C0B4AA32262BF02B"
@@ -32,7 +35,11 @@
 		}
 		{
 			dependencies: ["C0B4AA32262BF02B"]
-			description: ["Establish a 24-corn harvest. If world generation refuses to provide corn, the Crop Shop has an intentionally expensive deterministic seed recovery trade."]
+			description: [
+				"Establish a 24-corn harvest."
+				""
+				"If world generation refuses to provide corn, the Crop Shop has an intentionally expensive deterministic seed recovery trade."
+			]
 			id: "9A90000000000001"
 			tasks: [{ count: 24L, id: "C6046AB74D2BEFC7", item: "corn_delight:corn", type: "item" }]
 			title: "Corn Field"
@@ -41,7 +48,9 @@
 		}
 		{
 			dependencies: ["C0B4AA32262BF02B"]
-			description: ["Grow 16 tomatoes. Tomato is deliberately introduced one level after cabbage so the garden expands in understandable steps."]
+			description: [
+				"Grow 16 tomatoes. Tomato is deliberately introduced one level after cabbage so the garden expands in understandable steps."
+			]
 			id: "9A90000000000002"
 			tasks: [{ count: 16L, id: "359B446432579DB4", item: "farmersdelight:tomato", type: "item" }]
 			title: "Tomato Field"
@@ -50,7 +59,9 @@
 		}
 		{
 			dependencies: ["9A90000000000001"]
-			description: ["Turn corn into eight cornbread. This branch represents a finished baked product rather than selling only raw crop output."]
+			description: [
+				"Turn corn into eight cornbread. This branch represents a finished baked product rather than selling only raw crop output."
+			]
 			id: "9A90000000000003"
 			tasks: [{ count: 8L, id: "6F2AC460EFA39C93", item: "corn_delight:cornbread", type: "item" }]
 			title: "Cornbread"
@@ -59,7 +70,9 @@
 		}
 		{
 			dependencies: ["9A90000000000001"]
-			description: ["Produce eight tortillas as the intermediate processing line that turns corn into the base for higher-value tacos."]
+			description: [
+				"Produce eight tortillas as the intermediate processing line that turns corn into the base for higher-value tacos."
+			]
 			id: "9A90000000000004"
 			tasks: [{ count: 8L, id: "485F8F3EC8355404", item: "corn_delight:tortilla", type: "item" }]
 			title: "Tortillas"
@@ -68,7 +81,11 @@
 		}
 		{
 			dependencies: ["9A90000000000002", "9A90000000000004"]
-			description: ["Make eight tacos from tortilla, cooked pork, tomato, and cabbage. This one product deliberately reconnects Levels 4, 8, and 9 into a single valuable food line."]
+			description: [
+				"Make eight tacos from tortilla, cooked pork, tomato, and cabbage."
+				""
+				"This one product deliberately reconnects Levels 4, 8, and 9 into a single valuable food line."
+			]
 			icon: "corn_delight:taco"
 			id: "9A90000000000005"
 			tasks: [{ count: 8L, id: "3D71DFA58C33C641", item: "corn_delight:taco", type: "item" }]
@@ -78,7 +95,11 @@
 		}
 		{
 			dependencies: ["9A90000000000003", "9A90000000000005"]
-			description: ["The raw crop and processing branches converge here. Ship 24 corn, 16 tomatoes, eight cornbread, and eight tacos. Level 10 then turns the economy industrial."]
+			description: [
+				"The raw crop and processing branches converge here. Ship 24 corn, 16 tomatoes, eight cornbread, and eight tacos."
+				""
+				"Level 10 then turns the economy industrial."
+			]
 			icon: "corn_delight:corn"
 			id: "2A9904A355A5FE23"
 			shape: "hexagon"

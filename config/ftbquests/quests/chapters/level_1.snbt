@@ -11,8 +11,13 @@
 	quests: [
 		{
 			description: [
-				"Level 1 is active from the moment you join. Build a basic homestead, start wheat production, and learn the Bountiful economy before the first promotion."
-				"The chapter deliberately branches. Farming, basic tools, storage, materials, and the order board are separate parts of the homestead that later converge on the Market Order."
+				"Level 1 is active from the moment you join."
+				""
+				"Build a basic homestead, start wheat production, and learn the Bountiful economy before the first promotion."
+				""
+				"The chapter deliberately branches."
+				""
+				"Farming, basic tools, storage, materials, and the order board are separate parts of the homestead that later converge on the Market Order."
 			]
 			icon: "minecraft:wheat"
 			id: "74402ECAFFAFAEC4"
@@ -24,7 +29,9 @@
 		}
 		{
 			dependencies: ["74402ECAFFAFAEC4"]
-			description: ["Gather any logs. Wood feeds tools, storage, the crafting table, and the Bounty Board infrastructure."]
+			description: [
+				"Gather any logs. Wood feeds tools, storage, the crafting table, and the Bounty Board infrastructure."
+			]
 			id: "43284F27E8D976FC"
 			tasks: [{
 				id: "6D348E24A2AD28E3"
@@ -38,7 +45,9 @@
 		}
 		{
 			dependencies: ["43284F27E8D976FC"]
-			description: ["Craft a crafting table. This opens the two main homestead branches: tools and storage on one side, the farm economy on the other."]
+			description: [
+				"Craft a crafting table. This opens the two main homestead branches: tools and storage on one side, the farm economy on the other."
+			]
 			id: "7E05FEED92D53715"
 			tasks: [{ id: "7B3D88AB1D07C18D", item: "minecraft:crafting_table", type: "item" }]
 			title: "Crafting Table"
@@ -47,7 +56,9 @@
 		}
 		{
 			dependencies: ["7E05FEED92D53715"]
-			description: ["Craft a wooden pickaxe for gathering and a wooden hoe for the first field. Better material tiers arrive later instead of being rushed immediately."]
+			description: [
+				"Craft a wooden pickaxe for gathering and a wooden hoe for the first field. Better material tiers arrive later instead of being rushed immediately."
+			]
 			id: "0A6DE571FAAFADA0"
 			tasks: [
 				{ id: "0BE830BCE6BD2D0A", item: "minecraft:wooden_pickaxe", type: "item" }
@@ -59,7 +70,9 @@
 		}
 		{
 			dependencies: ["7E05FEED92D53715"]
-			description: ["Make a wooden chest. Farm management becomes much easier once harvests and order stock can be separated from your inventory."]
+			description: [
+				"Make a wooden chest. Farm management becomes much easier once harvests and order stock can be separated from your inventory."
+			]
 			id: "44559F724FDC9994"
 			tasks: [{
 				id: "32908F36FD95F41D"
@@ -73,7 +86,9 @@
 		}
 		{
 			dependencies: ["0A6DE571FAAFADA0"]
-			description: ["Start the first renewable crop line. Keep enough seed stock to expand instead of converting the entire first harvest into food."]
+			description: [
+				"Start the first renewable crop line. Keep enough seed stock to expand instead of converting the entire first harvest into food."
+			]
 			id: "157BBBAB00E2FAAF"
 			tasks: [
 				{ id: "01D2F6EB3E6A93F6", item: "minecraft:wheat_seeds", type: "item" }
@@ -85,7 +100,9 @@
 		}
 		{
 			dependencies: ["157BBBAB00E2FAAF"]
-			description: ["Bake four bread. Bread is the first processed farm product and remains useful as both food and an input to later prepared meals."]
+			description: [
+				"Bake four bread. Bread is the first processed farm product and remains useful as both food and an input to later prepared meals."
+			]
 			id: "5918C8C324EC380B"
 			tasks: [{ count: 4L, id: "20287FDBDA0C4EB5", item: "minecraft:bread", type: "item" }]
 			title: "Bread Production"
@@ -96,6 +113,7 @@
 			dependencies: ["7E05FEED92D53715"]
 			description: [
 				"Build a Bounty Board. It is the repeatable market where farm output becomes copper, iron, and eventually gold coins."
+				""
 				"The Level 1 Decree is awarded here so the economy tutorial is part of the quest branch rather than a hidden assumption."
 			]
 			icon: "bountiful:bountyboard"
@@ -112,7 +130,11 @@
 		}
 		{
 			dependencies: ["37DB727D93347A94"]
-			description: ["Insert the Level 1 Decree, complete a bounty, and hold the copper coin you earned. This proves the repeatable economy works before promotions begin charging currency."]
+			description: [
+				"Insert the Level 1 Decree, complete a bounty, and hold the copper coin you earned."
+				""
+				"This proves the repeatable economy works before promotions begin charging currency."
+			]
 			id: "A0B67F241C38D5E9"
 			tasks: [{ id: "BC9706D2E31A5F84", item: "kubejs:copper_coin", type: "item" }]
 			title: "First Farm Sale"
@@ -121,7 +143,11 @@
 		}
 		{
 			dependencies: ["0A6DE571FAAFADA0"]
-			description: ["Collect sand and gravel. These low-value materials become glass and flint in later branches, so gathering them now introduces the idea that basic resources gain value over time."]
+			description: [
+				"Collect sand and gravel."
+				""
+				"These low-value materials become glass and flint in later branches, so gathering them now introduces the idea that basic resources gain value over time."
+			]
 			id: "44F6F42801500C65"
 			tasks: [
 				{ id: "37CB835AD432A205", item: { Count: 1, id: "itemfilters:tag", tag: { value: "forge:sand" } }, title: "Any Sand", type: "item" }
@@ -135,6 +161,7 @@
 			dependencies: ["5918C8C324EC380B", "A0B67F241C38D5E9", "44F6F42801500C65"]
 			description: [
 				"The Level 1 branches converge here. Ship 12 wheat and four bread; the Board, first sale, basic farm, and material groundwork remain yours."
+				""
 				"Completing this one-time Market Order opens the Level 2 promotion."
 			]
 			icon: "minecraft:wheat"

@@ -13,7 +13,10 @@
 			dependencies: ["2A9904A355A5FE23"]
 			description: [
 				"After the Level 9 Market Order, spend 48 iron coins, 32 charcoal, and 24 copper ingots to fund the jump into Ironworking. Every cost is consumed."
-				"Iron, the iron kitchen, Create foundations, and redstone now become separate industrial branches. This is where production volume starts making automation the practical answer."
+				""
+				"Iron, the iron kitchen, Create foundations, and redstone now become separate industrial branches."
+				""
+				"This is where production volume starts making automation the practical answer."
 			]
 			icon: "minecraft:iron_ingot"
 			id: "201FA0D785EF1770"
@@ -34,7 +37,11 @@
 		}
 		{
 			dependencies: ["201FA0D785EF1770"]
-			description: ["Ironworking is now active. Collect 18 raw iron and smelt 12 ingots to establish the first true iron supply. This quest must remain directly attached to the promotion."]
+			description: [
+				"Ironworking is now active. Collect 18 raw iron and smelt 12 ingots to establish the first true iron supply."
+				""
+				"This quest must remain directly attached to the promotion."
+			]
 			icon: "minecraft:iron_ingot"
 			id: "557852FFD6F4D560"
 			tasks: [
@@ -47,7 +54,9 @@
 		}
 		{
 			dependencies: ["201FA0D785EF1770"]
-			description: ["Grow onions as the new agricultural input. The crop immediately enters the iron-kitchen branch instead of existing as an isolated checklist item."]
+			description: [
+				"Grow onions as the new agricultural input. The crop immediately enters the iron-kitchen branch instead of existing as an isolated checklist item."
+			]
 			id: "A100000000000001"
 			tasks: [{ count: 32L, id: "D7873812059AC8E4", item: "farmersdelight:onion", type: "item" }]
 			title: "Onion Field"
@@ -56,7 +65,11 @@
 		}
 		{
 			dependencies: ["557852FFD6F4D560", "A100000000000001"]
-			description: ["Use iron-enabled kitchen equipment to bottle milk and produce bacon and eggs. Cattle gains a dairy branch while pork and eggs are upgraded into a higher-value breakfast line."]
+			description: [
+				"Use iron-enabled kitchen equipment to bottle milk and produce bacon and eggs."
+				""
+				"Cattle gains a dairy branch while pork and eggs are upgraded into a higher-value breakfast line."
+			]
 			icon: "farmersdelight:iron_knife"
 			id: "B912F1FE8E149DE8"
 			tasks: [
@@ -69,7 +82,9 @@
 		}
 		{
 			dependencies: ["201FA0D785EF1770"]
-			description: ["Craft 16 andesite alloy as the material foundation of Create. Copper-era mining and the new iron tier now feed mechanical production."]
+			description: [
+				"Craft 16 andesite alloy as the material foundation of Create. Copper-era mining and the new iron tier now feed mechanical production."
+			]
 			icon: "create:andesite_alloy"
 			id: "A100000000000002"
 			tasks: [{ count: 16L, id: "16B11285B4E5277C", item: "create:andesite_alloy", type: "item" }]
@@ -79,7 +94,11 @@
 		}
 		{
 			dependencies: ["A100000000000002"]
-			description: ["Turn alloy into shafts and cogwheels. These parts are retained as infrastructure because the point is to build machines, not repeatedly surrender them."]
+			description: [
+				"Turn alloy into shafts and cogwheels."
+				""
+				"These parts are retained as infrastructure because the point is to build machines, not repeatedly surrender them."
+			]
 			icon: "create:cogwheel"
 			id: "525F40C497949612"
 			tasks: [
@@ -92,7 +111,11 @@
 		}
 		{
 			dependencies: ["201FA0D785EF1770"]
-			description: ["Secure redstone and build a basic redstone component. This is a parallel control-technology branch for future automation rather than a prerequisite hidden inside the Create quest."]
+			description: [
+				"Secure redstone and build a basic redstone component."
+				""
+				"This is a parallel control-technology branch for future automation rather than a prerequisite hidden inside the Create quest."
+			]
 			id: "A100000000000003"
 			tasks: [
 				{ count: 16L, id: "A100000000000004", item: "minecraft:redstone", type: "item" }
@@ -104,7 +127,11 @@
 		}
 		{
 			dependencies: ["557852FFD6F4D560", "B912F1FE8E149DE8", "525F40C497949612", "A100000000000003"]
-			description: ["All industrial branches converge here. Ship 32 iron ingots, 32 andesite alloy, 64 onions, 32 bacon and eggs, and 128 wheat. Machinery and control infrastructure stay on the farm."]
+			description: [
+				"All industrial branches converge here. Ship 32 iron ingots, 32 andesite alloy, 64 onions, 32 bacon and eggs, and 128 wheat."
+				""
+				"Machinery and control infrastructure stay on the farm."
+			]
 			icon: "minecraft:iron_ingot"
 			id: "C4F9E553B22E40CC"
 			shape: "hexagon"

@@ -11,9 +11,13 @@
 	quests: [
 		{
 			description: [
-				"Bounty Harvest uses 15 economic levels. Level 1 is granted when you join; each later level is a promotion contract unlocked by the previous tier's Market Order."
+				"Bounty Harvest uses 15 economic levels."
 				""
-				"Think like a farm-management game: each level adds a crop, animal, processor, machine, cuisine, or expedition that creates new products. Older goods must keep gaining new recipes and market demand instead of becoming dead inventory."
+				"Level 1 is granted when you join; each later level is a promotion contract unlocked by the previous tier's Market Order."
+				""
+				"Think like a farm-management game: each level adds a crop, animal, processor, machine, cuisine, or expedition that creates new products."
+				""
+				"Older goods must keep gaining new recipes and market demand instead of becoming dead inventory."
 				""
 				"Copper is a full era across Levels 7-9. Copper Tools prove mastery but do not grant Ironworking. Level 10 is the deliberate iron breakthrough."
 			]
@@ -27,9 +31,13 @@
 		{
 			dependencies: ["E60381A75A8C4D21"]
 			description: [
-				"ItemStages enforces item and namespace access where that is technically reliable. It does not pretend to stop mobs from spawning, block exploration systems, or gate every world mechanic."
+				"ItemStages enforces item and namespace access where that is technically reliable."
 				""
-				"Your Bounty Board is the repeatable market layer. Later decree pools mix new goods with older staples and increasingly processed products. Major production lines should gain a new layer within about two levels and meaningful demand within about three."
+				"It does not pretend to stop mobs from spawning, block exploration systems, or gate every world mechanic."
+				""
+				"Your Bounty Board is the repeatable market layer. Later decree pools mix new goods with older staples and increasingly processed products."
+				""
+				"Major production lines should gain a new layer within about two levels and meaningful demand within about three."
 				""
 				"Crop pacing follows the same rule: Level 8 introduces cabbage, Level 9 tomato, Level 10 onion, and Level 11 rice so each crop has room to become economically meaningful."
 			]
@@ -41,5 +49,5 @@
 			y: 0.0d
 		}
 	]
-	title: "Research & Levels"
+	title: "Research and Levels"
 }

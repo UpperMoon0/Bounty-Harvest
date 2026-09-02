@@ -12,7 +12,11 @@
 	quests: [
 		{
 			dependencies: ["74402ECAFFAFAEC4"]
-			description: ["Available from Level 1. Spend 16 copper coins to receive two wheat seeds.", "Use this repeatable shop if you need to restart or expand the farm's staple crop; the coins are consumed."]
+			description: [
+				"Available from Level 1. Spend 16 copper coins to receive two wheat seeds."
+				""
+				"Use this repeatable shop if you need to restart or expand the farm's staple crop; the coins are consumed."
+			]
 			hide_until_deps_visible: true
 			icon: "minecraft:wheat_seeds"
 			id: "69D0A2940723341A"
@@ -24,7 +28,11 @@
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
-			description: ["Unlocked with Level 4. Spend 48 copper coins to receive two carrots.", "Plant them to expand the root-crop loop or use them for pig breeding and later prepared foods. This repeatable purchase consumes the coins."]
+			description: [
+				"Unlocked with Level 4. Spend 48 copper coins to receive two carrots."
+				""
+				"Plant them to expand the root-crop loop or use them for pig breeding and later prepared foods. This repeatable purchase consumes the coins."
+			]
 			icon: "minecraft:carrot"
 			id: "42F61617476FBFCC"
 			rewards: [{ count: 2, id: "1C60DADADCF7A977", item: "minecraft:carrot", type: "item" }]
@@ -35,7 +43,13 @@
 		}
 		{
 			dependencies: ["7297A69487BEE03D"]
-			description: ["Unlocked with Level 6. Spend 64 copper coins to receive two sugar cane.", "Sugar and paper both become long-lived inputs: food processing uses sugar while the leather-and-paper chain feeds books and bookshelves. The coins are consumed."]
+			description: [
+				"Unlocked with Level 6. Spend 64 copper coins to receive two sugar cane."
+				""
+				"Sugar and paper both become long-lived inputs: food processing uses sugar while the leather-and-paper chain feeds books and bookshelves."
+				""
+				"The coins are consumed."
+			]
 			icon: "minecraft:sugar_cane"
 			id: "5EC3E67CEBBB2604"
 			rewards: [{ count: 2, id: "3204BC56166A6A93", item: "minecraft:sugar_cane", type: "item" }]
@@ -46,7 +60,11 @@
 		}
 		{
 			dependencies: ["7297A69487BEE03D"]
-			description: ["Unlocked with Level 6. Spend 64 copper coins to receive two potatoes.", "Potatoes become baked pantry goods, then return in Level 8 fish stew and stuffed foods. This repeatable purchase consumes the coins."]
+			description: [
+				"Unlocked with Level 6. Spend 64 copper coins to receive two potatoes."
+				""
+				"Potatoes become baked pantry goods, then return in Level 8 fish stew and stuffed foods. This repeatable purchase consumes the coins."
+			]
 			icon: "minecraft:potato"
 			id: "139EDF3D2E9F5E13"
 			rewards: [{ count: 2, id: "3366642D0DFF401C", item: "minecraft:potato", type: "item" }]
@@ -57,7 +75,11 @@
 		}
 		{
 			dependencies: ["74402ECAFFAFAEC4"]
-			description: ["Available from Level 1. Spend 16 copper coins to receive four bone meal.", "This repeatable convenience trade helps recover from a slow crop start; the coins are consumed."]
+			description: [
+				"Available from Level 1. Spend 16 copper coins to receive four bone meal."
+				""
+				"This repeatable convenience trade helps recover from a slow crop start; the coins are consumed."
+			]
 			hide_until_deps_visible: true
 			icon: "minecraft:bone_meal"
 			id: "0AF8D4DD44F1810B"
@@ -69,7 +91,13 @@
 		}
 		{
 			dependencies: ["4003BF6FE565761F"]
-			description: ["Unlocked with Level 8. Spend eight iron coins to receive two cabbage seeds.", "Cabbage is deliberately the only major new Level 8 crop. It immediately feeds sandwiches, stuffed potatoes, tacos, bounties, and the Level 8 Market Order."]
+			description: [
+				"Unlocked with Level 8. Spend eight iron coins to receive two cabbage seeds."
+				""
+				"Cabbage is deliberately the only major new Level 8 crop."
+				""
+				"It immediately feeds sandwiches, stuffed potatoes, tacos, bounties, and the Level 8 Market Order."
+			]
 			icon: "farmersdelight:cabbage"
 			id: "354D89A7217D2552"
 			rewards: [{ count: 2, icon: "farmersdelight:cabbage_seeds", id: "52200ACA6C004644", item: "farmersdelight:cabbage_seeds", type: "item" }]
@@ -80,7 +108,13 @@
 		}
 		{
 			dependencies: ["C0B4AA32262BF02B"]
-			description: ["Unlocked with Level 9. Spend 24 iron coins to receive two corn seeds.", "Wild corn remains the cheaper discovery route, but this recovery trade prevents biome or world-generation luck from blocking the main progression. The coins are consumed."]
+			description: [
+				"Unlocked with Level 9. Spend 24 iron coins to receive two corn seeds."
+				""
+				"Wild corn remains the cheaper discovery route, but this recovery trade prevents biome or world-generation luck from blocking the main progression."
+				""
+				"The coins are consumed."
+			]
 			icon: "corn_delight:corn_seeds"
 			id: "B1A9D4F7C2E63850"
 			rewards: [{ count: 2, id: "A9C61F2D4B8073EE", item: "corn_delight:corn_seeds", type: "item" }]
@@ -91,7 +125,11 @@
 		}
 		{
 			dependencies: ["C0B4AA32262BF02B"]
-			description: ["Unlocked with Level 9. Spend 10 iron coins to receive two tomato seeds.", "Tomato arrives one level after cabbage and immediately joins the taco chain instead of appearing as an isolated checklist crop."]
+			description: [
+				"Unlocked with Level 9. Spend 10 iron coins to receive two tomato seeds."
+				""
+				"Tomato arrives one level after cabbage and immediately joins the taco chain instead of appearing as an isolated checklist crop."
+			]
 			icon: "farmersdelight:tomato"
 			id: "EE75B1FC5ADB7E9E"
 			rewards: [{ count: 2, id: "0B92E1949FC97A39", item: "farmersdelight:tomato_seeds", type: "item" }]
@@ -102,7 +140,11 @@
 		}
 		{
 			dependencies: ["201FA0D785EF1770"]
-			description: ["Unlocked with Level 10. Spend 12 iron coins to receive two onions.", "Onion arrives with Ironworking and the Cooking Pot, giving the new iron kitchen a fresh crop without overloading the earlier Market Garden."]
+			description: [
+				"Unlocked with Level 10. Spend 12 iron coins to receive two onions."
+				""
+				"Onion arrives with Ironworking and the Cooking Pot, giving the new iron kitchen a fresh crop without overloading the earlier Market Garden."
+			]
 			icon: "farmersdelight:onion"
 			id: "1183861136AE7550"
 			rewards: [{ count: 2, id: "6C2ED0711F7C8B1C", item: "farmersdelight:onion", type: "item" }]
@@ -113,7 +155,11 @@
 		}
 		{
 			dependencies: ["1FFCFC4EAF71D122"]
-			description: ["Unlocked with Level 11. Spend 14 iron coins to receive two rice panicles.", "Rice is delayed until it can immediately support pineapple fried rice and fish rolls, reconnecting tropical processing to the old fisheries economy."]
+			description: [
+				"Unlocked with Level 11. Spend 14 iron coins to receive two rice panicles."
+				""
+				"Rice is delayed until it can immediately support pineapple fried rice and fish rolls, reconnecting tropical processing to the old fisheries economy."
+			]
 			icon: "farmersdelight:rice_panicle"
 			id: "1EDA0AEA6E44E43E"
 			rewards: [{ count: 2, id: "51EFEB9D028319CE", item: "farmersdelight:rice_panicle", type: "item" }]
@@ -124,7 +170,13 @@
 		}
 		{
 			dependencies: ["1FFCFC4EAF71D122"]
-			description: ["Unlocked with Level 11. Spend 48 iron coins to receive two plantable pineapple crops.", "Natural pineapple remains the preferred discovery route. This deliberately expensive recovery trade guarantees that unlucky world generation cannot hard-lock Tropical Automation."]
+			description: [
+				"Unlocked with Level 11. Spend 48 iron coins to receive two plantable pineapple crops."
+				""
+				"Natural pineapple remains the preferred discovery route."
+				""
+				"This deliberately expensive recovery trade guarantees that unlucky world generation cannot hard-lock Tropical Automation."
+			]
 			icon: "pineapple_delight:pineapple_crop"
 			id: "C84F1D6A3097BE52"
 			rewards: [{ count: 2, id: "E7A042B9D15C638F", item: "pineapple_delight:pineapple_crop", type: "item" }]

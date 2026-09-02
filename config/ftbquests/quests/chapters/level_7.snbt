@@ -13,7 +13,10 @@
 			dependencies: ["5EF6647A3BB43A42"]
 			description: [
 				"After the Level 6 Market Order, spend 64 copper coins and 16 baked potatoes to open the Copper Workshop. Both costs are consumed."
-				"Copper is a real technology era through Levels 7 to 9. Metal supply, tools, fuel, books, textiles, and copper utility recipes now branch separately instead of forming one straight chain."
+				""
+				"Copper is a real technology era through Levels 7 to 9."
+				""
+				"Metal supply, tools, fuel, books, textiles, and copper utility recipes now branch separately instead of forming one straight chain."
 			]
 			icon: "minecraft:copper_ingot"
 			id: "0A53CC520F7826A3"
@@ -32,7 +35,11 @@
 		}
 		{
 			dependencies: ["0A53CC520F7826A3"]
-			description: ["Mine raw copper and smelt enough ingots to establish a reliable workshop metal supply. Raw copper is intentionally inefficient, so mining scale matters."]
+			description: [
+				"Mine raw copper and smelt enough ingots to establish a reliable workshop metal supply."
+				""
+				"Raw copper is intentionally inefficient, so mining scale matters."
+			]
 			icon: "minecraft:copper_ingot"
 			id: "6A5C20C31BD2649E"
 			tasks: [
@@ -45,7 +52,9 @@
 		}
 		{
 			dependencies: ["6A5C20C31BD2649E"]
-			description: ["Craft the complete Better Copper toolset. Mastering copper tools does not unlock Ironworking; the copper era continues through Levels 8 and 9."]
+			description: [
+				"Craft the complete Better Copper toolset. Mastering copper tools does not unlock Ironworking; the copper era continues through Levels 8 and 9."
+			]
 			icon: "bettercopper:copper_pickaxe"
 			id: "34B5DF088E2F447E"
 			shape: "diamond"
@@ -62,7 +71,9 @@
 		}
 		{
 			dependencies: ["0A53CC520F7826A3"]
-			description: ["Stock renewable charcoal for smelting and workshop heat. This branch deliberately reuses Level 2 fuel production at larger scale."]
+			description: [
+				"Stock renewable charcoal for smelting and workshop heat. This branch deliberately reuses Level 2 fuel production at larger scale."
+			]
 			id: "7A70000000000001"
 			tasks: [{ count: 16L, id: "3A78A6B3BD08088A", item: "minecraft:charcoal", type: "item" }]
 			title: "Workshop Fuel"
@@ -71,7 +82,11 @@
 		}
 		{
 			dependencies: ["0A53CC520F7826A3"]
-			description: ["Craft bookshelves from the older leather, sugar-cane paper, and wood chains. Knowledge infrastructure becomes a workshop export instead of dead inventory."]
+			description: [
+				"Craft bookshelves from the older leather, sugar-cane paper, and wood chains."
+				""
+				"Knowledge infrastructure becomes a workshop export instead of dead inventory."
+			]
 			icon: "minecraft:bookshelf"
 			id: "824E1F00FADDCB4D"
 			tasks: [{ count: 2L, id: "64A092950EFF9947", item: "minecraft:bookshelf", type: "item" }]
@@ -81,7 +96,9 @@
 		}
 		{
 			dependencies: ["0A53CC520F7826A3"]
-			description: ["Finish a wool sweater from the Level 6 textile line. The copper workshop demands finished goods from the farm, not only metal."]
+			description: [
+				"Finish a wool sweater from the Level 6 textile line. The copper workshop demands finished goods from the farm, not only metal."
+			]
 			id: "7A70000000000002"
 			tasks: [{ id: "365C55FE463DFEC9", item: "kubejs:wool_sweater", type: "item" }]
 			title: "Textile Export"
@@ -90,7 +107,9 @@
 		}
 		{
 			dependencies: ["6A5C20C31BD2649E"]
-			description: ["Use copper in the utility recipes introduced for this era. A glass bottle and composter demonstrate that copper is more than a tool material."]
+			description: [
+				"Use copper in the utility recipes introduced for this era. A glass bottle and composter demonstrate that copper is more than a tool material."
+			]
 			id: "7A70000000000003"
 			tasks: [
 				{ id: "7A70000000000004", item: "minecraft:glass_bottle", type: "item" }
@@ -102,7 +121,11 @@
 		}
 		{
 			dependencies: ["34B5DF088E2F447E", "7A70000000000001", "824E1F00FADDCB4D", "7A70000000000002"]
-			description: ["The metal, tool, fuel, book, and textile branches converge here. Ship 16 copper ingots, four bookshelves, two sweaters, and 24 charcoal. Utility infrastructure is retained."]
+			description: [
+				"The metal, tool, fuel, book, and textile branches converge here. Ship 16 copper ingots, four bookshelves, two sweaters, and 24 charcoal."
+				""
+				"Utility infrastructure is retained."
+			]
 			icon: "minecraft:copper_ingot"
 			id: "D9D29B504CE79600"
 			shape: "hexagon"
