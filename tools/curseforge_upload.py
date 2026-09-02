@@ -44,7 +44,10 @@ def main() -> int:
         return emit({"ok": False, "error": f"Invalid metadata JSON: {exc}"}, 2)
 
     is_child = "parentFileID" in metadata
-    max_attempts = 4
+    # CurseForge can return a successful parent upload before that file is ready
+    # to accept an additional/server file. Child uploads therefore get a longer
+    # retry window than normal uploads.
+    max_attempts = 12 if is_child else 4
 
     with tempfile.TemporaryDirectory(prefix="curseforge-upload-") as temp_dir:
         temp = Path(temp_dir)
@@ -87,7 +90,11 @@ def main() -> int:
                 check=False,
             )
             status_text = result.stdout.strip()
-            body = response_path.read_text(encoding="utf-8", errors="replace") if response_path.exists() else ""
+            body = (
+                response_path.read_text(encoding="utf-8", errors="replace")
+                if response_path.exists()
+                else ""
+            )
 
             try:
                 status = int(status_text)
@@ -119,14 +126,36 @@ def main() -> int:
                     )
                 return emit({"ok": True, "id": str(file_id)}, 0)
 
+            response_json: dict[str, Any] | None = None
+            if body:
+                try:
+                    parsed = json.loads(body)
+                    if isinstance(parsed, dict):
+                        response_json = parsed
+                except json.JSONDecodeError:
+                    pass
+
+            # Error 1012 is overloaded by CurseForge. In this pipeline the
+            # parent ID comes from the immediately preceding successful client
+            # upload (or a project-scoped duplicate lookup), so for child files
+            # it most commonly means the new parent is still being processed.
+            parent_not_ready = (
+                is_child
+                and status == 400
+                and response_json is not None
+                and response_json.get("errorCode") == 1012
+            )
             transient_http = (
                 status in {408, 425, 429}
                 or 500 <= status <= 599
                 or (is_child and status == 404)
+                or parent_not_ready
             )
             transient_transport = result.returncode != 0
             if attempt < max_attempts and (transient_http or transient_transport):
-                time.sleep(5 * attempt)
+                # Keep retries bounded while giving newly-uploaded parent files
+                # enough time to leave CurseForge's processing state.
+                time.sleep(min(5 * attempt, 15))
                 continue
 
             error = result.stderr.strip() or body or "CurseForge upload failed."
