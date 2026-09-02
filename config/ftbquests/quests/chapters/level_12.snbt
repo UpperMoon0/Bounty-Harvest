@@ -36,7 +36,7 @@
 			description: [
 				"Establish tomato as this level's single new crop."
 				""
-				"Completing the crop milestone unlocks the composite taco line."
+				"The new crop remains separate from the established ingredient-logistics chain until taco assembly brings them together."
 			]
 			icon: "farmersdelight:tomato"
 			id: "A000000000000C02"
@@ -44,75 +44,67 @@
 				{ autoclaim: 1b, id: "C0000000000C0201", stage: "level_12_taco", type: "stage" }
 			]
 			shape: "diamond"
-			tasks: [
-				{ count: 24L, id: "B0000000000C0201", item: "farmersdelight:tomato", type: "item" }
-			]
+			tasks: [{ count: 24L, id: "B0000000000C0201", item: "farmersdelight:tomato", type: "item" }]
 			title: "Tomato Field"
 			x: -2.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["A000000000000C02"]
-			description: [
-				"Combine tomato with Level 11 tortillas, Level 4 pork, and Level 10 cabbage."
-				""
-				"The product multiplies three older systems rather than replacing them."
-			]
-			icon: "corn_delight:taco"
-			id: "A000000000000C03"
-			tasks: [
-				{ count: 12L, id: "B0000000000C0301", item: "corn_delight:taco", type: "item" }
-			]
-			title: "Taco Assembly"
-			x: -2.0d
-			y: 5.0d
-		}
-		{
 			dependencies: ["A000000000000C01"]
-			description: [
-				"Scale the previous corn-milling output for the new composite food."
-			]
+			description: ["Start the established-ingredient logistics chain by scaling Level 11 tortillas."]
 			icon: "corn_delight:tortilla"
 			id: "A000000000000C04"
-			tasks: [
-				{ count: 16L, id: "B0000000000C0401", item: "corn_delight:tortilla", type: "item" }
-			]
+			tasks: [{ count: 16L, id: "B0000000000C0401", item: "corn_delight:tortilla", type: "item" }]
 			title: "Tortilla Supply"
 			x: 1.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["A000000000000C01"]
+			dependencies: ["A000000000000C04"]
 			description: [
-				"Bring the older pig economy back into meaningful demand."
+				"Continue the ingredient logistics chain with the older pig economy."
+				""
+				"This is a production milestone downstream of tortillas rather than a second simultaneous unlock from the promotion."
 			]
 			icon: "minecraft:cooked_porkchop"
 			id: "A000000000000C05"
-			tasks: [
-				{ count: 16L, id: "B0000000000C0501", item: "minecraft:cooked_porkchop", type: "item" }
-			]
+			tasks: [{ count: 16L, id: "B0000000000C0501", item: "minecraft:cooked_porkchop", type: "item" }]
 			title: "Pork Supply"
 			x: 2.0d
 			y: 4.0d
 		}
 		{
-			dependencies: ["A000000000000C01"]
+			dependencies: ["A000000000000C05"]
 			description: [
-				"Keep the market garden active as a taco ingredient."
+				"Finish the carryover ingredient chain with cabbage from the market garden."
+				""
+				"All three older systems are now ready to meet the new tomato crop."
 			]
 			icon: "farmersdelight:cabbage"
 			id: "A000000000000C06"
-			tasks: [
-				{ count: 20L, id: "B0000000000C0601", item: "farmersdelight:cabbage", type: "item" }
-			]
+			tasks: [{ count: 20L, id: "B0000000000C0601", item: "farmersdelight:cabbage", type: "item" }]
 			title: "Cabbage Supply"
 			x: 3.0d
 			y: 6.0d
 		}
 		{
-			dependencies: ["A000000000000C03", "A000000000000C04", "A000000000000C05", "A000000000000C06"]
+			dependencies: ["A000000000000C02", "A000000000000C06"]
 			description: [
-				"Ship tomato, tacos, tortillas, and pork."
+				"Combine the new tomato crop with tortillas, pork, and cabbage from the established logistics chain."
+				""
+				"The product multiplies three older systems rather than dumping four independent ingredient quests at the start of the level."
+			]
+			icon: "corn_delight:taco"
+			id: "A000000000000C03"
+			tasks: [{ count: 12L, id: "B0000000000C0301", item: "corn_delight:taco", type: "item" }]
+			title: "Taco Assembly"
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000000C03"]
+			description: [
+				"Ship tomato, tacos, tortillas, and pork after the new crop and old ingredient systems have already converged at assembly."
 				""
 				"This closes the long copper-era food economy before Ironworking arrives."
 			]
