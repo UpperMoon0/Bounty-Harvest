@@ -70,23 +70,17 @@
 		}
 		{
 			dependencies: ["A000000000000901"]
-			description: [
-				"Scale the renewable charcoal line from Level 2 to support metalworking."
-			]
+			description: ["Scale the renewable charcoal line from Level 2 to support metalworking."]
 			icon: "minecraft:charcoal"
 			id: "A000000000000904"
-			tasks: [
-				{ count: 24L, id: "B000000000090401", item: "minecraft:charcoal", type: "item" }
-			]
+			tasks: [{ count: 24L, id: "B000000000090401", item: "minecraft:charcoal", type: "item" }]
 			title: "Workshop Fuel"
 			x: 0.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["A000000000000902"]
-			description: [
-				"Use copper for farm utility recipes as well as tools."
-			]
+			description: ["Use copper for farm utility recipes as well as tools."]
 			icon: "minecraft:composter"
 			id: "A000000000000905"
 			tasks: [
@@ -102,33 +96,31 @@
 			description: [
 				"Turn the previous level's paper and books into workshop shelving."
 				""
-				"The copper era therefore consumes older crop and leather production."
+				"This starts a single old-economy contract branch instead of opening several unrelated carryover quests at once."
 			]
 			icon: "minecraft:bookshelf"
 			id: "A000000000000906"
-			tasks: [
-				{ count: 4L, id: "B000000000090601", item: "minecraft:bookshelf", type: "item" }
-			]
+			tasks: [{ count: 4L, id: "B000000000090601", item: "minecraft:bookshelf", type: "item" }]
 			title: "Workshop Library"
 			x: 2.0d
 			y: 3.0d
 		}
 		{
-			dependencies: ["A000000000000901"]
+			dependencies: ["A000000000000906"]
 			description: [
-				"Keep the Level 6 textile chain economically relevant with a finished-goods contract."
+				"Continue the workshop contract branch with finished textiles from Level 6."
+				""
+				"Older book and textile production therefore form one paced carryover chain rather than two simultaneous unlocks."
 			]
 			icon: "kubejs:wool_sweater"
 			id: "A000000000000907"
-			tasks: [
-				{ count: 2L, id: "B000000000090701", item: "kubejs:wool_sweater", type: "item" }
-			]
+			tasks: [{ count: 2L, id: "B000000000090701", item: "kubejs:wool_sweater", type: "item" }]
 			title: "Workshop Textile Contract"
 			x: 3.0d
 			y: 5.0d
 		}
 		{
-			dependencies: ["A000000000000903", "A000000000000905", "A000000000000904", "A000000000000906", "A000000000000907"]
+			dependencies: ["A000000000000903", "A000000000000905", "A000000000000904", "A000000000000907"]
 			description: [
 				"Ship copper, bookshelves, sweaters, and charcoal."
 				""
