@@ -4,123 +4,145 @@
 	filename: "level_14"
 	group: "39B7846742C777FD"
 	hide_quest_until_deps_visible: true
-	icon: "alexscaves:cave_tablet"
-	id: "B82C326C77BA544A"
+	icon: "farmersdelight:onion"
+	id: "D00000000000000E"
 	order_index: 13
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["A48274D6A8EE43B3"]
+			dependencies: ["A000000000000D5A"]
 			description: [
-				"After the Level 13 Market Order, spend 96 gold coins, 128 tacos, and 128 pineapple pies to provision Deep Expeditions. Every cost is consumed."
+				"Advance into Level 14: Onion Kitchen."
 				""
-				"Navigation, diamonds, amethyst, optional lapis, and expedition food now form distinct branches."
-				""
-				"The Cave Tablet is permanent infrastructure and the farm must provision the trip at industrial scale."
+				"This promotion consumes value from the previous economy before opening the next production layer."
 			]
-			icon: "alexscaves:cave_tablet"
-			id: "4BB6B303F8005D7E"
+			icon: "farmersdelight:onion"
+			id: "A000000000000E01"
 			rewards: [
-				{ autoclaim: 1b, id: "16712ED0A48B1B43", stage: "level_14", type: "stage" }
-				{ id: "381D8D59B394C7E4", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_14\"]}", display: { Name: "{\"text\":\"Level 14 Decree\"}" } } }, type: "item" }
+				{ autoclaim: 1b, id: "C0000000000E0101", stage: "level_14", type: "stage" }
+				{ id: "C0000000000E0102", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_14\"]}", display: { Name: "{\"text\":\"Level 14 Decree\"}" } } }, type: "item" }
 			]
 			shape: "octagon"
 			tasks: [
-				{ consume_items: true, count: 96L, id: "C75EC8DAD60E0CC7", item: "kubejs:gold_coin", type: "item" }
-				{ consume_items: true, count: 128L, id: "57743A00B075B733", item: "corn_delight:taco", type: "item" }
-				{ consume_items: true, count: 128L, id: "58D12EA7C940B36F", item: "pineapple_delight:pineapple_pie", type: "item" }
+				{ consume_items: true, count: 96L, id: "B0000000000E0101", item: "kubejs:iron_coin", type: "item" }
+				{ consume_items: true, count: 32L, id: "B0000000000E0102", item: "minecraft:iron_ingot", type: "item" }
 			]
-			title: "Level 14 · Deep Expeditions"
+			title: "Level 14 · Onion Kitchen"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["4BB6B303F8005D7E"]
+			dependencies: ["A000000000000E01"]
 			description: [
-				"Obtain a Cave Tablet. It is the navigation and research key for this expedition and is retained permanently rather than sold to the market."
+				"Establish onion as this level's only new crop."
+				""
+				"It immediately upgrades older bread, beef, cabbage, and tomato into higher-value meals."
 			]
-			icon: "alexscaves:cave_tablet"
-			id: "E140000000000001"
-			tasks: [{ id: "02CD0FEE244A32B4", item: "alexscaves:cave_tablet", type: "item" }]
-			title: "Cave Tablet"
+			icon: "farmersdelight:onion"
+			id: "A000000000000E02"
+			tasks: [
+				{ count: 32L, id: "B0000000000E0201", item: "farmersdelight:onion", type: "item" }
+			]
+			title: "Onion Field"
 			x: -2.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["4BB6B303F8005D7E"]
+			dependencies: ["A000000000000E01"]
 			description: [
-				"Secure 16 diamonds as the premium deep-mining branch."
-				""
-				"Their scarcity stays meaningful, but the Market Order combines them with farm throughput rather than ending here."
+				"Build the iron-era kitchen infrastructure and keep it installed."
 			]
-			id: "E140000000000002"
-			tasks: [{ count: 16L, id: "C589F44D90ACEADA", item: "minecraft:diamond", type: "item" }]
-			title: "Diamond Supply"
+			icon: "farmersdelight:cooking_pot"
+			id: "A000000000000E03"
+			tasks: [
+				{ id: "B0000000000E0301", item: "farmersdelight:iron_knife", type: "item" }
+				{ id: "B0000000000E0302", item: "farmersdelight:cooking_pot", type: "item" }
+				{ id: "B0000000000E0303", item: "farmersdelight:skillet", type: "item" }
+				{ id: "B0000000000E0304", item: "farmersdelight:stove", type: "item" }
+			]
+			title: "Iron Kitchen Infrastructure"
 			x: 0.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["4BB6B303F8005D7E"]
+			dependencies: ["A000000000000E03"]
 			description: [
-				"Gather 64 amethyst shards. This is a separate renewable-or-exploration resource branch rather than being hidden inside one three-item checklist."
+				"Add a dairy-processing layer to the old cattle economy."
 			]
-			id: "E140000000000003"
-			tasks: [{ count: 64L, id: "3245CA53AA21AD58", item: "minecraft:amethyst_shard", type: "item" }]
-			title: "Amethyst Supply"
-			x: 2.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["4BB6B303F8005D7E"]
-			description: [
-				"Optional deep-mining breadth: collect lapis after the Level 14 gate opens."
-				""
-				"It is useful for enchanting and proves the level contains more than exactly the items sold in its final order."
-			]
-			id: "E140000000000004"
-			tasks: [{ count: 32L, id: "E140000000000005", item: "minecraft:lapis_lazuli", type: "item" }]
-			title: "Lapis Side Branch"
-			x: 3.5d
-			y: 0.0d
-		}
-		{
-			dependencies: ["4BB6B303F8005D7E"]
-			description: [
-				"Stage the food needed to support repeated deep expeditions: chicken sandwiches, pineapple pies, and tacos."
-				""
-				"These old automated lines carry most of the level's volume."
-			]
-			id: "E140000000000006"
+			icon: "farmersdelight:milk_bottle"
+			id: "A000000000000E04"
 			tasks: [
-				{ count: 256L, id: "E140000000000007", item: "farmersdelight:chicken_sandwich", type: "item" }
-				{ count: 256L, id: "E140000000000008", item: "pineapple_delight:pineapple_pie", type: "item" }
-				{ count: 128L, id: "E140000000000009", item: "corn_delight:taco", type: "item" }
+				{ count: 12L, id: "B0000000000E0401", item: "farmersdelight:milk_bottle", type: "item" }
 			]
-			title: "Expedition Provisions"
+			title: "Dairy Bottling"
 			x: 1.0d
-			y: 4.5d
+			y: 4.0d
 		}
 		{
-			dependencies: ["E140000000000001", "E140000000000002", "E140000000000003", "E140000000000006"]
+			dependencies: ["A000000000000E02", "A000000000000E03"]
 			description: [
-				"Navigation, deep resources, and farm provisioning converge here."
+				"Combine onion with old bread, beef patties, cabbage, and tomato."
 				""
-				"Ship the diamonds, amethyst, and prepared foods while keeping the Cave Tablet for future expeditions."
+				"One new crop multiplies several established production lines."
 			]
-			icon: "alexscaves:cave_tablet"
-			id: "250184A59EA4EBA2"
+			icon: "farmersdelight:hamburger"
+			id: "A000000000000E05"
+			tasks: [
+				{ count: 12L, id: "B0000000000E0501", item: "farmersdelight:hamburger", type: "item" }
+			]
+			title: "Hamburgers"
+			x: -1.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["A000000000000E03"]
+			description: [
+				"Upgrade old pork and poultry into an iron-kitchen breakfast product."
+			]
+			icon: "farmersdelight:bacon_and_eggs"
+			id: "A000000000000E06"
+			tasks: [
+				{ count: 12L, id: "B0000000000E0601", item: "farmersdelight:bacon_and_eggs", type: "item" }
+			]
+			title: "Bacon and Eggs"
+			x: 2.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000000E01"]
+			description: [
+				"Scale the older garden crops that feed this level's composite foods."
+			]
+			icon: "farmersdelight:tomato"
+			id: "A000000000000E07"
+			tasks: [
+				{ count: 32L, id: "B0000000000E0701", item: "farmersdelight:tomato", type: "item" }
+				{ count: 32L, id: "B0000000000E0702", item: "farmersdelight:cabbage", type: "item" }
+			]
+			title: "Old Garden Supply"
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["A000000000000E05", "A000000000000E06", "A000000000000E04", "A000000000000E07"]
+			description: [
+				"Ship onions, hamburgers, breakfast plates, and tomatoes."
+				""
+				"The iron kitchen gets its own economic tier instead of being bundled with Create."
+			]
+			icon: "farmersdelight:onion"
+			id: "A000000000000E5A"
 			shape: "hexagon"
 			tasks: [
-				{ consume_items: true, count: 16L, id: "E48AE20BE4D24194", item: "minecraft:diamond", type: "item" }
-				{ consume_items: true, count: 64L, id: "A5694C474A2BE8B4", item: "minecraft:amethyst_shard", type: "item" }
-				{ consume_items: true, count: 256L, id: "982A96F02AB0FC2A", item: "farmersdelight:chicken_sandwich", type: "item" }
-				{ consume_items: true, count: 256L, id: "6C20F1A8D53BE497", item: "pineapple_delight:pineapple_pie", type: "item" }
-				{ consume_items: true, count: 128L, id: "D40A79C31E65B28F", item: "corn_delight:taco", type: "item" }
+				{ consume_items: true, count: 32L, id: "B0000000000E5A01", item: "farmersdelight:onion", type: "item" }
+				{ consume_items: true, count: 24L, id: "B0000000000E5A02", item: "farmersdelight:hamburger", type: "item" }
+				{ consume_items: true, count: 24L, id: "B0000000000E5A03", item: "farmersdelight:bacon_and_eggs", type: "item" }
+				{ consume_items: true, count: 32L, id: "B0000000000E5A04", item: "farmersdelight:tomato", type: "item" }
 			]
 			title: "Level 14 Market Order"
 			x: 6.0d
-			y: 5.0d
+			y: 6.0d
 		}
 	]
-	title: "Level 14 · Deep Expeditions"
+	title: "Level 14 · Onion Kitchen"
 }

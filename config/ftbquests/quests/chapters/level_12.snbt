@@ -4,116 +4,131 @@
 	filename: "level_12"
 	group: "39B7846742C777FD"
 	hide_quest_until_deps_visible: true
-	icon: "createaddition:electric_motor"
-	id: "E7117B605BB29F24"
+	icon: "farmersdelight:tomato"
+	id: "D00000000000000C"
 	order_index: 11
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["2507AB50F6CCD90E"]
+			dependencies: ["A000000000000B5A"]
 			description: [
-				"After the Level 11 Market Order, spend 192 iron coins and 64 pineapple pies to enter Power and Logistics. Both costs are consumed."
+				"Advance into Level 12: Tomato Market."
 				""
-				"Gold supply, motors, generation, storage, and industrial farm throughput now branch separately."
-				""
-				"Electrical machines are infrastructure and are never surrendered to repeatable orders."
+				"This promotion consumes value from the previous economy before opening the next production layer."
 			]
-			icon: "createaddition:electric_motor"
-			id: "D147BB0FA78A2EFA"
+			icon: "farmersdelight:tomato"
+			id: "A000000000000C01"
 			rewards: [
-				{ autoclaim: 1b, id: "BF3CF5CBBD3341E4", stage: "level_12", type: "stage" }
-				{ id: "131A5C266BB3F6B0", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_12\"]}", display: { Name: "{\"text\":\"Level 12 Decree\"}" } } }, type: "item" }
+				{ autoclaim: 1b, id: "C0000000000C0101", stage: "level_12", type: "stage" }
+				{ id: "C0000000000C0102", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_12\"]}", display: { Name: "{\"text\":\"Level 12 Decree\"}" } } }, type: "item" }
 			]
 			shape: "octagon"
 			tasks: [
-				{ consume_items: true, count: 192L, id: "813783EF161BFB9A", item: "kubejs:iron_coin", type: "item" }
-				{ consume_items: true, count: 64L, id: "2071092ABE824597", item: "pineapple_delight:pineapple_pie", type: "item" }
+				{ consume_items: true, count: 32L, id: "B0000000000C0101", item: "kubejs:iron_coin", type: "item" }
+				{ consume_items: true, count: 16L, id: "B0000000000C0102", item: "corn_delight:tortilla", type: "item" }
 			]
-			title: "Level 12 · Power and Logistics"
+			title: "Level 12 · Tomato Market"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["D147BB0FA78A2EFA"]
+			dependencies: ["A000000000000C01"]
 			description: [
-				"Secure 16 gold ingots. Gold becomes the electrical-tier material and later the high-value market currency base."
+				"Establish tomato as this level's single new crop."
+				""
+				"Completing the crop milestone unlocks the composite taco line."
 			]
-			id: "C120000000000001"
-			tasks: [{ count: 16L, id: "AF2D1CCE89E93896", item: "minecraft:gold_ingot", type: "item" }]
-			title: "Gold Supply"
+			icon: "farmersdelight:tomato"
+			id: "A000000000000C02"
+			rewards: [
+				{ autoclaim: 1b, id: "C0000000000C0201", stage: "level_12_taco", type: "stage" }
+			]
+			shape: "diamond"
+			tasks: [
+				{ count: 24L, id: "B0000000000C0201", item: "farmersdelight:tomato", type: "item" }
+			]
+			title: "Tomato Field"
 			x: -2.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["C120000000000001"]
+			dependencies: ["A000000000000C02"]
 			description: [
-				"Build an electric motor. It converts electrical power back into rotational force and belongs permanently in the automation network."
+				"Combine tomato with Level 11 tortillas, Level 4 pork, and Level 10 cabbage."
+				""
+				"The product multiplies three older systems rather than replacing them."
 			]
-			icon: "createaddition:electric_motor"
-			id: "C120000000000002"
-			tasks: [{ id: "7E89D412FAD59CF8", item: "createaddition:electric_motor", type: "item" }]
-			title: "Electric Motor"
-			x: -3.0d
+			icon: "corn_delight:taco"
+			id: "A000000000000C03"
+			tasks: [
+				{ count: 12L, id: "B0000000000C0301", item: "corn_delight:taco", type: "item" }
+			]
+			title: "Taco Assembly"
+			x: -2.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["A000000000000C01"]
+			description: [
+				"Scale the previous corn-milling output for the new composite food."
+			]
+			icon: "corn_delight:tortilla"
+			id: "A000000000000C04"
+			tasks: [
+				{ count: 16L, id: "B0000000000C0401", item: "corn_delight:tortilla", type: "item" }
+			]
+			title: "Tortilla Supply"
+			x: 1.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000000C01"]
+			description: [
+				"Bring the older pig economy back into meaningful demand."
+			]
+			icon: "minecraft:cooked_porkchop"
+			id: "A000000000000C05"
+			tasks: [
+				{ count: 16L, id: "B0000000000C0501", item: "minecraft:cooked_porkchop", type: "item" }
+			]
+			title: "Pork Supply"
+			x: 2.0d
 			y: 4.0d
 		}
 		{
-			dependencies: ["C120000000000001"]
+			dependencies: ["A000000000000C01"]
 			description: [
-				"Build an alternator so mechanical power can feed the electrical side of the farm."
+				"Keep the market garden active as a taco ingredient."
 			]
-			id: "C120000000000003"
-			tasks: [{ id: "9ADF13B2B36816F4", item: "createaddition:alternator", type: "item" }]
-			title: "Alternator"
-			x: 0.0d
-			y: 4.0d
-		}
-		{
-			dependencies: ["C120000000000002", "C120000000000003"]
-			description: [
-				"Add an accumulator for energy storage. Motor, alternator, and storage together form a reusable power system rather than three disposable quest items."
+			icon: "farmersdelight:cabbage"
+			id: "A000000000000C06"
+			tasks: [
+				{ count: 20L, id: "B0000000000C0601", item: "farmersdelight:cabbage", type: "item" }
 			]
-			id: "501EFA4FEC807009"
-			tasks: [{ id: "89AC322430D5BC6E", item: "createaddition:accumulator", type: "item" }]
-			title: "Power Storage"
-			x: -1.5d
+			title: "Cabbage Supply"
+			x: 3.0d
 			y: 6.0d
 		}
 		{
-			dependencies: ["D147BB0FA78A2EFA"]
+			dependencies: ["A000000000000C03", "A000000000000C04", "A000000000000C05", "A000000000000C06"]
 			description: [
-				"Prove the farm can sustain the electrical era by staging the huge renewable outputs that will be sold: wheat, tacos, fried rice, and salmon rolls."
-			]
-			id: "C120000000000004"
-			tasks: [
-				{ count: 256L, id: "C120000000000005", item: "minecraft:wheat", type: "item" }
-				{ count: 128L, id: "C120000000000006", item: "corn_delight:taco", type: "item" }
-				{ count: 128L, id: "C120000000000007", item: "pineapple_delight:pineapple_fried_rice", type: "item" }
-				{ count: 96L, id: "C120000000000008", item: "farmersdelight:salmon_roll", type: "item" }
-			]
-			title: "Industrial Farm Throughput"
-			x: 2.5d
-			y: 3.0d
-		}
-		{
-			dependencies: ["501EFA4FEC807009", "C120000000000004"]
-			description: [
-				"Power infrastructure and farm throughput converge here."
+				"Ship tomato, tacos, tortillas, and pork."
 				""
-				"Sell the renewable output while keeping the motor, alternator, and accumulator installed on the farm."
+				"This closes the long copper-era food economy before Ironworking arrives."
 			]
-			icon: "createaddition:electric_motor"
-			id: "C249CFA083AB4179"
+			icon: "farmersdelight:tomato"
+			id: "A000000000000C5A"
 			shape: "hexagon"
 			tasks: [
-				{ consume_items: true, count: 256L, id: "20025468EEB83B3E", item: "minecraft:wheat", type: "item" }
-				{ consume_items: true, count: 128L, id: "15BB02EC8EFCF1F5", item: "corn_delight:taco", type: "item" }
-				{ consume_items: true, count: 128L, id: "124B9527F3ED5B19", item: "pineapple_delight:pineapple_fried_rice", type: "item" }
-				{ consume_items: true, count: 96L, id: "5D8A37C1F04BE296", item: "farmersdelight:salmon_roll", type: "item" }
+				{ consume_items: true, count: 24L, id: "B0000000000C5A01", item: "farmersdelight:tomato", type: "item" }
+				{ consume_items: true, count: 12L, id: "B0000000000C5A02", item: "corn_delight:taco", type: "item" }
+				{ consume_items: true, count: 16L, id: "B0000000000C5A03", item: "corn_delight:tortilla", type: "item" }
+				{ consume_items: true, count: 16L, id: "B0000000000C5A04", item: "minecraft:cooked_porkchop", type: "item" }
 			]
 			title: "Level 12 Market Order"
 			x: 6.0d
-			y: 5.0d
+			y: 6.0d
 		}
 	]
-	title: "Level 12 · Power and Logistics"
+	title: "Level 12 · Tomato Market"
 }

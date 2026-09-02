@@ -4,148 +4,197 @@
 	filename: "level_10"
 	group: "39B7846742C777FD"
 	hide_quest_until_deps_visible: true
-	icon: "minecraft:iron_ingot"
-	id: "515EA3009BB1E431"
+	icon: "farmersdelight:cabbage"
+	id: "D00000000000000A"
 	order_index: 9
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["2A9904A355A5FE23"]
+			dependencies: ["A00000000000095A"]
 			description: [
-				"After the Level 9 Market Order, spend 48 iron coins, 32 charcoal, and 24 copper ingots to fund the jump into Ironworking. Every cost is consumed."
+				"Advance into Level 10: Market Garden and Butchery."
 				""
-				"Iron, the iron kitchen, Create foundations, and redstone now become separate industrial branches."
-				""
-				"This is where production volume starts making automation the practical answer."
+				"This promotion consumes value from the previous economy before opening the next production layer."
 			]
-			icon: "minecraft:iron_ingot"
-			id: "201FA0D785EF1770"
+			icon: "farmersdelight:cabbage"
+			id: "A000000000000A01"
 			rewards: [
-				{ autoclaim: 1b, id: "26B4E0A30A516A14", stage: "level_10", type: "stage" }
-				{ autoclaim: 1b, id: "43A39CA00648358B", stage: "iron_age", type: "stage" }
-				{ id: "2E6B015BD6DC95DB", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_10\"]}", display: { Name: "{\"text\":\"Level 10 Decree\"}" } } }, type: "item" }
+				{ autoclaim: 1b, id: "C0000000000A0101", stage: "level_10", type: "stage" }
+				{ id: "C0000000000A0102", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_10\"]}", display: { Name: "{\"text\":\"Level 10 Decree\"}" } } }, type: "item" }
 			]
 			shape: "octagon"
 			tasks: [
-				{ consume_items: true, count: 48L, id: "F40F974AEF61FB8D", item: "kubejs:iron_coin", type: "item" }
-				{ consume_items: true, count: 32L, id: "DEED9A20DF169A0E", item: "minecraft:charcoal", type: "item" }
-				{ consume_items: true, count: 24L, id: "9FBCD7CE6A2827CD", item: "minecraft:copper_ingot", type: "item" }
+				{ consume_items: true, count: 8L, id: "B0000000000A0101", item: "kubejs:iron_coin", type: "item" }
+				{ consume_items: true, count: 16L, id: "B0000000000A0102", item: "minecraft:copper_ingot", type: "item" }
 			]
-			title: "Level 10 · Iron and Industry"
+			title: "Level 10 · Market Garden and Butchery"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["201FA0D785EF1770"]
+			dependencies: ["A000000000000A01"]
 			description: [
-				"Ironworking is now active. Collect 18 raw iron and smelt 12 ingots to establish the first true iron supply."
+				"Establish cabbage as this level's one new crop."
 				""
-				"This quest must remain directly attached to the promotion."
+				"It will tie several older meat and root lines together after the kitchen is prepared."
 			]
-			icon: "minecraft:iron_ingot"
-			id: "557852FFD6F4D560"
+			icon: "farmersdelight:cabbage"
+			id: "A000000000000A02"
 			tasks: [
-				{ count: 18L, id: "D1368579182B4441", item: "minecraft:raw_iron", type: "item" }
-				{ count: 12L, id: "6E70C88C1DDB2707", item: "minecraft:iron_ingot", type: "item" }
+				{ count: 20L, id: "B0000000000A0201", item: "farmersdelight:cabbage", type: "item" }
 			]
-			title: "Iron Supply"
+			title: "Cabbage Garden"
 			x: -2.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["201FA0D785EF1770"]
+			dependencies: ["A000000000000A01"]
 			description: [
-				"Grow onions as the new agricultural input. The crop immediately enters the iron-kitchen branch instead of existing as an isolated checklist item."
+				"Build the pre-iron processing workstation."
+				""
+				"Required foods use its processed cuts, so it cannot be bypassed."
 			]
-			id: "A100000000000001"
-			tasks: [{ count: 32L, id: "D7873812059AC8E4", item: "farmersdelight:onion", type: "item" }]
-			title: "Onion Field"
+			icon: "farmersdelight:cutting_board"
+			id: "A000000000000A03"
+			tasks: [
+				{ id: "B0000000000A0301", item: "farmersdelight:cutting_board", type: "item" }
+				{ id: "B0000000000A0302", item: "farmersdelight:flint_knife", type: "item" }
+			]
+			title: "Knife and Cutting Board"
 			x: 0.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["557852FFD6F4D560", "A100000000000001"]
+			dependencies: ["A000000000000A03"]
 			description: [
-				"Use iron-enabled kitchen equipment to bottle milk and produce bacon and eggs."
-				""
-				"Cattle gains a dairy branch while pork and eggs are upgraded into a higher-value breakfast line."
+				"Upgrade the Level 2 chicken line into processed cuts."
 			]
-			icon: "farmersdelight:iron_knife"
-			id: "B912F1FE8E149DE8"
+			icon: "farmersdelight:cooked_chicken_cuts"
+			id: "A000000000000A04"
 			tasks: [
-				{ count: 16L, id: "E0A077EB979C58E8", item: "farmersdelight:milk_bottle", type: "item" }
-				{ count: 8L, id: "CAD6AF4A6BD802E7", item: "farmersdelight:bacon_and_eggs", type: "item" }
+				{ count: 6L, id: "B0000000000A0401", item: "farmersdelight:cooked_chicken_cuts", type: "item" }
 			]
-			title: "Iron Kitchen"
+			title: "Poultry Butchery"
 			x: -0.5d
-			y: 4.5d
-		}
-		{
-			dependencies: ["201FA0D785EF1770"]
-			description: [
-				"Craft 16 andesite alloy as the material foundation of Create. Copper-era mining and the new iron tier now feed mechanical production."
-			]
-			icon: "create:andesite_alloy"
-			id: "A100000000000002"
-			tasks: [{ count: 16L, id: "16B11285B4E5277C", item: "create:andesite_alloy", type: "item" }]
-			title: "Andesite Alloy"
-			x: 2.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["A100000000000002"]
-			description: [
-				"Turn alloy into shafts and cogwheels."
-				""
-				"These parts are retained as infrastructure because the point is to build machines, not repeatedly surrender them."
-			]
-			icon: "create:cogwheel"
-			id: "525F40C497949612"
-			tasks: [
-				{ count: 16L, id: "5B370692CBDAC124", item: "create:shaft", type: "item" }
-				{ count: 16L, id: "5045FA1C2E22E962", item: "create:cogwheel", type: "item" }
-			]
-			title: "Mechanical Farm Foundations"
-			x: 3.5d
 			y: 4.0d
 		}
 		{
-			dependencies: ["201FA0D785EF1770"]
+			dependencies: ["A000000000000A03"]
 			description: [
-				"Secure redstone and build a basic redstone component."
-				""
-				"This is a parallel control-technology branch for future automation rather than a prerequisite hidden inside the Create quest."
+				"Bring the Level 5 fisheries back as processed kitchen ingredients."
 			]
-			id: "A100000000000003"
+			icon: "farmersdelight:cooked_salmon_slice"
+			id: "A000000000000A05"
 			tasks: [
-				{ count: 16L, id: "A100000000000004", item: "minecraft:redstone", type: "item" }
-				{ id: "A100000000000005", item: "minecraft:repeater", type: "item" }
+				{ count: 4L, id: "B0000000000A0501", item: "farmersdelight:cooked_cod_slice", type: "item" }
+				{ count: 4L, id: "B0000000000A0502", item: "farmersdelight:cooked_salmon_slice", type: "item" }
 			]
-			title: "Redstone Control"
-			x: 4.0d
-			y: 1.0d
+			title: "Fish Butchery"
+			x: 1.5d
+			y: 4.0d
 		}
 		{
-			dependencies: ["557852FFD6F4D560", "B912F1FE8E149DE8", "525F40C497949612", "A100000000000003"]
+			dependencies: ["A000000000000A02", "A000000000000A04", "A000000000000A05"]
 			description: [
-				"All industrial branches converge here. Ship 32 iron ingots, 32 andesite alloy, 64 onions, 32 bacon and eggs, and 128 wheat."
+				"Stock bread, carrots, and potatoes after establishing cabbage plus processed meat and fish."
 				""
-				"Machinery and control infrastructure stay on the farm."
+				"Completing this milestone unlocks the prepared-food outputs instead of dumping every cabbage recipe at promotion."
 			]
-			icon: "minecraft:iron_ingot"
-			id: "C4F9E553B22E40CC"
+			icon: "minecraft:bread"
+			id: "A000000000000A06"
+			rewards: [
+				{ autoclaim: 1b, id: "C0000000000A0601", stage: "level_10_kitchen", type: "stage" }
+			]
+			shape: "diamond"
+			tasks: [
+				{ count: 8L, id: "B0000000000A0601", item: "minecraft:bread", type: "item" }
+				{ count: 12L, id: "B0000000000A0602", item: "minecraft:carrot", type: "item" }
+				{ count: 12L, id: "B0000000000A0603", item: "minecraft:baked_potato", type: "item" }
+			]
+			title: "Prepared Kitchen"
+			x: 0.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000000A06"]
+			description: [
+				"Combine cabbage with old bread, carrots, and processed chicken."
+			]
+			icon: "farmersdelight:chicken_sandwich"
+			id: "A000000000000A07"
+			tasks: [
+				{ count: 6L, id: "B0000000000A0701", item: "farmersdelight:chicken_sandwich", type: "item" }
+			]
+			title: "Chicken Sandwiches"
+			x: -1.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["A000000000000A06"]
+			description: [
+				"Combine processed fish with the established potato and carrot economy."
+			]
+			icon: "farmersdelight:fish_stew"
+			id: "A000000000000A08"
+			tasks: [
+				{ count: 6L, id: "B0000000000A0801", item: "farmersdelight:fish_stew", type: "item" }
+			]
+			title: "Fish Stew"
+			x: 2.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["A000000000000A06"]
+			description: [
+				"Optional kitchen breadth: reconnect cattle and potatoes through beef patties and stuffed potatoes."
+			]
+			icon: "farmersdelight:stuffed_potato"
+			id: "A000000000000A09"
+			tasks: [
+				{ count: 2L, id: "B0000000000A0901", item: "farmersdelight:beef_patty", type: "item" }
+				{ count: 2L, id: "B0000000000A0902", item: "farmersdelight:stuffed_potato", type: "item" }
+			]
+			title: "Optional Stuffed Potatoes"
+			x: 4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000000A5A", "A000000000000A09"]
+			description: [
+				"Finish the optional stuffed-potato branch after satisfying the required shipment."
+				""
+				"The side chain reconnects here instead of visually terminating."
+			]
+			icon: "farmersdelight:stuffed_potato"
+			id: "A000000000000A0A"
+			rewards: [
+				{ count: 6, id: "C0000000000A0A01", item: "kubejs:iron_coin", type: "item" }
+			]
+			shape: "diamond"
+			tasks: [{ id: "B0000000000A0A01", type: "checkmark" }]
+			title: "Level 10 Kitchen Mastery"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000000A07", "A000000000000A08"]
+			description: [
+				"Ship cabbage, chicken sandwiches, and fish stew."
+				""
+				"Cabbage gets one coherent kitchen layer; unrelated new crops wait for later levels."
+			]
+			icon: "farmersdelight:cabbage"
+			id: "A000000000000A5A"
 			shape: "hexagon"
 			tasks: [
-				{ consume_items: true, count: 32L, id: "D6A3BDF4A3E91202", item: "minecraft:iron_ingot", type: "item" }
-				{ consume_items: true, count: 32L, id: "7FCB2B28A5E9C4C5", item: "create:andesite_alloy", type: "item" }
-				{ consume_items: true, count: 64L, id: "929C421DFC82013C", item: "farmersdelight:onion", type: "item" }
-				{ consume_items: true, count: 32L, id: "1E17A59F4EE17CCA", item: "farmersdelight:bacon_and_eggs", type: "item" }
-				{ consume_items: true, count: 128L, id: "28EC3B251E2F0575", item: "minecraft:wheat", type: "item" }
+				{ consume_items: true, count: 20L, id: "B0000000000A5A01", item: "farmersdelight:cabbage", type: "item" }
+				{ consume_items: true, count: 6L, id: "B0000000000A5A02", item: "farmersdelight:chicken_sandwich", type: "item" }
+				{ consume_items: true, count: 6L, id: "B0000000000A5A03", item: "farmersdelight:fish_stew", type: "item" }
 			]
 			title: "Level 10 Market Order"
-			x: 7.0d
-			y: 5.0d
+			x: 6.0d
+			y: 6.0d
 		}
 	]
-	title: "Level 10 · Iron and Industry"
+	title: "Level 10 · Market Garden and Butchery"
 }

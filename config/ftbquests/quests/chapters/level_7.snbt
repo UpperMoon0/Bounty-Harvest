@@ -4,141 +4,146 @@
 	filename: "level_7"
 	group: "39B7846742C777FD"
 	hide_quest_until_deps_visible: true
-	icon: "minecraft:copper_ingot"
-	id: "F0DA364F8ED578D3"
+	icon: "minecraft:potato"
+	id: "D000000000000007"
 	order_index: 6
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["5EF6647A3BB43A42"]
+			dependencies: ["A00000000000065A"]
 			description: [
-				"After the Level 6 Market Order, spend 64 copper coins and 16 baked potatoes to open the Copper Workshop. Both costs are consumed."
+				"Advance into Level 7: Potatoes and Pantry."
 				""
-				"Copper is a real technology era through Levels 7 to 9."
-				""
-				"Metal supply, tools, fuel, books, textiles, and copper utility recipes now branch separately instead of forming one straight chain."
+				"This promotion consumes value from the previous economy before opening the next production layer."
 			]
-			icon: "minecraft:copper_ingot"
-			id: "0A53CC520F7826A3"
+			icon: "minecraft:potato"
+			id: "A000000000000701"
 			rewards: [
-				{ autoclaim: 1b, id: "6372F008C4309D67", stage: "level_7", type: "stage" }
-				{ id: "0E0EB119548B44AD", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_7\"]}", display: { Name: "{\"text\":\"Level 7 Decree\"}" } } }, type: "item" }
+				{ autoclaim: 1b, id: "C000000000070101", stage: "level_7", type: "stage" }
+				{ id: "C000000000070102", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_7\"]}", display: { Name: "{\"text\":\"Level 7 Decree\"}" } } }, type: "item" }
 			]
 			shape: "octagon"
 			tasks: [
-				{ consume_items: true, count: 64L, id: "D6EA2FCE5968CE3E", item: "kubejs:copper_coin", type: "item" }
-				{ consume_items: true, count: 16L, id: "655D9013D520FAEF", item: "minecraft:baked_potato", type: "item" }
+				{ consume_items: true, count: 32L, id: "B000000000070101", item: "kubejs:copper_coin", type: "item" }
+				{ consume_items: true, count: 6L, id: "B000000000070102", item: "kubejs:wool_yarn", type: "item" }
 			]
-			title: "Level 7 · Copper Workshop"
+			title: "Level 7 · Potatoes and Pantry"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["0A53CC520F7826A3"]
+			dependencies: ["A000000000000701"]
 			description: [
-				"Mine raw copper and smelt enough ingots to establish a reliable workshop metal supply."
+				"Establish potatoes as the level's one major new crop."
 				""
-				"Raw copper is intentionally inefficient, so mining scale matters."
+				"The crop will return in later stews and prepared foods."
 			]
-			icon: "minecraft:copper_ingot"
-			id: "6A5C20C31BD2649E"
+			icon: "minecraft:potato"
+			id: "A000000000000702"
 			tasks: [
-				{ count: 12L, id: "B87584B2ECC4AE26", item: "minecraft:raw_copper", type: "item" }
-				{ count: 6L, id: "CB25C097B7625710", item: "minecraft:copper_ingot", type: "item" }
+				{ count: 20L, id: "B000000000070201", item: "minecraft:potato", type: "item" }
 			]
-			title: "Copper Supply"
-			x: -1.5d
+			title: "Potato Field"
+			x: -2.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["6A5C20C31BD2649E"]
+			dependencies: ["A000000000000702"]
 			description: [
-				"Craft the complete Better Copper toolset. Mastering copper tools does not unlock Ironworking; the copper era continues through Levels 8 and 9."
+				"Bake part of the harvest into a higher-value pantry staple."
 			]
-			icon: "bettercopper:copper_pickaxe"
-			id: "34B5DF088E2F447E"
-			shape: "diamond"
+			icon: "minecraft:baked_potato"
+			id: "A000000000000703"
 			tasks: [
-				{ id: "DE6A3852FA95E360", item: "bettercopper:copper_shovel", type: "item" }
-				{ id: "28CFF8532E328E97", item: "bettercopper:copper_pickaxe", type: "item" }
-				{ id: "D2878618C432C9C3", item: "bettercopper:copper_axe", type: "item" }
-				{ id: "A956717649A785C6", item: "bettercopper:copper_hoe", type: "item" }
-				{ id: "B0FF0DA47B371738", item: "bettercopper:copper_sword", type: "item" }
+				{ count: 16L, id: "B000000000070301", item: "minecraft:baked_potato", type: "item" }
 			]
-			title: "Copper Tools"
-			x: -2.5d
+			title: "Baked Potatoes"
+			x: -3.0d
 			y: 4.0d
 		}
 		{
-			dependencies: ["0A53CC520F7826A3"]
+			dependencies: ["A000000000000703"]
 			description: [
-				"Stock renewable charcoal for smelting and workshop heat. This branch deliberately reuses Level 2 fuel production at larger scale."
+				"Reconnect the older cattle economy to the new root crop instead of replacing it."
 			]
-			id: "7A70000000000001"
-			tasks: [{ count: 16L, id: "3A78A6B3BD08088A", item: "minecraft:charcoal", type: "item" }]
-			title: "Workshop Fuel"
-			x: 0.5d
-			y: 2.0d
+			icon: "minecraft:cooked_beef"
+			id: "A000000000000704"
+			tasks: [
+				{ count: 8L, id: "B000000000070401", item: "minecraft:cooked_beef", type: "item" }
+				{ count: 8L, id: "B000000000070402", item: "minecraft:baked_potato", type: "item" }
+			]
+			title: "Steak and Potatoes"
+			x: -1.0d
+			y: 6.0d
 		}
 		{
-			dependencies: ["0A53CC520F7826A3"]
+			dependencies: ["A000000000000701"]
 			description: [
-				"Craft bookshelves from the older leather, sugar-cane paper, and wood chains."
+				"Optional pantry breadth: gather both common mushrooms."
 				""
-				"Knowledge infrastructure becomes a workshop export instead of dead inventory."
+				"This side branch does not tax the main shipment, but it reconnects after the Market Order through mastery."
 			]
-			icon: "minecraft:bookshelf"
-			id: "824E1F00FADDCB4D"
-			tasks: [{ count: 2L, id: "64A092950EFF9947", item: "minecraft:bookshelf", type: "item" }]
-			title: "Books and Shelving"
+			icon: "minecraft:brown_mushroom"
+			id: "A000000000000705"
+			tasks: [
+				{ id: "B000000000070501", item: "minecraft:brown_mushroom", type: "item" }
+				{ id: "B000000000070502", item: "minecraft:red_mushroom", type: "item" }
+			]
+			title: "Optional Mushroom Pantry"
 			x: 2.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["0A53CC520F7826A3"]
+			dependencies: ["A000000000000705"]
 			description: [
-				"Finish a wool sweater from the Level 6 textile line. The copper workshop demands finished goods from the farm, not only metal."
+				"Cook the mushroom harvest into stew as the prepared endpoint of the optional pantry branch."
 			]
-			id: "7A70000000000002"
-			tasks: [{ id: "365C55FE463DFEC9", item: "kubejs:wool_sweater", type: "item" }]
-			title: "Textile Export"
-			x: 3.5d
-			y: 3.5d
-		}
-		{
-			dependencies: ["6A5C20C31BD2649E"]
-			description: [
-				"Use copper in the utility recipes introduced for this era. A glass bottle and composter demonstrate that copper is more than a tool material."
-			]
-			id: "7A70000000000003"
+			icon: "minecraft:mushroom_stew"
+			id: "A000000000000706"
 			tasks: [
-				{ id: "7A70000000000004", item: "minecraft:glass_bottle", type: "item" }
-				{ id: "7A70000000000005", item: "minecraft:composter", type: "item" }
+				{ count: 2L, id: "B000000000070601", item: "minecraft:mushroom_stew", type: "item" }
 			]
-			title: "Copper Utility"
-			x: -0.5d
-			y: -2.0d
+			title: "Optional Mushroom Stew"
+			x: 3.0d
+			y: 4.0d
 		}
 		{
-			dependencies: ["34B5DF088E2F447E", "7A70000000000001", "824E1F00FADDCB4D", "7A70000000000002"]
+			dependencies: ["A00000000000075A", "A000000000000706"]
 			description: [
-				"The metal, tool, fuel, book, and textile branches converge here. Ship 16 copper ingots, four bookshelves, two sweaters, and 24 charcoal."
+				"Complete both the required potato economy and the optional mushroom branch."
 				""
-				"Utility infrastructure is retained."
+				"This post-market mastery node makes the optional branch visibly reconnect instead of ending as an isolated spoke."
 			]
-			icon: "minecraft:copper_ingot"
-			id: "D9D29B504CE79600"
+			icon: "minecraft:mushroom_stew"
+			id: "A000000000000707"
+			rewards: [
+				{ count: 12, id: "C000000000070701", item: "kubejs:copper_coin", type: "item" }
+			]
+			shape: "diamond"
+			tasks: [{ id: "B000000000070701", type: "checkmark" }]
+			title: "Level 7 Pantry Mastery"
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["A000000000000704"]
+			description: [
+				"Ship raw and baked potatoes alongside cooked beef."
+				""
+				"Potatoes get room to establish themselves before another crop enters progression."
+			]
+			icon: "minecraft:potato"
+			id: "A00000000000075A"
 			shape: "hexagon"
 			tasks: [
-				{ consume_items: true, count: 16L, id: "309E520F5F0D7DBC", item: "minecraft:copper_ingot", type: "item" }
-				{ consume_items: true, count: 4L, id: "0BAB982F56535A06", item: "minecraft:bookshelf", type: "item" }
-				{ consume_items: true, count: 2L, id: "30046AED8B8F4CF5", item: "kubejs:wool_sweater", type: "item" }
-				{ consume_items: true, count: 24L, id: "F2745AA0FF11B3DC", item: "minecraft:charcoal", type: "item" }
+				{ consume_items: true, count: 20L, id: "B000000000075A01", item: "minecraft:potato", type: "item" }
+				{ consume_items: true, count: 16L, id: "B000000000075A02", item: "minecraft:baked_potato", type: "item" }
+				{ consume_items: true, count: 8L, id: "B000000000075A03", item: "minecraft:cooked_beef", type: "item" }
 			]
 			title: "Level 7 Market Order"
 			x: 6.0d
-			y: 4.0d
+			y: 6.0d
 		}
 	]
-	title: "Level 7 · Copper Workshop"
+	title: "Level 7 · Potatoes and Pantry"
 }

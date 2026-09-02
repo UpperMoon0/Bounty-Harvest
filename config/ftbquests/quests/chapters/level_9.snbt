@@ -4,115 +4,149 @@
 	filename: "level_9"
 	group: "39B7846742C777FD"
 	hide_quest_until_deps_visible: true
-	icon: "corn_delight:corn"
-	id: "918AB9368B34E2D5"
+	icon: "minecraft:copper_ingot"
+	id: "D000000000000009"
 	order_index: 8
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["F3FBD0BED43C89CC"]
+			dependencies: ["A00000000000085A"]
 			description: [
-				"After the Level 8 Market Order, spend 24 iron coins and eight fish stew to open the Corn Market. Both costs are consumed."
+				"Advance into Level 9: Copper Workshop."
 				""
-				"Corn, tomato, corn processing, and the cross-level taco line now branch independently."
-				""
-				"This is the last tier intended to remain comfortable without Create automation."
+				"This promotion consumes value from the previous economy before opening the next production layer."
 			]
-			icon: "corn_delight:corn"
-			id: "C0B4AA32262BF02B"
+			icon: "minecraft:copper_ingot"
+			id: "A000000000000901"
 			rewards: [
-				{ autoclaim: 1b, id: "3D1E76F5425C8727", stage: "level_9", type: "stage" }
-				{ id: "739173F309692FDC", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_9\"]}", display: { Name: "{\"text\":\"Level 9 Decree\"}" } } }, type: "item" }
+				{ autoclaim: 1b, id: "C000000000090101", stage: "level_9", type: "stage" }
+				{ id: "C000000000090102", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_9\"]}", display: { Name: "{\"text\":\"Level 9 Decree\"}" } } }, type: "item" }
 			]
 			shape: "octagon"
 			tasks: [
-				{ consume_items: true, count: 24L, id: "A52EC01776518BD5", item: "kubejs:iron_coin", type: "item" }
-				{ consume_items: true, count: 8L, id: "C16D4D6661677035", item: "farmersdelight:fish_stew", type: "item" }
+				{ consume_items: true, count: 64L, id: "B000000000090101", item: "kubejs:copper_coin", type: "item" }
+				{ consume_items: true, count: 4L, id: "B000000000090102", item: "farmersdelight:apple_pie", type: "item" }
 			]
-			title: "Level 9 · Corn and Tomato Market"
+			title: "Level 9 · Copper Workshop"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["C0B4AA32262BF02B"]
+			dependencies: ["A000000000000901"]
 			description: [
-				"Establish a 24-corn harvest."
+				"Open the copper era with a reliable metal supply."
 				""
-				"If world generation refuses to provide corn, the Crop Shop has an intentionally expensive deterministic seed recovery trade."
+				"Copper remains the active technology tier through Levels 9 to 12."
 			]
-			id: "9A90000000000001"
-			tasks: [{ count: 24L, id: "C6046AB74D2BEFC7", item: "corn_delight:corn", type: "item" }]
-			title: "Corn Field"
+			icon: "minecraft:copper_ingot"
+			id: "A000000000000902"
+			tasks: [
+				{ count: 16L, id: "B000000000090201", item: "minecraft:raw_copper", type: "item" }
+				{ count: 8L, id: "B000000000090202", item: "minecraft:copper_ingot", type: "item" }
+			]
+			title: "Copper Supply"
 			x: -2.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["C0B4AA32262BF02B"]
+			dependencies: ["A000000000000902"]
 			description: [
-				"Grow 16 tomatoes. Tomato is deliberately introduced one level after cabbage so the garden expands in understandable steps."
+				"Craft the complete copper toolset."
+				""
+				"Mastering copper does not immediately grant Ironworking; the era gets several levels to matter."
 			]
-			id: "9A90000000000002"
-			tasks: [{ count: 16L, id: "359B446432579DB4", item: "farmersdelight:tomato", type: "item" }]
-			title: "Tomato Field"
-			x: 1.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["9A90000000000001"]
-			description: [
-				"Turn corn into eight cornbread. This branch represents a finished baked product rather than selling only raw crop output."
+			icon: "bettercopper:copper_pickaxe"
+			id: "A000000000000903"
+			tasks: [
+				{ id: "B000000000090301", item: "bettercopper:copper_shovel", type: "item" }
+				{ id: "B000000000090302", item: "bettercopper:copper_pickaxe", type: "item" }
+				{ id: "B000000000090303", item: "bettercopper:copper_axe", type: "item" }
+				{ id: "B000000000090304", item: "bettercopper:copper_hoe", type: "item" }
+				{ id: "B000000000090305", item: "bettercopper:copper_sword", type: "item" }
 			]
-			id: "9A90000000000003"
-			tasks: [{ count: 8L, id: "6F2AC460EFA39C93", item: "corn_delight:cornbread", type: "item" }]
-			title: "Cornbread"
+			title: "Copper Tools"
 			x: -3.0d
 			y: 4.0d
 		}
 		{
-			dependencies: ["9A90000000000001"]
+			dependencies: ["A000000000000901"]
 			description: [
-				"Produce eight tortillas as the intermediate processing line that turns corn into the base for higher-value tacos."
+				"Scale the renewable charcoal line from Level 2 to support metalworking."
 			]
-			id: "9A90000000000004"
-			tasks: [{ count: 8L, id: "485F8F3EC8355404", item: "corn_delight:tortilla", type: "item" }]
-			title: "Tortillas"
-			x: -0.5d
-			y: 4.0d
-		}
-		{
-			dependencies: ["9A90000000000002", "9A90000000000004"]
-			description: [
-				"Make eight tacos from tortilla, cooked pork, tomato, and cabbage."
-				""
-				"This one product deliberately reconnects Levels 4, 8, and 9 into a single valuable food line."
-			]
-			icon: "corn_delight:taco"
-			id: "9A90000000000005"
-			tasks: [{ count: 8L, id: "3D71DFA58C33C641", item: "corn_delight:taco", type: "item" }]
-			title: "Taco Line"
-			x: 1.0d
-			y: 5.5d
-		}
-		{
-			dependencies: ["9A90000000000003", "9A90000000000005"]
-			description: [
-				"The raw crop and processing branches converge here. Ship 24 corn, 16 tomatoes, eight cornbread, and eight tacos."
-				""
-				"Level 10 then turns the economy industrial."
-			]
-			icon: "corn_delight:corn"
-			id: "2A9904A355A5FE23"
-			shape: "hexagon"
+			icon: "minecraft:charcoal"
+			id: "A000000000000904"
 			tasks: [
-				{ consume_items: true, count: 24L, id: "8122153FC4A00C3D", item: "corn_delight:corn", type: "item" }
-				{ consume_items: true, count: 16L, id: "08B87FF70F9AA4D2", item: "farmersdelight:tomato", type: "item" }
-				{ consume_items: true, count: 8L, id: "8EC3340438C18FD0", item: "corn_delight:cornbread", type: "item" }
-				{ consume_items: true, count: 8L, id: "66F2E6F1D3B01355", item: "corn_delight:taco", type: "item" }
+				{ count: 24L, id: "B000000000090401", item: "minecraft:charcoal", type: "item" }
 			]
-			title: "Level 9 Market Order"
-			x: 5.0d
+			title: "Workshop Fuel"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000000902"]
+			description: [
+				"Use copper for farm utility recipes as well as tools."
+			]
+			icon: "minecraft:composter"
+			id: "A000000000000905"
+			tasks: [
+				{ id: "B000000000090501", item: "minecraft:glass_bottle", type: "item" }
+				{ id: "B000000000090502", item: "minecraft:composter", type: "item" }
+			]
+			title: "Copper Utility"
+			x: -1.0d
 			y: 5.0d
 		}
+		{
+			dependencies: ["A000000000000901"]
+			description: [
+				"Turn the previous level's paper and books into workshop shelving."
+				""
+				"The copper era therefore consumes older crop and leather production."
+			]
+			icon: "minecraft:bookshelf"
+			id: "A000000000000906"
+			tasks: [
+				{ count: 4L, id: "B000000000090601", item: "minecraft:bookshelf", type: "item" }
+			]
+			title: "Workshop Library"
+			x: 2.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["A000000000000901"]
+			description: [
+				"Keep the Level 6 textile chain economically relevant with a finished-goods contract."
+			]
+			icon: "kubejs:wool_sweater"
+			id: "A000000000000907"
+			tasks: [
+				{ count: 2L, id: "B000000000090701", item: "kubejs:wool_sweater", type: "item" }
+			]
+			title: "Workshop Textile Contract"
+			x: 3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["A000000000000903", "A000000000000905", "A000000000000904", "A000000000000906", "A000000000000907"]
+			description: [
+				"Ship copper, bookshelves, sweaters, and charcoal."
+				""
+				"The first copper level proves an actual workshop economy rather than a five-minute tool prerequisite."
+			]
+			icon: "minecraft:copper_ingot"
+			id: "A00000000000095A"
+			shape: "hexagon"
+			tasks: [
+				{ consume_items: true, count: 16L, id: "B000000000095A01", item: "minecraft:copper_ingot", type: "item" }
+				{ consume_items: true, count: 4L, id: "B000000000095A02", item: "minecraft:bookshelf", type: "item" }
+				{ consume_items: true, count: 2L, id: "B000000000095A03", item: "kubejs:wool_sweater", type: "item" }
+				{ consume_items: true, count: 24L, id: "B000000000095A04", item: "minecraft:charcoal", type: "item" }
+			]
+			title: "Level 9 Market Order"
+			x: 6.0d
+			y: 6.0d
+		}
 	]
-	title: "Level 9 · Corn and Tomato Market"
+	title: "Level 9 · Copper Workshop"
 }

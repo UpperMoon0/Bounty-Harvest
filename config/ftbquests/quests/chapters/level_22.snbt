@@ -1,0 +1,122 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_22"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "twilightforest:magic_map"
+	id: "D000000000000016"
+	order_index: 21
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["A00000000000155A"]
+			description: [
+				"Advance into Level 22: Twilight Frontier."
+				""
+				"This promotion consumes value from the previous economy before opening the next production layer."
+			]
+			icon: "twilightforest:magic_map"
+			id: "A000000000001601"
+			rewards: [
+				{ autoclaim: 1b, id: "C000000000160101", stage: "level_22", type: "stage" }
+				{ id: "C000000000160102", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_22\"]}", display: { Name: "{\"text\":\"Level 22 Decree\"}" } } }, type: "item" }
+			]
+			shape: "octagon"
+			tasks: [
+				{ consume_items: true, count: 384L, id: "B000000000160101", item: "kubejs:gold_coin", type: "item" }
+				{ consume_items: true, count: 1024L, id: "B000000000160102", item: "farmersdelight:chicken_sandwich", type: "item" }
+				{ consume_items: true, count: 1024L, id: "B000000000160103", item: "pineapple_delight:pineapple_pie", type: "item" }
+			]
+			title: "Level 22 · Twilight Frontier"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A000000000001601"]
+			description: [
+				"Obtain a Magic Map as permanent Twilight navigation infrastructure."
+				""
+				"Completing navigation unlocks Twilight cuisine rather than dumping exploration and food integration simultaneously."
+			]
+			icon: "twilightforest:magic_map"
+			id: "A000000000001602"
+			rewards: [
+				{ autoclaim: 1b, id: "C000000000160201", stage: "level_22_cuisine", type: "stage" }
+			]
+			shape: "diamond"
+			tasks: [
+				{ id: "B000000000160201", item: "twilightforest:magic_map", type: "item" }
+			]
+			title: "Twilight Navigation"
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000001602"]
+			description: [
+				"Establish Glowstew as the premium renewable product of the Twilight branch."
+			]
+			icon: "twilightdelight:glowstew"
+			id: "A000000000001603"
+			tasks: [
+				{ count: 64L, id: "B000000000160301", item: "twilightdelight:glowstew", type: "item" }
+			]
+			title: "Twilight Cuisine"
+			x: -3.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000001601"]
+			description: [
+				"Keep three mature automated food lines supplying the frontier."
+			]
+			icon: "corn_delight:taco"
+			id: "A000000000001604"
+			tasks: [
+				{ count: 1024L, id: "B000000000160401", item: "corn_delight:taco", type: "item" }
+				{ count: 1024L, id: "B000000000160402", item: "pineapple_delight:pineapple_pie", type: "item" }
+				{ count: 1024L, id: "B000000000160403", item: "farmersdelight:chicken_sandwich", type: "item" }
+			]
+			title: "Frontier Supply Train"
+			x: 1.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["A000000000001601"]
+			description: [
+				"Return the corn bakery to another major late-game contract."
+			]
+			icon: "corn_delight:cornbread"
+			id: "A000000000001605"
+			tasks: [
+				{ count: 1024L, id: "B000000000160501", item: "corn_delight:cornbread", type: "item" }
+			]
+			title: "Frontier Bread Contract"
+			x: 2.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["A000000000001603", "A000000000001604", "A000000000001605"]
+			description: [
+				"Ship Twilight cuisine plus the frontier supply train."
+				""
+				"The End remains a separate final economic tier instead of opening alongside Twilight."
+			]
+			icon: "twilightforest:magic_map"
+			id: "A00000000000165A"
+			shape: "hexagon"
+			tasks: [
+				{ consume_items: true, count: 128L, id: "B000000000165A01", item: "twilightdelight:glowstew", type: "item" }
+				{ consume_items: true, count: 1024L, id: "B000000000165A02", item: "corn_delight:taco", type: "item" }
+				{ consume_items: true, count: 1024L, id: "B000000000165A03", item: "pineapple_delight:pineapple_pie", type: "item" }
+				{ consume_items: true, count: 1024L, id: "B000000000165A04", item: "farmersdelight:chicken_sandwich", type: "item" }
+				{ consume_items: true, count: 1024L, id: "B000000000165A05", item: "corn_delight:cornbread", type: "item" }
+			]
+			title: "Level 22 Market Order"
+			x: 6.0d
+			y: 6.0d
+		}
+	]
+	title: "Level 22 · Twilight Frontier"
+}

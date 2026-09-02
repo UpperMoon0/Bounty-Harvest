@@ -5,6 +5,7 @@
 	default_repeatable_quest: true
 	filename: "crop"
 	group: "189D77A4C52994B6"
+	hide_quest_until_deps_visible: true
 	icon: "minecraft:wheat_seeds"
 	id: "08E3F8FADCAEE65B"
 	order_index: 0
@@ -13,15 +14,25 @@
 		{
 			dependencies: ["74402ECAFFAFAEC4"]
 			description: [
-				"Available from Level 1. Spend 16 copper coins to receive two wheat seeds."
+				"Available from Level 1."
 				""
-				"Use this repeatable shop if you need to restart or expand the farm's staple crop; the coins are consumed."
+				"Use this support trade to restart or expand the crop without replacing normal farming and exploration."
 			]
-			hide_until_deps_visible: true
 			icon: "minecraft:wheat_seeds"
-			id: "69D0A2940723341A"
-			rewards: [{ count: 2, id: "128BA3BA79D5E74F", item: "minecraft:wheat_seeds", type: "item" }]
-			tasks: [{ count: 16L, id: "02BB7BFB113828A0", item: "kubejs:copper_coin", type: "item" }]
+			id: "E00000000000C001"
+			rewards: [{
+				count: 2
+				id: "E0000000000C1001"
+				item: "minecraft:wheat_seeds"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 16L
+				id: "E0000000000C2001"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
 			title: "Buy Wheat Seeds"
 			x: 0.0d
 			y: 0.0d
@@ -29,161 +40,236 @@
 		{
 			dependencies: ["1003C2B79F710366"]
 			description: [
-				"Unlocked with Level 4. Spend 48 copper coins to receive two carrots."
+				"Available from Level 4."
 				""
-				"Plant them to expand the root-crop loop or use them for pig breeding and later prepared foods. This repeatable purchase consumes the coins."
+				"Use this support trade to restart or expand the crop without replacing normal farming and exploration."
 			]
 			icon: "minecraft:carrot"
-			id: "42F61617476FBFCC"
-			rewards: [{ count: 2, id: "1C60DADADCF7A977", item: "minecraft:carrot", type: "item" }]
-			tasks: [{ count: 48L, id: "7B71F365F027097D", item: "kubejs:copper_coin", type: "item" }]
+			id: "E00000000000C002"
+			rewards: [{
+				count: 2
+				id: "E0000000000C1002"
+				item: "minecraft:carrot"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 48L
+				id: "E0000000000C2002"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
 			title: "Buy Carrot"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["7297A69487BEE03D"]
+			dependencies: ["A000000000000701"]
 			description: [
-				"Unlocked with Level 6. Spend 64 copper coins to receive two sugar cane."
+				"Available from Level 7."
 				""
-				"Sugar and paper both become long-lived inputs: food processing uses sugar while the leather-and-paper chain feeds books and bookshelves."
-				""
-				"The coins are consumed."
+				"Use this support trade to restart or expand the crop without replacing normal farming and exploration."
 			]
-			icon: "minecraft:sugar_cane"
-			id: "5EC3E67CEBBB2604"
-			rewards: [{ count: 2, id: "3204BC56166A6A93", item: "minecraft:sugar_cane", type: "item" }]
-			tasks: [{ count: 64L, id: "5EA228279EA3125F", item: "kubejs:copper_coin", type: "item" }]
-			title: "Buy Sugar Cane"
+			icon: "minecraft:potato"
+			id: "E00000000000C003"
+			rewards: [{
+				count: 2
+				id: "E0000000000C1003"
+				item: "minecraft:potato"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 64L
+				id: "E0000000000C2003"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
+			title: "Buy Potato"
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["7297A69487BEE03D"]
+			dependencies: ["A000000000000801"]
 			description: [
-				"Unlocked with Level 6. Spend 64 copper coins to receive two potatoes."
+				"Available from Level 8."
 				""
-				"Potatoes become baked pantry goods, then return in Level 8 fish stew and stuffed foods. This repeatable purchase consumes the coins."
+				"Use this support trade to restart or expand the crop without replacing normal farming and exploration."
 			]
-			icon: "minecraft:potato"
-			id: "139EDF3D2E9F5E13"
-			rewards: [{ count: 2, id: "3366642D0DFF401C", item: "minecraft:potato", type: "item" }]
-			tasks: [{ count: 64L, id: "79D9DD3207196D24", item: "kubejs:copper_coin", type: "item" }]
-			title: "Buy Potato"
+			icon: "minecraft:sugar_cane"
+			id: "E00000000000C004"
+			rewards: [{
+				count: 2
+				id: "E0000000000C1004"
+				item: "minecraft:sugar_cane"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 80L
+				id: "E0000000000C2004"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
+			title: "Buy Sugar Cane"
 			x: 6.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["74402ECAFFAFAEC4"]
+			dependencies: ["A000000000000A01"]
 			description: [
-				"Available from Level 1. Spend 16 copper coins to receive four bone meal."
+				"Available from Level 10."
 				""
-				"This repeatable convenience trade helps recover from a slow crop start; the coins are consumed."
-			]
-			hide_until_deps_visible: true
-			icon: "minecraft:bone_meal"
-			id: "0AF8D4DD44F1810B"
-			rewards: [{ count: 4, id: "08558ABACB0F8C3E", item: "minecraft:bone_meal", type: "item" }]
-			tasks: [{ count: 16L, id: "3B78A0A0B1721C7B", item: "kubejs:copper_coin", type: "item" }]
-			title: "Buy Bone Meal"
-			x: 0.0d
-			y: -2.0d
-		}
-		{
-			dependencies: ["4003BF6FE565761F"]
-			description: [
-				"Unlocked with Level 8. Spend eight iron coins to receive two cabbage seeds."
-				""
-				"Cabbage is deliberately the only major new Level 8 crop."
-				""
-				"It immediately feeds sandwiches, stuffed potatoes, tacos, bounties, and the Level 8 Market Order."
+				"Use this support trade to restart or expand the crop without replacing normal farming and exploration."
 			]
 			icon: "farmersdelight:cabbage"
-			id: "354D89A7217D2552"
-			rewards: [{ count: 2, icon: "farmersdelight:cabbage_seeds", id: "52200ACA6C004644", item: "farmersdelight:cabbage_seeds", type: "item" }]
-			tasks: [{ count: 8L, id: "066AD2111C3911E8", item: "kubejs:iron_coin", type: "item" }]
-			title: "Buy Cabbage"
+			id: "E00000000000C005"
+			rewards: [{
+				count: 2
+				id: "E0000000000C1005"
+				item: "farmersdelight:cabbage_seeds"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 12L
+				id: "E0000000000C2005"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			title: "Buy Cabbage Seeds"
 			x: 8.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["C0B4AA32262BF02B"]
+			dependencies: ["A000000000000B01"]
 			description: [
-				"Unlocked with Level 9. Spend 24 iron coins to receive two corn seeds."
+				"Available from Level 11."
 				""
-				"Wild corn remains the cheaper discovery route, but this recovery trade prevents biome or world-generation luck from blocking the main progression."
-				""
-				"The coins are consumed."
+				"This intentionally expensive recovery route prevents world-generation luck from hard-locking progression."
 			]
 			icon: "corn_delight:corn_seeds"
-			id: "B1A9D4F7C2E63850"
-			rewards: [{ count: 2, id: "A9C61F2D4B8073EE", item: "corn_delight:corn_seeds", type: "item" }]
-			tasks: [{ count: 24L, id: "D3F27491AB60CE85", item: "kubejs:iron_coin", type: "item" }]
+			id: "E00000000000C006"
+			rewards: [{
+				count: 2
+				id: "E0000000000C1006"
+				item: "corn_delight:corn_seeds"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 24L
+				id: "E0000000000C2006"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
 			title: "Recover Corn Seeds"
 			x: 10.0d
-			y: -2.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["C0B4AA32262BF02B"]
+			dependencies: ["A000000000000C01"]
 			description: [
-				"Unlocked with Level 9. Spend 10 iron coins to receive two tomato seeds."
+				"Available from Level 12."
 				""
-				"Tomato arrives one level after cabbage and immediately joins the taco chain instead of appearing as an isolated checklist crop."
+				"Use this support trade to restart or expand the crop without replacing normal farming and exploration."
 			]
 			icon: "farmersdelight:tomato"
-			id: "EE75B1FC5ADB7E9E"
-			rewards: [{ count: 2, id: "0B92E1949FC97A39", item: "farmersdelight:tomato_seeds", type: "item" }]
-			tasks: [{ count: 10L, id: "84B7043607F3BD77", item: "kubejs:iron_coin", type: "item" }]
+			id: "E00000000000C007"
+			rewards: [{
+				count: 2
+				id: "E0000000000C1007"
+				item: "farmersdelight:tomato_seeds"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 16L
+				id: "E0000000000C2007"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
 			title: "Buy Tomato Seeds"
-			x: 10.0d
-			y: 0.0d
+			x: 0.0d
+			y: 2.0d
 		}
 		{
-			dependencies: ["201FA0D785EF1770"]
+			dependencies: ["A000000000000E01"]
 			description: [
-				"Unlocked with Level 10. Spend 12 iron coins to receive two onions."
+				"Available from Level 14."
 				""
-				"Onion arrives with Ironworking and the Cooking Pot, giving the new iron kitchen a fresh crop without overloading the earlier Market Garden."
+				"Use this support trade to restart or expand the crop without replacing normal farming and exploration."
 			]
 			icon: "farmersdelight:onion"
-			id: "1183861136AE7550"
-			rewards: [{ count: 2, id: "6C2ED0711F7C8B1C", item: "farmersdelight:onion", type: "item" }]
-			tasks: [{ count: 12L, id: "2B2324B740681BE8", item: "kubejs:iron_coin", type: "item" }]
+			id: "E00000000000C008"
+			rewards: [{
+				count: 2
+				id: "E0000000000C1008"
+				item: "farmersdelight:onion"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 24L
+				id: "E0000000000C2008"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
 			title: "Buy Onion"
-			x: 12.0d
-			y: 0.0d
+			x: 2.0d
+			y: 2.0d
 		}
 		{
-			dependencies: ["1FFCFC4EAF71D122"]
+			dependencies: ["A000000000001001"]
 			description: [
-				"Unlocked with Level 11. Spend 14 iron coins to receive two rice panicles."
+				"Available from Level 16."
 				""
-				"Rice is delayed until it can immediately support pineapple fried rice and fish rolls, reconnecting tropical processing to the old fisheries economy."
-			]
-			icon: "farmersdelight:rice_panicle"
-			id: "1EDA0AEA6E44E43E"
-			rewards: [{ count: 2, id: "51EFEB9D028319CE", item: "farmersdelight:rice_panicle", type: "item" }]
-			tasks: [{ count: 14L, id: "F3F8F475B67EE175", item: "kubejs:iron_coin", type: "item" }]
-			title: "Buy Rice Panicles"
-			x: 14.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["1FFCFC4EAF71D122"]
-			description: [
-				"Unlocked with Level 11. Spend 48 iron coins to receive two plantable pineapple crops."
-				""
-				"Natural pineapple remains the preferred discovery route."
-				""
-				"This deliberately expensive recovery trade guarantees that unlucky world generation cannot hard-lock Tropical Automation."
+				"This intentionally expensive recovery route prevents world-generation luck from hard-locking progression."
 			]
 			icon: "pineapple_delight:pineapple_crop"
-			id: "C84F1D6A3097BE52"
-			rewards: [{ count: 2, id: "E7A042B9D15C638F", item: "pineapple_delight:pineapple_crop", type: "item" }]
-			tasks: [{ count: 48L, id: "9B6D31E4F20A875C", item: "kubejs:iron_coin", type: "item" }]
+			id: "E00000000000C009"
+			rewards: [{
+				count: 2
+				id: "E0000000000C1009"
+				item: "pineapple_delight:pineapple_crop"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 96L
+				id: "E0000000000C2009"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
 			title: "Recover Pineapple Crop"
-			x: 14.0d
-			y: -2.0d
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000001101"]
+			description: [
+				"Available from Level 17."
+				""
+				"Use this support trade to restart or expand the crop without replacing normal farming and exploration."
+			]
+			icon: "farmersdelight:rice_panicle"
+			id: "E00000000000C00A"
+			rewards: [{
+				count: 2
+				id: "E0000000000C100A"
+				item: "farmersdelight:rice_panicle"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 64L
+				id: "E0000000000C200A"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			title: "Buy Rice Panicles"
+			x: 6.0d
+			y: 2.0d
 		}
 	]
 	title: "Crops"

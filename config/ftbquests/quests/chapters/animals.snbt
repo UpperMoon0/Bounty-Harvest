@@ -5,6 +5,7 @@
 	default_repeatable_quest: true
 	filename: "animals"
 	group: "189D77A4C52994B6"
+	hide_quest_until_deps_visible: true
 	icon: "minecraft:egg"
 	id: "61E938A5BAC6BD4B"
 	order_index: 1
@@ -13,21 +14,22 @@
 		{
 			dependencies: ["7D3858343983B67A"]
 			description: [
-				"Unlocked with Level 2. Spend 32 copper coins to receive two chicken spawn eggs."
+				"Available from Level 2."
 				""
-				"This repeatable purchase is a convenience route for starting or expanding poultry; the coins are consumed."
+				"This repeatable livestock support trade consumes currency and does not replace the main production quest."
 			]
 			icon: "minecraft:chicken_spawn_egg"
-			id: "2C89F326D1B02E2B"
+			id: "E00000000000A001"
 			rewards: [{
 				count: 2
-				id: "0D7378CBBEEA0991"
+				id: "E0000000000A1001"
 				item: "minecraft:chicken_spawn_egg"
 				type: "item"
 			}]
 			tasks: [{
+				consume_items: true
 				count: 32L
-				id: "2D0CA01D7735EDA6"
+				id: "E0000000000A2001"
 				item: "kubejs:copper_coin"
 				type: "item"
 			}]
@@ -38,21 +40,22 @@
 		{
 			dependencies: ["573FE8ED65790A78"]
 			description: [
-				"Unlocked with Level 3. Spend 48 copper coins to receive two cow spawn eggs."
+				"Available from Level 3."
 				""
-				"Use this repeatable purchase to establish cattle for beef, leather, and later dairy production; the coins are consumed."
+				"This repeatable livestock support trade consumes currency and does not replace the main production quest."
 			]
 			icon: "minecraft:cow_spawn_egg"
-			id: "1CDC85097BF0DB3D"
+			id: "E00000000000A002"
 			rewards: [{
 				count: 2
-				id: "5DBEBC70EE29ED35"
+				id: "E0000000000A1002"
 				item: "minecraft:cow_spawn_egg"
 				type: "item"
 			}]
 			tasks: [{
+				consume_items: true
 				count: 48L
-				id: "17A0D0679A60DCA1"
+				id: "E0000000000A2002"
 				item: "kubejs:copper_coin"
 				type: "item"
 			}]
@@ -63,21 +66,22 @@
 		{
 			dependencies: ["1003C2B79F710366"]
 			description: [
-				"Unlocked with Level 4. Spend 64 copper coins to receive two pig spawn eggs."
+				"Available from Level 4."
 				""
-				"This repeatable purchase lets you scale pork production without waiting for natural animals; the coins are consumed."
+				"This repeatable livestock support trade consumes currency and does not replace the main production quest."
 			]
 			icon: "minecraft:pig_spawn_egg"
-			id: "3A11E98249BA4F92"
+			id: "E00000000000A003"
 			rewards: [{
 				count: 2
-				id: "4EECB20CFAB3C024"
+				id: "E0000000000A1003"
 				item: "minecraft:pig_spawn_egg"
 				type: "item"
 			}]
 			tasks: [{
+				consume_items: true
 				count: 64L
-				id: "79A230B5B98CC5EE"
+				id: "E0000000000A2003"
 				item: "kubejs:copper_coin"
 				type: "item"
 			}]
@@ -86,23 +90,24 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["7297A69487BEE03D"]
+			dependencies: ["A000000000000601"]
 			description: [
-				"Unlocked with Level 6. Spend 96 copper coins to receive two sheep spawn eggs."
+				"Available from Level 6."
 				""
-				"Sheep support the wool and yarn loop introduced at this tier. This purchase is repeatable and consumes the coins."
+				"This repeatable livestock support trade consumes currency and does not replace the main production quest."
 			]
 			icon: "minecraft:sheep_spawn_egg"
-			id: "67B868D8EADB6BA2"
+			id: "E00000000000A004"
 			rewards: [{
 				count: 2
-				id: "6D62AE0A9011637B"
+				id: "E0000000000A1004"
 				item: "minecraft:sheep_spawn_egg"
 				type: "item"
 			}]
 			tasks: [{
+				consume_items: true
 				count: 96L
-				id: "61FE9439CF1BFF58"
+				id: "E0000000000A2004"
 				item: "kubejs:copper_coin"
 				type: "item"
 			}]
@@ -111,23 +116,24 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["4003BF6FE565761F"]
+			dependencies: ["A000000000000A01"]
 			description: [
-				"Unlocked with Level 8. Spend 12 iron coins to receive two rabbit spawn eggs."
+				"Available from Level 10."
 				""
-				"This is an optional repeatable livestock expansion for the mature farm; the iron coins are consumed."
+				"This repeatable livestock support trade consumes currency and does not replace the main production quest."
 			]
 			icon: "minecraft:rabbit_spawn_egg"
-			id: "182F14B598A346E6"
+			id: "E00000000000A005"
 			rewards: [{
 				count: 2
-				id: "4A69A7F57493EDBA"
+				id: "E0000000000A1005"
 				item: "minecraft:rabbit_spawn_egg"
 				type: "item"
 			}]
 			tasks: [{
+				consume_items: true
 				count: 12L
-				id: "083B1963139AB80B"
+				id: "E0000000000A2005"
 				item: "kubejs:iron_coin"
 				type: "item"
 			}]

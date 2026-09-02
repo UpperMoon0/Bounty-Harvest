@@ -57,7 +57,9 @@
 			]
 			icon: "kubejs:wool_yarn"
 			id: "A000000000000603"
-			tasks: [{ count: 4L, id: "B000000000060301", item: "kubejs:wool_yarn", type: "item" }]
+			tasks: [
+				{ count: 4L, id: "B000000000060301", item: "kubejs:wool_yarn", type: "item" }
+			]
 			title: "Spin Wool Yarn"
 			x: -3.0d
 			y: 4.0d
@@ -71,7 +73,9 @@
 			]
 			icon: "kubejs:wool_sweater"
 			id: "A000000000000604"
-			tasks: [{ id: "B000000000060401", item: "kubejs:wool_sweater", type: "item" }]
+			tasks: [
+				{ id: "B000000000060401", item: "kubejs:wool_sweater", type: "item" }
+			]
 			title: "Finished Sweater"
 			x: -4.0d
 			y: 6.0d

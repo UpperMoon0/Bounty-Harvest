@@ -4,125 +4,144 @@
 	filename: "level_15"
 	group: "39B7846742C777FD"
 	hide_quest_until_deps_visible: true
-	icon: "twilightforest:magic_map"
-	id: "608823887CE0D6FA"
+	icon: "create:mechanical_harvester"
+	id: "D00000000000000F"
 	order_index: 14
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["250184A59EA4EBA2"]
+			dependencies: ["A000000000000E5A"]
 			description: [
-				"After the Level 14 Market Order, spend 192 gold coins, 256 tacos, 256 pineapple pies, and 128 chicken sandwiches to open the Frontier Economy."
+				"Advance into Level 15: Mechanical Farming."
 				""
-				"Every cost is consumed."
-				""
-				"Twilight navigation, Twilight cuisine, End farming, End's Delight processing, and legacy industrial provisioning now form separate frontier branches before the final Market Order."
+				"This promotion consumes value from the previous economy before opening the next production layer."
 			]
-			icon: "twilightforest:magic_map"
-			id: "2820C98F56814014"
+			icon: "create:mechanical_harvester"
+			id: "A000000000000F01"
 			rewards: [
-				{ autoclaim: 1b, id: "EEF9AFDC58081119", stage: "level_15", type: "stage" }
-				{ id: "E456E04499E66FF2", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_15\"]}", display: { Name: "{\"text\":\"Level 15 Decree\"}" } } }, type: "item" }
+				{ autoclaim: 1b, id: "C0000000000F0101", stage: "level_15", type: "stage" }
+				{ id: "C0000000000F0102", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_15\"]}", display: { Name: "{\"text\":\"Level 15 Decree\"}" } } }, type: "item" }
 			]
 			shape: "octagon"
 			tasks: [
-				{ consume_items: true, count: 192L, id: "636ECB6DEAF090C1", item: "kubejs:gold_coin", type: "item" }
-				{ consume_items: true, count: 256L, id: "0B7702F072C9D32F", item: "corn_delight:taco", type: "item" }
-				{ consume_items: true, count: 256L, id: "0F5C7A19E3D642B8", item: "pineapple_delight:pineapple_pie", type: "item" }
-				{ consume_items: true, count: 128L, id: "A6D31F8B205CE479", item: "farmersdelight:chicken_sandwich", type: "item" }
+				{ consume_items: true, count: 192L, id: "B0000000000F0101", item: "kubejs:iron_coin", type: "item" }
+				{ consume_items: true, count: 24L, id: "B0000000000F0102", item: "farmersdelight:hamburger", type: "item" }
+				{ consume_items: true, count: 48L, id: "B0000000000F0103", item: "minecraft:iron_ingot", type: "item" }
 			]
-			title: "Level 15 · Frontier Economy"
+			title: "Level 15 · Mechanical Farming"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["2820C98F56814014"]
+			dependencies: ["A000000000000F01"]
 			description: [
-				"Obtain a Twilight Forest Magic Map. It remains navigation infrastructure and is never sold or placed into repeatable Bountiful objectives."
+				"Establish the material foundation for Create automation."
 			]
-			icon: "twilightforest:magic_map"
-			id: "F150000000000001"
-			tasks: [{ id: "9036EBDDF44CE10D", item: "twilightforest:magic_map", type: "item" }]
-			title: "Twilight Navigation"
+			icon: "create:andesite_alloy"
+			id: "A000000000000F02"
+			tasks: [
+				{ count: 32L, id: "B0000000000F0201", item: "create:andesite_alloy", type: "item" }
+			]
+			title: "Andesite Alloy"
 			x: -2.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["F150000000000001"]
+			dependencies: ["A000000000000F02"]
 			description: [
-				"Prepare 32 Glowstew from Twilight's Flavors and Delight."
-				""
-				"This is the renewable premium product of the Twilight branch and scales into repeatable late-game demand."
+				"Turn alloy into reusable mechanical components."
 			]
-			id: "F150000000000002"
-			tasks: [{ count: 32L, id: "DDEE04D4B43C243B", item: "twilightdelight:glowstew", type: "item" }]
-			title: "Twilight Cuisine"
+			icon: "create:cogwheel"
+			id: "A000000000000F03"
+			tasks: [
+				{ count: 24L, id: "B0000000000F0301", item: "create:shaft", type: "item" }
+				{ count: 24L, id: "B0000000000F0302", item: "create:cogwheel", type: "item" }
+			]
+			title: "Mechanical Components"
 			x: -3.0d
 			y: 4.0d
 		}
 		{
-			dependencies: ["2820C98F56814014"]
+			dependencies: ["A000000000000F03"]
 			description: [
-				"Establish renewable chorus fruit production in the End. The final tier needs an actual farmable End input, not another one-time rare-drop checklist."
+				"Build a bearing for rotating farm machinery."
 			]
-			id: "F150000000000003"
-			tasks: [{ count: 64L, id: "F150000000000004", item: "minecraft:chorus_fruit", type: "item" }]
-			title: "Chorus Orchard"
-			x: 0.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["F150000000000003"]
-			description: [
-				"Turn chorus farming into 64 End's Delight chorus fruit pies."
-				""
-				"The recipe reconnects the frontier to old wheat, sugar, and Farmer's Delight pie crust production."
-			]
-			icon: "ends_delight:chorus_fruit_pie"
-			id: "8F6E2BD7AA1699E2"
-			tasks: [{ count: 64L, id: "59E8A2C41D76BF30", item: "ends_delight:chorus_fruit_pie", type: "item" }]
-			title: "End's Delight Pie Line"
-			x: 1.0d
-			y: 4.0d
-		}
-		{
-			dependencies: ["2820C98F56814014"]
-			description: [
-				"Stage the enormous old-economy provision lines that keep the frontier supplied: tacos, pineapple pies, chicken sandwiches, and cornbread."
-			]
-			id: "F150000000000005"
+			icon: "create:mechanical_bearing"
+			id: "A000000000000F04"
 			tasks: [
-				{ count: 512L, id: "F150000000000006", item: "corn_delight:taco", type: "item" }
-				{ count: 512L, id: "F150000000000007", item: "pineapple_delight:pineapple_pie", type: "item" }
-				{ count: 256L, id: "F150000000000008", item: "farmersdelight:chicken_sandwich", type: "item" }
-				{ count: 256L, id: "F150000000000009", item: "corn_delight:cornbread", type: "item" }
+				{ id: "B0000000000F0401", item: "create:mechanical_bearing", type: "item" }
 			]
-			title: "Frontier Provisioning"
-			x: 3.0d
+			title: "Mechanical Bearing"
+			x: -4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000000F03"]
+			description: [
+				"Build harvesters so crop throughput can scale beyond hand farming."
+			]
+			icon: "create:mechanical_harvester"
+			id: "A000000000000F05"
+			tasks: [
+				{ count: 4L, id: "B0000000000F0501", item: "create:mechanical_harvester", type: "item" }
+			]
+			title: "Mechanical Harvester"
+			x: -1.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000000F01"]
+			description: [
+				"Add redstone control as the automation-control branch."
+			]
+			icon: "minecraft:redstone"
+			id: "A000000000000F06"
+			tasks: [
+				{ count: 24L, id: "B0000000000F0601", item: "minecraft:redstone", type: "item" }
+				{ count: 2L, id: "B0000000000F0602", item: "minecraft:repeater", type: "item" }
+			]
+			title: "Redstone Control"
+			x: 2.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["F150000000000002", "8F6E2BD7AA1699E2", "F150000000000005"]
+			dependencies: ["A000000000000F04", "A000000000000F05", "A000000000000F06"]
 			description: [
-				"Twilight cuisine, End's Delight, and the mature farm economy converge here."
+				"Prove the machinery solves a real throughput problem by producing industrial crop volumes."
 				""
-				"Ship 64 Glowstew, 128 chorus fruit pies, 512 tacos, 512 pineapple pies, 256 chicken sandwiches, and 256 cornbread. The Magic Map remains yours."
+				"This is where automation becomes the intended answer."
 			]
-			icon: "ends_delight:chorus_fruit_pie"
-			id: "998D5FCA54B02B56"
+			icon: "minecraft:wheat"
+			id: "A000000000000F07"
+			tasks: [
+				{ count: 256L, id: "B0000000000F0701", item: "minecraft:wheat", type: "item" }
+				{ count: 128L, id: "B0000000000F0702", item: "corn_delight:corn", type: "item" }
+				{ count: 128L, id: "B0000000000F0703", item: "farmersdelight:cabbage", type: "item" }
+			]
+			title: "Automated Harvest Proof"
+			x: 1.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000000F07", "A000000000000F02"]
+			description: [
+				"Ship industrial farm output while keeping bearings, harvesters, and control infrastructure."
+				""
+				"Create is earned by throughput pressure rather than by crafting a machine and discarding it."
+			]
+			icon: "create:mechanical_harvester"
+			id: "A000000000000F5A"
 			shape: "hexagon"
 			tasks: [
-				{ consume_items: true, count: 64L, id: "1101BD908BF9D250", item: "twilightdelight:glowstew", type: "item" }
-				{ consume_items: true, count: 128L, id: "79C4D1A65E30BF82", item: "ends_delight:chorus_fruit_pie", type: "item" }
-				{ consume_items: true, count: 512L, id: "650E647F01E0FFC7", item: "corn_delight:taco", type: "item" }
-				{ consume_items: true, count: 512L, id: "481917FABAD20920", item: "pineapple_delight:pineapple_pie", type: "item" }
-				{ consume_items: true, count: 256L, id: "2ACE0D6E2A26F8B1", item: "farmersdelight:chicken_sandwich", type: "item" }
-				{ consume_items: true, count: 256L, id: "E2B6490C71AD35F8", item: "corn_delight:cornbread", type: "item" }
+				{ consume_items: true, count: 64L, id: "B0000000000F5A01", item: "create:andesite_alloy", type: "item" }
+				{ consume_items: true, count: 256L, id: "B0000000000F5A02", item: "minecraft:wheat", type: "item" }
+				{ consume_items: true, count: 128L, id: "B0000000000F5A03", item: "corn_delight:corn", type: "item" }
+				{ consume_items: true, count: 128L, id: "B0000000000F5A04", item: "farmersdelight:cabbage", type: "item" }
 			]
 			title: "Level 15 Market Order"
 			x: 6.0d
-			y: 5.0d
+			y: 6.0d
 		}
 	]
-	title: "Level 15 · Frontier Economy"
+	title: "Level 15 · Mechanical Farming"
 }

@@ -1,0 +1,124 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_18"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "createaddition:alternator"
+	id: "D000000000000012"
+	order_index: 17
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["A00000000000115A"]
+			description: [
+				"Advance into Level 18: Power Generation."
+				""
+				"This promotion consumes value from the previous economy before opening the next production layer."
+			]
+			icon: "createaddition:alternator"
+			id: "A000000000001201"
+			rewards: [
+				{ autoclaim: 1b, id: "C000000000120101", stage: "level_18", type: "stage" }
+				{ id: "C000000000120102", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_18\"]}", display: { Name: "{\"text\":\"Level 18 Decree\"}" } } }, type: "item" }
+			]
+			shape: "octagon"
+			tasks: [
+				{ consume_items: true, count: 1536L, id: "B000000000120101", item: "kubejs:iron_coin", type: "item" }
+				{ consume_items: true, count: 128L, id: "B000000000120102", item: "farmersdelight:salmon_roll", type: "item" }
+			]
+			title: "Level 18 · Power Generation"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A000000000001201"]
+			description: [
+				"Establish gold as the electrical-tier material."
+				""
+				"Completing this milestone unlocks generation hardware rather than all electrical infrastructure at once."
+			]
+			icon: "minecraft:gold_ingot"
+			id: "A000000000001202"
+			rewards: [
+				{ autoclaim: 1b, id: "C000000000120201", stage: "level_18_generation", type: "stage" }
+			]
+			shape: "diamond"
+			tasks: [
+				{ count: 24L, id: "B000000000120201", item: "minecraft:raw_gold", type: "item" }
+				{ count: 16L, id: "B000000000120202", item: "minecraft:gold_ingot", type: "item" }
+			]
+			title: "Gold Supply"
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000001202"]
+			description: [
+				"Build an alternator to convert mechanical power into electricity."
+				""
+				"The generator remains infrastructure and is never surrendered to the market."
+			]
+			icon: "createaddition:alternator"
+			id: "A000000000001203"
+			tasks: [
+				{ id: "B000000000120301", item: "createaddition:alternator", type: "item" }
+			]
+			title: "Alternator"
+			x: -3.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000001201"]
+			description: [
+				"Scale mechanical components to drive the new generator."
+			]
+			icon: "create:shaft"
+			id: "A000000000001204"
+			tasks: [
+				{ count: 64L, id: "B000000000120401", item: "create:shaft", type: "item" }
+				{ count: 64L, id: "B000000000120402", item: "create:cogwheel", type: "item" }
+			]
+			title: "Generation Drive"
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["A000000000001203", "A000000000001204"]
+			description: [
+				"Use the generation tier to support much larger automated farm and kitchen output."
+			]
+			icon: "minecraft:wheat"
+			id: "A000000000001205"
+			tasks: [
+				{ count: 512L, id: "B000000000120501", item: "minecraft:wheat", type: "item" }
+				{ count: 256L, id: "B000000000120502", item: "corn_delight:taco", type: "item" }
+				{ count: 256L, id: "B000000000120503", item: "pineapple_delight:pineapple_fried_rice", type: "item" }
+			]
+			title: "Powered Farm Throughput"
+			x: 1.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000001205", "A000000000001203"]
+			description: [
+				"Ship powered-farm output while keeping the alternator installed."
+				""
+				"Electric drive and storage deliberately wait for the next level."
+			]
+			icon: "createaddition:alternator"
+			id: "A00000000000125A"
+			shape: "hexagon"
+			tasks: [
+				{ consume_items: true, count: 512L, id: "B000000000125A01", item: "minecraft:wheat", type: "item" }
+				{ consume_items: true, count: 256L, id: "B000000000125A02", item: "corn_delight:taco", type: "item" }
+				{ consume_items: true, count: 256L, id: "B000000000125A03", item: "pineapple_delight:pineapple_fried_rice", type: "item" }
+				{ consume_items: true, count: 192L, id: "B000000000125A04", item: "farmersdelight:salmon_roll", type: "item" }
+			]
+			title: "Level 18 Market Order"
+			x: 6.0d
+			y: 6.0d
+		}
+	]
+	title: "Level 18 · Power Generation"
+}

@@ -1,0 +1,128 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_16"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "pineapple_delight:pineapple"
+	id: "D000000000000010"
+	order_index: 15
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["A000000000000F5A"]
+			description: [
+				"Advance into Level 16: Pineapple Plantation."
+				""
+				"This promotion consumes value from the previous economy before opening the next production layer."
+			]
+			icon: "pineapple_delight:pineapple"
+			id: "A000000000001001"
+			rewards: [
+				{ autoclaim: 1b, id: "C000000000100101", stage: "level_16", type: "stage" }
+				{ id: "C000000000100102", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_16\"]}", display: { Name: "{\"text\":\"Level 16 Decree\"}" } } }, type: "item" }
+			]
+			shape: "octagon"
+			tasks: [
+				{ consume_items: true, count: 384L, id: "B000000000100101", item: "kubejs:iron_coin", type: "item" }
+				{ consume_items: true, count: 64L, id: "B000000000100102", item: "create:andesite_alloy", type: "item" }
+			]
+			title: "Level 16 · Pineapple Plantation"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A000000000001001"]
+			description: [
+				"Establish pineapple as the sole new crop of this level."
+				""
+				"A costly recovery trade prevents bad world generation from becoming a hard lock."
+			]
+			icon: "pineapple_delight:pineapple"
+			id: "A000000000001002"
+			tasks: [
+				{ count: 48L, id: "B000000000100201", item: "pineapple_delight:pineapple", type: "item" }
+			]
+			title: "Pineapple Plantation"
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000001002"]
+			description: [
+				"Give pineapple one clear first premium product by reconnecting it to old pie crust, wheat, eggs, and sugar."
+			]
+			icon: "pineapple_delight:pineapple_pie"
+			id: "A000000000001003"
+			tasks: [
+				{ count: 24L, id: "B000000000100301", item: "pineapple_delight:pineapple_pie", type: "item" }
+			]
+			title: "Pineapple Pies"
+			x: -3.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000001001"]
+			description: [
+				"Scale the old sugar economy for the new bakery."
+			]
+			icon: "minecraft:sugar"
+			id: "A000000000001004"
+			tasks: [
+				{ count: 128L, id: "B000000000100401", item: "minecraft:sugar", type: "item" }
+			]
+			title: "Bakery Sugar"
+			x: 1.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000001001"]
+			description: [
+				"Scale the staple wheat line for industrial pastry production."
+			]
+			icon: "minecraft:wheat"
+			id: "A000000000001005"
+			tasks: [
+				{ count: 256L, id: "B000000000100501", item: "minecraft:wheat", type: "item" }
+			]
+			title: "Bakery Wheat"
+			x: 2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000001001"]
+			description: [
+				"Keep the mature corn, tomato, pork, and cabbage chain productive while pineapple establishes itself."
+			]
+			icon: "corn_delight:taco"
+			id: "A000000000001006"
+			tasks: [
+				{ count: 128L, id: "B000000000100601", item: "corn_delight:taco", type: "item" }
+			]
+			title: "Automated Taco Carryover"
+			x: 3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000001003", "A000000000001004", "A000000000001005", "A000000000001006"]
+			description: [
+				"Ship pineapple, pies, wheat, and tacos."
+				""
+				"Rice waits for the next level so pineapple gets its own economic identity first."
+			]
+			icon: "pineapple_delight:pineapple"
+			id: "A00000000000105A"
+			shape: "hexagon"
+			tasks: [
+				{ consume_items: true, count: 64L, id: "B000000000105A01", item: "pineapple_delight:pineapple", type: "item" }
+				{ consume_items: true, count: 64L, id: "B000000000105A02", item: "pineapple_delight:pineapple_pie", type: "item" }
+				{ consume_items: true, count: 256L, id: "B000000000105A03", item: "minecraft:wheat", type: "item" }
+				{ consume_items: true, count: 128L, id: "B000000000105A04", item: "corn_delight:taco", type: "item" }
+			]
+			title: "Level 16 Market Order"
+			x: 6.0d
+			y: 6.0d
+		}
+	]
+	title: "Level 16 · Pineapple Plantation"
+}
