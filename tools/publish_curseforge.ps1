@@ -79,25 +79,23 @@ if ($Preflight) {
 
     # This is the CurseForge author/upload API. Author tokens authenticate with
     # X-Api-Token; do not send them to the separate api.curseforge.com Core API.
+    #
+    # /api/game/versions is useful for proving that the author API is reachable
+    # and that the token is accepted, but its response is not guaranteed to be
+    # an exhaustive catalogue suitable for rejecting upload metadata names.
+    # The upload endpoint is authoritative for gameVersionNames validation.
     $gameVersionsEndpoint = "$authorApiBase/game/versions"
     try {
         $gameVersions = @(Invoke-RestMethod -Uri $gameVersionsEndpoint -Headers $authorHeaders)
-        $availableNames = @($gameVersions | ForEach-Object { [string]$_.name })
-        $requiredNames = @(
-            [string]$pack.minecraftVersion,
-            'Forge',
-            "Java $($pack.javaVersion)",
-            'Client'
-        )
-        foreach ($required in $requiredNames) {
-            if ($availableNames -notcontains $required) {
-                throw "CurseForge does not recognize required game version '$required'. Available: $($availableNames -join ', ')"
-            }
+        if ($gameVersions.Count -eq 0) {
+            throw 'CurseForge returned an empty game-version response.'
         }
-        Write-Host "PREFLIGHT: All required game version names are recognized by CurseForge."
+        $requestedNames = @($mainMetadata.gameVersionNames) -join ', '
+        Write-Host "PREFLIGHT: CurseForge author API authentication and reachability verified."
+        Write-Host "PREFLIGHT: upload endpoint will validate game version names: $requestedNames"
     }
     catch {
-        throw "PREFLIGHT: CurseForge author API reachability or game-version check failed: $($_.Exception.Message)"
+        throw "PREFLIGHT: CurseForge author API reachability or authentication check failed: $($_.Exception.Message)"
     }
     Write-Host "PREFLIGHT: All checks passed."
     exit 0
