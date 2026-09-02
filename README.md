@@ -36,9 +36,11 @@ The detailed design contract lives in [`PROGRESSION_DESIGN.md`](PROGRESSION_DESI
 | 12 | Create Crafts & Additions power and logistics |
 | 13 | Alex's Mobs fieldwork + Alex's Delight cuisine |
 | 14 | Alex's Caves expeditions and deep resources |
-| 15 | Twilight Forest frontier + Twilight's Flavors & Delight |
+| 15 | Twilight Forest + Twilight's Flavors & Delight + End's Delight frontier economy |
 
 Copper is intentionally the active metal across Levels 7-9. Completing the copper tool milestone does **not** unlock iron; the Level 10 promotion is the only main-progression reward that grants Ironworking.
+
+Create begins the automation era at Level 10. Repeatable renewable order demand then scales geometrically from 4x at Level 10 to 128x at Level 15, while rare maps, tablets, and enabling machines stay out of bulk repeatable objectives. The late game is deliberately balanced around automated farms, kitchens, storage, and logistics rather than manual crafting hundreds of items.
 
 ItemStages is used where item or namespace containment is reliable. The pack does **not** claim to stage entity spawning, dimensions, or arbitrary world systems that ItemStages cannot actually enforce.
 
@@ -65,6 +67,6 @@ Outputs:
 - `dist/Bounty-Harvest-<version>.zip` — CurseForge client manifest with runtime overrides
 - `dist/Bounty-Harvest-<version>-server.zip` — dedicated server, Forge installer, and launchers
 
-Pull requests validate the 15-level quest graph, declared roots, market-order spine, delayed Ironworking gate, generated Bountiful data, pack invariants, archive client/server split, and dedicated-server boot. A version change merged into `main` creates the GitHub release after a successful build; CurseForge publishing runs independently.
+Pull requests validate the 15-level quest graph, declared roots, market-order spine, delayed Ironworking gate, generated Bountiful data, deterministic crop recovery, processor use, automation-economy scaling, retained infrastructure, late-game integration branches, pack invariants, archive client/server split, and dedicated-server boot. A version change merged into `main` creates the GitHub release after a successful build; CurseForge publishing runs independently.
 
 CurseForge publication is split into client and server-child jobs. After the client upload succeeds, its file ID and archive hash are persisted as a short-lived Actions artifact so **Re-run failed jobs** can retry a failed server-child upload without uploading the client again. `CURSEFORGE_API_TOKEN` is required for author uploads. `CURSEFORGE_CORE_API_KEY` remains optional but recommended for duplicate-file recovery across separate workflow runs or ambiguous upload responses.
