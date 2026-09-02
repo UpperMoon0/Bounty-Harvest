@@ -139,11 +139,13 @@ def main() -> int:
             errors.append(f"Bountiful bulk scale for Level {level} must remain {scale}x")
     if "const bulk =" not in bounty:
         errors.append("Bountiful renewable-demand scaling helper is missing")
-    if not re.search(
-        r"content:\s*'ends_delight:chorus_fruit_pie'[\s\S]{0,120}amount:\s*bulk\(15,\s*1,\s*4\)",
-        bounty,
-    ):
-        errors.append("Level 15 repeatable market no longer keeps End's Delight economically relevant at 128x scale")
+
+    for item in ("twilightdelight:glowstew", "ends_delight:chorus_fruit_pie"):
+        if not re.search(
+            rf"content:\s*'{re.escape(item)}'[\s\S]{{0,120}}amount:\s*bulk\(15,\s*1,\s*4\)",
+            bounty,
+        ):
+            errors.append(f"Level 15 repeatable market no longer scales renewable {item} at 128x")
 
     stages = STAGES.read_text(encoding="utf-8")
     if not re.search(r'createModRestriction\("ends_delight",\s*"level_15"\)', stages):
@@ -156,7 +158,7 @@ def main() -> int:
 
     print(
         "Economy curve OK: onboarding, recovery, processor use, retained infrastructure, "
-        "4x-128x automation pressure, and the Level 15 End branch are protected."
+        "4x-128x automation pressure, and the Level 15 frontier branches are protected."
     )
     return 0
 
