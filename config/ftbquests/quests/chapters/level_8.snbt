@@ -13,53 +13,111 @@
 			dependencies: ["D9D29B504CE79600"]
 			description: [
 				"After the Level 7 Market Order, spend 12 iron coins and four bookshelves to open the Market Garden. Both costs are consumed."
-				"Level 8 introduces only one major new crop: cabbage. It also opens pre-iron food processing with the flint knife and cutting board; iron tools and the Cooking Pot remain locked until Level 10."
+				"Cabbage, knife processing, poultry, fish, pies, and older beef or potato ingredients now form separate kitchen branches. Iron tools and the Cooking Pot still wait for Level 10."
 			]
 			icon: "farmersdelight:cabbage"
 			id: "4003BF6FE565761F"
 			rewards: [
 				{ autoclaim: 1b, id: "AD619F0417856A12", stage: "level_8", type: "stage" }
-				{
-					id: "022725D8444A224C"
-					item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_8\"]}", display: { Name: "{\"text\":\"Level 8 Decree\"}" } } }
-					type: "item"
-				}
+				{ id: "022725D8444A224C", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_8\"]}", display: { Name: "{\"text\":\"Level 8 Decree\"}" } } }, type: "item" }
 			]
 			shape: "octagon"
 			tasks: [
 				{ consume_items: true, count: 12L, id: "93320D29B44A8395", item: "kubejs:iron_coin", type: "item" }
 				{ consume_items: true, count: 4L, id: "43BCBCA21208846F", item: "minecraft:bookshelf", type: "item" }
 			]
-			title: "Level 8 · Market Garden & Hearth"
+			title: "Level 8 · Market Garden and Hearth"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["4003BF6FE565761F"]
-			description: [
-				"Build a Cutting Board and flint knife, grow 16 cabbage, then prepare four chicken sandwiches, four fish stew, and two apple pies."
-				"The sandwich and stew recipes now require knife-processed cuts and fish slices, so this tier cannot be bypassed with whole cooked meat. Chicken returns from Level 2 and fish from Level 5."
-			]
+			description: ["Grow cabbage into a stable 16-item harvest. It is the only major new crop this level and becomes the common vegetable tying several prepared foods together."]
+			id: "8A80000000000001"
+			tasks: [{ count: 16L, id: "8B303B36507FE0DD", item: "farmersdelight:cabbage", type: "item" }]
+			title: "Cabbage Garden"
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4003BF6FE565761F"]
+			description: ["Build a Cutting Board and flint knife. The recipes in this tier intentionally require processed cuts so the workstation is functional progression rather than decoration."]
 			icon: "farmersdelight:cutting_board"
-			id: "7D4D6172A5804B60"
+			id: "8A80000000000002"
 			tasks: [
 				{ id: "6F91C5A327D84BE0", item: "farmersdelight:cutting_board", type: "item" }
 				{ id: "AA4E23D1975C60BF", item: "farmersdelight:flint_knife", type: "item" }
-				{ count: 16L, id: "8B303B36507FE0DD", item: "farmersdelight:cabbage", type: "item" }
-				{ count: 4L, id: "28EAA3E841484561", item: "farmersdelight:chicken_sandwich", type: "item" }
-				{ count: 4L, id: "DA512531A1F37E6E", item: "farmersdelight:fish_stew", type: "item" }
-				{ count: 2L, id: "ECACB203269C51AE", item: "farmersdelight:apple_pie", type: "item" }
 			]
-			title: "Cutting Board & Prepared Foods"
-			x: 2.0d
-			y: 0.0d
+			title: "Knife and Cutting Board"
+			x: 0.0d
+			y: 2.0d
 		}
 		{
-			dependencies: ["7D4D6172A5804B60"]
-			description: [
-				"Ship 16 cabbage, four chicken sandwiches, four fish stew, and two apple pies. Every listed item is consumed."
-				"This order proves that the pre-iron kitchen can multiply the value of old production lines while demand begins ramping toward the industrial era."
+			dependencies: ["8A80000000000002"]
+			description: ["Process chicken into cooked chicken cuts. The sandwich recipe consumes these cuts instead of accepting a whole cooked chicken."]
+			id: "8A80000000000003"
+			tasks: [{ count: 4L, id: "8A80000000000004", item: "farmersdelight:cooked_chicken_cuts", type: "item" }]
+			title: "Poultry Butchery"
+			x: -0.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["8A80000000000002"]
+			description: ["Process cod and salmon into cooked slices. This brings the Level 5 fishery back into the kitchen as a prepared ingredient line."]
+			id: "8A80000000000005"
+			tasks: [
+				{ count: 4L, id: "8A80000000000006", item: "farmersdelight:cooked_cod_slice", type: "item" }
+				{ count: 4L, id: "8A80000000000007", item: "farmersdelight:cooked_salmon_slice", type: "item" }
 			]
+			title: "Fish Butchery"
+			x: 1.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["8A80000000000001", "8A80000000000003"]
+			description: ["Combine bread, processed chicken, cabbage, and carrots into four chicken sandwiches. Several older farm lines now gain a new processing layer at once."]
+			id: "8A80000000000008"
+			tasks: [{ count: 4L, id: "28EAA3E841484561", item: "farmersdelight:chicken_sandwich", type: "item" }]
+			title: "Chicken Sandwiches"
+			x: -1.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["8A80000000000005"]
+			description: ["Cook four fish stew from the processed fish slices, baked potatoes, and carrots. Fisheries and root crops now meet in one prepared-food branch."]
+			id: "8A80000000000009"
+			tasks: [{ count: 4L, id: "DA512531A1F37E6E", item: "farmersdelight:fish_stew", type: "item" }]
+			title: "Fish Stew"
+			x: 1.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["4003BF6FE565761F"]
+			description: ["Make pie crust from the wheat-dough and egg economy, then turn old apples and sugar into two apple pies."]
+			id: "8A8000000000000A"
+			tasks: [
+				{ count: 2L, id: "8A8000000000000B", item: "farmersdelight:pie_crust", type: "item" }
+				{ count: 2L, id: "ECACB203269C51AE", item: "farmersdelight:apple_pie", type: "item" }
+			]
+			title: "Apple Pie Line"
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["8A80000000000001", "8A80000000000002"]
+			description: ["Optional kitchen breadth: make a beef patty and stuffed potato. This keeps cattle and potatoes visible even though they are not required by this Market Order."]
+			id: "8A8000000000000C"
+			tasks: [
+				{ id: "8A8000000000000D", item: "farmersdelight:beef_patty", type: "item" }
+				{ id: "8A8000000000000E", item: "farmersdelight:stuffed_potato", type: "item" }
+			]
+			title: "Stuffed Potato Side Line"
+			x: 3.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["8A80000000000008", "8A80000000000009", "8A8000000000000A"]
+			description: ["The cabbage, poultry, fish, and pie branches converge here. Ship 16 cabbage, four chicken sandwiches, four fish stew, and two apple pies."]
 			icon: "farmersdelight:cabbage"
 			id: "F3FBD0BED43C89CC"
 			shape: "hexagon"
@@ -70,9 +128,9 @@
 				{ consume_items: true, count: 2L, id: "4BE4445A9FBFBA2C", item: "farmersdelight:apple_pie", type: "item" }
 			]
 			title: "Level 8 Market Order"
-			x: 4.0d
-			y: 0.0d
+			x: 6.0d
+			y: 6.0d
 		}
 	]
-	title: "Level 8 · Market Garden & Hearth"
+	title: "Level 8 · Market Garden and Hearth"
 }
