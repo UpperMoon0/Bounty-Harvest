@@ -22,6 +22,8 @@ jobs:
         run: python tools/validate_pack.py
       - name: Validate automation economy curve
         run: python tools/validate_economy_curve.py
+      - name: Validate retained bounty infrastructure
+        run: python tools/validate_bounty_infrastructure.py
       - name: Validate CurseForge publisher modes
         shell: pwsh
         run: |
