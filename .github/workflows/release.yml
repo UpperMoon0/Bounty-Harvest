@@ -3,7 +3,10 @@ name: Release modpack
 on:
   push:
     branches: [main]
-    paths: ['pack/pack.json', '.github/workflows/release.yml']
+    paths:
+      - 'pack/pack.json'
+      - '.github/workflows/release.yml'
+      - 'tools/publish_curseforge.ps1'
     tags: ['v*']
   workflow_dispatch:
     inputs:
@@ -33,6 +36,7 @@ jobs:
       should_release: ${{ steps.check.outputs.should_release }}
       version: ${{ steps.check.outputs.version }}
       release_type: ${{ steps.check.outputs.release_type }}
+      publish_github_release: ${{ steps.check.outputs.publish_github_release }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -50,20 +54,30 @@ jobs:
           $version = [string]$pack.version
           $releaseType = [string]$pack.releaseType
           $shouldRelease = $false
+          $publishGithubRelease = $false
+
+          $releaseTag = "v$version"
+          $tagExists = -not [string]::IsNullOrWhiteSpace(((& git tag --list $releaseTag) -join "`n"))
+          if ($LASTEXITCODE -ne 0) { throw "Failed to inspect release tags." }
 
           if ($env:GITHUB_EVENT_NAME -eq 'workflow_dispatch') {
             if (-not [string]::IsNullOrWhiteSpace($env:REQUESTED_RELEASE_TYPE)) { $releaseType = $env:REQUESTED_RELEASE_TYPE }
             $shouldRelease = ($env:GITHUB_REF -eq 'refs/heads/main') -and ($env:MANUAL_PUBLISH -eq 'true')
+            $publishGithubRelease = $shouldRelease -and (-not $tagExists)
           }
           elseif ($env:GITHUB_REF -like 'refs/tags/*') {
             $tag = $env:GITHUB_REF.Substring('refs/tags/'.Length)
-            if ($tag -ne "v$version") { throw "Tag $tag does not match pack version v$version." }
+            if ($tag -ne $releaseTag) { throw "Tag $tag does not match pack version $releaseTag." }
             $shouldRelease = $true
+            # A tag push is the event that creates the GitHub release, so the
+            # tag necessarily exists even when the release object does not yet.
+            $publishGithubRelease = $true
           }
           elseif ($env:GITHUB_EVENT_NAME -eq 'push' -and $env:GITHUB_REF -eq 'refs/heads/main') {
             $before = $env:BEFORE
             $previousVersion = $null
             $hasPreviousPack = $false
+            $releaseInfrastructureChanged = $false
 
             if ($before -and $before -ne '0000000000000000000000000000000000000000') {
               # Probe the tree first instead of intentionally running a failing
@@ -77,16 +91,24 @@ jobs:
                 $previousVersion = [string](($previousJson | ConvertFrom-Json).version)
                 $hasPreviousPack = $true
               }
+
+              $changedPaths = @(& git diff --name-only $before $env:GITHUB_SHA)
+              if ($LASTEXITCODE -ne 0) { throw "Failed to inspect changed paths since $before." }
+              $releaseInfrastructureChanged =
+                ($changedPaths -contains '.github/workflows/release.yml') -or
+                ($changedPaths -contains 'tools/publish_curseforge.ps1')
             }
 
             # A missing release tag means the current version was never fully
-            # published. This makes workflow-only fixes able to retry a failed
-            # release without requiring a fake version bump.
-            $releaseTag = "v$version"
-            $tagExists = -not [string]::IsNullOrWhiteSpace(((& git tag --list $releaseTag) -join "`n"))
-            if ($LASTEXITCODE -ne 0) { throw "Failed to inspect release tags." }
-
-            $shouldRelease = (-not $hasPreviousPack) -or ($previousVersion -ne $version) -or (-not $tagExists)
+            # published. Release-pipeline fixes are also explicit retries: a
+            # prior run may have created the GitHub tag/release before the
+            # CurseForge leg failed, so tag existence alone is not sufficient.
+            $shouldRelease =
+              (-not $hasPreviousPack) -or
+              ($previousVersion -ne $version) -or
+              (-not $tagExists) -or
+              $releaseInfrastructureChanged
+            $publishGithubRelease = $shouldRelease -and (-not $tagExists)
           }
 
           if ($shouldRelease -and -not (Test-Path "changelog/$version.md")) {
@@ -95,6 +117,7 @@ jobs:
           "should_release=$($shouldRelease.ToString().ToLowerInvariant())" >> $env:GITHUB_OUTPUT
           "version=$version" >> $env:GITHUB_OUTPUT
           "release_type=$releaseType" >> $env:GITHUB_OUTPUT
+          "publish_github_release=$($publishGithubRelease.ToString().ToLowerInvariant())" >> $env:GITHUB_OUTPUT
 
   build:
     needs: release-gate
@@ -192,7 +215,7 @@ jobs:
         run: ./tools/publish_curseforge.ps1 -Version '${{ needs.release-gate.outputs.version }}' -ReleaseType '${{ needs.release-gate.outputs.release_type }}' -SkipBuild -Mode server -StateFile 'dist/curseforge-state.json'
 
   publish-github-release:
-    if: needs.release-gate.outputs.should_release == 'true'
+    if: needs.release-gate.outputs.publish_github_release == 'true'
     needs: [release-gate, build]
     runs-on: ubuntu-latest
     timeout-minutes: 10
