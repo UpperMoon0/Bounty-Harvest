@@ -12,48 +12,23 @@
 		{
 			dependencies: ["2507AB50F6CCD90E"]
 			description: [
-				"After the Level 11 Market Order, spend 20 iron coins and two pineapple pies to enter Power & Logistics. Both costs are consumed."
-				"Completing this promotion grants Level 12, unlocks Create Crafts & Additions plus gold access, and awards your first Level 12 Decree."
+				"After the Level 11 Market Order, spend 192 iron coins and 64 pineapple pies to enter Power & Logistics. Both costs are consumed."
+				"Completing this promotion grants Level 12, unlocks Create Crafts & Additions plus gold access, and doubles the expected industrial throughput again."
 			]
 			icon: "createaddition:electric_motor"
 			id: "D147BB0FA78A2EFA"
 			rewards: [
-				{
-					autoclaim: 1b
-					id: "BF3CF5CBBD3341E4"
-					stage: "level_12"
-					type: "stage"
-				}
+				{ autoclaim: 1b, id: "BF3CF5CBBD3341E4", stage: "level_12", type: "stage" }
 				{
 					id: "131A5C266BB3F6B0"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_12\"]}"
-							display: { Name: "{\"text\":\"Level 12 Decree\"}" }
-						}
-					}
+					item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_12\"]}", display: { Name: "{\"text\":\"Level 12 Decree\"}" } } }
 					type: "item"
 				}
 			]
 			shape: "octagon"
 			tasks: [
-				{
-					consume_items: true
-					count: 20L
-					id: "813783EF161BFB9A"
-					item: "kubejs:iron_coin"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 2L
-					id: "2071092ABE824597"
-					item: "pineapple_delight:pineapple_pie"
-					type: "item"
-				}
+				{ consume_items: true, count: 192L, id: "813783EF161BFB9A", item: "kubejs:iron_coin", type: "item" }
+				{ consume_items: true, count: 64L, id: "2071092ABE824597", item: "pineapple_delight:pineapple_pie", type: "item" }
 			]
 			title: "Level 12 · Power & Logistics"
 			x: 0.0d
@@ -62,67 +37,35 @@
 		{
 			dependencies: ["D147BB0FA78A2EFA"]
 			description: [
-				"Build an electric motor, alternator, and accumulator, then secure four gold ingots to prove the farm can bridge mechanical and electrical infrastructure."
-				"These tasks only detect the components and gold; they are not consumed here."
+				"Build an electric motor, alternator, and accumulator, then secure 16 gold ingots to prove the farm can bridge mechanical and electrical infrastructure."
+				"These are permanent infrastructure checks. Nothing here is consumed: wire the components into the farm instead of crafting replacements for the Market Order."
 			]
 			icon: "createaddition:electric_motor"
 			id: "501EFA4FEC807009"
 			tasks: [
-				{
-					id: "7E89D412FAD59CF8"
-					item: "createaddition:electric_motor"
-					type: "item"
-				}
-				{
-					id: "9ADF13B2B36816F4"
-					item: "createaddition:alternator"
-					type: "item"
-				}
-				{
-					id: "89AC322430D5BC6E"
-					item: "createaddition:accumulator"
-					type: "item"
-				}
-				{
-					count: 4L
-					id: "AF2D1CCE89E93896"
-					item: "minecraft:gold_ingot"
-					type: "item"
-				}
+				{ id: "7E89D412FAD59CF8", item: "createaddition:electric_motor", type: "item" }
+				{ id: "9ADF13B2B36816F4", item: "createaddition:alternator", type: "item" }
+				{ id: "89AC322430D5BC6E", item: "createaddition:accumulator", type: "item" }
+				{ count: 16L, id: "AF2D1CCE89E93896", item: "minecraft:gold_ingot", type: "item" }
 			]
-			title: "Power & Logistics Production"
+			title: "Power Infrastructure"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["501EFA4FEC807009"]
 			description: [
-				"Ship one electric motor, one alternator, and four gold ingots. These shipment items are consumed; the accumulator remains yours."
-				"Completing the order opens Level 13 and moves the economy from infrastructure into wildlife cuisine."
+				"Use the infrastructure instead of selling it: ship 256 wheat, 128 tacos, 128 pineapple fried rice, and 96 salmon rolls. Every shipment item is consumed; the motor, alternator, and accumulator remain yours."
+				"This order is intentionally hostile to hand production. Power & Logistics is complete only when old farm lines can sustain industrial throughput together."
 			]
 			icon: "createaddition:electric_motor"
 			id: "C249CFA083AB4179"
 			shape: "hexagon"
 			tasks: [
-				{
-					consume_items: true
-					id: "20025468EEB83B3E"
-					item: "createaddition:electric_motor"
-					type: "item"
-				}
-				{
-					consume_items: true
-					id: "15BB02EC8EFCF1F5"
-					item: "createaddition:alternator"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 4L
-					id: "124B9527F3ED5B19"
-					item: "minecraft:gold_ingot"
-					type: "item"
-				}
+				{ consume_items: true, count: 256L, id: "20025468EEB83B3E", item: "minecraft:wheat", type: "item" }
+				{ consume_items: true, count: 128L, id: "15BB02EC8EFCF1F5", item: "corn_delight:taco", type: "item" }
+				{ consume_items: true, count: 128L, id: "124B9527F3ED5B19", item: "pineapple_delight:pineapple_fried_rice", type: "item" }
+				{ consume_items: true, count: 96L, id: "5D8A37C1F04BE296", item: "farmersdelight:salmon_roll", type: "item" }
 			]
 			title: "Level 12 Market Order"
 			x: 4.0d
