@@ -13,52 +13,72 @@
 			dependencies: ["F3FBD0BED43C89CC"]
 			description: [
 				"After the Level 8 Market Order, spend 24 iron coins and eight fish stew to open the Corn Market. Both costs are consumed."
-				"Level 9 adds corn plus one new supporting crop, tomato. The taco chain combines Level 4 pork, Level 8 cabbage, and the new crops while copper remains the active metal tier."
+				"Corn, tomato, corn processing, and the cross-level taco line now branch independently. This is the last tier intended to remain comfortable without Create automation."
 			]
 			icon: "corn_delight:corn"
 			id: "C0B4AA32262BF02B"
 			rewards: [
 				{ autoclaim: 1b, id: "3D1E76F5425C8727", stage: "level_9", type: "stage" }
-				{
-					id: "739173F309692FDC"
-					item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_9\"]}", display: { Name: "{\"text\":\"Level 9 Decree\"}" } } }
-					type: "item"
-				}
+				{ id: "739173F309692FDC", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_9\"]}", display: { Name: "{\"text\":\"Level 9 Decree\"}" } } }, type: "item" }
 			]
 			shape: "octagon"
 			tasks: [
 				{ consume_items: true, count: 24L, id: "A52EC01776518BD5", item: "kubejs:iron_coin", type: "item" }
 				{ consume_items: true, count: 8L, id: "C16D4D6661677035", item: "farmersdelight:fish_stew", type: "item" }
 			]
-			title: "Level 9 · Corn & Tomato Market"
+			title: "Level 9 · Corn and Tomato Market"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["C0B4AA32262BF02B"]
-			description: [
-				"Harvest 24 corn and 16 tomatoes, then make eight cornbread, eight tortillas, and eight tacos."
-				"These tasks only detect the food. The custom taco recipe is a cross-level product: tortilla + cooked pork + tomato + cabbage."
-			]
-			icon: "corn_delight:taco"
-			id: "547338FFDF3F8C9F"
-			tasks: [
-				{ count: 24L, id: "C6046AB74D2BEFC7", item: "corn_delight:corn", type: "item" }
-				{ count: 16L, id: "359B446432579DB4", item: "farmersdelight:tomato", type: "item" }
-				{ count: 8L, id: "6F2AC460EFA39C93", item: "corn_delight:cornbread", type: "item" }
-				{ count: 8L, id: "485F8F3EC8355404", item: "corn_delight:tortilla", type: "item" }
-				{ count: 8L, id: "3D71DFA58C33C641", item: "corn_delight:taco", type: "item" }
-			]
-			title: "Corn & Tomato Production"
-			x: 2.0d
-			y: 0.0d
+			description: ["Establish a 24-corn harvest. If world generation refuses to provide corn, the Crop Shop has an intentionally expensive deterministic seed recovery trade."]
+			id: "9A90000000000001"
+			tasks: [{ count: 24L, id: "C6046AB74D2BEFC7", item: "corn_delight:corn", type: "item" }]
+			title: "Corn Field"
+			x: -2.0d
+			y: 2.0d
 		}
 		{
-			dependencies: ["547338FFDF3F8C9F"]
-			description: [
-				"Ship 24 corn, 16 tomatoes, eight cornbread, and eight tacos. All listed goods are consumed."
-				"This is the last intentionally hand-manageable Market Order. Level 10 unlocks Create, after which required throughput rises geometrically rather than staying at kitchen-scale quantities."
-			]
+			dependencies: ["C0B4AA32262BF02B"]
+			description: ["Grow 16 tomatoes. Tomato is deliberately introduced one level after cabbage so the garden expands in understandable steps."]
+			id: "9A90000000000002"
+			tasks: [{ count: 16L, id: "359B446432579DB4", item: "farmersdelight:tomato", type: "item" }]
+			title: "Tomato Field"
+			x: 1.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["9A90000000000001"]
+			description: ["Turn corn into eight cornbread. This branch represents a finished baked product rather than selling only raw crop output."]
+			id: "9A90000000000003"
+			tasks: [{ count: 8L, id: "6F2AC460EFA39C93", item: "corn_delight:cornbread", type: "item" }]
+			title: "Cornbread"
+			x: -3.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["9A90000000000001"]
+			description: ["Produce eight tortillas as the intermediate processing line that turns corn into the base for higher-value tacos."]
+			id: "9A90000000000004"
+			tasks: [{ count: 8L, id: "485F8F3EC8355404", item: "corn_delight:tortilla", type: "item" }]
+			title: "Tortillas"
+			x: -0.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["9A90000000000002", "9A90000000000004"]
+			description: ["Make eight tacos from tortilla, cooked pork, tomato, and cabbage. This one product deliberately reconnects Levels 4, 8, and 9 into a single valuable food line."]
+			icon: "corn_delight:taco"
+			id: "9A90000000000005"
+			tasks: [{ count: 8L, id: "3D71DFA58C33C641", item: "corn_delight:taco", type: "item" }]
+			title: "Taco Line"
+			x: 1.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["9A90000000000003", "9A90000000000005"]
+			description: ["The raw crop and processing branches converge here. Ship 24 corn, 16 tomatoes, eight cornbread, and eight tacos. Level 10 then turns the economy industrial."]
 			icon: "corn_delight:corn"
 			id: "2A9904A355A5FE23"
 			shape: "hexagon"
@@ -69,9 +89,9 @@
 				{ consume_items: true, count: 8L, id: "66F2E6F1D3B01355", item: "corn_delight:taco", type: "item" }
 			]
 			title: "Level 9 Market Order"
-			x: 4.0d
-			y: 0.0d
+			x: 5.0d
+			y: 5.0d
 		}
 	]
-	title: "Level 9 · Corn & Tomato Market"
+	title: "Level 9 · Corn and Tomato Market"
 }
