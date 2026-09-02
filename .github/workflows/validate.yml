@@ -2,9 +2,14 @@ name: Validate pack
 
 on:
   push:
-    branches: ['**']
+    branches: [main]
   pull_request:
-    branches: ['**']
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: validate-pack-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   validate:
