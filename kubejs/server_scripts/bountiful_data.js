@@ -138,7 +138,7 @@ ServerEvents.highPriorityData(event => {
             taco: { type: 'item', content: 'corn_delight:taco', amount: bulk(14, 1, 5), unitWorth: 460 }
         } },
         15: { reward: 'bh_gold_rews', content: {
-            glowstew: { type: 'item', content: 'twilightdelight:glowstew', amount: { min: 16, max: 64 }, unitWorth: 720 },
+            glowstew: { type: 'item', content: 'twilightdelight:glowstew', amount: bulk(15, 1, 4), unitWorth: 720 },
             chorus_pie: { type: 'item', content: 'ends_delight:chorus_fruit_pie', amount: bulk(15, 1, 4), unitWorth: 780 },
             taco: { type: 'item', content: 'corn_delight:taco', amount: bulk(15, 1, 5), unitWorth: 460 },
             pineapple_pie: { type: 'item', content: 'pineapple_delight:pineapple_pie', amount: bulk(15, 1, 5), unitWorth: 480 },
