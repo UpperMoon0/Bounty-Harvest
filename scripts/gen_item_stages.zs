@@ -142,8 +142,7 @@ ItemStages.restrict(<tag:items:minecraft:redstone_ores>, "level_10");
 ItemStages.restrict(<item:minecraft:redstone>, "level_10");
 ItemStages.restrict(<item:minecraft:redstone_block>, "level_10");
 
-// Level 11 · Tropical Automation — rice arrives here because it immediately
-// connects pineapple fried rice to the old fisheries through fish rolls.
+// Level 11 · Tropical Automation — rice and pineapple feed Slice & Dice scale.
 ItemStages.restrict(<item:farmersdelight:rice>, "level_11");
 ItemStages.restrict(<item:farmersdelight:rice_panicle>, "level_11");
 ItemStages.restrict(<item:farmersdelight:cooked_rice>, "level_11");
@@ -178,4 +177,3 @@ ItemStages.restrict(<item:minecraft:amethyst_shard>, "level_14");
 // Level 15 · Twilight Frontier
 ItemStages.createModRestriction("twilightforest", "level_15");
 ItemStages.createModRestriction("twilightdelight", "level_15");
-ItemStages.createModRestriction("ends_delight", "level_15");
