@@ -40,73 +40,63 @@
 			]
 			icon: "pineapple_delight:pineapple"
 			id: "A000000000001002"
-			tasks: [
-				{ count: 48L, id: "B000000000100201", item: "pineapple_delight:pineapple", type: "item" }
-			]
+			tasks: [{ count: 48L, id: "B000000000100201", item: "pineapple_delight:pineapple", type: "item" }]
 			title: "Pineapple Plantation"
 			x: -2.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["A000000000001002"]
-			description: [
-				"Give pineapple one clear first premium product by reconnecting it to old pie crust, wheat, eggs, and sugar."
-			]
-			icon: "pineapple_delight:pineapple_pie"
-			id: "A000000000001003"
-			tasks: [
-				{ count: 24L, id: "B000000000100301", item: "pineapple_delight:pineapple_pie", type: "item" }
-			]
-			title: "Pineapple Pies"
-			x: -3.0d
-			y: 4.0d
-		}
-		{
 			dependencies: ["A000000000001001"]
 			description: [
-				"Scale the old sugar economy for the new bakery."
+				"Begin the bakery-supply branch by scaling the old sugar economy."
+				""
+				"Wheat follows downstream so this level does not open every bakery input as a parallel checklist."
 			]
 			icon: "minecraft:sugar"
 			id: "A000000000001004"
-			tasks: [
-				{ count: 128L, id: "B000000000100401", item: "minecraft:sugar", type: "item" }
-			]
+			tasks: [{ count: 128L, id: "B000000000100401", item: "minecraft:sugar", type: "item" }]
 			title: "Bakery Sugar"
 			x: 1.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["A000000000001001"]
-			description: [
-				"Scale the staple wheat line for industrial pastry production."
-			]
+			dependencies: ["A000000000001004"]
+			description: ["Continue the bakery-supply branch by scaling the original wheat staple for industrial pastry production."]
 			icon: "minecraft:wheat"
 			id: "A000000000001005"
-			tasks: [
-				{ count: 256L, id: "B000000000100501", item: "minecraft:wheat", type: "item" }
-			]
+			tasks: [{ count: 256L, id: "B000000000100501", item: "minecraft:wheat", type: "item" }]
 			title: "Bakery Wheat"
 			x: 2.0d
 			y: 4.0d
 		}
 		{
-			dependencies: ["A000000000001001"]
+			dependencies: ["A000000000001002", "A000000000001005"]
 			description: [
-				"Keep the mature corn, tomato, pork, and cabbage chain productive while pineapple establishes itself."
+				"Combine pineapple with the established sugar and wheat bakery supply."
+				""
+				"The premium product now represents a real convergence of the new crop and old farm systems."
 			]
+			icon: "pineapple_delight:pineapple_pie"
+			id: "A000000000001003"
+			tasks: [{ count: 24L, id: "B000000000100301", item: "pineapple_delight:pineapple_pie", type: "item" }]
+			title: "Pineapple Pies"
+			x: -1.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["A000000000001001"]
+			description: ["Keep the mature corn, tomato, pork, and cabbage chain productive while pineapple establishes its own bakery identity."]
 			icon: "corn_delight:taco"
 			id: "A000000000001006"
-			tasks: [
-				{ count: 128L, id: "B000000000100601", item: "corn_delight:taco", type: "item" }
-			]
+			tasks: [{ count: 128L, id: "B000000000100601", item: "corn_delight:taco", type: "item" }]
 			title: "Automated Taco Carryover"
 			x: 3.0d
 			y: 6.0d
 		}
 		{
-			dependencies: ["A000000000001003", "A000000000001004", "A000000000001005", "A000000000001006"]
+			dependencies: ["A000000000001003", "A000000000001006"]
 			description: [
-				"Ship pineapple, pies, wheat, and tacos."
+				"Ship pineapple, pies, wheat, and tacos after the bakery branch has already converged its ingredients."
 				""
 				"Rice waits for the next level so pineapple gets its own economic identity first."
 			]
