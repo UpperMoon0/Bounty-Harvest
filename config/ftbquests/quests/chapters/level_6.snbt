@@ -114,6 +114,7 @@
 		}
 		{
 			dependencies: ["210D58BA749A0F47"]
+			description: ["Combine the mushroom harvest into stew as the prepared endpoint of the pantry side branch. It broadens the food guide without adding another mandatory Market Order tax."]
 			id: "343DEFDA4A80BD80"
 			tasks: [{ id: "52B2C27427857FDD", item: "minecraft:mushroom_stew", type: "item" }]
 			title: "Mushroom Stew"
