@@ -104,15 +104,16 @@ ServerEvents.recipes((e) => {
     })
 
     // Level 8 · Market Garden & Hearth
-    // Pre-iron cooking must still gain complexity. These recipes deliberately combine
-    // old production lines with the one new L8 crop, cabbage.
+    // Prepared foods now require the cutting-board outputs unlocked at this level.
+    // The flint knife/cutting board therefore form a real processing tier rather than
+    // cosmetic unlocks that can be bypassed by whole-meat crafting recipes.
     e.remove({output: 'farmersdelight:chicken_sandwich'})
     e.shaped('farmersdelight:chicken_sandwich', [
         'BC',
         'DR'
     ], {
         B: 'minecraft:bread',
-        C: 'minecraft:cooked_chicken',
+        C: 'farmersdelight:cooked_chicken_cuts',
         D: 'farmersdelight:cabbage',
         R: 'minecraft:carrot'
     })
@@ -120,8 +121,8 @@ ServerEvents.recipes((e) => {
     e.remove({output: 'farmersdelight:fish_stew'})
     e.shapeless('farmersdelight:fish_stew', [
         'minecraft:bowl',
-        'minecraft:cooked_cod',
-        'minecraft:cooked_salmon',
+        'farmersdelight:cooked_cod_slice',
+        'farmersdelight:cooked_salmon_slice',
         'minecraft:baked_potato',
         'minecraft:carrot'
     ])
@@ -132,7 +133,7 @@ ServerEvents.recipes((e) => {
         'C '
     ], {
         A: 'minecraft:baked_potato',
-        B: 'minecraft:cooked_beef',
+        B: 'farmersdelight:beef_patty',
         C: 'farmersdelight:cabbage'
     })
 
