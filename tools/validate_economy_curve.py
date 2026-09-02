@@ -4,7 +4,7 @@ import re
 import sys
 from pathlib import Path
 
-from validate_quests import extract_quest_blocks
+from validate_quests import FINAL_MARKET_IDS, ID_RE, LEVEL_STAGE_IDS, extract_quest_blocks
 
 ROOT = Path(__file__).resolve().parents[1]
 QUESTS = ROOT / "config" / "ftbquests" / "quests" / "chapters"
@@ -35,6 +35,15 @@ def has_item(block: str, item: str, count: int | None = None) -> bool:
     ) is not None
 
 
+def quest_map(text: str) -> dict[str, str]:
+    result: dict[str, str] = {}
+    for block in extract_quest_blocks(text):
+        match = ID_RE.search(block)
+        if match:
+            result[match.group(1).lower()] = block
+    return result
+
+
 def main() -> int:
     errors: list[str] = []
 
@@ -43,11 +52,14 @@ def main() -> int:
         for level in range(1, 16)
     }
     blocks = {level: extract_quest_blocks(text) for level, text in levels.items()}
+    quests = {level: quest_map(text) for level, text in levels.items()}
 
-    # Level 1 must teach the core economy before charging promotion currency.
-    if "bountiful:bountyboard" not in blocks[1][0]:
+    # Level 1 must teach the core economy before charging promotion currency. The
+    # book is intentionally branched, so this invariant searches the chapter rather
+    # than assuming specific array positions.
+    if not any("bountiful:bountyboard" in block for block in blocks[1]):
         errors.append("Level 1 onboarding no longer requires the Bounty Board")
-    if "kubejs:copper_coin" not in blocks[1][1]:
+    if not any("kubejs:copper_coin" in block for block in blocks[1]):
         errors.append("Level 1 onboarding no longer proves the player completed a first sale")
 
     # World-generation luck must never hard-lock a required crop.
@@ -66,6 +78,11 @@ def main() -> int:
     ):
         if processed_input not in recipes:
             errors.append(f"Level 8 processing can bypass required input {processed_input}")
+    if not any(
+        "farmersdelight:cutting_board" in block and "farmersdelight:flint_knife" in block
+        for block in blocks[8]
+    ):
+        errors.append("Level 8 no longer establishes Cutting Board and flint-knife infrastructure")
 
     # Promotion currency follows an explicit doubling-style industrial curve.
     promotion_costs = {
@@ -77,17 +94,20 @@ def main() -> int:
         15: [("kubejs:gold_coin", 192), ("corn_delight:taco", 256), ("pineapple_delight:pineapple_pie", 256)],
     }
     for level, costs in promotion_costs.items():
-        promotion = blocks[level][0]
+        promotion = quests[level].get(LEVEL_STAGE_IDS[level], "")
+        if not promotion:
+            errors.append(f"Level {level} promotion block is missing")
+            continue
         for item, count in costs:
             if not has_consumed_item(promotion, item, count):
                 errors.append(f"Level {level} promotion lost automation-scale cost {count}x {item}")
 
-    # Slice & Dice must be a used progression tool, not a dead namespace unlock.
-    if "sliceanddice:slicer" not in blocks[11][1]:
-        errors.append("Level 11 no longer requires Slice & Dice infrastructure")
+    # Slice and Dice must be a used progression tool, not a dead namespace unlock.
+    if not any("sliceanddice:slicer" in block for block in blocks[11]):
+        errors.append("Level 11 no longer requires Slice and Dice infrastructure")
 
     # Infrastructure is retained; market orders consume renewable throughput instead.
-    level12_market = blocks[12][-1]
+    level12_market = quests[12].get(FINAL_MARKET_IDS[12], "")
     for infrastructure in (
         "createaddition:electric_motor",
         "createaddition:alternator",
@@ -103,7 +123,7 @@ def main() -> int:
         if not has_consumed_item(level12_market, item, count):
             errors.append(f"Level 12 Market Order lost industrial shipment {count}x {item}")
 
-    level14_market = blocks[14][-1]
+    level14_market = quests[14].get(FINAL_MARKET_IDS[14], "")
     if has_consumed_item(level14_market, "alexscaves:cave_tablet"):
         errors.append("Level 14 Market Order consumes the Cave Tablet instead of retaining infrastructure")
     for item, count in (
@@ -114,8 +134,7 @@ def main() -> int:
         if not has_consumed_item(level14_market, item, count):
             errors.append(f"Level 14 no longer reconnects farm throughput through {count}x {item}")
 
-    level15_supply = blocks[15][1]
-    level15_market = blocks[15][-1]
+    level15_market = quests[15].get(FINAL_MARKET_IDS[15], "")
     if has_consumed_item(level15_market, "twilightforest:magic_map"):
         errors.append("Level 15 Market Order consumes the Magic Map instead of retaining navigation infrastructure")
     for item, count in (
@@ -128,7 +147,10 @@ def main() -> int:
             errors.append(f"Level 15 peak shipment lost {count}x {item}")
 
     # End's Delight is intentionally a real final-tier branch, not a dead namespace gate.
-    if not has_item(level15_supply, "ends_delight:chorus_fruit_pie", 64):
+    if not any(
+        block != level15_market and has_item(block, "ends_delight:chorus_fruit_pie", 64)
+        for block in blocks[15]
+    ):
         errors.append("Level 15 no longer establishes the End's Delight chorus-fruit production branch")
 
     # Repeatable orders scale geometrically on renewable goods after Create arrives.
@@ -157,7 +179,7 @@ def main() -> int:
         return 1
 
     print(
-        "Economy curve OK: onboarding, recovery, processor use, retained infrastructure, "
+        "Economy curve OK: branched onboarding, recovery, processor use, retained infrastructure, "
         "4x-128x automation pressure, and the Level 15 frontier branches are protected."
     )
     return 0
