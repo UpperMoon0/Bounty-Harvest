@@ -13,17 +13,13 @@
 			dependencies: ["A48274D6A8EE43B3"]
 			description: [
 				"After the Level 13 Market Order, spend 96 gold coins, 128 tacos, and 128 pineapple pies to provision Deep Expeditions. Every cost is consumed."
-				"The expedition is funded by the farm economy rather than by disposable machinery. Completing this promotion unlocks Alex's Caves item progression plus diamond and lapis access."
+				"Navigation, diamonds, amethyst, optional lapis, and expedition food now form distinct branches. The Cave Tablet is permanent infrastructure and the farm must provision the trip at industrial scale."
 			]
 			icon: "alexscaves:cave_tablet"
 			id: "4BB6B303F8005D7E"
 			rewards: [
 				{ autoclaim: 1b, id: "16712ED0A48B1B43", stage: "level_14", type: "stage" }
-				{
-					id: "381D8D59B394C7E4"
-					item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_14\"]}", display: { Name: "{\"text\":\"Level 14 Decree\"}" } } }
-					type: "item"
-				}
+				{ id: "381D8D59B394C7E4", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_14\"]}", display: { Name: "{\"text\":\"Level 14 Decree\"}" } } }, type: "item" }
 			]
 			shape: "octagon"
 			tasks: [
@@ -37,27 +33,57 @@
 		}
 		{
 			dependencies: ["4BB6B303F8005D7E"]
-			description: [
-				"Obtain a Cave Tablet, 16 diamonds, and 64 amethyst shards to establish a serious deep-resource supply."
-				"These tasks only detect the resources. Keep the Cave Tablet permanently: it is expedition infrastructure, not something the market asks you to repeatedly replace."
-			]
+			description: ["Obtain a Cave Tablet. It is the navigation and research key for this expedition and is retained permanently rather than sold to the market."]
 			icon: "alexscaves:cave_tablet"
-			id: "9524652C04DDDC53"
-			tasks: [
-				{ id: "02CD0FEE244A32B4", item: "alexscaves:cave_tablet", type: "item" }
-				{ count: 16L, id: "C589F44D90ACEADA", item: "minecraft:diamond", type: "item" }
-				{ count: 64L, id: "3245CA53AA21AD58", item: "minecraft:amethyst_shard", type: "item" }
-			]
-			title: "Deep Resource Supply"
+			id: "E140000000000001"
+			tasks: [{ id: "02CD0FEE244A32B4", item: "alexscaves:cave_tablet", type: "item" }]
+			title: "Cave Tablet"
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4BB6B303F8005D7E"]
+			description: ["Secure 16 diamonds as the premium deep-mining branch. Their scarcity stays meaningful, but the Market Order combines them with farm throughput rather than ending here."]
+			id: "E140000000000002"
+			tasks: [{ count: 16L, id: "C589F44D90ACEADA", item: "minecraft:diamond", type: "item" }]
+			title: "Diamond Supply"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4BB6B303F8005D7E"]
+			description: ["Gather 64 amethyst shards. This is a separate renewable-or-exploration resource branch rather than being hidden inside one three-item checklist."]
+			id: "E140000000000003"
+			tasks: [{ count: 64L, id: "3245CA53AA21AD58", item: "minecraft:amethyst_shard", type: "item" }]
+			title: "Amethyst Supply"
 			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4BB6B303F8005D7E"]
+			description: ["Optional deep-mining breadth: collect lapis after the Level 14 gate opens. It is useful for enchanting and proves the level contains more than exactly the items sold in its final order."]
+			id: "E140000000000004"
+			tasks: [{ count: 32L, id: "E140000000000005", item: "minecraft:lapis_lazuli", type: "item" }]
+			title: "Lapis Side Branch"
+			x: 3.5d
 			y: 0.0d
 		}
 		{
-			dependencies: ["9524652C04DDDC53"]
-			description: [
-				"Ship 16 diamonds, 64 amethyst shards, 256 chicken sandwiches, 256 pineapple pies, and 128 tacos. The Cave Tablet remains yours."
-				"Deep resources are now premium inputs inside a much larger provisioned economy. The level no longer ends as a rare-item checklist: mature food lines must support the expedition at industrial scale."
+			dependencies: ["4BB6B303F8005D7E"]
+			description: ["Stage the food needed to support repeated deep expeditions: chicken sandwiches, pineapple pies, and tacos. These old automated lines carry most of the level's volume."]
+			id: "E140000000000006"
+			tasks: [
+				{ count: 256L, id: "E140000000000007", item: "farmersdelight:chicken_sandwich", type: "item" }
+				{ count: 256L, id: "E140000000000008", item: "pineapple_delight:pineapple_pie", type: "item" }
+				{ count: 128L, id: "E140000000000009", item: "corn_delight:taco", type: "item" }
 			]
+			title: "Expedition Provisions"
+			x: 1.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["E140000000000001", "E140000000000002", "E140000000000003", "E140000000000006"]
+			description: ["Navigation, deep resources, and farm provisioning converge here. Ship the diamonds, amethyst, and prepared foods while keeping the Cave Tablet for future expeditions."]
 			icon: "alexscaves:cave_tablet"
 			id: "250184A59EA4EBA2"
 			shape: "hexagon"
@@ -69,8 +95,8 @@
 				{ consume_items: true, count: 128L, id: "D40A79C31E65B28F", item: "corn_delight:taco", type: "item" }
 			]
 			title: "Level 14 Market Order"
-			x: 4.0d
-			y: 0.0d
+			x: 6.0d
+			y: 5.0d
 		}
 	]
 	title: "Level 14 · Deep Expeditions"
