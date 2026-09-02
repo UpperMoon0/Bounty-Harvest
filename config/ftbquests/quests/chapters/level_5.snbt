@@ -73,7 +73,7 @@
 			dependencies: ["DD0D246B33124C7D"]
 			description: ["Collect an ink sac as an optional water-resource branch. Not every detail needs to gate progression, but the chapter should represent more than the final sale recipe."]
 			id: "1CCF7C805ED9FE8B"
-			tasks: [{ id: "4D8584A4BBCC99A6", item: "minecraft:ink_sac", type: "item" }]
+			tasks: [{ id: "A500000000000001", item: "minecraft:ink_sac", type: "item" }]
 			title: "Squid and Ink"
 			x: 1.5d
 			y: -2.0d
