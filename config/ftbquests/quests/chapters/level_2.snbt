@@ -120,6 +120,7 @@
 		}
 		{
 			dependencies: ["5571AA243B6BB49B"]
+			description: ["Add a trapdoor and ladder to the farmhouse. This is a small shelter-improvement branch kept for guidance and atmosphere rather than Market Order throughput."]
 			id: "0EB9C48464D5C956"
 			tasks: [
 				{ id: "6C72236233047E7E", item: { Count: 1, id: "itemfilters:tag", tag: { value: "minecraft:wooden_trapdoors" } }, title: "Any Wooden Trapdoor", type: "item" }
