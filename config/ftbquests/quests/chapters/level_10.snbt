@@ -12,8 +12,8 @@
 		{
 			dependencies: ["2A9904A355A5FE23"]
 			description: [
-				"After the Level 9 Market Order, spend 12 iron coins, 12 charcoal, and eight copper ingots to fund the jump from the mature copper economy into Ironworking. Every cost is consumed."
-				"Completing this promotion grants Level 10 and the Ironworking stage together. Iron is intentionally impossible before this point. Level 10 also opens onion, the iron kitchen, Create, and redstone."
+				"After the Level 9 Market Order, spend 48 iron coins, 32 charcoal, and 24 copper ingots to fund the jump from the mature copper economy into Ironworking. Every cost is consumed."
+				"Completing this promotion grants Level 10 and Ironworking together. Create and redstone arrive here, and from this point onward promotion and order volumes rise aggressively so automation becomes the intended answer."
 			]
 			icon: "minecraft:iron_ingot"
 			id: "201FA0D785EF1770"
@@ -28,9 +28,9 @@
 			]
 			shape: "octagon"
 			tasks: [
-				{ consume_items: true, count: 12L, id: "F40F974AEF61FB8D", item: "kubejs:iron_coin", type: "item" }
-				{ consume_items: true, count: 12L, id: "DEED9A20DF169A0E", item: "minecraft:charcoal", type: "item" }
-				{ consume_items: true, count: 8L, id: "9FBCD7CE6A2827CD", item: "minecraft:copper_ingot", type: "item" }
+				{ consume_items: true, count: 48L, id: "F40F974AEF61FB8D", item: "kubejs:iron_coin", type: "item" }
+				{ consume_items: true, count: 32L, id: "DEED9A20DF169A0E", item: "minecraft:charcoal", type: "item" }
+				{ consume_items: true, count: 24L, id: "9FBCD7CE6A2827CD", item: "minecraft:copper_ingot", type: "item" }
 			]
 			title: "Level 10 · Iron & Industry"
 			x: 0.0d
@@ -39,14 +39,14 @@
 		{
 			dependencies: ["201FA0D785EF1770"]
 			description: [
-				"Ironworking is now active. Collect nine raw iron and smelt six iron ingots to establish the new metal supply."
+				"Ironworking is now active. Collect 18 raw iron and smelt 12 iron ingots to establish the new metal supply."
 				"This is detection-only. The three-nugget ore economy still applies, so the first iron tools and machines represent a real investment."
 			]
 			icon: "minecraft:iron_ingot"
 			id: "557852FFD6F4D560"
 			tasks: [
-				{ count: 9L, id: "D1368579182B4441", item: "minecraft:raw_iron", type: "item" }
-				{ count: 6L, id: "6E70C88C1DDB2707", item: "minecraft:iron_ingot", type: "item" }
+				{ count: 18L, id: "D1368579182B4441", item: "minecraft:raw_iron", type: "item" }
+				{ count: 12L, id: "6E70C88C1DDB2707", item: "minecraft:iron_ingot", type: "item" }
 			]
 			title: "Iron Supply"
 			x: 2.0d
@@ -55,15 +55,15 @@
 		{
 			dependencies: ["557852FFD6F4D560"]
 			description: [
-				"Add one new crop, onion, and use iron-enabled buckets and kitchen equipment to make four milk bottles and two bacon and eggs."
-				"These tasks only detect the goods. Cattle gains a dairy branch, pork and eggs gain a more complex breakfast product, and onion gets an immediate kitchen role instead of becoming another checklist crop."
+				"Add onion and use iron-enabled kitchen equipment to stock 16 milk bottles and eight bacon and eggs."
+				"Cattle gains a dairy branch, pork and eggs gain a more complex breakfast product, and onion gets an immediate kitchen role. At this scale, designing repeatable production starts paying off."
 			]
 			icon: "farmersdelight:iron_knife"
 			id: "B912F1FE8E149DE8"
 			tasks: [
-				{ count: 8L, id: "D7873812059AC8E4", item: "farmersdelight:onion", type: "item" }
-				{ count: 4L, id: "E0A077EB979C58E8", item: "farmersdelight:milk_bottle", type: "item" }
-				{ count: 2L, id: "CAD6AF4A6BD802E7", item: "farmersdelight:bacon_and_eggs", type: "item" }
+				{ count: 32L, id: "D7873812059AC8E4", item: "farmersdelight:onion", type: "item" }
+				{ count: 16L, id: "E0A077EB979C58E8", item: "farmersdelight:milk_bottle", type: "item" }
+				{ count: 8L, id: "CAD6AF4A6BD802E7", item: "farmersdelight:bacon_and_eggs", type: "item" }
 			]
 			title: "Iron Kitchen & Onion"
 			x: 4.0d
@@ -72,15 +72,15 @@
 		{
 			dependencies: ["B912F1FE8E149DE8"]
 			description: [
-				"Craft eight andesite alloy, eight shafts, and eight cogwheels to turn the new iron tier into practical Create infrastructure."
-				"This quest only detects the components. Create arrives after Ironworking instead of replacing the copper era prematurely."
+				"Craft 16 andesite alloy, 16 shafts, and 16 cogwheels to turn the new iron tier into practical Create infrastructure."
+				"These components are detected, not consumed. Build with them: later orders deliberately demand volumes that are tedious to maintain by hand."
 			]
 			icon: "create:andesite_alloy"
 			id: "525F40C497949612"
 			tasks: [
-				{ count: 8L, id: "16B11285B4E5277C", item: "create:andesite_alloy", type: "item" }
-				{ count: 8L, id: "5B370692CBDAC124", item: "create:shaft", type: "item" }
-				{ count: 8L, id: "5045FA1C2E22E962", item: "create:cogwheel", type: "item" }
+				{ count: 16L, id: "16B11285B4E5277C", item: "create:andesite_alloy", type: "item" }
+				{ count: 16L, id: "5B370692CBDAC124", item: "create:shaft", type: "item" }
+				{ count: 16L, id: "5045FA1C2E22E962", item: "create:cogwheel", type: "item" }
 			]
 			title: "Mechanical Farm Foundations"
 			x: 6.0d
@@ -89,18 +89,18 @@
 		{
 			dependencies: ["525F40C497949612"]
 			description: [
-				"Ship six iron ingots, four andesite alloy, eight onions, two bacon and eggs, and 16 wheat. Every listed good is consumed."
-				"The first industrial order deliberately combines the new iron/Create economy with old wheat, pork, and eggs. Completing it opens Level 11 Tropical Automation."
+				"Ship 32 iron ingots, 32 andesite alloy, 64 onions, 32 bacon and eggs, and 128 wheat. Every listed good is consumed."
+				"This is the first industrial-volume order. It deliberately combines the new iron/Create economy with old wheat, pork, eggs, and cattle so a growing automated farm is more valuable than a one-off machine craft."
 			]
 			icon: "minecraft:iron_ingot"
 			id: "C4F9E553B22E40CC"
 			shape: "hexagon"
 			tasks: [
-				{ consume_items: true, count: 6L, id: "D6A3BDF4A3E91202", item: "minecraft:iron_ingot", type: "item" }
-				{ consume_items: true, count: 4L, id: "7FCB2B28A5E9C4C5", item: "create:andesite_alloy", type: "item" }
-				{ consume_items: true, count: 8L, id: "929C421DFC82013C", item: "farmersdelight:onion", type: "item" }
-				{ consume_items: true, count: 2L, id: "1E17A59F4EE17CCA", item: "farmersdelight:bacon_and_eggs", type: "item" }
-				{ consume_items: true, count: 16L, id: "28EC3B251E2F0575", item: "minecraft:wheat", type: "item" }
+				{ consume_items: true, count: 32L, id: "D6A3BDF4A3E91202", item: "minecraft:iron_ingot", type: "item" }
+				{ consume_items: true, count: 32L, id: "7FCB2B28A5E9C4C5", item: "create:andesite_alloy", type: "item" }
+				{ consume_items: true, count: 64L, id: "929C421DFC82013C", item: "farmersdelight:onion", type: "item" }
+				{ consume_items: true, count: 32L, id: "1E17A59F4EE17CCA", item: "farmersdelight:bacon_and_eggs", type: "item" }
+				{ consume_items: true, count: 128L, id: "28EC3B251E2F0575", item: "minecraft:wheat", type: "item" }
 			]
 			title: "Level 10 Market Order"
 			x: 8.0d
