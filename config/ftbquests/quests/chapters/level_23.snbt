@@ -64,7 +64,9 @@
 		}
 		{
 			dependencies: ["A000000000001704"]
-			description: ["Continue the final bakery-supply chain by pushing the original Level 1 wheat staple to the largest throughput target in the pack."]
+			description: [
+				"Continue the final bakery-supply chain by pushing the original Level 1 wheat staple to the largest throughput target in the pack."
+			]
 			icon: "minecraft:wheat"
 			id: "A000000000001705"
 			tasks: [{ count: 4096L, id: "B000000000170501", item: "minecraft:wheat", type: "item" }]

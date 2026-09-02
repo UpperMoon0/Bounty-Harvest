@@ -33,7 +33,9 @@
 		}
 		{
 			dependencies: ["29747D157C7F8C88"]
-			description: ["Craft a fishing rod. The pack intentionally keeps this recipe pre-iron so the fisheries tier cannot deadlock behind Ironworking."]
+			description: [
+				"Craft a fishing rod. The pack intentionally keeps this recipe pre-iron so the fisheries tier cannot deadlock behind Ironworking."
+			]
 			id: "DD0D246B33124C7D"
 			tasks: [{ id: "2C51673F2E408CBB", item: "minecraft:fishing_rod", type: "item" }]
 			title: "Fishing Gear"
@@ -42,7 +44,9 @@
 		}
 		{
 			dependencies: ["DD0D246B33124C7D"]
-			description: ["Catch enough cod and salmon to establish a repeatable vanilla fish supply. Later rice and prepared-food branches reuse this fish economy."]
+			description: [
+				"Catch enough cod and salmon to establish a repeatable vanilla fish supply. Later rice and prepared-food branches reuse this fish economy."
+			]
 			id: "3BA339E0640B6081"
 			tasks: [
 				{ count: 8L, id: "9D7E8C6CEA4FA5A2", item: "minecraft:cod", type: "item" }
@@ -54,7 +58,9 @@
 		}
 		{
 			dependencies: ["DD0D246B33124C7D"]
-			description: ["Use Aquaculture to obtain raw fish fillets. This gives the addon a real processing branch instead of merely being installed in the pack."]
+			description: [
+				"Use Aquaculture to obtain raw fish fillets. This gives the addon a real processing branch instead of merely being installed in the pack."
+			]
 			id: "617E16F23CADA562"
 			tasks: [{ count: 4L, id: "0F21B9E87227A382", item: "aquaculture:fish_fillet_raw", type: "item" }]
 			title: "Aquaculture Fillets"
@@ -63,7 +69,9 @@
 		}
 		{
 			dependencies: ["29747D157C7F8C88"]
-			description: ["Prepare Ocean's Delight seagrass salad. The recipe is deliberately accessible in this pre-iron tier and forms the coastal-food branch."]
+			description: [
+				"Prepare Ocean's Delight seagrass salad. The recipe is deliberately accessible in this pre-iron tier and forms the coastal-food branch."
+			]
 			id: "43D5B92E7B462E7E"
 			tasks: [{ count: 2L, id: "6166F90E3CF06C3D", item: "oceansdelight:seagrass_salad", type: "item" }]
 			title: "Coastal Cooking"
@@ -104,7 +112,9 @@
 		}
 		{
 			dependencies: ["964E4E55A3EFB49E", "1CCF7C805ED9FE8B"]
-			description: ["Finish the optional water-resource branch after establishing the core fish market."]
+			description: [
+				"Finish the optional water-resource branch after establishing the core fish market."
+			]
 			icon: "minecraft:ink_sac"
 			id: "A500000000000507"
 			rewards: [{ count: 10, id: "C500000000000507", item: "kubejs:copper_coin", type: "item" }]

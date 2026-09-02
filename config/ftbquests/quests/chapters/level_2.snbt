@@ -33,7 +33,9 @@
 		}
 		{
 			dependencies: ["7D3858343983B67A"]
-			description: ["Raise chickens and collect the three basic products of the flock: meat, eggs, and feathers. This is the animal-production branch of the level."]
+			description: [
+				"Raise chickens and collect the three basic products of the flock: meat, eggs, and feathers. This is the animal-production branch of the level."
+			]
 			id: "778CCDE835D9EF67"
 			tasks: [
 				{ id: "530B222E9D20B5BD", item: "minecraft:chicken", type: "item" }
@@ -46,7 +48,9 @@
 		}
 		{
 			dependencies: ["7D3858343983B67A"]
-			description: ["Gather cobblestone for the first permanent heat-processing setup."]
+			description: [
+				"Gather cobblestone for the first permanent heat-processing setup."
+			]
 			id: "19B61578D942D20A"
 			tasks: [{ count: 8L, id: "5DF5E6E5AE89A230", item: "minecraft:cobblestone", type: "item" }]
 			title: "Stone for the Hearth"
@@ -55,7 +59,9 @@
 		}
 		{
 			dependencies: ["19B61578D942D20A"]
-			description: ["Build a furnace. It anchors the cooking, charcoal, and clay-processing branches of this level."]
+			description: [
+				"Build a furnace. It anchors the cooking, charcoal, and clay-processing branches of this level."
+			]
 			id: "342421E0C377A36D"
 			tasks: [{ id: "5268DBF51D13CD09", item: "minecraft:furnace", type: "item" }]
 			title: "Furnace"
@@ -64,7 +70,9 @@
 		}
 		{
 			dependencies: ["342421E0C377A36D"]
-			description: ["Convert logs into at least eight charcoal. Charcoal is the renewable fuel line that keeps returning throughout the pack."]
+			description: [
+				"Convert logs into at least eight charcoal. Charcoal is the renewable fuel line that keeps returning throughout the pack."
+			]
 			id: "501C3132C26AE330"
 			tasks: [{ count: 8L, id: "3F2E60D7E683A99C", item: "minecraft:charcoal", type: "item" }]
 			title: "Charcoal"
@@ -73,7 +81,9 @@
 		}
 		{
 			dependencies: ["501C3132C26AE330"]
-			description: ["Use the renewable fuel line to make torches. This retained utility branch reconnects through Level 2 Mastery instead of taxing the Market Order."]
+			description: [
+				"Use the renewable fuel line to make torches. This retained utility branch reconnects through Level 2 Mastery instead of taxing the Market Order."
+			]
 			id: "175C3116B3681471"
 			tasks: [{ count: 8L, id: "1D1C4CB1CDE98B93", item: "minecraft:torch", type: "item" }]
 			title: "Optional Lighting"
@@ -82,7 +92,9 @@
 		}
 		{
 			dependencies: ["778CCDE835D9EF67", "342421E0C377A36D"]
-			description: ["Cook four chicken. This branch deliberately requires both the flock and the furnace instead of collapsing the entire level into one checklist quest."]
+			description: [
+				"Cook four chicken. This branch deliberately requires both the flock and the furnace instead of collapsing the entire level into one checklist quest."
+			]
 			id: "6136AD91428A0801"
 			tasks: [{ count: 4L, id: "20B15C43031E912C", item: "minecraft:cooked_chicken", type: "item" }]
 			title: "Cooked Chicken"
@@ -91,7 +103,9 @@
 		}
 		{
 			dependencies: ["7D3858343983B67A"]
-			description: ["Collect clay as a separate material-production branch. Clay will support building, containers, and later processing recipes."]
+			description: [
+				"Collect clay as a separate material-production branch. Clay will support building, containers, and later processing recipes."
+			]
 			id: "47B754C95B98C91B"
 			tasks: [
 				{ count: 4L, id: "6117389AF08B9170", item: "minecraft:clay_ball", type: "item" }
@@ -103,7 +117,9 @@
 		}
 		{
 			dependencies: ["47B754C95B98C91B", "342421E0C377A36D"]
-			description: ["Fire clay into terracotta. The Market Order checks this branch so the furnace is useful for more than meat and fuel."]
+			description: [
+				"Fire clay into terracotta. The Market Order checks this branch so the furnace is useful for more than meat and fuel."
+			]
 			id: "46299A2CF9119F73"
 			tasks: [{ count: 4L, id: "0730F35A2A5D3540", item: "minecraft:terracotta", type: "item" }]
 			title: "Terracotta"
@@ -112,7 +128,9 @@
 		}
 		{
 			dependencies: ["7D3858343983B67A"]
-			description: ["Add a farmhouse door as an optional homestead-detail branch that later reconnects through mastery."]
+			description: [
+				"Add a farmhouse door as an optional homestead-detail branch that later reconnects through mastery."
+			]
 			id: "5571AA243B6BB49B"
 			tasks: [{ id: "2A1E7FF6A1BD58BE", item: { Count: 1, id: "itemfilters:tag", tag: { value: "minecraft:wooden_doors" } }, title: "Any Wooden Door", type: "item" }]
 			title: "Optional Farmhouse Door"
@@ -121,7 +139,9 @@
 		}
 		{
 			dependencies: ["5571AA243B6BB49B"]
-			description: ["Add a trapdoor and ladder to complete the optional farmhouse-detail chain. It reconnects after the Market Order through mastery."]
+			description: [
+				"Add a trapdoor and ladder to complete the optional farmhouse-detail chain. It reconnects after the Market Order through mastery."
+			]
 			id: "0EB9C48464D5C956"
 			tasks: [
 				{ id: "6C72236233047E7E", item: { Count: 1, id: "itemfilters:tag", tag: { value: "minecraft:wooden_trapdoors" } }, title: "Any Wooden Trapdoor", type: "item" }
@@ -152,7 +172,9 @@
 		}
 		{
 			dependencies: ["759303985A706218", "175C3116B3681471", "0EB9C48464D5C956"]
-			description: ["Complete the retained lighting and farmhouse-detail branches after satisfying the core Level 2 economy."]
+			description: [
+				"Complete the retained lighting and farmhouse-detail branches after satisfying the core Level 2 economy."
+			]
 			icon: "minecraft:lantern"
 			id: "A200000000000207"
 			rewards: [{ count: 4, id: "C200000000000207", item: "kubejs:copper_coin", type: "item" }]

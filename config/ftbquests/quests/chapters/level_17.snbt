@@ -75,7 +75,9 @@
 		}
 		{
 			dependencies: ["A000000000001102", "A000000000001103", "A000000000001106"]
-			description: ["Bring the Level 5 salmon economy back through rice-based rolls, with Slice and Dice as required infrastructure."]
+			description: [
+				"Bring the Level 5 salmon economy back through rice-based rolls, with Slice and Dice as required infrastructure."
+			]
 			icon: "farmersdelight:salmon_roll"
 			id: "A000000000001104"
 			tasks: [{ count: 32L, id: "B000000000110401", item: "farmersdelight:salmon_roll", type: "item" }]
@@ -85,7 +87,9 @@
 		}
 		{
 			dependencies: ["A000000000001101"]
-			description: ["Keep the previous level's pineapple bakery in demand as the old-economy carryover branch for this tier."]
+			description: [
+				"Keep the previous level's pineapple bakery in demand as the old-economy carryover branch for this tier."
+			]
 			icon: "pineapple_delight:pineapple_pie"
 			id: "A000000000001107"
 			tasks: [{ count: 128L, id: "B000000000110701", item: "pineapple_delight:pineapple_pie", type: "item" }]

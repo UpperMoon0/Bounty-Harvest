@@ -70,7 +70,9 @@
 		}
 		{
 			dependencies: ["A000000000000901"]
-			description: ["Scale the renewable charcoal line from Level 2 to support metalworking."]
+			description: [
+				"Scale the renewable charcoal line from Level 2 to support metalworking."
+			]
 			icon: "minecraft:charcoal"
 			id: "A000000000000904"
 			tasks: [{ count: 24L, id: "B000000000090401", item: "minecraft:charcoal", type: "item" }]
@@ -80,7 +82,9 @@
 		}
 		{
 			dependencies: ["A000000000000902"]
-			description: ["Use copper for farm utility recipes as well as tools."]
+			description: [
+				"Use copper for farm utility recipes as well as tools."
+			]
 			icon: "minecraft:composter"
 			id: "A000000000000905"
 			tasks: [

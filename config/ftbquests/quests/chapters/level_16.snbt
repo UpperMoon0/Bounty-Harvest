@@ -61,7 +61,9 @@
 		}
 		{
 			dependencies: ["A000000000001004"]
-			description: ["Continue the bakery-supply branch by scaling the original wheat staple for industrial pastry production."]
+			description: [
+				"Continue the bakery-supply branch by scaling the original wheat staple for industrial pastry production."
+			]
 			icon: "minecraft:wheat"
 			id: "A000000000001005"
 			tasks: [{ count: 256L, id: "B000000000100501", item: "minecraft:wheat", type: "item" }]
@@ -85,7 +87,9 @@
 		}
 		{
 			dependencies: ["A000000000001001"]
-			description: ["Keep the mature corn, tomato, pork, and cabbage chain productive while pineapple establishes its own bakery identity."]
+			description: [
+				"Keep the mature corn, tomato, pork, and cabbage chain productive while pineapple establishes its own bakery identity."
+			]
 			icon: "corn_delight:taco"
 			id: "A000000000001006"
 			tasks: [{ count: 128L, id: "B000000000100601", item: "corn_delight:taco", type: "item" }]

@@ -51,7 +51,9 @@
 		}
 		{
 			dependencies: ["A000000000000C01"]
-			description: ["Start the established-ingredient logistics chain by scaling Level 11 tortillas."]
+			description: [
+				"Start the established-ingredient logistics chain by scaling Level 11 tortillas."
+			]
 			icon: "corn_delight:tortilla"
 			id: "A000000000000C04"
 			tasks: [{ count: 16L, id: "B0000000000C0401", item: "corn_delight:tortilla", type: "item" }]
