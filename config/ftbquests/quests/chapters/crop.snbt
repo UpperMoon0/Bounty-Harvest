@@ -80,6 +80,17 @@
 		}
 		{
 			dependencies: ["C0B4AA32262BF02B"]
+			description: ["Unlocked with Level 9. Spend 24 iron coins to receive two corn seeds.", "Wild corn remains the cheaper discovery route, but this recovery trade prevents biome or world-generation luck from blocking the main progression. The coins are consumed."]
+			icon: "corn_delight:corn_seeds"
+			id: "B1A9D4F7C2E63850"
+			rewards: [{ count: 2, id: "A9C61F2D4B8073EE", item: "corn_delight:corn_seeds", type: "item" }]
+			tasks: [{ count: 24L, id: "D3F27491AB60CE85", item: "kubejs:iron_coin", type: "item" }]
+			title: "Recover Corn Seeds"
+			x: 10.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["C0B4AA32262BF02B"]
 			description: ["Unlocked with Level 9. Spend 10 iron coins to receive two tomato seeds.", "Tomato arrives one level after cabbage and immediately joins the taco chain instead of appearing as an isolated checklist crop."]
 			icon: "farmersdelight:tomato"
 			id: "EE75B1FC5ADB7E9E"
@@ -102,7 +113,7 @@
 		}
 		{
 			dependencies: ["1FFCFC4EAF71D122"]
-			description: ["Unlocked with Level 11. Spend 14 iron coins to receive two rice panicles.", "Rice is delayed until it can immediately support pineapple fried rice and fish rolls, reconnecting tropical automation to the old fisheries economy."]
+			description: ["Unlocked with Level 11. Spend 14 iron coins to receive two rice panicles.", "Rice is delayed until it can immediately support pineapple fried rice and fish rolls, reconnecting tropical processing to the old fisheries economy."]
 			icon: "farmersdelight:rice_panicle"
 			id: "1EDA0AEA6E44E43E"
 			rewards: [{ count: 2, id: "51EFEB9D028319CE", item: "farmersdelight:rice_panicle", type: "item" }]
@@ -110,6 +121,17 @@
 			title: "Buy Rice Panicles"
 			x: 14.0d
 			y: 0.0d
+		}
+		{
+			dependencies: ["1FFCFC4EAF71D122"]
+			description: ["Unlocked with Level 11. Spend 48 iron coins to receive two plantable pineapple crops.", "Natural pineapple remains the preferred discovery route. This deliberately expensive recovery trade guarantees that unlucky world generation cannot hard-lock Tropical Automation."]
+			icon: "pineapple_delight:pineapple_crop"
+			id: "C84F1D6A3097BE52"
+			rewards: [{ count: 2, id: "E7A042B9D15C638F", item: "pineapple_delight:pineapple_crop", type: "item" }]
+			tasks: [{ count: 48L, id: "9B6D31E4F20A875C", item: "kubejs:iron_coin", type: "item" }]
+			title: "Recover Pineapple Crop"
+			x: 14.0d
+			y: -2.0d
 		}
 	]
 	title: "Crops"
