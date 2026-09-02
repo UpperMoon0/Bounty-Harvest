@@ -44,7 +44,43 @@ $mainMetadata = [ordered]@{
     releaseType = $ReleaseType
 }
 
+function Resolve-PythonExecutable {
+    # actions/setup-python exports pythonLocation. Prefer that exact interpreter
+    # when available so Windows Store shims or additional hosted-toolcache
+    # versions cannot make Get-Command return an ambiguous array.
+    $pythonLocation = [Environment]::GetEnvironmentVariable('pythonLocation')
+    if (-not [string]::IsNullOrWhiteSpace($pythonLocation)) {
+        foreach ($name in @('python.exe', 'python')) {
+            $candidate = Join-Path $pythonLocation $name
+            if (Test-Path -LiteralPath $candidate -PathType Leaf) {
+                return [System.IO.Path]::GetFullPath($candidate)
+            }
+        }
+    }
+
+    foreach ($commandName in @('python', 'python3')) {
+        $commands = @(Get-Command $commandName -CommandType Application -ErrorAction SilentlyContinue)
+        $command = $commands |
+            Where-Object {
+                $_.Source -and
+                $_.Source -notmatch '[\\/]WindowsApps[\\/]' -and
+                (Test-Path -LiteralPath $_.Source -PathType Leaf)
+            } |
+            Select-Object -First 1
+        if ($null -ne $command) {
+            return [System.IO.Path]::GetFullPath([string]$command.Source)
+        }
+    }
+
+    throw 'A real Python interpreter is required for CurseForge uploads. Install Python or use actions/setup-python before the publish step.'
+}
+
 if ($DryRun) {
+    # Resolve the helper interpreter even in dry-run mode. This turns the normal
+    # CI publisher-mode check into coverage for command-resolution regressions.
+    $pythonPath = Resolve-PythonExecutable
+    Write-Host "DRY RUN: CurseForge upload helper interpreter: $pythonPath"
+
     if ($Mode -in @('all', 'client')) {
         Write-Host "DRY RUN: would upload $clientArchive"
         Write-Host ($mainMetadata | ConvertTo-Json -Depth 5)
@@ -146,15 +182,7 @@ function Get-ExistingFileId($DisplayName) {
 
 function Publish-File($Metadata, $Archive) {
     try {
-        $pythonCommand = Get-Command python -CommandType Application -ErrorAction SilentlyContinue
-        if ($null -eq $pythonCommand) {
-            $pythonCommand = Get-Command python3 -CommandType Application -ErrorAction SilentlyContinue
-        }
-        if ($null -eq $pythonCommand) {
-            throw 'Python is required for CurseForge uploads.'
-        }
-
-        $pythonPath = [string]$pythonCommand.Source
+        $pythonPath = Resolve-PythonExecutable
         $helperPath = Join-Path $PSScriptRoot 'curseforge_upload.py'
         $metadataJson = $Metadata | ConvertTo-Json -Compress -Depth 5
         $helperOutput = @(& $pythonPath $helperPath '--url' $uploadEndpoint '--metadata' $metadataJson '--file' $Archive)
