@@ -40,9 +40,7 @@
 			]
 			icon: "farmersdelight:rice"
 			id: "A000000000001102"
-			tasks: [
-				{ count: 48L, id: "B000000000110201", item: "farmersdelight:rice", type: "item" }
-			]
+			tasks: [{ count: 48L, id: "B000000000110201", item: "farmersdelight:rice", type: "item" }]
 			title: "Rice Paddies"
 			x: -2.0d
 			y: 2.0d
@@ -56,73 +54,63 @@
 			]
 			icon: "sliceanddice:slicer"
 			id: "A000000000001103"
-			tasks: [
-				{ id: "B000000000110301", item: "sliceanddice:slicer", type: "item" }
-			]
+			tasks: [{ id: "B000000000110301", item: "sliceanddice:slicer", type: "item" }]
 			title: "Slice and Dice Infrastructure"
 			x: 0.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["A000000000001102", "A000000000001103"]
+			dependencies: ["A000000000001102"]
 			description: [
-				"Bring the Level 5 salmon economy back through rice-based rolls."
-			]
-			icon: "farmersdelight:salmon_roll"
-			id: "A000000000001104"
-			tasks: [
-				{ count: 32L, id: "B000000000110401", item: "farmersdelight:salmon_roll", type: "item" }
-			]
-			title: "Salmon Rolls"
-			x: -2.0d
-			y: 5.0d
-		}
-		{
-			dependencies: ["A000000000001102", "A000000000001103"]
-			description: [
-				"Combine rice with the established pineapple plantation in an automated prepared-food line."
-			]
-			icon: "pineapple_delight:pineapple_fried_rice"
-			id: "A000000000001105"
-			tasks: [
-				{ count: 32L, id: "B000000000110501", item: "pineapple_delight:pineapple_fried_rice", type: "item" }
-			]
-			title: "Pineapple Fried Rice"
-			x: 0.5d
-			y: 5.0d
-		}
-		{
-			dependencies: ["A000000000001101"]
-			description: [
-				"Scale the old fishery to support the new rice-processing branch."
+				"After establishing rice, scale the old fishery specifically for the roll branch."
+				""
+				"This keeps salmon as a downstream production requirement instead of another simultaneous system unlock."
 			]
 			icon: "minecraft:salmon"
 			id: "A000000000001106"
-			tasks: [
-				{ count: 128L, id: "B000000000110601", item: "minecraft:salmon", type: "item" }
-			]
+			tasks: [{ count: 128L, id: "B000000000110601", item: "minecraft:salmon", type: "item" }]
 			title: "Industrial Salmon"
-			x: 2.5d
-			y: 3.0d
+			x: -3.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000001102", "A000000000001103", "A000000000001106"]
+			description: ["Bring the Level 5 salmon economy back through rice-based rolls, with Slice and Dice as required infrastructure."]
+			icon: "farmersdelight:salmon_roll"
+			id: "A000000000001104"
+			tasks: [{ count: 32L, id: "B000000000110401", item: "farmersdelight:salmon_roll", type: "item" }]
+			title: "Salmon Rolls"
+			x: -2.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["A000000000001101"]
-			description: [
-				"Keep the previous level's bakery in demand instead of replacing it with rice."
-			]
+			description: ["Keep the previous level's pineapple bakery in demand as the old-economy carryover branch for this tier."]
 			icon: "pineapple_delight:pineapple_pie"
 			id: "A000000000001107"
-			tasks: [
-				{ count: 128L, id: "B000000000110701", item: "pineapple_delight:pineapple_pie", type: "item" }
-			]
+			tasks: [{ count: 128L, id: "B000000000110701", item: "pineapple_delight:pineapple_pie", type: "item" }]
 			title: "Pineapple Carryover"
-			x: 3.5d
-			y: 5.0d
+			x: 3.0d
+			y: 3.0d
 		}
 		{
-			dependencies: ["A000000000001104", "A000000000001105", "A000000000001106", "A000000000001107"]
+			dependencies: ["A000000000001102", "A000000000001103", "A000000000001107"]
 			description: [
-				"Ship salmon rolls, pineapple fried rice, pineapple pies, and tacos."
+				"Combine rice with the established pineapple plantation through the Slicer-powered prepared-food line."
+				""
+				"The carryover branch now feeds the new product instead of ending as a parallel stockpile."
+			]
+			icon: "pineapple_delight:pineapple_fried_rice"
+			id: "A000000000001105"
+			tasks: [{ count: 32L, id: "B000000000110501", item: "pineapple_delight:pineapple_fried_rice", type: "item" }]
+			title: "Pineapple Fried Rice"
+			x: 1.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000001104", "A000000000001105"]
+			description: [
+				"Ship salmon rolls, pineapple fried rice, pineapple pies, and tacos after both processor branches converge."
 				""
 				"The new processor multiplies old fisheries and pineapple systems at industrial volume."
 			]
