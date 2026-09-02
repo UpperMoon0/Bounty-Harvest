@@ -11,7 +11,8 @@ ServerEvents.highPriorityData(event => {
         bh_gold_rews: { content: { gold_coin: { type: 'item', content: 'kubejs:gold_coin', amount: { min: 1, max: 256 }, unitWorth: 8100 } } }
     }
 
-    Object.entries(rewardPools).forEach(([id, data]) => {
+    Object.keys(rewardPools).forEach(id => {
+        const data = rewardPools[id]
         event.addJson(`bountiful:bounty_pools/bountiful/${id}`, data)
     })
 
@@ -147,7 +148,8 @@ ServerEvents.highPriorityData(event => {
         } }
     }
 
-    Object.entries(levels).forEach(([level, data]) => {
+    Object.keys(levels).forEach(level => {
+        const data = levels[level]
         const pool = `level_${level}_objs`
         event.addJson(`bountiful:bounty_pools/bountiful/${pool}`, { content: data.content })
         event.addJson(`bountiful:bounty_decrees/bountiful/level_${level}`, {
