@@ -26,6 +26,15 @@ def has_consumed_item(block: str, item: str, count: int | None = None) -> bool:
     return re.search(pattern, block) is not None
 
 
+def has_item(block: str, item: str, count: int | None = None) -> bool:
+    escaped = re.escape(item)
+    if count is None:
+        return re.search(rf'item:\s*"{escaped}"', block) is not None
+    return re.search(
+        rf'count:\s*{count}L?[\s\S]{{0,160}}item:\s*"{escaped}"', block
+    ) is not None
+
+
 def main() -> int:
     errors: list[str] = []
 
@@ -105,6 +114,7 @@ def main() -> int:
         if not has_consumed_item(level14_market, item, count):
             errors.append(f"Level 14 no longer reconnects farm throughput through {count}x {item}")
 
+    level15_supply = blocks[15][1]
     level15_market = blocks[15][-1]
     if has_consumed_item(level15_market, "twilightforest:magic_map"):
         errors.append("Level 15 Market Order consumes the Magic Map instead of retaining navigation infrastructure")
@@ -112,9 +122,14 @@ def main() -> int:
         ("corn_delight:taco", 512),
         ("pineapple_delight:pineapple_pie", 512),
         ("farmersdelight:chicken_sandwich", 256),
+        ("ends_delight:chorus_fruit_pie", 128),
     ):
         if not has_consumed_item(level15_market, item, count):
             errors.append(f"Level 15 peak shipment lost {count}x {item}")
+
+    # End's Delight is intentionally a real final-tier branch, not a dead namespace gate.
+    if not has_item(level15_supply, "ends_delight:chorus_fruit_pie", 64):
+        errors.append("Level 15 no longer establishes the End's Delight chorus-fruit production branch")
 
     # Repeatable orders scale geometrically on renewable goods after Create arrives.
     bounty = BOUNTIFUL.read_text(encoding="utf-8")
@@ -124,17 +139,25 @@ def main() -> int:
             errors.append(f"Bountiful bulk scale for Level {level} must remain {scale}x")
     if "const bulk =" not in bounty:
         errors.append("Bountiful renewable-demand scaling helper is missing")
+    if not re.search(
+        r"content:\s*'ends_delight:chorus_fruit_pie'[\s\S]{0,120}amount:\s*bulk\(15,\s*1,\s*4\)",
+        bounty,
+    ):
+        errors.append("Level 15 repeatable market no longer keeps End's Delight economically relevant at 128x scale")
 
     stages = STAGES.read_text(encoding="utf-8")
-    if 'createModRestriction("ends_delight"' in stages:
-        errors.append("End's Delight is gated at Level 15 despite having no progression branch")
+    if not re.search(r'createModRestriction\("ends_delight",\s*"level_15"\)', stages):
+        errors.append("End's Delight must remain gated to Level 15 while its chorus-fruit branch is active")
 
     if errors:
         for error in errors:
             print(f"ERROR: {error}")
         return 1
 
-    print("Economy curve OK: onboarding, recovery, processing, retained infrastructure, and 4x-128x automation pressure protected.")
+    print(
+        "Economy curve OK: onboarding, recovery, processor use, retained infrastructure, "
+        "4x-128x automation pressure, and the Level 15 End branch are protected."
+    )
     return 0
 
 
