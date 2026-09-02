@@ -32,24 +32,22 @@ jobs:
               new_line = f'consume_items: true, count: {new}L'
               if old_line not in text:
                   raise SystemExit(f'Expected promotion cost not found in {path}: {old_line}')
-              text = text.replace(old_line, new_line, 1)
-              path.write_text(text, encoding='utf-8')
+              path.write_text(text.replace(old_line, new_line, 1), encoding='utf-8')
 
           path = root / 'tools' / 'validate_economy_curve.py'
-          text = path.read_text(encoding='utf-8')
-          old = '''    if not re.search(r"content:\\s*'ends_delight:chorus_fruit_pie'[\\s\\S]{0,120}amount:\\s*bulk\\(23,", bounty):
-              errors.append("Level 23 repeatable orders no longer put chorus pies under 1024x renewable pressure")
-          if re.search(r"content:\\s*'twilightdelight:glowstew'[\\s\\S]{0,120}amount:\\s*bulk\\(22,", bounty):
-              errors.append("new Twilight frontier input Glowstew should stay fixed-volume instead of inheriting the 512x legacy multiplier")
-          '''
-          new = '''    if not re.search(r"^\\s*chorus_pie:.*content:\\s*'ends_delight:chorus_fruit_pie'.*amount:\\s*bulk\\(23,", bounty, re.MULTILINE):
-              errors.append("Level 23 repeatable orders no longer put chorus pies under 1024x renewable pressure")
-          if re.search(r"^\\s*glowstew:.*amount:\\s*bulk\\(22,", bounty, re.MULTILINE):
-              errors.append("new Twilight frontier input Glowstew should stay fixed-volume instead of inheriting the 512x legacy multiplier")
-          '''
-          if old not in text:
-              raise SystemExit('Expected frontier bounty validator block not found')
-          path.write_text(text.replace(old, new), encoding='utf-8')
+          lines = path.read_text(encoding='utf-8').splitlines()
+          chorus_fixed = False
+          glow_fixed = False
+          for i, line in enumerate(lines):
+              if "if not re.search" in line and "ends_delight:chorus_fruit_pie" in line:
+                  lines[i] = "    if not re.search(r\"^\\s*chorus_pie:.*content:\\s*'ends_delight:chorus_fruit_pie'.*amount:\\s*bulk\\(23,\", bounty, re.MULTILINE):"
+                  chorus_fixed = True
+              elif "if re.search" in line and "twilightdelight:glowstew" in line:
+                  lines[i] = "    if re.search(r\"^\\s*glowstew:.*amount:\\s*bulk\\(22,\", bounty, re.MULTILINE):"
+                  glow_fixed = True
+          if not chorus_fixed or not glow_fixed:
+              raise SystemExit(f'Could not update frontier bounty checks: chorus={chorus_fixed}, glow={glow_fixed}')
+          path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
       - name: Commit corrections
         shell: bash
         run: |
