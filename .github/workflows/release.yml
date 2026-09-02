@@ -7,6 +7,7 @@ on:
       - 'pack/pack.json'
       - '.github/workflows/release.yml'
       - 'tools/publish_curseforge.ps1'
+      - 'tools/curseforge_upload.py'
     tags: ['v*']
   workflow_dispatch:
     inputs:
@@ -96,7 +97,8 @@ jobs:
               if ($LASTEXITCODE -ne 0) { throw "Failed to inspect changed paths since $before." }
               $releaseInfrastructureChanged =
                 ($changedPaths -contains '.github/workflows/release.yml') -or
-                ($changedPaths -contains 'tools/publish_curseforge.ps1')
+                ($changedPaths -contains 'tools/publish_curseforge.ps1') -or
+                ($changedPaths -contains 'tools/curseforge_upload.py')
             }
 
             # A missing release tag means the current version was never fully
