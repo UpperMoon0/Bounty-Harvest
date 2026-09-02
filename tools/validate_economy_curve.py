@@ -184,9 +184,9 @@ def main() -> int:
             break
     if "Object.keys(levels).forEach" not in bounty or "bounty_decrees/bountiful/level_${level}" not in bounty:
         errors.append("Bountiful decree generation no longer covers the complete level table")
-    if not re.search(r"content:\s*'ends_delight:chorus_fruit_pie'[\s\S]{0,120}amount:\s*bulk\(23,", bounty):
+    if not re.search(r"^\s*chorus_pie:.*content:\s*'ends_delight:chorus_fruit_pie'.*amount:\s*bulk\(23,", bounty, re.MULTILINE):
         errors.append("Level 23 repeatable orders no longer put chorus pies under 1024x renewable pressure")
-    if re.search(r"content:\s*'twilightdelight:glowstew'[\s\S]{0,120}amount:\s*bulk\(22,", bounty):
+    if re.search(r"^\s*glowstew:.*amount:\s*bulk\(22,", bounty, re.MULTILINE):
         errors.append("new Twilight frontier input Glowstew should stay fixed-volume instead of inheriting the 512x legacy multiplier")
 
     # Newly crafted boards are seeded deterministically from the placer's highest stage.

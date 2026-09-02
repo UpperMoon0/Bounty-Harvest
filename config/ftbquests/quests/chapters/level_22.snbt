@@ -24,7 +24,7 @@
 			]
 			shape: "octagon"
 			tasks: [
-				{ consume_items: true, count: 384L, id: "B000000000160101", item: "kubejs:gold_coin", type: "item" }
+				{ consume_items: true, count: 3072L, id: "B000000000160101", item: "kubejs:gold_coin", type: "item" }
 				{ consume_items: true, count: 1024L, id: "B000000000160102", item: "farmersdelight:chicken_sandwich", type: "item" }
 				{ consume_items: true, count: 1024L, id: "B000000000160103", item: "pineapple_delight:pineapple_pie", type: "item" }
 			]

@@ -24,7 +24,7 @@
 			]
 			shape: "octagon"
 			tasks: [
-				{ consume_items: true, count: 96L, id: "B000000000140101", item: "kubejs:gold_coin", type: "item" }
+				{ consume_items: true, count: 768L, id: "B000000000140101", item: "kubejs:gold_coin", type: "item" }
 				{ consume_items: true, count: 512L, id: "B000000000140102", item: "minecraft:leather", type: "item" }
 			]
 			title: "Level 20 · Wildlife Cuisine"
