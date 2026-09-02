@@ -147,26 +147,105 @@ function Get-ExistingFileId($DisplayName) {
     return $null
 }
 
+function Invoke-CurseForgeUpload($Metadata, $Archive) {
+    # Stream multipart uploads through curl instead of PowerShell's web cmdlet.
+    # Server packs are hundreds of MB and curl is both memory-stable and the same
+    # transport used by known-good CurseForge modpack release pipelines.
+    $curlCommand = Get-Command curl.exe -ErrorAction SilentlyContinue
+    if ($null -eq $curlCommand) {
+        $curlCommand = Get-Command curl -CommandType Application -ErrorAction SilentlyContinue
+    }
+    if ($null -eq $curlCommand) {
+        throw 'curl is required for CurseForge file uploads.'
+    }
+
+    $tempRoot = [System.IO.Path]::GetTempPath()
+    $nonce = [guid]::NewGuid().ToString('N')
+    $metadataPath = Join-Path $tempRoot "curseforge-metadata-$nonce.json"
+    $responsePath = Join-Path $tempRoot "curseforge-response-$nonce.txt"
+    [System.IO.File]::WriteAllText(
+        $metadataPath,
+        ($Metadata | ConvertTo-Json -Compress -Depth 5),
+        [System.Text.UTF8Encoding]::new($false)
+    )
+
+    try {
+        $maxAttempts = 4
+        for ($attempt = 1; $attempt -le $maxAttempts; $attempt++) {
+            if (Test-Path -LiteralPath $responsePath) {
+                Remove-Item -LiteralPath $responsePath -Force
+            }
+
+            $curlArgs = @(
+                '--silent', '--show-error', '--location',
+                '--connect-timeout', '30', '--max-time', '900',
+                '--output', $responsePath,
+                '--write-out', '%{http_code}',
+                '--request', 'POST',
+                '--header', "X-Api-Token: $token",
+                '--form', "metadata=<$metadataPath",
+                '--form', "file=@$Archive;type=application/zip",
+                $uploadEndpoint
+            )
+
+            $statusOutput = @(& $curlCommand.Source @curlArgs)
+            $curlExit = $LASTEXITCODE
+            $statusCode = (($statusOutput -join '') -replace '\s', '').Trim()
+            $body = if (Test-Path -LiteralPath $responsePath) {
+                [string](Get-Content -LiteralPath $responsePath -Raw -Encoding utf8)
+            }
+            else { '' }
+
+            if ($curlExit -eq 0 -and $statusCode -match '^2\d\d$') {
+                $response = $body | ConvertFrom-Json
+                if (-not $response.id) {
+                    throw "CurseForge returned no file ID for $Archive. Response: $body"
+                }
+                return [string]$response.id
+            }
+
+            $isChildUpload = $Metadata.Contains('parentFileID')
+            $transientHttp =
+                ($statusCode -in @('408', '425', '429')) -or
+                ($statusCode -match '^5\d\d$') -or
+                ($isChildUpload -and $statusCode -eq '404')
+            $transientTransport = $curlExit -ne 0
+
+            if ($attempt -lt $maxAttempts -and ($transientHttp -or $transientTransport)) {
+                $delaySeconds = 5 * $attempt
+                Write-Warning "CurseForge upload attempt $attempt failed transiently (curl=$curlExit HTTP=$statusCode); retrying in $delaySeconds seconds."
+                Start-Sleep -Seconds $delaySeconds
+                continue
+            }
+
+            if ($curlExit -ne 0) {
+                throw "CurseForge upload transport failed (curl exit $curlExit, HTTP $statusCode): $body"
+            }
+            throw "CurseForge upload returned HTTP $statusCode: $body"
+        }
+    }
+    finally {
+        Remove-Item -LiteralPath $metadataPath, $responsePath -Force -ErrorAction SilentlyContinue
+    }
+}
+
 function Publish-File($Metadata, $Archive) {
     try {
-        $response = Invoke-RestMethod -Uri $uploadEndpoint -Method Post -Headers $authorHeaders -Form @{
-            metadata = ($Metadata | ConvertTo-Json -Compress -Depth 5)
-            file = Get-Item -LiteralPath $Archive
-        }
-        if (-not $response.id) { throw "CurseForge returned no file ID for $Archive." }
-        return [string]$response.id
+        return Invoke-CurseForgeUpload $Metadata $Archive
     }
     catch {
         $body = Get-UploadErrorBody $_
-        if ($body -match 'already|duplicate') {
-            $existing = Get-ExistingFileId $Metadata.displayName
-            if ($existing) {
-                Write-Host "Reusing existing CurseForge file $existing for $($Metadata.displayName)."
-                return $existing
-            }
-            if ($null -eq $coreHeaders) {
-                Write-Warning 'CurseForge reported a duplicate. A saved publish-state file can recover the client ID for server retries; CURSEFORGE_CORE_API_KEY is still recommended for duplicate recovery across separate workflow runs.'
-            }
+
+        # If CurseForge accepted the upload but the response was lost (or this is a
+        # retry of an earlier run), recover by the version-unique display name.
+        $existing = Get-ExistingFileId $Metadata.displayName
+        if ($existing) {
+            Write-Host "Reusing existing CurseForge file $existing for $($Metadata.displayName)."
+            return $existing
+        }
+
+        if ($body -match 'already|duplicate' -and $null -eq $coreHeaders) {
+            Write-Warning 'CurseForge reported a duplicate. A saved publish-state file can recover the client ID for server retries; CURSEFORGE_CORE_API_KEY is still recommended for duplicate recovery across separate workflow runs.'
         }
         throw "CurseForge upload failed for ${Archive}: $body"
     }
