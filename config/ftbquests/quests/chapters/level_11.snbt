@@ -13,17 +13,13 @@
 			dependencies: ["C4F9E553B22E40CC"]
 			description: [
 				"After the Level 10 Market Order, spend 96 iron coins and 48 andesite alloy to expand industrial farming into tropical automation. Both costs are consumed."
-				"Level 11 adds pineapple and rice, then unlocks Slice & Dice so automated kitchen processing can keep up with the new order volumes. Rice reconnects the old fishing economy through salmon rolls."
+				"Pineapple, rice, Slice and Dice infrastructure, fried rice, pies, and salmon rolls now branch separately so the tropical tier feels like a production network rather than one oversized task."
 			]
 			icon: "pineapple_delight:pineapple"
 			id: "1FFCFC4EAF71D122"
 			rewards: [
 				{ autoclaim: 1b, id: "81583BE1459E5091", stage: "level_11", type: "stage" }
-				{
-					id: "217ACD66E95BED4E"
-					item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_11\"]}", display: { Name: "{\"text\":\"Level 11 Decree\"}" } } }
-					type: "item"
-				}
+				{ id: "217ACD66E95BED4E", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_11\"]}", display: { Name: "{\"text\":\"Level 11 Decree\"}" } } }, type: "item" }
 			]
 			shape: "octagon"
 			tasks: [
@@ -36,30 +32,62 @@
 		}
 		{
 			dependencies: ["1FFCFC4EAF71D122"]
-			description: [
-				"Build a Slice & Dice Slicer, harvest 32 pineapple and 32 rice, then stock 16 pineapple pies, 16 pineapple fried rice, and 16 salmon rolls."
-				"The Slicer is kept as infrastructure. This tier is about building a kitchen line that can repeatedly process tropical crops and Level 5 fish rather than crafting one showcase machine."
-			]
-			icon: "sliceanddice:slicer"
-			id: "CAD91105DBDBD22C"
-			tasks: [
-				{ id: "4DE137A9B65C82F0", item: "sliceanddice:slicer", type: "item" }
-				{ count: 32L, id: "9B591478340B10CD", item: "pineapple_delight:pineapple", type: "item" }
-				{ count: 32L, id: "E5606FAB78041A44", item: "farmersdelight:rice", type: "item" }
-				{ count: 16L, id: "71B95DA0B5874F2D", item: "pineapple_delight:pineapple_fried_rice", type: "item" }
-				{ count: 16L, id: "62DB1B640AE21CF1", item: "pineapple_delight:pineapple_pie", type: "item" }
-				{ count: 16L, id: "7C954321D8C340DD", item: "farmersdelight:salmon_roll", type: "item" }
-			]
-			title: "Automated Tropical Kitchen"
-			x: 2.0d
-			y: 0.0d
+			description: ["Establish a 32-pineapple harvest. If exploration never finds the crop, the expensive recovery trade in the Crop Shop prevents a progression hard lock."]
+			id: "B110000000000001"
+			tasks: [{ count: 32L, id: "9B591478340B10CD", item: "pineapple_delight:pineapple", type: "item" }]
+			title: "Pineapple Plantation"
+			x: -2.0d
+			y: 2.0d
 		}
 		{
-			dependencies: ["CAD91105DBDBD22C"]
-			description: [
-				"Ship 64 pineapple fried rice, 64 pineapple pies, 64 salmon rolls, and 64 tacos. Every listed item is consumed."
-				"Demand has now moved beyond batch cooking. Tropical crops reuse rice, salmon reactivates fisheries, tacos keep Levels 4, 8, and 9 profitable, and automation is the practical way to sustain all four lines."
-			]
+			dependencies: ["1FFCFC4EAF71D122"]
+			description: ["Grow 32 rice. Rice immediately reconnects the fisheries economy through rolls and combines with pineapple in the tropical kitchen."]
+			id: "B110000000000002"
+			tasks: [{ count: 32L, id: "E5606FAB78041A44", item: "farmersdelight:rice", type: "item" }]
+			title: "Rice Paddies"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["1FFCFC4EAF71D122"]
+			description: ["Build the Slice and Dice Slicer. It is permanent infrastructure and is required by actual food-production branches, not merely checked as an unused unlock."]
+			icon: "sliceanddice:slicer"
+			id: "CAD91105DBDBD22C"
+			tasks: [{ id: "4DE137A9B65C82F0", item: "sliceanddice:slicer", type: "item" }]
+			title: "Slice and Dice Infrastructure"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["B110000000000001", "B110000000000002", "CAD91105DBDBD22C"]
+			description: ["Automate 16 pineapple fried rice. This branch combines both new crops and demonstrates why the Slicer exists in progression."]
+			id: "B110000000000003"
+			tasks: [{ count: 16L, id: "71B95DA0B5874F2D", item: "pineapple_delight:pineapple_fried_rice", type: "item" }]
+			title: "Pineapple Fried Rice"
+			x: -1.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["B110000000000001"]
+			description: ["Bake 16 pineapple pies. The pie line reuses the crust, wheat, egg, and sugar economy established long before this level."]
+			id: "B110000000000004"
+			tasks: [{ count: 16L, id: "62DB1B640AE21CF1", item: "pineapple_delight:pineapple_pie", type: "item" }]
+			title: "Pineapple Pies"
+			x: -3.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["B110000000000002", "CAD91105DBDBD22C"]
+			description: ["Produce 16 salmon rolls. This branch deliberately reactivates the Level 5 salmon supply instead of letting fisheries become obsolete."]
+			id: "B110000000000005"
+			tasks: [{ count: 16L, id: "7C954321D8C340DD", item: "farmersdelight:salmon_roll", type: "item" }]
+			title: "Salmon Rolls"
+			x: 2.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["B110000000000003", "B110000000000004", "B110000000000005"]
+			description: ["The tropical crop, automated processing, pie, and fish branches converge here. Ship 64 fried rice, 64 pineapple pies, 64 salmon rolls, and 64 tacos."]
 			icon: "pineapple_delight:pineapple_fried_rice"
 			id: "2507AB50F6CCD90E"
 			shape: "hexagon"
@@ -70,8 +98,8 @@
 				{ consume_items: true, count: 64L, id: "A5816E32E0CE275D", item: "corn_delight:taco", type: "item" }
 			]
 			title: "Level 11 Market Order"
-			x: 4.0d
-			y: 0.0d
+			x: 6.0d
+			y: 5.0d
 		}
 	]
 	title: "Level 11 · Tropical Automation"
