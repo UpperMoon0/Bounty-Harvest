@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Inspect generator write loop
+      - name: Diagnose generator output path
         shell: bash
         run: |
           python - <<'PY'
@@ -32,7 +32,23 @@ jobs:
           payload = re.search(r'b64decode\(\"([^\"]+)\"\)', wrapper).group(1)
           source = zlib.decompress(base64.b64decode(payload)).decode('utf-8')
           lines = source.splitlines()
-          for number in range(1695, 1765):
-              if number <= len(lines):
-                  print(f'{number}: {lines[number-1]}')
+          for number, line in enumerate(lines, 1):
+              if number <= 130 or 'ROOT' in line or 'CHAPTERS' in line:
+                  print(f'{number}: {line}')
+          source = source.replace(
+              '"icon": old_icons.get(level, LEVELS[level]["icon"]),',
+              '"icon": old_icons[level] if level in old_icons else LEVELS[level]["icon"],'
+          )
+          ns = {'__name__': 'migration_probe'}
+          exec(compile(source, 'restructure_progression_23.py', 'exec'), ns)
+          print('ROOT =', ns.get('ROOT'))
+          print('CHAPTERS =', ns.get('CHAPTERS'))
+          print('LEVEL KEYS =', sorted(ns.get('LEVELS', {}).keys()))
+          ns['main']()
           PY
+          echo '--- pwd ---'
+          pwd
+          echo '--- generated files anywhere nearby ---'
+          find .. \( -name 'level_16.snbt' -o -name 'level_23.snbt' \) -print
+          echo '--- git status ---'
+          git status --short --untracked-files=all
