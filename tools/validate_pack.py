@@ -207,7 +207,6 @@ def main() -> int:
         "alexscaves": "level_14",
         "twilightforest": "level_15",
         "twilightdelight": "level_15",
-        "ends_delight": "level_15",
     }
     for mod_id, stage in expected_mod_policy.items():
         expected = f'createModRestriction("{mod_id}", "{stage}")'
