@@ -1,0 +1,34 @@
+name: One-shot quest formatter
+
+on:
+  push:
+    paths:
+      - '.github/workflows/quest-format-once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Normalize quest text
+        run: python tools/format_quest_text.py --write
+      - name: Commit normalized quest text
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo 'No formatting changes needed.'
+            exit 0
+          fi
+          git config user.name 'Lily'
+          git config user.email 'lily@users.noreply.github.com'
+          git add config/ftbquests/quests
+          git commit -m 'style: normalize quest text after graph rebuild'
+          git push origin HEAD:${{ github.ref_name }}
