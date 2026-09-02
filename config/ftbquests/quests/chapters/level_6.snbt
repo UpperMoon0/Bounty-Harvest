@@ -78,7 +78,9 @@
 		}
 		{
 			dependencies: ["A000000000000601"]
-			description: ["Keep the older wheat and poultry economy productive while the textile branch comes online."]
+			description: [
+				"Keep the older wheat and poultry economy productive while the textile branch comes online."
+			]
 			icon: "minecraft:bread"
 			id: "A000000000000605"
 			tasks: [
@@ -91,7 +93,9 @@
 		}
 		{
 			dependencies: ["A000000000000603"]
-			description: ["Scale the new textile line enough to prove sheep and yarn are sustainable outputs."]
+			description: [
+				"Scale the new textile line enough to prove sheep and yarn are sustainable outputs."
+			]
 			icon: "kubejs:wool_yarn"
 			id: "A000000000000606"
 			tasks: [
