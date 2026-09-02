@@ -12,47 +12,23 @@
 		{
 			dependencies: ["C249CFA083AB4179"]
 			description: [
-				"After the Level 12 Market Order, spend two gold coins and one electric motor to open Wildlife Cuisine. Both costs are consumed."
-				"Completing this promotion grants Level 13 and unlocks the progression-facing Alex's Delight and Animal Dictionary content. Alex's Mobs entities themselves are not stage-gated."
+				"After the Level 12 Market Order, spend 48 gold coins and 128 pineapple pies to open Wildlife Cuisine. Both costs are consumed."
+				"The electrical infrastructure stays on the farm; promotions now consume the output it enabled. Level 13 unlocks Alex's Delight and Animal Dictionary content, while Alex's Mobs entities themselves remain outside ItemStages."
 			]
 			icon: "alexsmobs:animal_dictionary"
 			id: "14A6F09E58565C89"
 			rewards: [
-				{
-					autoclaim: 1b
-					id: "61D2EAD62259F2F3"
-					stage: "level_13"
-					type: "stage"
-				}
+				{ autoclaim: 1b, id: "61D2EAD62259F2F3", stage: "level_13", type: "stage" }
 				{
 					id: "AF9FC5D3613900EB"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_13\"]}"
-							display: { Name: "{\"text\":\"Level 13 Decree\"}" }
-						}
-					}
+					item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_13\"]}", display: { Name: "{\"text\":\"Level 13 Decree\"}" } } }
 					type: "item"
 				}
 			]
 			shape: "octagon"
 			tasks: [
-				{
-					consume_items: true
-					count: 2L
-					id: "B568D07135BF53DB"
-					item: "kubejs:gold_coin"
-					type: "item"
-				}
-				{
-					consume_items: true
-					id: "32DE7DC1E8A60133"
-					item: "createaddition:electric_motor"
-					type: "item"
-				}
+				{ consume_items: true, count: 48L, id: "B568D07135BF53DB", item: "kubejs:gold_coin", type: "item" }
+				{ consume_items: true, count: 128L, id: "32DE7DC1E8A60133", item: "pineapple_delight:pineapple_pie", type: "item" }
 			]
 			title: "Level 13 · Wildlife Cuisine"
 			x: 0.0d
@@ -61,29 +37,15 @@
 		{
 			dependencies: ["14A6F09E58565C89"]
 			description: [
-				"Obtain the Animal Dictionary and prepare two bison burgers plus two acacia blossom soups to establish the wildlife-food branch."
-				"These are detection tasks. Wildlife may already exist in the world; this tier marks when the pack expects you to use its progression-facing tools and cuisine."
+				"Obtain the Animal Dictionary and prepare eight bison burgers plus eight acacia blossom soups to establish the wildlife-food branch."
+				"Wildlife ingredients are a specialist input, not the entire throughput burden. The larger order below deliberately leans on established farm goods that can be automated reliably."
 			]
 			icon: "alexsmobs:animal_dictionary"
 			id: "2B337D14D79B9F50"
 			tasks: [
-				{
-					id: "F427E711627D0CCF"
-					item: "alexsmobs:animal_dictionary"
-					type: "item"
-				}
-				{
-					count: 2L
-					id: "D768BFF63BC52EB9"
-					item: "alexsdelight:bison_burger"
-					type: "item"
-				}
-				{
-					count: 2L
-					id: "B70BE54324A8F9E1"
-					item: "alexsdelight:acacia_blossom_soup"
-					type: "item"
-				}
+				{ id: "F427E711627D0CCF", item: "alexsmobs:animal_dictionary", type: "item" }
+				{ count: 8L, id: "D768BFF63BC52EB9", item: "alexsdelight:bison_burger", type: "item" }
+				{ count: 8L, id: "B70BE54324A8F9E1", item: "alexsdelight:acacia_blossom_soup", type: "item" }
 			]
 			title: "Wildlife Cuisine Production"
 			x: 2.0d
@@ -92,34 +54,17 @@
 		{
 			dependencies: ["2B337D14D79B9F50"]
 			description: [
-				"Ship three bison burgers, two acacia blossom soups, and six leather. All listed goods are consumed."
-				"Leather returns from Level 3 on purpose, tying mature wildlife cuisine back to the cattle economy. Completing the order opens Level 14."
+				"Ship 32 bison burgers, 32 acacia blossom soups, 256 leather, and 256 cornbread. All listed goods are consumed."
+				"Specialist wildlife cuisine proves the new branch works; the huge leather and corn demand proves the older cattle and crop industries can feed a mature automated economy."
 			]
 			icon: "alexsmobs:animal_dictionary"
 			id: "A48274D6A8EE43B3"
 			shape: "hexagon"
 			tasks: [
-				{
-					consume_items: true
-					count: 3L
-					id: "E4898D4EA9AC51FD"
-					item: "alexsdelight:bison_burger"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 2L
-					id: "7B8C0C7A8371EF7E"
-					item: "alexsdelight:acacia_blossom_soup"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 6L
-					id: "04703023688A01EF"
-					item: "minecraft:leather"
-					type: "item"
-				}
+				{ consume_items: true, count: 32L, id: "E4898D4EA9AC51FD", item: "alexsdelight:bison_burger", type: "item" }
+				{ consume_items: true, count: 32L, id: "7B8C0C7A8371EF7E", item: "alexsdelight:acacia_blossom_soup", type: "item" }
+				{ consume_items: true, count: 256L, id: "04703023688A01EF", item: "minecraft:leather", type: "item" }
+				{ consume_items: true, count: 256L, id: "7F31DA8C265BE409", item: "corn_delight:cornbread", type: "item" }
 			]
 			title: "Level 13 Market Order"
 			x: 4.0d
