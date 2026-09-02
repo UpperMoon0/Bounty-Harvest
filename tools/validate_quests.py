@@ -121,7 +121,6 @@ def main() -> int:
                     f"depends on missing quest {dependency.upper()}"
                 )
 
-    # Detect dependency cycles.
     state: dict[str, int] = {}
     stack: list[str] = []
 
@@ -145,7 +144,6 @@ def main() -> int:
         if state.get(node, 0) == 0:
             visit(node)
 
-    # Exactly the three deliberate book roots may be dependency-free.
     actual_roots = {node for node, dependencies in graph.items() if not dependencies}
     for root, expected_source in KNOWN_ROOTS.items():
         if root not in graph:
@@ -158,7 +156,6 @@ def main() -> int:
             f"({source_by_id[unexpected].relative_to(QUEST_ROOT)})"
         )
 
-    # Reachability from the declared roots.
     global_dependents: dict[str, set[str]] = {node: set() for node in graph}
     for node, dependencies in graph.items():
         for dependency in dependencies:
@@ -178,7 +175,6 @@ def main() -> int:
         )
 
     previous_market: str | None = None
-    level_meta: dict[int, tuple[str, str]] = {}
 
     for level in range(1, LEVEL_COUNT + 1):
         path = QUEST_ROOT / "chapters" / f"level_{level}.snbt"
@@ -189,11 +185,7 @@ def main() -> int:
         if "&" in content:
             errors.append(f"Level {level} contains literal '&'; FTB Quests interprets it as formatting")
 
-        level_ids = {
-            quest_id
-            for quest_id, source in source_by_id.items()
-            if source == path
-        }
+        level_ids = {quest_id for quest_id, source in source_by_id.items() if source == path}
         level_blocks = {quest_id: blocks_by_id[quest_id] for quest_id in level_ids}
 
         if level == 1:
@@ -216,7 +208,6 @@ def main() -> int:
             errors.append(f"Level {level} has {len(market_candidates)} Market Orders; expected exactly one")
             continue
         market = market_candidates[0]
-        level_meta[level] = (promotion, market)
 
         if level >= 2:
             if previous_market is None or graph[promotion] != {previous_market}:
@@ -232,13 +223,13 @@ def main() -> int:
                 errors.append(f"Level {level} promotion does not reward the matching level_{level} decree")
 
         market_block = level_blocks[market]
-        if len(graph[market]) < 2:
-            errors.append(f"Level {level} Market Order must converge at least two quest branches")
+        if not graph[market]:
+            errors.append(f"Level {level} Market Order has no production dependency")
+        if promotion in graph[market]:
+            errors.append(f"Level {level} Market Order depends directly on promotion instead of production")
         if market_block.count("consume_items: true") < 2:
             errors.append(f"Level {level} Market Order must consume at least two production outputs")
 
-        # Same-level connection graph. The only legal terminal nodes are the Market
-        # Order itself or an explicit Mastery quest that reconnects optional content.
         level_dependents: dict[str, set[str]] = {qid: set() for qid in level_ids}
         for qid in level_ids:
             for dependency in graph[qid]:
@@ -271,8 +262,6 @@ def main() -> int:
                     f"Level {level} core quest {qid.upper()} ({title_for(block)}) does not feed the Market Order"
                 )
 
-        # A promotion should fan into a small number of meaningful systems, not dump
-        # an entire mod's product catalog at once. More detail belongs downstream.
         direct_branches = level_dependents[promotion]
         if level >= 6 and len(direct_branches) > 3:
             errors.append(
@@ -290,7 +279,7 @@ def main() -> int:
         return 1
 
     print(
-        "Quest graph OK: 23-level spine is reachable and acyclic; every level converges on its Market Order, "
+        "Quest graph OK: 23-level spine is reachable and acyclic; every core quest reaches its Market Order, "
         "optional branches reconnect through Mastery, and promotions avoid unlock dumps."
     )
     return 0
