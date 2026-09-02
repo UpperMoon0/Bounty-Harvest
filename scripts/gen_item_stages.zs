@@ -174,6 +174,7 @@ ItemStages.restrict(<item:minecraft:lapis_lazuli>, "level_14");
 ItemStages.restrict(<item:minecraft:lapis_block>, "level_14");
 ItemStages.restrict(<item:minecraft:amethyst_shard>, "level_14");
 
-// Level 15 · Twilight Frontier
+// Level 15 · Frontier Economy
 ItemStages.createModRestriction("twilightforest", "level_15");
 ItemStages.createModRestriction("twilightdelight", "level_15");
+ItemStages.createModRestriction("ends_delight", "level_15");
