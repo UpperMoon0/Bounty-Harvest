@@ -13,17 +13,13 @@
 			dependencies: ["250184A59EA4EBA2"]
 			description: [
 				"After the Level 14 Market Order, spend 192 gold coins, 256 tacos, 256 pineapple pies, and 128 chicken sandwiches to open the Frontier Economy. Every cost is consumed."
-				"Completing this promotion grants Level 15 and unlocks Twilight Forest, Twilight's Flavors & Delight, and End's Delight. The final current tier expects a mature automated economy capable of provisioning other worlds."
+				"Twilight navigation, Twilight cuisine, End farming, End's Delight processing, and legacy industrial provisioning now form separate frontier branches before the final Market Order."
 			]
 			icon: "twilightforest:magic_map"
 			id: "2820C98F56814014"
 			rewards: [
 				{ autoclaim: 1b, id: "EEF9AFDC58081119", stage: "level_15", type: "stage" }
-				{
-					id: "E456E04499E66FF2"
-					item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_15\"]}", display: { Name: "{\"text\":\"Level 15 Decree\"}" } } }
-					type: "item"
-				}
+				{ id: "E456E04499E66FF2", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_15\"]}", display: { Name: "{\"text\":\"Level 15 Decree\"}" } } }, type: "item" }
 			]
 			shape: "octagon"
 			tasks: [
@@ -38,27 +34,59 @@
 		}
 		{
 			dependencies: ["2820C98F56814014"]
-			description: [
-				"Obtain a Twilight Forest Magic Map, prepare 32 Glowstew, and establish the End branch with 64 chorus fruit pies."
-				"The Magic Map is navigation infrastructure and is never consumed. Chorus fruit pie is the renewable End product: it reconnects chorus farming to old wheat, sugar, and Farmer's Delight pie crust instead of turning the End into another rare-drop checklist."
-			]
-			icon: "ends_delight:chorus_fruit_pie"
-			id: "8F6E2BD7AA1699E2"
-			tasks: [
-				{ id: "9036EBDDF44CE10D", item: "twilightforest:magic_map", type: "item" }
-				{ count: 32L, id: "DDEE04D4B43C243B", item: "twilightdelight:glowstew", type: "item" }
-				{ count: 64L, id: "59E8A2C41D76BF30", item: "ends_delight:chorus_fruit_pie", type: "item" }
-			]
-			title: "Twilight & End Frontier Supply"
-			x: 2.0d
-			y: 0.0d
+			description: ["Obtain a Twilight Forest Magic Map. It remains navigation infrastructure and is never sold or placed into repeatable Bountiful objectives."]
+			icon: "twilightforest:magic_map"
+			id: "F150000000000001"
+			tasks: [{ id: "9036EBDDF44CE10D", item: "twilightforest:magic_map", type: "item" }]
+			title: "Twilight Navigation"
+			x: -2.0d
+			y: 2.0d
 		}
 		{
-			dependencies: ["8F6E2BD7AA1699E2"]
-			description: [
-				"Ship 64 Glowstew, 128 chorus fruit pies, 512 tacos, 512 pineapple pies, 256 chicken sandwiches, and 256 cornbread. The Magic Map remains yours."
-				"This is the current peak throughput test: several old production chains must run continuously at industrial scale while Twilight and End cuisine become the premium frontier products."
+			dependencies: ["F150000000000001"]
+			description: ["Prepare 32 Glowstew from Twilight's Flavors and Delight. This is the renewable premium product of the Twilight branch and scales into repeatable late-game demand."]
+			id: "F150000000000002"
+			tasks: [{ count: 32L, id: "DDEE04D4B43C243B", item: "twilightdelight:glowstew", type: "item" }]
+			title: "Twilight Cuisine"
+			x: -3.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["2820C98F56814014"]
+			description: ["Establish renewable chorus fruit production in the End. The final tier needs an actual farmable End input, not another one-time rare-drop checklist."]
+			id: "F150000000000003"
+			tasks: [{ count: 64L, id: "F150000000000004", item: "minecraft:chorus_fruit", type: "item" }]
+			title: "Chorus Orchard"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["F150000000000003"]
+			description: ["Turn chorus farming into 64 End's Delight chorus fruit pies. The recipe reconnects the frontier to old wheat, sugar, and Farmer's Delight pie crust production."]
+			icon: "ends_delight:chorus_fruit_pie"
+			id: "8F6E2BD7AA1699E2"
+			tasks: [{ count: 64L, id: "59E8A2C41D76BF30", item: "ends_delight:chorus_fruit_pie", type: "item" }]
+			title: "End's Delight Pie Line"
+			x: 1.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["2820C98F56814014"]
+			description: ["Stage the enormous old-economy provision lines that keep the frontier supplied: tacos, pineapple pies, chicken sandwiches, and cornbread."]
+			id: "F150000000000005"
+			tasks: [
+				{ count: 512L, id: "F150000000000006", item: "corn_delight:taco", type: "item" }
+				{ count: 512L, id: "F150000000000007", item: "pineapple_delight:pineapple_pie", type: "item" }
+				{ count: 256L, id: "F150000000000008", item: "farmersdelight:chicken_sandwich", type: "item" }
+				{ count: 256L, id: "F150000000000009", item: "corn_delight:cornbread", type: "item" }
 			]
+			title: "Frontier Provisioning"
+			x: 3.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["F150000000000002", "8F6E2BD7AA1699E2", "F150000000000005"]
+			description: ["Twilight cuisine, End's Delight, and the mature farm economy converge here. Ship 64 Glowstew, 128 chorus fruit pies, 512 tacos, 512 pineapple pies, 256 chicken sandwiches, and 256 cornbread. The Magic Map remains yours."]
 			icon: "ends_delight:chorus_fruit_pie"
 			id: "998D5FCA54B02B56"
 			shape: "hexagon"
@@ -71,8 +99,8 @@
 				{ consume_items: true, count: 256L, id: "E2B6490C71AD35F8", item: "corn_delight:cornbread", type: "item" }
 			]
 			title: "Level 15 Market Order"
-			x: 4.0d
-			y: 0.0d
+			x: 6.0d
+			y: 5.0d
 		}
 	]
 	title: "Level 15 · Frontier Economy"
