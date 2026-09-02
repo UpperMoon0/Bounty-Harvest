@@ -13,30 +13,13 @@
 			dependencies: ["5EF6647A3BB43A42"]
 			description: [
 				"After the Level 6 Market Order, spend 64 copper coins and 16 baked potatoes to open the Copper Workshop. Both costs are consumed."
-				"Level 7 begins a real copper era. Copper remains the active metal through Levels 7-9; Ironworking does not unlock until the Level 10 promotion."
+				"Copper is a real technology era through Levels 7 to 9. Metal supply, tools, fuel, books, textiles, and copper utility recipes now branch separately instead of forming one straight chain."
 			]
 			icon: "minecraft:copper_ingot"
 			id: "0A53CC520F7826A3"
 			rewards: [
-				{
-					autoclaim: 1b
-					id: "6372F008C4309D67"
-					stage: "level_7"
-					type: "stage"
-				}
-				{
-					id: "0E0EB119548B44AD"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_7\"]}"
-							display: { Name: "{\"text\":\"Level 7 Decree\"}" }
-						}
-					}
-					type: "item"
-				}
+				{ autoclaim: 1b, id: "6372F008C4309D67", stage: "level_7", type: "stage" }
+				{ id: "0E0EB119548B44AD", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_7\"]}", display: { Name: "{\"text\":\"Level 7 Decree\"}" } } }, type: "item" }
 			]
 			shape: "octagon"
 			tasks: [
@@ -49,10 +32,7 @@
 		}
 		{
 			dependencies: ["0A53CC520F7826A3"]
-			description: [
-				"Mine 12 raw copper and smelt six copper ingots to establish a reliable metal supply. Raw copper still yields only three nuggets, so ore efficiency matters."
-				"This quest only detects the materials; keep them for tools, workshop recipes, bounties, and the Market Order."
-			]
+			description: ["Mine raw copper and smelt enough ingots to establish a reliable workshop metal supply. Raw copper is intentionally inefficient, so mining scale matters."]
 			icon: "minecraft:copper_ingot"
 			id: "6A5C20C31BD2649E"
 			tasks: [
@@ -60,15 +40,12 @@
 				{ count: 6L, id: "CB25C097B7625710", item: "minecraft:copper_ingot", type: "item" }
 			]
 			title: "Copper Supply"
-			x: 2.0d
-			y: 0.0d
+			x: -1.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["6A5C20C31BD2649E"]
-			description: [
-				"Craft the complete Better Copper toolset: shovel, pickaxe, axe, hoe, and sword. The tools are detected, not consumed."
-				"This proves copper-tool mastery but deliberately does not unlock iron. The copper era continues through two more economic levels before Ironworking at Level 10."
-			]
+			description: ["Craft the complete Better Copper toolset. Mastering copper tools does not unlock Ironworking; the copper era continues through Levels 8 and 9."]
 			icon: "bettercopper:copper_pickaxe"
 			id: "34B5DF088E2F447E"
 			shape: "diamond"
@@ -80,32 +57,52 @@
 				{ id: "B0FF0DA47B371738", item: "bettercopper:copper_sword", type: "item" }
 			]
 			title: "Copper Tools"
-			x: 4.0d
-			y: 0.0d
+			x: -2.5d
+			y: 4.0d
 		}
 		{
-			dependencies: ["34B5DF088E2F447E"]
-			description: [
-				"Turn older farm industries into workshop supplies: stock charcoal for heat, craft bookshelves from the leather-and-paper chain, and finish a wool sweater from your textile line."
-				"These tasks only detect the goods. This is the first deliberate copper-era test that asks several older production lines to support the new technology tier."
-			]
+			dependencies: ["0A53CC520F7826A3"]
+			description: ["Stock renewable charcoal for smelting and workshop heat. This branch deliberately reuses Level 2 fuel production at larger scale."]
+			id: "7A70000000000001"
+			tasks: [{ count: 16L, id: "3A78A6B3BD08088A", item: "minecraft:charcoal", type: "item" }]
+			title: "Workshop Fuel"
+			x: 0.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0A53CC520F7826A3"]
+			description: ["Craft bookshelves from the older leather, sugar-cane paper, and wood chains. Knowledge infrastructure becomes a workshop export instead of dead inventory."]
 			icon: "minecraft:bookshelf"
 			id: "824E1F00FADDCB4D"
-			tasks: [
-				{ count: 16L, id: "3A78A6B3BD08088A", item: "minecraft:charcoal", type: "item" }
-				{ count: 2L, id: "64A092950EFF9947", item: "minecraft:bookshelf", type: "item" }
-				{ id: "365C55FE463DFEC9", item: "kubejs:wool_sweater", type: "item" }
-			]
-			title: "Workshop Supplies"
-			x: 6.0d
-			y: 0.0d
+			tasks: [{ count: 2L, id: "64A092950EFF9947", item: "minecraft:bookshelf", type: "item" }]
+			title: "Books and Shelving"
+			x: 2.0d
+			y: 2.0d
 		}
 		{
-			dependencies: ["824E1F00FADDCB4D"]
-			description: [
-				"Ship 16 copper ingots, four bookshelves, two wool sweaters, and 24 charcoal. Every listed good is consumed."
-				"Volume starts climbing here, but remains human-scale before Create. The order keeps leather, paper, wool, wood, and charcoal economically relevant while copper becomes the main technology."
+			dependencies: ["0A53CC520F7826A3"]
+			description: ["Finish a wool sweater from the Level 6 textile line. The copper workshop demands finished goods from the farm, not only metal."]
+			id: "7A70000000000002"
+			tasks: [{ id: "365C55FE463DFEC9", item: "kubejs:wool_sweater", type: "item" }]
+			title: "Textile Export"
+			x: 3.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["6A5C20C31BD2649E"]
+			description: ["Use copper in the utility recipes introduced for this era. A glass bottle and composter demonstrate that copper is more than a tool material."]
+			id: "7A70000000000003"
+			tasks: [
+				{ id: "7A70000000000004", item: "minecraft:glass_bottle", type: "item" }
+				{ id: "7A70000000000005", item: "minecraft:composter", type: "item" }
 			]
+			title: "Copper Utility"
+			x: -0.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["34B5DF088E2F447E", "7A70000000000001", "824E1F00FADDCB4D", "7A70000000000002"]
+			description: ["The metal, tool, fuel, book, and textile branches converge here. Ship 16 copper ingots, four bookshelves, two sweaters, and 24 charcoal. Utility infrastructure is retained."]
 			icon: "minecraft:copper_ingot"
 			id: "D9D29B504CE79600"
 			shape: "hexagon"
@@ -116,8 +113,8 @@
 				{ consume_items: true, count: 24L, id: "F2745AA0FF11B3DC", item: "minecraft:charcoal", type: "item" }
 			]
 			title: "Level 7 Market Order"
-			x: 8.0d
-			y: 0.0d
+			x: 6.0d
+			y: 4.0d
 		}
 	]
 	title: "Level 7 · Copper Workshop"
