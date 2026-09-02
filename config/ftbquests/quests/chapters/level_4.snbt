@@ -13,120 +13,119 @@
 			dependencies: ["9131A689D31728C8"]
 			description: [
 				"After the Level 3 Market Order, spend 16 copper coins and four cooked beef to add roots, pigs, and a broader food chain. Both costs are consumed."
-				"Completing this promotion grants Level 4, unlocks the pig and carrot shops, and awards your first Level 4 Decree."
+				"Carrots, pigs, Farmer's Delight dough, flint tools, and common mob or glass resources now branch independently before converging on the Market Order."
 			]
 			icon: "minecraft:carrot"
 			id: "1003C2B79F710366"
 			rewards: [
-				{
-					autoclaim: 1b
-					id: "474039432878481B"
-					stage: "level_4"
-					type: "stage"
-				}
-				{
-					id: "082AECF3C6D6FF92"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_4\"]}"
-							display: { Name: "{\"text\":\"Level 4 Decree\"}" }
-						}
-					}
-					type: "item"
-				}
+				{ autoclaim: 1b, id: "474039432878481B", stage: "level_4", type: "stage" }
+				{ id: "082AECF3C6D6FF92", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_4\"]}", display: { Name: "{\"text\":\"Level 4 Decree\"}" } } }, type: "item" }
 			]
 			shape: "octagon"
 			tasks: [
-				{
-					consume_items: true
-					count: 16L
-					id: "F59CADCF33F29592"
-					item: "kubejs:copper_coin"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 4L
-					id: "DC624E929E2F8A43"
-					item: "minecraft:cooked_beef"
-					type: "item"
-				}
+				{ consume_items: true, count: 16L, id: "F59CADCF33F29592", item: "kubejs:copper_coin", type: "item" }
+				{ consume_items: true, count: 4L, id: "DC624E929E2F8A43", item: "minecraft:cooked_beef", type: "item" }
 			]
-			title: "Level 4 · Roots & Pork"
+			title: "Level 4 · Roots and Pork"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
-			description: [
-				"Produce 12 carrots, six cooked porkchops, and six Farmer's Delight wheat dough to connect crops, livestock, and cooking."
-				"These tasks only detect the items; save the stock for bounties and the Market Order."
-			]
-			icon: "minecraft:carrot"
-			id: "E1C4D64071102D60"
-			tasks: [
-				{
-					count: 12L
-					id: "D4E776CC6ABEA4F6"
-					item: "minecraft:carrot"
-					type: "item"
-				}
-				{
-					count: 6L
-					id: "A6A6B420C821708B"
-					item: "minecraft:cooked_porkchop"
-					type: "item"
-				}
-				{
-					count: 6L
-					id: "5AB3F5F07481EEC8"
-					item: "farmersdelight:wheat_dough"
-					type: "item"
-				}
-			]
-			title: "Roots & Pork Production"
-			x: 2.0d
-			y: 0.0d
+			description: ["Acquire and expand carrots into a reliable crop. This is the crop branch that supports both the pig line and later prepared foods."]
+			id: "352F41B3BED0E086"
+			tasks: [{ count: 12L, id: "269DA89171668F2A", item: "minecraft:carrot", type: "item" }]
+			title: "Carrot Field"
+			x: -2.0d
+			y: 2.0d
 		}
 		{
-			dependencies: ["E1C4D64071102D60"]
-			description: [
-				"Ship 12 carrots, six cooked porkchops, and six wheat dough. All listed items are consumed."
-				"Completing this one-time contract opens the Level 5 promotion into fishing and coastal food."
+			dependencies: ["352F41B3BED0E086"]
+			description: ["Raise pigs using the new root crop and establish pork as the third animal food line."]
+			id: "58846BA779358FD2"
+			tasks: [{ count: 4L, id: "413A84E06FE1CFAA", item: "minecraft:porkchop", type: "item" }]
+			title: "Pig Pen"
+			x: -3.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["58846BA779358FD2"]
+			description: ["Cook six porkchops. This becomes the sale-ready endpoint of the pig branch and returns again in the taco chain at Level 9."]
+			id: "6D3ECD5141AFA093"
+			tasks: [{ count: 6L, id: "2357515CE357A112", item: "minecraft:cooked_porkchop", type: "item" }]
+			title: "Cooked Pork"
+			x: -4.5d
+			y: 5.5d
+		}
+		{
+			dependencies: ["1003C2B79F710366"]
+			description: ["Make Farmer's Delight wheat dough from the older wheat and egg economy. New food tiers should multiply old production instead of replacing it."]
+			id: "72CAF40486DF976F"
+			tasks: [{ count: 6L, id: "026B64363A5FE21E", item: "farmersdelight:wheat_dough", type: "item" }]
+			title: "Wheat Dough"
+			x: 0.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["1003C2B79F710366"]
+			description: ["Collect flint from the gravel branch introduced at Level 1. This turns an old low-value material into the next tool tier."]
+			id: "17F6492995529F96"
+			tasks: [{ count: 5L, id: "0799389515CA36EB", item: "minecraft:flint", type: "item" }]
+			title: "Flint Supply"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["17F6492995529F96"]
+			description: ["Craft the complete flint tool set using the modified stone-tool recipes. This is a real pre-copper equipment tier, not a one-item unlock."]
+			id: "19A0223BFE395A14"
+			tasks: [
+				{ id: "45A5573D47862E96", item: "minecraft:stone_shovel", type: "item" }
+				{ id: "39C623F4A3918C9A", item: "minecraft:stone_pickaxe", type: "item" }
+				{ id: "3B4663CE58D98FD9", item: "minecraft:stone_axe", type: "item" }
+				{ id: "1C188B295DD98031", item: "minecraft:stone_hoe", type: "item" }
+				{ id: "330D6E427AAE1BF4", item: "minecraft:stone_sword", type: "item" }
 			]
+			title: "Flint Tools"
+			x: 3.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["1003C2B79F710366"]
+			description: ["Smelt the sand gathered earlier into glass. This is a separate materials branch that later feeds bottles and copper utility recipes."]
+			id: "12932CB774E66484"
+			tasks: [{ count: 6L, id: "7C2A27D31C954D1B", item: "minecraft:glass", type: "item" }]
+			title: "Glassmaking"
+			x: 2.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["1003C2B79F710366"]
+			description: ["Collect string and a spider eye. Mob resources remain useful side branches without becoming mandatory grind for every promotion."]
+			id: "6A5228B39CFC9F88"
+			tasks: [
+				{ count: 2L, id: "77CA2E89333327E4", item: "minecraft:string", type: "item" }
+				{ id: "2C5451DB682F750B", item: "minecraft:spider_eye", type: "item" }
+			]
+			title: "Spider Resources"
+			x: -1.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["6D3ECD5141AFA093", "72CAF40486DF976F", "19A0223BFE395A14"]
+			description: ["The crop, livestock, food-processing, and tool branches converge here. Ship 12 carrots, six cooked porkchops, and six wheat dough; the flint tools are retained."]
 			icon: "minecraft:carrot"
 			id: "284BDA8AD6A1EE07"
 			shape: "hexagon"
 			tasks: [
-				{
-					consume_items: true
-					count: 12L
-					id: "8BB86A8D1082146D"
-					item: "minecraft:carrot"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 6L
-					id: "BEF6BA3047CC7BCB"
-					item: "minecraft:cooked_porkchop"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 6L
-					id: "5E14A94D6A00D6C2"
-					item: "farmersdelight:wheat_dough"
-					type: "item"
-				}
+				{ consume_items: true, count: 12L, id: "8BB86A8D1082146D", item: "minecraft:carrot", type: "item" }
+				{ consume_items: true, count: 6L, id: "BEF6BA3047CC7BCB", item: "minecraft:cooked_porkchop", type: "item" }
+				{ consume_items: true, count: 6L, id: "5E14A94D6A00D6C2", item: "farmersdelight:wheat_dough", type: "item" }
 			]
 			title: "Level 4 Market Order"
-			x: 4.0d
-			y: 0.0d
+			x: 6.5d
+			y: 4.0d
 		}
 	]
-	title: "Level 4 · Roots & Pork"
+	title: "Level 4 · Roots and Pork"
 }
