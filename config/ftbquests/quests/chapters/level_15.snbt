@@ -12,48 +12,25 @@
 		{
 			dependencies: ["250184A59EA4EBA2"]
 			description: [
-				"After the Level 14 Market Order, spend four gold coins and two diamonds to open the Twilight Frontier. Both costs are consumed."
-				"Completing this promotion grants Level 15 and unlocks the pack's Twilight Forest, Twilight's Flavors & Delight, and End's Delight integration tier."
+				"After the Level 14 Market Order, spend 192 gold coins, 256 tacos, 256 pineapple pies, and 128 chicken sandwiches to open the Twilight Frontier. Every cost is consumed."
+				"Completing this promotion grants Level 15 and unlocks Twilight Forest plus Twilight's Flavors & Delight. The final current tier expects a mature automated economy capable of provisioning another world."
 			]
 			icon: "twilightforest:magic_map"
 			id: "2820C98F56814014"
 			rewards: [
-				{
-					autoclaim: 1b
-					id: "EEF9AFDC58081119"
-					stage: "level_15"
-					type: "stage"
-				}
+				{ autoclaim: 1b, id: "EEF9AFDC58081119", stage: "level_15", type: "stage" }
 				{
 					id: "E456E04499E66FF2"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_15\"]}"
-							display: { Name: "{\"text\":\"Level 15 Decree\"}" }
-						}
-					}
+					item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_15\"]}", display: { Name: "{\"text\":\"Level 15 Decree\"}" } } }
 					type: "item"
 				}
 			]
 			shape: "octagon"
 			tasks: [
-				{
-					consume_items: true
-					count: 4L
-					id: "636ECB6DEAF090C1"
-					item: "kubejs:gold_coin"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 2L
-					id: "0B7702F072C9D32F"
-					item: "minecraft:diamond"
-					type: "item"
-				}
+				{ consume_items: true, count: 192L, id: "636ECB6DEAF090C1", item: "kubejs:gold_coin", type: "item" }
+				{ consume_items: true, count: 256L, id: "0B7702F072C9D32F", item: "corn_delight:taco", type: "item" }
+				{ consume_items: true, count: 256L, id: "0F5C7A19E3D642B8", item: "pineapple_delight:pineapple_pie", type: "item" }
+				{ consume_items: true, count: 128L, id: "A6D31F8B205CE479", item: "farmersdelight:chicken_sandwich", type: "item" }
 			]
 			title: "Level 15 · Twilight Frontier"
 			x: 0.0d
@@ -62,65 +39,34 @@
 		{
 			dependencies: ["2820C98F56814014"]
 			description: [
-				"Obtain a Twilight Forest Magic Map and prepare two Glowstew to establish the expedition-and-cuisine loop for the final current tier."
-				"These tasks only detect the items; keep them until you are ready to submit the final Market Order."
+				"Obtain a Twilight Forest Magic Map and prepare 32 Glowstew to establish the expedition-and-cuisine loop for the final current tier."
+				"The map is navigation infrastructure and is never consumed by progression. Keep it while the farm scales the provisioning lines needed for the final shipment."
 			]
 			icon: "twilightforest:magic_map"
 			id: "8F6E2BD7AA1699E2"
 			tasks: [
-				{
-					id: "9036EBDDF44CE10D"
-					item: "twilightforest:magic_map"
-					type: "item"
-				}
-				{
-					count: 2L
-					id: "DDEE04D4B43C243B"
-					item: "twilightdelight:glowstew"
-					type: "item"
-				}
+				{ id: "9036EBDDF44CE10D", item: "twilightforest:magic_map", type: "item" }
+				{ count: 32L, id: "DDEE04D4B43C243B", item: "twilightdelight:glowstew", type: "item" }
 			]
-			title: "Twilight Frontier Production"
+			title: "Twilight Frontier Supply"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["8F6E2BD7AA1699E2"]
 			description: [
-				"Ship one Magic Map, two Glowstew, two tacos, and two pineapple pies. Every listed item is consumed."
-				"The older prepared foods are intentional carryover from Levels 9 and 11. Completing this order finishes the current 0.12 progression; there is no Level 16 yet."
+				"Ship 64 Glowstew, 512 tacos, 512 pineapple pies, 256 chicken sandwiches, and 256 cornbread. The Magic Map remains yours."
+				"This is the current peak throughput test: several old production chains must run continuously at industrial scale while Twilight cuisine becomes the premium frontier product."
 			]
 			icon: "twilightforest:magic_map"
 			id: "998D5FCA54B02B56"
 			shape: "hexagon"
 			tasks: [
-				{
-					consume_items: true
-					id: "1101BD908BF9D250"
-					item: "twilightforest:magic_map"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 2L
-					id: "650E647F01E0FFC7"
-					item: "twilightdelight:glowstew"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 2L
-					id: "481917FABAD20920"
-					item: "corn_delight:taco"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 2L
-					id: "2ACE0D6E2A26F8B1"
-					item: "pineapple_delight:pineapple_pie"
-					type: "item"
-				}
+				{ consume_items: true, count: 64L, id: "1101BD908BF9D250", item: "twilightdelight:glowstew", type: "item" }
+				{ consume_items: true, count: 512L, id: "650E647F01E0FFC7", item: "corn_delight:taco", type: "item" }
+				{ consume_items: true, count: 512L, id: "481917FABAD20920", item: "pineapple_delight:pineapple_pie", type: "item" }
+				{ consume_items: true, count: 256L, id: "2ACE0D6E2A26F8B1", item: "farmersdelight:chicken_sandwich", type: "item" }
+				{ consume_items: true, count: 256L, id: "E2B6490C71AD35F8", item: "corn_delight:cornbread", type: "item" }
 			]
 			title: "Level 15 Market Order"
 			x: 4.0d
