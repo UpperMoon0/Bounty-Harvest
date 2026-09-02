@@ -12,9 +12,9 @@
 		{
 			description: [
 				"Level 1 is granted automatically when you join, so the basic farm loop is available immediately."
-				"Build a Bounty Board and claim the starter Level 1 Decree here. The board turns farm output into repeatable coin-paying orders."
+				"Build a Bounty Board to claim the starter Level 1 Decree. The board is the core economy: use the decree to turn farm output into repeatable coin-paying orders."
 			]
-			icon: "minecraft:wheat"
+			icon: "bountiful:bountyboard"
 			id: "74402ECAFFAFAEC4"
 			rewards: [
 				{
@@ -35,7 +35,8 @@
 			tasks: [
 				{
 					id: "958A4FF8BAE588E5"
-					type: "checkmark"
+					item: "bountiful:bountyboard"
+					type: "item"
 				}
 			]
 			title: "Level 1 · Homestead & Orders"
@@ -45,8 +46,8 @@
 		{
 			dependencies: ["74402ECAFFAFAEC4"]
 			description: [
-				"Grow at least 16 wheat and bake four bread to prove the starter production loop works."
-				"These tasks only detect the items; nothing is consumed here. Keep the stock for bounties and the Market Order."
+				"Grow at least 16 wheat, bake four bread, and complete at least one Bountiful order so you are holding a copper coin."
+				"These tasks only detect the items; nothing is consumed here. The coin task proves the order board is working before the progression starts charging promotion fees."
 			]
 			icon: "minecraft:wheat"
 			id: "8270C1151D2C9EE7"
@@ -63,8 +64,13 @@
 					item: "minecraft:bread"
 					type: "item"
 				}
+				{
+					id: "B05C17A8D9E364F2"
+					item: "kubejs:copper_coin"
+					type: "item"
+				}
 			]
-			title: "Homestead & Orders Production"
+			title: "Homestead & First Sale"
 			x: 2.0d
 			y: 0.0d
 		}
@@ -72,7 +78,7 @@
 			dependencies: ["8270C1151D2C9EE7"]
 			description: [
 				"This one-time shipment consumes 12 wheat and four bread. Completing it opens the Level 2 promotion contract."
-				"Market Orders are progression gates, and later bounty pools will continue asking for older staples."
+				"Market Orders are progression gates, and later bounty pools will continue asking for older staples at increasingly industrial volumes."
 			]
 			icon: "minecraft:wheat"
 			id: "A06092AE6EA56685"
