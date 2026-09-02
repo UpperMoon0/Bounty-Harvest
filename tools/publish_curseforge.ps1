@@ -77,13 +77,6 @@ if ($Preflight) {
         throw "Missing changelog: $ChangelogFile"
     }
 
-    # This is the CurseForge author/upload API. Author tokens authenticate with
-    # X-Api-Token; do not send them to the separate api.curseforge.com Core API.
-    #
-    # /api/game/versions is useful for proving that the author API is reachable
-    # and that the token is accepted, but its response is not guaranteed to be
-    # an exhaustive catalogue suitable for rejecting upload metadata names.
-    # The upload endpoint is authoritative for gameVersionNames validation.
     $gameVersionsEndpoint = "$authorApiBase/game/versions"
     try {
         $gameVersions = @(Invoke-RestMethod -Uri $gameVersionsEndpoint -Headers $authorHeaders)
@@ -111,8 +104,6 @@ foreach ($archive in $requiredArchives) {
     }
 }
 
-# Duplicate recovery uses the separate CurseForge Core API only when its own
-# x-api-key credential is configured. Normal uploads require only the author token.
 $coreApiKey = [Environment]::GetEnvironmentVariable('CURSEFORGE_CORE_API_KEY')
 $coreHeaders = $null
 if (-not [string]::IsNullOrWhiteSpace($coreApiKey)) {
@@ -148,9 +139,6 @@ function Get-ExistingFileId($DisplayName) {
 }
 
 function Invoke-CurseForgeUpload($Metadata, $Archive) {
-    # Stream multipart uploads through curl instead of PowerShell's web cmdlet.
-    # Server packs are hundreds of MB and curl is both memory-stable and the same
-    # transport used by known-good CurseForge modpack release pipelines.
     $curlCommand = Get-Command curl.exe -ErrorAction SilentlyContinue
     if ($null -eq $curlCommand) {
         $curlCommand = Get-Command curl -CommandType Application -ErrorAction SilentlyContinue
@@ -191,10 +179,12 @@ function Invoke-CurseForgeUpload($Metadata, $Archive) {
             $statusOutput = @(& $curlCommand.Source @curlArgs)
             $curlExit = $LASTEXITCODE
             $statusCode = (($statusOutput -join '') -replace '\s', '').Trim()
-            $body = if (Test-Path -LiteralPath $responsePath) {
-                [string](Get-Content -LiteralPath $responsePath -Raw -Encoding utf8)
+            if (Test-Path -LiteralPath $responsePath) {
+                $body = [string](Get-Content -LiteralPath $responsePath -Raw -Encoding utf8)
             }
-            else { '' }
+            else {
+                $body = ''
+            }
 
             if ($curlExit -eq 0 -and $statusCode -match '^2\d\d$') {
                 $response = $body | ConvertFrom-Json
@@ -205,11 +195,8 @@ function Invoke-CurseForgeUpload($Metadata, $Archive) {
             }
 
             $isChildUpload = $Metadata.Contains('parentFileID')
-            $transientHttp =
-                ($statusCode -in @('408', '425', '429')) -or
-                ($statusCode -match '^5\d\d$') -or
-                ($isChildUpload -and $statusCode -eq '404')
-            $transientTransport = $curlExit -ne 0
+            $transientHttp = (($statusCode -in @('408', '425', '429')) -or ($statusCode -match '^5\d\d$') -or ($isChildUpload -and $statusCode -eq '404'))
+            $transientTransport = ($curlExit -ne 0)
 
             if ($attempt -lt $maxAttempts -and ($transientHttp -or $transientTransport)) {
                 $delaySeconds = 5 * $attempt
@@ -231,13 +218,11 @@ function Invoke-CurseForgeUpload($Metadata, $Archive) {
 
 function Publish-File($Metadata, $Archive) {
     try {
-        return Invoke-CurseForgeUpload $Metadata $Archive
+        $uploadedFileId = Invoke-CurseForgeUpload -Metadata $Metadata -Archive $Archive
+        return $uploadedFileId
     }
     catch {
         $body = Get-UploadErrorBody $_
-
-        # If CurseForge accepted the upload but the response was lost (or this is a
-        # retry of an earlier run), recover by the version-unique display name.
         $existing = Get-ExistingFileId $Metadata.displayName
         if ($existing) {
             Write-Host "Reusing existing CurseForge file $existing for $($Metadata.displayName)."
