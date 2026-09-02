@@ -229,6 +229,65 @@ def check_level_spine(
                 errors.append(f"Level {level} milestone must auto-claim stage level_{level}")
 
 
+def check_level_chapter_design(
+    graph: dict[str, set[str]], quest_sources: dict[str, Path], errors: list[str]
+) -> None:
+    """Protect the questbook as a branched guide, not only a progression spine."""
+    dependents: dict[str, set[str]] = {node: set() for node in graph}
+    for node, dependencies in graph.items():
+        for dependency in dependencies:
+            if dependency in dependents:
+                dependents[dependency].add(node)
+
+    for level in range(1, 16):
+        expected_file = f"chapters/level_{level}.snbt"
+        path = QUEST_ROOT / expected_file
+        content = path.read_text(encoding="utf-8")
+
+        # FTB Quests interprets ampersand as a legacy formatting prefix. A literal
+        # ampersand followed by normal text/whitespace renders as "Invalid formatting".
+        # Level prose deliberately spells out "and" instead of relying on escaping.
+        if "&" in content:
+            errors.append(
+                f"Level {level} contains a literal '&'; FTB Quests treats it as formatting. "
+                "Spell out 'and' in level quest text."
+            )
+
+        level_ids = [
+            quest_id
+            for quest_id, source in quest_sources.items()
+            if source.relative_to(QUEST_ROOT).as_posix() == expected_file
+        ]
+        if len(level_ids) < 6:
+            errors.append(
+                f"Level {level} has only {len(level_ids)} quests; each level must cover multiple "
+                "systems instead of collapsing to promotion -> production -> market"
+            )
+
+        market_id = FINAL_MARKET_IDS[level]
+        if market_id in graph and len(graph[market_id]) < 2:
+            errors.append(
+                f"Level {level} Market Order has only {len(graph[market_id])} prerequisite branch(es); "
+                "at least two production branches must converge on the market"
+            )
+
+        stage_id = LEVEL_STAGE_IDS[level]
+        if level >= 2 and stage_id in dependents:
+            direct_branches = [node for node in dependents[stage_id] if node in level_ids]
+            if len(direct_branches) < 2:
+                errors.append(
+                    f"Level {level} milestone opens only {len(direct_branches)} direct branch(es); "
+                    "the chapter must fan out into multiple aspects of the level"
+                )
+        elif level == 1:
+            branch_points = [
+                node for node in level_ids
+                if len([child for child in dependents.get(node, set()) if child in level_ids]) >= 2
+            ]
+            if not branch_points:
+                errors.append("Level 1 has no internal branch point; the homestead tutorial must fan out")
+
+
 def check_copper_iron_invariant(
     graph: dict[str, set[str]], quest_blocks: dict[str, str], quest_sources: dict[str, Path], errors: list[str]
 ) -> None:
@@ -336,6 +395,7 @@ def main() -> int:
     check_cycles(graph, errors)
     check_reachability(graph, quest_sources, errors)
     check_level_spine(graph, quest_blocks, quest_sources, errors)
+    check_level_chapter_design(graph, quest_sources, errors)
     check_copper_iron_invariant(graph, quest_blocks, quest_sources, errors)
 
     if errors:
@@ -346,8 +406,8 @@ def main() -> int:
     dependency_count = sum(len(dependencies) for dependencies in graph.values())
     print(
         f"Quest graph OK: {len(ids)} unique IDs / {dependency_count} quest dependencies; "
-        "15 economic levels, market-order spine, 3 declared roots, cycles, reachability, "
-        "and delayed Level 10 Ironworking invariants valid."
+        "15 branched economic levels, market-order spine, 3 declared roots, formatting, cycles, "
+        "reachability, and delayed Level 10 Ironworking invariants valid."
     )
     return 0
 
