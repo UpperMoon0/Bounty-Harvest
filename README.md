@@ -1,14 +1,12 @@
 # Bounty Harvest
 
-Bounty Harvest is a Forge 1.20.1 farm-management modpack built around a staged agricultural economy. Instead of treating progression as a vanilla checklist, the pack asks you to grow an increasingly interconnected farm, turn production into repeatable Bountiful income, fund level promotions, and eventually automate industrial-scale orders.
+Bounty Harvest is a Forge 1.20.1 farm-management modpack built around a staged agricultural economy. Progression is about expanding an interconnected farm, turning production into repeatable Bountiful income, funding new tiers, and eventually automating industrial-scale orders.
 
 ## Progression model
 
-The main game is organized into 15 economic levels. Every level expands the farm with new crops, animals, processors, technology, cuisine, or exploration systems and ends in a one-time Market Order.
+The main game has **23 economic levels**. Every level adds one meaningful production layer, technology step, cuisine branch, or expedition system and ends in a one-time Market Order.
 
-The quest book is intentionally **branched** rather than a straight promotion -> production -> order line. Each level exposes the relevant crop, livestock, processing, technology, exploration, and support paths separately, then converges the important branches on the Market Order. Optional guidance can remain visible without becoming a mandatory progression tax.
-
-Quest descriptions are formatted for the compact FTB Quests window: distinct ideas are separated into paragraphs and long prose is reflowed instead of appearing as a wall of text. Natural-language ampersands are avoided because FTB Quests interprets `&` as a formatting prefix.
+The quest book is intentionally branched. Core branches feed the level's Market Order; optional guidance branches reconnect through a post-market Mastery node instead of ending as disconnected spokes. Quest descriptions are normalized for compact FTB Quests windows with real paragraph spacing and safe display text.
 
 | Level | Economy focus |
 | --- | --- |
@@ -17,63 +15,70 @@ Quest descriptions are formatted for the compact FTB Quests window: distinct ide
 | 3 | Cattle, leather, fertilizer, ranching and brickwork |
 | 4 | Carrots, pigs, wheat dough, flint tools and glass |
 | 5 | Fishing, Aquaculture and Ocean's Delight |
-| 6 | Sheep, textiles, potatoes, sugar and pantry production |
-| 7 | Copper Workshop, copper tools and workshop supplies |
-| 8 | Cabbage Market Garden, Cutting Board and pre-iron prepared food |
-| 9 | Corn, tomato, cornbread, tortillas and tacos |
-| 10 | Ironworking, onion, Iron Kitchen, Create and redstone |
-| 11 | Pineapple, rice, Slice and Dice and tropical automation |
-| 12 | Create Crafts and Additions power, storage and logistics |
-| 13 | Wildlife cuisine and mature farm exports |
-| 14 | Alex's Caves deep expeditions and industrial provisioning |
-| 15 | Twilight/End frontier, Twilight's Flavors and Delight, and End's Delight |
+| 6 | Sheep and textiles |
+| 7 | Potatoes and pantry production |
+| 8 | Sugar and baking |
+| 9 | Copper workshop and copper-era utilities |
+| 10 | Cabbage, Cutting Board and butchery |
+| 11 | Corn, cornbread and tortillas |
+| 12 | Tomato and taco economy |
+| 13 | Ironworking |
+| 14 | Onion and iron-kitchen expansion |
+| 15 | Create mechanical farming and redstone control |
+| 16 | Pineapple plantation and bakery |
+| 17 | Rice, Slice and Dice, rolls and fried rice |
+| 18 | Create Crafts and Additions power generation |
+| 19 | Electric drive, storage and powered logistics |
+| 20 | Wildlife cuisine and mature-farm exports |
+| 21 | Alex's Caves deep expeditions |
+| 22 | Twilight navigation and cuisine |
+| 23 | End farming, End's Delight and final industrial provisioning |
 
-Copper deliberately remains the active technology tier through Levels 7-9. Ironworking unlocks only at Level 10, when Create arrives and the economy begins shifting from hand production toward automation.
+Copper is deliberately a real era from Level 9 through Level 12. Ironworking arrives at Level 13. Create arrives at Level 15 only after the pre-automation farm economy has matured.
 
 ## Automation curve
 
-Level 9 is the last intentionally hand-manageable tier. After Create unlocks, renewable Bountiful demand grows geometrically:
+Level 14 is the last intentionally hand-manageable tier. Once Create arrives at Level 15, renewable Bountiful demand doubles every level:
 
-- Level 10: 4x
-- Level 11: 8x
-- Level 12: 16x
-- Level 13: 32x
-- Level 14: 64x
-- Level 15: 128x
+- L15: 4x
+- L16: 8x
+- L17: 16x
+- L18: 32x
+- L19: 64x
+- L20: 128x
+- L21: 256x
+- L22: 512x
+- L23: 1024x
 
-Late promotions and Market Orders also grow sharply. By the final levels, a player is expected to operate automated farms, kitchens, storage, processing, and logistics rather than hand-crafting hundreds of products.
+The multiplier is for mature renewable production, not every newly introduced item. New frontier goods can begin at fixed volumes before later systems scale them, and rare ores, navigation items, expedition keys, motors, alternators, accumulators, maps, and tablets are not inflated just to make numbers larger.
 
-Permanent infrastructure is normally retained. Motors, accumulators, Cave Tablets, and navigation maps prove capability or enable the economy; orders consume the renewable production they make possible instead of requiring the player to throw expensive machines away.
+Promotion costs follow the same industrial direction. Iron-coin costs grow through L15-L18, then the gold denomination continues the curve at 384 / 768 / 1536 / 3072 / 6144 gold coins for L19-L23 rather than resetting progression to a cheaper tier.
 
-## Repeatable market
+## Repeatable market and decrees
 
-Bountiful is the repeatable market layer. Each level awards a decree for that tier, and later bounty pools intentionally mix newly unlocked goods with older staples and increasingly processed products.
+Bountiful is the repeatable market layer. Every level has a matching decree and objective pool. Older staples and processed goods continue returning so existing farms gain value instead of becoming obsolete.
 
-The goal is for old production to gain value as the farm grows. Wheat, livestock products, fish, corn, prepared foods, and other early chains continue to appear in later recipes, promotions, Market Orders, and repeatable bounties.
+Freshly crafted Bounty Boards are seeded with the placing player's highest unlocked `level_N` decree. This overrides Bountiful's default pristine-board behavior, which otherwise resolves a blank decree to a random loaded decree. Broken and re-placed boards retain their saved decree and bounty data.
 
-Required renewable inputs that can otherwise depend on world-generation luck have expensive deterministic recovery routes. Natural exploration remains cheaper, but a bad seed or biome location should not permanently block progression.
+World-generation-dependent progression crops such as corn and pineapple retain expensive deterministic recovery routes so biome luck cannot hard-lock progression.
 
-## Validation
+## Validation and CI
 
-The repository contains automated progression checks for:
+CI protects:
 
-- quest IDs, dependencies, cycles and reachability;
-- the complete 15-level Market Order spine;
-- branched level structure rather than three-node linear chapters;
-- readable paragraph spacing and safe FTB quest-text formatting;
-- non-empty quest descriptions;
-- delayed Level 10 Ironworking;
-- crop pacing and recovery paths;
-- processor use;
-- promotion and automation-demand scaling;
-- retained infrastructure;
-- late-game integration demand;
-- client/server archive construction and dedicated-server smoke boot.
+- the complete 23-level promotion and Market Order spine;
+- unique IDs, reachability, cycles, core-to-market connectivity, optional-to-Mastery connectivity, and controlled branch fan-out;
+- readable paragraph spacing and safe FTB quest formatting;
+- non-empty descriptions;
+- crop and technology pacing;
+- processor use and retained infrastructure;
+- continuous promotion costs and 4x-1024x automation pressure;
+- deterministic level-decree board seeding;
+- CurseForge publisher modes;
+- client/server archive construction and a hardened dedicated-server smoke boot.
+
+CI is optimized for iteration: feature branches do not run duplicate `push` plus `pull_request` validation, superseded runs cancel automatically, and the expensive Windows archive/server job is gated behind a cheap Ubuntu preflight.
 
 For the design rules behind these checks, see `PROGRESSION_DESIGN.md`.
-
-## Building the pack
-
-The repository includes PowerShell tooling for constructing the client and dedicated-server archives and for publishing CurseForge builds. CI validates both archive variants and performs a dedicated Forge server boot before release changes are considered safe.
 
 Version: **0.12.0**

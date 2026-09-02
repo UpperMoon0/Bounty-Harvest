@@ -1,60 +1,67 @@
 # Bounty Harvest Progression Design Philosophy
 
-This document is the design contract for Bounty Harvest's main progression. When adding or revising quests, recipes, stages, bounty pools, shops, or level themes, preserve these rules unless there is a deliberate reason to change the progression model.
+This document is the design contract for Bounty Harvest. Quests, recipes, stages, shops, Bountiful pools, and future integrations should preserve these rules unless the progression model is deliberately changed.
 
 ## 1. The farm is an expanding economy, not a checklist
 
-Each level should add a meaningful economic expansion: a crop, animal, processor, machine, cuisine, expedition, or production method that creates new goods and changes what existing goods are worth.
+Every level should change the player's economy. A crop, animal, processor, machine, cuisine, expedition, or production method is useful only when it creates new production chains, new demand, or new ways to scale existing production.
 
-A level is weak if its core loop is only "obtain N of this new item." New content should feed into production chains, prepared goods, market demand, or later technology.
+A level whose core loop is only "obtain N of the new item" is incomplete.
 
 ## 2. Old production must keep gaining value
 
-A core ingredient should not become dead inventory after the level that introduces it.
+Important inputs should not become dead inventory after their introduction.
 
 As a target:
 
-- Within about 2 levels, an important ingredient should gain a new processing step, composite recipe, or upgraded use.
-- Within about 3 levels, it should receive meaningful demand again through a Market Order, Bountiful pool, promotion cost, or a later product chain.
-- Re-requesting the exact same raw item after a long gap is not enough by itself. Prefer increasing complexity: raw ingredient -> processed ingredient -> prepared product -> industrial or premium use.
+- within about two levels, an important input should gain a new processing step, composite recipe, or upgraded use;
+- within about three levels, it should receive meaningful demand again through a Market Order, Bountiful pool, promotion cost, or later product chain;
+- later demand should preferably increase complexity: raw good -> processed ingredient -> prepared product -> industrial or premium use.
 
-Strong examples are wheat, corn, and pineapple: later systems reuse earlier inputs and convert them into higher-value goods.
+Simply asking for the same raw item again after a long gap is weak reuse.
 
-## 3. New levels multiply old systems instead of replacing them
+## 3. New systems multiply old systems
 
-Progression should resemble a farm-management game. A new crop or machine should make several existing production lines more useful.
+A new crop or machine should make several existing production lines more useful. Prefer composite chains such as new crop + old meat + old vegetable, or a new processor that turns established farm output into a higher-value good.
 
-Prefer recipes such as:
-
-- new crop + old meat + old vegetable -> new prepared food
-- old fuel + current metal -> new processing tier
-- old textile + new machine -> higher-value product
-
-Avoid isolated branches where a player builds an entire farm or processor for one level and never needs it again.
+Avoid isolated farms or machines that matter for one quest and are never relevant again.
 
 ## 4. Introduce new inputs at a controlled pace
 
-Do not overload one level with several independent crops, animals, or machines unless they are tightly linked.
+One major new crop or production family per normal agricultural level is usually enough. Several outputs are fine when they form one coherent chain, such as corn -> tortilla -> taco.
 
-For normal agricultural levels, one major new crop or production family is usually enough. Additional crops should be staggered into later levels so each one has room to establish its own recipes, demand, and identity.
+Do not dump several independent ingredients, processors, and product families into one promotion merely because they are related to food.
 
-A level may add several outputs when they belong to one coherent chain, such as corn -> tortilla -> taco.
+The current 23-level spine deliberately separates systems that were previously compressed together:
 
-## 5. Technology tiers must have room to breathe
+- L6 wool/textiles
+- L7 potatoes/pantry
+- L8 sugar/baking
+- L9 copper
+- L10 cabbage/butchery
+- L11 corn
+- L12 tomato/tacos
+- L13 iron
+- L14 onion/kitchen
+- L15 Create
+- L16 pineapple
+- L17 rice/Slice and Dice
+- L18 power generation
+- L19 electric drive/storage
+- L20 wildlife cuisine
+- L21 deep expeditions
+- L22 Twilight
+- L23 End
 
-A material tier should be an era, not a five-minute prerequisite for the next material.
+## 5. Technology tiers need room to breathe
 
-For metals and machinery:
+A technology tier is an era, not a five-minute prerequisite.
 
-- Unlock the raw material first.
-- Let it support useful tools, processors, recipes, and infrastructure across multiple levels.
-- Require mastery of that era, plus older economic inputs, before the next technology tier appears.
+Unlock the material first, let it support useful tools and infrastructure, and require the economy to mature before the next tier appears. Copper therefore begins at Level 9 and remains the active metal through Level 12. Ironworking arrives only at Level 13. Create arrives only at Level 15.
 
-Copper therefore must remain the active technology tier across Levels 7-9. Ironworking belongs at Level 10, after the player has had time to build a mature copper-era economy.
+Electrical progression is also sequential: Level 18 establishes generation with the alternator; Level 19 adds electric drive and storage with the motor and accumulator.
 
-## 6. Processing complexity should rise gradually
-
-Early levels should favor raw goods and simple cooking. Later levels should increasingly ask for processed and multi-input products.
+## 6. Processing complexity rises gradually
 
 A useful progression shape is:
 
@@ -62,115 +69,109 @@ A useful progression shape is:
 2. basic processed ingredient
 3. simple prepared product
 4. composite meal or manufactured good
-5. automated / industrial production
+5. automated or industrial production
 6. premium or expedition product
 
-Do not make sophisticated food depend entirely on Ironworking. The pre-iron economy still needs meaningful cooking and processing; iron should unlock new methods and scale, not cooking itself.
-
-When a level introduces a processor, the progression should actually use its outputs. A cutting board, slicer, machine, or logistics system should not be a decorative unlock that the player's required recipes can bypass.
+Processors must matter. If a level introduces a Cutting Board, Slicer, machine, or logistics system, required products should use the outputs or capability of that processor rather than bypassing it through simpler recipes.
 
 ## 7. Automation is earned by throughput pressure
 
-Automation should solve a real economic problem. Do not teach automation by asking the player to craft one machine and immediately sell or discard it.
+Automation should solve a real economic problem. Do not teach automation by asking the player to craft a machine and immediately sell it.
 
-Once Create arrives at Level 10, renewable order volume should grow geometrically. The current repeatable Bountiful target curve is intentionally explicit:
+Create begins at Level 15. From there, repeatable renewable Bountiful demand follows an explicit geometric curve:
 
-- Level 10: 4x renewable-demand scale
-- Level 11: 8x
-- Level 12: 16x
-- Level 13: 32x
-- Level 14: 64x
-- Level 15: 128x
+- L15: 4x
+- L16: 8x
+- L17: 16x
+- L18: 32x
+- L19: 64x
+- L20: 128x
+- L21: 256x
+- L22: 512x
+- L23: 1024x
 
-One-time Market Orders and promotion costs should follow the same direction: later tiers must require dramatically more economic output than earlier tiers. By the late game, hand production should remain technically possible but obviously inferior to building automated farms, kitchens, storage, and logistics.
+This multiplier belongs on mature renewable production: crops, processed ingredients, prepared foods, livestock goods, and other automatable output. It does **not** automatically apply to a newly introduced frontier ingredient on the same level. A new item should first establish its production identity before later demand scales it.
 
-Apply this pressure to renewable production: crops, processed ingredients, prepared foods, livestock products, and automatable industrial materials. Do **not** scale rare maps, tablets, unique exploration objects, or specialist machines to hundreds of copies merely to make a number larger.
+Rare ores, maps, tablets, expedition keys, and enabling machines must not be multiplied into absurd quantities simply to make a tier look harder.
 
-Core infrastructure normally stays with the player. Motors, accumulators, navigation maps, expedition tablets, and similar enabling objects should prove capability and then be used; the market should consume the output they enable.
+## 8. Promotion costs must not reset at denomination changes
 
-## 8. Every main level ends in a Market Order
+Promotions consume value from the preceding economy. When currency changes denomination, effective cost must continue rising instead of becoming cheaper.
 
-Each level's main progression must culminate in a one-time Market Order.
+The industrial curve currently reaches 192 / 384 / 768 / 1536 iron coins at L15-L18, then continues at 384 / 768 / 1536 / 3072 / 6144 gold coins at L19-L23, alongside previous-economy goods.
 
-The Market Order should:
+Late advancement should feel like funding a major expansion of the farm.
 
-- consume multiple outputs from that level's economy;
-- normally pull at least one older production line back into demand;
-- prove that the new chain is sustainable, not just that one item was found;
-- become increasingly throughput-oriented after automation unlocks;
-- unlock the next promotion path.
+## 9. Every main level ends in a Market Order
 
-## 9. Promotions consume value from the previous economy
+The one-time Market Order is the proof that a level's economy is sustainable. It should consume multiple meaningful outputs, reconnect older production, and increasingly test throughput after automation arrives.
 
-Promotion quests should require goods and currency earned from the preceding tier. This makes level advancement an economic decision rather than a free stage toggle.
+Core quest branches must lead into the Market Order. Intermediate convergence is encouraged when it makes the graph read naturally; the Market Order itself does not need artificial parallel prerequisites if several branches already converged in a meaningful production quest.
 
-Do not require a currency denomination before that denomination is a normal reward tier.
+## 10. Optional branches must reconnect
 
-Promotion costs should rise sharply with the economy. After industrialization, each new level should feel like funding an expansion of the farm rather than paying a token quest fee.
+Optional guidance should not become a mandatory progression tax, but it also should not appear as a disconnected line in the quest book.
 
-## 10. Bountiful is the repeatable market layer
+An optional branch should reconnect through a post-market **Mastery** node. That keeps the main promotion path focused while making the chapter visually coherent.
 
-The Bounty Board and level decrees are repeatable orders. Their job is to keep the whole farm economically relevant between one-time Market Orders.
+A normal level should not explode into many unrelated quests directly from its promotion node. Related production steps should be sequenced downstream.
 
-Later bounty pools should deliberately mix:
+## 11. Infrastructure stays with the player
 
-- newly unlocked goods;
-- staples from older levels;
-- increasingly processed versions of old ingredients;
-- high-volume renewable objectives that reward investment in automation.
+Motors, alternators, accumulators, Cutting Boards, Slicers, Cave Tablets, Magic Maps, and similar enabling objects prove capability and should normally be retained.
 
-A later pool should not consist entirely of that level's newest items. Reward amount caps must also be high enough that industrial orders can remain economically worthwhile instead of demanding hundreds of items for a payout capped at a few coins.
+Markets consume the output those systems enable rather than repeatedly forcing the player to rebuild infrastructure.
 
-## 11. Side shops support progression; they do not replace it
+## 12. Bountiful is the repeatable market layer
 
-Animal, crop, decoration, and decree shops are support systems. They should unlock when their goods become economically relevant and use currency appropriate for that point in progression.
+Each level has a matching decree and repeatable objective pool. Later pools should mix newly relevant goods, older staples, processed products, and high-volume renewable objectives.
 
-Buying a replacement decree never advances the main level spine.
+Reward caps must be high enough that industrial orders remain economically worthwhile.
 
-A progression-required renewable input must have a deterministic recovery route if world generation or exploration luck can otherwise hard-lock the player. Recovery trades should be deliberately expensive so natural discovery remains preferable without making bad biome luck a progression blocker.
+A fresh Bounty Board must reflect progression. Bountiful 6.0.4 normally gives a pristine board a blank decree and later resolves it to a random loaded decree, which is incompatible with a level-based economy. Bounty Harvest therefore seeds a newly crafted board with the placing player's highest unlocked `level_N` decree. A board carrying saved block-entity data must keep its existing decrees and bounties when re-placed.
 
-## 12. Stage only what can be staged reliably
+## 13. Shops are recovery/support systems
 
-ItemStages can reliably gate items and namespaces. It cannot reliably gate every entity, world-generation system, dimension mechanic, or exploration event.
+Animal, crop, decoration, and decree shops support progression but do not replace it. Buying a decree never advances the main level spine.
 
-Do not describe or design a stage as if it blocks systems that technically remain accessible. Gate progression-facing items where reliable and let quests/economy provide the intended path for the rest.
+A progression-required renewable input must have an expensive deterministic recovery route when world generation or exploration luck could otherwise hard-lock the player. Natural discovery should remain preferable.
 
-Do not stage an entire integration merely because it is installed. If a mod has no progression branch, meaningful order demand, or intentional support role yet, leave it out of the level contract until it does.
+## 14. Stage only what can be staged reliably
 
-A staged integration is justified when the level actually establishes and retains its economy. Level 15 End's Delight is the reference example: the stage unlocks a chorus-fruit production branch, that branch consumes older farm inputs such as wheat, sugar, and pie crust, the one-time Market Order consumes the resulting pies at industrial scale, and repeatable Bountiful orders keep the product relevant afterward.
+ItemStages reliably gates items and namespaces. It cannot honestly guarantee every entity spawn, dimension mechanic, world-generation feature, or exploration event.
 
-## 13. Quest chapters must branch and remain readable
+Do not claim stronger gating than the implementation provides. Do not namespace-gate an integration just because it is installed; staged integrations need a real progression branch and recurring economic role.
 
-The quest book is a guide to the economy, not only a dependency graph. A main level should visibly fan out into the important systems introduced or reused at that tier, then converge those branches on the Market Order.
+Twilight and End are deliberately separate tiers. Level 22 establishes Twilight navigation before Twilight cuisine. Level 23 establishes renewable chorus fruit before End's Delight processing.
 
-As a structural floor, every main level should contain multiple branches and enough quests to show the level's crops, animals, processing, technology, exploration, or support systems separately where they matter. Optional guidance may remain visible without becoming a progression tax.
+## 15. Quest text must be readable
 
-Quest prose must also be readable inside FTB Quests' compact windows:
+FTB Quests is part of the gameplay interface, not a database dump.
 
-- separate distinct ideas with blank paragraph entries instead of placing consecutive prose strings back-to-back;
-- split oversized paragraphs at natural sentence boundaries;
-- keep short single-purpose descriptions concise;
-- do not use a natural-language ampersand in displayed titles or descriptions, because FTB Quests interprets `&` as a legacy formatting prefix and can render `Invalid formatting` instead;
-- run `python tools/format_quest_text.py --write` after editing quest prose and keep the formatter's check green in CI.
+- separate distinct ideas with blank paragraph entries;
+- split oversized prose at sentence boundaries;
+- keep short descriptions concise;
+- avoid natural-language `&` in displayed text because FTB Quests treats it as a legacy formatting prefix;
+- run `python tools/format_quest_text.py --write` after editing quest prose.
 
-## 14. Validate the progression contract
+## 16. Validate the philosophy, not only syntax
 
-Automated validation should protect structural rules that are easy to regress, including:
+CI protects rules that are easy to regress:
 
-- every quest has a useful description;
-- quest text is normalized for readable paragraph spacing and safe FTB formatting;
-- all 15 main levels remain connected;
-- every main level remains branched rather than collapsing into a three-node line;
-- every level has a Market Order;
-- the promotion spine has no cycles or dangling dependencies;
-- currency tiers are coherent;
-- Copper remains pre-Ironworking progression;
-- Ironworking is not granted before Level 10;
-- major introduced production lines continue to receive later demand;
-- required crops have deterministic recovery paths when world generation can fail the player;
-- processors used by the design cannot be bypassed by required recipes;
-- automation-era promotion costs and Bountiful demand preserve the intended growth curve;
-- infrastructure objects are retained where the economic test is supposed to be throughput;
-- staged late-game integrations must have both a real progression objective and recurring economic demand.
+- all 23 main levels exist and form one promotion spine;
+- IDs are unique and dependencies are reachable and acyclic;
+- every core quest reaches its Market Order;
+- optional branches reconnect through Mastery;
+- promotion fan-out stays controlled instead of becoming an unlock dump;
+- every quest has a useful description and normalized display text;
+- crop, processor, metal, and integration pacing stays intentional;
+- Ironworking remains at L13 and Create at L15;
+- required crops keep deterministic recovery paths;
+- processors cannot be bypassed by required progression recipes;
+- promotion costs remain continuous across currency changes;
+- renewable automation pressure remains 4x through 1024x from L15-L23;
+- infrastructure is retained where the intended test is throughput;
+- fresh Bounty Boards receive the correct level decree;
+- staged late integrations have both a progression objective and repeatable economic demand.
 
-When a validator cannot prove a qualitative rule, review the progression manually against this document before merging.
+When a qualitative rule cannot be proved mechanically, review the progression manually against this document before merging.
