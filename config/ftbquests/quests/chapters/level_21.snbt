@@ -1,0 +1,146 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_21"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "alexscaves:cave_tablet"
+	id: "D000000000000015"
+	order_index: 20
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["A00000000000145A"]
+			description: [
+				"Advance into Level 21: Deep Expeditions."
+				""
+				"This promotion consumes value from the previous economy before opening the next production layer."
+			]
+			icon: "alexscaves:cave_tablet"
+			id: "A000000000001501"
+			rewards: [
+				{ autoclaim: 1b, id: "C000000000150101", stage: "level_21", type: "stage" }
+				{ id: "C000000000150102", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_21\"]}", display: { Name: "{\"text\":\"Level 21 Decree\"}" } } }, type: "item" }
+			]
+			shape: "octagon"
+			tasks: [
+				{ consume_items: true, count: 1536L, id: "B000000000150101", item: "kubejs:gold_coin", type: "item" }
+				{ consume_items: true, count: 64L, id: "B000000000150102", item: "alexsdelight:bison_burger", type: "item" }
+				{ consume_items: true, count: 512L, id: "B000000000150103", item: "corn_delight:cornbread", type: "item" }
+			]
+			title: "Level 21 · Deep Expeditions"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A000000000001501"]
+			description: [
+				"Obtain the Cave Tablet as permanent expedition infrastructure."
+			]
+			icon: "alexscaves:cave_tablet"
+			id: "A000000000001502"
+			tasks: [
+				{ id: "B000000000150201", item: "alexscaves:cave_tablet", type: "item" }
+			]
+			title: "Cave Tablet"
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000001501"]
+			description: [
+				"Provision repeated deep expeditions from mature automated food lines."
+			]
+			icon: "farmersdelight:chicken_sandwich"
+			id: "A000000000001503"
+			tasks: [
+				{ count: 1024L, id: "B000000000150301", item: "farmersdelight:chicken_sandwich", type: "item" }
+				{ count: 1024L, id: "B000000000150302", item: "pineapple_delight:pineapple_pie", type: "item" }
+				{ count: 512L, id: "B000000000150303", item: "corn_delight:taco", type: "item" }
+			]
+			title: "Expedition Provisions"
+			x: 1.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000001502", "A000000000001503"]
+			description: [
+				"Secure diamonds only after the expedition is both navigable and economically provisioned."
+			]
+			icon: "minecraft:diamond"
+			id: "A000000000001504"
+			tasks: [
+				{ count: 16L, id: "B000000000150401", item: "minecraft:diamond", type: "item" }
+			]
+			title: "Diamond Supply"
+			x: -1.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["A000000000001504"]
+			description: [
+				"Continue the expedition into a second resource target instead of unlocking all deep materials simultaneously."
+			]
+			icon: "minecraft:amethyst_shard"
+			id: "A000000000001505"
+			tasks: [
+				{ count: 64L, id: "B000000000150501", item: "minecraft:amethyst_shard", type: "item" }
+			]
+			title: "Amethyst Survey"
+			x: -2.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["A000000000001504"]
+			description: [
+				"Optional deep-mining breadth that reconnects through expedition mastery."
+			]
+			icon: "minecraft:lapis_lazuli"
+			id: "A000000000001506"
+			tasks: [
+				{ count: 64L, id: "B000000000150601", item: "minecraft:lapis_lazuli", type: "item" }
+			]
+			title: "Optional Lapis Survey"
+			x: 1.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["A00000000000155A", "A000000000001506"]
+			description: [
+				"Complete the optional lapis survey after the core expedition shipment."
+			]
+			icon: "minecraft:lapis_lazuli"
+			id: "A000000000001507"
+			rewards: [
+				{ count: 48, id: "C000000000150701", item: "kubejs:gold_coin", type: "item" }
+			]
+			shape: "diamond"
+			tasks: [{ id: "B000000000150701", type: "checkmark" }]
+			title: "Level 21 Expedition Mastery"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000001505", "A000000000001503"]
+			description: [
+				"Ship deep resources plus industrial provisions while retaining the Cave Tablet."
+				""
+				"Exploration is funded by the farm economy instead of replacing it."
+			]
+			icon: "alexscaves:cave_tablet"
+			id: "A00000000000155A"
+			shape: "hexagon"
+			tasks: [
+				{ consume_items: true, count: 16L, id: "B000000000155A01", item: "minecraft:diamond", type: "item" }
+				{ consume_items: true, count: 64L, id: "B000000000155A02", item: "minecraft:amethyst_shard", type: "item" }
+				{ consume_items: true, count: 1024L, id: "B000000000155A03", item: "farmersdelight:chicken_sandwich", type: "item" }
+				{ consume_items: true, count: 1024L, id: "B000000000155A04", item: "pineapple_delight:pineapple_pie", type: "item" }
+				{ consume_items: true, count: 512L, id: "B000000000155A05", item: "corn_delight:taco", type: "item" }
+			]
+			title: "Level 21 Market Order"
+			x: 6.0d
+			y: 6.0d
+		}
+	]
+	title: "Level 21 · Deep Expeditions"
+}

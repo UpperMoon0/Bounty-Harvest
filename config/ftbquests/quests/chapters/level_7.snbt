@@ -4,309 +4,146 @@
 	filename: "level_7"
 	group: "39B7846742C777FD"
 	hide_quest_until_deps_visible: true
-	icon: "minecraft:copper_ingot"
-	id: "257A8F10E2DBD05B"
+	icon: "minecraft:potato"
+	id: "D000000000000007"
 	order_index: 6
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: [
-				"343DEFDA4A80BD80"
-				"015743E28B4488CE"
-				"66BB290DCD86866E"
+			dependencies: ["A00000000000065A"]
+			description: [
+				"Advance into Level 7: Potatoes and Pantry."
+				""
+				"This promotion consumes value from the previous economy before opening the next production layer."
 			]
-			icon: "minecraft:copper_ingot"
-			id: "0A53CC520F7826A3"
+			icon: "minecraft:potato"
+			id: "A000000000000701"
 			rewards: [
-				{
-					autoclaim: 1b
-					id: "5F17EA48FD2E51D1"
-					stage: "level_7"
-					type: "stage"
-				}
-				{
-					id: "3EAAD3FF909BE248"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_7\"]}"
-							display: {
-								Name: "{\"text\":\"Level 7 Decree\"}"
-							}
-						}
-					}
-					type: "item"
-				}
+				{ autoclaim: 1b, id: "C000000000070101", stage: "level_7", type: "stage" }
+				{ id: "C000000000070102", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_7\"]}", display: { Name: "{\"text\":\"Level 7 Decree\"}" } } }, type: "item" }
 			]
 			shape: "octagon"
 			tasks: [
-				{
-					consume_items: true
-					count: 10L
-					id: "1A54ACFC554590C8"
-					item: { Count: 10, id: "kubejs:gold_coin" }
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 1L
-					id: "3D4675D6BF568A80"
-					item: "minecraft:mushroom_stew"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 1L
-					id: "1B358C70AA1BEC71"
-					item: "kubejs:wool_sweater"
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 8L
-					id: "70DA258D3E2ED1DD"
-					item: { Count: 8, id: "minecraft:baked_potato" }
-					type: "item"
-				}
+				{ consume_items: true, count: 32L, id: "B000000000070101", item: "kubejs:copper_coin", type: "item" }
+				{ consume_items: true, count: 6L, id: "B000000000070102", item: "kubejs:wool_yarn", type: "item" }
 			]
-			title: "Level 7"
+			title: "Level 7 · Potatoes and Pantry"
 			x: 0.0d
-			y: 1.0d
-		}
-		{
-			dependencies: ["0A53CC520F7826A3"]
-			hide_until_deps_visible: false
-			id: "6A5C20C31BD2649E"
-			description: ["Raw copper smelts into three nuggets, not a full ingot. Build a copper tool set to prove the copper industry before ironworking unlocks."]
-			tasks: [
-				{
-					id: "23232AF83E879BA3"
-					item: "minecraft:raw_copper"
-					type: "item"
-				}
-				{
-					id: "78468E0A8A12BB94"
-					item: "minecraft:copper_ingot"
-					type: "item"
-				}
-			]
-			title: "Copper"
-			x: -1.5d
-			y: 4.0d
-		}
-		{
-			dependencies: ["6A5C20C31BD2649E"]
-			hide_until_deps_visible: false
-			id: "34B5DF088E2F447E"
-			rewards: [{
-				autoclaim: 1b
-				id: "74AE2B560D93C81F"
-				stage: "iron_age"
-				type: "stage"
-			}]
-			tasks: [
-				{
-					id: "1AC9E12AE8A09AC1"
-					item: {
-						Count: 1
-						id: "bettercopper:copper_shovel"
-						tag: { Damage: 0 }
-					}
-					type: "item"
-				}
-				{
-					id: "29DEA7E1C86699A5"
-					item: {
-						Count: 1
-						id: "bettercopper:copper_pickaxe"
-						tag: { Damage: 0 }
-					}
-					type: "item"
-				}
-				{
-					id: "198189A9FD436D17"
-					item: {
-						Count: 1
-						id: "bettercopper:copper_axe"
-						tag: { Damage: 0 }
-					}
-					type: "item"
-				}
-				{
-					id: "1356A443C9E0E10E"
-					item: {
-						Count: 1
-						id: "bettercopper:copper_hoe"
-						tag: { Damage: 0 }
-					}
-					type: "item"
-				}
-				{
-					id: "65DF3C2BBEFFA3BF"
-					item: {
-						Count: 1
-						id: "bettercopper:copper_sword"
-						tag: { Damage: 0 }
-					}
-					type: "item"
-				}
-			]
-			title: "Copper Tools"
-			description: ["Copper tools are the Level 7 metal tier. Completing this milestone automatically unlocks Ironworking."]
-			x: -3.5d
-			y: 2.5d
-		}
-		{
-			dependencies: ["34B5DF088E2F447E"]
-			hide_until_deps_visible: false
-			id: "557852FFD6F4D560"
-			description: ["Ironworking is now available. Raw iron also smelts into three nuggets, so plan the ore economy around three raw ore per ingot."]
-			tasks: [
-				{
-					id: "511E6646D44416DA"
-					item: "minecraft:raw_iron"
-					type: "item"
-				}
-				{
-					id: "4AC85624B3D59722"
-					item: "minecraft:iron_ingot"
-					type: "item"
-				}
-			]
-			title: "Iron"
-			x: 2.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["557852FFD6F4D560"]
-			id: "1F768D9AE414C105"
-			tasks: [{
-				id: "47C974D26A075E5C"
-				item: "minecraft:bucket"
-				type: "item"
-			}]
-			x: 4.0d
-			y: 0.0d
+			dependencies: ["A000000000000701"]
+			description: [
+				"Establish potatoes as the level's one major new crop."
+				""
+				"The crop will return in later stews and prepared foods."
+			]
+			icon: "minecraft:potato"
+			id: "A000000000000702"
+			tasks: [
+				{ count: 20L, id: "B000000000070201", item: "minecraft:potato", type: "item" }
+			]
+			title: "Potato Field"
+			x: -2.0d
+			y: 2.0d
 		}
 		{
-			dependencies: ["1F768D9AE414C105"]
-			id: "522AB9F276BC5735"
-			tasks: [{
-				id: "5AC6416680889A34"
-				item: "minecraft:water_bucket"
-				type: "item"
-			}]
-			x: 6.0d
-			y: -1.0d
-		}
-		{
-			dependencies: ["1F768D9AE414C105"]
-			id: "39A799527478DAF9"
-			tasks: [{
-				id: "682A841B041CFADC"
-				item: "minecraft:milk_bucket"
-				type: "item"
-			}]
-			x: 6.0d
-			y: 1.0d
-		}
-		{
-			dependencies: ["6A5C20C31BD2649E"]
-			id: "1E3050BA6A45ECEA"
-			tasks: [{
-				id: "56A5A43C9FABF3BC"
-				item: "minecraft:glass_bottle"
-				type: "item"
-			}]
-			x: 0.5d
+			dependencies: ["A000000000000702"]
+			description: [
+				"Bake part of the harvest into a higher-value pantry staple."
+			]
+			icon: "minecraft:baked_potato"
+			id: "A000000000000703"
+			tasks: [
+				{ count: 16L, id: "B000000000070301", item: "minecraft:baked_potato", type: "item" }
+			]
+			title: "Baked Potatoes"
+			x: -3.0d
 			y: 4.0d
 		}
 		{
-			dependencies: ["0A53CC520F7826A3"]
-			id: "627A04ED165155B1"
-			tasks: [{
-				id: "5CDFE6B7C67A5E56"
-				item: "minecraft:apple"
-				type: "item"
-			}]
+			dependencies: ["A000000000000703"]
+			description: [
+				"Reconnect the older cattle economy to the new root crop instead of replacing it."
+			]
+			icon: "minecraft:cooked_beef"
+			id: "A000000000000704"
+			tasks: [
+				{ count: 8L, id: "B000000000070401", item: "minecraft:cooked_beef", type: "item" }
+				{ count: 8L, id: "B000000000070402", item: "minecraft:baked_potato", type: "item" }
+			]
+			title: "Steak and Potatoes"
+			x: -1.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000000701"]
+			description: [
+				"Optional pantry breadth: gather both common mushrooms."
+				""
+				"This side branch does not tax the main shipment, but it reconnects after the Market Order through mastery."
+			]
+			icon: "minecraft:brown_mushroom"
+			id: "A000000000000705"
+			tasks: [
+				{ id: "B000000000070501", item: "minecraft:brown_mushroom", type: "item" }
+				{ id: "B000000000070502", item: "minecraft:red_mushroom", type: "item" }
+			]
+			title: "Optional Mushroom Pantry"
 			x: 2.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["39A799527478DAF9"]
-			hide_until_deps_visible: false
-			id: "40CF73DC10015083"
-			tasks: [{
-				id: "32C75B16274A5880"
-				item: "farmersdelight:pie_crust"
-				type: "item"
-			}]
-			x: 4.0d
-			y: 2.0d
-		}
-		{
-			dependencies: [
-				"40CF73DC10015083"
-				"627A04ED165155B1"
+			dependencies: ["A000000000000705"]
+			description: [
+				"Cook the mushroom harvest into stew as the prepared endpoint of the optional pantry branch."
 			]
-			id: "0B7198D069D4E3D5"
-			tasks: [{
-				id: "3E04C97A22F77911"
-				item: "farmersdelight:apple_pie"
-				type: "item"
-			}]
+			icon: "minecraft:mushroom_stew"
+			id: "A000000000000706"
+			tasks: [
+				{ count: 2L, id: "B000000000070601", item: "minecraft:mushroom_stew", type: "item" }
+			]
+			title: "Optional Mushroom Stew"
 			x: 3.0d
 			y: 4.0d
 		}
 		{
-			dependencies: ["557852FFD6F4D560"]
-			hide_until_deps_visible: false
-			id: "5C6BB14026AE99D5"
-			tasks: [{
-				id: "184F69C260A1025B"
-				item: {
-					Count: 1
-					id: "minecraft:fishing_rod"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 2.0d
-			y: -2.5d
+			dependencies: ["A00000000000075A", "A000000000000706"]
+			description: [
+				"Complete both the required potato economy and the optional mushroom branch."
+				""
+				"This post-market mastery node makes the optional branch visibly reconnect instead of ending as an isolated spoke."
+			]
+			icon: "minecraft:mushroom_stew"
+			id: "A000000000000707"
+			rewards: [
+				{ count: 12, id: "C000000000070701", item: "kubejs:copper_coin", type: "item" }
+			]
+			shape: "diamond"
+			tasks: [{ id: "B000000000070701", type: "checkmark" }]
+			title: "Level 7 Pantry Mastery"
+			x: 6.0d
+			y: 1.0d
 		}
 		{
-			dependencies: ["6A5C20C31BD2649E"]
-			id: "0F046D49DC4BDDE5"
-			tasks: [{
-				id: "0CF6C38E4C1AB728"
-				item: "minecraft:emerald"
-				type: "item"
-			}]
-			x: 0.0d
-			y: 8.5d
-		}
-		{
-			dependencies: ["6A5C20C31BD2649E"]
-			id: "0F3044742FD58877"
-			tasks: [{
-				id: "18576D7087B97DBF"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "minecraft:decorated_pot_sherds"
-					}
-				}
-				title: "Any #minecraft:decorated_pot_sherds"
-				type: "item"
-			}]
-			x: -3.0d
-			y: 8.5d
+			dependencies: ["A000000000000704"]
+			description: [
+				"Ship raw and baked potatoes alongside cooked beef."
+				""
+				"Potatoes get room to establish themselves before another crop enters progression."
+			]
+			icon: "minecraft:potato"
+			id: "A00000000000075A"
+			shape: "hexagon"
+			tasks: [
+				{ consume_items: true, count: 20L, id: "B000000000075A01", item: "minecraft:potato", type: "item" }
+				{ consume_items: true, count: 16L, id: "B000000000075A02", item: "minecraft:baked_potato", type: "item" }
+				{ consume_items: true, count: 8L, id: "B000000000075A03", item: "minecraft:cooked_beef", type: "item" }
+			]
+			title: "Level 7 Market Order"
+			x: 6.0d
+			y: 6.0d
 		}
 	]
-	title: "Level 7"
+	title: "Level 7 · Potatoes and Pantry"
 }

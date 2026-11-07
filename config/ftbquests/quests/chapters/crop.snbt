@@ -5,6 +5,7 @@
 	default_repeatable_quest: true
 	filename: "crop"
 	group: "189D77A4C52994B6"
+	hide_quest_until_deps_visible: true
 	icon: "minecraft:wheat_seeds"
 	id: "08E3F8FADCAEE65B"
 	order_index: 0
@@ -12,18 +13,23 @@
 	quests: [
 		{
 			dependencies: ["74402ECAFFAFAEC4"]
-			hide_until_deps_visible: true
+			description: [
+				"Available from Level 1."
+				""
+				"Use this support trade to restart or expand the crop without replacing normal farming and exploration."
+			]
 			icon: "minecraft:wheat_seeds"
-			id: "69D0A2940723341A"
+			id: "E00000000000C001"
 			rewards: [{
 				count: 2
-				id: "128BA3BA79D5E74F"
+				id: "E0000000000C1001"
 				item: "minecraft:wheat_seeds"
 				type: "item"
 			}]
 			tasks: [{
+				consume_items: true
 				count: 16L
-				id: "02BB7BFB113828A0"
+				id: "E0000000000C2001"
 				item: "kubejs:copper_coin"
 				type: "item"
 			}]
@@ -33,17 +39,23 @@
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
+			description: [
+				"Available from Level 4."
+				""
+				"Use this support trade to restart or expand the crop without replacing normal farming and exploration."
+			]
 			icon: "minecraft:carrot"
-			id: "42F61617476FBFCC"
+			id: "E00000000000C002"
 			rewards: [{
 				count: 2
-				id: "1C60DADADCF7A977"
+				id: "E0000000000C1002"
 				item: "minecraft:carrot"
 				type: "item"
 			}]
 			tasks: [{
+				consume_items: true
 				count: 48L
-				id: "7B71F365F027097D"
+				id: "E0000000000C2002"
 				item: "kubejs:copper_coin"
 				type: "item"
 			}]
@@ -52,86 +64,212 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["29747D157C7F8C88"]
-			icon: "minecraft:sugar_cane"
-			id: "5EC3E67CEBBB2604"
-			rewards: [{
-				count: 2
-				id: "3204BC56166A6A93"
-				item: "minecraft:sugar_cane"
-				type: "item"
-			}]
-			tasks: [{
-				count: 48L
-				id: "5EA228279EA3125F"
-				item: "kubejs:copper_coin"
-				type: "item"
-			}]
-			title: "Buy Sugar Cane"
-			x: 4.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["7297A69487BEE03D"]
+			dependencies: ["A000000000000701"]
+			description: [
+				"Available from Level 7."
+				""
+				"Use this support trade to restart or expand the crop without replacing normal farming and exploration."
+			]
 			icon: "minecraft:potato"
-			id: "139EDF3D2E9F5E13"
+			id: "E00000000000C003"
 			rewards: [{
 				count: 2
-				id: "3366642D0DFF401C"
+				id: "E0000000000C1003"
 				item: "minecraft:potato"
 				type: "item"
 			}]
 			tasks: [{
+				consume_items: true
 				count: 64L
-				id: "79D9DD3207196D24"
+				id: "E0000000000C2003"
 				item: "kubejs:copper_coin"
 				type: "item"
 			}]
 			title: "Buy Potato"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A000000000000801"]
+			description: [
+				"Available from Level 8."
+				""
+				"Use this support trade to restart or expand the crop without replacing normal farming and exploration."
+			]
+			icon: "minecraft:sugar_cane"
+			id: "E00000000000C004"
+			rewards: [{
+				count: 2
+				id: "E0000000000C1004"
+				item: "minecraft:sugar_cane"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 80L
+				id: "E0000000000C2004"
+				item: "kubejs:copper_coin"
+				type: "item"
+			}]
+			title: "Buy Sugar Cane"
 			x: 6.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["74402ECAFFAFAEC4"]
-			hide_until_deps_visible: true
-			icon: "minecraft:bone_meal"
-			id: "0AF8D4DD44F1810B"
-			rewards: [{
-				count: 4
-				id: "08558ABACB0F8C3E"
-				item: "minecraft:bone_meal"
-				type: "item"
-			}]
-			tasks: [{
-				count: 16L
-				id: "3B78A0A0B1721C7B"
-				item: "kubejs:copper_coin"
-				type: "item"
-			}]
-			title: "Buy Bone Meal"
-			x: 0.0d
-			y: -2.0d
-		}
-		{
-			dependencies: ["4003BF6FE565761F"]
+			dependencies: ["A000000000000A01"]
+			description: [
+				"Available from Level 10."
+				""
+				"Use this support trade to restart or expand the crop without replacing normal farming and exploration."
+			]
 			icon: "farmersdelight:cabbage"
-			id: "354D89A7217D2552"
+			id: "E00000000000C005"
 			rewards: [{
 				count: 2
-				icon: "farmersdelight:cabbage_seeds"
-				id: "52200ACA6C004644"
+				id: "E0000000000C1005"
 				item: "farmersdelight:cabbage_seeds"
 				type: "item"
 			}]
 			tasks: [{
-				count: 2L
-				id: "066AD2111C3911E8"
-				item: "kubejs:gold_coin"
+				consume_items: true
+				count: 12L
+				id: "E0000000000C2005"
+				item: "kubejs:iron_coin"
 				type: "item"
 			}]
-			title: "Buy Cabbage"
+			title: "Buy Cabbage Seeds"
 			x: 8.0d
 			y: 0.0d
+		}
+		{
+			dependencies: ["A000000000000B01"]
+			description: [
+				"Available from Level 11."
+				""
+				"This intentionally expensive recovery route prevents world-generation luck from hard-locking progression."
+			]
+			icon: "corn_delight:corn_seeds"
+			id: "E00000000000C006"
+			rewards: [{
+				count: 2
+				id: "E0000000000C1006"
+				item: "corn_delight:corn_seeds"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 24L
+				id: "E0000000000C2006"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			title: "Recover Corn Seeds"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A000000000000C01"]
+			description: [
+				"Available from Level 12."
+				""
+				"Use this support trade to restart or expand the crop without replacing normal farming and exploration."
+			]
+			icon: "farmersdelight:tomato"
+			id: "E00000000000C007"
+			rewards: [{
+				count: 2
+				id: "E0000000000C1007"
+				item: "farmersdelight:tomato_seeds"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 16L
+				id: "E0000000000C2007"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			title: "Buy Tomato Seeds"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000000E01"]
+			description: [
+				"Available from Level 14."
+				""
+				"Use this support trade to restart or expand the crop without replacing normal farming and exploration."
+			]
+			icon: "farmersdelight:onion"
+			id: "E00000000000C008"
+			rewards: [{
+				count: 2
+				id: "E0000000000C1008"
+				item: "farmersdelight:onion"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 24L
+				id: "E0000000000C2008"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			title: "Buy Onion"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000001001"]
+			description: [
+				"Available from Level 16."
+				""
+				"This intentionally expensive recovery route prevents world-generation luck from hard-locking progression."
+			]
+			icon: "pineapple_delight:pineapple_crop"
+			id: "E00000000000C009"
+			rewards: [{
+				count: 2
+				id: "E0000000000C1009"
+				item: "pineapple_delight:pineapple_crop"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 96L
+				id: "E0000000000C2009"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			title: "Recover Pineapple Crop"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000001101"]
+			description: [
+				"Available from Level 17."
+				""
+				"Use this support trade to restart or expand the crop without replacing normal farming and exploration."
+			]
+			icon: "farmersdelight:rice_panicle"
+			id: "E00000000000C00A"
+			rewards: [{
+				count: 2
+				id: "E0000000000C100A"
+				item: "farmersdelight:rice_panicle"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: true
+				count: 64L
+				id: "E0000000000C200A"
+				item: "kubejs:iron_coin"
+				type: "item"
+			}]
+			title: "Buy Rice Panicles"
+			x: 6.0d
+			y: 2.0d
 		}
 	]
 	title: "Crops"

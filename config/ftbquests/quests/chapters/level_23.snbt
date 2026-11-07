@@ -1,0 +1,134 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_23"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "minecraft:chorus_fruit"
+	id: "D000000000000017"
+	order_index: 22
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["A00000000000165A"]
+			description: [
+				"Advance into Level 23: End Frontier."
+				""
+				"This promotion consumes value from the previous economy before opening the final production layer."
+			]
+			icon: "minecraft:chorus_fruit"
+			id: "A000000000001701"
+			rewards: [
+				{ autoclaim: 1b, id: "C000000000170101", stage: "level_23", type: "stage" }
+				{ id: "C000000000170102", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_23\"]}", display: { Name: "{\"text\":\"Level 23 Decree\"}" } } }, type: "item" }
+			]
+			shape: "octagon"
+			tasks: [
+				{ consume_items: true, count: 6144L, id: "B000000000170101", item: "kubejs:gold_coin", type: "item" }
+				{ consume_items: true, count: 128L, id: "B000000000170102", item: "twilightdelight:glowstew", type: "item" }
+				{ consume_items: true, count: 1024L, id: "B000000000170103", item: "corn_delight:taco", type: "item" }
+			]
+			title: "Level 23 · End Frontier"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A000000000001701"]
+			description: [
+				"Establish renewable chorus fruit before End cuisine appears."
+				""
+				"Completing the orchard unlocks End's Delight processing as a second step."
+			]
+			icon: "minecraft:chorus_fruit"
+			id: "A000000000001702"
+			rewards: [{ autoclaim: 1b, id: "C000000000170201", stage: "level_23_cuisine", type: "stage" }]
+			shape: "diamond"
+			tasks: [{ count: 128L, id: "B000000000170201", item: "minecraft:chorus_fruit", type: "item" }]
+			title: "Chorus Orchard"
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000001701"]
+			description: [
+				"Begin the final bakery-supply chain by pushing the long-running sugar economy to final-tier scale."
+				""
+				"Wheat follows downstream rather than appearing as another parallel promotion branch."
+			]
+			icon: "minecraft:sugar"
+			id: "A000000000001704"
+			tasks: [{ count: 2048L, id: "B000000000170401", item: "minecraft:sugar", type: "item" }]
+			title: "Industrial Sugar"
+			x: 1.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000001704"]
+			description: [
+				"Continue the final bakery-supply chain by pushing the original Level 1 wheat staple to the largest throughput target in the pack."
+			]
+			icon: "minecraft:wheat"
+			id: "A000000000001705"
+			tasks: [{ count: 4096L, id: "B000000000170501", item: "minecraft:wheat", type: "item" }]
+			title: "Industrial Wheat"
+			x: 2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000001702", "A000000000001705"]
+			description: [
+				"Turn chorus fruit into pies after both the End orchard and mature wheat/sugar bakery chain are established."
+				""
+				"The final new product therefore reconnects the End to old wheat, sugar, and pie-crust production instead of appearing in isolation."
+			]
+			icon: "ends_delight:chorus_fruit_pie"
+			id: "A000000000001703"
+			tasks: [{ count: 128L, id: "B000000000170301", item: "ends_delight:chorus_fruit_pie", type: "item" }]
+			title: "Chorus Fruit Pies"
+			x: -1.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000001701"]
+			description: [
+				"Stage the mature farm's final industrial provisioning network as the carryover branch."
+				""
+				"It keeps tacos, pineapple pies, chicken sandwiches, and cornbread economically relevant without pretending they are new unlocks."
+			]
+			icon: "corn_delight:taco"
+			id: "A000000000001706"
+			tasks: [
+				{ count: 2048L, id: "B000000000170601", item: "corn_delight:taco", type: "item" }
+				{ count: 2048L, id: "B000000000170602", item: "pineapple_delight:pineapple_pie", type: "item" }
+				{ count: 2048L, id: "B000000000170603", item: "farmersdelight:chicken_sandwich", type: "item" }
+				{ count: 2048L, id: "B000000000170604", item: "corn_delight:cornbread", type: "item" }
+			]
+			title: "Final Provisioning"
+			x: 3.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000001703", "A000000000001706"]
+			description: [
+				"The final order combines End cuisine with the oldest and most mature farm systems at extreme automated scale."
+				""
+				"This is a throughput finale, not a rare-item checklist."
+			]
+			icon: "minecraft:chorus_fruit"
+			id: "A00000000000175A"
+			shape: "hexagon"
+			tasks: [
+				{ consume_items: true, count: 256L, id: "B000000000175A01", item: "ends_delight:chorus_fruit_pie", type: "item" }
+				{ consume_items: true, count: 4096L, id: "B000000000175A02", item: "minecraft:wheat", type: "item" }
+				{ consume_items: true, count: 2048L, id: "B000000000175A03", item: "minecraft:sugar", type: "item" }
+				{ consume_items: true, count: 2048L, id: "B000000000175A04", item: "corn_delight:taco", type: "item" }
+				{ consume_items: true, count: 2048L, id: "B000000000175A05", item: "pineapple_delight:pineapple_pie", type: "item" }
+				{ consume_items: true, count: 2048L, id: "B000000000175A06", item: "farmersdelight:chicken_sandwich", type: "item" }
+			]
+			title: "Level 23 Market Order"
+			x: 6.0d
+			y: 6.0d
+		}
+	]
+	title: "Level 23 · End Frontier"
+}

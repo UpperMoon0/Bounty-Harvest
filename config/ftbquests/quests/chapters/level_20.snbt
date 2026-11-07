@@ -1,0 +1,146 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_20"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "alexsmobs:animal_dictionary"
+	id: "D000000000000014"
+	order_index: 19
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["A00000000000135A"]
+			description: [
+				"Advance into Level 20: Wildlife Cuisine."
+				""
+				"This promotion consumes value from the previous economy before opening the next production layer."
+			]
+			icon: "alexsmobs:animal_dictionary"
+			id: "A000000000001401"
+			rewards: [
+				{ autoclaim: 1b, id: "C000000000140101", stage: "level_20", type: "stage" }
+				{ id: "C000000000140102", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_20\"]}", display: { Name: "{\"text\":\"Level 20 Decree\"}" } } }, type: "item" }
+			]
+			shape: "octagon"
+			tasks: [
+				{ consume_items: true, count: 768L, id: "B000000000140101", item: "kubejs:gold_coin", type: "item" }
+				{ consume_items: true, count: 512L, id: "B000000000140102", item: "minecraft:leather", type: "item" }
+			]
+			title: "Level 20 · Wildlife Cuisine"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A000000000001401"]
+			description: [
+				"Use the Animal Dictionary as the field-research anchor."
+				""
+				"Entities themselves are not falsely described as item-staged."
+			]
+			icon: "alexsmobs:animal_dictionary"
+			id: "A000000000001402"
+			tasks: [
+				{ id: "B000000000140201", item: "alexsmobs:animal_dictionary", type: "item" }
+			]
+			title: "Wildlife Field Guide"
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000001402"]
+			description: [
+				"Turn specialist wildlife meat into a premium prepared-food line."
+			]
+			icon: "alexsdelight:bison_burger"
+			id: "A000000000001403"
+			tasks: [
+				{ count: 24L, id: "B000000000140301", item: "alexsdelight:bison_burger", type: "item" }
+			]
+			title: "Bison Burger Line"
+			x: -3.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000001401"]
+			description: [
+				"Keep the automated cattle economy as a major throughput burden."
+			]
+			icon: "minecraft:leather"
+			id: "A000000000001404"
+			tasks: [
+				{ count: 768L, id: "B000000000140401", item: "minecraft:leather", type: "item" }
+			]
+			title: "Industrial Leather Contract"
+			x: 1.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000001401"]
+			description: [
+				"Return the Level 11 corn bakery to very large late-game demand."
+			]
+			icon: "corn_delight:cornbread"
+			id: "A000000000001405"
+			tasks: [
+				{ count: 768L, id: "B000000000140501", item: "corn_delight:cornbread", type: "item" }
+			]
+			title: "Industrial Cornbread Contract"
+			x: 2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000001402"]
+			description: [
+				"Optional specialist cuisine for players who want broader wildlife processing."
+				""
+				"It reconnects after the Market Order through mastery instead of ending as a loose branch."
+			]
+			icon: "alexsdelight:acacia_blossom_soup"
+			id: "A000000000001406"
+			tasks: [
+				{ count: 16L, id: "B000000000140601", item: "alexsdelight:acacia_blossom_soup", type: "item" }
+			]
+			title: "Optional Blossom Soup"
+			x: 0.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["A00000000000145A", "A000000000001406"]
+			description: [
+				"Complete the optional blossom cuisine after satisfying the core wildlife economy."
+			]
+			icon: "alexsdelight:acacia_blossom_soup"
+			id: "A000000000001407"
+			rewards: [
+				{ count: 24, id: "C000000000140701", item: "kubejs:gold_coin", type: "item" }
+			]
+			shape: "diamond"
+			tasks: [{ id: "B000000000140701", type: "checkmark" }]
+			title: "Level 20 Wildlife Mastery"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000001403", "A000000000001404", "A000000000001405"]
+			description: [
+				"Ship specialist bison cuisine alongside enormous old-farm contracts."
+				""
+				"Wildlife adds specialization without displacing the automated farm."
+			]
+			icon: "alexsmobs:animal_dictionary"
+			id: "A00000000000145A"
+			shape: "hexagon"
+			tasks: [
+				{ consume_items: true, count: 64L, id: "B000000000145A01", item: "alexsdelight:bison_burger", type: "item" }
+				{ consume_items: true, count: 768L, id: "B000000000145A02", item: "minecraft:leather", type: "item" }
+				{ consume_items: true, count: 768L, id: "B000000000145A03", item: "corn_delight:cornbread", type: "item" }
+				{ consume_items: true, count: 512L, id: "B000000000145A04", item: "pineapple_delight:pineapple_pie", type: "item" }
+			]
+			title: "Level 20 Market Order"
+			x: 6.0d
+			y: 6.0d
+		}
+	]
+	title: "Level 20 · Wildlife Cuisine"
+}

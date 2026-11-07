@@ -5,291 +5,178 @@
 	group: "39B7846742C777FD"
 	hide_quest_until_deps_visible: true
 	icon: "minecraft:leather"
-	id: "3D5CF467B00AFBA8"
+	id: "19B03D0FC4E987F6"
 	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: [
-				"46299A2CF9119F73"
-				"6136AD91428A0801"
-				"175C3116B3681471"
+			dependencies: ["759303985A706218"]
+			description: [
+				"After the Level 2 Market Order, spend 12 copper coins and four cooked chicken to expand into cattle and leather. Both costs are consumed."
+				""
+				"Cattle, ranch infrastructure, leather equipment, bone fertilizer, and brickwork are separate branches so the level develops the whole farm instead of only its sale item."
 			]
 			icon: "minecraft:leather"
 			id: "573FE8ED65790A78"
 			rewards: [
-				{
-					autoclaim: 1b
-					id: "6629D8529763B34A"
-					stage: "level_3"
-					type: "stage"
-				}
-				{
-					id: "2FD553EA8B8C5325"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_3\"]}"
-							display: {
-								Name: "{\"text\":\"Level 3 Decree\"}"
-							}
-						}
-					}
-					type: "item"
-				}
+				{ autoclaim: 1b, id: "74F60E0C2F98596C", stage: "level_3", type: "stage" }
+				{ id: "7ACD002FA7F06F1D", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_3\"]}", display: { Name: "{\"text\":\"Level 3 Decree\"}" } } }, type: "item" }
 			]
 			shape: "octagon"
 			tasks: [
-				{
-					consume_items: true
-					count: 2L
-					id: "51C23B8B5D40946D"
-					item: { Count: 2, id: "kubejs:gold_coin" }
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 4L
-					id: "4CD5AB29DD021E1C"
-					item: { Count: 4, id: "minecraft:cooked_chicken" }
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 8L
-					id: "2E51DA89E895A4B8"
-					item: { Count: 8, id: "minecraft:torch" }
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 4L
-					id: "05AAABC40A80D038"
-					item: { Count: 4, id: "minecraft:terracotta" }
-					type: "item"
-				}
+				{ consume_items: true, count: 12L, id: "9672223B690756BF", item: "kubejs:copper_coin", type: "item" }
+				{ consume_items: true, count: 4L, id: "DA57F47CA832672D", item: "minecraft:cooked_chicken", type: "item" }
 			]
-			title: "Level 3"
-			x: 0.5d
-			y: -0.5d
+			title: "Level 3 · Cattle and Leather"
+			x: 0.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["573FE8ED65790A78"]
+			description: [
+				"Establish cattle production. Beef feeds the food economy while leather becomes a persistent input for equipment, books, and later workshop supplies."
+			]
 			id: "4D94846C7A3621E1"
 			tasks: [
-				{
-					id: "36CA09406A4FE748"
-					item: "minecraft:beef"
-					type: "item"
-				}
-				{
-					id: "24F7AF2A6828AD64"
-					item: "minecraft:leather"
-					type: "item"
-				}
+				{ count: 4L, id: "36CA09406A4FE748", item: "minecraft:beef", type: "item" }
+				{ count: 6L, id: "24F7AF2A6828AD64", item: "minecraft:leather", type: "item" }
 			]
-			title: "Cow"
-			x: -0.5d
-			y: 1.5d
+			title: "Cattle Herd"
+			x: -2.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["4D94846C7A3621E1"]
+			description: [
+				"Cook four beef. This is the sale-ready food endpoint of the cattle branch."
+			]
+			id: "0F903402C0357CB1"
+			tasks: [{ count: 4L, id: "1F540A02C3858084", item: "minecraft:cooked_beef", type: "item" }]
+			title: "Cooked Beef"
+			x: -3.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["4D94846C7A3621E1"]
+			description: [
+				"Craft a full leather armor set as an optional equipment branch. It is detected rather than consumed and reconnects through Level 3 Mastery."
+			]
 			id: "076BFC8E90689E06"
 			tasks: [
-				{
-					id: "3630EA2CCAC3D14E"
-					item: {
-						Count: 1
-						id: "minecraft:leather_helmet"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "2C8FBF40447E4223"
-					item: {
-						Count: 1
-						id: "minecraft:leather_chestplate"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "66CA63F8322CC6D6"
-					item: {
-						Count: 1
-						id: "minecraft:leather_leggings"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "55635BEB719CBE83"
-					item: {
-						Count: 1
-						id: "minecraft:leather_boots"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
+				{ id: "3630EA2CCAC3D14E", item: "minecraft:leather_helmet", type: "item" }
+				{ id: "2C8FBF40447E4223", item: "minecraft:leather_chestplate", type: "item" }
+				{ id: "66CA63F8322CC6D6", item: "minecraft:leather_leggings", type: "item" }
+				{ id: "55635BEB719CBE83", item: "minecraft:leather_boots", type: "item" }
 			]
-			title: "Leather Armor"
-			x: -1.5d
-			y: 3.5d
+			title: "Optional Leather Equipment"
+			x: -0.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["573FE8ED65790A78"]
+			description: [
+				"Collect bones and turn them into bone meal. Fertilizer is the first explicit productivity upgrade for the crop economy."
+			]
 			id: "354771AEA610B772"
-			tasks: [{
-				id: "24E83E5C75B1569C"
-				item: "minecraft:bone"
-				type: "item"
-			}]
-			x: 2.5d
-			y: -0.5d
+			tasks: [{ count: 4L, id: "24E83E5C75B1569C", item: "minecraft:bone", type: "item" }]
+			title: "Bones"
+			x: 1.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["354771AEA610B772"]
 			id: "328A5A7575E922BB"
-			tasks: [{
-				id: "007E85D2015D42E2"
-				item: "minecraft:bone_meal"
-				type: "item"
-			}]
-			x: 4.5d
-			y: -0.5d
-		}
-		{
-			dependencies: ["573FE8ED65790A78"]
-			id: "521B1983269E86CD"
-			tasks: [{
-				id: "34DC260D620B0200"
-				item: "farmersdelight:fried_egg"
-				type: "item"
-			}]
-			x: -0.5d
-			y: -2.5d
-		}
-		{
-			dependencies: ["573FE8ED65790A78"]
-			hide_until_deps_visible: true
-			id: "469D79186355892B"
-			tasks: [{
-				id: "5196E141B83AD323"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "minecraft:boats"
-					}
-				}
-				title: "Any Boat"
-				type: "item"
-			}]
-			title: "Boat"
-			x: -1.5d
-			y: -0.5d
-		}
-		{
-			dependencies: ["573FE8ED65790A78"]
-			id: "05B91EF6C45378BE"
-			tasks: [
-				{
-					id: "62B4AA089A6C6C88"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "forge:fences/wooden"
-						}
-					}
-					title: "Any Wooden Fence"
-					type: "item"
-				}
-				{
-					id: "4CD28B77A07855E6"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "forge:fence_gates/wooden"
-						}
-					}
-					title: "Any Wooden Fence Gate"
-					type: "item"
-				}
+			description: [
+				"Convert bones into bone meal and use it to accelerate crop expansion."
 			]
-			title: "Wooden Fence and Fence Gate"
-			x: 3.5d
-			y: 1.5d
-		}
-		{
-			dependencies: ["573FE8ED65790A78"]
-			id: "43CD52707D5AC45C"
-			tasks: [{
-				id: "003328B83628CC9B"
-				item: {
-					Count: 1
-					id: "minecraft:bow"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 1.5d
-			y: -2.5d
-		}
-		{
-			dependencies: ["573FE8ED65790A78"]
-			id: "4967B23E5A19ADB4"
-			tasks: [
-				{
-					id: "69359810F2C8C9F3"
-					item: "minecraft:brick"
-					type: "item"
-				}
-				{
-					id: "0EA39E955B0F39B7"
-					item: "minecraft:bricks"
-					type: "item"
-				}
-			]
-			x: 2.0d
-			y: 2.5d
-		}
-		{
-			dependencies: ["4967B23E5A19ADB4"]
-			id: "281A5329C4D661E3"
-			tasks: [{
-				id: "5D744725E94E860C"
-				item: "minecraft:flower_pot"
-				type: "item"
-			}]
-			x: 3.5d
+			tasks: [{ count: 8L, id: "007E85D2015D42E2", item: "minecraft:bone_meal", type: "item" }]
+			title: "Fertilizer"
+			x: 3.0d
 			y: 3.5d
 		}
 		{
-			dependencies: ["4D94846C7A3621E1"]
-			id: "0F903402C0357CB1"
-			tasks: [{
-				id: "1F540A02C3858084"
-				item: "minecraft:cooked_beef"
-				type: "item"
-			}]
-			x: -2.5d
-			y: 1.5d
+			dependencies: ["573FE8ED65790A78"]
+			description: [
+				"Build wooden fencing and a gate. Ranch infrastructure matters because later animal lines assume controlled breeding rather than opportunistic hunting."
+			]
+			id: "05B91EF6C45378BE"
+			tasks: [
+				{ id: "62B4AA089A6C6C88", item: { Count: 1, id: "itemfilters:tag", tag: { value: "forge:fences/wooden" } }, title: "Any Wooden Fence", type: "item" }
+				{ id: "4CD28B77A07855E6", item: { Count: 1, id: "itemfilters:tag", tag: { value: "forge:fence_gates/wooden" } }, title: "Any Wooden Fence Gate", type: "item" }
+			]
+			title: "Ranch Fencing"
+			x: 1.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["573FE8ED65790A78"]
+			description: [
+				"Fire clay into bricks as an optional continuation of Level 2 materials. The branch reconnects through pottery and Level 3 Mastery."
+			]
+			id: "4967B23E5A19ADB4"
+			tasks: [
+				{ count: 4L, id: "69359810F2C8C9F3", item: "minecraft:brick", type: "item" }
+				{ id: "0EA39E955B0F39B7", item: "minecraft:bricks", type: "item" }
+			]
+			title: "Optional Brickwork"
+			x: 3.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["4967B23E5A19ADB4"]
+			description: [
+				"Craft a flower pot as the optional decorative endpoint of the clay and brick line, then reconnect it through mastery."
+			]
+			id: "281A5329C4D661E3"
+			tasks: [{ id: "5D744725E94E860C", item: "minecraft:flower_pot", type: "item" }]
+			title: "Optional Farmhouse Pottery"
+			x: 5.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["573FE8ED65790A78"]
+			description: [
+				"Cook fried eggs as an optional carryover from Level 2 so the poultry economy remains visible while cattle expands."
+			]
+			id: "521B1983269E86CD"
+			tasks: [{ count: 2L, id: "34DC260D620B0200", item: "farmersdelight:fried_egg", type: "item" }]
+			title: "Optional Poultry Carryover"
+			x: -1.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["0F903402C0357CB1", "328A5A7575E922BB", "05B91EF6C45378BE"]
+			description: [
+				"The cattle, fertilizer, and ranch branches converge here. Ship four cooked beef, six leather, and four eggs."
+				""
+				"Optional equipment, brickwork, pottery, and poultry carryover reconnect after this order through mastery."
+			]
+			icon: "minecraft:leather"
+			id: "9131A689D31728C8"
+			shape: "hexagon"
+			tasks: [
+				{ consume_items: true, count: 4L, id: "2E2CBF26FA375DA5", item: "minecraft:cooked_beef", type: "item" }
+				{ consume_items: true, count: 6L, id: "8BAFBD12A8B79EF6", item: "minecraft:leather", type: "item" }
+				{ consume_items: true, count: 4L, id: "9F2F74FCF14127A5", item: "minecraft:egg", type: "item" }
+			]
+			title: "Level 3 Market Order"
+			x: 6.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["9131A689D31728C8", "076BFC8E90689E06", "281A5329C4D661E3", "521B1983269E86CD"]
+			description: [
+				"Complete the optional equipment, construction, and carryover branches after satisfying the core cattle economy."
+			]
+			icon: "minecraft:leather_chestplate"
+			id: "A300000000000307"
+			rewards: [{ count: 6, id: "C300000000000307", item: "kubejs:copper_coin", type: "item" }]
+			shape: "diamond"
+			tasks: [{ id: "B300000000000307", type: "checkmark" }]
+			title: "Level 3 Homestead Mastery"
+			x: 7.5d
+			y: 1.0d
 		}
 	]
-	title: "Level 3"
+	title: "Level 3 · Cattle and Leather"
 }

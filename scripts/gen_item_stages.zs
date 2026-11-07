@@ -1,153 +1,114 @@
 import mods.itemstages.ItemStages;
 
-// Level 1
+// Bounty Harvest progression is item/namespace gating only. It does not claim
+// to gate entity spawning, dimensions, or arbitrary world systems.
+
+// Level 1 · Homestead and Orders (granted automatically on join)
 ItemStages.restrict(<tag:items:minecraft:planks>, "level_1");
-ItemStages.restrict(<item:minecraft:bone_meal>, "level_1");
 ItemStages.restrict(<item:minecraft:crafting_table>, "level_1");
 ItemStages.restrict(<item:minecraft:stick>, "level_1");
 ItemStages.restrict(<item:minecraft:wheat_seeds>, "level_1");
-ItemStages.restrict(<item:minecraft:bread>, "level_1");
-ItemStages.restrict(<tag:items:forge:cobblestone>, "level_1");
-ItemStages.restrict(<tag:items:forge:gravel>, "level_1");
-ItemStages.restrict(<tag:items:minecraft:sand>, "level_1");
 ItemStages.restrict(<item:minecraft:wheat>, "level_1");
+ItemStages.restrict(<item:minecraft:bread>, "level_1");
 ItemStages.restrict(<item:minecraft:wooden_axe>, "level_1");
 ItemStages.restrict(<item:minecraft:wooden_hoe>, "level_1");
 ItemStages.restrict(<item:minecraft:wooden_pickaxe>, "level_1");
 ItemStages.restrict(<item:minecraft:wooden_shovel>, "level_1");
 ItemStages.restrict(<item:minecraft:wooden_sword>, "level_1");
-ItemStages.restrict(<tag:items:forge:chests/wooden>, "level_1");
-ItemStages.restrict(<item:minecraft:rotten_flesh>, "level_1");
-ItemStages.restrict(<item:minecraft:torch>, "level_1");
-ItemStages.restrict(<item:minecraft:apple>, "level_1");
 
-// Level 2
-ItemStages.restrict(<item:minecraft:chicken>, "level_2");
-ItemStages.restrict(<item:minecraft:clay>, "level_2");
-ItemStages.restrict(<item:minecraft:furnace>, "level_2");
-ItemStages.restrict(<tag:items:minecraft:wooden_doors>, "level_2");
-ItemStages.restrict(<tag:items:minecraft:wooden_trapdoors>, "level_2");
-ItemStages.restrict(<item:immersive_armors:wooden_boots>, "level_2");
-ItemStages.restrict(<item:immersive_armors:wooden_chestplate>, "level_2");
-ItemStages.restrict(<item:immersive_armors:wooden_helmet>, "level_2");
-ItemStages.restrict(<item:immersive_armors:wooden_leggings>, "level_2");
-ItemStages.restrict(<item:minecraft:charcoal>, "level_2");
-ItemStages.restrict(<item:minecraft:clay_ball>, "level_2");
-ItemStages.restrict(<item:minecraft:cooked_chicken>, "level_2");
+// Level 2 · Poultry and Hearth
 ItemStages.restrict(<item:minecraft:egg>, "level_2");
 ItemStages.restrict(<item:minecraft:feather>, "level_2");
-ItemStages.restrict(<item:minecraft:hay_block>, "level_2");
-ItemStages.restrict(<item:minecraft:ladder>, "level_2");
-ItemStages.restrict(<item:minecraft:terracotta>, "level_2");
+ItemStages.restrict(<item:minecraft:chicken>, "level_2");
+ItemStages.restrict(<item:minecraft:cooked_chicken>, "level_2");
+ItemStages.restrict(<item:minecraft:furnace>, "level_2");
+ItemStages.restrict(<item:minecraft:charcoal>, "level_2");
+ItemStages.restrict(<item:farmersdelight:fried_egg>, "level_2");
 
-// Level 3
+// Level 3 · Cattle and Leather
 ItemStages.restrict(<item:minecraft:beef>, "level_3");
-ItemStages.restrict(<item:minecraft:brick>, "level_3");
-ItemStages.restrict(<item:minecraft:brick_slab>, "level_3");
-ItemStages.restrict(<item:minecraft:brick_stairs>, "level_3");
-ItemStages.restrict(<item:minecraft:brick_wall>, "level_3");
-ItemStages.restrict(<item:minecraft:white_dye>, "level_3");
-ItemStages.restrict(<tag:items:forge:fence_gates/wooden>, "level_3");
-ItemStages.restrict(<tag:items:minecraft:boats>, "level_3");
-ItemStages.restrict(<tag:items:minecraft:wooden_fences>, "level_3");
-ItemStages.restrict(<item:farmersdelight:fried_egg>, "level_3");
-ItemStages.restrict(<item:minecraft:bone>, "level_3");
-ItemStages.restrict(<item:minecraft:bow>, "level_3");
-ItemStages.restrict(<item:minecraft:string>, "level_3");
-ItemStages.restrict(<item:minecraft:bricks>, "level_3");
 ItemStages.restrict(<item:minecraft:cooked_beef>, "level_3");
-ItemStages.restrict(<item:minecraft:flower_pot>, "level_3");
 ItemStages.restrict(<item:minecraft:leather>, "level_3");
 ItemStages.restrict(<item:minecraft:leather_boots>, "level_3");
 ItemStages.restrict(<item:minecraft:leather_chestplate>, "level_3");
 ItemStages.restrict(<item:minecraft:leather_helmet>, "level_3");
 ItemStages.restrict(<item:minecraft:leather_leggings>, "level_3");
+ItemStages.restrict(<item:minecraft:string>, "level_3");
+ItemStages.restrict(<item:minecraft:bow>, "level_3");
 
-// Level 4
-ItemStages.restrict(<tag:items:minecraft:wooden_buttons>, "level_4");
-ItemStages.restrict(<tag:items:minecraft:wooden_pressure_plates>, "level_4");
+// Level 4 · Roots and Pork
+ItemStages.restrict(<item:minecraft:carrot>, "level_4");
+ItemStages.restrict(<item:minecraft:porkchop>, "level_4");
+ItemStages.restrict(<item:minecraft:cooked_porkchop>, "level_4");
 ItemStages.restrict(<item:farmersdelight:wheat_dough>, "level_4");
 ItemStages.restrict(<item:minecraft:flint>, "level_4");
-ItemStages.restrict(<item:minecraft:porkchop>, "level_4");
-ItemStages.restrict(<tag:items:forge:glass>, "level_4");
-ItemStages.restrict(<tag:items:forge:small_freshwater_fishes>, "level_4");
-ItemStages.restrict(<item:minecraft:carrot>, "level_4");
-ItemStages.restrict(<item:minecraft:cooked_porkchop>, "level_4");
-ItemStages.restrict(<item:minecraft:gunpowder>, "level_4");
-ItemStages.restrict(<item:minecraft:spider_eye>, "level_4");
 ItemStages.restrict(<item:minecraft:stone_axe>, "level_4");
 ItemStages.restrict(<item:minecraft:stone_hoe>, "level_4");
 ItemStages.restrict(<item:minecraft:stone_pickaxe>, "level_4");
 ItemStages.restrict(<item:minecraft:stone_shovel>, "level_4");
 ItemStages.restrict(<item:minecraft:stone_sword>, "level_4");
 
-// Level 5
-ItemStages.restrict(<tag:items:minecraft:wool>, "level_5");
-ItemStages.restrict(<item:minecraft:black_dye>, "level_5");
-ItemStages.restrict(<item:minecraft:mutton>, "level_5");
-ItemStages.restrict(<item:minecraft:paper>, "level_5");
-ItemStages.restrict(<tag:items:forge:medium_freshwater_fishes>, "level_5");
-ItemStages.restrict(<tag:items:minecraft:beds>, "level_5");
-ItemStages.restrict(<item:farmersdelight:carrot_crate>, "level_5");
-ItemStages.restrict(<item:minecraft:book>, "level_5");
-ItemStages.restrict(<item:minecraft:cooked_mutton>, "level_5");
+// Level 5 · Fisheries and Coast
+ItemStages.restrict(<item:minecraft:fishing_rod>, "level_5");
+ItemStages.restrict(<item:minecraft:cod>, "level_5");
+ItemStages.restrict(<item:minecraft:salmon>, "level_5");
+ItemStages.restrict(<item:minecraft:cooked_cod>, "level_5");
 ItemStages.restrict(<item:minecraft:cooked_salmon>, "level_5");
-ItemStages.restrict(<item:minecraft:ink_sac>, "level_5");
-ItemStages.restrict(<item:minecraft:sugar>, "level_5");
-ItemStages.restrict(<item:minecraft:sugar_cane>, "level_5");
-ItemStages.restrict(<item:minecraft:tnt>, "level_5");
+ItemStages.restrict(<item:minecraft:bowl>, "level_5");
+ItemStages.restrict(<item:minecraft:seagrass>, "level_5");
+ItemStages.createModRestriction("aquaculture", "level_5");
+ItemStages.createModRestriction("oceansdelight", "level_5");
 
-// Level 6
-ItemStages.restrict(<tag:items:forge:red_flowers>, "level_6");
-ItemStages.restrict(<tag:items:forge:yellow_flowers>, "level_6");
+// Level 6 · Wool and Textiles. No pantry/crop dump here.
+ItemStages.restrict(<tag:items:minecraft:wool>, "level_6");
+ItemStages.restrict(<item:minecraft:mutton>, "level_6");
+ItemStages.restrict(<item:minecraft:cooked_mutton>, "level_6");
 ItemStages.restrict(<item:kubejs:wool_yarn>, "level_6");
-ItemStages.restrict(<item:minecraft:bowl>, "level_6");
-ItemStages.restrict(<item:minecraft:brown_mushroom>, "level_6");
-ItemStages.restrict(<item:minecraft:orange_dye>, "level_6");
-ItemStages.restrict(<item:minecraft:red_dye>, "level_6");
-ItemStages.restrict(<item:minecraft:red_mushroom>, "level_6");
-ItemStages.restrict(<item:minecraft:yellow_dye>, "level_6");
-ItemStages.restrict(<item:immersive_armors:bone_boots>, "level_6");
-ItemStages.restrict(<item:immersive_armors:bone_chestplate>, "level_6");
-ItemStages.restrict(<item:immersive_armors:bone_helmet>, "level_6");
-ItemStages.restrict(<item:immersive_armors:bone_leggings>, "level_6");
 ItemStages.restrict(<item:kubejs:wool_sweater>, "level_6");
-ItemStages.restrict(<item:minecraft:baked_potato>, "level_6");
-ItemStages.restrict(<item:minecraft:bookshelf>, "level_6");
-ItemStages.restrict(<item:minecraft:fermented_spider_eye>, "level_6");
-ItemStages.restrict(<item:minecraft:mushroom_stew>, "level_6");
-ItemStages.restrict(<item:minecraft:poisonous_potato>, "level_6");
-ItemStages.restrict(<item:minecraft:potato>, "level_6");
 
-// Level 7
-ItemStages.restrict(<tag:items:minecraft:copper_ores>, "level_7");
-ItemStages.restrict(<tag:items:minecraft:decorated_pot_sherds>, "level_7");
-ItemStages.restrict(<item:bettercopper:copper_nugget>, "level_7");
-ItemStages.restrict(<item:farmersdelight:milk_bottle>, "level_7");
-ItemStages.restrict(<item:farmersdelight:pie_crust>, "level_7");
-ItemStages.restrict(<item:minecraft:bucket>, "level_7");
-ItemStages.restrict(<item:minecraft:copper_ingot>, "level_7");
-ItemStages.restrict(<item:minecraft:glass_bottle>, "level_7");
-ItemStages.restrict(<item:minecraft:milk_bucket>, "level_7");
-ItemStages.restrict(<item:minecraft:raw_copper>, "level_7");
-ItemStages.restrict(<item:minecraft:raw_copper_block>, "level_7");
-ItemStages.restrict(<item:minecraft:water_bucket>, "level_7");
-ItemStages.restrict(<item:bettercopper:copper_axe>, "level_7");
-ItemStages.restrict(<item:bettercopper:copper_hoe>, "level_7");
-ItemStages.restrict(<item:bettercopper:copper_pickaxe>, "level_7");
-ItemStages.restrict(<item:bettercopper:copper_shovel>, "level_7");
-ItemStages.restrict(<item:bettercopper:copper_sword>, "level_7");
-ItemStages.restrict(<item:farmersdelight:apple_pie>, "level_7");
-ItemStages.restrict(<item:farmersdelight:potato_crate>, "level_7");
-ItemStages.restrict(<item:farmersdelight:stuffed_potato>, "level_7");
-ItemStages.restrict(<item:minecraft:brush>, "level_7");
-ItemStages.restrict(<item:minecraft:cake>, "level_7");
-ItemStages.restrict(<item:minecraft:composter>, "level_7");
-ItemStages.restrict(<item:minecraft:decorated_pot>, "level_7");
-ItemStages.restrict(<item:minecraft:emerald>, "level_7");
-ItemStages.restrict(<item:minecraft:fishing_rod>, "level_7");
-// Ironworking is unlocked inside Level 7 after the copper-tool milestone.
-// Keeping the metal stages separate gives BetterCopper a real progression era.
+// Level 7 · Potato Pantry
+ItemStages.restrict(<item:minecraft:potato>, "level_7");
+ItemStages.restrict(<item:minecraft:baked_potato>, "level_7");
+
+// Level 8 · Sugar and Baking
+ItemStages.restrict(<item:minecraft:sugar_cane>, "level_8");
+ItemStages.restrict(<item:minecraft:sugar>, "level_8");
+ItemStages.restrict(<item:farmersdelight:pie_crust>, "level_8");
+ItemStages.restrict(<item:farmersdelight:apple_pie>, "level_8");
+
+// Level 9 · Copper Workshop
+ItemStages.createModRestriction("bettercopper", "level_9");
+ItemStages.restrict(<tag:items:minecraft:copper_ores>, "level_9");
+ItemStages.restrict(<item:minecraft:raw_copper>, "level_9");
+ItemStages.restrict(<item:minecraft:raw_copper_block>, "level_9");
+ItemStages.restrict(<item:minecraft:copper_ingot>, "level_9");
+
+// Level 10 · Cabbage and Butchery
+ItemStages.restrict(<item:farmersdelight:cabbage>, "level_10");
+ItemStages.restrict(<item:farmersdelight:cabbage_seeds>, "level_10");
+ItemStages.restrict(<item:farmersdelight:cutting_board>, "level_10");
+ItemStages.restrict(<item:farmersdelight:flint_knife>, "level_10");
+ItemStages.restrict(<item:farmersdelight:bacon>, "level_10");
+ItemStages.restrict(<item:farmersdelight:cooked_bacon>, "level_10");
+ItemStages.restrict(<item:farmersdelight:beef_patty>, "level_10");
+ItemStages.restrict(<item:farmersdelight:chicken_cuts>, "level_10");
+ItemStages.restrict(<item:farmersdelight:cooked_chicken_cuts>, "level_10");
+ItemStages.restrict(<item:farmersdelight:cod_slice>, "level_10");
+ItemStages.restrict(<item:farmersdelight:cooked_cod_slice>, "level_10");
+ItemStages.restrict(<item:farmersdelight:salmon_slice>, "level_10");
+ItemStages.restrict(<item:farmersdelight:cooked_salmon_slice>, "level_10");
+ItemStages.restrict(<item:farmersdelight:chicken_sandwich>, "level_10");
+ItemStages.restrict(<item:farmersdelight:fish_stew>, "level_10");
+ItemStages.restrict(<item:farmersdelight:stuffed_potato>, "level_10");
+
+// Level 11 · Corn Bakery
+ItemStages.createModRestriction("corn_delight", "level_11");
+
+// Level 12 · Tomato and Tacos
+ItemStages.restrict(<item:farmersdelight:tomato>, "level_12");
+ItemStages.restrict(<item:farmersdelight:tomato_seeds>, "level_12");
+
+// Level 13 · Ironworking. The level promotion also grants iron_age.
 ItemStages.restrict(<tag:items:minecraft:iron_ores>, "iron_age");
 ItemStages.restrict(<item:minecraft:iron_nugget>, "iron_age");
 ItemStages.restrict(<item:minecraft:raw_iron>, "iron_age");
@@ -164,86 +125,68 @@ ItemStages.restrict(<item:minecraft:iron_chestplate>, "iron_age");
 ItemStages.restrict(<item:minecraft:iron_leggings>, "iron_age");
 ItemStages.restrict(<item:minecraft:iron_boots>, "iron_age");
 ItemStages.restrict(<item:minecraft:shield>, "iron_age");
+ItemStages.restrict(<item:minecraft:bucket>, "iron_age");
+ItemStages.restrict(<item:minecraft:water_bucket>, "iron_age");
+ItemStages.restrict(<item:minecraft:milk_bucket>, "iron_age");
 
-// Explicit integration policy for gameplay-changing systems. These namespace
-// gates prevent adventure and automation mods from bypassing the farm economy.
-// Temporary item-level containment pending full progression integration.
-// This prevents obvious item bypasses but does not define final unlock levels.
-ItemStages.createModRestriction("alexsmobs", "level_4");
-ItemStages.createModRestriction("cookingforblockheads", "level_7");
-ItemStages.createModRestriction("create", "level_8");
-ItemStages.createModRestriction("createaddition", "level_8");
-ItemStages.createModRestriction("sliceanddice", "level_8");
-ItemStages.createModRestriction("alexscaves", "level_8");
-ItemStages.createModRestriction("twilightforest", "level_8");
+// Level 14 · Onion Kitchen
+ItemStages.restrict(<item:farmersdelight:onion>, "level_14");
+ItemStages.restrict(<item:farmersdelight:milk_bottle>, "level_14");
+ItemStages.restrict(<item:farmersdelight:iron_knife>, "level_14");
+ItemStages.restrict(<item:farmersdelight:cooking_pot>, "level_14");
+ItemStages.restrict(<item:farmersdelight:skillet>, "level_14");
+ItemStages.restrict(<item:farmersdelight:stove>, "level_14");
+ItemStages.restrict(<item:farmersdelight:bacon_and_eggs>, "level_14");
+ItemStages.createModRestriction("cookingforblockheads", "level_14");
+ItemStages.createModRestriction("delightful", "level_14");
 
-// TEMPORARY: unfinished progression boundary; revisit in progression overhaul.
-// Stage diamond, redstone, lapis, and gold at level_8 to prevent L7 iron pickaxe
-// from making the entire unfinished vanilla tech tree immediately available.
-// This is not final progression design.
-ItemStages.restrict(<tag:items:minecraft:diamond_ores>, "level_8");
-ItemStages.restrict(<item:minecraft:diamond>, "level_8");
-ItemStages.restrict(<item:minecraft:diamond_block>, "level_8");
-ItemStages.restrict(<item:minecraft:diamond_axe>, "level_8");
-ItemStages.restrict(<item:minecraft:diamond_hoe>, "level_8");
-ItemStages.restrict(<item:minecraft:diamond_pickaxe>, "level_8");
-ItemStages.restrict(<item:minecraft:diamond_shovel>, "level_8");
-ItemStages.restrict(<item:minecraft:diamond_sword>, "level_8");
-ItemStages.restrict(<item:minecraft:diamond_helmet>, "level_8");
-ItemStages.restrict(<item:minecraft:diamond_chestplate>, "level_8");
-ItemStages.restrict(<item:minecraft:diamond_leggings>, "level_8");
-ItemStages.restrict(<item:minecraft:diamond_boots>, "level_8");
-ItemStages.restrict(<tag:items:minecraft:redstone_ores>, "level_8");
-ItemStages.restrict(<item:minecraft:redstone>, "level_8");
-ItemStages.restrict(<item:minecraft:redstone_block>, "level_8");
-ItemStages.restrict(<tag:items:minecraft:lapis_ores>, "level_8");
-ItemStages.restrict(<item:minecraft:lapis_lazuli>, "level_8");
-ItemStages.restrict(<item:minecraft:lapis_block>, "level_8");
-ItemStages.restrict(<tag:items:minecraft:gold_ores>, "level_8");
-ItemStages.restrict(<item:minecraft:raw_gold>, "level_8");
-ItemStages.restrict(<item:minecraft:raw_gold_block>, "level_8");
-ItemStages.restrict(<item:minecraft:gold_ingot>, "level_8");
-ItemStages.restrict(<item:minecraft:gold_block>, "level_8");
-ItemStages.restrict(<item:minecraft:golden_axe>, "level_8");
-ItemStages.restrict(<item:minecraft:golden_hoe>, "level_8");
-ItemStages.restrict(<item:minecraft:golden_pickaxe>, "level_8");
-ItemStages.restrict(<item:minecraft:golden_shovel>, "level_8");
-ItemStages.restrict(<item:minecraft:golden_sword>, "level_8");
-ItemStages.restrict(<item:minecraft:golden_helmet>, "level_8");
-ItemStages.restrict(<item:minecraft:golden_chestplate>, "level_8");
-ItemStages.restrict(<item:minecraft:golden_leggings>, "level_8");
-ItemStages.restrict(<item:minecraft:golden_boots>, "level_8");
+// Level 15 · Mechanical Farming
+ItemStages.createModRestriction("create", "level_15");
+ItemStages.restrict(<tag:items:minecraft:redstone_ores>, "level_15");
+ItemStages.restrict(<item:minecraft:redstone>, "level_15");
+ItemStages.restrict(<item:minecraft:redstone_block>, "level_15");
 
-// Level 8
-ItemStages.restrict(<item:aquaculture:fish_fillet_raw>, "level_8");
-ItemStages.restrict(<item:aquaculture:iron_fillet_knife>, "level_8");
-ItemStages.restrict(<item:aquaculture:stone_fillet_knife>, "level_8");
-ItemStages.restrict(<item:aquaculture:wooden_fillet_knife>, "level_8");
-ItemStages.restrict(<item:farmersdelight:cutting_board>, "level_8");
-ItemStages.restrict(<item:farmersdelight:flint_knife>, "level_8");
-ItemStages.restrict(<item:farmersdelight:iron_knife>, "level_8");
-ItemStages.restrict(<item:farmersdelight:iron_knife>, "level_8");
-ItemStages.restrict(<item:minecraft:rabbit>, "level_8");
-ItemStages.restrict(<item:minecraft:seagrass>, "level_8");
-ItemStages.restrict(<item:minecraft:shears>, "level_8");
-ItemStages.restrict(<item:farmersdelight:bacon>, "level_8");
-ItemStages.restrict(<item:farmersdelight:minced_beef>, "level_8");
-ItemStages.restrict(<item:minecraft:chain>, "level_8");
-ItemStages.restrict(<item:farmersdelight:cabbage_seeds>, "level_8");
-ItemStages.restrict(<item:farmersdelight:cabbage_leaf>, "level_8");
-ItemStages.restrict(<item:farmersdelight:chicken_cuts>, "level_8");
-ItemStages.restrict(<item:farmersdelight:cooked_chicken_cuts>, "level_8");
-ItemStages.restrict(<item:minecraft:cooked_rabbit>, "level_8");
-ItemStages.restrict(<item:aquaculture:sushi>, "level_8");
-ItemStages.restrict(<item:farmersdelight:cooked_bacon>, "level_8");
-ItemStages.restrict(<item:minecraft:rabbit_foot>, "level_8");
-ItemStages.restrict(<item:minecraft:rabbit_hide>, "level_8");
-ItemStages.restrict(<item:minecraft:rabbit_stew>, "level_8");
-ItemStages.restrict(<item:farmersdelight:bacon_and_eggs>, "level_8");
-ItemStages.restrict(<item:farmersdelight:beef_patty>, "level_8");
-ItemStages.restrict(<item:minecraft:chainmail_helmet>, "level_8");
-ItemStages.restrict(<item:minecraft:chainmail_chestplate>, "level_8");
-ItemStages.restrict(<item:minecraft:chainmail_leggings>, "level_8");
-ItemStages.restrict(<item:minecraft:chainmail_boots>, "level_8");
-ItemStages.restrict(<item:farmersdelight:cabbage>, "level_8");
-ItemStages.restrict(<item:farmersdelight:chicken_sandwich>, "level_8");
+// Level 16 · Tropical Orchard
+ItemStages.createModRestriction("pineapple_delight", "level_16");
+
+// Level 17 · Rice and Slicing
+ItemStages.restrict(<item:farmersdelight:rice>, "level_17");
+ItemStages.restrict(<item:farmersdelight:rice_panicle>, "level_17");
+ItemStages.restrict(<item:farmersdelight:cooked_rice>, "level_17");
+ItemStages.restrict(<item:farmersdelight:salmon_roll>, "level_17");
+ItemStages.restrict(<item:farmersdelight:cod_roll>, "level_17");
+ItemStages.createModRestriction("sliceanddice", "level_17");
+
+// Level 18 · Power Generation. Gold and the alternator arrive first.
+ItemStages.restrict(<tag:items:minecraft:gold_ores>, "level_18");
+ItemStages.restrict(<item:minecraft:raw_gold>, "level_18");
+ItemStages.restrict(<item:minecraft:raw_gold_block>, "level_18");
+ItemStages.restrict(<item:minecraft:gold_ingot>, "level_18");
+ItemStages.restrict(<item:minecraft:gold_block>, "level_18");
+ItemStages.restrict(<item:createaddition:alternator>, "level_18");
+
+// Level 19 · Electric Drive and Storage. Do not dump these into Level 18.
+ItemStages.restrict(<item:createaddition:electric_motor>, "level_19");
+ItemStages.restrict(<item:createaddition:accumulator>, "level_19");
+
+// Level 20 · Wildlife Cuisine
+// Alex's Mobs itself is not namespace-gated: ItemStages cannot gate entities.
+ItemStages.restrict(<item:alexsmobs:animal_dictionary>, "level_20");
+ItemStages.createModRestriction("alexsdelight", "level_20");
+
+// Level 21 · Deep Expeditions
+ItemStages.createModRestriction("alexscaves", "level_21");
+ItemStages.restrict(<tag:items:minecraft:diamond_ores>, "level_21");
+ItemStages.restrict(<item:minecraft:diamond>, "level_21");
+ItemStages.restrict(<item:minecraft:diamond_block>, "level_21");
+ItemStages.restrict(<tag:items:minecraft:lapis_ores>, "level_21");
+ItemStages.restrict(<item:minecraft:lapis_lazuli>, "level_21");
+ItemStages.restrict(<item:minecraft:lapis_block>, "level_21");
+ItemStages.restrict(<item:minecraft:amethyst_shard>, "level_21");
+
+// Level 22 · Twilight Supply Chain
+ItemStages.createModRestriction("twilightforest", "level_22");
+ItemStages.createModRestriction("twilightdelight", "level_22");
+
+// Level 23 · End Supply Chain
+ItemStages.createModRestriction("ends_delight", "level_23");

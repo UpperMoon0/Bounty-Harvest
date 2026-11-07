@@ -21,8 +21,12 @@ $null = New-Item -ItemType Directory -Path $logDir -Force
 $fatalPatterns = @(
     'Failed to load KubeJS script',
     'Error loading KubeJS script',
+    "Error in 'ServerEvents\.",
+    "Error in 'StartupEvents\.",
+    "Error in 'ClientEvents\.",
     "Couldn't parse recipe",
     "Couldn't parse data file",
+    'Error parsing recipe.*Unknown item',
     'Failed to load datapacks',
     'CraftTweaker.*compile',
     'CraftTweaker.*error',
@@ -89,13 +93,13 @@ try {
     [System.IO.File]::WriteAllText((Join-Path $smokeRoot 'user_jvm_args.txt'), "-Xms1G`n-Xmx4G`n-XX:+UseG1GC`n")
     $argsFile = "@libraries/net/minecraftforge/forge/$coordinate/win_args.txt"
     $startupOutput = Invoke-JavaProcess -Arguments @('@user_jvm_args.txt', $argsFile, 'nogui') -Timeout $TimeoutSeconds -WatchForDone
-    
-    # Check for fatal patterns in startup output
+
+    # Reaching Done is not sufficient: a server can boot while KubeJS/data reloads failed.
     if (Test-FatalPatterns $startupOutput) {
         throw "Server startup contained fatal script/config errors."
     }
-    
-    # Also check latest.log and KubeJS/CraftTweaker logs if they exist
+
+    # Also check latest.log.
     $latestLog = Join-Path $smokeRoot 'logs/latest.log'
     if (Test-Path $latestLog) {
         $latestContent = Get-Content -Raw -LiteralPath $latestLog
@@ -103,17 +107,20 @@ try {
             throw "Server logs contain fatal script/config errors."
         }
     }
-    
-    # Check KubeJS logs
-    $kubejsLogs = Get-ChildItem -LiteralPath (Join-Path $smokeRoot 'logs') -Filter 'kubejs*.log' -ErrorAction SilentlyContinue
-    foreach ($log in $kubejsLogs) {
-        $content = Get-Content -Raw -LiteralPath $log.FullName
-        if (Test-FatalPatterns $content) {
-            throw "KubeJS logs contain fatal script/config errors."
+
+    # KubeJS writes its own logs under logs/kubejs/*.log, not directly under logs/.
+    $kubejsLogDir = Join-Path $smokeRoot 'logs/kubejs'
+    if (Test-Path -LiteralPath $kubejsLogDir) {
+        $kubejsLogs = Get-ChildItem -LiteralPath $kubejsLogDir -Filter '*.log' -File -ErrorAction SilentlyContinue
+        foreach ($log in $kubejsLogs) {
+            $content = Get-Content -Raw -LiteralPath $log.FullName
+            if (Test-FatalPatterns $content) {
+                throw "KubeJS logs contain fatal script/config errors."
+            }
         }
     }
-    
-    # Check CraftTweaker logs
+
+    # Check CraftTweaker logs.
     $ctLogs = Get-ChildItem -LiteralPath (Join-Path $smokeRoot 'logs') -Filter 'crafttweaker*.log' -ErrorAction SilentlyContinue
     foreach ($log in $ctLogs) {
         $content = Get-Content -Raw -LiteralPath $log.FullName
@@ -121,8 +128,8 @@ try {
             throw "CraftTweaker logs contain fatal script/config errors."
         }
     }
-    
-    Write-Host 'Dedicated server smoke test reached Done.'
+
+    Write-Host 'Dedicated server smoke test reached Done with no fatal script/data errors.'
 }
 catch {
     # Preserve logs for diagnosis

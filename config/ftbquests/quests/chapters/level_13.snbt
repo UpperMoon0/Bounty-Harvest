@@ -1,0 +1,171 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_13"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "minecraft:iron_ingot"
+	id: "D00000000000000D"
+	order_index: 12
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["A000000000000C5A"]
+			description: [
+				"Advance into Level 13: Ironworking."
+				""
+				"This promotion consumes value from the previous economy before opening the next production layer."
+			]
+			icon: "minecraft:iron_ingot"
+			id: "A000000000000D01"
+			rewards: [
+				{ autoclaim: 1b, id: "C0000000000D0101", stage: "level_13", type: "stage" }
+				{ autoclaim: 1b, id: "C0000000000D0102", stage: "iron_age", type: "stage" }
+				{ id: "C0000000000D0103", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_13\"]}", display: { Name: "{\"text\":\"Level 13 Decree\"}" } } }, type: "item" }
+			]
+			shape: "octagon"
+			tasks: [
+				{ consume_items: true, count: 64L, id: "B0000000000D0101", item: "kubejs:iron_coin", type: "item" }
+				{ consume_items: true, count: 24L, id: "B0000000000D0102", item: "corn_delight:taco", type: "item" }
+				{ consume_items: true, count: 24L, id: "B0000000000D0103", item: "minecraft:copper_ingot", type: "item" }
+			]
+			title: "Level 13 · Ironworking"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A000000000000D01"]
+			description: [
+				"Ironworking is finally active after four copper-era levels."
+				""
+				"Establish a real iron supply before branching into tools and utilities."
+			]
+			icon: "minecraft:iron_ingot"
+			id: "A000000000000D02"
+			tasks: [
+				{ count: 24L, id: "B0000000000D0201", item: "minecraft:raw_iron", type: "item" }
+				{ count: 16L, id: "B0000000000D0202", item: "minecraft:iron_ingot", type: "item" }
+			]
+			title: "Iron Supply"
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000000D02"]
+			description: [
+				"Craft the full iron toolset as a material-tier mastery branch."
+			]
+			icon: "minecraft:iron_pickaxe"
+			id: "A000000000000D03"
+			tasks: [
+				{ id: "B0000000000D0301", item: "minecraft:iron_shovel", type: "item" }
+				{ id: "B0000000000D0302", item: "minecraft:iron_pickaxe", type: "item" }
+				{ id: "B0000000000D0303", item: "minecraft:iron_axe", type: "item" }
+				{ id: "B0000000000D0304", item: "minecraft:iron_hoe", type: "item" }
+				{ id: "B0000000000D0305", item: "minecraft:iron_sword", type: "item" }
+			]
+			title: "Iron Tools"
+			x: -3.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000000D02"]
+			description: [
+				"Use iron for persistent farm and exploration utilities, not only better tools."
+			]
+			icon: "minecraft:bucket"
+			id: "A000000000000D04"
+			tasks: [
+				{ id: "B0000000000D0401", item: "minecraft:bucket", type: "item" }
+				{ id: "B0000000000D0402", item: "minecraft:shield", type: "item" }
+			]
+			title: "Iron Farm Utility"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000000D02"]
+			description: [
+				"Turn iron into chain as a manufactured intermediate."
+			]
+			icon: "minecraft:chain"
+			id: "A000000000000D05"
+			tasks: [
+				{ count: 12L, id: "B0000000000D0501", item: "minecraft:chain", type: "item" }
+			]
+			title: "Chainmaking"
+			x: 1.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["A000000000000D01"]
+			description: [
+				"Scale renewable charcoal again to support the new metal era."
+			]
+			icon: "minecraft:charcoal"
+			id: "A000000000000D06"
+			tasks: [
+				{ count: 48L, id: "B0000000000D0601", item: "minecraft:charcoal", type: "item" }
+			]
+			title: "Smeltery Fuel"
+			x: 3.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000000D05"]
+			description: [
+				"Optional manufactured-equipment endpoint for the chain line."
+			]
+			icon: "minecraft:chainmail_chestplate"
+			id: "A000000000000D07"
+			tasks: [
+				{ id: "B0000000000D0701", item: "minecraft:chainmail_helmet", type: "item" }
+				{ id: "B0000000000D0702", item: "minecraft:chainmail_chestplate", type: "item" }
+				{ id: "B0000000000D0703", item: "minecraft:chainmail_leggings", type: "item" }
+				{ id: "B0000000000D0704", item: "minecraft:chainmail_boots", type: "item" }
+			]
+			title: "Optional Chainmail Workshop"
+			x: 2.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["A000000000000D5A", "A000000000000D07"]
+			description: [
+				"Complete the optional chainmail workshop after the required iron shipment."
+				""
+				"This reconnects the equipment branch without making armor a progression tax."
+			]
+			icon: "minecraft:chainmail_chestplate"
+			id: "A000000000000D08"
+			rewards: [
+				{ count: 24, id: "C0000000000D0801", item: "kubejs:iron_coin", type: "item" }
+			]
+			shape: "diamond"
+			tasks: [{ id: "B0000000000D0801", type: "checkmark" }]
+			title: "Level 13 Iron Mastery"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000000D03", "A000000000000D04", "A000000000000D05", "A000000000000D06"]
+			description: [
+				"Ship iron, chain, charcoal, and tacos."
+				""
+				"The new metal era is funded by the mature farm economy and gets a full level before Create arrives."
+			]
+			icon: "minecraft:iron_ingot"
+			id: "A000000000000D5A"
+			shape: "hexagon"
+			tasks: [
+				{ consume_items: true, count: 32L, id: "B0000000000D5A01", item: "minecraft:iron_ingot", type: "item" }
+				{ consume_items: true, count: 12L, id: "B0000000000D5A02", item: "minecraft:chain", type: "item" }
+				{ consume_items: true, count: 48L, id: "B0000000000D5A03", item: "minecraft:charcoal", type: "item" }
+				{ consume_items: true, count: 32L, id: "B0000000000D5A04", item: "corn_delight:taco", type: "item" }
+			]
+			title: "Level 13 Market Order"
+			x: 6.0d
+			y: 6.0d
+		}
+	]
+	title: "Level 13 · Ironworking"
+}

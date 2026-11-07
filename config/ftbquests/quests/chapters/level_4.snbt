@@ -5,302 +5,164 @@
 	group: "39B7846742C777FD"
 	hide_quest_until_deps_visible: true
 	icon: "minecraft:carrot"
-	id: "2AF3D52E5E46A20F"
+	id: "D9DF46D28E381405"
 	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: [
-				"4D94846C7A3621E1"
-				"0F903402C0357CB1"
-				"43CD52707D5AC45C"
+			dependencies: ["9131A689D31728C8"]
+			description: [
+				"After the Level 3 Market Order, spend 16 copper coins and four cooked beef to add roots, pigs, and a broader food chain. Both costs are consumed."
+				""
+				"Carrots, pigs, Farmer's Delight dough, flint tools, and common mob or glass resources now branch independently before reconnecting through the Market Order or mastery."
 			]
 			icon: "minecraft:carrot"
 			id: "1003C2B79F710366"
 			rewards: [
-				{
-					autoclaim: 1b
-					id: "2B1DDE4295CD60DD"
-					stage: "level_4"
-					type: "stage"
-				}
-				{
-					id: "2295122A1560CAE1"
-					item: {
-						Count: 1
-						id: "bountiful:decree"
-						tag: {
-							RepairCost: 0
-							"bountiful:decree_data": "{\"ids\":[\"level_4\"]}"
-							display: {
-								Name: "{\"text\":\"Level 4 Decree\"}"
-							}
-						}
-					}
-					type: "item"
-				}
+				{ autoclaim: 1b, id: "474039432878481B", stage: "level_4", type: "stage" }
+				{ id: "082AECF3C6D6FF92", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_4\"]}", display: { Name: "{\"text\":\"Level 4 Decree\"}" } } }, type: "item" }
 			]
 			shape: "octagon"
 			tasks: [
-				{
-					consume_items: true
-					count: 2L
-					id: "5CDAE6C6E830E3D0"
-					item: { Count: 2, id: "kubejs:gold_coin" }
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 4L
-					id: "148496AD041DB986"
-					item: { Count: 4, id: "kubejs:iron_coin" }
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 4L
-					id: "2DDA7D4B9E966C80"
-					item: { Count: 4, id: "minecraft:cooked_beef" }
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 4L
-					id: "690FB21FF4E312EC"
-					item: { Count: 4, id: "minecraft:leather" }
-					type: "item"
-				}
-				{
-					consume_items: false
-					id: "602BA0B766EB9931"
-					item: "minecraft:bow"
-					type: "item"
-				}
+				{ consume_items: true, count: 16L, id: "F59CADCF33F29592", item: "kubejs:copper_coin", type: "item" }
+				{ consume_items: true, count: 4L, id: "DC624E929E2F8A43", item: "minecraft:cooked_beef", type: "item" }
 			]
-			title: "Level 4"
+			title: "Level 4 · Roots and Pork"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
-			hide_until_deps_visible: false
+			description: [
+				"Acquire and expand carrots into a reliable crop. This is the crop branch that supports both the pig line and later prepared foods."
+			]
 			id: "352F41B3BED0E086"
-			tasks: [{
-				id: "269DA89171668F2A"
-				item: "minecraft:carrot"
-				type: "item"
-			}]
-			x: 0.0d
+			tasks: [{ count: 12L, id: "269DA89171668F2A", item: "minecraft:carrot", type: "item" }]
+			title: "Carrot Field"
+			x: -2.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["352F41B3BED0E086"]
-			hide_until_deps_visible: false
+			description: [
+				"Raise pigs using the new root crop and establish pork as the third animal food line."
+			]
 			id: "58846BA779358FD2"
-			tasks: [{
-				id: "413A84E06FE1CFAA"
-				item: "minecraft:porkchop"
-				type: "item"
-			}]
-			title: "Pig"
-			x: -1.0d
+			tasks: [{ count: 4L, id: "413A84E06FE1CFAA", item: "minecraft:porkchop", type: "item" }]
+			title: "Pig Pen"
+			x: -3.0d
 			y: 4.0d
 		}
 		{
+			dependencies: ["58846BA779358FD2"]
+			description: [
+				"Cook six porkchops. This becomes the sale-ready endpoint of the pig branch and returns again in the later taco chain."
+			]
+			id: "6D3ECD5141AFA093"
+			tasks: [{ count: 6L, id: "2357515CE357A112", item: "minecraft:cooked_porkchop", type: "item" }]
+			title: "Cooked Pork"
+			x: -4.5d
+			y: 5.5d
+		}
+		{
 			dependencies: ["1003C2B79F710366"]
-			hide_until_deps_visible: false
+			description: [
+				"Make Farmer's Delight wheat dough from the older wheat and egg economy. New food tiers should multiply old production instead of replacing it."
+			]
 			id: "72CAF40486DF976F"
-			tasks: [{
-				id: "026B64363A5FE21E"
-				item: "farmersdelight:wheat_dough"
-				type: "item"
-			}]
+			tasks: [{ count: 6L, id: "026B64363A5FE21E", item: "farmersdelight:wheat_dough", type: "item" }]
+			title: "Wheat Dough"
 			x: 0.0d
 			y: -2.0d
 		}
 		{
+			dependencies: ["1003C2B79F710366"]
+			description: [
+				"Collect flint from the gravel branch introduced at Level 1. This turns an old low-value material into the next tool tier."
+			]
+			id: "17F6492995529F96"
+			tasks: [{ count: 5L, id: "0799389515CA36EB", item: "minecraft:flint", type: "item" }]
+			title: "Flint Supply"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
 			dependencies: ["17F6492995529F96"]
+			description: [
+				"Craft the complete flint tool set using the modified stone-tool recipes. This is a real pre-copper equipment tier, not a one-item unlock."
+			]
 			id: "19A0223BFE395A14"
 			tasks: [
-				{
-					id: "45A5573D47862E96"
-					item: {
-						Count: 1
-						id: "minecraft:stone_shovel"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "39C623F4A3918C9A"
-					item: {
-						Count: 1
-						id: "minecraft:stone_pickaxe"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "3B4663CE58D98FD9"
-					item: {
-						Count: 1
-						id: "minecraft:stone_axe"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "1C188B295DD98031"
-					item: {
-						Count: 1
-						id: "minecraft:stone_hoe"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "330D6E427AAE1BF4"
-					item: {
-						Count: 1
-						id: "minecraft:stone_sword"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
+				{ id: "45A5573D47862E96", item: "minecraft:stone_shovel", type: "item" }
+				{ id: "39C623F4A3918C9A", item: "minecraft:stone_pickaxe", type: "item" }
+				{ id: "3B4663CE58D98FD9", item: "minecraft:stone_axe", type: "item" }
+				{ id: "1C188B295DD98031", item: "minecraft:stone_hoe", type: "item" }
+				{ id: "330D6E427AAE1BF4", item: "minecraft:stone_sword", type: "item" }
 			]
 			title: "Flint Tools"
-			x: 4.0d
-			y: 0.0d
+			x: 3.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
-			id: "382504BCFCC6B07A"
-			tasks: [{
-				id: "12F8A6CCF615292A"
-				item: "minecraft:gunpowder"
-				type: "item"
-			}]
-			title: "Creeper"
-			x: -2.0d
-			y: 0.0d
+			description: [
+				"Smelt earlier sand into glass as an optional materials branch."
+				""
+				"It reconnects after the Market Order through Level 4 Mastery and later feeds bottles and utilities."
+			]
+			id: "12932CB774E66484"
+			tasks: [{ count: 6L, id: "7C2A27D31C954D1B", item: "minecraft:glass", type: "item" }]
+			title: "Optional Glassmaking"
+			x: 2.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["1003C2B79F710366"]
+			description: [
+				"Collect string and a spider eye as an optional mob-resource branch. It reconnects through mastery without becoming a promotion grind."
+			]
 			id: "6A5228B39CFC9F88"
 			tasks: [
-				{
-					id: "77CA2E89333327E4"
-					item: "minecraft:string"
-					type: "item"
-				}
-				{
-					id: "2C5451DB682F750B"
-					item: "minecraft:spider_eye"
-					type: "item"
-				}
+				{ count: 2L, id: "77CA2E89333327E4", item: "minecraft:string", type: "item" }
+				{ id: "2C5451DB682F750B", item: "minecraft:spider_eye", type: "item" }
 			]
-			title: "Spider"
+			title: "Optional Spider Resources"
 			x: -1.5d
-			y: 1.5d
+			y: -2.0d
 		}
 		{
-			dependencies: ["1003C2B79F710366"]
-			hide_until_deps_visible: false
-			id: "12932CB774E66484"
-			tasks: [{
-				id: "7C2A27D31C954D1B"
-				item: "minecraft:glass"
-				type: "item"
-			}]
-			x: -1.5d
-			y: -1.5d
-		}
-		{
-			dependencies: ["1003C2B79F710366"]
-			hide_until_deps_visible: false
-			id: "7D811445066E0898"
+			dependencies: ["6D3ECD5141AFA093", "72CAF40486DF976F", "19A0223BFE395A14"]
+			description: [
+				"The crop, livestock, food-processing, and tool branches converge here."
+				""
+				"Ship 12 carrots, six cooked porkchops, and six wheat dough; the flint tools are retained."
+			]
+			icon: "minecraft:carrot"
+			id: "284BDA8AD6A1EE07"
+			shape: "hexagon"
 			tasks: [
-				{
-					id: "3181F287CBC9E103"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "minecraft:wooden_buttons"
-						}
-					}
-					title: "Any Wooden Button"
-					type: "item"
-				}
-				{
-					id: "104D55D30B2B309B"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "minecraft:wooden_pressure_plates"
-						}
-					}
-					title: "Any Wooden Pressure Plate"
-					type: "item"
-				}
+				{ consume_items: true, count: 12L, id: "8BB86A8D1082146D", item: "minecraft:carrot", type: "item" }
+				{ consume_items: true, count: 6L, id: "BEF6BA3047CC7BCB", item: "minecraft:cooked_porkchop", type: "item" }
+				{ consume_items: true, count: 6L, id: "5E14A94D6A00D6C2", item: "farmersdelight:wheat_dough", type: "item" }
 			]
-			title: "Wooden Button and Pressure Plate"
-			x: 1.5d
-			y: -1.5d
-		}
-		{
-			dependencies: ["1003C2B79F710366"]
-			id: "17F6492995529F96"
-			tasks: [{
-				id: "0799389515CA36EB"
-				item: "minecraft:flint"
-				type: "item"
-			}]
-			x: 2.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["1003C2B79F710366"]
-			hide_until_deps_visible: false
-			id: "3BA339E0640B6081"
-			tasks: [{
-				id: "4CBD4601C827EC15"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "forge:small_freshwater_fishes"
-					}
-				}
-				title: "Any #forge:small_freshwater_fishes"
-				type: "item"
-			}]
-			title: "Small Freshwater Fishes"
-			x: 1.5d
-			y: 1.5d
-		}
-		{
-			dependencies: ["58846BA779358FD2"]
-			id: "6D3ECD5141AFA093"
-			tasks: [{
-				id: "2357515CE357A112"
-				item: "minecraft:cooked_porkchop"
-				type: "item"
-			}]
-			x: 1.0d
+			title: "Level 4 Market Order"
+			x: 6.5d
 			y: 4.0d
 		}
+		{
+			dependencies: ["284BDA8AD6A1EE07", "12932CB774E66484", "6A5228B39CFC9F88"]
+			description: [
+				"Complete the optional glass and mob-resource branches after satisfying the core roots and pork economy."
+			]
+			icon: "minecraft:glass"
+			id: "A400000000000407"
+			rewards: [{ count: 8, id: "C400000000000407", item: "kubejs:copper_coin", type: "item" }]
+			shape: "diamond"
+			tasks: [{ id: "B400000000000407", type: "checkmark" }]
+			title: "Level 4 Homestead Mastery"
+			x: 7.5d
+			y: 1.0d
+		}
 	]
-	title: "Level 4"
+	title: "Level 4 · Roots and Pork"
 }

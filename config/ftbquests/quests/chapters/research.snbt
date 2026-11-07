@@ -3,6 +3,7 @@
 	default_quest_shape: ""
 	filename: "research"
 	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
 	icon: "create:crafting_blueprint"
 	id: "2C72C819BFA43E10"
 	order_index: -1
@@ -10,28 +11,40 @@
 	quests: [
 		{
 			description: [
-				"Bounty Harvest uses levels as research milestones. Level 1 is granted automatically when you join; completing the Level 2-8 level-up quests grants their stages. ItemStages uses those stages to gate selected items and selected mod namespaces."
+				"Bounty Harvest uses 15 economic levels."
 				""
-				"Locked items show their required stage in their tooltip and are hidden or marked in JEI until that stage is available."
+				"Level 1 is granted when you join; each later level is a promotion contract unlocked by the previous tier's Market Order."
+				""
+				"Think like a farm-management game: each level adds a crop, animal, processor, machine, cuisine, or expedition that creates new products."
+				""
+				"Older goods must keep gaining new recipes and market demand instead of becoming dead inventory."
+				""
+				"Copper is a full era across Levels 7-9. Copper Tools prove mastery but do not grant Ironworking. Level 10 is the deliberate iron breakthrough."
 			]
+			icon: "bountiful:bountyboard"
 			id: "E60381A75A8C4D21"
-			tasks: [{
-				id: "18A9C17BEA7F302D"
-				type: "checkmark"
-			}]
-			title: "How research works"
+			tasks: [{ id: "D8414AB6A86181F6", type: "checkmark" }]
+			title: "How progression works"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["E60381A75A8C4D21"]
-			description: ["The quest book is the authoritative progression map. Locked-item tooltips identify later-stage item requirements."]
+			description: [
+				"ItemStages enforces item and namespace access where that is technically reliable."
+				""
+				"It does not pretend to stop mobs from spawning, block exploration systems, or gate every world mechanic."
+				""
+				"Your Bounty Board is the repeatable market layer. Later decree pools mix new goods with older staples and increasingly processed products."
+				""
+				"Major production lines should gain a new layer within about two levels and meaningful demand within about three."
+				""
+				"Crop pacing follows the same rule: Level 8 introduces cabbage, Level 9 tomato, Level 10 onion, and Level 11 rice so each crop has room to become economically meaningful."
+			]
+			icon: "kubejs:copper_coin"
 			id: "E5CA8B613D89274F"
-			tasks: [{
-				id: "435E9C0AD162A8BF"
-				type: "checkmark"
-			}]
-			title: "Reading the progression"
+			tasks: [{ id: "D79E13EE3D1802BF", type: "checkmark" }]
+			title: "Stages, decrees, and reuse"
 			x: 2.0d
 			y: 0.0d
 		}

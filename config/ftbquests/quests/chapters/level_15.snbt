@@ -1,0 +1,147 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "level_15"
+	group: "39B7846742C777FD"
+	hide_quest_until_deps_visible: true
+	icon: "create:mechanical_harvester"
+	id: "D00000000000000F"
+	order_index: 14
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["A000000000000E5A"]
+			description: [
+				"Advance into Level 15: Mechanical Farming."
+				""
+				"This promotion consumes value from the previous economy before opening the next production layer."
+			]
+			icon: "create:mechanical_harvester"
+			id: "A000000000000F01"
+			rewards: [
+				{ autoclaim: 1b, id: "C0000000000F0101", stage: "level_15", type: "stage" }
+				{ id: "C0000000000F0102", item: { Count: 1, id: "bountiful:decree", tag: { RepairCost: 0, "bountiful:decree_data": "{\"ids\":[\"level_15\"]}", display: { Name: "{\"text\":\"Level 15 Decree\"}" } } }, type: "item" }
+			]
+			shape: "octagon"
+			tasks: [
+				{ consume_items: true, count: 192L, id: "B0000000000F0101", item: "kubejs:iron_coin", type: "item" }
+				{ consume_items: true, count: 24L, id: "B0000000000F0102", item: "farmersdelight:hamburger", type: "item" }
+				{ consume_items: true, count: 48L, id: "B0000000000F0103", item: "minecraft:iron_ingot", type: "item" }
+			]
+			title: "Level 15 · Mechanical Farming"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A000000000000F01"]
+			description: [
+				"Establish the material foundation for Create automation."
+			]
+			icon: "create:andesite_alloy"
+			id: "A000000000000F02"
+			tasks: [
+				{ count: 32L, id: "B0000000000F0201", item: "create:andesite_alloy", type: "item" }
+			]
+			title: "Andesite Alloy"
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000000F02"]
+			description: [
+				"Turn alloy into reusable mechanical components."
+			]
+			icon: "create:cogwheel"
+			id: "A000000000000F03"
+			tasks: [
+				{ count: 24L, id: "B0000000000F0301", item: "create:shaft", type: "item" }
+				{ count: 24L, id: "B0000000000F0302", item: "create:cogwheel", type: "item" }
+			]
+			title: "Mechanical Components"
+			x: -3.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["A000000000000F03"]
+			description: [
+				"Build a bearing for rotating farm machinery."
+			]
+			icon: "create:mechanical_bearing"
+			id: "A000000000000F04"
+			tasks: [
+				{ id: "B0000000000F0401", item: "create:mechanical_bearing", type: "item" }
+			]
+			title: "Mechanical Bearing"
+			x: -4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000000F03"]
+			description: [
+				"Build harvesters so crop throughput can scale beyond hand farming."
+			]
+			icon: "create:mechanical_harvester"
+			id: "A000000000000F05"
+			tasks: [
+				{ count: 4L, id: "B0000000000F0501", item: "create:mechanical_harvester", type: "item" }
+			]
+			title: "Mechanical Harvester"
+			x: -1.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000000F01"]
+			description: [
+				"Add redstone control as the automation-control branch."
+			]
+			icon: "minecraft:redstone"
+			id: "A000000000000F06"
+			tasks: [
+				{ count: 24L, id: "B0000000000F0601", item: "minecraft:redstone", type: "item" }
+				{ count: 2L, id: "B0000000000F0602", item: "minecraft:repeater", type: "item" }
+			]
+			title: "Redstone Control"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["A000000000000F04", "A000000000000F05", "A000000000000F06"]
+			description: [
+				"Prove the machinery solves a real throughput problem by producing industrial crop volumes."
+				""
+				"This is where automation becomes the intended answer."
+			]
+			icon: "minecraft:wheat"
+			id: "A000000000000F07"
+			tasks: [
+				{ count: 256L, id: "B0000000000F0701", item: "minecraft:wheat", type: "item" }
+				{ count: 128L, id: "B0000000000F0702", item: "corn_delight:corn", type: "item" }
+				{ count: 128L, id: "B0000000000F0703", item: "farmersdelight:cabbage", type: "item" }
+			]
+			title: "Automated Harvest Proof"
+			x: 1.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A000000000000F07", "A000000000000F02"]
+			description: [
+				"Ship industrial farm output while keeping bearings, harvesters, and control infrastructure."
+				""
+				"Create is earned by throughput pressure rather than by crafting a machine and discarding it."
+			]
+			icon: "create:mechanical_harvester"
+			id: "A000000000000F5A"
+			shape: "hexagon"
+			tasks: [
+				{ consume_items: true, count: 64L, id: "B0000000000F5A01", item: "create:andesite_alloy", type: "item" }
+				{ consume_items: true, count: 256L, id: "B0000000000F5A02", item: "minecraft:wheat", type: "item" }
+				{ consume_items: true, count: 128L, id: "B0000000000F5A03", item: "corn_delight:corn", type: "item" }
+				{ consume_items: true, count: 128L, id: "B0000000000F5A04", item: "farmersdelight:cabbage", type: "item" }
+			]
+			title: "Level 15 Market Order"
+			x: 6.0d
+			y: 6.0d
+		}
+	]
+	title: "Level 15 · Mechanical Farming"
+}
